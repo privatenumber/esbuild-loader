@@ -1,0 +1,24 @@
+{
+  "name": "esbuild-loder",
+  "version": "0.0.0-semantic-release",
+  "main": "src/index.js",
+  "author": "EGOIST",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --env node"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {
+    "esbuild": "^0.2.9",
+    "loader-utils": "^2.0.0"
+  }
+}
