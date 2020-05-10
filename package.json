@@ -1,5 +1,5 @@
 {
-  "name": "esbuild-loder",
+  "name": "esbuild-loader",
   "version": "0.0.0-semantic-release",
   "main": "src/index.js",
   "author": "EGOIST",
