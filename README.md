@@ -22,7 +22,10 @@ module.exports = {
         test: /\.[jt]sx?$/,
         loader: 'esbuild-loader',
         options: {
+          // All options are optional
           target: 'es2015', // default, or 'es20XX', 'esnext'
+          jsxFactory: 'React.createElement',
+          jsxFragment: 'React.Fragment'
         },
       },
     ],

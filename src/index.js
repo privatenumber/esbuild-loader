@@ -29,6 +29,8 @@ module.exports = async function (source) {
     const result = await service.transform(source, {
       target: options.target || 'es2015',
       loader: ext.slice(1),
+      jsxFactory: options.jsxFactory,
+      jsxFragment: options.jsxFragment
     })
     done(null, result.js, result.jsSourceMap)
   } catch (err) {
