@@ -90,6 +90,27 @@ exports[`simple 2`] = `
 /************************************************************************/
 /******/ ({
 
+/***/ \\"./test/fixture/bar.js\\":
+/*!*****************************!*\\\\
+  !*** ./test/fixture/bar.js ***!
+  \\\\*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"default\\", function() { return Bar; });
+class Bar {
+  render() {
+    return React.createElement(\\"div\\", {
+      className: \\"hehe\\"
+    }, \\"hello there!!!\\");
+  }
+}
+
+
+/***/ }),
+
 /***/ \\"./test/fixture/foo.tsx\\":
 /*!******************************!*\\\\
   !*** ./test/fixture/foo.tsx ***!
@@ -121,8 +142,11 @@ class Foo {
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _foo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo */ \\"./test/fixture/foo.tsx\\");
+/* harmony import */ var _bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bar */ \\"./test/fixture/bar.js\\");
+
 
 console.log(_foo__WEBPACK_IMPORTED_MODULE_0__[\\"default\\"]);
+console.log(_bar__WEBPACK_IMPORTED_MODULE_1__[\\"default\\"]);
 
 
 /***/ })

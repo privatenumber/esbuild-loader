@@ -20,7 +20,7 @@ module.exports = async function (source) {
 
   try {
     const ext = path.extname(this.resourcePath)
-    if (!exts.includes(ext)) {
+    if (!options.loader && !exts.includes(ext)) {
       return done(
         new Error(`[esbuild-loader] Unsupported file extension: ${ext}`)
       )
@@ -28,7 +28,7 @@ module.exports = async function (source) {
 
     const result = await service.transform(source, {
       target: options.target || 'es2015',
-      loader: ext.slice(1),
+      loader: options.loader || ext.slice(1),
       jsxFactory: options.jsxFactory,
       jsxFragment: options.jsxFragment,
       sourcemap: options.sourceMap

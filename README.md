@@ -24,6 +24,7 @@ module.exports = {
         options: {
           // All options are optional
           target: 'es2015', // default, or 'es20XX', 'esnext'
+          loader: 'tsx', // default value is current transpinling file ext
           jsxFactory: 'React.createElement',
           jsxFragment: 'React.Fragment',
           sourceMap: false // Enable sourcemap

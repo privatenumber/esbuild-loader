@@ -20,9 +20,16 @@ test('simple', async () => {
     module: {
       rules: [
         {
-          test: /\.[jt]sx?$/,
+          test: /\.tsx?$/,
           loader: esbuildLoader,
         },
+        {
+          test: /\.jsx?$/,
+          loader: esbuildLoader,
+          options: {
+            loader: 'tsx'
+          }
+        }
       ],
     },
     plugins: [new ESBuildPlugin()],
