@@ -18,7 +18,7 @@
     "webpack": "^4.43.0"
   },
   "dependencies": {
-    "esbuild": "^0.2.9",
+    "esbuild": "^0.5.16",
     "loader-utils": "^2.0.0"
   }
 }
