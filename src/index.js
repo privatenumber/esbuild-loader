@@ -5,7 +5,12 @@ const { getOptions } = require('loader-utils')
 /** @type {import('esbuild').Service} */
 let service
 
-const exts = ['.js', '.jsx', '.ts', '.tsx']
+const getLoader = (ext) => {
+  if (ext === '.json') {
+    return 'json'
+  }
+  return 'tsx'
+}
 
 module.exports = async function (source) {
   const done = this.async()
@@ -20,15 +25,10 @@ module.exports = async function (source) {
 
   try {
     const ext = path.extname(this.resourcePath)
-    if (!exts.includes(ext)) {
-      return done(
-        new Error(`[esbuild-loader] Unsupported file extension: ${ext}`)
-      )
-    }
 
     const result = await service.transform(source, {
       target: options.target || 'es2015',
-      loader: ext.slice(1),
+      loader: getLoader(ext),
       jsxFactory: options.jsxFactory,
       jsxFragment: options.jsxFragment,
       sourcemap: options.sourceMap
