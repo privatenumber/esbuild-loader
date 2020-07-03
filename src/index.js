@@ -2,9 +2,6 @@ const path = require('path')
 const esbuild = require('esbuild')
 const { getOptions } = require('loader-utils')
 
-/** @type {import('esbuild').Service} */
-let service
-
 const getLoader = (ext) => {
   if (ext === '.json') {
     return 'json'
@@ -15,6 +12,9 @@ const getLoader = (ext) => {
 module.exports = async function (source) {
   const done = this.async()
   const options = getOptions(this)
+  /** @type {import('esbuild').Service} */
+  const service = this._compiler.$esbuildService
+
   if (!service) {
     return done(
       new Error(
@@ -31,7 +31,7 @@ module.exports = async function (source) {
       loader: getLoader(ext),
       jsxFactory: options.jsxFactory,
       jsxFragment: options.jsxFragment,
-      sourcemap: options.sourceMap
+      sourcemap: options.sourceMap,
     })
     done(null, result.js, result.jsSourceMap)
   } catch (err) {
@@ -47,8 +47,8 @@ module.exports.ESBuildPlugin = class ESBuildPlugin {
     let watching = false
 
     const startService = async () => {
-      if (!service) {
-        service = await esbuild.startService()
+      if (!compiler.$esbuildService) {
+        compiler.$esbuildService = await esbuild.startService()
       }
     }
 
@@ -61,9 +61,9 @@ module.exports.ESBuildPlugin = class ESBuildPlugin {
     })
 
     compiler.hooks.done.tap('esbuild', () => {
-      if (!watching && service) {
-        service.stop()
-        service = undefined
+      if (!watching && compiler.$esbuildService) {
+        compiler.$esbuildService.stop()
+        compiler.$esbuildService = undefined
       }
     })
   }
