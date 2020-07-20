@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"default\\", function() { return Foo; });
 class Foo {
   render() {
-    return React.createElement(\\"div\\", {
+    return /* @__PURE__ */ React.createElement(\\"div\\", {
       className: \\"hehe\\"
     }, \\"hello there!!!\\");
   }
