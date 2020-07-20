@@ -12,9 +12,6 @@ const getLoader = (ext) => {
     )
   }
 
-  if (ext === '.json') {
-    return 'json'
-  }
   return ext.slice(1)
 }
 
