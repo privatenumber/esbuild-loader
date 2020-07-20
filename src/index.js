@@ -26,43 +26,35 @@ module.exports = async function (source) {
   try {
     const ext = path.extname(this.resourcePath)
 
-    const minify = {
+    const config = {
+      target: options.target || 'es2015',
+      loader: getLoader(ext),
+      jsxFactory: options.jsxFactory,
+      jsxFragment: options.jsxFragment,
+      sourcemap: options.sourceMap,
       minifyWhitespace: false,
       minifySyntax: false,
       minifyIdentifiers: false,
     }
 
     if (options.minify === true) {
-      Object.assign(minify, {
-        minifyWhitespace: true,
-        minifySyntax: true,
-        minifyIdentifiers: true,
-      })
+      config.minifyIdentifiers = true
+      config.minifySyntax = true
+      config.minifyWhitespace = true
     } else if (typeof options.minify === 'object') {
       if (options.minify.minifyIdentifiers) {
-        minify.minifyIdentifiers = true
+        config.minifyIdentifiers = true
       }
       if (options.minify.minifySyntax) {
-        minify.minifySyntax = true
+        config.minifySyntax = true
       }
       if (options.minify.minifyWhitespace) {
-        minify.minifyWhitespace = true
+        config.minifyWhitespace = true
       }
     }
 
-    const result = await service.transform(
-      source,
-      Object.assign(
-        {
-          target: options.target || 'es2015',
-          loader: getLoader(ext),
-          jsxFactory: options.jsxFactory,
-          jsxFragment: options.jsxFragment,
-          sourcemap: options.sourceMap,
-        },
-        minify
-      )
-    )
+    const result = await service.transform(source, config)
+
     done(null, result.js, result.jsSourceMap)
   } catch (err) {
     done(err)
