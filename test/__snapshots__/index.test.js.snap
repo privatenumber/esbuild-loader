@@ -85,15 +85,15 @@ exports[`simple 2`] = `
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = \\"./test/fixture/index.js\\");
+/******/ 	return __webpack_require__(__webpack_require__.s = \\"../../../../../../index.js\\");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ \\"./test/fixture/foo.tsx\\":
-/*!******************************!*\\\\
-  !*** ./test/fixture/foo.tsx ***!
-  \\\\******************************/
+/***/ \\"../../../../../../foo.tsx\\":
+/*!****************!*\\\\
+  !*** /foo.tsx ***!
+  \\\\****************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -111,18 +111,18 @@ class Foo {
 
 /***/ }),
 
-/***/ \\"./test/fixture/index.js\\":
-/*!*******************************!*\\\\
-  !*** ./test/fixture/index.js ***!
-  \\\\*******************************/
+/***/ \\"../../../../../../index.js\\":
+/*!*****************!*\\\\
+  !*** /index.js ***!
+  \\\\*****************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _foo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo */ \\"./test/fixture/foo.tsx\\");
+/* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"../../../../../../foo.tsx\\");
 
-console.log(_foo__WEBPACK_IMPORTED_MODULE_0__[\\"default\\"]);
+console.log(_foo_tsx__WEBPACK_IMPORTED_MODULE_0__[\\"default\\"]);
 
 
 /***/ })

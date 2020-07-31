@@ -2,10 +2,10 @@ const path = require('path')
 const { getOptions } = require('loader-utils')
 
 const getLoader = (ext) => {
-  if (ext === '.json') {
-    return 'json'
+  if (ext === '.txt') {
+    return 'text';
   }
-  return 'tsx'
+  return ext.slice(1)
 }
 
 async function ESBuildLoader(source) {

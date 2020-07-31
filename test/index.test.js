@@ -1,35 +1,21 @@
-const { promisify } = require('util')
-const webpack = require('webpack')
-const { ESBuildPlugin } = require('../src')
-
-const esbuildLoader = require.resolve('../src')
+const { build } = require('./utils')
 
 test('simple', async () => {
-  const compiler = webpack({
-    mode: 'development',
-    devtool: false,
-    entry: __dirname + '/fixture/index.js',
-    output: {
-      path: __dirname + '/fixture/dist',
-      filename: 'index.js',
-      libraryTarget: 'commonjs2',
-    },
-    resolve: {
-      extensions: ['.js', '.tsx', '.ts', '.jsx', '.json'],
-    },
-    module: {
-      rules: [
-        {
-          test: /\.[jt]sx?$/,
-          loader: esbuildLoader,
-        },
-      ],
-    },
-    plugins: [new ESBuildPlugin()],
-  })
-  const stats = await promisify(compiler.run.bind(compiler))()
 
-  console.log(stats.toString('minimal'))
+  const stats = await build({
+    '/index.js': `
+      import Foo from './foo.tsx'
+      console.log(Foo)
+    `,
+    '/foo.tsx': `
+    export default class Foo {
+      render() {
+        return <div className="hehe">hello there!!!</div>
+      }
+    }
+    `,
+  });
+
   const assets = stats.compilation.assets
 
   expect(Object.keys(assets)).toMatchInlineSnapshot(`
