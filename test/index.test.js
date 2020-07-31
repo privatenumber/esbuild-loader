@@ -27,12 +27,11 @@ test('simple', async () => {
     },
     plugins: [new ESBuildPlugin()],
   })
-  let assets
-  compiler.hooks.done.tap('test', (stats) => {
-    console.log(stats.toString('minimal'))
-    assets = stats.compilation.assets
-  })
-  await promisify(compiler.run.bind(compiler))()
+  const stats = await promisify(compiler.run.bind(compiler))()
+
+  console.log(stats.toString('minimal'))
+  const assets = stats.compilation.assets
+
   expect(Object.keys(assets)).toMatchInlineSnapshot(`
     Array [
       "index.js",
