@@ -1,16 +1,17 @@
-const { RawSource, SourceMapSource } = require('webpack-sources');
+const { RawSource, SourceMapSource } = require('webpack-sources')
 
-const isJsFile = /\.js$/i;
-const pluginName = 'esbuild-minify';
+const isJsFile = /\.js$/i
+const pluginName = 'esbuild-minify'
 
 class ESBuildMinifyPlugin {
-
   constructor(options) {
-    this.options = { ...options };
+    this.options = { ...options }
 
-    const hasMinify = Object.keys(this.options).some(k => k.startsWith('minify'));
+    const hasMinify = Object.keys(this.options).some((k) =>
+      k.startsWith('minify')
+    )
     if (!hasMinify) {
-      this.options.minify = true;
+      this.options.minify = true
     }
   }
 
@@ -18,7 +19,7 @@ class ESBuildMinifyPlugin {
    * @param {import('webpack').Compiler} compiler
    */
   apply(compiler) {
-    const { options } = this;
+    const { options } = this
 
     compiler.hooks.compilation.tap(pluginName, (compilation) => {
       const service = compiler.$esbuildService
@@ -29,47 +30,50 @@ class ESBuildMinifyPlugin {
         )
       }
 
-      const { devtool } = compiler.options;
-      const sourcemap = options.hasOwnProperty('sourcemap') ? options.sourcemap : (devtool && devtool.includes('source-map'));
+      const { devtool } = compiler.options
+      const sourcemap = options.hasOwnProperty('sourcemap')
+        ? options.sourcemap
+        : devtool && devtool.includes('source-map')
 
-      compilation.hooks.optimizeChunkAssets.tapPromise(pluginName, async (chunks) => {
+      compilation.hooks.optimizeChunkAssets.tapPromise(
+        pluginName,
+        async (chunks) => {
+          const transforms = chunks.flatMap((chunk) => {
+            return chunk.files
+              .filter((file) => isJsFile.test(file))
+              .map(async (file) => {
+                const assetSource = compilation.assets[file]
+                const { source, map } = assetSource.sourceAndMap()
 
-        const transforms = chunks.flatMap((chunk) => {
-          return chunk.files
-            .filter(file => isJsFile.test(file))
-            .map(async file => {
-              const assetSource = compilation.assets[file];
-              const { source, map } = assetSource.sourceAndMap();
+                const result = await service.transform(source, {
+                  ...options,
+                  sourcemap,
+                  sourcefile: file,
+                })
 
-              const result = await service.transform(source, {
-                ...options,
-                sourcemap,
-                sourcefile: file,
-              });
+                compilation.updateAsset(file, () => {
+                  if (sourcemap) {
+                    return new SourceMapSource(
+                      result.js || '',
+                      file,
+                      result.jsSourceMap,
+                      source,
+                      map,
+                      true
+                    )
+                  } else {
+                    return new RawSource(result.js || '')
+                  }
+                })
+              })
+          })
 
-              compilation.updateAsset(file, () => {
-                if (sourcemap) {
-                  return new SourceMapSource(
-                    result.js || '',
-                    file,
-                    result.jsSourceMap,
-                    source,
-                    map,
-                    true,
-                  );
-                } else {
-                  return new RawSource(result.js || '');
-                }
-              });
-          });
-        });
-
-        if (transforms.length) {
-          await Promise.all(transforms);          
+          if (transforms.length) {
+            await Promise.all(transforms)
+          }
         }
-      });
-      },
-    );
+      )
+    })
   }
 }
 

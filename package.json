@@ -5,7 +5,8 @@
   "author": "EGOIST",
   "license": "MIT",
   "scripts": {
-    "test": "jest --env node"
+    "test": "jest --env node",
+    "lint": "prettier --write src test/*.js"
   },
   "files": [
     "src"

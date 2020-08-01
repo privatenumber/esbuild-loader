@@ -12,8 +12,8 @@ const js = {
   '/bar.js': `
   console.log('bar' + 1);
   export default Symbol('bar');
-  `
-};
+  `,
+}
 
 const tsx = {
   '/index.js': `
@@ -28,7 +28,7 @@ const tsx = {
     }
   }
   `,
-};
+}
 
 const target = {
   '/index.js': `
@@ -43,10 +43,10 @@ const target = {
     let x = {...y}
     let {...z} = y
   `,
-};
+}
 
 module.exports = {
   js,
   tsx,
   target,
-};
+}
