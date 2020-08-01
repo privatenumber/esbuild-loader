@@ -7,12 +7,12 @@ const { Volume } = require('memfs');
 const { ESBuildPlugin } = require('../src')
 const esbuildLoader = require.resolve('../src')
 
-function build(volJson) {
+function build(volJson, configure) {
 	return new Promise((resolve, reject) => {
 		const mfs = Volume.fromJSON(volJson);
 		mfs.join = path.join.bind(path);
 
-		const compiler = webpack({
+		let config = {
 			mode: 'development',
 			devtool: false,
 
@@ -23,18 +23,30 @@ function build(volJson) {
 				libraryTarget: 'commonjs2',
 			},
 
+			resolveLoader: {
+				alias: {
+					'esbuild-loader': esbuildLoader,
+				},
+			},
+
 			module: {
 				rules: [
 					{
-						test: /\.[jt]sx?$/,
-						loader: esbuildLoader,
+						test: /\.js$/,
+						loader: 'esbuild-loader',
 					},
 				],
 			},
 			plugins: [
 				new ESBuildPlugin(),
 			],
-		});
+		};
+
+		if (typeof configure === 'function') {
+			configure(config);
+		}
+
+		const compiler = webpack(config);
 
 		compiler.inputFileSystem = ufs.use(fs).use(mfs);
 		compiler.outputFileSystem = mfs;
@@ -55,6 +67,4 @@ function build(volJson) {
 	});
 }
 
-module.exports = {
-	build
-};
+module.exports = build;

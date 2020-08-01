@@ -1,13 +1,6 @@
 const path = require('path')
 const { getOptions } = require('loader-utils')
 
-const getLoader = (ext) => {
-  if (ext === '.txt') {
-    return 'text';
-  }
-  return ext.slice(1)
-}
-
 async function ESBuildLoader(source) {
   const done = this.async()
   const options = getOptions(this)
@@ -23,14 +16,13 @@ async function ESBuildLoader(source) {
   }
 
   try {
-    const ext = path.extname(this.resourcePath)
-
     const result = await service.transform(source, {
       target: options.target || 'es2015',
-      loader: getLoader(ext),
+      loader: options.loader || 'js',
       jsxFactory: options.jsxFactory,
       jsxFragment: options.jsxFragment,
-      sourcemap: options.sourceMap,
+      sourcemap: this.sourceMap,
+      sourcefile: this.resourcePath,
     })
     done(null, result.js, result.jsSourceMap)
   } catch (err) {

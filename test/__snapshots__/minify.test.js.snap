@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader + Minification minify 1`] = `
+"module.exports=function(f){var d={};function b(a){if(d[a])return d[a].exports;var c=d[a]={i:a,l:!1,exports:{}};return f[a].call(c.exports,c,c.exports,b),c.l=!0,c.exports}return b.m=f,b.c=d,b.d=function(a,c,e){b.o(a,c)||Object.defineProperty(a,c,{enumerable:!0,get:e})},b.r=function(a){typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(a,\\"__esModule\\",{value:!0})},b.t=function(a,c){c&1&&(a=b(a));if(c&8)return a;if(c&4&&typeof a===\\"object\\"&&a&&a.__esModule)return a;var e=Object.create(null);b.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:a});if(c&2&&typeof a!=\\"string\\")for(var g in a)b.d(e,g,function(h){return a[h]}.bind(null,g));return e},b.n=function(a){var c=a&&a.__esModule?function e(){return a.default}:function e(){return a};return b.d(c,\\"a\\",c),c},b.o=function(a,c){return Object.prototype.hasOwnProperty.call(a,c)},b.p=\\"\\",b(b.s=\\"../../../../../../index.js\\")}({\\"../../../../../../bar.js\\":function(f,d,b){\\"use strict\\";b.r(d),console.log(\\"bar\\"+1),d.default=Symbol(\\"bar\\")},\\"../../../../../../foo.js\\":function(f,d,b){\\"use strict\\";b.r(d),console.log(\\"foo\\"),d.default=1},\\"../../../../../../index.js\\":function(f,d,b){\\"use strict\\";b.r(d);var a=b(\\"../../../../../../foo.js\\"),c=b(\\"../../../../../../bar.js\\");console.log(a.default)}});
+"
+`;
+
+exports[`Loader + Minification minify w/ no devtool 1`] = `
+"module.exports=function(f){var e={};function c(a){if(e[a])return e[a].exports;var b=e[a]={i:a,l:!1,exports:{}};return f[a].call(b.exports,b,b.exports,c),b.l=!0,b.exports}return c.m=f,c.c=e,c.d=function(a,b,d){c.o(a,b)||Object.defineProperty(a,b,{enumerable:!0,get:d})},c.r=function(a){typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(a,\\"__esModule\\",{value:!0})},c.t=function(a,b){b&1&&(a=c(a));if(b&8)return a;if(b&4&&typeof a===\\"object\\"&&a&&a.__esModule)return a;var d=Object.create(null);c.r(d),Object.defineProperty(d,\\"default\\",{enumerable:!0,value:a});if(b&2&&typeof a!=\\"string\\")for(var g in a)c.d(d,g,function(h){return a[h]}.bind(null,g));return d},c.n=function(a){var b=a&&a.__esModule?function d(){return a.default}:function d(){return a};return c.d(b,\\"a\\",b),b},c.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},c.p=\\"\\",c(c.s=\\"../../../../../../index.js\\")}({\\"../../../../../../bar.js\\":function(module,__webpack_exports__,__webpack_require__){\\"use strict\\";eval(\`__webpack_require__.r(__webpack_exports__);
+console.log(\\"bar\\" + 1);
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (Symbol(\\"bar\\"));
+
+
+//# sourceURL=webpack:////bar.js?\`)},\\"../../../../../../foo.js\\":function(module,__webpack_exports__,__webpack_require__){\\"use strict\\";eval(\`__webpack_require__.r(__webpack_exports__);
+console.log(\\"foo\\");
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (1);
+
+
+//# sourceURL=webpack:////foo.js?\`)},\\"../../../../../../index.js\\":function(module,__webpack_exports__,__webpack_require__){\\"use strict\\";eval(\`__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"../../../../../../foo.js\\");
+/* harmony import */ var _bar_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bar.js */ \\"../../../../../../bar.js\\");
+
+
+console.log(_foo_js__WEBPACK_IMPORTED_MODULE_0__[\\"default\\"]);
+
+
+//# sourceURL=webpack:////index.js?\`)}});
+"
+`;
+
+exports[`Loader + Minification minify w/ source-maps 1`] = `
+"module.exports=function(f){var d={};function b(a){if(d[a])return d[a].exports;var c=d[a]={i:a,l:!1,exports:{}};return f[a].call(c.exports,c,c.exports,b),c.l=!0,c.exports}return b.m=f,b.c=d,b.d=function(a,c,e){b.o(a,c)||Object.defineProperty(a,c,{enumerable:!0,get:e})},b.r=function(a){typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(a,\\"__esModule\\",{value:!0})},b.t=function(a,c){c&1&&(a=b(a));if(c&8)return a;if(c&4&&typeof a===\\"object\\"&&a&&a.__esModule)return a;var e=Object.create(null);b.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:a});if(c&2&&typeof a!=\\"string\\")for(var g in a)b.d(e,g,function(h){return a[h]}.bind(null,g));return e},b.n=function(a){var c=a&&a.__esModule?function e(){return a.default}:function e(){return a};return b.d(c,\\"a\\",c),c},b.o=function(a,c){return Object.prototype.hasOwnProperty.call(a,c)},b.p=\\"\\",b(b.s=\\"../../../../../../index.js\\")}({\\"../../../../../../bar.js\\":function(f,d,b){\\"use strict\\";b.r(d),console.log(\\"bar\\"+1),d.default=Symbol(\\"bar\\")},\\"../../../../../../foo.js\\":function(f,d,b){\\"use strict\\";b.r(d),console.log(\\"foo\\"),d.default=1},\\"../../../../../../index.js\\":function(f,d,b){\\"use strict\\";b.r(d);var a=b(\\"../../../../../../foo.js\\"),c=b(\\"../../../../../../bar.js\\");console.log(a.default)}});
+
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9iYXIuanMiLCJ3ZWJwYWNrOi8vLy9mb28uanMiLCJ3ZWJwYWNrOi8vLy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiMkJBQ0UsR0FBSSxHQUFtQixHQUd2QixXQUE2QixHQUc1QixHQUFHLEVBQWlCLEdBQ25CLE1BQU8sR0FBaUIsR0FBVSxRQUduQyxHQUFJLEdBQVMsRUFBaUIsR0FBWSxDQUN6QyxFQUFHLEVBQ0gsRUFBRyxHQUNILFFBQVMsSUFJVixTQUFRLEdBQVUsS0FBSyxFQUFPLFFBQVMsRUFBUSxFQUFPLFFBQVMsR0FHL0QsRUFBTyxFQUFJLEdBR0osRUFBTyxRQUtmLFNBQW9CLEVBQUksRUFHeEIsRUFBb0IsRUFBSSxFQUd4QixFQUFvQixFQUFJLFNBQVMsRUFBUyxFQUFNLEdBQzNDLEVBQW9CLEVBQUUsRUFBUyxJQUNsQyxPQUFPLGVBQWUsRUFBUyxFQUFNLENBQUUsV0FBWSxHQUFNLElBQUssS0FLaEUsRUFBb0IsRUFBSSxTQUFTLEdBQzdCLE1BQU8sVUFBVyxhQUFlLE9BQU8sYUFDMUMsT0FBTyxlQUFlLEVBQVMsT0FBTyxZQUFhLENBQUUsTUFBTyxXQUU3RCxPQUFPLGVBQWUsRUFBUyxhQUFjLENBQUUsTUFBTyxNQVF2RCxFQUFvQixFQUFJLFNBQVMsRUFBTyxHQUNwQyxFQUFPLEdBQUcsR0FBUSxFQUFvQixJQUN6QyxHQUFHLEVBQU8sRUFBRyxNQUFPLEdBQ3BCLEdBQUksRUFBTyxHQUFNLE1BQU8sS0FBVSxVQUFZLEdBQVMsRUFBTSxXQUFZLE1BQU8sR0FDaEYsR0FBSSxHQUFLLE9BQU8sT0FBTyxNQUN2QixFQUFvQixFQUFFLEdBQ3RCLE9BQU8sZUFBZSxFQUFJLFVBQVcsQ0FBRSxXQUFZLEdBQU0sTUFBTyxJQUNoRSxHQUFHLEVBQU8sR0FBSyxNQUFPLElBQVMsU0FBVSxPQUFRLEtBQU8sR0FBTyxFQUFvQixFQUFFLEVBQUksRUFBSyxTQUFTLEdBQU8sTUFBTyxHQUFNLElBQVEsS0FBSyxLQUFNLElBQzlJLE1BQU8sSUFJUixFQUFvQixFQUFJLFNBQVMsR0FDaEMsR0FBSSxHQUFTLEdBQVUsRUFBTyxXQUM3QixhQUF3QixNQUFPLEdBQU8sU0FDdEMsYUFBOEIsTUFBTyxJQUN0QyxTQUFvQixFQUFFLEVBQVEsSUFBSyxHQUM1QixHQUlSLEVBQW9CLEVBQUksU0FBUyxFQUFRLEdBQVksTUFBTyxRQUFPLFVBQVUsZUFBZSxLQUFLLEVBQVEsSUFHekcsRUFBb0IsRUFBSSxHQUlqQixFQUFvQixFQUFvQixFQUFJLCtCLHlEQ2pGbkQsZUFBUSxJQUFJLE1BQVEsR0FDTCxpQkFBTyxRLHdEQ0R0QixlQUFRLElBQUksT0FDRyxhLDBEQ0RiLDJFQUVBLFFBQVEsSUFBSSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIiBcdC8vIFRoZSBtb2R1bGUgY2FjaGVcbiBcdHZhciBpbnN0YWxsZWRNb2R1bGVzID0ge307XG5cbiBcdC8vIFRoZSByZXF1aXJlIGZ1bmN0aW9uXG4gXHRmdW5jdGlvbiBfX3dlYnBhY2tfcmVxdWlyZV9fKG1vZHVsZUlkKSB7XG5cbiBcdFx0Ly8gQ2hlY2sgaWYgbW9kdWxlIGlzIGluIGNhY2hlXG4gXHRcdGlmKGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdKSB7XG4gXHRcdFx0cmV0dXJuIGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdLmV4cG9ydHM7XG4gXHRcdH1cbiBcdFx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcbiBcdFx0dmFyIG1vZHVsZSA9IGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdID0ge1xuIFx0XHRcdGk6IG1vZHVsZUlkLFxuIFx0XHRcdGw6IGZhbHNlLFxuIFx0XHRcdGV4cG9ydHM6IHt9XG4gXHRcdH07XG5cbiBcdFx0Ly8gRXhlY3V0ZSB0aGUgbW9kdWxlIGZ1bmN0aW9uXG4gXHRcdG1vZHVsZXNbbW9kdWxlSWRdLmNhbGwobW9kdWxlLmV4cG9ydHMsIG1vZHVsZSwgbW9kdWxlLmV4cG9ydHMsIF9fd2VicGFja19yZXF1aXJlX18pO1xuXG4gXHRcdC8vIEZsYWcgdGhlIG1vZHVsZSBhcyBsb2FkZWRcbiBcdFx0bW9kdWxlLmwgPSB0cnVlO1xuXG4gXHRcdC8vIFJldHVybiB0aGUgZXhwb3J0cyBvZiB0aGUgbW9kdWxlXG4gXHRcdHJldHVybiBtb2R1bGUuZXhwb3J0cztcbiBcdH1cblxuXG4gXHQvLyBleHBvc2UgdGhlIG1vZHVsZXMgb2JqZWN0IChfX3dlYnBhY2tfbW9kdWxlc19fKVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5tID0gbW9kdWxlcztcblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGUgY2FjaGVcbiBcdF9fd2VicGFja19yZXF1aXJlX18uYyA9IGluc3RhbGxlZE1vZHVsZXM7XG5cbiBcdC8vIGRlZmluZSBnZXR0ZXIgZnVuY3Rpb24gZm9yIGhhcm1vbnkgZXhwb3J0c1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kID0gZnVuY3Rpb24oZXhwb3J0cywgbmFtZSwgZ2V0dGVyKSB7XG4gXHRcdGlmKCFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywgbmFtZSkpIHtcbiBcdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgbmFtZSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGdldHRlciB9KTtcbiBcdFx0fVxuIFx0fTtcblxuIFx0Ly8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5yID0gZnVuY3Rpb24oZXhwb3J0cykge1xuIFx0XHRpZih0eXBlb2YgU3ltYm9sICE9PSAndW5kZWZpbmVkJyAmJiBTeW1ib2wudG9TdHJpbmdUYWcpIHtcbiBcdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgU3ltYm9sLnRvU3RyaW5nVGFnLCB7IHZhbHVlOiAnTW9kdWxlJyB9KTtcbiBcdFx0fVxuIFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgJ19fZXNNb2R1bGUnLCB7IHZhbHVlOiB0cnVlIH0pO1xuIFx0fTtcblxuIFx0Ly8gY3JlYXRlIGEgZmFrZSBuYW1lc3BhY2Ugb2JqZWN0XG4gXHQvLyBtb2RlICYgMTogdmFsdWUgaXMgYSBtb2R1bGUgaWQsIHJlcXVpcmUgaXRcbiBcdC8vIG1vZGUgJiAyOiBtZXJnZSBhbGwgcHJvcGVydGllcyBvZiB2YWx1ZSBpbnRvIHRoZSBuc1xuIFx0Ly8gbW9kZSAmIDQ6IHJldHVybiB2YWx1ZSB3aGVuIGFscmVhZHkgbnMgb2JqZWN0XG4gXHQvLyBtb2RlICYgOHwxOiBiZWhhdmUgbGlrZSByZXF1aXJlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnQgPSBmdW5jdGlvbih2YWx1ZSwgbW9kZSkge1xuIFx0XHRpZihtb2RlICYgMSkgdmFsdWUgPSBfX3dlYnBhY2tfcmVxdWlyZV9fKHZhbHVlKTtcbiBcdFx0aWYobW9kZSAmIDgpIHJldHVybiB2YWx1ZTtcbiBcdFx0aWYoKG1vZGUgJiA0KSAmJiB0eXBlb2YgdmFsdWUgPT09ICdvYmplY3QnICYmIHZhbHVlICYmIHZhbHVlLl9fZXNNb2R1bGUpIHJldHVybiB2YWx1ZTtcbiBcdFx0dmFyIG5zID0gT2JqZWN0LmNyZWF0ZShudWxsKTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5yKG5zKTtcbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KG5zLCAnZGVmYXVsdCcsIHsgZW51bWVyYWJsZTogdHJ1ZSwgdmFsdWU6IHZhbHVlIH0pO1xuIFx0XHRpZihtb2RlICYgMiAmJiB0eXBlb2YgdmFsdWUgIT0gJ3N0cmluZycpIGZvcih2YXIga2V5IGluIHZhbHVlKSBfX3dlYnBhY2tfcmVxdWlyZV9fLmQobnMsIGtleSwgZnVuY3Rpb24oa2V5KSB7IHJldHVybiB2YWx1ZVtrZXldOyB9LmJpbmQobnVsbCwga2V5KSk7XG4gXHRcdHJldHVybiBucztcbiBcdH07XG5cbiBcdC8vIGdldERlZmF1bHRFeHBvcnQgZnVuY3Rpb24gZm9yIGNvbXBhdGliaWxpdHkgd2l0aCBub24taGFybW9ueSBtb2R1bGVzXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm4gPSBmdW5jdGlvbihtb2R1bGUpIHtcbiBcdFx0dmFyIGdldHRlciA9IG1vZHVsZSAmJiBtb2R1bGUuX19lc01vZHVsZSA/XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0RGVmYXVsdCgpIHsgcmV0dXJuIG1vZHVsZVsnZGVmYXVsdCddOyB9IDpcbiBcdFx0XHRmdW5jdGlvbiBnZXRNb2R1bGVFeHBvcnRzKCkgeyByZXR1cm4gbW9kdWxlOyB9O1xuIFx0XHRfX3dlYnBhY2tfcmVxdWlyZV9fLmQoZ2V0dGVyLCAnYScsIGdldHRlcik7XG4gXHRcdHJldHVybiBnZXR0ZXI7XG4gXHR9O1xuXG4gXHQvLyBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGxcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubyA9IGZ1bmN0aW9uKG9iamVjdCwgcHJvcGVydHkpIHsgcmV0dXJuIE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmplY3QsIHByb3BlcnR5KTsgfTtcblxuIFx0Ly8gX193ZWJwYWNrX3B1YmxpY19wYXRoX19cbiBcdF9fd2VicGFja19yZXF1aXJlX18ucCA9IFwiXCI7XG5cblxuIFx0Ly8gTG9hZCBlbnRyeSBtb2R1bGUgYW5kIHJldHVybiBleHBvcnRzXG4gXHRyZXR1cm4gX193ZWJwYWNrX3JlcXVpcmVfXyhfX3dlYnBhY2tfcmVxdWlyZV9fLnMgPSBcIi4uLy4uLy4uLy4uLy4uLy4uL2luZGV4LmpzXCIpO1xuIiwiXG4gIGNvbnNvbGUubG9nKCdiYXInICsgMSk7XG4gIGV4cG9ydCBkZWZhdWx0IFN5bWJvbCgnYmFyJyk7XG4gICIsIlxuICBjb25zb2xlLmxvZygnZm9vJyk7XG4gIGV4cG9ydCBkZWZhdWx0IDE7XG4gICIsIlxuICAgIGltcG9ydCBGb28gZnJvbSAnLi9mb28uanMnXG4gICAgaW1wb3J0IEJhciBmcm9tICcuL2Jhci5qcydcbiAgICBjb25zb2xlLmxvZyhGb28pXG4gICJdLCJzb3VyY2VSb290IjoiIn0="
+`;
+
+exports[`Loader + Minification minifyIdentifiers 1`] = `
+"module.exports = function(f) {
+  var d = {};
+  function b(a) {
+    if (d[a]) {
+      return d[a].exports;
+    }
+    var c = d[a] = {
+      i: a,
+      l: false,
+      exports: {}
+    };
+    f[a].call(c.exports, c, c.exports, b);
+    c.l = true;
+    return c.exports;
+  }
+  b.m = f;
+  b.c = d;
+  b.d = function(a, c, e) {
+    if (!b.o(a, c)) {
+      Object.defineProperty(a, c, {enumerable: true, get: e});
+    }
+  };
+  b.r = function(a) {
+    if (typeof Symbol !== \\"undefined\\" && Symbol.toStringTag) {
+      Object.defineProperty(a, Symbol.toStringTag, {value: \\"Module\\"});
+    }
+    Object.defineProperty(a, \\"__esModule\\", {value: true});
+  };
+  b.t = function(a, c) {
+    if (c & 1)
+      a = b(a);
+    if (c & 8)
+      return a;
+    if (c & 4 && typeof a === \\"object\\" && a && a.__esModule)
+      return a;
+    var e = Object.create(null);
+    b.r(e);
+    Object.defineProperty(e, \\"default\\", {enumerable: true, value: a});
+    if (c & 2 && typeof a != \\"string\\")
+      for (var g in a)
+        b.d(e, g, function(h) {
+          return a[h];
+        }.bind(null, g));
+    return e;
+  };
+  b.n = function(a) {
+    var c = a && a.__esModule ? function e() {
+      return a[\\"default\\"];
+    } : function e() {
+      return a;
+    };
+    b.d(c, \\"a\\", c);
+    return c;
+  };
+  b.o = function(a, c) {
+    return Object.prototype.hasOwnProperty.call(a, c);
+  };
+  b.p = \\"\\";
+  return b(b.s = \\"../../../../../../index.js\\");
+}({
+  \\"../../../../../../bar.js\\": function(f, d, b) {
+    \\"use strict\\";
+    b.r(d);
+    console.log(\\"bar\\" + 1);
+    d[\\"default\\"] = Symbol(\\"bar\\");
+  },
+  \\"../../../../../../foo.js\\": function(f, d, b) {
+    \\"use strict\\";
+    b.r(d);
+    console.log(\\"foo\\");
+    d[\\"default\\"] = 1;
+  },
+  \\"../../../../../../index.js\\": function(f, d, b) {
+    \\"use strict\\";
+    b.r(d);
+    var a = b(\\"../../../../../../foo.js\\");
+    var c = b(\\"../../../../../../bar.js\\");
+    console.log(a[\\"default\\"]);
+  }
+});
+"
+`;
+
+exports[`Loader + Minification minifySyntax 1`] = `
+"module.exports = function(modules) {
+  var installedModules = {};
+  function __webpack_require__(moduleId) {
+    if (installedModules[moduleId])
+      return installedModules[moduleId].exports;
+    var module2 = installedModules[moduleId] = {
+      i: moduleId,
+      l: false,
+      exports: {}
+    };
+    return modules[moduleId].call(module2.exports, module2, module2.exports, __webpack_require__), module2.l = true, module2.exports;
+  }
+  return __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
+    __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, {enumerable: true, get: getter});
+  }, __webpack_require__.r = function(exports) {
+    typeof Symbol !== \\"undefined\\" && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, {value: \\"Module\\"}), Object.defineProperty(exports, \\"__esModule\\", {value: true});
+  }, __webpack_require__.t = function(value, mode) {
+    mode & 1 && (value = __webpack_require__(value));
+    if (mode & 8)
+      return value;
+    if (mode & 4 && typeof value === \\"object\\" && value && value.__esModule)
+      return value;
+    var ns = Object.create(null);
+    __webpack_require__.r(ns), Object.defineProperty(ns, \\"default\\", {enumerable: true, value});
+    if (mode & 2 && typeof value != \\"string\\")
+      for (var key in value)
+        __webpack_require__.d(ns, key, function(key2) {
+          return value[key2];
+        }.bind(null, key));
+    return ns;
+  }, __webpack_require__.n = function(module2) {
+    var getter = module2 && module2.__esModule ? function getDefault() {
+      return module2.default;
+    } : function getModuleExports() {
+      return module2;
+    };
+    return __webpack_require__.d(getter, \\"a\\", getter), getter;
+  }, __webpack_require__.o = function(object, property) {
+    return Object.prototype.hasOwnProperty.call(object, property);
+  }, __webpack_require__.p = \\"\\", __webpack_require__(__webpack_require__.s = \\"../../../../../../index.js\\");
+}({
+  \\"../../../../../../bar.js\\": function(module2, __webpack_exports__, __webpack_require__) {
+    \\"use strict\\";
+    __webpack_require__.r(__webpack_exports__), console.log(\\"bar\\" + 1), __webpack_exports__.default = Symbol(\\"bar\\");
+  },
+  \\"../../../../../../foo.js\\": function(module2, __webpack_exports__, __webpack_require__) {
+    \\"use strict\\";
+    __webpack_require__.r(__webpack_exports__), console.log(\\"foo\\"), __webpack_exports__.default = 1;
+  },
+  \\"../../../../../../index.js\\": function(module2, __webpack_exports__, __webpack_require__) {
+    \\"use strict\\";
+    __webpack_require__.r(__webpack_exports__);
+    var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(\\"../../../../../../foo.js\\"), _bar_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(\\"../../../../../../bar.js\\");
+    console.log(_foo_js__WEBPACK_IMPORTED_MODULE_0__.default);
+  }
+});
+"
+`;
+
+exports[`Loader + Minification minifyWhitespace 1`] = `
+"module.exports=function(modules){var installedModules={};function __webpack_require__(moduleId){if(installedModules[moduleId]){return installedModules[moduleId].exports}var module2=installedModules[moduleId]={i:moduleId,l:!1,exports:{}};modules[moduleId].call(module2.exports,module2,module2.exports,__webpack_require__);module2.l=!0;return module2.exports}__webpack_require__.m=modules;__webpack_require__.c=installedModules;__webpack_require__.d=function(exports,name,getter){if(!__webpack_require__.o(exports,name)){Object.defineProperty(exports,name,{enumerable:!0,get:getter})}};__webpack_require__.r=function(exports){if(typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag){Object.defineProperty(exports,Symbol.toStringTag,{value:\\"Module\\"})}Object.defineProperty(exports,\\"__esModule\\",{value:!0})};__webpack_require__.t=function(value,mode){if(mode&1)value=__webpack_require__(value);if(mode&8)return value;if(mode&4&&typeof value===\\"object\\"&&value&&value.__esModule)return value;var ns=Object.create(null);__webpack_require__.r(ns);Object.defineProperty(ns,\\"default\\",{enumerable:!0,value});if(mode&2&&typeof value!=\\"string\\")for(var key in value)__webpack_require__.d(ns,key,function(key2){return value[key2]}.bind(null,key));return ns};__webpack_require__.n=function(module2){var getter=module2&&module2.__esModule?function getDefault(){return module2[\\"default\\"]}:function getModuleExports(){return module2};__webpack_require__.d(getter,\\"a\\",getter);return getter};__webpack_require__.o=function(object,property){return Object.prototype.hasOwnProperty.call(object,property)};__webpack_require__.p=\\"\\";return __webpack_require__(__webpack_require__.s=\\"../../../../../../index.js\\")}({\\"../../../../../../bar.js\\":function(module2,__webpack_exports__,__webpack_require__){\\"use strict\\";__webpack_require__.r(__webpack_exports__);console.log(\\"bar\\"+1);__webpack_exports__[\\"default\\"]=Symbol(\\"bar\\")},\\"../../../../../../foo.js\\":function(module2,__webpack_exports__,__webpack_require__){\\"use strict\\";__webpack_require__.r(__webpack_exports__);console.log(\\"foo\\");__webpack_exports__[\\"default\\"]=1},\\"../../../../../../index.js\\":function(module2,__webpack_exports__,__webpack_require__){\\"use strict\\";__webpack_require__.r(__webpack_exports__);var _foo_js__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(\\"../../../../../../foo.js\\");var _bar_js__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(\\"../../../../../../bar.js\\");console.log(_foo_js__WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])}});
+"
+`;
