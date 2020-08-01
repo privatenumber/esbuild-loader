@@ -16,6 +16,7 @@ function build(volJson, configure) {
       mode: 'development',
       devtool: false,
 
+      context: '/',
       entry: '/index.js',
       output: {
         path: '/dist',
