@@ -31,9 +31,10 @@ class ESBuildMinifyPlugin {
       }
 
       const { devtool } = compiler.options
-      const sourcemap = options.hasOwnProperty('sourcemap')
-        ? options.sourcemap
-        : devtool && devtool.includes('source-map')
+      const sourcemap =
+        options.sourcemap !== undefined
+          ? options.sourcemap
+          : devtool && devtool.includes('source-map')
 
       compilation.hooks.optimizeChunkAssets.tapPromise(
         pluginName,

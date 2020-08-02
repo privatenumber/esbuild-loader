@@ -61,6 +61,11 @@ function build(volJson, configure) {
         return
       }
 
+      if (stats.compilation.warnings.length > 0) {
+        reject(stats.compilation.warnings)
+        return
+      }
+
       resolve(stats)
     })
   })
