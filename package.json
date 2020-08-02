@@ -5,7 +5,8 @@
   "author": "EGOIST",
   "license": "MIT",
   "scripts": {
-    "test": "jest --env node"
+    "test": "jest --env node",
+    "lint": "prettier --write src test/*.js"
   },
   "files": [
     "src"
@@ -13,12 +14,15 @@
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "jest": "^26.0.1",
+    "memfs": "^3.2.0",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3",
+    "unionfs": "^4.4.0",
     "webpack": "^4.43.0"
   },
   "dependencies": {
     "esbuild": "^0.5.16",
-    "loader-utils": "^2.0.0"
+    "loader-utils": "^2.0.0",
+    "webpack-sources": "^1.4.3"
   }
 }
