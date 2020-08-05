@@ -13,6 +13,15 @@ class ESBuildPlugin {
       }
     }
 
+    compiler.hooks.thisCompilation.tap('esbuild', (compilation) => {
+      compilation.hooks.childCompiler.tap(
+        'esbuild',
+        (childCompiler) => {
+          childCompiler.$esbuildService = compiler.$esbuildService
+        }
+      )
+    })
+
     compiler.hooks.run.tapPromise('esbuild', async () => {
       await startService()
     })
