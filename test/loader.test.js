@@ -84,8 +84,8 @@ test('webpack magic comments', async () => {
 
   const { assets } = stats.compilation
   expect(assets['index.js'].source()).toMatchSnapshot()
-  expect(assets).toHaveProperty('named-chunk-foo.js')
+  expect(assets).toHaveProperty(['named-chunk-foo.js'])
   expect(assets['named-chunk-foo.js'].source()).toMatchSnapshot()
-  expect(assets).toHaveProperty('named-chunk-bar.js')
+  expect(assets).toHaveProperty(['named-chunk-bar.js'])
   expect(assets['named-chunk-bar.js'].source()).toMatchSnapshot()
 })
