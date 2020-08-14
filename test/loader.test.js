@@ -77,16 +77,15 @@ describe('Source-map', () => {
     const { assets } = stats.compilation
     expect(assets['index.js'].source()).toMatchSnapshot()
   })
+})
 
-  test('webpack magic comments', async () => {
-    const stats = await build(fixtures.webpackMagicComments)
+test('webpack magic comments', async () => {
+  const stats = await build(fixtures.webpackMagicComments)
 
-    const { assets } = stats.compilation
-    expect(assets['index.js'].source()).toMatchSnapshot()
-    expect(assets).toHaveProperty('named-chunk-foo.js')
-    expect(assets['named-chunk-foo.js'].source()).toMatchSnapshot()
-    expect(assets).toHaveProperty('named-chunk-bar.js')
-    expect(assets['named-chunk-bar.js'].source()).toMatchSnapshot()
-  })
-
+  const { assets } = stats.compilation
+  expect(assets['index.js'].source()).toMatchSnapshot()
+  expect(assets).toHaveProperty('named-chunk-foo.js')
+  expect(assets['named-chunk-foo.js'].source()).toMatchSnapshot()
+  expect(assets).toHaveProperty('named-chunk-bar.js')
+  expect(assets['named-chunk-bar.js'].source()).toMatchSnapshot()
 })
