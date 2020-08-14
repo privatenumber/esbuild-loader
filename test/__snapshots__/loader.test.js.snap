@@ -243,7 +243,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"default\\", function() { return Foo; });
 class Foo {
   render() {
-    return React.createElement(\\"div\\", {
+    return /* @__PURE__ */ React.createElement(\\"div\\", {
       className: \\"hehe\\"
     }, \\"hello there!!!\\");
   }
@@ -913,40 +913,40 @@ exports[`target 1`] = `
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-let __hasOwnProperty = Object.prototype.hasOwnProperty;
-let __getOwnPropertySymbols = Object.getOwnPropertySymbols;
-let __propertyIsEnumerable = Object.prototype.propertyIsEnumerable;
-let __pow = Math.pow;
-let __assign = Object.assign;
-let __rest = (source, exclude) => {
-  let target = {};
-  for (let prop in source)
+var __hasOwnProperty = Object.prototype.hasOwnProperty;
+var __getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var __propertyIsEnumerable = Object.prototype.propertyIsEnumerable;
+var __pow = Math.pow;
+var __assign = Object.assign;
+var __rest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
     if (__hasOwnProperty.call(source, prop) && exclude.indexOf(prop) < 0)
       target[prop] = source[prop];
   if (source != null && __getOwnPropertySymbols) {
-    for (let prop of __getOwnPropertySymbols(source))
+    for (var prop of __getOwnPropertySymbols(source))
       if (exclude.indexOf(prop) < 0 && __propertyIsEnumerable.call(source, prop))
         target[prop] = source[prop];
   }
   return target;
 };
-let __async = (__this, __arguments, generator) => {
+var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
-    let fulfilled = (value) => {
+    var fulfilled = (value) => {
       try {
         step(generator.next(value));
       } catch (e) {
         reject(e);
       }
     };
-    let rejected = (value) => {
+    var rejected = (value) => {
       try {
         step(generator.throw(value));
       } catch (e) {
         reject(e);
       }
     };
-    let step = (result) => {
+    var step = (result) => {
       return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);
     };
     step((generator = generator.apply(__this, __arguments)).next());
