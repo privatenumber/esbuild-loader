@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 const { ufs } = require('unionfs')
@@ -7,7 +6,7 @@ const { Volume } = require('memfs')
 const { ESBuildPlugin } = require('../src')
 const esbuildLoader = require.resolve('../src')
 
-function build(volJson, configure) {
+function build(webpack, volJson, configure) {
   return new Promise((resolve, reject) => {
     const mfs = Volume.fromJSON(volJson)
     mfs.join = path.join.bind(path)

@@ -18,7 +18,7 @@
     "prettier": "^2.0.5",
     "typescript": "^3.8.3",
     "unionfs": "^4.4.0",
-    "webpack": "^4.43.0"
+    "webpack4": "npm:webpack@^4.43.0"
   },
   "dependencies": {
     "esbuild": "^0.5.16",
