@@ -20,9 +20,7 @@ class ESBuildMinifyPlugin {
    */
   apply(compiler) {
     compiler.hooks.compilation.tap(pluginName, (compilation) => {
-      const service = compiler.$esbuildService
-
-      if (!service) {
+      if (!compiler.$esbuildService) {
         throw new Error(
           `[esbuild-loader] You need to add ESBuildPlugin to your webpack config first`
         )
@@ -35,17 +33,7 @@ class ESBuildMinifyPlugin {
             name: pluginName,
             stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
           },
-          async (assets) => {
-            const transforms = Object.entries(assets)
-              .filter(([file]) => isJsFile.test(file))
-              .map(async ([file, source]) => {
-                await this.processSource(source, file, compilation)
-              })
-
-            if (transforms.length) {
-              await Promise.all(transforms)
-            }
-          }
+          (assets) => this.transformAssets(compilation, Object.entries(assets))
         )
       }
 
@@ -54,31 +42,15 @@ class ESBuildMinifyPlugin {
         compilation.hooks.optimizeChunkAssets.tapPromise(
           pluginName,
           async (chunks) => {
-            const transforms = chunks.flatMap((chunk) => {
-              return chunk.files
-                .filter((file) => isJsFile.test(file))
-                .map(async (file) => {
-                  const assetSource = compilation.assets[file]
-                  await this.processSource(assetSource, file, compilation)
-                })
-            })
-
-            if (transforms.length) {
-              await Promise.all(transforms)
-            }
+            const files = chunks.flatMap((chunk) => chunk.files.map((file) => [file, compilation.assets[file]]))
+            return this.transformAssets(compilation, files);
           }
         )
       }
     })
   }
 
-  /**
-   * @private
-   * @param {import('webpack').Compilation} compilation
-   * @param {import('webpack-sources').Source} source
-   */
-  async processSource(sourceObject, file, compilation) {
-    const { source, map } = sourceObject.sourceAndMap()
+  async transformAssets(compilation, assets) {
     const {
       options: { devtool },
       $esbuildService,
@@ -89,27 +61,36 @@ class ESBuildMinifyPlugin {
         ? this.options.sourcemap
         : devtool && devtool.includes('source-map')
 
-    const result = await $esbuildService.transform(source, {
-      ...this.options,
-      sourcemap,
-      devtool,
-      sourcefile: file,
-    })
+    const transforms = assets
+      .filter(([file]) => isJsFile.test(file))
+      .map(async ([file, assetSource]) => {
+        const { source, map } = assetSource.sourceAndMap()
+        const result = await $esbuildService.transform(source, {
+          ...this.options,
+          sourcemap,
+          devtool,
+          sourcefile: file,
+        })
 
-    compilation.updateAsset(file, () => {
-      if (sourcemap) {
-        return new SourceMapSource(
-          result.js || '',
-          file,
-          result.jsSourceMap,
-          source,
-          map,
-          true
-        )
-      } else {
-        return new RawSource(result.js || '')
-      }
-    })
+        compilation.updateAsset(file, () => {
+          if (sourcemap) {
+            return new SourceMapSource(
+              result.js || '',
+              file,
+              result.jsSourceMap,
+              source,
+              map,
+              true
+            )
+          } else {
+            return new RawSource(result.js || '')
+          }
+        })
+      })
+
+    if (transforms.length) {
+      await Promise.all(transforms)
+    }
   }
 }
 
