@@ -1,4 +1,4 @@
-const webpack4 = require('webpack4')
+const webpack4 = require('webpack')
 const webpack5 = require('webpack5')
 const { build, getFile } = require('./utils')
 const { ESBuildMinifyPlugin } = require('../src')
