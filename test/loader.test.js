@@ -11,8 +11,9 @@ describe.each([
     test('js', async () => {
       const stats = await build(webpack, fixtures.js)
 
-      const { assets } = stats.compilation
-      expect(assets['index.js'].source()).toMatchSnapshot()
+      expect(
+        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+      ).toMatchSnapshot()
     })
 
     test('tsx', async () => {
@@ -26,8 +27,9 @@ describe.each([
         })
       })
 
-      const { assets } = stats.compilation
-      expect(assets['index.js'].source()).toMatchSnapshot()
+      expect(
+        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+      ).toMatchSnapshot()
     })
   })
 
@@ -40,7 +42,7 @@ describe.each([
     })
 
     const { assets } = stats.compilation
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   describe('Source-map', () => {
@@ -50,7 +52,9 @@ describe.each([
       })
 
       const { assets } = stats.compilation
-      expect(assets['index.js'].source()).toMatchSnapshot()
+      expect(
+        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+      ).toMatchSnapshot()
     })
 
     test('source-map inline', async () => {
@@ -59,7 +63,9 @@ describe.each([
       })
 
       const { assets } = stats.compilation
-      expect(assets['index.js'].source()).toMatchSnapshot()
+      expect(
+        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+      ).toMatchSnapshot()
     })
 
     test('source-map file', async () => {
@@ -68,8 +74,12 @@ describe.each([
       })
 
       const { assets } = stats.compilation
-      expect(assets['index.js'].source()).toMatchSnapshot()
-      expect(assets['index.js.map'].source()).toMatchSnapshot()
+      expect(
+        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+      ).toMatchSnapshot()
+      expect(
+        stats.mfs.readFileSync('/dist/index.js.map', 'utf-8')
+      ).toMatchSnapshot()
     })
 
     test('source-map plugin', async () => {
@@ -79,7 +89,9 @@ describe.each([
       })
 
       const { assets } = stats.compilation
-      expect(assets['index.js'].source()).toMatchSnapshot()
+      expect(
+        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+      ).toMatchSnapshot()
     })
   })
 })

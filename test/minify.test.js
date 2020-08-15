@@ -16,8 +16,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minifyWhitespace', async () => {
@@ -32,8 +31,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minifyIdentifiers', async () => {
@@ -48,8 +46,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minifySyntax', async () => {
@@ -64,8 +61,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minify w/ no devtool', async () => {
@@ -77,8 +73,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minify w/ devtool inline-source-map', async () => {
@@ -90,8 +85,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minify w/ devtool source-maps', async () => {
@@ -103,8 +97,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option', async () => {
@@ -120,8 +113,7 @@ describe.each([
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option and source-map plugin inline', async () => {
@@ -138,8 +130,7 @@ describe.each([
       config.plugins.push(new webpack.SourceMapDevToolPlugin({}))
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option and source-map plugin external', async () => {
@@ -160,8 +151,9 @@ describe.each([
       )
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
-    expect(assets['index.js.map'].source()).toMatchSnapshot()
+    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(
+      stats.mfs.readFileSync('/dist/index.js.map', 'utf-8')
+    ).toMatchSnapshot()
   })
 })

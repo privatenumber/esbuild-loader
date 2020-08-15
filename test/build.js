@@ -65,6 +65,8 @@ function build(webpack, volJson, configure) {
         return
       }
 
+      stats.mfs = mfs
+
       resolve(stats)
     })
   })
