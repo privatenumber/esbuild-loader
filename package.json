@@ -11,6 +11,14 @@
   "files": [
     "src"
   ],
+  "dependencies": {
+    "esbuild": "^0.6.23",
+    "loader-utils": "^2.0.0",
+    "webpack-sources": "^1.4.3"
+  },
+  "peerDependencies": {
+    "webpack": "^4.40.0"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.9",
     "jest": "^26.0.1",
@@ -18,11 +26,6 @@
     "prettier": "^2.0.5",
     "typescript": "^3.8.3",
     "unionfs": "^4.4.0",
-    "webpack": "^4.43.0"
-  },
-  "dependencies": {
-    "esbuild": "^0.6.23",
-    "loader-utils": "^2.0.0",
-    "webpack-sources": "^1.4.3"
+    "webpack": "^4.44.1"
   }
 }
