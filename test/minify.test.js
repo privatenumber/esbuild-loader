@@ -85,7 +85,9 @@ describe.each([
       }
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    const contents = stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+    expect(contents).toContain(`//# sourceMappingURL=data:application/`)
+    expect(contents).toMatchSnapshot()
   })
 
   test('minify w/ devtool source-maps', async () => {
@@ -97,6 +99,8 @@ describe.each([
       }
     })
 
+    const contents = stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+    expect(contents).toContain(`//# sourceMappingURL=index.js.map`)
     expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
   })
 

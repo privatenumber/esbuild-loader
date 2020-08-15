@@ -19,8 +19,6 @@ class ESBuildMinifyPlugin {
    * @param {import('webpack').Compiler} compiler
    */
   apply(compiler) {
-    const { options } = this
-
     compiler.hooks.compilation.tap(pluginName, (compilation) => {
       const service = compiler.$esbuildService
 
@@ -30,50 +28,81 @@ class ESBuildMinifyPlugin {
         )
       }
 
-      const { devtool } = compiler.options
-      const sourcemap =
-        options.sourcemap !== undefined
-          ? options.sourcemap
-          : devtool && devtool.includes('source-map')
-
-      compilation.hooks.optimizeChunkAssets.tapPromise(
-        pluginName,
-        async (chunks) => {
-          const transforms = chunks.flatMap((chunk) => {
-            return chunk.files
-              .filter((file) => isJsFile.test(file))
-              .map(async (file) => {
-                const assetSource = compilation.assets[file]
-                const { source, map } = assetSource.sourceAndMap()
-
-                const result = await service.transform(source, {
-                  ...options,
-                  sourcemap,
-                  sourcefile: file,
-                })
-
-                compilation.updateAsset(file, () => {
-                  if (sourcemap) {
-                    return new SourceMapSource(
-                      result.js || '',
-                      file,
-                      result.jsSourceMap,
-                      source,
-                      map,
-                      true
-                    )
-                  } else {
-                    return new RawSource(result.js || '')
-                  }
-                })
+      if (compilation.hooks.processAssets) {
+        compilation.hooks.processAssets.tapPromise(
+          {
+            name: pluginName,
+            stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+          },
+          async (assets) => {
+            await Promise.all(
+              Object.entries(assets).map(async ([file, source]) => {
+                if (isJsFile.test(file)) {
+                  await this.processSource(source, file, compilation)
+                }
               })
-          })
-
-          if (transforms.length) {
-            await Promise.all(transforms)
+            )
           }
-        }
-      )
+        )
+      } else {
+        compilation.hooks.optimizeChunkAssets.tapPromise(
+          pluginName,
+          async (chunks) => {
+            const transforms = chunks.flatMap((chunk) => {
+              return chunk.files
+                .filter((file) => isJsFile.test(file))
+                .map(async (file) => {
+                  const assetSource = compilation.assets[file]
+                  await this.processSource(assetSource, file, compilation)
+                })
+            })
+
+            if (transforms.length) {
+              await Promise.all(transforms)
+            }
+          }
+        )
+      }
+    })
+  }
+
+  /**
+   * @private
+   * @param {import('webpack').Compilation} compilation
+   * @param {import('webpack-sources').Source} source
+   */
+  async processSource(sourceObject, file, compilation) {
+    const { source, map } = sourceObject.sourceAndMap()
+    const {
+      options: { devtool },
+      $esbuildService,
+    } = compilation.compiler
+
+    const sourcemap =
+      this.options.sourcemap !== undefined
+        ? this.options.sourcemap
+        : devtool && devtool.includes('source-map')
+
+    const result = await $esbuildService.transform(source, {
+      ...this.options,
+      sourcemap,
+      devtool,
+      sourcefile: file,
+    })
+
+    compilation.updateAsset(file, () => {
+      if (sourcemap) {
+        return new SourceMapSource(
+          result.js || '',
+          file,
+          result.jsSourceMap,
+          source,
+          map,
+          true
+        )
+      } else {
+        return new RawSource(result.js || '')
+      }
     })
   }
 }
