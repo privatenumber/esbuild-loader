@@ -45,8 +45,27 @@ const target = {
   `,
 }
 
+const webpackMagicComments = {
+  '/index.js': `
+    const Foo = import(/* webpackChunkName: "named-chunk-foo" */'./foo.js')
+    const Bar = import(/* webpackChunkName: "named-chunk-bar" */'./bar.js')
+
+    Foo.then(console.log)
+  `,
+
+  '/foo.js': `
+  console.log('foo');
+  export default 1;
+  `,
+  '/bar.js': `
+  console.log('bar' + 1);
+  export default Symbol('bar');
+  `,
+}
+
 module.exports = {
   js,
   tsx,
   target,
+  webpackMagicComments,
 }

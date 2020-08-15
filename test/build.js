@@ -16,10 +16,13 @@ function build(webpack, volJson, configure) {
       devtool: false,
 
       context: '/',
-      entry: '/index.js',
+      entry: {
+        index: '/index.js',
+      },
       output: {
         path: '/dist',
-        filename: 'index.js',
+        filename: '[name].js',
+        chunkFilename: '[name].js',
         libraryTarget: 'commonjs2',
       },
 

@@ -94,4 +94,21 @@ describe.each([
       ).toMatchSnapshot()
     })
   })
+
+  test('webpack magic comments', async () => {
+    const stats = await build(webpack, fixtures.webpackMagicComments)
+
+    const { assets } = stats.compilation
+    expect(
+      stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+    ).toMatchSnapshot()
+    expect(assets).toHaveProperty(['named-chunk-foo.js'])
+    expect(
+      stats.mfs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')
+    ).toMatchSnapshot()
+    expect(assets).toHaveProperty(['named-chunk-bar.js'])
+    expect(
+      stats.mfs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')
+    ).toMatchSnapshot()
+  })
 })
