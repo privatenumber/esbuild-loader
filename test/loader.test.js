@@ -1,9 +1,12 @@
 const webpack4 = require('webpack4')
+const webpack5 = require('webpack5')
 const build = require('./build')
-const { ESBuildMinifyPlugin } = require('../src')
 const fixtures = require('./fixtures')
 
-describe.each([['Webpack 4', webpack4]])('%s', (_name, webpack) => {
+describe.each([
+  ['Webpack 4', webpack4],
+  ['Webpack 5', webpack5],
+])('%s', (_name, webpack) => {
   describe('Loader', () => {
     test('js', async () => {
       const stats = await build(webpack, fixtures.js)
