@@ -1,6 +1,6 @@
 const webpack4 = require('webpack4')
 const webpack5 = require('webpack5')
-const build = require('./build')
+const { build, getFile } = require('./utils')
 const { ESBuildMinifyPlugin } = require('../src')
 const fixtures = require('./fixtures')
 
@@ -16,7 +16,7 @@ describe.each([
       }
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minifyWhitespace', async () => {
@@ -31,7 +31,7 @@ describe.each([
       }
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minifyIdentifiers', async () => {
@@ -46,7 +46,7 @@ describe.each([
       }
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minifySyntax', async () => {
@@ -61,7 +61,7 @@ describe.each([
       }
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ no devtool', async () => {
@@ -73,7 +73,7 @@ describe.each([
       }
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ devtool inline-source-map', async () => {
@@ -85,7 +85,7 @@ describe.each([
       }
     })
 
-    const contents = stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+    const contents = getFile(stats, '/dist/index.js')
     expect(contents).toContain(`//# sourceMappingURL=data:application/`)
     expect(contents).toMatchSnapshot()
   })
@@ -99,9 +99,9 @@ describe.each([
       }
     })
 
-    const contents = stats.mfs.readFileSync('/dist/index.js', 'utf-8')
+    const contents = getFile(stats, '/dist/index.js')
     expect(contents).toContain(`//# sourceMappingURL=index.js.map`)
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option', async () => {
@@ -117,7 +117,7 @@ describe.each([
       }
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option and source-map plugin inline', async () => {
@@ -134,7 +134,7 @@ describe.each([
       config.plugins.push(new webpack.SourceMapDevToolPlugin({}))
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option and source-map plugin external', async () => {
@@ -155,9 +155,7 @@ describe.each([
       )
     })
 
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
-    expect(
-      stats.mfs.readFileSync('/dist/index.js.map', 'utf-8')
-    ).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js.map')).toMatchSnapshot()
   })
 })

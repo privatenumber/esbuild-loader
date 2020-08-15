@@ -1,6 +1,6 @@
 const webpack4 = require('webpack4')
 const webpack5 = require('webpack5')
-const build = require('./build')
+const { build, getFile } = require('./utils')
 const fixtures = require('./fixtures')
 
 describe.each([
@@ -11,9 +11,7 @@ describe.each([
     test('js', async () => {
       const stats = await build(webpack, fixtures.js)
 
-      expect(
-        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
-      ).toMatchSnapshot()
+      expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
     })
 
     test('tsx', async () => {
@@ -27,9 +25,7 @@ describe.each([
         })
       })
 
-      expect(
-        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
-      ).toMatchSnapshot()
+      expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
     })
   })
 
@@ -42,7 +38,7 @@ describe.each([
     })
 
     const { assets } = stats.compilation
-    expect(stats.mfs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   describe('Source-map', () => {
@@ -52,9 +48,7 @@ describe.each([
       })
 
       const { assets } = stats.compilation
-      expect(
-        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
-      ).toMatchSnapshot()
+      expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
     })
 
     test('source-map inline', async () => {
@@ -63,9 +57,7 @@ describe.each([
       })
 
       const { assets } = stats.compilation
-      expect(
-        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
-      ).toMatchSnapshot()
+      expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
     })
 
     test('source-map file', async () => {
@@ -74,12 +66,8 @@ describe.each([
       })
 
       const { assets } = stats.compilation
-      expect(
-        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
-      ).toMatchSnapshot()
-      expect(
-        stats.mfs.readFileSync('/dist/index.js.map', 'utf-8')
-      ).toMatchSnapshot()
+      expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
+      expect(getFile(stats, '/dist/index.js.map')).toMatchSnapshot()
     })
 
     test('source-map plugin', async () => {
@@ -88,10 +76,7 @@ describe.each([
         config.plugins.push(new webpack.SourceMapDevToolPlugin({}))
       })
 
-      const { assets } = stats.compilation
-      expect(
-        stats.mfs.readFileSync('/dist/index.js', 'utf-8')
-      ).toMatchSnapshot()
+      expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
     })
   })
 
@@ -99,16 +84,10 @@ describe.each([
     const stats = await build(webpack, fixtures.webpackMagicComments)
 
     const { assets } = stats.compilation
-    expect(
-      stats.mfs.readFileSync('/dist/index.js', 'utf-8')
-    ).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
     expect(assets).toHaveProperty(['named-chunk-foo.js'])
-    expect(
-      stats.mfs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')
-    ).toMatchSnapshot()
+    expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot()
     expect(assets).toHaveProperty(['named-chunk-bar.js'])
-    expect(
-      stats.mfs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')
-    ).toMatchSnapshot()
+    expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot()
   })
 })

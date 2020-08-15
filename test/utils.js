@@ -68,11 +68,15 @@ function build(webpack, volJson, configure) {
         return
       }
 
-      stats.mfs = mfs
-
       resolve(stats)
     })
   })
 }
 
-module.exports = build
+const getFile = (stats, filePath) =>
+  stats.compilation.compiler.outputFileSystem.readFileSync(filePath, 'utf-8')
+
+module.exports = {
+  build,
+  getFile,
+}
