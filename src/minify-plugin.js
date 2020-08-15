@@ -28,6 +28,7 @@ class ESBuildMinifyPlugin {
         )
       }
 
+      // Webpack 5
       if (compilation.hooks.processAssets) {
         compilation.hooks.processAssets.tapPromise(
           {
@@ -35,16 +36,21 @@ class ESBuildMinifyPlugin {
             stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
           },
           async (assets) => {
-            await Promise.all(
-              Object.entries(assets).map(async ([file, source]) => {
-                if (isJsFile.test(file)) {
-                  await this.processSource(source, file, compilation)
-                }
+            const transforms = Object.entries(assets)
+              .filter(([file]) => isJsFile.test(file))
+              .map(async ([file, source]) => {
+                await this.processSource(source, file, compilation)
               })
-            )
+
+            if (transforms.length) {
+              await Promise.all(transforms)
+            }
           }
         )
-      } else {
+      }
+
+      // Webpack 4
+      else {
         compilation.hooks.optimizeChunkAssets.tapPromise(
           pluginName,
           async (chunks) => {
