@@ -45,7 +45,7 @@ const target = {
   `,
 }
 
-const webpackMagicComments = {
+const webpackChunks = {
   '/index.js': `
     const Foo = import(/* webpackChunkName: "named-chunk-foo" */'./foo.js')
     const Bar = import(/* webpackChunkName: "named-chunk-bar" */'./bar.js')
@@ -67,5 +67,5 @@ module.exports = {
   js,
   tsx,
   target,
-  webpackMagicComments,
+  webpackChunks,
 }
