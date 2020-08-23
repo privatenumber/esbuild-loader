@@ -48,8 +48,14 @@ class ESBuildMinifyPlugin {
             name: pluginName,
             stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
           },
-          (assets) => this.transformAssets(compilation, Object.entries(assets))
+          (assets) => this.transformAssets(compilation, Object.keys(assets))
         )
+
+        compilation.hooks.statsPrinter.tap(pluginName, (stats) => {
+          stats.hooks.print
+            .for('asset.info.minimized')
+            .tap(pluginName, (minimized, { green, formatFlag }) => minimized ? green(formatFlag('minimized')) : undefined);
+        });
       }
 
       // Webpack 4
@@ -57,15 +63,14 @@ class ESBuildMinifyPlugin {
         compilation.hooks.optimizeChunkAssets.tapPromise(
           pluginName,
           async (chunks) => {
-            const files = flatMap(chunks, (chunk) => chunk.files.map((file) => [file, compilation.assets[file]]))
-            return this.transformAssets(compilation, files);
+            return this.transformAssets(compilation, flatMap(chunks, (chunk) => chunk.files));
           }
         )
       }
     })
   }
 
-  async transformAssets(compilation, assets) {
+  async transformAssets(compilation, assetNames) {
     const {
       options: { devtool },
       $esbuildService,
@@ -76,33 +81,37 @@ class ESBuildMinifyPlugin {
         ? this.options.sourcemap
         : devtool && devtool.includes('source-map')
 
-    const transforms = assets
-      .filter(([file]) => isJsFile.test(file))
-      .map(async ([file, assetSource]) => {
+    const transforms = assetNames
+      .filter((assetName) => isJsFile.test(assetName))
+      .map(assetName => [assetName, compilation.getAsset(assetName)])
+      .map(async ([assetName, { info, source: assetSource }]) => {
         const { source, map } = assetSource.sourceAndMap()
         const result = await $esbuildService.transform(source, {
           ...this.options,
           sourcemap,
           devtool,
-          sourcefile: file,
+          sourcefile: assetName,
         })
 
-        compilation.updateAsset(file, () => {
-          if (sourcemap) {
-            return new SourceMapSource(
+        compilation.updateAsset(
+          assetName,
+          (
+            sourcemap ? new SourceMapSource(
               result.js || '',
-              file,
+              assetName,
               result.jsSourceMap,
               source,
               map,
               true
-            )
-          } else {
-            return new RawSource(result.js || '')
+            ) : new RawSource(result.js || '')
+          ),
+          {
+            ...info,
+            minimized: true
           }
-        })
-      })
+        )
 
+      })
     if (transforms.length) {
       await Promise.all(transforms)
     }

@@ -14,6 +14,7 @@ function build(webpack, volJson, configure) {
     let config = {
       mode: 'development',
       devtool: false,
+      bail: true,
 
       context: '/',
       entry: {

@@ -162,3 +162,16 @@ describe.each([
     expect(getFile(stats, '/dist/index.js.map')).toMatchSnapshot()
   })
 })
+
+test('Webpack 5 stats', async () => {
+  const stats = await build(webpack5, fixtures.js, (config) => {
+    config.optimization = {
+      minimize: true,
+      minimizer: [
+        new ESBuildMinifyPlugin(),
+      ],
+    }
+  })
+
+  expect(stats.toString().includes('[minimized]')).toBe(true);
+})
