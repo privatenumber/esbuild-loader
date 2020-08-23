@@ -71,9 +71,7 @@ describe.each([
     const stats = await build(webpack, fixtures.webpackChunks, (config) => {
       config.optimization = {
         minimize: true,
-        minimizer: [
-          new ESBuildMinifyPlugin(),
-        ],
+        minimizer: [new ESBuildMinifyPlugin()],
       }
     })
 
