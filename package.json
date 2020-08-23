@@ -1,6 +1,10 @@
 {
   "name": "esbuild-loader",
+  "description": "",
   "version": "0.0.0-semantic-release",
+  "files": [
+    "src"
+  ],
   "main": "src/index.js",
   "author": "EGOIST",
   "license": "MIT",
@@ -8,9 +12,14 @@
     "test": "jest --env node",
     "lint": "prettier --write src test/*.js"
   },
-  "files": [
-    "src"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": ["prettier --write"]
+  },
   "dependencies": {
     "esbuild": "^0.6.23",
     "loader-utils": "^2.0.0",
@@ -21,7 +30,9 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.9",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "lint-staged": "^10.2.11",
     "memfs": "^3.2.0",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3",
