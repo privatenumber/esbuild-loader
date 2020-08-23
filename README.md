@@ -13,7 +13,7 @@ npm i -D esbuild-loader
 or
 
 ```bash
-yarn add esbuild-loader --dev
+yarn add --dev esbuild-loader
 ```
 
 ## Usage
