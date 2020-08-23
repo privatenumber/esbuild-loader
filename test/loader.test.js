@@ -81,7 +81,7 @@ describe.each([
   })
 
   test('webpack magic comments', async () => {
-    const stats = await build(webpack, fixtures.webpackMagicComments)
+    const stats = await build(webpack, fixtures.webpackChunks)
 
     const { assets } = stats.compilation
     expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()

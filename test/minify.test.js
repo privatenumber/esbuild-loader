@@ -67,6 +67,21 @@ describe.each([
     expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
+  test('minify chunks', async () => {
+    const stats = await build(webpack, fixtures.webpackChunks, (config) => {
+      config.optimization = {
+        minimize: true,
+        minimizer: [
+          new ESBuildMinifyPlugin(),
+        ],
+      }
+    })
+
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot()
+  })
+
   test('minify w/ no devtool', async () => {
     const stats = await build(webpack, fixtures.js, (config) => {
       delete config.devtool
