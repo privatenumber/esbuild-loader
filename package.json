@@ -4,7 +4,9 @@
   "keywords": [
     "esbuild",
     "webpack",
-    "loader"
+    "loader",
+    "typescript",
+    "esnext"
   ],
   "version": "0.0.0-semantic-release",
   "files": [
