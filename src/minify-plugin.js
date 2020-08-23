@@ -1,9 +1,13 @@
+const assert = require('assert')
 const { RawSource, SourceMapSource } = require('webpack-sources')
 
 const isJsFile = /\.js$/i
 const pluginName = 'esbuild-minify'
 
-const flatMap = (arr, cb) => arr.flatMap ? arr.flatMap(cb) : [].concat(...arr.map(cb))
+const flatMap = (arr, cb) => {
+  assert(Array.isArray(arr), `arr is not an Array`)
+  return arr.flatMap ? arr.flatMap(cb) : [].concat(...arr.map(cb))
+};
 
 class ESBuildMinifyPlugin {
   constructor(options) {
