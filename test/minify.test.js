@@ -9,6 +9,8 @@ describe.each([
   ['Webpack 5', webpack5],
 ])('%s Loader + Minification', (_name, webpack) => {
   test('minify', async () => {
+    const statsUnminified = await build(webpack, fixtures.js)
+
     const stats = await build(webpack, fixtures.js, (config) => {
       config.optimization = {
         minimize: true,
@@ -16,6 +18,7 @@ describe.each([
       }
     })
 
+    expect(statsUnminified.hash).not.toBe(stats.hash)
     expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 

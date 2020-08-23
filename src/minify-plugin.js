@@ -1,3 +1,4 @@
+const { version } = require('../package');
 const assert = require('assert')
 const { RawSource, SourceMapSource } = require('webpack-sources')
 
@@ -32,8 +33,16 @@ class ESBuildMinifyPlugin {
         )
       }
 
+      const meta = JSON.stringify({
+        name: 'esbuild-loader',
+        version,
+        options: this.options,
+      });
+      compilation.hooks.chunkHash.tap(pluginName, (chunk, hash) => hash.update(meta))
+
       // Webpack 5
       if (compilation.hooks.processAssets) {
+
         compilation.hooks.processAssets.tapPromise(
           {
             name: pluginName,
