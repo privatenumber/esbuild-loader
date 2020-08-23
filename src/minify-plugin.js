@@ -3,6 +3,8 @@ const { RawSource, SourceMapSource } = require('webpack-sources')
 const isJsFile = /\.js$/i
 const pluginName = 'esbuild-minify'
 
+const flatMap = (arr, cb) => arr.flatMap ? arr.flatMap(cb) : [].concat(...arr.map(cb))
+
 class ESBuildMinifyPlugin {
   constructor(options) {
     this.options = { ...options }
@@ -42,7 +44,7 @@ class ESBuildMinifyPlugin {
         compilation.hooks.optimizeChunkAssets.tapPromise(
           pluginName,
           async (chunks) => {
-            const files = chunks.flatMap((chunk) => chunk.files.map((file) => [file, compilation.assets[file]]))
+            const files = flatMap(chunks, (chunk) => chunk.files.map((file) => [file, compilation.assets[file]]))
             return this.transformAssets(compilation, files);
           }
         )
