@@ -1,4 +1,4 @@
-const { version } = require('../package');
+const { version } = require('../package')
 const assert = require('assert')
 const { RawSource, SourceMapSource } = require('webpack-sources')
 
@@ -8,7 +8,7 @@ const pluginName = 'esbuild-minify'
 const flatMap = (arr, cb) => {
   assert(Array.isArray(arr), `arr is not an Array`)
   return arr.flatMap ? arr.flatMap(cb) : [].concat(...arr.map(cb))
-};
+}
 
 class ESBuildMinifyPlugin {
   constructor(options) {
@@ -37,12 +37,13 @@ class ESBuildMinifyPlugin {
         name: 'esbuild-loader',
         version,
         options: this.options,
-      });
-      compilation.hooks.chunkHash.tap(pluginName, (chunk, hash) => hash.update(meta))
+      })
+      compilation.hooks.chunkHash.tap(pluginName, (chunk, hash) =>
+        hash.update(meta)
+      )
 
       // Webpack 5
       if (compilation.hooks.processAssets) {
-
         compilation.hooks.processAssets.tapPromise(
           {
             name: pluginName,
@@ -54,8 +55,10 @@ class ESBuildMinifyPlugin {
         compilation.hooks.statsPrinter.tap(pluginName, (stats) => {
           stats.hooks.print
             .for('asset.info.minimized')
-            .tap(pluginName, (minimized, { green, formatFlag }) => minimized ? green(formatFlag('minimized')) : undefined);
-        });
+            .tap(pluginName, (minimized, { green, formatFlag }) =>
+              minimized ? green(formatFlag('minimized')) : undefined
+            )
+        })
       }
 
       // Webpack 4
@@ -63,7 +66,10 @@ class ESBuildMinifyPlugin {
         compilation.hooks.optimizeChunkAssets.tapPromise(
           pluginName,
           async (chunks) => {
-            return this.transformAssets(compilation, flatMap(chunks, (chunk) => chunk.files));
+            return this.transformAssets(
+              compilation,
+              flatMap(chunks, (chunk) => chunk.files)
+            )
           }
         )
       }
@@ -83,7 +89,7 @@ class ESBuildMinifyPlugin {
 
     const transforms = assetNames
       .filter((assetName) => isJsFile.test(assetName))
-      .map(assetName => [assetName, compilation.getAsset(assetName)])
+      .map((assetName) => [assetName, compilation.getAsset(assetName)])
       .map(async ([assetName, { info, source: assetSource }]) => {
         const { source, map } = assetSource.sourceAndMap()
         const result = await $esbuildService.transform(source, {
@@ -95,22 +101,21 @@ class ESBuildMinifyPlugin {
 
         compilation.updateAsset(
           assetName,
-          (
-            sourcemap ? new SourceMapSource(
-              result.js || '',
-              assetName,
-              result.jsSourceMap,
-              source,
-              map,
-              true
-            ) : new RawSource(result.js || '')
-          ),
+          sourcemap
+            ? new SourceMapSource(
+                result.js || '',
+                assetName,
+                result.jsSourceMap,
+                source,
+                map,
+                true
+              )
+            : new RawSource(result.js || ''),
           {
             ...info,
-            minimized: true
+            minimized: true,
           }
         )
-
       })
     if (transforms.length) {
       await Promise.all(transforms)
