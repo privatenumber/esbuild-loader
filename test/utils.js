@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 const { ufs } = require('unionfs')
@@ -7,7 +6,7 @@ const { Volume } = require('memfs')
 const { ESBuildPlugin } = require('../src')
 const esbuildLoader = require.resolve('../src')
 
-function build(volJson, configure) {
+function build(webpack, volJson, configure) {
   return new Promise((resolve, reject) => {
     const mfs = Volume.fromJSON(volJson)
     mfs.join = path.join.bind(path)
@@ -15,6 +14,7 @@ function build(volJson, configure) {
     let config = {
       mode: 'development',
       devtool: false,
+      bail: true,
 
       context: '/',
       entry: {
@@ -74,4 +74,10 @@ function build(volJson, configure) {
   })
 }
 
-module.exports = build
+const getFile = (stats, filePath) =>
+  stats.compilation.compiler.outputFileSystem.readFileSync(filePath, 'utf-8')
+
+module.exports = {
+  build,
+  getFile,
+}
