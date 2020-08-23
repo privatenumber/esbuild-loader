@@ -1,23 +1,29 @@
-const webpack = require('webpack')
-const build = require('./build')
+const webpack4 = require('webpack')
+const webpack5 = require('webpack5')
+const { build, getFile } = require('./utils')
 const { ESBuildMinifyPlugin } = require('../src')
 const fixtures = require('./fixtures')
 
-describe('Loader + Minification', () => {
+describe.each([
+  ['Webpack 4', webpack4],
+  ['Webpack 5', webpack5],
+])('%s Loader + Minification', (_name, webpack) => {
   test('minify', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const statsUnminified = await build(webpack, fixtures.js)
+
+    const stats = await build(webpack, fixtures.js, (config) => {
       config.optimization = {
         minimize: true,
         minimizer: [new ESBuildMinifyPlugin()],
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(statsUnminified.hash).not.toBe(stats.hash)
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minifyWhitespace', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       config.optimization = {
         minimize: true,
         minimizer: [
@@ -28,12 +34,11 @@ describe('Loader + Minification', () => {
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minifyIdentifiers', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       config.optimization = {
         minimize: true,
         minimizer: [
@@ -44,12 +49,11 @@ describe('Loader + Minification', () => {
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minifySyntax', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       config.optimization = {
         minimize: true,
         minimizer: [
@@ -60,12 +64,11 @@ describe('Loader + Minification', () => {
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ no devtool', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       delete config.devtool
       config.optimization = {
         minimize: true,
@@ -73,12 +76,11 @@ describe('Loader + Minification', () => {
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ devtool inline-source-map', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       config.devtool = 'inline-source-map'
       config.optimization = {
         minimize: true,
@@ -86,12 +88,13 @@ describe('Loader + Minification', () => {
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    const contents = getFile(stats, '/dist/index.js')
+    expect(contents).toContain(`//# sourceMappingURL=data:application/`)
+    expect(contents).toMatchSnapshot()
   })
 
   test('minify w/ devtool source-maps', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       config.devtool = 'source-map'
       config.optimization = {
         minimize: true,
@@ -99,12 +102,13 @@ describe('Loader + Minification', () => {
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    const contents = getFile(stats, '/dist/index.js')
+    expect(contents).toContain(`//# sourceMappingURL=index.js.map`)
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       delete config.devtool
       config.optimization = {
         minimize: true,
@@ -116,12 +120,11 @@ describe('Loader + Minification', () => {
       }
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option and source-map plugin inline', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       delete config.devtool
       config.optimization = {
         minimize: true,
@@ -134,12 +137,11 @@ describe('Loader + Minification', () => {
       config.plugins.push(new webpack.SourceMapDevToolPlugin({}))
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
   })
 
   test('minify w/ sourcemap option and source-map plugin external', async () => {
-    const stats = await build(fixtures.js, (config) => {
+    const stats = await build(webpack, fixtures.js, (config) => {
       delete config.devtool
       config.optimization = {
         minimize: true,
@@ -156,8 +158,18 @@ describe('Loader + Minification', () => {
       )
     })
 
-    const assets = stats.compilation.assets
-    expect(assets['index.js'].source()).toMatchSnapshot()
-    expect(assets['index.js.map'].source()).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js')).toMatchSnapshot()
+    expect(getFile(stats, '/dist/index.js.map')).toMatchSnapshot()
   })
+})
+
+test('Webpack 5 stats', async () => {
+  const stats = await build(webpack5, fixtures.js, (config) => {
+    config.optimization = {
+      minimize: true,
+      minimizer: [new ESBuildMinifyPlugin()],
+    }
+  })
+
+  expect(stats.toString().includes('[minimized]')).toBe(true)
 })
