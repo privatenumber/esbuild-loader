@@ -19,6 +19,7 @@ async function ESBuildLoader(source) {
     const result = await service.transform(source, {
       target: options.target || 'es2015',
       loader: options.loader || 'js',
+      platform: options.platform || 'browser',
       jsxFactory: options.jsxFactory,
       jsxFragment: options.jsxFragment,
       sourcemap: this.sourceMap,
