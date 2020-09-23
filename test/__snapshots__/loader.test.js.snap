@@ -953,7 +953,7 @@ var __async = (__this, __arguments, generator) => {
   });
 };
 console.log(__pow(10, 4));
-() => __async(this, [], function* () {
+() => __async(this, null, function* () {
 });
 const y = {a: 1};
 let x = __assign({}, y);
@@ -1976,6 +1976,7 @@ exports[`Webpack 5 target 1`] = `
   \\\\******************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: top-level-this-exports */
+/*! CommonJS bailout: this is used directly at 41:14-18 */
 /***/ (function() {
 
 var __hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -2018,7 +2019,7 @@ var __async = (__this, __arguments, generator) => {
   });
 };
 console.log(__pow(10, 4));
-() => __async(this, [], function* () {
+() => __async(this, null, function* () {
 });
 const y = {a: 1};
 let x = __assign({}, y);
@@ -2144,6 +2145,18 @@ Foo.then(console.log);
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
@@ -2208,11 +2221,28 @@ Foo.then(console.log);
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = \\"\\";
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + \\"\\";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName(\\"script\\");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string (\\"\\") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error(\\"Automatic publicPath is not supported in this browser\\");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, \\"\\").replace(/\\\\?.*$/, \\"\\").replace(/\\\\/[^\\\\/]+$/, \\"/\\");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// Promise = chunk loading, 0 = chunk loaded
@@ -2273,11 +2303,8 @@ Foo.then(console.log);
 /******/ 		// no deferred startup
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
-/******/ 		function webpackJsonpCallback(data) {
-/******/ 			var chunkIds = data[0];
-/******/ 			var moreModules = data[1];
-/******/ 		
-/******/ 			var runtime = data[3];
+/******/ 		var webpackJsonpCallback = (data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add \\"moreModules\\" to the modules object,
 /******/ 			// then flag all \\"chunkIds\\" as loaded and fire callback
 /******/ 			var moduleId, chunkId, i = 0, resolves = [];
@@ -2294,17 +2321,16 @@ Foo.then(console.log);
 /******/ 				}
 /******/ 			}
 /******/ 			if(runtime) runtime(__webpack_require__);
-/******/ 			if(parentJsonpFunction) parentJsonpFunction(data);
+/******/ 			parentChunkLoadingFunction(data);
 /******/ 			while(resolves.length) {
 /******/ 				resolves.shift()();
 /******/ 			}
 /******/ 		
-/******/ 		};
+/******/ 		}
 /******/ 		
-/******/ 		var jsonpArray = window[\\"webpackJsonp\\"] = window[\\"webpackJsonp\\"] || [];
-/******/ 		var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
-/******/ 		jsonpArray.push = webpackJsonpCallback;
-/******/ 		var parentJsonpFunction = oldJsonpFunction;
+/******/ 		var chunkLoadingGlobal = self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || [];
+/******/ 		var parentChunkLoadingFunction = chunkLoadingGlobal.push.bind(chunkLoadingGlobal);
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
@@ -2317,7 +2343,7 @@ Foo.then(console.log);
 `;
 
 exports[`Webpack 5 webpack magic comments 2`] = `
-"(window[\\"webpackJsonp\\"] = window[\\"webpackJsonp\\"] || []).push([[\\"named-chunk-foo\\"],{
+"(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[\\"named-chunk-foo\\"],{
 
 /***/ \\"./foo.js\\":
 /*!****************!*\\\\
@@ -2344,7 +2370,7 @@ console.log(\\"foo\\");
 `;
 
 exports[`Webpack 5 webpack magic comments 3`] = `
-"(window[\\"webpackJsonp\\"] = window[\\"webpackJsonp\\"] || []).push([[\\"named-chunk-bar\\"],{
+"(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[\\"named-chunk-bar\\"],{
 
 /***/ \\"./bar.js\\":
 /*!****************!*\\\\
