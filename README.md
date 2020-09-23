@@ -7,13 +7,21 @@ You might also like [maho](https://github.com/egoist/maho), a React framework po
 ## Install
 
 ```bash
+<<<<<<< HEAD
 npm i -D esbuild esbuild-loader
+=======
+npm i -D esbuild-loader
+>>>>>>> ba20d934f49fde3a993f7dd8b572ecdffd3aa181
 ```
 
 or
 
 ```bash
+<<<<<<< HEAD
 yarn add --dev esbuild esbuild-loader
+=======
+yarn add --dev esbuild-loader
+>>>>>>> ba20d934f49fde3a993f7dd8b572ecdffd3aa181
 ```
 
 ## Usage
@@ -77,7 +85,8 @@ module.exports = {
 ### Loader
 The loader supports options from [esbuild](https://github.com/evanw/esbuild#command-line-usage).
 - `target` `<String>` (`es2015`) - Environment target (e.g. es2017, chrome80, esnext)
-- `loader` `<String>` (`js`) - Which loader to use to handle file. Possible values: `js, jsx, ts, tsx, json, text, base64, file, dataurl, binary`
+- `loader` `<String>` (`js`) - Which loader to use to handle file
+  - [Possible values](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
 - `jsxFactory` `<String>` - What to use instead of React.createElement
 - `jsxFragment` `<String>` - What to use instead of React.Fragment
 - Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)

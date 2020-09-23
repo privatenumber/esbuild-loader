@@ -95,7 +95,6 @@ class ESBuildMinifyPlugin {
         const result = await $esbuildService.transform(source, {
           ...this.options,
           sourcemap,
-          devtool,
           sourcefile: assetName,
         })
 
