@@ -1918,10 +1918,10 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-esbuild@^0.6.23:
-  version "0.6.34"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.6.34.tgz#76565a60e006f45d5f273b6e59e61ed0816551f5"
-  integrity sha512-InRdL/Q96pUucPqovJzvuLhquZr6jOn81FDVwFjCKz1rYKIm9OdOC+7Fs4vr6x48vKBl5LzKgtjU39BUpO636A==
+esbuild@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.3.tgz#505724ccfeca186b208546de81e18c185cb511a2"
+  integrity sha512-zsS/SXSAUNLJDYDGufSmBckQRLBdkNqz8PXdaDDJZK2VyZLDtilu3FEfIRUxpZMSbIWXVmlGx0Dlb1EoyS3bTA==
 
 escape-string-regexp@^1.0.5:
   version "1.0.5"
