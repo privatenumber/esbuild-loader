@@ -7,21 +7,13 @@ You might also like [maho](https://github.com/egoist/maho), a React framework po
 ## Install
 
 ```bash
-<<<<<<< HEAD
 npm i -D esbuild esbuild-loader
-=======
-npm i -D esbuild-loader
->>>>>>> ba20d934f49fde3a993f7dd8b572ecdffd3aa181
 ```
 
 or
 
 ```bash
-<<<<<<< HEAD
 yarn add --dev esbuild esbuild-loader
-=======
-yarn add --dev esbuild-loader
->>>>>>> ba20d934f49fde3a993f7dd8b572ecdffd3aa181
 ```
 
 ## Usage
