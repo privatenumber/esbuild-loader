@@ -82,6 +82,7 @@ In `webpack.config.js`:
 + const { ESBuildPlugin, ESBuildMinifyPlugin } = require('esbuild-loader')
 
  module.exports = {
+   ...,
 
 +  optimization: {
 +    minimize: true,
