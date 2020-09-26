@@ -1,6 +1,7 @@
 {
   "name": "esbuild-loader",
-  "description": "⚡️ Speed up your Webpack build-time with esbuild",
+  "version": "0.0.0-semantic-release",
+  "description": "⚡️ Speed up your Webpack build with esbuild",
   "keywords": [
     "esbuild",
     "webpack",
@@ -8,15 +9,13 @@
     "typescript",
     "esnext"
   ],
-  "version": "0.0.0-semantic-release",
+  "license": "MIT",
+  "repository": "privatenumber/esbuild-loader",
+  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
   "files": [
     "src"
   ],
   "main": "src/index.js",
-  "author": "EGOIST",
-  "license": "MIT",
-  "repository": "egoist/esbuild-loader",
-  "funding": "https://github.com/egoist/esbuild-loader?sponsor=1",
   "scripts": {
     "test": "jest --env node",
     "lint": "prettier --write src test/*.js"
