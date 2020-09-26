@@ -14,59 +14,87 @@ npm i -D esbuild-loader
 
 ## 🚦 Quick Setup
 
-### Transpiling
+### Javascript transpilation (eg. Babel)
 In `webpack.config.js`:
 
-```js
-const { ESBuildPlugin } = require('esbuild-loader')
+```diff
++ const { ESBuildPlugin } = require('esbuild-loader')
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.[jt]sx?$/,
-        loader: 'esbuild-loader',
-        options: {
-          target: 'es2015', // default, or 'es20XX', 'esnext'
-        },
-      },
-      {
-        test: /\.tsx$/,
-        loader: 'esbuild-loader',
-        options: {
-          loader: 'tsx',
-          target: 'es2015',
-        },
-      },
-    ],
-  },
-  plugins: [
-    new ESBuildPlugin()
-  ]
-}
+ module.exports = {
+   module: {
+     rules: [
+-      {
+-        test: /\.js$/,
+-        use: 'babel-loader',
+-      },
++      {
++        test: /\.js$/,
++        loader: 'esbuild-loader',
++        options: {
++          target: 'es2015', // Syntax to compile to (see options below for possible values)
++        },
++      },
+
+       ...
+     ],
+   },
+   plugins: [
++    new ESBuildPlugin()
+   ]
+ }
 ```
 
-### Minifying
+### TypeScript & TSX
+In `webpack.config.js`:
+```diff
++ const { ESBuildPlugin } = require('esbuild-loader')
+
+ module.exports = {
+   module: {
+     rules: [
+-      {
+-        test: /\.tsx?$/,
+-        use: 'ts-loader',
+-      },
++      {
++        test: /\.tsx?$/,
++        loader: 'esbuild-loader',
++        options: {
++          loader: 'tsx', // Or 'ts' if you don't need tsx
++          target: 'es2015',
++        },
++      },
+
+       ...
+     ],
+   },
+   plugins: [
++    new ESBuildPlugin()
+   ]
+ }
+```
+
+### Minification (eg. Terser)
+You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is.
 
 In `webpack.config.js`:
+```diff
++ const { ESBuildPlugin, ESBuildMinifyPlugin } = require('esbuild-loader')
 
-```js
-const { ESBuildPlugin, ESBuildMinifyPlugin } = require('esbuild-loader')
+ module.exports = {
 
-module.exports = {
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new ESBuildMinifyPlugin()
-    ],
-  },
++  optimization: {
++    minimize: true,
++    minimizer: [
++      new ESBuildMinifyPlugin()
++    ],
++  },
 
-  plugins: [
-    new ESBuildPlugin()
-  ],
-}
+   plugins: [
++    new ESBuildPlugin()
+   ]
+ }
 ```
-
 
 ## ⚙️ Options
 
