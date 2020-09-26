@@ -46,6 +46,7 @@ In `webpack.config.js`:
 
 ### TypeScript & TSX
 In `webpack.config.js`:
+
 ```diff
 + const { ESBuildPlugin } = require('esbuild-loader')
 
@@ -78,6 +79,7 @@ In `webpack.config.js`:
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is.
 
 In `webpack.config.js`:
+
 ```diff
 + const {
 +   ESBuildPlugin,
@@ -109,7 +111,8 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild#comm
   - [Possible values](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
 - `jsxFactory` `<String>` - What to use instead of React.createElement
 - `jsxFragment` `<String>` - What to use instead of React.Fragment
-- Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
+
+Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
 ### MinifyPlugin
 - `minify` `<Boolean>` (`true`) - Sets all `--minify-*` flags
