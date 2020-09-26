@@ -116,6 +116,6 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild#comm
 - `sourcemap` `<Boolean>` (defaults to Webpack `devtool`)- Whether to emit sourcemaps
 
 
-## License
+## 💼 License
 - MIT &copy; privatenumber
 - MIT &copy; [EGOIST (Kevin Titor)](https://github.com/sponsors/egoist)
