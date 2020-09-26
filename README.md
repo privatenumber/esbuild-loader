@@ -20,28 +20,28 @@ In `webpack.config.js`:
 ```diff
 + const { ESBuildPlugin } = require('esbuild-loader')
 
- module.exports = {
-   module: {
-     rules: [
--      {
--        test: /\.js$/,
--        use: 'babel-loader',
--      },
-+      {
-+        test: /\.js$/,
-+        loader: 'esbuild-loader',
-+        options: {
-+          target: 'es2015', // Syntax to compile to (see options below for possible values)
-+        },
-+      },
+  module.exports = {
+    module: {
+      rules: [
+-       {
+-         test: /\.js$/,
+-         use: 'babel-loader',
+-       },
++       {
++         test: /\.js$/,
++         loader: 'esbuild-loader',
++         options: {
++           target: 'es2015', // Syntax to compile to (see options below for possible values)
++         },
++       },
 
-       ...
-     ],
-   },
-   plugins: [
-+    new ESBuildPlugin()
-   ]
- }
+        ...
+      ],
+    },
+    plugins: [
++     new ESBuildPlugin()
+    ]
+  }
 ```
 
 ### TypeScript & TSX
@@ -49,29 +49,29 @@ In `webpack.config.js`:
 ```diff
 + const { ESBuildPlugin } = require('esbuild-loader')
 
- module.exports = {
-   module: {
-     rules: [
--      {
--        test: /\.tsx?$/,
--        use: 'ts-loader',
--      },
-+      {
-+        test: /\.tsx?$/,
-+        loader: 'esbuild-loader',
-+        options: {
-+          loader: 'tsx', // Or 'ts' if you don't need tsx
-+          target: 'es2015',
-+        },
-+      },
+  module.exports = {
+    module: {
+      rules: [
+-       {
+-         test: /\.tsx?$/,
+-         use: 'ts-loader',
+-       },
++       {
++         test: /\.tsx?$/,
++         loader: 'esbuild-loader',
++         options: {
++           loader: 'tsx', // Or 'ts' if you don't need tsx
++           target: 'es2015',
++         },
++       },
 
-       ...
-     ],
-   },
-   plugins: [
-+    new ESBuildPlugin()
-   ]
- }
+        ...
+      ],
+    },
+    plugins: [
++     new ESBuildPlugin()
+    ]
+  }
 ```
 
 ### Minification (eg. Terser)
@@ -79,22 +79,25 @@ You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](
 
 In `webpack.config.js`:
 ```diff
-+ const { ESBuildPlugin, ESBuildMinifyPlugin } = require('esbuild-loader')
++ const {
++   ESBuildPlugin,
++   ESBuildMinifyPlugin
++ } = require('esbuild-loader')
 
- module.exports = {
-   ...,
+  module.exports = {
+    ...,
 
-+  optimization: {
-+    minimize: true,
-+    minimizer: [
-+      new ESBuildMinifyPlugin()
-+    ],
-+  },
++   optimization: {
++     minimize: true,
++     minimizer: [
++       new ESBuildMinifyPlugin()
++     ],
++   },
 
-   plugins: [
-+    new ESBuildPlugin()
-   ]
- }
+    plugins: [
++     new ESBuildPlugin()
+    ]
+  }
 ```
 
 ## ⚙️ Options
