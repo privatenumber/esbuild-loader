@@ -1,7 +1,7 @@
 const webpack4 = require('webpack')
 const webpack5 = require('webpack5')
 const { build, getFile } = require('./utils')
-const { ESBuildMinifyPlugin } = require('../src')
+const { ESBuildMinifyPlugin } = require('..')
 const fixtures = require('./fixtures')
 
 describe.each([

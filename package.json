@@ -13,12 +13,12 @@
   "repository": "privatenumber/esbuild-loader",
   "author": "Hiroki Osame <hiroki.osame@gmail.com>",
   "files": [
-    "src"
+    "lib"
   ],
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest --env node",
-    "lint": "prettier --write src test/*.js"
+    "lint": "prettier --write lib test/*.js"
   },
   "husky": {
     "hooks": {
