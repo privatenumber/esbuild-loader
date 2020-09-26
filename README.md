@@ -1,22 +1,18 @@
 # esbuild-loader <a href="https://npm.im/esbuild-loader"><img src="https://badgen.net/npm/v/esbuild-loader"></a> <a href="https://npm.im/esbuild-loader"><img src="https://badgen.net/npm/dm/esbuild-loader"></a> <a href="https://packagephobia.now.sh/result?p=esbuild-loader"><img src="https://packagephobia.now.sh/badge?p=esbuild-loader"></a>
 
-[esbuild](https://github.com/evanw/esbuild) is by far one of the fastest TS/ESNext to ES6 compilers, so it makes sense to use it over Babel/TSC with webpack to take advantage of both worlds (Speed and the webpack ecosytem).
+Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! 🔥
 
-You might also like [maho](https://github.com/egoist/maho), a React framework powered by esbuild.
 
-## Install
+[esbuild](https://github.com/evanw/esbuild) is written in Go, and supports blazing fast ESNext & TypeScript transpilation, and JS minification.
+
+
+## 🚀 Install
 
 ```bash
 npm i -D esbuild-loader
 ```
 
-or
-
-```bash
-yarn add --dev esbuild-loader
-```
-
-## Usage
+## 🚦 Quick Setup
 
 ### Transpiling
 In `webpack.config.js`:
@@ -72,7 +68,7 @@ module.exports = {
 ```
 
 
-## Options
+## ⚙️ Options
 
 ### Loader
 The loader supports options from [esbuild](https://github.com/evanw/esbuild#command-line-usage).
@@ -92,5 +88,5 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild#comm
 
 
 ## License
-
-MIT &copy; [EGOIST (Kevin Titor)](https://github.com/sponsors/egoist)
+- MIT &copy; privatenumber
+- MIT &copy; [EGOIST (Kevin Titor)](https://github.com/sponsors/egoist)
