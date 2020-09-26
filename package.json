@@ -18,7 +18,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest --env node",
-    "lint": "prettier --write lib test/*.js"
+    "lint": "xo lib test/*.js"
   },
   "husky": {
     "hooks": {
@@ -27,7 +27,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
+      "xo --write",
       "jest --bail --findRelatedTests"
     ]
   },
@@ -45,9 +45,9 @@
     "jest": "^26.4.2",
     "lint-staged": "^10.4.0",
     "memfs": "^3.2.0",
-    "prettier": "^2.1.2",
     "unionfs": "^4.4.0",
     "webpack": "^4.44.2",
-    "webpack5": "npm:webpack@^5.0.0-rc.0"
+    "webpack5": "npm:webpack@^5.0.0-rc.0",
+    "xo": "^0.33.1"
   }
 }
