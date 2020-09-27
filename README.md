@@ -9,7 +9,7 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 ## 🚀 Install
 
 ```bash
-npm i -D esbuild-loader
+npm i -D esbuild esbuild-loader
 ```
 
 ## 🚦 Quick Setup
