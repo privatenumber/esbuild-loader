@@ -1,6 +1,7 @@
 {
   "name": "esbuild-loader",
-  "description": "⚡️ Speed up your Webpack build-time with esbuild",
+  "version": "0.0.0-semantic-release",
+  "description": "⚡️ Speed up your Webpack build with esbuild",
   "keywords": [
     "esbuild",
     "webpack",
@@ -8,18 +9,16 @@
     "typescript",
     "esnext"
   ],
-  "version": "0.0.0-semantic-release",
-  "files": [
-    "src"
-  ],
-  "main": "src/index.js",
-  "author": "EGOIST",
   "license": "MIT",
-  "repository": "egoist/esbuild-loader",
-  "funding": "https://github.com/egoist/esbuild-loader?sponsor=1",
+  "repository": "privatenumber/esbuild-loader",
+  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest --env node",
-    "lint": "prettier --write src test/*.js"
+    "lint": "xo lib test/*.js"
   },
   "husky": {
     "hooks": {
@@ -28,7 +27,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
+      "xo --write",
       "jest --bail --findRelatedTests"
     ]
   },
@@ -46,9 +45,9 @@
     "jest": "^26.4.2",
     "lint-staged": "^10.4.0",
     "memfs": "^3.2.0",
-    "prettier": "^2.1.2",
     "unionfs": "^4.4.0",
     "webpack": "^4.44.2",
-    "webpack5": "npm:webpack@^5.0.0-rc.0"
+    "webpack5": "npm:webpack@^5.0.0-rc.0",
+    "xo": "^0.33.1"
   }
 }
