@@ -92,7 +92,7 @@ In `webpack.config.js`:
 +   optimization: {
 +     minimize: true,
 +     minimizer: [
-+       new ESBuildMinifyPlugin()
++       new ESBuildMinifyPlugin({ target: 'es2015' })
 +     ],
 +   },
 
