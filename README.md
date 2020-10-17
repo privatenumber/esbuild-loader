@@ -92,7 +92,9 @@ In `webpack.config.js`:
 +   optimization: {
 +     minimize: true,
 +     minimizer: [
-+       new ESBuildMinifyPlugin({ target: 'es2015' })
++       new ESBuildMinifyPlugin({
++         target: 'es2015' // Syntax to compile to (see options below for possible values)
++       })
 +     ],
 +   },
 
@@ -102,11 +104,15 @@ In `webpack.config.js`:
   }
 ```
 
+> _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
+> 
+> The `target` option helps _esbuild_ be smart about using new and concise syntax to perform better minification. If you're not using TypeScript or any syntax unsupported by Webpack, you can also leverage this as a transpilation step. It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
+
 ## ⚙️ Options
 
 ### Loader
 The loader supports options from [esbuild](https://github.com/evanw/esbuild#command-line-usage).
-- `target` `<String>` (`es2015`) - Environment target (e.g. es2017, chrome80, esnext)
+- `target` `<String>` (`es2015`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
 - `loader` `<String>` (`js`) - Which loader to use to handle file
   - [Possible values](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
 - `jsxFactory` `<String>` - What to use instead of React.createElement
@@ -115,6 +121,7 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild#comm
 Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
 ### MinifyPlugin
+- `target` `<String>` (`esnext`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
 - `minify` `<Boolean>` (`true`) - Sets all `--minify-*` flags
 - `minifyWhitespace` `<Boolean>` - Remove whitespace
 - `minifyIdentifiers` `<Boolean>` - Shorten identifiers
