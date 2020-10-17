@@ -47,7 +47,7 @@
     "memfs": "^3.2.0",
     "unionfs": "^4.4.0",
     "webpack": "^4.44.2",
-    "webpack5": "npm:webpack@^5.0.0-rc.0",
+    "webpack5": "npm:webpack@^5.0.0",
     "xo": "^0.33.1"
   }
 }
