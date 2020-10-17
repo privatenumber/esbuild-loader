@@ -27,6 +27,20 @@ describe.each([
 
 			expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
 		});
+
+		test('ts', async () => {
+			const stats = await build(webpack, fixtures.ts, config => {
+				config.module.rules.push({
+					test: /\.ts$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'ts',
+					},
+				});
+			});
+
+			expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		});
 	});
 
 	// Targets
