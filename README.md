@@ -5,6 +5,7 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 
 [esbuild](https://github.com/evanw/esbuild) is written in Go, and supports blazing fast ESNext & TypeScript transpilation, and JS minification.
 
+<sub>Please consider [following me](https://github.com/privatenumber) and starring this project to show your support ❤️</sub>
 
 ## 🚀 Install
 
