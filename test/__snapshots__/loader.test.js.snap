@@ -1043,21 +1043,21 @@ exports[`Webpack 4 target 1`] = `
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var __hasOwnProperty = Object.prototype.hasOwnProperty;
-var __getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var __propertyIsEnumerable = Object.prototype.propertyIsEnumerable;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
 var __assign = Object.assign;
 var __rest = (source, exclude) => {
   var target = {};
   for (var prop in source)
-    if (__hasOwnProperty.call(source, prop) && exclude.indexOf(prop) < 0)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
       target[prop] = source[prop];
-  if (source != null && __getOwnPropertySymbols) {
-    for (var prop of __getOwnPropertySymbols(source))
-      if (exclude.indexOf(prop) < 0 && __propertyIsEnumerable.call(source, prop))
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
         target[prop] = source[prop];
-  }
+    }
   return target;
 };
 var __async = (__this, __arguments, generator) => {
@@ -2221,21 +2221,21 @@ exports[`Webpack 5 target 1`] = `
 /*! CommonJS bailout: this is used directly at 41:14-18 */
 /***/ (function() {
 
-var __hasOwnProperty = Object.prototype.hasOwnProperty;
-var __getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var __propertyIsEnumerable = Object.prototype.propertyIsEnumerable;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
 var __assign = Object.assign;
 var __rest = (source, exclude) => {
   var target = {};
   for (var prop in source)
-    if (__hasOwnProperty.call(source, prop) && exclude.indexOf(prop) < 0)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
       target[prop] = source[prop];
-  if (source != null && __getOwnPropertySymbols) {
-    for (var prop of __getOwnPropertySymbols(source))
-      if (exclude.indexOf(prop) < 0 && __propertyIsEnumerable.call(source, prop))
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
         target[prop] = source[prop];
-  }
+    }
   return target;
 };
 var __async = (__this, __arguments, generator) => {
