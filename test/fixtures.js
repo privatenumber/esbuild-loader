@@ -22,6 +22,8 @@ const ts = {
 	`,
 
 	'/use-previous.ts': `
+	class Foo { foo }
+
 	const usePrevious = <T>(value: T) => {
 		const ref = useRef<T>();
 		useEffect(() => {
@@ -41,6 +43,10 @@ const tsx = {
 	`,
 
 	'/foo.tsx': `
+
+	const HelloWorld = <><div>hello world</div></>;
+	console.log(HelloWorld);
+
 	export default class Foo {
 		render() {
 			return <div className="hehe">hello there!!!</div>

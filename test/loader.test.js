@@ -41,6 +41,45 @@ describe.each([
 
 			expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
 		});
+
+		test('ts w/ tsconfig', async () => {
+			const stats = await build(webpack, fixtures.ts, config => {
+				config.module.rules.push({
+					test: /\.ts$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'ts',
+						tsconfigRaw: {
+							compilerOptions: {
+								useDefineForClassFields: true,
+							},
+						},
+					},
+				});
+			});
+
+			expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		});
+
+		test('tsx w/ tsconfig', async () => {
+			const stats = await build(webpack, fixtures.tsx, config => {
+				config.module.rules.push({
+					test: /\.tsx$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'tsx',
+						tsconfigRaw: {
+							compilerOptions: {
+								jsxFactory: 'customFactory',
+								jsxFragmentFactory: 'customFragment',
+							},
+						},
+					},
+				});
+			});
+
+			expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		});
 	});
 
 	// Targets
