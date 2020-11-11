@@ -32,8 +32,8 @@ In `webpack.config.js`:
 +         test: /\.js$/,
 +         loader: 'esbuild-loader',
 +         options: {
-+           target: 'es2015', // Syntax to compile to (see options below for possible values)
-+         },
++           target: 'es2015' // Syntax to compile to (see options below for possible values)
++         }
 +       },
 
         ...
@@ -56,19 +56,19 @@ In `webpack.config.js`:
       rules: [
 -       {
 -         test: /\.tsx?$/,
--         use: 'ts-loader',
+-         use: 'ts-loader'
 -       },
 +       {
 +         test: /\.tsx?$/,
 +         loader: 'esbuild-loader',
 +         options: {
 +           loader: 'tsx', // Or 'ts' if you don't need tsx
-+           target: 'es2015',
-+         },
++           target: 'es2015'
++         }
 +       },
 
         ...
-      ],
+      ]
     },
     plugins: [
 +     new ESBuildPlugin()
@@ -87,8 +87,8 @@ If you have a `tsconfig.json` file, you can pass it in via the `tsconfigRaw` opt
           loader: 'tsx',
           target: 'es2015',
 +         tsconfigRaw: require('./tsconfig.json')
-      },
-  },
+      }
+  }
 ```
 
 ### Minification (eg. Terser)
@@ -111,7 +111,7 @@ In `webpack.config.js`:
 +       new ESBuildMinifyPlugin({
 +         target: 'es2015' // Syntax to compile to (see options below for possible values)
 +       })
-+     ],
++     ]
 +   },
 
     plugins: [
