@@ -76,6 +76,21 @@ In `webpack.config.js`:
   }
 ```
 
+#### Configuration
+If you have a `tsconfig.json` file, you can pass it in via the `tsconfigRaw` option. Note, esbuild only supports [a subset of `tsconfig` options](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L92).
+
+```diff
+  {
+      test: /\.tsx?$/,
+      loader: 'esbuild-loader',
+      options: {
+          loader: 'tsx',
+          target: 'es2015',
++         tsconfigRaw: require('./tsconfig.json')
+      },
+  },
+```
+
 ### Minification (eg. Terser)
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is.
 
