@@ -7,6 +7,35 @@ describe.each([
 	['Webpack 4', webpack4],
 	['Webpack 5', webpack5],
 ])('%s', (_name, webpack) => {
+	describe('Error handling', () => {
+		test('tsx handled as ts', async () => {
+			const runBuild = () => build(webpack, fixtures.tsx, config => {
+				config.module.rules.push({
+					test: /\.tsx$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'ts',
+					},
+				});
+			});
+			await expect(runBuild).rejects.toThrow('Unexpected ">"');
+		});
+
+		test('invalid tsx', async () => {
+			const runBuild = () => build(webpack, fixtures.invalidTsx, config => {
+				config.module.rules.push({
+					test: /\.tsx?$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'tsx',
+					},
+				});
+			});
+
+			await expect(runBuild).rejects.toThrow('Unexpected "const"');
+		});
+	});
+
 	describe('Loader', () => {
 		test('js', async () => {
 			const stats = await build(webpack, fixtures.js);
@@ -35,6 +64,24 @@ describe.each([
 					loader: 'esbuild-loader',
 					options: {
 						loader: 'ts',
+					},
+				});
+			});
+
+			expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		});
+
+		test('ts as tsx', async () => {
+			/*
+			 * If a TS file is accidentally parsed as TSX, it should fallback to parsing as TS
+			 * This is to support ts-loader like syntax: test: /\.tsx?$/
+			 */
+			const stats = await build(webpack, fixtures.ts, config => {
+				config.module.rules.push({
+					test: /\.tsx?$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'tsx',
 					},
 				});
 			});

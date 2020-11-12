@@ -55,6 +55,23 @@ const tsx = {
 	`,
 };
 
+const invalidTsx = {
+	'/index.js': `
+		import usePrevious from './use-previous.tsx'
+		console.log(usePrevious)
+	`,
+
+	'/use-previous.tsx': `
+	const usePrevious = <T><INVALID TSX>(value: T) => {
+		const ref = useRef<T><asdf>();
+		return ref.current;
+	};
+
+
+	export default usePrevious;
+	`,
+};
+
 const target = {
 	'/index.js': `
 		// es2016
@@ -92,6 +109,7 @@ module.exports = {
 	js,
 	ts,
 	tsx,
+	invalidTsx,
 	target,
 	webpackChunks,
 };
