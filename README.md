@@ -6,7 +6,7 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 
 [esbuild-loader](https://github.com/privatenumber/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. babel-loader/ts-loader) and minification (eg. Terser)!
 
-<sub>Please consider [following me](https://github.com/privatenumber) and starring this project to show your support ❤️</sub>
+<sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🚀 Install
 
