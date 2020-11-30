@@ -60,12 +60,12 @@ function build(webpack, volJson, configure) {
 			}
 
 			if (stats.compilation.errors.length > 0) {
-				reject(stats.compilation.errors);
+				reject(new Error(stats.compilation.errors[0]));
 				return;
 			}
 
 			if (stats.compilation.warnings.length > 0) {
-				reject(stats.compilation.warnings);
+				reject(new Error(stats.compilation.warnings[0]));
 				return;
 			}
 

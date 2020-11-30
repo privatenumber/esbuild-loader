@@ -2,9 +2,11 @@
 
 Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! 🔥
 
+[esbuild](https://github.com/evanw/esbuild) is a JavaScript bundler written in Go that supports blazing fast ESNext & TypeScript transpilation and JS minification.
 
-[esbuild](https://github.com/evanw/esbuild) is written in Go, and supports blazing fast ESNext & TypeScript transpilation, and JS minification.
+[esbuild-loader](https://github.com/privatenumber/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. babel-loader/ts-loader) and minification (eg. Terser)!
 
+<sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🚀 Install
 
@@ -31,8 +33,8 @@ In `webpack.config.js`:
 +         test: /\.js$/,
 +         loader: 'esbuild-loader',
 +         options: {
-+           target: 'es2015', // Syntax to compile to (see options below for possible values)
-+         },
++           target: 'es2015' // Syntax to compile to (see options below for possible values)
++         }
 +       },
 
         ...
@@ -55,23 +57,38 @@ In `webpack.config.js`:
       rules: [
 -       {
 -         test: /\.tsx?$/,
--         use: 'ts-loader',
+-         use: 'ts-loader'
 -       },
 +       {
 +         test: /\.tsx?$/,
 +         loader: 'esbuild-loader',
 +         options: {
 +           loader: 'tsx', // Or 'ts' if you don't need tsx
-+           target: 'es2015',
-+         },
++           target: 'es2015'
++         }
 +       },
 
         ...
-      ],
+      ]
     },
     plugins: [
 +     new ESBuildPlugin()
     ]
+  }
+```
+
+#### Configuration
+If you have a `tsconfig.json` file, you can pass it in via the `tsconfigRaw` option. Note, esbuild only supports [a subset of `tsconfig` options](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L92) and does not do type checks.
+
+```diff
+  {
+      test: /\.tsx?$/,
+      loader: 'esbuild-loader',
+      options: {
+          loader: 'tsx',
+          target: 'es2015',
++         tsconfigRaw: require('./tsconfig.json')
+      }
   }
 ```
 
@@ -92,8 +109,10 @@ In `webpack.config.js`:
 +   optimization: {
 +     minimize: true,
 +     minimizer: [
-+       new ESBuildMinifyPlugin()
-+     ],
++       new ESBuildMinifyPlugin({
++         target: 'es2015' // Syntax to compile to (see options below for possible values)
++       })
++     ]
 +   },
 
     plugins: [
@@ -102,11 +121,15 @@ In `webpack.config.js`:
   }
 ```
 
+> _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
+> 
+> The `target` option tells _esbuild_ that it can use newer JS syntax to perform better minification. If you're not using TypeScript or any syntax unsupported by Webpack, you can also leverage this as a transpilation step. It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
+
 ## ⚙️ Options
 
 ### Loader
 The loader supports options from [esbuild](https://github.com/evanw/esbuild#command-line-usage).
-- `target` `<String>` (`es2015`) - Environment target (e.g. es2017, chrome80, esnext)
+- `target` `<String>` (`es2015`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
 - `loader` `<String>` (`js`) - Which loader to use to handle file
   - [Possible values](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
 - `jsxFactory` `<String>` - What to use instead of React.createElement
@@ -115,7 +138,8 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild#comm
 Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
 ### MinifyPlugin
-- `minify` `<Boolean>` (`true`) - Sets all `--minify-*` flags
+- `target` `<String>` (`esnext`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
+- `minify` `<Boolean>` (`true`) - Sets all `minify` flags
 - `minifyWhitespace` `<Boolean>` - Remove whitespace
 - `minifyIdentifiers` `<Boolean>` - Shorten identifiers
 - `minifySyntax` `<Boolean>` - Use equivalent but shorter syntax

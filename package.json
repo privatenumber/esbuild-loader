@@ -18,7 +18,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest --env node",
-    "lint": "xo lib test/*.js"
+    "lint": "xo"
   },
   "husky": {
     "hooks": {
@@ -32,22 +32,22 @@
     ]
   },
   "dependencies": {
-    "esbuild": "^0.7.3",
+    "esbuild": "^0.8.17",
     "loader-utils": "^2.0.0",
-    "webpack-sources": "^2.0.0"
+    "webpack-sources": "^2.2.0"
   },
   "peerDependencies": {
     "webpack": "^4.40.0 || ^5.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.14",
+    "@types/jest": "^26.0.15",
     "husky": "^4.3.0",
-    "jest": "^26.4.2",
-    "lint-staged": "^10.4.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.2",
     "memfs": "^3.2.0",
     "unionfs": "^4.4.0",
     "webpack": "^4.44.2",
-    "webpack5": "npm:webpack@^5.0.0-rc.0",
-    "xo": "^0.33.1"
+    "webpack5": "npm:webpack@^5.0.0",
+    "xo": "^0.35.0"
   }
 }
