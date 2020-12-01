@@ -1,20 +1,17 @@
 name: Test
-
 on:
   push:
     branches: [develop]
   pull_request:
     branches: [master, develop, next]
-
 jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-
+    timeout-minutes: 10
     strategy:
       matrix:
         node-version: [10.x, 14.x]
-
     steps:
     - name: Checkout
       uses: actions/checkout@v2
