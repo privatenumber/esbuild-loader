@@ -1,17 +1,6 @@
-import webpack4 = require('webpack');
 import {getOptions} from 'loader-utils';
-import { Service, Loader, TransformOptions } from 'esbuild';
-
-interface LoaderOptions {
-	target?: string;
-	loader?: Loader;
-	minify?: boolean;
-	tsconfigRaw?: TransformOptions['tsconfigRaw'];
-}
-
-interface Compiler extends webpack4.Compiler {
-	$esbuildService?: Service;
-}
+import webpack4 = require('webpack');
+import { Compiler, LoaderOptions } from './interfaces';
 
 async function ESBuildLoader(
 	this: webpack4.loader.LoaderContext,

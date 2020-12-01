@@ -1,10 +1,8 @@
-const {startService} = require('esbuild');
+import { startService } from 'esbuild';
+import { Compiler } from './interfaces';
 
 class ESBuildPlugin {
-	/**
-	* @param {import('webpack').Compiler} compiler
-	*/
-	apply(compiler) {
+	apply(compiler: Compiler) {
 		let watching = false;
 
 		const safeStartService = async () => {
@@ -37,4 +35,4 @@ class ESBuildPlugin {
 	}
 }
 
-module.exports = ESBuildPlugin;
+export default ESBuildPlugin;
