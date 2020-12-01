@@ -17,7 +17,7 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest --env node",
+    "test": "jest --env node --coverage",
     "lint": "xo"
   },
   "husky": {
