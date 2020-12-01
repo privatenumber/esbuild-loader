@@ -1,6 +1,7 @@
 const {version} = require('../package');
 import assert from 'assert';
 import {RawSource, SourceMapSource} from 'webpack-sources';
+import { RawSourceMap } from 'source-map';
 import { Compiler, MinifyPluginOptions } from './interfaces';
 import * as webpack4 from 'webpack';
 import * as webpack5 from 'webpack5';
@@ -112,13 +113,14 @@ class ESBuildMinifyPlugin {
 
 				compilation.updateAsset(
 					assetName,
+					// @ts-ignore
 					sourcemap ?
 						new SourceMapSource(
 							result.code || '',
 							assetName,
-							result.map,
-							source,
-							map,
+							result.map as any,
+							source && source.toString(),
+							(map as RawSourceMap),
 							true,
 						) :
 						new RawSource(result.code || ''),
