@@ -17,7 +17,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc --project ./src",
+    "build": "tsc",
     "test": "jest --env node",
     "lint": "xo"
   },
