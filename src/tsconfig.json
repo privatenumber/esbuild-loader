@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["ESNext.Array"],
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+		"noImplicitThis": true,
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"outDir": "../dist",
+		"declarationDir": "../dist"
+	}
+}
