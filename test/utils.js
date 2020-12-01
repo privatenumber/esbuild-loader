@@ -3,8 +3,8 @@ const fs = require('fs');
 const {ufs} = require('unionfs');
 const {Volume} = require('memfs');
 
-const {ESBuildPlugin} = require('..');
-const esbuildLoader = require.resolve('..');
+const {ESBuildPlugin} = require('esbuild-loader');
+const esbuildLoader = require.resolve('esbuild-loader');
 
 function build(webpack, volJson, configure) {
 	return new Promise((resolve, reject) => {
