@@ -1,5 +1,5 @@
-import { startService } from 'esbuild';
-import { Compiler } from './interfaces';
+import {startService} from 'esbuild';
+import {Compiler} from './interfaces';
 
 class ESBuildPlugin {
 	apply(compiler: Compiler) {

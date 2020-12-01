@@ -1,9 +1,7 @@
 module.exports = {
-	envs: [
-		'browser',
-	],
 	rules: {
 		'comma-dangle': ['error', 'always-multiline'],
+		'@typescript-eslint/comma-dangle': 'off',
 		'symbol-description': 'off',
 	},
 	overrides: [

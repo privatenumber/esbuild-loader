@@ -1,10 +1,10 @@
 import {getOptions} from 'loader-utils';
 import webpack4 = require('webpack');
-import { Compiler, LoaderOptions } from './interfaces';
+import {Compiler, LoaderOptions} from './interfaces';
 
 async function ESBuildLoader(
 	this: webpack4.loader.LoaderContext,
-	source: string
+	source: string,
 ) {
 	const done = this.async() as webpack4.loader.loaderCallback;
 	const options: LoaderOptions = getOptions(this);
@@ -39,8 +39,8 @@ async function ESBuildLoader(
 			throw error;
 		});
 		done(null, result.code, result.map);
-	} catch (error) {
-		done(error);
+	} catch (error: unknown) {
+		done(error as Error);
 	}
 }
 

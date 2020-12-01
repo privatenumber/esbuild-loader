@@ -1,12 +1,14 @@
-const {version} = require('../package');
 import assert from 'assert';
 import {RawSource, SourceMapSource} from 'webpack-sources';
-import { RawSourceMap } from 'source-map';
-import { Compiler, MinifyPluginOptions } from './interfaces';
+import {RawSourceMap} from 'source-map';
+import {Compiler, MinifyPluginOptions} from './interfaces';
 import * as webpack4 from 'webpack';
 import * as webpack5 from 'webpack5';
 
-type Asset = webpack4.compilation.Asset | ReturnType<webpack5.Compilation["getAsset"]>;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const {version} = require('../package');
+
+type Asset = webpack4.compilation.Asset | ReturnType<webpack5.Compilation['getAsset']>;
 
 const isJsFile = /\.js$/i;
 const pluginName = 'esbuild-minify';
@@ -51,7 +53,7 @@ class ESBuildMinifyPlugin {
 						name: pluginName,
 						stage: (compilation.constructor as typeof webpack5.Compilation).PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
 					},
-					assets => this.transformAssets(compilation, Object.keys(assets)),
+					async assets => this.transformAssets(compilation, Object.keys(assets)),
 				);
 
 				compilation.hooks.statsPrinter.tap(pluginName, stats => {
@@ -64,12 +66,10 @@ class ESBuildMinifyPlugin {
 			} else {
 				compilation.hooks.optimizeChunkAssets.tapPromise(
 					pluginName,
-					async chunks => {
-						return this.transformAssets(
-							compilation,
-							flatMap(chunks, chunk => chunk.files),
-						);
-					},
+					async chunks => this.transformAssets(
+						compilation,
+						flatMap(chunks, chunk => chunk.files),
+					),
 				);
 			}
 		});
@@ -81,7 +81,7 @@ class ESBuildMinifyPlugin {
 	) {
 		const {
 			options: {
-				devtool
+				devtool,
 			},
 			$esbuildService,
 		} = compilation.compiler as Compiler;
@@ -113,13 +113,13 @@ class ESBuildMinifyPlugin {
 
 				compilation.updateAsset(
 					assetName,
-					// @ts-ignore
+					// @ts-expect-error
 					sourcemap ?
 						new SourceMapSource(
 							result.code || '',
 							assetName,
 							result.map as any,
-							source && source.toString(),
+							source?.toString(),
 							(map as RawSourceMap),
 							true,
 						) :

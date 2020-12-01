@@ -1,5 +1,5 @@
-import { Service, Loader, TransformOptions } from 'esbuild';
-import { Compiler as Webpack4Compiler } from 'webpack';
+import {Service, Loader, TransformOptions} from 'esbuild';
+import {Compiler as Webpack4Compiler} from 'webpack';
 
 export interface LoaderOptions {
 	target?: string;
