@@ -11,3 +11,10 @@ export interface LoaderOptions {
 export interface Compiler extends Webpack4Compiler {
 	$esbuildService?: Service;
 }
+
+export interface MinifyPluginOptions {
+	target?: string;
+	loader?: Loader;
+	minify?: boolean;
+	sourcemap?: boolean;
+}
