@@ -1,3 +1,6 @@
-module.exports = require('./loader');
-module.exports.ESBuildPlugin = require('./plugin');
-module.exports.ESBuildMinifyPlugin = require('./minify-plugin');
+import esbuildLoader from './loader';
+import ESBuildPlugin from './plugin';
+import ESBuildMinifyPlugin from './minify-plugin';
+
+export default esbuildLoader;
+export { ESBuildPlugin, ESBuildMinifyPlugin };
