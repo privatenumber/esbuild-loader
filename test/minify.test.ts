@@ -1,8 +1,8 @@
-const webpack4 = require('webpack');
-const webpack5 = require('webpack5');
-const {build, getFile} = require('./utils');
-const {ESBuildMinifyPlugin} = require('esbuild-loader');
-const fixtures = require('./fixtures');
+import webpack4 from 'webpack';
+import webpack5 from 'webpack5';
+import {build, getFile} from './utils';
+import {ESBuildMinifyPlugin} from '..';
+import * as fixtures from './fixtures';
 
 describe.each([
 	['Webpack 4', webpack4],
@@ -147,6 +147,8 @@ describe.each([
 					}),
 				],
 			};
+
+			// @ts-expect-error
 			config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
 		});
 
@@ -164,7 +166,9 @@ describe.each([
 					}),
 				],
 			};
+
 			config.plugins.push(
+				// @ts-expect-error
 				new webpack.SourceMapDevToolPlugin({
 					filename: 'index.js.map',
 				}),

@@ -16,5 +16,8 @@ export interface MinifyPluginOptions {
 	target?: string;
 	loader?: Loader;
 	minify?: boolean;
+	minifyWhitespace?: boolean;
+	minifyIdentifiers?: boolean;
+	minifySyntax?: boolean;
 	sourcemap?: boolean;
 }

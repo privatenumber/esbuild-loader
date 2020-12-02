@@ -18,6 +18,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "pretest": "npm run build",
     "test": "jest --coverage",
     "lint": "xo"
   },

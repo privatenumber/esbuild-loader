@@ -1,7 +1,7 @@
-const webpack4 = require('webpack');
-const webpack5 = require('webpack5');
-const {build, getFile} = require('./utils');
-const fixtures = require('./fixtures');
+import webpack4 from 'webpack';
+import webpack5 from 'webpack5';
+import {build, getFile} from './utils';
+import * as fixtures from './fixtures';
 
 describe.each([
 	['Webpack 4', webpack4],
@@ -9,7 +9,7 @@ describe.each([
 ])('%s', (_name, webpack) => {
 	describe('Error handling', () => {
 		test('tsx handled as ts', async () => {
-			const runBuild = () => build(webpack, fixtures.tsx, config => {
+			const runBuild = async () => build(webpack, fixtures.tsx, config => {
 				config.module.rules.push({
 					test: /\.tsx$/,
 					loader: 'esbuild-loader',
@@ -22,7 +22,7 @@ describe.each([
 		});
 
 		test('invalid tsx', async () => {
-			const runBuild = () => build(webpack, fixtures.invalidTsx, config => {
+			const runBuild = async () => build(webpack, fixtures.invalidTsx, config => {
 				config.module.rules.push({
 					test: /\.tsx?$/,
 					loader: 'esbuild-loader',
@@ -132,6 +132,7 @@ describe.each([
 	// Targets
 	test('target', async () => {
 		const stats = await build(webpack, fixtures.target, config => {
+			// @ts-expect-error
 			config.module.rules[0].options = {
 				target: 'es2015',
 			};
@@ -169,6 +170,7 @@ describe.each([
 		test('source-map plugin', async () => {
 			const stats = await build(webpack, fixtures.js, config => {
 				delete config.devtool;
+				// @ts-expect-error
 				config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
 			});
 

@@ -23,7 +23,7 @@ function isWebpack5(compilation: webpack4.compilation.Compilation | webpack5.Com
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
 
-	constructor(options: MinifyPluginOptions) {
+	constructor(options?: MinifyPluginOptions) {
 		this.options = {...options};
 
 		const hasMinify = Object.keys(this.options).some(k =>
