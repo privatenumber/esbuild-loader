@@ -36,6 +36,26 @@ export const ts = {
 	`,
 };
 
+export const ts2 = {
+	'/index.js': `
+		import usePrevious from './use-previous.ts'
+		console.log(usePrevious)
+	`,
+
+	'/use-previous.ts': `
+	class Foo { foo }
+
+	const testFn = <V>(
+		l: Level,
+		options: { [key in Level]: V },
+	): V => {
+		return options[l];
+	};
+
+	export default testFn;
+	`,
+};
+
 export const tsx = {
 	'/index.js': `
 		import Foo from './foo.tsx'
