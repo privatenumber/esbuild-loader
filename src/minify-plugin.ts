@@ -89,6 +89,7 @@ class ESBuildMinifyPlugin {
 		assert($esbuildService, '[esbuild-loader] You need to add ESBuildPlugin to your webpack config first');
 
 		const sourcemap = (
+			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
 			this.options.sourcemap === undefined ?
 				devtool && (devtool as string).includes('source-map') :
 				this.options.sourcemap
