@@ -17,3 +17,9 @@ node_modules/
 
 # Output of 'npm pack'
 *.tgz
+
+# Jest coverage data
+coverage
+
+# Distribution files
+dist
