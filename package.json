@@ -28,7 +28,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.ts": [
       "xo --write",
       "jest --bail --findRelatedTests"
     ]
