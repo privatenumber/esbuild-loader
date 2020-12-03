@@ -1,9 +1,14 @@
-const {getOptions} = require('loader-utils');
+import {getOptions} from 'loader-utils';
+import webpack4 = require('webpack');
+import {Compiler, LoaderOptions} from './interfaces';
 
-async function ESBuildLoader(source) {
-	const done = this.async();
-	const options = getOptions(this);
-	const service = this._compiler.$esbuildService;
+async function ESBuildLoader(
+	this: webpack4.loader.LoaderContext,
+	source: string,
+) {
+	const done = this.async() as webpack4.loader.loaderCallback;
+	const options: LoaderOptions = getOptions(this);
+	const service = (this._compiler as Compiler).$esbuildService;
 
 	if (!service) {
 		return done(
@@ -15,8 +20,8 @@ async function ESBuildLoader(source) {
 
 	const transformOptions = {
 		...options,
-		target: options.target || 'es2015',
-		loader: options.loader || 'js',
+		target: options.target ?? 'es2015',
+		loader: options.loader ?? 'js',
 		sourcemap: this.sourceMap,
 		sourcefile: this.resourcePath,
 	};
@@ -34,9 +39,9 @@ async function ESBuildLoader(source) {
 			throw error;
 		});
 		done(null, result.code, result.map);
-	} catch (error) {
-		done(error);
+	} catch (error: unknown) {
+		done(error as Error);
 	}
 }
 
-module.exports = ESBuildLoader;
+export default ESBuildLoader;
