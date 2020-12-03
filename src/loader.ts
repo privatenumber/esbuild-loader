@@ -2,6 +2,8 @@ import {getOptions} from 'loader-utils';
 import webpack4 = require('webpack');
 import {Compiler, LoaderOptions} from './interfaces';
 
+const tsxTryTsLoaderPtrn = /Unexpected|Expected/;
+
 async function ESBuildLoader(
 	this: webpack4.loader.LoaderContext,
 	source: string,
@@ -29,7 +31,7 @@ async function ESBuildLoader(
 	try {
 		const result = await service.transform(source, transformOptions).catch(async error => {
 			// Target might be a TS file accidentally parsed as TSX
-			if (transformOptions.loader === 'tsx' && error.message.includes('Unexpected')) {
+			if (transformOptions.loader === 'tsx' && tsxTryTsLoaderPtrn.test(error.message)) {
 				transformOptions.loader = 'ts';
 				return service.transform(source, transformOptions).catch(_ => {
 					throw error;
