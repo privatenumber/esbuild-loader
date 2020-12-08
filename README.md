@@ -78,7 +78,7 @@ In `webpack.config.js`:
 ```
 
 #### Configuration
-If you have a `tsconfig.json` file, you can pass it in via the `tsconfigRaw` option. Note, esbuild only supports [a subset of `tsconfig` options](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L92) and does not do type checks.
+If you have a `tsconfig.json` file, you can pass it in via the [`tsconfigRaw` option](https://esbuild.github.io/api/#tsconfig-raw). Note, `tsconfigRaw` only supports a subset of `tsconfig` options [(see `TransformOptions`)](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L126) and does not do type checks.
 
 ```diff
   {
