@@ -1,14 +1,14 @@
+import webpack = require('webpack');
 import {getOptions} from 'loader-utils';
-import webpack4 = require('webpack');
 import {Compiler, LoaderOptions} from './interfaces';
 
 const tsxTryTsLoaderPtrn = /Unexpected|Expected/;
 
 async function ESBuildLoader(
-	this: webpack4.loader.LoaderContext,
+	this: webpack.loader.LoaderContext,
 	source: string,
 ) {
-	const done = this.async() as webpack4.loader.loaderCallback;
+	const done = this.async() as webpack.loader.loaderCallback;
 	const options: LoaderOptions = getOptions(this);
 	const service = (this._compiler as Compiler).$esbuildService;
 

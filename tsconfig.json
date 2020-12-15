@@ -3,8 +3,8 @@
 	"compilerOptions": {
 		"outDir": "dist",
 		"module": "commonjs",
-		"target": "es5",
-		"lib": ["ESNext.Array"],
+		"target": "ES2018",
+		"lib": ["ES2018"],
 		"strict": true,
 		"declaration": true,
 		"noImplicitReturns": true,
