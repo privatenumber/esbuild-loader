@@ -1,8 +1,8 @@
+import webpack = require('webpack');
 import {Service, TransformOptions} from 'esbuild';
-import {Compiler as Webpack4Compiler} from 'webpack';
 import {Except} from 'type-fest';
 
-export type Compiler = Webpack4Compiler & {
+export type Compiler = webpack.Compiler & {
 	$esbuildService?: Service;
 };
 

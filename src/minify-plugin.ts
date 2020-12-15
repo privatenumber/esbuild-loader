@@ -2,23 +2,18 @@ import assert from 'assert';
 import {RawSource, SourceMapSource} from 'webpack-sources';
 import {RawSourceMap} from 'source-map';
 import {Compiler, MinifyPluginOptions} from './interfaces';
-import * as webpack4 from 'webpack';
-import * as webpack5 from 'webpack5';
+import webpack = require('webpack');
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const {version} = require('../package');
 
-type Asset = webpack4.compilation.Asset | ReturnType<webpack5.Compilation['getAsset']>;
+type Asset = webpack.compilation.Asset;
 
 const isJsFile = /\.js$/i;
 const pluginName = 'esbuild-minify';
 
 // eslint-disable-next-line unicorn/no-fn-reference-in-iterator
 const flatMap = (array: any[], cb: (element: any) => any) => array.flatMap ? array.flatMap(cb) : [].concat(...array.map(cb));
-
-function isWebpack5(compilation: webpack4.compilation.Compilation | webpack5.Compilation): compilation is webpack5.Compilation {
-	return (compilation as webpack5.Compilation).hooks.processAssets !== undefined;
-}
 
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
@@ -47,19 +42,20 @@ class ESBuildMinifyPlugin {
 				hash.update(meta),
 			);
 
-			if (isWebpack5(compilation)) {
-				compilation.hooks.processAssets.tapPromise(
+			const hooks = (compilation.hooks as any);
+			if (hooks.processAssets) {
+				hooks.processAssets.tapPromise(
 					{
 						name: pluginName,
-						stage: (compilation.constructor as typeof webpack5.Compilation).PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+						stage: (compilation.constructor as any).PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
 					},
-					async assets => this.transformAssets(compilation, Object.keys(assets)),
+					async (assets: Asset[]) => this.transformAssets(compilation, Object.keys(assets)),
 				);
 
-				compilation.hooks.statsPrinter.tap(pluginName, stats => {
+				hooks.statsPrinter.tap(pluginName, (stats: any) => {
 					stats.hooks.print
 						.for('asset.info.minimized')
-						.tap(pluginName, (minimized, {green, formatFlag}: any) =>
+						.tap(pluginName, (minimized: boolean, {green, formatFlag}: any) =>
 							minimized ? green(formatFlag('minimized')) : undefined,
 						);
 				});
@@ -76,7 +72,7 @@ class ESBuildMinifyPlugin {
 	}
 
 	async transformAssets(
-		compilation: webpack4.compilation.Compilation | webpack5.Compilation,
+		compilation: webpack.compilation.Compilation,
 		assetNames: string[],
 	) {
 		const {
@@ -114,7 +110,6 @@ class ESBuildMinifyPlugin {
 
 				compilation.updateAsset(
 					assetName,
-					// @ts-expect-error
 					sourcemap ?
 						new SourceMapSource(
 							result.code || '',
@@ -128,7 +123,7 @@ class ESBuildMinifyPlugin {
 					{
 						...info,
 						minimized: true,
-					},
+					} as any,
 				);
 			});
 
