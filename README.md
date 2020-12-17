@@ -123,7 +123,7 @@ In `webpack.config.js`:
 ```
 
 > _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
-> 
+>
 > The `target` option tells _esbuild_ that it can use newer JS syntax to perform better minification. If you're not using TypeScript or any syntax unsupported by Webpack, you can also leverage this as a transpilation step. It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
 
 ## ⚙️ Options
@@ -145,6 +145,9 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 - `minifyIdentifiers` `<Boolean>` - Shorten identifiers
 - `minifySyntax` `<Boolean>` - Use equivalent but shorter syntax
 - `sourcemap` `<Boolean>` (defaults to Webpack `devtool`)- Whether to emit sourcemaps
+- `test` `String|RegExp|Array<String|RegExp>` (`undefined`) - Filter assets for minification
+- `include` `String|RegExp|Array<String|RegExp>` (`undefined`) - Filter assets for inclusion in minification
+- `exclude` `String|RegExp|Array<String|RegExp>` (`undefined`) - Filter assets for exclusion in minification
 
 
 ## 💼 License
