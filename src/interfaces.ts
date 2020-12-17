@@ -6,5 +6,11 @@ export type Compiler = webpack.Compiler & {
 	$esbuildService?: Service;
 };
 
+type FilterObject = {
+	test?: string | RegExp | string[] | RegExp[];
+	include?: string | RegExp | string[] | RegExp[];
+	exclude?: string | RegExp | string[] | RegExp[];
+};
+
 export type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'>;
-export type MinifyPluginOptions = Except<TransformOptions, 'sourcefile'>;
+export type MinifyPluginOptions = Except<TransformOptions, 'sourcefile'> & FilterObject;

@@ -3,6 +3,7 @@ import {RawSource, SourceMapSource} from 'webpack-sources';
 import {RawSourceMap} from 'source-map';
 import {Compiler, MinifyPluginOptions} from './interfaces';
 import webpack = require('webpack');
+import {matchObject} from 'webpack/lib/ModuleFilenameHelpers';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const {version} = require('../package');
@@ -91,8 +92,10 @@ class ESBuildMinifyPlugin {
 				this.options.sourcemap
 		);
 
+		const {test, include, exclude, ...transformOptions} = this.options;
+
 		const transforms = assetNames
-			.filter(assetName => isJsFile.test(assetName))
+			.filter(assetName => isJsFile.test(assetName) && matchObject({test, include, exclude}, assetName))
 			.map((assetName): [string, Asset] => [
 				assetName,
 				compilation.getAsset(assetName),
@@ -103,7 +106,7 @@ class ESBuildMinifyPlugin {
 			]) => {
 				const {source, map} = assetSource.sourceAndMap();
 				const result = await $esbuildService.transform(source.toString(), {
-					...this.options,
+					...transformOptions,
 					sourcemap,
 					sourcefile: assetName,
 				});
