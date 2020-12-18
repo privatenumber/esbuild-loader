@@ -129,17 +129,17 @@ In `webpack.config.js`:
 ## ⚙️ Options
 
 ### Loader
-The loader supports options from [esbuild](https://github.com/evanw/esbuild#command-line-usage).
-- `target` `<String>` (`es2015`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
-- `loader` `<String>` (`js`) - Which loader to use to handle file
-  - [Possible values](https://github.com/evanw/esbuild/blob/master/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
-- `jsxFactory` `<String>` - What to use instead of React.createElement
-- `jsxFragment` `<String>` - What to use instead of React.Fragment
+The loader supports options from [esbuild](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L126-L138).
+- `target` `String` (`es2015`) - [Environment target](https://esbuild.github.io/api/#target) (e.g. es2016, chrome80, esnext)
+- `loader` `String` (`js`) - Which loader to use to handle file
+  - [Possible values](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
+- `jsxFactory` `String` - What to use instead of React.createElement
+- `jsxFragment` `String` - What to use instead of React.Fragment
 
 Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
 ### MinifyPlugin
-- `target` `<String>` (`esnext`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
+- `target` `String` (`esnext`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
 - `minify` `Boolean` (`true`) - Sets all `minify` flags
 - `minifyWhitespace` `Boolean` - Remove whitespace
 - `minifyIdentifiers` `Boolean` - Shorten identifiers
