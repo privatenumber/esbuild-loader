@@ -6,10 +6,10 @@ export type Compiler = webpack.Compiler & {
 	$esbuildService?: Service;
 };
 
+type Filter = string | RegExp;
 type FilterObject = {
-	test?: string | RegExp | string[] | RegExp[];
-	include?: string | RegExp | string[] | RegExp[];
-	exclude?: string | RegExp | string[] | RegExp[];
+	include?: Filter | Filter[];
+	exclude?: Filter | Filter[];
 };
 
 export type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'>;
