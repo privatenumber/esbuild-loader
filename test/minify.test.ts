@@ -80,6 +80,46 @@ describe.each([
 		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
 	});
 
+	test('minify chunks filtered using "include"', async () => {
+		const stats = await build(webpack, fixtures.webpackChunks, config => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [new ESBuildMinifyPlugin({
+					include: /(index|bar)/,
+				})],
+			};
+		});
+
+		// The string "__webpack_require__" is only present in unminified chunks
+		expect(getFile(stats, '/dist/index.js')).not.toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-foo.js')).toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-bar.js')).not.toContain('__webpack_require__');
+
+		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
+	});
+
+	test('minify chunks filtered using "exclude"', async () => {
+		const stats = await build(webpack, fixtures.webpackChunks, config => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [new ESBuildMinifyPlugin({
+					exclude: /bar/,
+				})],
+			};
+		});
+
+		// The string "__webpack_require__" is only present in unminified chunks
+		expect(getFile(stats, '/dist/index.js')).not.toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-foo.js')).not.toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-bar.js')).toContain('__webpack_require__');
+
+		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
+	});
+
 	test('minify w/ no devtool', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			delete config.devtool;
