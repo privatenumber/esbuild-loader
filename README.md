@@ -140,14 +140,13 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 
 ### MinifyPlugin
 - `target` `<String>` (`esnext`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
-- `minify` `<Boolean>` (`true`) - Sets all `minify` flags
-- `minifyWhitespace` `<Boolean>` - Remove whitespace
-- `minifyIdentifiers` `<Boolean>` - Shorten identifiers
-- `minifySyntax` `<Boolean>` - Use equivalent but shorter syntax
-- `sourcemap` `<Boolean>` (defaults to Webpack `devtool`)- Whether to emit sourcemaps
-- `test` `String|RegExp|Array<String|RegExp>` (`undefined`) - Filter assets for minification
-- `include` `String|RegExp|Array<String|RegExp>` (`undefined`) - Filter assets for inclusion in minification
-- `exclude` `String|RegExp|Array<String|RegExp>` (`undefined`) - Filter assets for exclusion in minification
+- `minify` `Boolean` (`true`) - Sets all `minify` flags
+- `minifyWhitespace` `Boolean` - Remove whitespace
+- `minifyIdentifiers` `Boolean` - Shorten identifiers
+- `minifySyntax` `Boolean` - Use equivalent but shorter syntax
+- `sourcemap` `Boolean` (defaults to Webpack `devtool`) - Whether to emit sourcemaps
+- `include` `String|RegExp|Array<String|RegExp>` - Filter assets for inclusion in minification
+- `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
 
 
 ## 💼 License

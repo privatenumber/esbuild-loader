@@ -92,10 +92,10 @@ class ESBuildMinifyPlugin {
 				this.options.sourcemap
 		);
 
-		const {test, include, exclude, ...transformOptions} = this.options;
+		const {include, exclude, ...transformOptions} = this.options;
 
 		const transforms = assetNames
-			.filter(assetName => isJsFile.test(assetName) && matchObject({test, include, exclude}, assetName))
+			.filter(assetName => isJsFile.test(assetName) && matchObject({include, exclude}, assetName))
 			.map((assetName): [string, Asset] => [
 				assetName,
 				compilation.getAsset(assetName),

@@ -80,26 +80,6 @@ describe.each([
 		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
 	});
 
-	test('minify chunks filtered using "test"', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks, config => {
-			config.optimization = {
-				minimize: true,
-				minimizer: [new ESBuildMinifyPlugin({
-					test: /^index/,
-				})],
-			};
-		});
-
-		// The string "__webpack_require__" is only present in unminified chunks
-		expect(getFile(stats, '/dist/index.js')).not.toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-foo.js')).toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-bar.js')).toContain('__webpack_require__');
-
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
-	});
-
 	test('minify chunks filtered using "include"', async () => {
 		const stats = await build(webpack, fixtures.webpackChunks, config => {
 			config.optimization = {
