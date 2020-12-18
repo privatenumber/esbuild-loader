@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: 14.x
     - name: Install dependencies
-      run: npx -p @antfu/ni nci
+      run: npx pnpm i --frozen-lockfile
     - name: Test
       run: npm run test --if-present
     - name: Build
