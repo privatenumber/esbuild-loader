@@ -21,6 +21,70 @@ exports[`Webpack 4 Loader + Minification minify chunks 3`] = `
 "
 `;
 
+exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 1`] = `
+"module.exports=function(h){function b(n){for(var e=n[0],r=n[1],a,f,o=0,c=[];o<e.length;o++)f=e[o],Object.prototype.hasOwnProperty.call(u,f)&&u[f]&&c.push(u[f][0]),u[f]=0;for(a in r)Object.prototype.hasOwnProperty.call(r,a)&&(h[a]=r[a]);for(j&&j(n);c.length;)c.shift()()}var i={},u={index:0};function y(n){return t.p+\\"\\"+({\\"named-chunk-bar\\":\\"named-chunk-bar\\",\\"named-chunk-foo\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"}function t(n){if(i[n])return i[n].exports;var e=i[n]={i:n,l:!1,exports:{}};return h[n].call(e.exports,e,e.exports,t),e.l=!0,e.exports}t.e=function(e){var r=[],a=u[e];if(a!==0)if(a)r.push(a[2]);else{var f=new Promise(function(s,p){a=u[e]=[s,p]});r.push(a[2]=f);var o=document.createElement(\\"script\\"),c;o.charset=\\"utf-8\\",o.timeout=120,t.nc&&o.setAttribute(\\"nonce\\",t.nc),o.src=y(e);var d=new Error;c=function(s){o.onerror=o.onload=null,clearTimeout(O);var p=u[e];if(p!==0){if(p){var m=s&&(s.type===\\"load\\"?\\"missing\\":s.type),v=s&&s.target&&s.target.src;d.message=\\"Loading chunk \\"+e+\` failed.
+(\`+m+\\": \\"+v+\\")\\",d.name=\\"ChunkLoadError\\",d.type=m,d.request=v,p[1](d)}u[e]=void 0}};var O=setTimeout(function(){c({type:\\"timeout\\",target:o})},12e4);o.onerror=o.onload=c,document.head.appendChild(o)}return Promise.all(r)},t.m=h,t.c=i,t.d=function(n,e,r){t.o(n,e)||Object.defineProperty(n,e,{enumerable:!0,get:r})},t.r=function(n){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(n,\\"__esModule\\",{value:!0})},t.t=function(n,e){if(e&1&&(n=t(n)),e&8)return n;if(e&4&&typeof n==\\"object\\"&&n&&n.__esModule)return n;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,\\"default\\",{enumerable:!0,value:n}),e&2&&typeof n!=\\"string\\")for(var a in n)t.d(r,a,function(f){return n[f]}.bind(null,a));return r},t.n=function(n){var e=n&&n.__esModule?function(){return n.default}:function(){return n};return t.d(e,\\"a\\",e),e},t.o=function(n,e){return Object.prototype.hasOwnProperty.call(n,e)},t.p=\\"\\",t.oe=function(n){throw console.error(n),n};var l=window.webpackJsonp=window.webpackJsonp||[],w=l.push.bind(l);l.push=b,l=l.slice();for(var g=0;g<l.length;g++)b(l[g]);var j=w;return t(t.s=\\"./index.js\\")}({\\"./index.js\\":function(h,b,i){const u=i.e(\\"named-chunk-foo\\").then(i.bind(null,\\"./foo.js\\")),y=i.e(\\"named-chunk-bar\\").then(i.bind(null,\\"./bar.js\\"));u.then(console.log)}});
+"
+`;
+
+exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 2`] = `
+"(window.webpackJsonp=window.webpackJsonp||[]).push([[\\"named-chunk-foo\\"],{\\"./foo.js\\":function(s,o,n){\\"use strict\\";n.r(o),console.log(\\"foo\\"),o.default=1}}]);
+"
+`;
+
+exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 3`] = `
+"(window[\\"webpackJsonp\\"] = window[\\"webpackJsonp\\"] || []).push([[\\"named-chunk-bar\\"],{
+
+/***/ \\"./bar.js\\":
+/*!***************!*\\\\
+  !*** /bar.js ***!
+  \\\\***************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+__webpack_require__.r(__webpack_exports__);
+console.log(\\"bar\\" + 1);
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (Symbol(\\"bar\\"));
+
+
+/***/ })
+
+}]);"
+`;
+
+exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 1`] = `
+"module.exports=function(h){function b(n){for(var e=n[0],r=n[1],a,f,o=0,c=[];o<e.length;o++)f=e[o],Object.prototype.hasOwnProperty.call(u,f)&&u[f]&&c.push(u[f][0]),u[f]=0;for(a in r)Object.prototype.hasOwnProperty.call(r,a)&&(h[a]=r[a]);for(j&&j(n);c.length;)c.shift()()}var i={},u={index:0};function y(n){return t.p+\\"\\"+({\\"named-chunk-bar\\":\\"named-chunk-bar\\",\\"named-chunk-foo\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"}function t(n){if(i[n])return i[n].exports;var e=i[n]={i:n,l:!1,exports:{}};return h[n].call(e.exports,e,e.exports,t),e.l=!0,e.exports}t.e=function(e){var r=[],a=u[e];if(a!==0)if(a)r.push(a[2]);else{var f=new Promise(function(s,p){a=u[e]=[s,p]});r.push(a[2]=f);var o=document.createElement(\\"script\\"),c;o.charset=\\"utf-8\\",o.timeout=120,t.nc&&o.setAttribute(\\"nonce\\",t.nc),o.src=y(e);var d=new Error;c=function(s){o.onerror=o.onload=null,clearTimeout(O);var p=u[e];if(p!==0){if(p){var m=s&&(s.type===\\"load\\"?\\"missing\\":s.type),v=s&&s.target&&s.target.src;d.message=\\"Loading chunk \\"+e+\` failed.
+(\`+m+\\": \\"+v+\\")\\",d.name=\\"ChunkLoadError\\",d.type=m,d.request=v,p[1](d)}u[e]=void 0}};var O=setTimeout(function(){c({type:\\"timeout\\",target:o})},12e4);o.onerror=o.onload=c,document.head.appendChild(o)}return Promise.all(r)},t.m=h,t.c=i,t.d=function(n,e,r){t.o(n,e)||Object.defineProperty(n,e,{enumerable:!0,get:r})},t.r=function(n){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(n,\\"__esModule\\",{value:!0})},t.t=function(n,e){if(e&1&&(n=t(n)),e&8)return n;if(e&4&&typeof n==\\"object\\"&&n&&n.__esModule)return n;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,\\"default\\",{enumerable:!0,value:n}),e&2&&typeof n!=\\"string\\")for(var a in n)t.d(r,a,function(f){return n[f]}.bind(null,a));return r},t.n=function(n){var e=n&&n.__esModule?function(){return n.default}:function(){return n};return t.d(e,\\"a\\",e),e},t.o=function(n,e){return Object.prototype.hasOwnProperty.call(n,e)},t.p=\\"\\",t.oe=function(n){throw console.error(n),n};var l=window.webpackJsonp=window.webpackJsonp||[],w=l.push.bind(l);l.push=b,l=l.slice();for(var g=0;g<l.length;g++)b(l[g]);var j=w;return t(t.s=\\"./index.js\\")}({\\"./index.js\\":function(h,b,i){const u=i.e(\\"named-chunk-foo\\").then(i.bind(null,\\"./foo.js\\")),y=i.e(\\"named-chunk-bar\\").then(i.bind(null,\\"./bar.js\\"));u.then(console.log)}});
+"
+`;
+
+exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 2`] = `
+"(window[\\"webpackJsonp\\"] = window[\\"webpackJsonp\\"] || []).push([[\\"named-chunk-foo\\"],{
+
+/***/ \\"./foo.js\\":
+/*!***************!*\\\\
+  !*** /foo.js ***!
+  \\\\***************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+__webpack_require__.r(__webpack_exports__);
+console.log(\\"foo\\");
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (1);
+
+
+/***/ })
+
+}]);"
+`;
+
+exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 3`] = `
+"(window.webpackJsonp=window.webpackJsonp||[]).push([[\\"named-chunk-bar\\"],{\\"./bar.js\\":function(a,n,o){\\"use strict\\";o.r(n),console.log(\\"bar\\"+1),n.default=Symbol(\\"bar\\")}}]);
+"
+`;
+
 exports[`Webpack 4 Loader + Minification minify w/ devtool inline-source-map 1`] = `
 "module.exports=function(f){var n={};function r(t){if(n[t])return n[t].exports;var e=n[t]={i:t,l:!1,exports:{}};return f[t].call(e.exports,e,e.exports,r),e.l=!0,e.exports}return r.m=f,r.c=n,r.d=function(t,e,o){r.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},r.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},r.t=function(t,e){if(e&1&&(t=r(t)),e&8)return t;if(e&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,\\"default\\",{enumerable:!0,value:t}),e&2&&typeof t!=\\"string\\")for(var u in t)r.d(o,u,function(i){return t[i]}.bind(null,u));return o},r.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(e,\\"a\\",e),e},r.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},r.p=\\"\\",r(r.s=\\"./index.js\\")}({\\"./bar.js\\":function(f,n,r){\\"use strict\\";r.r(n),console.log(\\"bar\\"+1),n.default=Symbol(\\"bar\\")},\\"./foo.js\\":function(f,n,r){\\"use strict\\";r.r(n),console.log(\\"foo\\"),n.default=1},\\"./index.js\\":function(f,n,r){\\"use strict\\";r.r(n);var t=r(\\"./foo.js\\"),e=r(\\"./bar.js\\");console.log(t.default)}});
 
@@ -293,6 +357,82 @@ exports[`Webpack 5 Loader + Minification minify chunks 2`] = `
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks 3`] = `
+"(self.webpackChunk=self.webpackChunk||[]).push([[\\"named-chunk-bar\\"],{\\"./bar.js\\":(l,s,u)=>{\\"use strict\\";u.r(s),u.d(s,{default:()=>a}),console.log(\\"bar\\"+1);const a=Symbol(\\"bar\\")}}]);
+"
+`;
+
+exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 1`] = `
+"module.exports=(()=>{var b={\\"./index.js\\":(e,r,o)=>{const p=o.e(\\"named-chunk-foo\\").then(o.bind(o,\\"./foo.js\\")),t=o.e(\\"named-chunk-bar\\").then(o.bind(o,\\"./bar.js\\"));p.then(console.log)}},m={};function n(e){if(m[e])return m[e].exports;var r=m[e]={exports:{}};return b[e](r,r.exports,n),r.exports}return n.m=b,(()=>{n.d=(e,r)=>{for(var o in r)n.o(r,o)&&!n.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:r[o]})}})(),(()=>{n.f={},n.e=e=>Promise.all(Object.keys(n.f).reduce((r,o)=>(n.f[o](e,r),r),[]))})(),(()=>{n.u=e=>\\"\\"+e+\\".js\\"})(),(()=>{n.g=function(){if(typeof globalThis==\\"object\\")return globalThis;try{return this||new Function(\\"return this\\")()}catch(e){if(typeof window==\\"object\\")return window}}()})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{var e={};n.l=(r,o,p)=>{if(e[r]){e[r].push(o);return}var t,s;if(p!==void 0)for(var a=document.getElementsByTagName(\\"script\\"),c=0;c<a.length;c++){var l=a[c];if(l.getAttribute(\\"src\\")==r){t=l;break}}t||(s=!0,t=document.createElement(\\"script\\"),t.charset=\\"utf-8\\",t.timeout=120,n.nc&&t.setAttribute(\\"nonce\\",n.nc),t.src=r),e[r]=[o];var i=(u,d)=>{t.onerror=t.onload=null,clearTimeout(f);var h=e[r];if(delete e[r],t.parentNode&&t.parentNode.removeChild(t),h&&h.forEach(g=>g(d)),u)return u(d)},f=setTimeout(i.bind(null,void 0,{type:\\"timeout\\",target:t}),12e4);t.onerror=i.bind(null,t.onerror),t.onload=i.bind(null,t.onload),s&&document.head.appendChild(t)}})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})(),(()=>{var e;n.g.importScripts&&(e=n.g.location+\\"\\");var r=n.g.document;if(!e&&r&&(r.currentScript&&(e=r.currentScript.src),!e)){var o=r.getElementsByTagName(\\"script\\");o.length&&(e=o[o.length-1].src)}if(!e)throw new Error(\\"Automatic publicPath is not supported in this browser\\");e=e.replace(/#.*$/,\\"\\").replace(/\\\\?.*$/,\\"\\").replace(/\\\\/[^\\\\/]+$/,\\"/\\"),n.p=e})(),(()=>{var e={index:0};n.f.j=(t,s)=>{var a=n.o(e,t)?e[t]:void 0;if(a!==0)if(a)s.push(a[2]);else{var c=new Promise((u,d)=>{a=e[t]=[u,d]});s.push(a[2]=c);var l=n.p+n.u(t),i=new Error,f=u=>{if(n.o(e,t)&&(a=e[t],a!==0&&(e[t]=void 0),a)){var d=u&&(u.type===\\"load\\"?\\"missing\\":u.type),h=u&&u.target&&u.target.src;i.message=\\"Loading chunk \\"+t+\` failed.
+(\`+d+\\": \\"+h+\\")\\",i.name=\\"ChunkLoadError\\",i.type=d,i.request=h,a[1](i)}};n.l(l,f,\\"chunk-\\"+t)}};var r=t=>{for(var[s,a,c]=t,l,i,f=0,u=[];f<s.length;f++)i=s[f],n.o(e,i)&&e[i]&&u.push(e[i][0]),e[i]=0;for(l in a)n.o(a,l)&&(n.m[l]=a[l]);for(c&&c(n),p(t);u.length;)u.shift()()},o=self.webpackChunk=self.webpackChunk||[],p=o.push.bind(o);o.push=r})(),n(\\"./index.js\\")})();
+"
+`;
+
+exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 2`] = `
+"(self.webpackChunk=self.webpackChunk||[]).push([[\\"named-chunk-foo\\"],{\\"./foo.js\\":(n,o,s)=>{\\"use strict\\";s.r(o),s.d(o,{default:()=>u}),console.log(\\"foo\\");const u=1}}]);
+"
+`;
+
+exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 3`] = `
+"(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[\\"named-chunk-bar\\"],{
+
+/***/ \\"./bar.js\\":
+/*!****************!*\\\\
+  !*** ./bar.js ***!
+  \\\\****************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+\\"use strict\\";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+console.log(\\"bar\\" + 1);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Symbol(\\"bar\\"));
+
+
+/***/ })
+
+}]);"
+`;
+
+exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 1`] = `
+"module.exports=(()=>{var b={\\"./index.js\\":(e,r,o)=>{const p=o.e(\\"named-chunk-foo\\").then(o.bind(o,\\"./foo.js\\")),t=o.e(\\"named-chunk-bar\\").then(o.bind(o,\\"./bar.js\\"));p.then(console.log)}},m={};function n(e){if(m[e])return m[e].exports;var r=m[e]={exports:{}};return b[e](r,r.exports,n),r.exports}return n.m=b,(()=>{n.d=(e,r)=>{for(var o in r)n.o(r,o)&&!n.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:r[o]})}})(),(()=>{n.f={},n.e=e=>Promise.all(Object.keys(n.f).reduce((r,o)=>(n.f[o](e,r),r),[]))})(),(()=>{n.u=e=>\\"\\"+e+\\".js\\"})(),(()=>{n.g=function(){if(typeof globalThis==\\"object\\")return globalThis;try{return this||new Function(\\"return this\\")()}catch(e){if(typeof window==\\"object\\")return window}}()})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{var e={};n.l=(r,o,p)=>{if(e[r]){e[r].push(o);return}var t,s;if(p!==void 0)for(var a=document.getElementsByTagName(\\"script\\"),c=0;c<a.length;c++){var l=a[c];if(l.getAttribute(\\"src\\")==r){t=l;break}}t||(s=!0,t=document.createElement(\\"script\\"),t.charset=\\"utf-8\\",t.timeout=120,n.nc&&t.setAttribute(\\"nonce\\",n.nc),t.src=r),e[r]=[o];var i=(u,d)=>{t.onerror=t.onload=null,clearTimeout(f);var h=e[r];if(delete e[r],t.parentNode&&t.parentNode.removeChild(t),h&&h.forEach(g=>g(d)),u)return u(d)},f=setTimeout(i.bind(null,void 0,{type:\\"timeout\\",target:t}),12e4);t.onerror=i.bind(null,t.onerror),t.onload=i.bind(null,t.onload),s&&document.head.appendChild(t)}})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})(),(()=>{var e;n.g.importScripts&&(e=n.g.location+\\"\\");var r=n.g.document;if(!e&&r&&(r.currentScript&&(e=r.currentScript.src),!e)){var o=r.getElementsByTagName(\\"script\\");o.length&&(e=o[o.length-1].src)}if(!e)throw new Error(\\"Automatic publicPath is not supported in this browser\\");e=e.replace(/#.*$/,\\"\\").replace(/\\\\?.*$/,\\"\\").replace(/\\\\/[^\\\\/]+$/,\\"/\\"),n.p=e})(),(()=>{var e={index:0};n.f.j=(t,s)=>{var a=n.o(e,t)?e[t]:void 0;if(a!==0)if(a)s.push(a[2]);else{var c=new Promise((u,d)=>{a=e[t]=[u,d]});s.push(a[2]=c);var l=n.p+n.u(t),i=new Error,f=u=>{if(n.o(e,t)&&(a=e[t],a!==0&&(e[t]=void 0),a)){var d=u&&(u.type===\\"load\\"?\\"missing\\":u.type),h=u&&u.target&&u.target.src;i.message=\\"Loading chunk \\"+t+\` failed.
+(\`+d+\\": \\"+h+\\")\\",i.name=\\"ChunkLoadError\\",i.type=d,i.request=h,a[1](i)}};n.l(l,f,\\"chunk-\\"+t)}};var r=t=>{for(var[s,a,c]=t,l,i,f=0,u=[];f<s.length;f++)i=s[f],n.o(e,i)&&e[i]&&u.push(e[i][0]),e[i]=0;for(l in a)n.o(a,l)&&(n.m[l]=a[l]);for(c&&c(n),p(t);u.length;)u.shift()()},o=self.webpackChunk=self.webpackChunk||[],p=o.push.bind(o);o.push=r})(),n(\\"./index.js\\")})();
+"
+`;
+
+exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 2`] = `
+"(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[\\"named-chunk-foo\\"],{
+
+/***/ \\"./foo.js\\":
+/*!****************!*\\\\
+  !*** ./foo.js ***!
+  \\\\****************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+\\"use strict\\";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+console.log(\\"foo\\");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (1);
+
+
+/***/ })
+
+}]);"
+`;
+
+exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 3`] = `
 "(self.webpackChunk=self.webpackChunk||[]).push([[\\"named-chunk-bar\\"],{\\"./bar.js\\":(l,s,u)=>{\\"use strict\\";u.r(s),u.d(s,{default:()=>a}),console.log(\\"bar\\"+1);const a=Symbol(\\"bar\\")}}]);
 "
 `;

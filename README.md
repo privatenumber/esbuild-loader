@@ -123,7 +123,7 @@ In `webpack.config.js`:
 ```
 
 > _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
-> 
+>
 > The `target` option tells _esbuild_ that it can use newer JS syntax to perform better minification. If you're not using TypeScript or any syntax unsupported by Webpack, you can also leverage this as a transpilation step. It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
 
 ## ⚙️ Options
@@ -140,11 +140,13 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 
 ### MinifyPlugin
 - `target` `<String>` (`esnext`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. es2016, chrome80, esnext)
-- `minify` `<Boolean>` (`true`) - Sets all `minify` flags
-- `minifyWhitespace` `<Boolean>` - Remove whitespace
-- `minifyIdentifiers` `<Boolean>` - Shorten identifiers
-- `minifySyntax` `<Boolean>` - Use equivalent but shorter syntax
-- `sourcemap` `<Boolean>` (defaults to Webpack `devtool`)- Whether to emit sourcemaps
+- `minify` `Boolean` (`true`) - Sets all `minify` flags
+- `minifyWhitespace` `Boolean` - Remove whitespace
+- `minifyIdentifiers` `Boolean` - Shorten identifiers
+- `minifySyntax` `Boolean` - Use equivalent but shorter syntax
+- `sourcemap` `Boolean` (defaults to Webpack `devtool`) - Whether to emit sourcemaps
+- `include` `String|RegExp|Array<String|RegExp>` - Filter assets for inclusion in minification
+- `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
 
 
 ## 💼 License
