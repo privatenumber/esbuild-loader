@@ -1,4 +1,4 @@
-export const js = {
+const js = {
 	'/index.js': `
 		import Foo from './foo.js'
 		import Bar from './bar.js'
@@ -15,7 +15,7 @@ export const js = {
 	`,
 };
 
-export const ts = {
+const ts = {
 	'/index.js': `
 		import usePrevious from './use-previous.ts'
 		console.log(usePrevious)
@@ -36,7 +36,7 @@ export const ts = {
 	`,
 };
 
-export const ts2 = {
+const ts2 = {
 	'/index.js': `
 		import usePrevious from './use-previous.ts'
 		console.log(usePrevious)
@@ -56,7 +56,7 @@ export const ts2 = {
 	`,
 };
 
-export const tsx = {
+const tsx = {
 	'/index.js': `
 		import Foo from './foo.tsx'
 		console.log(Foo)
@@ -75,7 +75,7 @@ export const tsx = {
 	`,
 };
 
-export const invalidTsx = {
+const invalidTsx = {
 	'/index.js': `
 		import usePrevious from './use-previous.tsx'
 		console.log(usePrevious)
@@ -92,7 +92,7 @@ export const invalidTsx = {
 	`,
 };
 
-export const target = {
+const target = {
 	'/index.js': `
 		// es2016
 		console.log(10 ** 4)
@@ -107,7 +107,7 @@ export const target = {
 	`,
 };
 
-export const webpackChunks = {
+const webpackChunks = {
 	'/index.js': `
 		const Foo = import(/* webpackChunkName: "named-chunk-foo" */'./foo.js')
 		const Bar = import(/* webpackChunkName: "named-chunk-bar" */'./bar.js')
@@ -123,4 +123,14 @@ export const webpackChunks = {
 	console.log('bar' + 1);
 	export default Symbol('bar');
 	`,
+};
+
+export {
+	js,
+	ts,
+	ts2,
+	tsx,
+	invalidTsx,
+	target,
+	webpackChunks,
 };
