@@ -1,5 +1,5 @@
 dependencies:
-  esbuild: 0.8.17
+  esbuild: 0.8.28
   loader-utils: 2.0.0
   type-fest: 0.20.2
   webpack-sources: 2.2.0
@@ -2536,12 +2536,12 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==
-  /esbuild/0.8.17:
+  /esbuild/0.8.28:
     dev: false
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-ReHap+Iyn5BQF0B8F3xrLwu+j57ri5uDUw2ej9XTPAuFDebYiWwRzBY4jhF610bklveXLbCGim/8/2wQKQlu1w==
+      integrity: sha512-8u4PliPrsELMwl0X4ChPJvlNfoSh5OSpLHcAFFiipi2m/k+9i4cEjQB8rztLiiqO7kXnL+IaNU36StgnpHhOwA==
   /escalade/3.1.1:
     dev: true
     engines:
@@ -8028,7 +8028,7 @@ specifiers:
   '@types/jest': ^26.0.19
   '@types/loader-utils': ^2.0.1
   '@types/webpack': ^4.41.25
-  esbuild: ^0.8.17
+  esbuild: ^0.8.28
   husky: ^4.3.6
   jest: ^26.6.3
   lint-staged: ^10.5.3
