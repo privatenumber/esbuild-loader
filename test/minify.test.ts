@@ -10,16 +10,22 @@ describe.each([
 ])('%s Loader + Minification', (_name, webpack) => {
 	test('minify', async () => {
 		const statsUnminified = await build(webpack, fixtures.js);
-
 		const stats = await build(webpack, fixtures.js, config => {
 			config.optimization = {
 				minimize: true,
-				minimizer: [new ESBuildMinifyPlugin()],
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						target: 'es2019',
+					}),
+				],
 			};
 		});
-
 		expect(statsUnminified.hash).not.toBe(stats.hash);
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+
+		const file = getFile(stats, '/dist/index.js');
+
+		expect(file.content).toMatchSnapshot();
+		expect(file.execute()).toMatchSnapshot();
 	});
 
 	test('minifyWhitespace', async () => {
@@ -33,8 +39,10 @@ describe.each([
 				],
 			};
 		});
+		const file = getFile(stats, '/dist/index.js');
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(file.content).toMatchSnapshot();
+		expect(file.execute()).toMatchSnapshot();
 	});
 
 	test('minifyIdentifiers', async () => {
@@ -48,8 +56,10 @@ describe.each([
 				],
 			};
 		});
+		const file = getFile(stats, '/dist/index.js');
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(file.content).toMatchSnapshot();
+		expect(file.execute()).toMatchSnapshot();
 	});
 
 	test('minifySyntax', async () => {
@@ -58,13 +68,16 @@ describe.each([
 				minimize: true,
 				minimizer: [
 					new ESBuildMinifyPlugin({
+						target: 'es2019',
 						minifySyntax: true,
 					}),
 				],
 			};
 		});
+		const file = getFile(stats, '/dist/index.js');
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(file.content).toMatchSnapshot();
+		expect(file.execute()).toMatchSnapshot();
 	});
 
 	test('minify chunks', async () => {
@@ -75,9 +88,9 @@ describe.each([
 			};
 		});
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toMatchSnapshot();
 	});
 
 	test('minify chunks filtered using "include"', async () => {
@@ -91,33 +104,35 @@ describe.each([
 		});
 
 		// The string "__webpack_require__" is only present in unminified chunks
-		expect(getFile(stats, '/dist/index.js')).not.toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-foo.js')).toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-bar.js')).not.toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/index.js').content).not.toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-bar.js').content).not.toContain('__webpack_require__');
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toMatchSnapshot();
 	});
 
 	test('minify chunks filtered using "exclude"', async () => {
 		const stats = await build(webpack, fixtures.webpackChunks, config => {
 			config.optimization = {
 				minimize: true,
-				minimizer: [new ESBuildMinifyPlugin({
-					exclude: /bar/,
-				})],
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						exclude: /bar/,
+					}),
+				],
 			};
 		});
 
 		// The string "__webpack_require__" is only present in unminified chunks
-		expect(getFile(stats, '/dist/index.js')).not.toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-foo.js')).not.toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-bar.js')).toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/index.js').content).not.toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-foo.js').content).not.toContain('__webpack_require__');
+		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toContain('__webpack_require__');
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-foo.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-bar.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();
+		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toMatchSnapshot();
 	});
 
 	test('minify w/ no devtool', async () => {
@@ -128,8 +143,11 @@ describe.each([
 				minimizer: [new ESBuildMinifyPlugin()],
 			};
 		});
+		const file = getFile(stats, '/dist/index.js');
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(file.content).toMatchSnapshot();
+		expect(file.content).toContain('//# sourceURL');
+		expect(file.execute()).toMatchSnapshot();
 	});
 
 	test('minify w/ devtool inline-source-map', async () => {
@@ -137,13 +155,15 @@ describe.each([
 			config.devtool = 'inline-source-map';
 			config.optimization = {
 				minimize: true,
-				minimizer: [new ESBuildMinifyPlugin()],
+				minimizer: [
+					new ESBuildMinifyPlugin(),
+				],
 			};
 		});
 
-		const contents = getFile(stats, '/dist/index.js');
-		expect(contents).toContain('//# sourceMappingURL=data:application/');
-		expect(contents).toMatchSnapshot();
+		const file = getFile(stats, '/dist/index.js');
+		expect(file.content).toContain('//# sourceMappingURL=data:application/');
+		expect(file.content).toMatchSnapshot();
 	});
 
 	test('minify w/ devtool source-maps', async () => {
@@ -155,9 +175,9 @@ describe.each([
 			};
 		});
 
-		const contents = getFile(stats, '/dist/index.js');
-		expect(contents).toContain('//# sourceMappingURL=index.js.map');
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		const file = getFile(stats, '/dist/index.js');
+		expect(file.content).toContain('//# sourceMappingURL=index.js.map');
+		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
 	test('minify w/ sourcemap option', async () => {
@@ -173,7 +193,7 @@ describe.each([
 			};
 		});
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
 	test('minify w/ sourcemap option and source-map plugin inline', async () => {
@@ -192,7 +212,7 @@ describe.each([
 			config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
 		});
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
 	test('minify w/ sourcemap option and source-map plugin external', async () => {
@@ -215,8 +235,8 @@ describe.each([
 			);
 		});
 
-		expect(getFile(stats, '/dist/index.js')).toMatchSnapshot();
-		expect(getFile(stats, '/dist/index.js.map')).toMatchSnapshot();
+		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(getFile(stats, '/dist/index.js.map').content).toMatchSnapshot();
 	});
 });
 

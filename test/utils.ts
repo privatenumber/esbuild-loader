@@ -95,5 +95,14 @@ export async function build(
 	});
 }
 
-export const getFile = (stats: Stats, filePath: string) =>
-	(stats.compilation.compiler.outputFileSystem as any).readFileSync(filePath, 'utf-8');
+export const getFile = (stats: Stats, filePath: string) => {
+	const content = (stats.compilation.compiler.outputFileSystem as any).readFileSync(filePath, 'utf-8');
+
+	return {
+		content,
+		execute(prefixCode = '') {
+			// eslint-disable-next-line no-eval,@typescript-eslint/restrict-plus-operands
+			return eval(prefixCode + content);
+		},
+	};
+};
