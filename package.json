@@ -34,7 +34,7 @@
 		]
 	},
 	"dependencies": {
-		"esbuild": "^0.8.28",
+		"esbuild": "^0.8.33",
 		"loader-utils": "^2.0.0",
 		"webpack-sources": "^2.2.0",
 		"type-fest": "^0.20.2"
