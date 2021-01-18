@@ -11,7 +11,10 @@
 	],
 	"license": "MIT",
 	"repository": "privatenumber/esbuild-loader",
-	"author": "Hiroki Osame <hiroki.osame@gmail.com>",
+	"author": {
+		"name": "Hiroki Osame",
+		"email": "hiroki.osame@gmail.com"
+	},
 	"files": [
 		"dist"
 	],
@@ -36,8 +39,8 @@
 	"dependencies": {
 		"esbuild": "^0.8.33",
 		"loader-utils": "^2.0.0",
-		"webpack-sources": "^2.2.0",
-		"type-fest": "^0.20.2"
+		"type-fest": "^0.20.2",
+		"webpack-sources": "^2.2.0"
 	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"
