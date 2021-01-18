@@ -8,16 +8,17 @@ async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
 	source: string,
 ) {
-	const done = this.async() as webpack.loader.loaderCallback;
+	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
 	const service = (this._compiler as Compiler).$esbuildService;
 
 	if (!service) {
-		return done(
+		done(
 			new Error(
 				'[esbuild-loader] You need to add ESBuildPlugin to your webpack config first',
 			),
 		);
+		return;
 	}
 
 	const transformOptions = {
