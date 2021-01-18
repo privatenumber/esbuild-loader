@@ -1,113 +1,139 @@
-export const js = {
+const js = {
 	'/index.js': `
-		import Foo from './foo.js'
-		import Bar from './bar.js'
-		console.log(Foo)
+		export * from './foo.js'
 	`,
 
 	'/foo.js': `
-	console.log('foo');
-	export default 1;
-	`,
-	'/bar.js': `
-	console.log('bar' + 1);
-	export default Symbol('bar');
-	`,
-};
+		export const es2016 = 10 ** 4;
 
-export const ts = {
-	'/index.js': `
-		import usePrevious from './use-previous.ts'
-		console.log(usePrevious)
-	`,
+		export const es2017 = typeof (async () => {});
 
-	'/use-previous.ts': `
-	class Foo { foo }
+		export const es2018 = (() => {
+			const y = { a: 1 }
+			let x = {...y}
+			let {...z} = y
+			return z;
+		})();
 
-	const usePrevious = <T>(value: T) => {
-		const ref = useRef<T>();
-		useEffect(() => {
-			ref.current = value;
-		});
-		return ref.current;
-	};
+		export const es2019 = (() => {
+			try {
+				return 'try'
+			} catch {}
+		})();
 
-	export default usePrevious;
-	`,
-};
+		export const es2020 = (() => {
+			const obj = {
+				property: 1,
+			};
+			return [
+				obj?.property,
+				obj.prop ?? 2,
+				import.meta,
+			];
+		})();
 
-export const ts2 = {
-	'/index.js': `
-		import usePrevious from './use-previous.ts'
-		console.log(usePrevious)
-	`,
-
-	'/use-previous.ts': `
-	class Foo { foo }
-
-	const testFn = <V>(
-		l: Level,
-		options: { [key in Level]: V },
-	): V => {
-		return options[l];
-	};
-
-	export default testFn;
+		export const esnext = (() => {
+			let a;
+			return [
+				class { x = 2; },
+				class { static x = 1; },
+				class { #x() {} },
+				class { #x },
+				class { static #x() {} },
+				class { static #x },
+				a ??= 2,
+			];
+		})();
 	`,
 };
 
-export const tsx = {
+const ts = {
 	'/index.js': `
-		import Foo from './foo.tsx'
-		console.log(Foo)
+		import { foo } from './foo.ts'
+		export default foo()
+	`,
+
+	'/foo.ts': `
+		import type {Type} from 'foo'
+
+		interface Foo {}
+
+		type Foo = number
+
+		declare module 'foo' {}
+
+		export function foo(): string {
+			return 'foo'
+		}
+
+		// For "ts as tsx" test
+		const bar = <T>(value: T) => fn<T>();
+	`,
+};
+
+const ts2 = {
+	'/index.js': `
+		export { default } from './foo.ts'
+	`,
+
+	'/foo.ts': `
+		const testFn = <V>(
+			l: obj,
+			options: { [key in obj]: V },
+		): V => {
+			return options[l];
+		};
+
+		export default testFn;
+	`,
+};
+
+const tsx = {
+	'/index.js': `
+		import Foo, { HelloWorld } from './foo.tsx'
+		export default [
+			HelloWorld,
+			(new Foo()).render(),
+		];
 	`,
 
 	'/foo.tsx': `
+		export const HelloWorld = <><div>hello world</div></>;
 
-	const HelloWorld = <><div>hello world</div></>;
-	console.log(HelloWorld);
-
-	export default class Foo {
-		render() {
-			return <div className="hehe">hello there!!!</div>
+		export default class Foo {
+			render() {
+				return <div className="class-name">content</div>
+			}
 		}
-	}
 	`,
 };
 
-export const invalidTsx = {
+const invalidTsx = {
 	'/index.js': `
 		import usePrevious from './use-previous.tsx'
 		console.log(usePrevious)
 	`,
 
 	'/use-previous.tsx': `
-	const usePrevious = <T><INVALID TSX>(value: T) => {
-		const ref = useRef<T><asdf>();
-		return ref.current;
-	};
+		const usePrevious = <T><INVALID TSX>(value: T) => {
+			const ref = useRef<T><asdf>();
+			return ref.current;
+		};
 
-
-	export default usePrevious;
+		export default usePrevious;
 	`,
 };
 
-export const target = {
+const tsConfig = {
 	'/index.js': `
-		// es2016
-		console.log(10 ** 4)
-
-		// es2017
-		async () => {}
-
-		// 2018
-		const y = { a: 1 };
-		let x = {...y}
-		let {...z} = y
+		export { default } from './foo.ts'
+	`,
+	'/foo.ts': `
+		export default class A { a }
 	`,
 };
 
-export const webpackChunks = {
+const webpackChunks = {
 	'/index.js': `
 		const Foo = import(/* webpackChunkName: "named-chunk-foo" */'./foo.js')
 		const Bar = import(/* webpackChunkName: "named-chunk-bar" */'./bar.js')
@@ -119,8 +145,19 @@ export const webpackChunks = {
 	console.log('foo');
 	export default 1;
 	`,
+
 	'/bar.js': `
 	console.log('bar' + 1);
 	export default Symbol('bar');
 	`,
+};
+
+export {
+	js,
+	ts,
+	ts2,
+	tsx,
+	invalidTsx,
+	tsConfig,
+	webpackChunks,
 };

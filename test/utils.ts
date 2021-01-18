@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import {ufs} from 'unionfs';
 import {Volume, DirectoryJSON} from 'memfs';
-import {ESBuildPlugin} from '..';
+import {ESBuildPlugin} from '../dist/index.js';
 import {
 	Configuration as Wp4Configuration,
 	Stats,
@@ -74,9 +74,9 @@ export async function build(
 		compiler.inputFileSystem = ufs.use(fs).use(mfs as any);
 		compiler.outputFileSystem = mfs;
 
-		compiler.run((err: Error, stats: Stats) => {
-			if (err) {
-				reject(err);
+		compiler.run((error: Error, stats: Stats) => {
+			if (error) {
+				reject(error);
 				return;
 			}
 
@@ -95,5 +95,14 @@ export async function build(
 	});
 }
 
-export const getFile = (stats: Stats, filePath: string) =>
-	(stats.compilation.compiler.outputFileSystem as any).readFileSync(filePath, 'utf-8');
+export const getFile = (stats: Stats, filePath: string) => {
+	const content = (stats.compilation.compiler.outputFileSystem as any).readFileSync(filePath, 'utf-8');
+
+	return {
+		content,
+		execute(prefixCode = '') {
+			// eslint-disable-next-line no-eval,@typescript-eslint/restrict-plus-operands
+			return eval(prefixCode + content);
+		},
+	};
+};
