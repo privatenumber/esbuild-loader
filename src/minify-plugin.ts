@@ -1,6 +1,5 @@
 import assert from 'assert';
 import {RawSource, SourceMapSource} from 'webpack-sources';
-import {RawSourceMap} from 'source-map';
 import {Compiler, MinifyPluginOptions} from './interfaces';
 import webpack = require('webpack');
 import {matchObject} from 'webpack/lib/ModuleFilenameHelpers';
@@ -13,8 +12,8 @@ type Asset = webpack.compilation.Asset;
 const isJsFile = /\.js$/i;
 const pluginName = 'esbuild-minify';
 
-// eslint-disable-next-line unicorn/no-fn-reference-in-iterator
-const flatMap = (array: any[], cb: (element: any) => any) => array.flatMap ? array.flatMap(cb) : [].concat(...array.map(cb));
+// eslint-disable-next-line unicorn/no-array-callback-reference
+const flatMap = (array: any[], cb: (element: any) => any) => [].concat(...array.map(cb));
 
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
@@ -119,7 +118,7 @@ class ESBuildMinifyPlugin {
 							assetName,
 							result.map as any,
 							source?.toString(),
-							(map as RawSourceMap),
+							map!,
 							true,
 						) :
 						new RawSource(result.code || ''),
