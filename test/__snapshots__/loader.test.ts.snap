@@ -361,12 +361,25 @@ exports[`Webpack 4 Loader ts 1`] = `
 /*!***************!*\\\\
   !*** /foo.ts ***!
   \\\\***************/
-/*! exports provided: foo */
+/*! exports provided: a, b, foo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"a\\", function() { return a; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"b\\", function() { return b; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"foo\\", function() { return foo; });
+var BasicEnum;
+(function(BasicEnum2) {
+  BasicEnum2[BasicEnum2[\\"Left\\"] = 0] = \\"Left\\";
+  BasicEnum2[BasicEnum2[\\"Right\\"] = 1] = \\"Right\\";
+})(BasicEnum || (BasicEnum = {}));
+var NamedEnum;
+(function(NamedEnum2) {
+  NamedEnum2[\\"SomeEnum\\"] = \\"some-value\\";
+})(NamedEnum || (NamedEnum = {}));
+const a = 0;
+const b = NamedEnum.SomeEnum;
 function foo() {
   return \\"foo\\";
 }
@@ -494,12 +507,25 @@ exports[`Webpack 4 Loader ts as tsx 1`] = `
 /*!***************!*\\\\
   !*** /foo.ts ***!
   \\\\***************/
-/*! exports provided: foo */
+/*! exports provided: a, b, foo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"a\\", function() { return a; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"b\\", function() { return b; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"foo\\", function() { return foo; });
+var BasicEnum;
+(function(BasicEnum2) {
+  BasicEnum2[BasicEnum2[\\"Left\\"] = 0] = \\"Left\\";
+  BasicEnum2[BasicEnum2[\\"Right\\"] = 1] = \\"Right\\";
+})(BasicEnum || (BasicEnum = {}));
+var NamedEnum;
+(function(NamedEnum2) {
+  NamedEnum2[\\"SomeEnum\\"] = \\"some-value\\";
+})(NamedEnum || (NamedEnum = {}));
+const a = 0;
+const b = NamedEnum.SomeEnum;
 function foo() {
   return \\"foo\\";
 }
@@ -2650,6 +2676,8 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./foo.ts ***!
   \\\\****************/
 /*! namespace exports */
+/*! export a [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export b [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export foo [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
@@ -2657,8 +2685,21 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"a\\": () => /* binding */ a,
+/* harmony export */   \\"b\\": () => /* binding */ b,
 /* harmony export */   \\"foo\\": () => /* binding */ foo
 /* harmony export */ });
+var BasicEnum;
+(function(BasicEnum2) {
+  BasicEnum2[BasicEnum2[\\"Left\\"] = 0] = \\"Left\\";
+  BasicEnum2[BasicEnum2[\\"Right\\"] = 1] = \\"Right\\";
+})(BasicEnum || (BasicEnum = {}));
+var NamedEnum;
+(function(NamedEnum2) {
+  NamedEnum2[\\"SomeEnum\\"] = \\"some-value\\";
+})(NamedEnum || (NamedEnum = {}));
+const a = 0;
+const b = NamedEnum.SomeEnum;
 function foo() {
   return \\"foo\\";
 }
@@ -2768,6 +2809,8 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./foo.ts ***!
   \\\\****************/
 /*! namespace exports */
+/*! export a [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export b [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export foo [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
@@ -2775,8 +2818,21 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"a\\": () => /* binding */ a,
+/* harmony export */   \\"b\\": () => /* binding */ b,
 /* harmony export */   \\"foo\\": () => /* binding */ foo
 /* harmony export */ });
+var BasicEnum;
+(function(BasicEnum2) {
+  BasicEnum2[BasicEnum2[\\"Left\\"] = 0] = \\"Left\\";
+  BasicEnum2[BasicEnum2[\\"Right\\"] = 1] = \\"Right\\";
+})(BasicEnum || (BasicEnum = {}));
+var NamedEnum;
+(function(NamedEnum2) {
+  NamedEnum2[\\"SomeEnum\\"] = \\"some-value\\";
+})(NamedEnum || (NamedEnum = {}));
+const a = 0;
+const b = NamedEnum.SomeEnum;
 function foo() {
   return \\"foo\\";
 }
