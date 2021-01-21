@@ -62,6 +62,19 @@ const ts = {
 
 		declare module 'foo' {}
 
+		enum BasicEnum {
+			Left,
+			Right,
+		}
+
+		enum NamedEnum {
+			SomeEnum = 'some-value',
+		}
+
+		export const a = BasicEnum.Left;
+
+		export const b = NamedEnum.SomeEnum;
+
 		export function foo(): string {
 			return 'foo'
 		}
