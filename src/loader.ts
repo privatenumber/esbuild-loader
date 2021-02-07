@@ -72,7 +72,8 @@ async function ESBuildLoader(
 
 			throw error;
 		});
-		done(null, result.code, result.map);
+
+		done(null, result.code, result.map && JSON.parse(result.map));
 	} catch (error: unknown) {
 		done(error as Error);
 	}
