@@ -2,7 +2,7 @@ import {startService} from 'esbuild';
 import {Compiler} from './interfaces';
 
 class ESBuildPlugin {
-	apply(compiler: Compiler) {
+	apply(compiler: Compiler): void {
 		let watching = false;
 
 		const safeStartService = async () => {

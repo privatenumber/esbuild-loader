@@ -1,5 +1,5 @@
-import webpack = require('webpack');
 import {getOptions} from 'loader-utils';
+import webpack from 'webpack';
 import {Compiler, LoaderOptions} from './interfaces';
 
 const tsxTryTsLoaderPtrn = /Unexpected|Expected/;
@@ -7,7 +7,7 @@ const tsxTryTsLoaderPtrn = /Unexpected|Expected/;
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
 	source: string,
-) {
+): Promise<void> {
 	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
 	const service = (this._compiler as Compiler).$esbuildService;
