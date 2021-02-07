@@ -1,5 +1,7 @@
 dependencies:
   esbuild: 0.8.42
+  joycon: 2.2.5
+  json5: 2.2.0
   loader-utils: 2.0.0
   type-fest: 0.20.2
   webpack-sources: 2.2.0
@@ -4869,6 +4871,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q==
+  /joycon/2.2.5:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-YqvUxoOcVPnCp0VU1/56f+iKSdvIRJYPznH22BdXV3xMk75SFXhWeJkZ8C9XxUWt1b5x2X1SxuFygW1U0FmkEQ==
   /js-tokens/4.0.0:
     dev: true
     resolution:
@@ -4979,6 +4987,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-KXPvOm8K9IJKFM0bmdn8QXh7udDh1g/giieX0NLCaMnb4hEiVFqnop2ImTXCc5e0/oHz3LTqmHGtExn5hfMkOA==
+  /json5/2.2.0:
+    dependencies:
+      minimist: 1.2.5
+    dev: false
+    engines:
+      node: '>=6'
+    hasBin: true
+    resolution:
+      integrity: sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
   /jsonfile/6.1.0:
     dependencies:
       universalify: 2.0.0
@@ -8198,6 +8215,8 @@ specifiers:
   esbuild: ^0.8.42
   husky: ^4.3.8
   jest: ^26.6.3
+  joycon: ^2.2.5
+  json5: ^2.2.0
   lint-staged: ^10.5.4
   loader-utils: ^2.0.0
   memfs: ^3.2.0
