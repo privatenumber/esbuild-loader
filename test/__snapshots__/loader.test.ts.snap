@@ -2399,25 +2399,16 @@ exports[`Webpack 5 Loader js 1`] = `
 /*!****************!*\\\\
   !*** ./foo.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export es2016 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2017 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2018 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2019 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2020 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export esnext [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* binding */ es2016,
-/* harmony export */   \\"es2017\\": () => /* binding */ es2017,
-/* harmony export */   \\"es2018\\": () => /* binding */ es2018,
-/* harmony export */   \\"es2019\\": () => /* binding */ es2019,
-/* harmony export */   \\"es2020\\": () => /* binding */ es2020,
-/* harmony export */   \\"esnext\\": () => /* binding */ esnext
+/* harmony export */   \\"es2016\\": () => (/* binding */ es2016),
+/* harmony export */   \\"es2017\\": () => (/* binding */ es2017),
+/* harmony export */   \\"es2018\\": () => (/* binding */ es2018),
+/* harmony export */   \\"es2019\\": () => (/* binding */ es2019),
+/* harmony export */   \\"es2020\\": () => (/* binding */ es2020),
+/* harmony export */   \\"esnext\\": () => (/* binding */ esnext)
 /* harmony export */ });
 var __defProp = Object.defineProperty;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -2530,25 +2521,16 @@ const esnext = (() => {
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export es2016 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2016 */
-/*! export es2017 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2017 */
-/*! export es2018 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2018 */
-/*! export es2019 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2019 */
-/*! export es2020 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2020 */
-/*! export esnext [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .esnext */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016,
-/* harmony export */   \\"es2017\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017,
-/* harmony export */   \\"es2018\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018,
-/* harmony export */   \\"es2019\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019,
-/* harmony export */   \\"es2020\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020,
-/* harmony export */   \\"esnext\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
 /* harmony export */ });
 /* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
 
@@ -2596,7 +2578,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -2654,15 +2636,11 @@ exports[`Webpack 5 Loader ts 1`] = `
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export default [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
 
@@ -2675,19 +2653,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************!*\\\\
   !*** ./foo.ts ***!
   \\\\****************/
-/*! namespace exports */
-/*! export a [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export b [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export foo [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"a\\": () => /* binding */ a,
-/* harmony export */   \\"b\\": () => /* binding */ b,
-/* harmony export */   \\"foo\\": () => /* binding */ foo
+/* harmony export */   \\"a\\": () => (/* binding */ a),
+/* harmony export */   \\"b\\": () => (/* binding */ b),
+/* harmony export */   \\"foo\\": () => (/* binding */ foo)
 /* harmony export */ });
 var BasicEnum;
 (function(BasicEnum2) {
@@ -2748,7 +2720,7 @@ const bar = (value) => fn();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -2787,15 +2759,11 @@ exports[`Webpack 5 Loader ts as tsx 1`] = `
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export default [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
 
@@ -2808,19 +2776,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************!*\\\\
   !*** ./foo.ts ***!
   \\\\****************/
-/*! namespace exports */
-/*! export a [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export b [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export foo [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"a\\": () => /* binding */ a,
-/* harmony export */   \\"b\\": () => /* binding */ b,
-/* harmony export */   \\"foo\\": () => /* binding */ foo
+/* harmony export */   \\"a\\": () => (/* binding */ a),
+/* harmony export */   \\"b\\": () => (/* binding */ b),
+/* harmony export */   \\"foo\\": () => (/* binding */ foo)
 /* harmony export */ });
 var BasicEnum;
 (function(BasicEnum2) {
@@ -2881,7 +2843,7 @@ const bar = (value) => fn();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -2914,15 +2876,11 @@ exports[`Webpack 5 Loader ts as tsx 2 1`] = `
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export default [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.ts .default */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => /* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default
+/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
 /* harmony export */ });
 /* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
 
@@ -2934,15 +2892,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************!*\\\\
   !*** ./foo.ts ***!
   \\\\****************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const testFn = (l, options) => {
   return options[l];
@@ -2992,7 +2946,7 @@ const testFn = (l, options) => {
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -3027,15 +2981,11 @@ exports[`Webpack 5 Loader ts w/ tsconfig 1`] = `
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export default [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.ts .default */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => /* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default
+/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
 /* harmony export */ });
 /* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
 
@@ -3047,15 +2997,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************!*\\\\
   !*** ./foo.ts ***!
   \\\\****************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => /* binding */ A
+/* harmony export */   \\"default\\": () => (/* binding */ A)
 /* harmony export */ });
 var __defProp = Object.defineProperty;
 var __publicField = (obj, key, value) => {
@@ -3114,7 +3060,7 @@ class A {
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -3147,15 +3093,11 @@ exports[`Webpack 5 Loader tsx 1`] = `
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export default [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
 
@@ -3171,17 +3113,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************!*\\\\
   !*** ./foo.tsx ***!
   \\\\*****************/
-/*! namespace exports */
-/*! export HelloWorld [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"HelloWorld\\": () => /* binding */ HelloWorld,
-/* harmony export */   \\"default\\": () => /* binding */ Foo
+/* harmony export */   \\"HelloWorld\\": () => (/* binding */ HelloWorld),
+/* harmony export */   \\"default\\": () => (/* binding */ Foo)
 /* harmony export */ });
 const HelloWorld = /* @__PURE__ */ createElement(Fragment, null, /* @__PURE__ */ createElement(\\"div\\", null, \\"hello world\\"));
 class Foo {
@@ -3235,7 +3172,7 @@ class Foo {
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -3291,15 +3228,11 @@ exports[`Webpack 5 Loader tsx w/ tsconfig 1`] = `
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export default [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
 
@@ -3315,17 +3248,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************!*\\\\
   !*** ./foo.tsx ***!
   \\\\*****************/
-/*! namespace exports */
-/*! export HelloWorld [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"HelloWorld\\": () => /* binding */ HelloWorld,
-/* harmony export */   \\"default\\": () => /* binding */ Foo
+/* harmony export */   \\"HelloWorld\\": () => (/* binding */ HelloWorld),
+/* harmony export */   \\"default\\": () => (/* binding */ Foo)
 /* harmony export */ });
 const HelloWorld = /* @__PURE__ */ customFactory(customFragment, null, /* @__PURE__ */ customFactory(\\"div\\", null, \\"hello world\\"));
 class Foo {
@@ -3379,7 +3307,7 @@ class Foo {
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -3428,7 +3356,7 @@ Object {
 exports[`Webpack 5 Source-map source-map eval 1`] = `
 "/*
  * ATTENTION: An \\"eval-source-map\\" devtool has been used.
- * This devtool is not neither made for production nor for readable output files.
+ * This devtool is neither made for production nor for readable output files.
  * It uses \\"eval()\\" calls to create a separate source file with attached SourceMaps in the browser devtools.
  * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
  * or disable the default devtool with \\"devtool: false\\".
@@ -3443,18 +3371,9 @@ module.exports =
 /*!****************!*\\\\
   !*** ./foo.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export es2016 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2017 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2018 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2019 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2020 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export esnext [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => /* binding */ es2016,\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => /* binding */ es2017,\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => /* binding */ es2018,\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => /* binding */ es2019,\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => /* binding */ es2020,\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => /* binding */ esnext\\\\n/* harmony export */ });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanM/MDhhYiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVO0FBQ3RCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksYUFBSTtBQUNaLE1BQVEsV0FBSyxHQUFMO0FBQ1IsU0FBTztBQUFBO0FBR0QsTUFBTSxTQUFVO0FBQ3RCO0FBQ0MsV0FBTztBQUFBLFdBQ0E7QUFBQTtBQUFBO0FBR0YsTUFBTSxTQUFVO0FBbEJ6QjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVO0FBN0J6QjtBQThCRyxNQUFJO0FBQ0osU0FBTztBQUFBLElBQ047QUFBQSxNQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQWhDaEI7QUFBQSxPQWlDbUIsY0FqQ25CLElBaUNtQixLQUFJLElBakN2QjtBQUFBO0FBQUE7QUFrQ1k7QUFBQTtBQUFBLGtDQUFFO0FBQUEsT0FsQ2Q7QUFBQTtBQUFBO0FBbUNZO0FBQUE7QUFBQSw0QkFuQ1o7QUFBQTtBQUFBLE9Bb0NtQiw2QkFBRTtBQUFBLE9BQUYsUUFwQ25CO0FBQUE7QUFBQSxPQXFDbUIsNkJBckNuQixJQXFDbUIsU0FyQ25CO0FBQUEsSUFzQ0ksb0JBQU07QUFBQTtBQUFBIiwiZmlsZSI6Ii4vZm9vLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./foo.js\\\\n\\");
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => (/* binding */ es2016),\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => (/* binding */ es2017),\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => (/* binding */ es2018),\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => (/* binding */ es2019),\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => (/* binding */ es2020),\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => (/* binding */ esnext)\\\\n/* harmony export */ });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanM/MDhhYiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVO0FBQ3RCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksYUFBSTtBQUNaLE1BQVEsV0FBSyxHQUFMO0FBQ1IsU0FBTztBQUFBO0FBR0QsTUFBTSxTQUFVO0FBQ3RCO0FBQ0MsV0FBTztBQUFBLFdBQ0E7QUFBQTtBQUFBO0FBR0YsTUFBTSxTQUFVO0FBbEJ6QjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVO0FBN0J6QjtBQThCRyxNQUFJO0FBQ0osU0FBTztBQUFBLElBQ047QUFBQSxNQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQWhDaEI7QUFBQSxPQWlDbUIsY0FqQ25CLElBaUNtQixLQUFJLElBakN2QjtBQUFBO0FBQUE7QUFrQ1k7QUFBQTtBQUFBLGtDQUFFO0FBQUEsT0FsQ2Q7QUFBQTtBQUFBO0FBbUNZO0FBQUE7QUFBQSw0QkFuQ1o7QUFBQTtBQUFBLE9Bb0NtQiw2QkFBRTtBQUFBLE9BQUYsUUFwQ25CO0FBQUE7QUFBQSxPQXFDbUIsNkJBckNuQixJQXFDbUIsU0FyQ25CO0FBQUEsSUFzQ0ksb0JBQU07QUFBQTtBQUFBIiwiZmlsZSI6Ii4vZm9vLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./foo.js\\\\n\\");
 
 /***/ }),
 
@@ -3462,18 +3381,9 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export es2016 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2016 */
-/*! export es2017 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2017 */
-/*! export es2018 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2018 */
-/*! export es2019 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2019 */
-/*! export es2020 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2020 */
-/*! export esnext [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .esnext */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016,\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017,\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018,\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019,\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020,\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext\\\\n/* harmony export */ });\\\\n/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\\\\\"./foo.js\\\\\\");\\\\n\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9pbmRleC5qcz80MWY1Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFDRSIsImZpbGUiOiIuL2luZGV4LmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./index.js\\\\n\\");
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)\\\\n/* harmony export */ });\\\\n/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\\\\\"./foo.js\\\\\\");\\\\n\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9pbmRleC5qcz80MWY1Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFDRSIsImZpbGUiOiIuL2luZGV4LmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./index.js\\\\n\\");
 
 /***/ })
 
@@ -3517,7 +3427,7 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -3550,25 +3460,16 @@ exports[`Webpack 5 Source-map source-map file 1`] = `
 /*!****************!*\\\\
   !*** ./foo.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export es2016 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2017 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2018 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2019 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2020 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export esnext [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* binding */ es2016,
-/* harmony export */   \\"es2017\\": () => /* binding */ es2017,
-/* harmony export */   \\"es2018\\": () => /* binding */ es2018,
-/* harmony export */   \\"es2019\\": () => /* binding */ es2019,
-/* harmony export */   \\"es2020\\": () => /* binding */ es2020,
-/* harmony export */   \\"esnext\\": () => /* binding */ esnext
+/* harmony export */   \\"es2016\\": () => (/* binding */ es2016),
+/* harmony export */   \\"es2017\\": () => (/* binding */ es2017),
+/* harmony export */   \\"es2018\\": () => (/* binding */ es2018),
+/* harmony export */   \\"es2019\\": () => (/* binding */ es2019),
+/* harmony export */   \\"es2020\\": () => (/* binding */ es2020),
+/* harmony export */   \\"esnext\\": () => (/* binding */ esnext)
 /* harmony export */ });
 var __defProp = Object.defineProperty;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -3681,25 +3582,16 @@ const esnext = (() => {
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export es2016 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2016 */
-/*! export es2017 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2017 */
-/*! export es2018 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2018 */
-/*! export es2019 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2019 */
-/*! export es2020 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2020 */
-/*! export esnext [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .esnext */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016,
-/* harmony export */   \\"es2017\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017,
-/* harmony export */   \\"es2018\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018,
-/* harmony export */   \\"es2019\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019,
-/* harmony export */   \\"es2020\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020,
-/* harmony export */   \\"esnext\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
 /* harmony export */ });
 /* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
 
@@ -3747,7 +3639,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -3771,7 +3663,7 @@ __webpack_require__.r(__webpack_exports__);
 //# sourceMappingURL=index.js.map"
 `;
 
-exports[`Webpack 5 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///./foo.js\\",\\"webpack:///./index.js\\",\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///webpack/startup\\"],\\"names\\":[],\\"mappings\\":\\";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU;AACtB,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,aAAI;AACZ,MAAQ,WAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU;AACtB;AACC,WAAO;AAAA,WACA;AAAA;AAAA;AAGF,MAAM,SAAU;AAlBzB;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU;AA7BzB;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN;AAAA,MAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IAhChB;AAAA,OAiCmB,cAjCnB,IAiCmB,KAAI,IAjCvB;AAAA;AAAA;AAkCY;AAAA;AAAA,kCAAE;AAAA,OAlCd;AAAA;AAAA;AAmCY;AAAA;AAAA,4BAnCZ;AAAA;AAAA,OAoCmB,6BAAE;AAAA,OAAF,QApCnB;AAAA;AAAA,OAqCmB,6BArCnB,IAqCmB,SArCnB;AAAA,IAsCI,oBAAM;AAAA;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;ACrCR;;;;;;;UCDF;UACA;;UAEA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;;UAEA;UACA;;UAEA;UACA;UACA;;;;;WCrBA;WACA;WACA;WACA;WACA,wCAAwC,yCAAyC;WACjF;WACA;WACA,E;;;;;WCPA,sF;;;;;WCAA;WACA;WACA;WACA,sDAAsD,kBAAkB;WACxE;WACA,+CAA+C,cAAc;WAC7D,E;;;;UCNA;UACA;UACA;UACA\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\",\\"// The module cache\\\\nvar __webpack_module_cache__ = {};\\\\n\\\\n// The require function\\\\nfunction __webpack_require__(moduleId) {\\\\n\\\\t// Check if module is in cache\\\\n\\\\tif(__webpack_module_cache__[moduleId]) {\\\\n\\\\t\\\\treturn __webpack_module_cache__[moduleId].exports;\\\\n\\\\t}\\\\n\\\\t// Create a new module (and put it into the cache)\\\\n\\\\tvar module = __webpack_module_cache__[moduleId] = {\\\\n\\\\t\\\\t// no module.id needed\\\\n\\\\t\\\\t// no module.loaded needed\\\\n\\\\t\\\\texports: {}\\\\n\\\\t};\\\\n\\\\n\\\\t// Execute the module function\\\\n\\\\t__webpack_modules__[moduleId](module, module.exports, __webpack_require__);\\\\n\\\\n\\\\t// Return the exports of the module\\\\n\\\\treturn module.exports;\\\\n}\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"// module exports must be returned from runtime so entry inlining is disabled\\\\n// startup\\\\n// Load entry module and return exports\\\\nreturn __webpack_require__(\\\\\\"./index.js\\\\\\");\\\\n\\"],\\"sourceRoot\\":\\"\\"}"`;
+exports[`Webpack 5 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///./foo.js\\",\\"webpack:///./index.js\\",\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///webpack/startup\\"],\\"names\\":[],\\"mappings\\":\\";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU;AACtB,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,aAAI;AACZ,MAAQ,WAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU;AACtB;AACC,WAAO;AAAA,WACA;AAAA;AAAA;AAGF,MAAM,SAAU;AAlBzB;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU;AA7BzB;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN;AAAA,MAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IAhChB;AAAA,OAiCmB,cAjCnB,IAiCmB,KAAI,IAjCvB;AAAA;AAAA;AAkCY;AAAA;AAAA,kCAAE;AAAA,OAlCd;AAAA;AAAA;AAmCY;AAAA;AAAA,4BAnCZ;AAAA;AAAA,OAoCmB,6BAAE;AAAA,OAAF,QApCnB;AAAA;AAAA,OAqCmB,6BArCnB,IAqCmB,SArCnB;AAAA,IAsCI,oBAAM;AAAA;AAAA;;;;;;;;;;;;;;;;;;;;;ACrCR;;;;;;;UCDF;UACA;;UAEA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;;UAEA;UACA;;UAEA;UACA;UACA;;;;;WCrBA;WACA;WACA;WACA;WACA,wCAAwC,yCAAyC;WACjF;WACA;WACA,E;;;;;WCPA,wF;;;;;WCAA;WACA;WACA;WACA,sDAAsD,kBAAkB;WACxE;WACA,+CAA+C,cAAc;WAC7D,E;;;;UCNA;UACA;UACA;UACA\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\",\\"// The module cache\\\\nvar __webpack_module_cache__ = {};\\\\n\\\\n// The require function\\\\nfunction __webpack_require__(moduleId) {\\\\n\\\\t// Check if module is in cache\\\\n\\\\tif(__webpack_module_cache__[moduleId]) {\\\\n\\\\t\\\\treturn __webpack_module_cache__[moduleId].exports;\\\\n\\\\t}\\\\n\\\\t// Create a new module (and put it into the cache)\\\\n\\\\tvar module = __webpack_module_cache__[moduleId] = {\\\\n\\\\t\\\\t// no module.id needed\\\\n\\\\t\\\\t// no module.loaded needed\\\\n\\\\t\\\\texports: {}\\\\n\\\\t};\\\\n\\\\n\\\\t// Execute the module function\\\\n\\\\t__webpack_modules__[moduleId](module, module.exports, __webpack_require__);\\\\n\\\\n\\\\t// Return the exports of the module\\\\n\\\\treturn module.exports;\\\\n}\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"// module exports must be returned from runtime so entry inlining is disabled\\\\n// startup\\\\n// Load entry module and return exports\\\\nreturn __webpack_require__(\\\\\\"./index.js\\\\\\");\\\\n\\"],\\"sourceRoot\\":\\"\\"}"`;
 
 exports[`Webpack 5 Source-map source-map inline 1`] = `
 "module.exports =
@@ -3783,25 +3675,16 @@ exports[`Webpack 5 Source-map source-map inline 1`] = `
 /*!****************!*\\\\
   !*** ./foo.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export es2016 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2017 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2018 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2019 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2020 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export esnext [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* binding */ es2016,
-/* harmony export */   \\"es2017\\": () => /* binding */ es2017,
-/* harmony export */   \\"es2018\\": () => /* binding */ es2018,
-/* harmony export */   \\"es2019\\": () => /* binding */ es2019,
-/* harmony export */   \\"es2020\\": () => /* binding */ es2020,
-/* harmony export */   \\"esnext\\": () => /* binding */ esnext
+/* harmony export */   \\"es2016\\": () => (/* binding */ es2016),
+/* harmony export */   \\"es2017\\": () => (/* binding */ es2017),
+/* harmony export */   \\"es2018\\": () => (/* binding */ es2018),
+/* harmony export */   \\"es2019\\": () => (/* binding */ es2019),
+/* harmony export */   \\"es2020\\": () => (/* binding */ es2020),
+/* harmony export */   \\"esnext\\": () => (/* binding */ esnext)
 /* harmony export */ });
 var __defProp = Object.defineProperty;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -3914,25 +3797,16 @@ const esnext = (() => {
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export es2016 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2016 */
-/*! export es2017 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2017 */
-/*! export es2018 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2018 */
-/*! export es2019 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2019 */
-/*! export es2020 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2020 */
-/*! export esnext [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .esnext */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016,
-/* harmony export */   \\"es2017\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017,
-/* harmony export */   \\"es2018\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018,
-/* harmony export */   \\"es2019\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019,
-/* harmony export */   \\"es2020\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020,
-/* harmony export */   \\"esnext\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
 /* harmony export */ });
 /* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
 
@@ -3980,7 +3854,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -4001,13 +3875,13 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	return __webpack_require__(\\"./index.js\\");
 /******/ })()
 ;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanMiLCJ3ZWJwYWNrOi8vLy4vaW5kZXguanMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svYm9vdHN0cmFwIiwid2VicGFjazovLy93ZWJwYWNrL3J1bnRpbWUvZGVmaW5lIHByb3BlcnR5IGdldHRlcnMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9oYXNPd25Qcm9wZXJ0eSBzaG9ydGhhbmQiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9tYWtlIG5hbWVzcGFjZSBvYmplY3QiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svc3RhcnR1cCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDUyxNQUFNLFNBQVMsVUFBTTtBQUVyQixNQUFNLFNBQVM7QUFFZixNQUFNLFNBQVU7QUFDdEIsUUFBTSxJQUFJLENBQUUsR0FBRztBQUNmLE1BQUksSUFBSSxhQUFJO0FBQ1osTUFBUSxXQUFLLEdBQUw7QUFDUixTQUFPO0FBQUE7QUFHRCxNQUFNLFNBQVU7QUFDdEI7QUFDQyxXQUFPO0FBQUEsV0FDQTtBQUFBO0FBQUE7QUFHRixNQUFNLFNBQVU7QUFsQnpCO0FBbUJHLFFBQU0sTUFBTTtBQUFBLElBQ1gsVUFBVTtBQUFBO0FBRVgsU0FBTztBQUFBLElBQ04sMkJBQUs7QUFBQSxJQUNMLFVBQUksU0FBSixZQUFZO0FBQUEsSUFDWjtBQUFBO0FBQUE7QUFJSyxNQUFNLFNBQVU7QUE3QnpCO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTjtBQUFBLE1BaENKO0FBZ0NZLGlDQUFJO0FBQUE7QUFBQTtBQUFBLElBaENoQjtBQUFBLE9BaUNtQixjQWpDbkIsSUFpQ21CLEtBQUksSUFqQ3ZCO0FBQUE7QUFBQTtBQWtDWTtBQUFBO0FBQUEsa0NBQUU7QUFBQSxPQWxDZDtBQUFBO0FBQUE7QUFtQ1k7QUFBQTtBQUFBLDRCQW5DWjtBQUFBO0FBQUEsT0FvQ21CLDZCQUFFO0FBQUEsT0FBRixRQXBDbkI7QUFBQTtBQUFBLE9BcUNtQiw2QkFyQ25CLElBcUNtQixTQXJDbkI7QUFBQSxJQXNDSSxvQkFBTTtBQUFBO0FBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ3JDUjs7Ozs7OztVQ0RGO1VBQ0E7O1VBRUE7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBOztVQUVBO1VBQ0E7O1VBRUE7VUFDQTtVQUNBOzs7OztXQ3JCQTtXQUNBO1dBQ0E7V0FDQTtXQUNBLHdDQUF3Qyx5Q0FBeUM7V0FDakY7V0FDQTtXQUNBLEU7Ozs7O1dDUEEsc0Y7Ozs7O1dDQUE7V0FDQTtXQUNBO1dBQ0Esc0RBQXNELGtCQUFrQjtXQUN4RTtXQUNBLCtDQUErQyxjQUFjO1dBQzdELEU7Ozs7VUNOQTtVQUNBO1VBQ0E7VUFDQSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiLCJcblx0XHRleHBvcnQgKiBmcm9tICcuL2Zvby5qcydcblx0IiwiLy8gVGhlIG1vZHVsZSBjYWNoZVxudmFyIF9fd2VicGFja19tb2R1bGVfY2FjaGVfXyA9IHt9O1xuXG4vLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcblx0aWYoX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fW21vZHVsZUlkXSkge1xuXHRcdHJldHVybiBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdLmV4cG9ydHM7XG5cdH1cblx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcblx0dmFyIG1vZHVsZSA9IF9fd2VicGFja19tb2R1bGVfY2FjaGVfX1ttb2R1bGVJZF0gPSB7XG5cdFx0Ly8gbm8gbW9kdWxlLmlkIG5lZWRlZFxuXHRcdC8vIG5vIG1vZHVsZS5sb2FkZWQgbmVlZGVkXG5cdFx0ZXhwb3J0czoge31cblx0fTtcblxuXHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cblx0X193ZWJwYWNrX21vZHVsZXNfX1ttb2R1bGVJZF0obW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cblx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcblx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xufVxuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBwcm9wKSIsIi8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uciA9IChleHBvcnRzKSA9PiB7XG5cdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuXHR9XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG59OyIsIi8vIG1vZHVsZSBleHBvcnRzIG11c3QgYmUgcmV0dXJuZWQgZnJvbSBydW50aW1lIHNvIGVudHJ5IGlubGluaW5nIGlzIGRpc2FibGVkXG4vLyBzdGFydHVwXG4vLyBMb2FkIGVudHJ5IG1vZHVsZSBhbmQgcmV0dXJuIGV4cG9ydHNcbnJldHVybiBfX3dlYnBhY2tfcmVxdWlyZV9fKFwiLi9pbmRleC5qc1wiKTtcbiJdLCJzb3VyY2VSb290IjoiIn0="
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanMiLCJ3ZWJwYWNrOi8vLy4vaW5kZXguanMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svYm9vdHN0cmFwIiwid2VicGFjazovLy93ZWJwYWNrL3J1bnRpbWUvZGVmaW5lIHByb3BlcnR5IGdldHRlcnMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9oYXNPd25Qcm9wZXJ0eSBzaG9ydGhhbmQiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9tYWtlIG5hbWVzcGFjZSBvYmplY3QiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svc3RhcnR1cCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDUyxNQUFNLFNBQVMsVUFBTTtBQUVyQixNQUFNLFNBQVM7QUFFZixNQUFNLFNBQVU7QUFDdEIsUUFBTSxJQUFJLENBQUUsR0FBRztBQUNmLE1BQUksSUFBSSxhQUFJO0FBQ1osTUFBUSxXQUFLLEdBQUw7QUFDUixTQUFPO0FBQUE7QUFHRCxNQUFNLFNBQVU7QUFDdEI7QUFDQyxXQUFPO0FBQUEsV0FDQTtBQUFBO0FBQUE7QUFHRixNQUFNLFNBQVU7QUFsQnpCO0FBbUJHLFFBQU0sTUFBTTtBQUFBLElBQ1gsVUFBVTtBQUFBO0FBRVgsU0FBTztBQUFBLElBQ04sMkJBQUs7QUFBQSxJQUNMLFVBQUksU0FBSixZQUFZO0FBQUEsSUFDWjtBQUFBO0FBQUE7QUFJSyxNQUFNLFNBQVU7QUE3QnpCO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTjtBQUFBLE1BaENKO0FBZ0NZLGlDQUFJO0FBQUE7QUFBQTtBQUFBLElBaENoQjtBQUFBLE9BaUNtQixjQWpDbkIsSUFpQ21CLEtBQUksSUFqQ3ZCO0FBQUE7QUFBQTtBQWtDWTtBQUFBO0FBQUEsa0NBQUU7QUFBQSxPQWxDZDtBQUFBO0FBQUE7QUFtQ1k7QUFBQTtBQUFBLDRCQW5DWjtBQUFBO0FBQUEsT0FvQ21CLDZCQUFFO0FBQUEsT0FBRixRQXBDbkI7QUFBQTtBQUFBLE9BcUNtQiw2QkFyQ25CLElBcUNtQixTQXJDbkI7QUFBQSxJQXNDSSxvQkFBTTtBQUFBO0FBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ3JDUjs7Ozs7OztVQ0RGO1VBQ0E7O1VBRUE7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBOztVQUVBO1VBQ0E7O1VBRUE7VUFDQTtVQUNBOzs7OztXQ3JCQTtXQUNBO1dBQ0E7V0FDQTtXQUNBLHdDQUF3Qyx5Q0FBeUM7V0FDakY7V0FDQTtXQUNBLEU7Ozs7O1dDUEEsd0Y7Ozs7O1dDQUE7V0FDQTtXQUNBO1dBQ0Esc0RBQXNELGtCQUFrQjtXQUN4RTtXQUNBLCtDQUErQyxjQUFjO1dBQzdELEU7Ozs7VUNOQTtVQUNBO1VBQ0E7VUFDQSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiLCJcblx0XHRleHBvcnQgKiBmcm9tICcuL2Zvby5qcydcblx0IiwiLy8gVGhlIG1vZHVsZSBjYWNoZVxudmFyIF9fd2VicGFja19tb2R1bGVfY2FjaGVfXyA9IHt9O1xuXG4vLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcblx0aWYoX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fW21vZHVsZUlkXSkge1xuXHRcdHJldHVybiBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdLmV4cG9ydHM7XG5cdH1cblx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcblx0dmFyIG1vZHVsZSA9IF9fd2VicGFja19tb2R1bGVfY2FjaGVfX1ttb2R1bGVJZF0gPSB7XG5cdFx0Ly8gbm8gbW9kdWxlLmlkIG5lZWRlZFxuXHRcdC8vIG5vIG1vZHVsZS5sb2FkZWQgbmVlZGVkXG5cdFx0ZXhwb3J0czoge31cblx0fTtcblxuXHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cblx0X193ZWJwYWNrX21vZHVsZXNfX1ttb2R1bGVJZF0obW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cblx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcblx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xufVxuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgcHJvcCkpIiwiLy8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5yID0gKGV4cG9ydHMpID0+IHtcblx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG5cdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG5cdH1cblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbn07IiwiLy8gbW9kdWxlIGV4cG9ydHMgbXVzdCBiZSByZXR1cm5lZCBmcm9tIHJ1bnRpbWUgc28gZW50cnkgaW5saW5pbmcgaXMgZGlzYWJsZWRcbi8vIHN0YXJ0dXBcbi8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xucmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oXCIuL2luZGV4LmpzXCIpO1xuIl0sInNvdXJjZVJvb3QiOiIifQ=="
 `;
 
 exports[`Webpack 5 Source-map source-map plugin 1`] = `
 "/*
  * ATTENTION: The \\"eval\\" devtool has been used (maybe by default in mode: \\"development\\").
- * This devtool is not neither made for production nor for readable output files.
+ * This devtool is neither made for production nor for readable output files.
  * It uses \\"eval()\\" calls to create a separate source file in the browser devtools.
  * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
  * or disable the default devtool with \\"devtool: false\\".
@@ -4022,18 +3896,9 @@ module.exports =
 /*!****************!*\\\\
   !*** ./foo.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export es2016 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2017 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2018 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2019 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2020 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export esnext [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => /* binding */ es2016,\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => /* binding */ es2017,\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => /* binding */ es2018,\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => /* binding */ es2019,\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => /* binding */ es2020,\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => /* binding */ esnext\\\\n/* harmony export */ });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n\\\\n\\\\n//# sourceURL=webpack:///./foo.js?\\");
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => (/* binding */ es2016),\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => (/* binding */ es2017),\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => (/* binding */ es2018),\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => (/* binding */ es2019),\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => (/* binding */ es2020),\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => (/* binding */ esnext)\\\\n/* harmony export */ });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n\\\\n\\\\n//# sourceURL=webpack:///./foo.js?\\");
 
 /***/ }),
 
@@ -4041,18 +3906,9 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export es2016 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2016 */
-/*! export es2017 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2017 */
-/*! export es2018 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2018 */
-/*! export es2019 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2019 */
-/*! export es2020 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2020 */
-/*! export esnext [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .esnext */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016,\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017,\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018,\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019,\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020,\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext\\\\n/* harmony export */ });\\\\n/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\\\\\"./foo.js\\\\\\");\\\\n\\\\n\\\\n\\\\n//# sourceURL=webpack:///./index.js?\\");
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)\\\\n/* harmony export */ });\\\\n/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\\\\\"./foo.js\\\\\\");\\\\n\\\\n\\\\n\\\\n//# sourceURL=webpack:///./index.js?\\");
 
 /***/ })
 
@@ -4096,7 +3952,7 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -4117,7 +3973,7 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /******/ 	return __webpack_require__(\\"./index.js\\");
 /******/ })()
 ;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vd2VicGFjay9zdGFydHVwIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1VBQUE7VUFDQTs7VUFFQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7O1VBRUE7VUFDQTs7VUFFQTtVQUNBO1VBQ0E7Ozs7O1dDckJBO1dBQ0E7V0FDQTtXQUNBO1dBQ0Esd0NBQXdDLHlDQUF5QztXQUNqRjtXQUNBO1dBQ0EsRTs7Ozs7V0NQQSxzRjs7Ozs7V0NBQTtXQUNBO1dBQ0E7V0FDQSxzREFBc0Qsa0JBQWtCO1dBQ3hFO1dBQ0EsK0NBQStDLGNBQWM7V0FDN0QsRTs7OztVQ05BO1VBQ0E7VUFDQTtVQUNBIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGhlIG1vZHVsZSBjYWNoZVxudmFyIF9fd2VicGFja19tb2R1bGVfY2FjaGVfXyA9IHt9O1xuXG4vLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcblx0aWYoX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fW21vZHVsZUlkXSkge1xuXHRcdHJldHVybiBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdLmV4cG9ydHM7XG5cdH1cblx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcblx0dmFyIG1vZHVsZSA9IF9fd2VicGFja19tb2R1bGVfY2FjaGVfX1ttb2R1bGVJZF0gPSB7XG5cdFx0Ly8gbm8gbW9kdWxlLmlkIG5lZWRlZFxuXHRcdC8vIG5vIG1vZHVsZS5sb2FkZWQgbmVlZGVkXG5cdFx0ZXhwb3J0czoge31cblx0fTtcblxuXHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cblx0X193ZWJwYWNrX21vZHVsZXNfX1ttb2R1bGVJZF0obW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cblx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcblx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xufVxuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBwcm9wKSIsIi8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uciA9IChleHBvcnRzKSA9PiB7XG5cdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuXHR9XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG59OyIsIi8vIG1vZHVsZSBleHBvcnRzIG11c3QgYmUgcmV0dXJuZWQgZnJvbSBydW50aW1lIHNvIGVudHJ5IGlubGluaW5nIGlzIGRpc2FibGVkXG4vLyBzdGFydHVwXG4vLyBMb2FkIGVudHJ5IG1vZHVsZSBhbmQgcmV0dXJuIGV4cG9ydHNcbnJldHVybiBfX3dlYnBhY2tfcmVxdWlyZV9fKFwiLi9pbmRleC5qc1wiKTtcbiJdLCJzb3VyY2VSb290IjoiIn0="
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vd2VicGFjay9zdGFydHVwIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1VBQUE7VUFDQTs7VUFFQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7O1VBRUE7VUFDQTs7VUFFQTtVQUNBO1VBQ0E7Ozs7O1dDckJBO1dBQ0E7V0FDQTtXQUNBO1dBQ0Esd0NBQXdDLHlDQUF5QztXQUNqRjtXQUNBO1dBQ0EsRTs7Ozs7V0NQQSx3Rjs7Ozs7V0NBQTtXQUNBO1dBQ0E7V0FDQSxzREFBc0Qsa0JBQWtCO1dBQ3hFO1dBQ0EsK0NBQStDLGNBQWM7V0FDN0QsRTs7OztVQ05BO1VBQ0E7VUFDQTtVQUNBIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGhlIG1vZHVsZSBjYWNoZVxudmFyIF9fd2VicGFja19tb2R1bGVfY2FjaGVfXyA9IHt9O1xuXG4vLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcblx0aWYoX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fW21vZHVsZUlkXSkge1xuXHRcdHJldHVybiBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdLmV4cG9ydHM7XG5cdH1cblx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcblx0dmFyIG1vZHVsZSA9IF9fd2VicGFja19tb2R1bGVfY2FjaGVfX1ttb2R1bGVJZF0gPSB7XG5cdFx0Ly8gbm8gbW9kdWxlLmlkIG5lZWRlZFxuXHRcdC8vIG5vIG1vZHVsZS5sb2FkZWQgbmVlZGVkXG5cdFx0ZXhwb3J0czoge31cblx0fTtcblxuXHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cblx0X193ZWJwYWNrX21vZHVsZXNfX1ttb2R1bGVJZF0obW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cblx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcblx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xufVxuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgcHJvcCkpIiwiLy8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5yID0gKGV4cG9ydHMpID0+IHtcblx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG5cdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG5cdH1cblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbn07IiwiLy8gbW9kdWxlIGV4cG9ydHMgbXVzdCBiZSByZXR1cm5lZCBmcm9tIHJ1bnRpbWUgc28gZW50cnkgaW5saW5pbmcgaXMgZGlzYWJsZWRcbi8vIHN0YXJ0dXBcbi8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xucmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oXCIuL2luZGV4LmpzXCIpO1xuIl0sInNvdXJjZVJvb3QiOiIifQ=="
 `;
 
 exports[`Webpack 5 target 1`] = `
@@ -4130,25 +3986,16 @@ exports[`Webpack 5 target 1`] = `
 /*!****************!*\\\\
   !*** ./foo.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export es2016 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2017 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2018 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2019 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export es2020 [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export esnext [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* binding */ es2016,
-/* harmony export */   \\"es2017\\": () => /* binding */ es2017,
-/* harmony export */   \\"es2018\\": () => /* binding */ es2018,
-/* harmony export */   \\"es2019\\": () => /* binding */ es2019,
-/* harmony export */   \\"es2020\\": () => /* binding */ es2020,
-/* harmony export */   \\"esnext\\": () => /* binding */ esnext
+/* harmony export */   \\"es2016\\": () => (/* binding */ es2016),
+/* harmony export */   \\"es2017\\": () => (/* binding */ es2017),
+/* harmony export */   \\"es2018\\": () => (/* binding */ es2018),
+/* harmony export */   \\"es2019\\": () => (/* binding */ es2019),
+/* harmony export */   \\"es2020\\": () => (/* binding */ es2020),
+/* harmony export */   \\"esnext\\": () => (/* binding */ esnext)
 /* harmony export */ });
 var __defProp = Object.defineProperty;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -4261,25 +4108,16 @@ const esnext = (() => {
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! namespace exports */
-/*! export es2016 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2016 */
-/*! export es2017 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2017 */
-/*! export es2018 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2018 */
-/*! export es2019 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2019 */
-/*! export es2020 [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .es2020 */
-/*! export esnext [provided] [maybe used in index (runtime-defined)] [usage prevents renaming] -> ./foo.js .esnext */
-/*! other exports [not provided] [maybe used in index (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016,
-/* harmony export */   \\"es2017\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017,
-/* harmony export */   \\"es2018\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018,
-/* harmony export */   \\"es2019\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019,
-/* harmony export */   \\"es2020\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020,
-/* harmony export */   \\"esnext\\": () => /* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
 /* harmony export */ });
 /* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
 
@@ -4327,7 +4165,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -4384,8 +4222,6 @@ exports[`Webpack 5 webpack magic comments 1`] = `
 /*!******************!*\\\\
   !*** ./index.js ***!
   \\\\******************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements: __webpack_require__.e, __webpack_require__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 const Foo = __webpack_require__.e(/*! import() | named-chunk-foo */ \\"named-chunk-foo\\").then(__webpack_require__.bind(__webpack_require__, /*! ./foo.js */ \\"./foo.js\\"));
@@ -4472,7 +4308,7 @@ Foo.then(console.log);
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/load script */
@@ -4480,7 +4316,7 @@ Foo.then(console.log);
 /******/ 		var inProgress = {};
 /******/ 		// data-webpack is not used as build has no uniqueName
 /******/ 		// loadScript function to load a script via script tag
-/******/ 		__webpack_require__.l = (url, done, key) => {
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
 /******/ 			var script, needAttach;
 /******/ 			if(key !== undefined) {
@@ -4510,7 +4346,7 @@ Foo.then(console.log);
 /******/ 				var doneFns = inProgress[url];
 /******/ 				delete inProgress[url];
 /******/ 				script.parentNode && script.parentNode.removeChild(script);
-/******/ 				doneFns && doneFns.forEach((fn) => fn(event));
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
 /******/ 				if(prev) return prev(event);
 /******/ 			}
 /******/ 			;
@@ -4599,7 +4435,7 @@ Foo.then(console.log);
 /******/ 									}
 /******/ 								}
 /******/ 							};
-/******/ 							__webpack_require__.l(url, loadingEnded, \\"chunk-\\" + chunkId);
+/******/ 							__webpack_require__.l(url, loadingEnded, \\"chunk-\\" + chunkId, chunkId);
 /******/ 						} else installedChunks[chunkId] = 0;
 /******/ 					}
 /******/ 				}
@@ -4616,7 +4452,7 @@ Foo.then(console.log);
 /******/ 		// no deferred startup
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (data) => {
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
 /******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add \\"moreModules\\" to the modules object,
 /******/ 			// then flag all \\"chunkIds\\" as loaded and fire callback
@@ -4634,7 +4470,7 @@ Foo.then(console.log);
 /******/ 				}
 /******/ 			}
 /******/ 			if(runtime) runtime(__webpack_require__);
-/******/ 			parentChunkLoadingFunction(data);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			while(resolves.length) {
 /******/ 				resolves.shift()();
 /******/ 			}
@@ -4642,8 +4478,10 @@ Foo.then(console.log);
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || [];
-/******/ 		var parentChunkLoadingFunction = chunkLoadingGlobal.push.bind(chunkLoadingGlobal);
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback;
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 		
+/******/ 		// no deferred startup
 /******/ 	})();
 /******/ 	
 /************************************************************************/
@@ -4662,16 +4500,12 @@ exports[`Webpack 5 webpack magic comments 2`] = `
 /*!****************!*\\\\
   !*** ./foo.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 console.log(\\"foo\\");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (1);
@@ -4689,16 +4523,12 @@ exports[`Webpack 5 webpack magic comments 3`] = `
 /*!****************!*\\\\
   !*** ./bar.js ***!
   \\\\****************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 console.log(\\"bar\\" + 1);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Symbol(\\"bar\\"));
