@@ -1,8 +1,8 @@
-import webpack = require('webpack');
 import {Service, TransformOptions} from 'esbuild';
 import {Except} from 'type-fest';
+import webpack from 'webpack';
 
-export type Compiler = webpack.Compiler & {
+type Compiler = webpack.Compiler & {
 	$esbuildService?: Service;
 };
 
@@ -12,5 +12,11 @@ type FilterObject = {
 	exclude?: Filter | Filter[];
 };
 
-export type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'>;
-export type MinifyPluginOptions = Except<TransformOptions, 'sourcefile'> & FilterObject;
+type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'>;
+type MinifyPluginOptions = Except<TransformOptions, 'sourcefile'> & FilterObject;
+
+export {
+	Compiler,
+	LoaderOptions,
+	MinifyPluginOptions,
+};

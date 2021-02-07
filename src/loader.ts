@@ -1,9 +1,9 @@
-import webpack = require('webpack');
 import fs from 'fs';
+import path from 'path';
 import {getOptions} from 'loader-utils';
+import webpack from 'webpack';
 import JoyCon, {LoadResult} from 'joycon';
 import JSON5 from 'json5';
-import path from 'path';
 import {Compiler, LoaderOptions} from './interfaces';
 
 const joycon = new JoyCon();
@@ -28,7 +28,7 @@ let tsConfig: LoadResult;
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
 	source: string,
-) {
+): Promise<void> {
 	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
 	const service = (this._compiler as Compiler).$esbuildService;
