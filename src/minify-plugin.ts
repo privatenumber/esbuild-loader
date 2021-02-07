@@ -12,8 +12,13 @@ type Asset = webpack.compilation.Asset;
 const isJsFile = /\.js$/i;
 const pluginName = 'esbuild-minify';
 
-// eslint-disable-next-line unicorn/no-array-callback-reference
-const flatMap = (array: any[], cb: (element: any) => any) => [].concat(...array.map(cb));
+const flatMap = <T, U>(
+	array: T[],
+	callback: (value: T) => U[],
+): U[] => (
+	// eslint-disable-next-line unicorn/no-array-callback-reference
+	Array.prototype.concat(...array.map(callback))
+);
 
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
