@@ -1,19 +1,47 @@
 import assert from 'assert';
 import {RawSource, SourceMapSource} from 'webpack-sources';
-import {Compiler, MinifyPluginOptions} from './interfaces';
-import webpack = require('webpack');
+import webpack from 'webpack';
 import {matchObject} from 'webpack/lib/ModuleFilenameHelpers';
+import {Compiler, MinifyPluginOptions} from './interfaces';
+
+type Asset = webpack.compilation.Asset;
+
+type KnownStatsPrinterContext = {
+	formatFlag(flag: string): string;
+	green(string: string): string;
+};
+
+type Tappable = {
+	tap(
+		name: string,
+		callback: (
+			minimized: boolean,
+			statsPrinterContext: KnownStatsPrinterContext,
+		) => void,
+	): void;
+};
+
+type StatsPrinter = {
+	hooks: {
+		print: {
+			for(name: string): Tappable;
+		};
+	};
+};
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const {version} = require('../package');
 
-type Asset = webpack.compilation.Asset;
-
 const isJsFile = /\.js$/i;
 const pluginName = 'esbuild-minify';
 
-// eslint-disable-next-line unicorn/no-array-callback-reference
-const flatMap = (array: any[], cb: (element: any) => any) => [].concat(...array.map(cb));
+const flatMap = <T, U>(
+	array: T[],
+	callback: (value: T) => U[],
+): U[] => (
+	// eslint-disable-next-line unicorn/no-array-callback-reference
+	Array.prototype.concat(...array.map(callback))
+);
 
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
@@ -29,7 +57,7 @@ class ESBuildMinifyPlugin {
 		}
 	}
 
-	apply(compiler: Compiler) {
+	apply(compiler: Compiler): void {
 		compiler.hooks.compilation.tap(pluginName, compilation => {
 			assert(compiler.$esbuildService, '[esbuild-loader] You need to add ESBuildPlugin to your webpack config first');
 
@@ -38,25 +66,40 @@ class ESBuildMinifyPlugin {
 				version,
 				options: this.options,
 			});
-			compilation.hooks.chunkHash.tap(pluginName, (_, hash) =>
-				hash.update(meta),
-			);
 
-			const hooks = (compilation.hooks as any);
-			if (hooks.processAssets) {
-				hooks.processAssets.tapPromise(
+			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
+
+			type Wp5Compilation = typeof compilation & {
+				hooks: typeof compilation.hooks & {
+					processAssets: typeof compilation.hooks.optimizeAssets;
+					statsPrinter: typeof compilation.hooks.childCompiler; // Could be any SyncHook
+				};
+				constructor: {
+					PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE: number;
+				};
+			};
+
+			if ('processAssets' in compilation.hooks) {
+				const wp5Compilation = compilation as Wp5Compilation;
+
+				wp5Compilation.hooks.processAssets.tapPromise(
 					{
 						name: pluginName,
-						stage: (compilation.constructor as any).PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+						stage: wp5Compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
 					},
 					async (assets: Asset[]) => this.transformAssets(compilation, Object.keys(assets)),
 				);
 
-				hooks.statsPrinter.tap(pluginName, (stats: any) => {
-					stats.hooks.print
+				wp5Compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter: StatsPrinter) => {
+					statsPrinter.hooks.print
 						.for('asset.info.minimized')
-						.tap(pluginName, (minimized: boolean, {green, formatFlag}: any) =>
-							minimized ? green(formatFlag('minimized')) : undefined,
+						.tap(
+							pluginName,
+							(minimized, {green, formatFlag}: any) => (
+								minimized ?
+									green(formatFlag('minimized')) :
+									undefined
+							),
 						);
 				});
 			} else {
@@ -74,7 +117,7 @@ class ESBuildMinifyPlugin {
 	async transformAssets(
 		compilation: webpack.compilation.Compilation,
 		assetNames: string[],
-	) {
+	): Promise<void> {
 		const {
 			options: {
 				devtool,

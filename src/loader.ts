@@ -1,13 +1,34 @@
-import webpack = require('webpack');
+import fs from 'fs';
+import path from 'path';
 import {getOptions} from 'loader-utils';
+import webpack from 'webpack';
+import JoyCon, {LoadResult} from 'joycon';
+import JSON5 from 'json5';
 import {Compiler, LoaderOptions} from './interfaces';
 
+const joycon = new JoyCon();
+
+joycon.addLoader({
+	test: /\.json$/,
+	async load(filePath) {
+		try {
+			const config = fs.readFileSync(filePath, 'utf8');
+			return JSON5.parse(config);
+		} catch (error: any) { // eslint-disable-line @typescript-eslint/no-implicit-any-catch
+			throw new Error(
+				`Failed to parse tsconfig at ${path.relative(process.cwd(), filePath)}: ${error.message as string}`,
+			);
+		}
+	},
+});
+
 const tsxTryTsLoaderPtrn = /Unexpected|Expected/;
+let tsConfig: LoadResult;
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
 	source: string,
-) {
+): Promise<void> {
 	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
 	const service = (this._compiler as Compiler).$esbuildService;
@@ -28,6 +49,16 @@ async function ESBuildLoader(
 		sourcemap: this.sourceMap,
 		sourcefile: this.resourcePath,
 	};
+
+	if (!('tsconfigRaw' in transformOptions)) {
+		if (!tsConfig) {
+			tsConfig = await joycon.load(['tsconfig.json']);
+		}
+
+		if (tsConfig.data) {
+			transformOptions.tsconfigRaw = tsConfig.data;
+		}
+	}
 
 	try {
 		const result = await service.transform(source, transformOptions).catch(async error => {
