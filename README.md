@@ -61,10 +61,18 @@ In `webpack.config.js`:
 -         use: 'ts-loader'
 -       },
 +       {
-+         test: /\.tsx?$/,
++         test: /\.ts$/,
 +         loader: 'esbuild-loader',
 +         options: {
-+           loader: 'tsx', // Or 'ts' if you don't need tsx
++           loader: 'ts',
++           target: 'es2015'
++         }
++       },
++       {
++         test: /\.tsx$/,
++         loader: 'esbuild-loader',
++         options: {
++           loader: 'tsx',
 +           target: 'es2015'
 +         }
 +       },
@@ -85,7 +93,16 @@ Note, esbuild only supports a subset of `tsconfig` options [(see `TransformOptio
 
 ```diff
   {
-      test: /\.tsx?$/,
+      test: /\.ts$/,
+      loader: 'esbuild-loader',
+      options: {
+          loader: 'ts',
+          target: 'es2015',
++         tsconfigRaw: require('./tsconfig.json')
+      }
+  },
+  {
+      test: /\.tsx$/,
       loader: 'esbuild-loader',
       options: {
           loader: 'tsx',

@@ -22,7 +22,6 @@ joycon.addLoader({
 	},
 });
 
-const tsxTryTsLoaderPtrn = /Unexpected|Expected/;
 let tsConfig: LoadResult;
 
 async function ESBuildLoader(
@@ -61,18 +60,7 @@ async function ESBuildLoader(
 	}
 
 	try {
-		const result = await service.transform(source, transformOptions).catch(async error => {
-			// Target might be a TS file accidentally parsed as TSX
-			if (transformOptions.loader === 'tsx' && tsxTryTsLoaderPtrn.test(error.message)) {
-				transformOptions.loader = 'ts';
-				return service.transform(source, transformOptions).catch(_ => {
-					throw error;
-				});
-			}
-
-			throw error;
-		});
-
+		const result = await service.transform(source, transformOptions);
 		done(null, result.code, result.map && JSON.parse(result.map));
 	} catch (error: unknown) {
 		done(error as Error);
