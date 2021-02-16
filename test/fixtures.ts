@@ -133,7 +133,7 @@ const tsx = {
 
 const tsxAmbiguous = {
 	'/index.js': `
-		export { default } from './foo.ts'
+		export { default } from './foo.tsx'
 	`,
 
 	'/foo.tsx': `

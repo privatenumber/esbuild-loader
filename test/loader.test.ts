@@ -79,8 +79,8 @@ describe.each([
 			expect(file.execute('const createElement = (...args) => args, Fragment = "Fragment";')).toMatchSnapshot();
 		});
 
-		describe('ambigious tsx', () => {
-			test('ts as tsx', async () => {
+		describe('ambigious ts/tsx', () => {
+			test('ts via tsx', async () => {
 				const stats = await build(webpack, fixtures.ts, config => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
@@ -90,11 +90,11 @@ describe.each([
 						},
 					});
 				});
-	
+
 				expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 			});
 
-			test('ts as tsx 2', async () => {
+			test('ts via tsx 2', async () => {
 				const stats = await build(webpack, fixtures.ts2, config => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
@@ -105,12 +105,12 @@ describe.each([
 					});
 				});
 				const file = getFile(stats, '/dist/index.js');
-	
+
 				expect(file.content).toMatchSnapshot();
 				expect(file.execute().default('a', {a: 1})).toMatchSnapshot();
 			});
 
-			test('ts as tsx', async () => {
+			test('ambiguous ts', async () => {
 				const stats = await build(webpack, fixtures.tsAmbiguous, config => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
@@ -120,12 +120,13 @@ describe.each([
 						},
 					});
 				});
-	
-				console.log(getFile(stats, '/dist/index.js').content);
-				// expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+
+				const {content} = getFile(stats, '/dist/index.js');
+				expect(content).toContain('(() => 1 < /a>/g)');
+				expect(content).toMatchSnapshot();
 			});
 
-			test('ts as tsx', async () => {
+			test('ambiguous tsx', async () => {
 				const stats = await build(webpack, fixtures.tsxAmbiguous, config => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
@@ -135,9 +136,10 @@ describe.each([
 						},
 					});
 				});
-	
-				console.log(getFile(stats, '/dist/index.js').content);
-				// expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+
+				const {content} = getFile(stats, '/dist/index.js');
+				expect(content).toContain('React.createElement');
+				expect(content).toMatchSnapshot();
 			});
 		});
 
