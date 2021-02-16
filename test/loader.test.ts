@@ -79,44 +79,66 @@ describe.each([
 			expect(file.execute('const createElement = (...args) => args, Fragment = "Fragment";')).toMatchSnapshot();
 		});
 
-		test('ts as tsx', async () => {
-			/*
-			 * Catch errror "Transform failed with 1 error:\n/use-previous.ts:5:2: error: Unexpected \"const\""
-			 * If a TS file is accidentally parsed as TSX, it should fallback to parsing as TS
-			 * This is to support ts-loader like syntax: test: /\.tsx?$/
-			 */
-			const stats = await build(webpack, fixtures.ts, config => {
-				config.module.rules.push({
-					test: /\.tsx?$/,
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'tsx',
-					},
+		describe('ambigious tsx', () => {
+			test('ts as tsx', async () => {
+				const stats = await build(webpack, fixtures.ts, config => {
+					config.module.rules.push({
+						test: /\.tsx?$/,
+						loader: 'esbuild-loader',
+						options: {
+							loader: 'tsx',
+						},
+					});
 				});
+	
+				expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 			});
 
-			expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
-		});
-
-		test('ts as tsx 2', async () => {
-			/*
-			 * Catch errror "Transform failed with 1 error:\n/use-previous.ts:5:27: error: Expected \"}\" but found \":\""
-			 * If a TS file is accidentally parsed as TSX, it should fallback to parsing as TS
-			 * This is to support ts-loader like syntax: test: /\.tsx?$/
-			 */
-			const stats = await build(webpack, fixtures.ts2, config => {
-				config.module.rules.push({
-					test: /\.tsx?$/,
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'tsx',
-					},
+			test('ts as tsx 2', async () => {
+				const stats = await build(webpack, fixtures.ts2, config => {
+					config.module.rules.push({
+						test: /\.tsx?$/,
+						loader: 'esbuild-loader',
+						options: {
+							loader: 'tsx',
+						},
+					});
 				});
+				const file = getFile(stats, '/dist/index.js');
+	
+				expect(file.content).toMatchSnapshot();
+				expect(file.execute().default('a', {a: 1})).toMatchSnapshot();
 			});
-			const file = getFile(stats, '/dist/index.js');
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.execute().default('a', {a: 1})).toMatchSnapshot();
+			test('ts as tsx', async () => {
+				const stats = await build(webpack, fixtures.tsAmbiguous, config => {
+					config.module.rules.push({
+						test: /\.tsx?$/,
+						loader: 'esbuild-loader',
+						options: {
+							loader: 'tsx',
+						},
+					});
+				});
+	
+				console.log(getFile(stats, '/dist/index.js').content);
+				// expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+			});
+
+			test('ts as tsx', async () => {
+				const stats = await build(webpack, fixtures.tsxAmbiguous, config => {
+					config.module.rules.push({
+						test: /\.tsx?$/,
+						loader: 'esbuild-loader',
+						options: {
+							loader: 'tsx',
+						},
+					});
+				});
+	
+				console.log(getFile(stats, '/dist/index.js').content);
+				// expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+			});
 		});
 
 		test('ts w/ tsconfig', async () => {
