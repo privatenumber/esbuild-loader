@@ -101,6 +101,16 @@ const ts2 = {
 	`,
 };
 
+const tsAmbiguous = {
+	'/index.js': `
+		export { default } from './foo.ts'
+	`,
+
+	'/foo.ts': `
+		export default () => <a>1</a>/g
+	`,
+};
+
 const tsx = {
 	'/index.js': `
 		import Foo, { HelloWorld } from './foo.tsx'
@@ -118,6 +128,16 @@ const tsx = {
 				return <div className="class-name">content</div>
 			}
 		}
+	`,
+};
+
+const tsxAmbiguous = {
+	'/index.js': `
+		export { default } from './foo.tsx'
+	`,
+
+	'/foo.tsx': `
+		export default () => <a>1</a>/g
 	`,
 };
 
@@ -169,7 +189,9 @@ export {
 	js,
 	ts,
 	ts2,
+	tsAmbiguous,
 	tsx,
+	tsxAmbiguous,
 	invalidTsx,
 	tsConfig,
 	webpackChunks,
