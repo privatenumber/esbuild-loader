@@ -37,7 +37,7 @@ export async function build(
 			mode: 'development',
 			devtool: false,
 			bail: true,
-
+			cache: false,
 			context: '/',
 			entry: {
 				index: '/index.js',

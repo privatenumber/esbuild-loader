@@ -24,7 +24,8 @@ Keep your reproductions minimal. Follow guidelines here: https://stackoverflow.c
 
 ## Environment
 
-- `esbuild-loader` version:
+- esbuild-loader version:
+- Webpack version:
 - Operating System:
 - Node version:
 - Package manager (npm/yarn/pnpm) and version:
