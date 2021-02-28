@@ -96,7 +96,7 @@ Note, esbuild only supports a subset of `tsconfig` options [(see `TransformOptio
 ```
 
 ### Minification (eg. Terser)
-You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is.
+You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
 
 In `webpack.config.js`:
 
@@ -124,9 +124,8 @@ In `webpack.config.js`:
   }
 ```
 
-> _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
->
-> The `target` option tells _esbuild_ that it can use newer JS syntax to perform better minification. If you're not using TypeScript or any syntax unsupported by Webpack, you can also leverage this as a transpilation step. It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
+#### _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
+If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel). It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file. Simply set the `target` option on the minifier to specify which support level you want. 
 
 ## ⚙️ Options
 
