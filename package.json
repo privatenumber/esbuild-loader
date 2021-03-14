@@ -33,7 +33,7 @@
 	},
 	"lint-staged": {
 		"*.ts": [
-			"xo --write",
+			"xo",
 			"jest --bail --findRelatedTests"
 		]
 	},
