@@ -62,14 +62,14 @@ async function ESBuildLoader(
 
 	// https://github.com/privatenumber/esbuild-loader/pull/107
 	if (
-		transformOptions.loader === 'tsx'
-		&& isTsExtensionPtrn.test(this.resourcePath)
+		transformOptions.loader === 'tsx' &&
+		isTsExtensionPtrn.test(this.resourcePath)
 	) {
 		transformOptions.loader = 'ts';
 	}
 
 	try {
-		const { code, map } = await service.transform(source, transformOptions);
+		const {code, map} = await service.transform(source, transformOptions);
 		done(null, code, map && JSON.parse(map));
 	} catch (error: unknown) {
 		done(error as Error);
