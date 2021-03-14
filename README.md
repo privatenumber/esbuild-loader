@@ -22,8 +22,6 @@ npm i -D esbuild-loader
 In `webpack.config.js`:
 
 ```diff
-+ const { ESBuildPlugin } = require('esbuild-loader')
-
   module.exports = {
     module: {
       rules: [
@@ -43,9 +41,6 @@ In `webpack.config.js`:
         ...
       ],
     },
-    plugins: [
-+     new ESBuildPlugin()
-    ]
   }
 ```
 
@@ -53,8 +48,6 @@ In `webpack.config.js`:
 In `webpack.config.js`:
 
 ```diff
-+ const { ESBuildPlugin } = require('esbuild-loader')
-
   module.exports = {
     module: {
       rules: [
@@ -74,9 +67,6 @@ In `webpack.config.js`:
         ...
       ]
     },
-    plugins: [
-+     new ESBuildPlugin()
-    ]
   }
 ```
 
@@ -104,7 +94,6 @@ In `webpack.config.js`:
 
 ```diff
 + const {
-+   ESBuildPlugin,
 +   ESBuildMinifyPlugin
 + } = require('esbuild-loader')
 
@@ -119,15 +108,11 @@ In `webpack.config.js`:
 +       })
 +     ]
 +   },
-
-    plugins: [
-+     new ESBuildPlugin()
-    ]
   }
 ```
 
 #### _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
-If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel). It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file. Simply set the `target` option on the minifier to specify which support level you want. 
+If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel). It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file. Simply set the `target` option on the minifier to specify which support level you want.
 
 ### Examples
 If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).

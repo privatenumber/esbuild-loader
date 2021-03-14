@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import {transform} from 'esbuild';
 import {getOptions} from 'loader-utils';
 import webpack from 'webpack';
 import JoyCon, {LoadResult} from 'joycon';
 import JSON5 from 'json5';
-import {Compiler, LoaderOptions} from './interfaces';
+import {LoaderOptions} from './interfaces';
 
 const joycon = new JoyCon();
 
@@ -31,16 +32,6 @@ async function ESBuildLoader(
 ): Promise<void> {
 	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
-	const service = (this._compiler as Compiler).$esbuildService;
-
-	if (!service) {
-		done(
-			new Error(
-				'[esbuild-loader] You need to add ESBuildPlugin to your webpack config first',
-			),
-		);
-		return;
-	}
 
 	const transformOptions = {
 		...options,
@@ -69,7 +60,7 @@ async function ESBuildLoader(
 	}
 
 	try {
-		const { code, map } = await service.transform(source, transformOptions);
+		const { code, map } = await transform(source, transformOptions);
 		done(null, code, map && JSON.parse(map));
 	} catch (error: unknown) {
 		done(error as Error);

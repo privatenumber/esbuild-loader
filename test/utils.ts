@@ -2,7 +2,6 @@ import path from 'path';
 import fs from 'fs';
 import {ufs} from 'unionfs';
 import {Volume, DirectoryJSON} from 'memfs';
-import {ESBuildPlugin} from '../dist/index.js';
 import {
 	Configuration as Wp4Configuration,
 	Stats,
@@ -63,7 +62,7 @@ export async function build(
 					},
 				],
 			},
-			plugins: [new ESBuildPlugin()],
+			plugins: [],
 		};
 
 		configure?.(config);
