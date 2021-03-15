@@ -93,9 +93,7 @@ You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](
 In `webpack.config.js`:
 
 ```diff
-+ const {
-+   ESBuildMinifyPlugin
-+ } = require('esbuild-loader')
++ const { ESBuildMinifyPlugin } = require('esbuild-loader')
 
   module.exports = {
     ...,
