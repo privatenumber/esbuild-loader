@@ -9,11 +9,11 @@ devDependencies:
   '@types/jest': 26.0.20
   '@types/loader-utils': 2.0.1
   '@types/webpack': 4.41.26
+  es-jest: 1.1.0
   husky: 4.3.8
   jest: 26.6.3
   lint-staged: 10.5.4
   memfs: 3.2.0
-  ts-jest: 26.5.3_jest@26.6.3+typescript@4.2.3
   typescript: 4.2.3
   unionfs: 4.4.0
   webpack: 4.46.0
@@ -1724,14 +1724,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-vIyhWmIkULaq04Gt93txdh+j02yX/JzlyhLYbV3YQCn/zvES3JnY7TifHHvvr1w5hTDluNKMkV05cs4vy8Q7sw==
-  /bs-logger/0.2.6:
-    dependencies:
-      fast-json-stable-stringify: 2.1.0
-    dev: true
-    engines:
-      node: '>= 6'
-    resolution:
-      integrity: sha512-pd8DCoxmbgc7hyPKOvxtqNcjYoOsABPQdcCUjGp3d42VR2CX1ORhk2A87oqqu5R1kk+76nsxZupkmyd+MVtCog==
   /bser/2.1.1:
     dependencies:
       node-int64: 0.4.0
@@ -2654,6 +2646,14 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-LJzK7MrQa8TS0ja2w3YNLzUgJCGPdPOV1yVvezjNnS89D+VR08+Szt2mz3YB2Dck/+w5tfIq/RoUAFqJJGM2yw==
+  /es-jest/1.1.0:
+    dependencies:
+      esbuild: 0.8.57
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-NoFGP15xsmEwAE5PFXoIeDJn2vBZEc6Z5QRB6g+xzSaGsiR02akiA1V2L9nljdDaanDlv0V55xuoxNCS90Glww==
   /es-module-lexer/0.4.1:
     dev: true
     resolution:
@@ -2669,7 +2669,6 @@ packages:
     resolution:
       integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==
   /esbuild/0.8.57:
-    dev: false
     hasBin: true
     requiresBuild: true
     resolution:
@@ -5301,10 +5300,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==
-  /make-error/1.3.6:
-    dev: true
-    resolution:
-      integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
   /makeerror/1.0.11:
     dependencies:
       tmpl: 1.0.4
@@ -5535,13 +5530,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
-  /mkdirp/1.0.4:
-    dev: true
-    engines:
-      node: '>=10'
-    hasBin: true
-    resolution:
-      integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
   /move-concurrently/1.0.1:
     dependencies:
       aproba: 1.2.0
@@ -7507,29 +7495,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-C4+gOpvmxaSMKuEf9Qc134F1ZuOHVXKRbtEflf4NTtuuJDEIJ9p5PXsalL8SkeRw+qit1Mo+yuvMPAKwWg/1hA==
-  /ts-jest/26.5.3_jest@26.6.3+typescript@4.2.3:
-    dependencies:
-      bs-logger: 0.2.6
-      buffer-from: 1.1.1
-      fast-json-stable-stringify: 2.1.0
-      jest: 26.6.3
-      jest-util: 26.6.2
-      json5: 2.2.0
-      lodash: 4.17.21
-      make-error: 1.3.6
-      mkdirp: 1.0.4
-      semver: 7.3.4
-      typescript: 4.2.3
-      yargs-parser: 20.2.7
-    dev: true
-    engines:
-      node: '>= 10'
-    hasBin: true
-    peerDependencies:
-      jest: '>=26 <27'
-      typescript: '>=3.8 <5.0'
-    resolution:
-      integrity: sha512-nBiiFGNvtujdLryU7MiMQh1iPmnZ/QvOskBbD2kURiI1MwqvxlxNnaAB/z9TbslMqCsSbu5BXvSSQPc5tvHGeA==
   /tsconfig-paths/3.9.0:
     dependencies:
       '@types/json5': 0.0.29
@@ -8247,6 +8212,7 @@ specifiers:
   '@types/jest': ^26.0.20
   '@types/loader-utils': ^2.0.1
   '@types/webpack': ^4.41.26
+  es-jest: ^1.1.0
   esbuild: ^0.8.57
   husky: ^4.3.8
   jest: ^26.6.3
@@ -8255,7 +8221,6 @@ specifiers:
   lint-staged: ^10.5.4
   loader-utils: ^2.0.0
   memfs: ^3.2.0
-  ts-jest: ^26.5.3
   type-fest: ^0.21.3
   typescript: ^4.2.3
   unionfs: ^4.4.0
