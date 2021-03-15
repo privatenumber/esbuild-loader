@@ -1,5 +1,6 @@
 import esbuildLoader from './loader';
+import ESBuildPlugin from './plugin';
 import ESBuildMinifyPlugin from './minify-plugin';
 
 export default esbuildLoader;
-export {ESBuildMinifyPlugin};
+export {ESBuildPlugin, ESBuildMinifyPlugin};
