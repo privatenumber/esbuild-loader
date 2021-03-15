@@ -1,4 +1,6 @@
 module.exports = {
 	testEnvironment: 'node',
-	preset: 'ts-jest',
+	transform: {
+		'\\.ts$': './test/jest.esbuild-transformer.js',
+	},
 };

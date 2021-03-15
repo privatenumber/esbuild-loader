@@ -6,6 +6,8 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 
 [esbuild-loader](https://github.com/privatenumber/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. babel-loader/ts-loader) and minification (eg. Terser)!
 
+Curious how much faster your build will be? See [what users are saying](https://github.com/privatenumber/esbuild-loader/issues/13).
+
 <sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🚀 Install
@@ -20,8 +22,6 @@ npm i -D esbuild-loader
 In `webpack.config.js`:
 
 ```diff
-+ const { ESBuildPlugin } = require('esbuild-loader')
-
   module.exports = {
     module: {
       rules: [
@@ -41,9 +41,6 @@ In `webpack.config.js`:
         ...
       ],
     },
-    plugins: [
-+     new ESBuildPlugin()
-    ]
   }
 ```
 
@@ -51,8 +48,6 @@ In `webpack.config.js`:
 In `webpack.config.js`:
 
 ```diff
-+ const { ESBuildPlugin } = require('esbuild-loader')
-
   module.exports = {
     module: {
       rules: [
@@ -72,17 +67,13 @@ In `webpack.config.js`:
         ...
       ]
     },
-    plugins: [
-+     new ESBuildPlugin()
-    ]
   }
 ```
 
 #### Configuration
-If you have a `tsconfig.json` file, esbuild-loader will automatically detect it. Alternatively, you can pass it in via the [`tsconfigRaw` option](https://esbuild.github.io/api/#tsconfig-raw).
+If you have a `tsconfig.json` file, esbuild-loader will automatically detect it.
 
-Note, esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L127-L133) and does not do type checks.
-
+Alternatively, you can also pass it in directly via the [`tsconfigRaw` option](https://esbuild.github.io/api/#tsconfig-raw):
 ```diff
   {
       test: /\.tsx?$/,
@@ -95,16 +86,16 @@ Note, esbuild only supports a subset of `tsconfig` options [(see `TransformOptio
   }
 ```
 
+⚠️ esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L127-L133) and does not do type-checks. It's recommended to use a type-aware IDE or `tsc --noEmit` for type-checking instead. It is also recommend to enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) and [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) options in your `tsconfig` by the [esbuild docs](https://esbuild.github.io/content-types/#typescript-caveats).
+
+
 ### Minification (eg. Terser)
-You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is.
+You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
 
 In `webpack.config.js`:
 
 ```diff
-+ const {
-+   ESBuildPlugin,
-+   ESBuildMinifyPlugin
-+ } = require('esbuild-loader')
++ const { ESBuildMinifyPlugin } = require('esbuild-loader')
 
   module.exports = {
     ...,
@@ -117,16 +108,14 @@ In `webpack.config.js`:
 +       })
 +     ]
 +   },
-
-    plugins: [
-+     new ESBuildPlugin()
-    ]
   }
 ```
 
-> _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
->
-> The `target` option tells _esbuild_ that it can use newer JS syntax to perform better minification. If you're not using TypeScript or any syntax unsupported by Webpack, you can also leverage this as a transpilation step. It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
+#### _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile your JS_
+If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel). It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file. Simply set the `target` option on the minifier to specify which support level you want.
+
+### Examples
+If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).
 
 ## ⚙️ Options
 
