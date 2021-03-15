@@ -71,10 +71,9 @@ In `webpack.config.js`:
 ```
 
 #### Configuration
-If you have a `tsconfig.json` file, esbuild-loader will automatically detect it. Alternatively, you can pass it in via the [`tsconfigRaw` option](https://esbuild.github.io/api/#tsconfig-raw).
+If you have a `tsconfig.json` file, esbuild-loader will automatically detect it.
 
-Note, esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L127-L133) and does not do type checks.
-
+Alternatively, you can also pass it in directly via the [`tsconfigRaw` option](https://esbuild.github.io/api/#tsconfig-raw):
 ```diff
   {
       test: /\.tsx?$/,
@@ -86,6 +85,9 @@ Note, esbuild only supports a subset of `tsconfig` options [(see `TransformOptio
       }
   }
 ```
+
+⚠️ Note, esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L127-L133) and does not do type-checks. It's recommended to use a type-aware IDE or `tsc --noEmit` for type-checking instead. It is also recommend to enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) and [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) options in your `tsconfig` by the [esbuild docs](https://esbuild.github.io/content-types/#typescript-caveats).
+
 
 ### Minification (eg. Terser)
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
