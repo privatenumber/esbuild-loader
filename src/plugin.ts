@@ -1,37 +1,6 @@
-import {startService} from 'esbuild';
-import {Compiler} from './interfaces';
-
 class ESBuildPlugin {
-	apply(compiler: Compiler): void {
-		let watching = false;
-
-		const safeStartService = async () => {
-			if (!compiler.$esbuildService) {
-				compiler.$esbuildService = await startService();
-			}
-		};
-
-		compiler.hooks.thisCompilation.tap('esbuild', compilation => {
-			compilation.hooks.childCompiler.tap('esbuild', childCompiler => {
-				childCompiler.$esbuildService = compiler.$esbuildService;
-			});
-		});
-
-		compiler.hooks.run.tapPromise('esbuild', async () => {
-			await safeStartService();
-		});
-
-		compiler.hooks.watchRun.tapPromise('esbuild', async () => {
-			watching = true;
-			await safeStartService();
-		});
-
-		compiler.hooks.done.tap('esbuild', () => {
-			if (!watching && compiler.$esbuildService) {
-				compiler.$esbuildService.stop();
-				compiler.$esbuildService = undefined;
-			}
-		});
+	apply() {
+		console.warn('[esbuild-loader] ESBuildPlugin is no longer required for usage and will be removed in the next major release. Please refer to the docs and release notes for more info.');
 	}
 }
 

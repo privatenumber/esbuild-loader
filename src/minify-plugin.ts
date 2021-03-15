@@ -1,8 +1,8 @@
-import assert from 'assert';
+import {transform} from 'esbuild';
 import {RawSource, SourceMapSource} from 'webpack-sources';
 import webpack from 'webpack';
 import {matchObject} from 'webpack/lib/ModuleFilenameHelpers';
-import {Compiler, MinifyPluginOptions} from './interfaces';
+import {MinifyPluginOptions} from './interfaces';
 
 type Asset = webpack.compilation.Asset;
 
@@ -57,10 +57,8 @@ class ESBuildMinifyPlugin {
 		}
 	}
 
-	apply(compiler: Compiler): void {
+	apply(compiler: webpack.Compiler): void {
 		compiler.hooks.compilation.tap(pluginName, compilation => {
-			assert(compiler.$esbuildService, '[esbuild-loader] You need to add ESBuildPlugin to your webpack config first');
-
 			const meta = JSON.stringify({
 				name: 'esbuild-loader',
 				version,
@@ -118,14 +116,7 @@ class ESBuildMinifyPlugin {
 		compilation: webpack.compilation.Compilation,
 		assetNames: string[],
 	): Promise<void> {
-		const {
-			options: {
-				devtool,
-			},
-			$esbuildService,
-		} = compilation.compiler as Compiler;
-
-		assert($esbuildService, '[esbuild-loader] You need to add ESBuildPlugin to your webpack config first');
+		const {options: {devtool}} = compilation.compiler;
 
 		const sourcemap = (
 			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
@@ -147,7 +138,7 @@ class ESBuildMinifyPlugin {
 				{info, source: assetSource},
 			]) => {
 				const {source, map} = assetSource.sourceAndMap();
-				const result = await $esbuildService.transform(source.toString(), {
+				const result = await transform(source.toString(), {
 					...transformOptions,
 					sourcemap,
 					sourcefile: assetName,
