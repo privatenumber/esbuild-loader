@@ -100,7 +100,7 @@ export const getFile = (stats: Stats, filePath: string) => {
 
 	return {
 		content,
-		execute(prefixCode = '') {
+		execute(prefixCode = ''): any {
 			const context = {
 				module: {
 					exports: {},
