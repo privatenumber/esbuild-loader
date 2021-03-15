@@ -1481,7 +1481,7 @@ exports[`Webpack 4 Source-map source-map eval 1`] = `
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2016\\\\\\", function() { return es2016; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2017\\\\\\", function() { return es2017; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2018\\\\\\", function() { return es2018; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2019\\\\\\", function() { return es2019; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2020\\\\\\", function() { return es2020; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"esnext\\\\\\", function() { return esnext; });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vL2Zvby5qcz9kZmEyIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVO0FBQ3RCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksYUFBSTtBQUNaLE1BQVEsV0FBSyxHQUFMO0FBQ1IsU0FBTztBQUFBO0FBR0QsTUFBTSxTQUFVO0FBQ3RCO0FBQ0MsV0FBTztBQUFBLFdBQ0E7QUFBQTtBQUFBO0FBR0YsTUFBTSxTQUFVO0FBbEJ6QjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVO0FBN0J6QjtBQThCRyxNQUFJO0FBQ0osU0FBTztBQUFBLElBQ047QUFBQSxNQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQWhDaEI7QUFBQSxPQWlDbUIsY0FqQ25CLElBaUNtQixLQUFJLElBakN2QjtBQUFBO0FBQUE7QUFrQ1k7QUFBQTtBQUFBLGtDQUFFO0FBQUEsT0FsQ2Q7QUFBQTtBQUFBO0FBbUNZO0FBQUE7QUFBQSw0QkFuQ1o7QUFBQTtBQUFBLE9Bb0NtQiw2QkFBRTtBQUFBLE9BQUYsUUFwQ25CO0FBQUE7QUFBQSxPQXFDbUIsNkJBckNuQixJQXFDbUIsU0FyQ25CO0FBQUEsSUFzQ0ksb0JBQU07QUFBQTtBQUFBIiwiZmlsZSI6Ii4vZm9vLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./foo.js\\\\n\\");
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2016\\\\\\", function() { return es2016; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2017\\\\\\", function() { return es2017; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2018\\\\\\", function() { return es2018; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2019\\\\\\", function() { return es2019; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"es2020\\\\\\", function() { return es2020; });\\\\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\\\\\"esnext\\\\\\", function() { return esnext; });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vL2Zvby5qcz9kZmEyIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVLE9BQU07QUFDNUIsUUFBTSxJQUFJLENBQUUsR0FBRztBQUNmLE1BQUksSUFBSSxhQUFJO0FBQ1osTUFBUSxXQUFLLEdBQUw7QUFDUixTQUFPO0FBQUE7QUFHRCxNQUFNLFNBQVUsT0FBTTtBQUM1QixNQUFJO0FBQ0gsV0FBTztBQUFBLFdBQ0EsR0FBTjtBQUFBO0FBQUE7QUFHSSxNQUFNLFNBQVUsT0FBTTtBQWxCL0I7QUFtQkcsUUFBTSxNQUFNO0FBQUEsSUFDWCxVQUFVO0FBQUE7QUFFWCxTQUFPO0FBQUEsSUFDTiwyQkFBSztBQUFBLElBQ0wsVUFBSSxTQUFKLFlBQVk7QUFBQSxJQUNaO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBN0IvQjtBQThCRyxNQUFJO0FBQ0osU0FBTztBQUFBLElBQ04sTUFBTTtBQUFBLE1BQU4sY0FoQ0o7QUFnQ1ksaUNBQUk7QUFBQTtBQUFBO0FBQUEsSUFDWixZQUFNO0FBQUEsT0FBUyxjQUFmLElBQWUsS0FBSSxJQUFuQjtBQUFBLElBQ0EsWUFBTTtBQUFBLE1BQU4sY0FsQ0o7QUFrQ1k7QUFBQTtBQUFBLGtDQUFFLFdBQUc7QUFBQSxPQUFiO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQW5DSjtBQW1DWTtBQUFBO0FBQUEsNEJBQVI7QUFBQSxJQUNBLFlBQU07QUFBQSxPQUFTLDZCQUFFLFdBQUc7QUFBQSxPQUFMLFFBQWY7QUFBQSxJQUNBLFlBQU07QUFBQSxPQUFTLDZCQUFmLElBQWUsU0FBZjtBQUFBLElBQ0Esb0JBQU07QUFBQTtBQUFBIiwiZmlsZSI6Ii4vZm9vLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./foo.js\\\\n\\");
 
 /***/ }),
 
@@ -1743,7 +1743,7 @@ __webpack_require__.r(__webpack_exports__);
 //# sourceMappingURL=index.js.map"
 `;
 
-exports[`Webpack 4 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:////foo.js\\",\\"webpack:////index.js\\"],\\"names\\":[],\\"mappings\\":\\";;QAAA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;QAEA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;;;QAGA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA,0CAA0C,gCAAgC;QAC1E;QACA;;QAEA;QACA;QACA;QACA,wDAAwD,kBAAkB;QAC1E;QACA,iDAAiD,cAAc;QAC/D;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA,yCAAyC,iCAAiC;QAC1E,gHAAgH,mBAAmB,EAAE;QACrI;QACA;;QAEA;QACA;QACA;QACA,2BAA2B,0BAA0B,EAAE;QACvD,iCAAiC,eAAe;QAChD;QACA;QACA;;QAEA;QACA,sDAAsD,+DAA+D;;QAErH;QACA;;;QAGA;QACA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AClFA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU;AACtB,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,aAAI;AACZ,MAAQ,WAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU;AACtB;AACC,WAAO;AAAA,WACA;AAAA;AAAA;AAGF,MAAM,SAAU;AAlBzB;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU;AA7BzB;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN;AAAA,MAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IAhChB;AAAA,OAiCmB,cAjCnB,IAiCmB,KAAI,IAjCvB;AAAA;AAAA;AAkCY;AAAA;AAAA,kCAAE;AAAA,OAlCd;AAAA;AAAA;AAmCY;AAAA;AAAA,4BAnCZ;AAAA;AAAA,OAoCmB,6BAAE;AAAA,OAAF,QApCnB;AAAA;AAAA,OAqCmB,6BArCnB,IAqCmB,SArCnB;AAAA,IAsCI,oBAAM;AAAA;AAAA;;;;;;;;;;;;;ACrCR;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\" \\\\t// The module cache\\\\n \\\\tvar installedModules = {};\\\\n\\\\n \\\\t// The require function\\\\n \\\\tfunction __webpack_require__(moduleId) {\\\\n\\\\n \\\\t\\\\t// Check if module is in cache\\\\n \\\\t\\\\tif(installedModules[moduleId]) {\\\\n \\\\t\\\\t\\\\treturn installedModules[moduleId].exports;\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\t// Create a new module (and put it into the cache)\\\\n \\\\t\\\\tvar module = installedModules[moduleId] = {\\\\n \\\\t\\\\t\\\\ti: moduleId,\\\\n \\\\t\\\\t\\\\tl: false,\\\\n \\\\t\\\\t\\\\texports: {}\\\\n \\\\t\\\\t};\\\\n\\\\n \\\\t\\\\t// Execute the module function\\\\n \\\\t\\\\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\\\\n\\\\n \\\\t\\\\t// Flag the module as loaded\\\\n \\\\t\\\\tmodule.l = true;\\\\n\\\\n \\\\t\\\\t// Return the exports of the module\\\\n \\\\t\\\\treturn module.exports;\\\\n \\\\t}\\\\n\\\\n\\\\n \\\\t// expose the modules object (__webpack_modules__)\\\\n \\\\t__webpack_require__.m = modules;\\\\n\\\\n \\\\t// expose the module cache\\\\n \\\\t__webpack_require__.c = installedModules;\\\\n\\\\n \\\\t// define getter function for harmony exports\\\\n \\\\t__webpack_require__.d = function(exports, name, getter) {\\\\n \\\\t\\\\tif(!__webpack_require__.o(exports, name)) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, name, { enumerable: true, get: getter });\\\\n \\\\t\\\\t}\\\\n \\\\t};\\\\n\\\\n \\\\t// define __esModule on exports\\\\n \\\\t__webpack_require__.r = function(exports) {\\\\n \\\\t\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n \\\\t};\\\\n\\\\n \\\\t// create a fake namespace object\\\\n \\\\t// mode & 1: value is a module id, require it\\\\n \\\\t// mode & 2: merge all properties of value into the ns\\\\n \\\\t// mode & 4: return value when already ns object\\\\n \\\\t// mode & 8|1: behave like require\\\\n \\\\t__webpack_require__.t = function(value, mode) {\\\\n \\\\t\\\\tif(mode & 1) value = __webpack_require__(value);\\\\n \\\\t\\\\tif(mode & 8) return value;\\\\n \\\\t\\\\tif((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;\\\\n \\\\t\\\\tvar ns = Object.create(null);\\\\n \\\\t\\\\t__webpack_require__.r(ns);\\\\n \\\\t\\\\tObject.defineProperty(ns, 'default', { enumerable: true, value: value });\\\\n \\\\t\\\\tif(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));\\\\n \\\\t\\\\treturn ns;\\\\n \\\\t};\\\\n\\\\n \\\\t// getDefaultExport function for compatibility with non-harmony modules\\\\n \\\\t__webpack_require__.n = function(module) {\\\\n \\\\t\\\\tvar getter = module && module.__esModule ?\\\\n \\\\t\\\\t\\\\tfunction getDefault() { return module['default']; } :\\\\n \\\\t\\\\t\\\\tfunction getModuleExports() { return module; };\\\\n \\\\t\\\\t__webpack_require__.d(getter, 'a', getter);\\\\n \\\\t\\\\treturn getter;\\\\n \\\\t};\\\\n\\\\n \\\\t// Object.prototype.hasOwnProperty.call\\\\n \\\\t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\\\\n\\\\n \\\\t// __webpack_public_path__\\\\n \\\\t__webpack_require__.p = \\\\\\"\\\\\\";\\\\n\\\\n\\\\n \\\\t// Load entry module and return exports\\\\n \\\\treturn __webpack_require__(__webpack_require__.s = \\\\\\"./index.js\\\\\\");\\\\n\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
+exports[`Webpack 4 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:////foo.js\\",\\"webpack:////index.js\\"],\\"names\\":[],\\"mappings\\":\\";;QAAA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;QAEA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;;;QAGA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA,0CAA0C,gCAAgC;QAC1E;QACA;;QAEA;QACA;QACA;QACA,wDAAwD,kBAAkB;QAC1E;QACA,iDAAiD,cAAc;QAC/D;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA,yCAAyC,iCAAiC;QAC1E,gHAAgH,mBAAmB,EAAE;QACrI;QACA;;QAEA;QACA;QACA;QACA,2BAA2B,0BAA0B,EAAE;QACvD,iCAAiC,eAAe;QAChD;QACA;QACA;;QAEA;QACA,sDAAsD,+DAA+D;;QAErH;QACA;;;QAGA;QACA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AClFA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU,OAAM;AAC5B,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,aAAI;AACZ,MAAQ,WAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU,OAAM;AAC5B,MAAI;AACH,WAAO;AAAA,WACA,GAAN;AAAA;AAAA;AAGI,MAAM,SAAU,OAAM;AAlB/B;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AA7B/B;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN,MAAM;AAAA,MAAN,cAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IACZ,YAAM;AAAA,OAAS,cAAf,IAAe,KAAI,IAAnB;AAAA,IACA,YAAM;AAAA,MAAN,cAlCJ;AAkCY;AAAA;AAAA,kCAAE,WAAG;AAAA,OAAb;AAAA,IACA,YAAM;AAAA,MAAN,cAnCJ;AAmCY;AAAA;AAAA,4BAAR;AAAA,IACA,YAAM;AAAA,OAAS,6BAAE,WAAG;AAAA,OAAL,QAAf;AAAA,IACA,YAAM;AAAA,OAAS,6BAAf,IAAe,SAAf;AAAA,IACA,oBAAM;AAAA;AAAA;;;;;;;;;;;;;ACrCR;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\" \\\\t// The module cache\\\\n \\\\tvar installedModules = {};\\\\n\\\\n \\\\t// The require function\\\\n \\\\tfunction __webpack_require__(moduleId) {\\\\n\\\\n \\\\t\\\\t// Check if module is in cache\\\\n \\\\t\\\\tif(installedModules[moduleId]) {\\\\n \\\\t\\\\t\\\\treturn installedModules[moduleId].exports;\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\t// Create a new module (and put it into the cache)\\\\n \\\\t\\\\tvar module = installedModules[moduleId] = {\\\\n \\\\t\\\\t\\\\ti: moduleId,\\\\n \\\\t\\\\t\\\\tl: false,\\\\n \\\\t\\\\t\\\\texports: {}\\\\n \\\\t\\\\t};\\\\n\\\\n \\\\t\\\\t// Execute the module function\\\\n \\\\t\\\\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\\\\n\\\\n \\\\t\\\\t// Flag the module as loaded\\\\n \\\\t\\\\tmodule.l = true;\\\\n\\\\n \\\\t\\\\t// Return the exports of the module\\\\n \\\\t\\\\treturn module.exports;\\\\n \\\\t}\\\\n\\\\n\\\\n \\\\t// expose the modules object (__webpack_modules__)\\\\n \\\\t__webpack_require__.m = modules;\\\\n\\\\n \\\\t// expose the module cache\\\\n \\\\t__webpack_require__.c = installedModules;\\\\n\\\\n \\\\t// define getter function for harmony exports\\\\n \\\\t__webpack_require__.d = function(exports, name, getter) {\\\\n \\\\t\\\\tif(!__webpack_require__.o(exports, name)) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, name, { enumerable: true, get: getter });\\\\n \\\\t\\\\t}\\\\n \\\\t};\\\\n\\\\n \\\\t// define __esModule on exports\\\\n \\\\t__webpack_require__.r = function(exports) {\\\\n \\\\t\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n \\\\t};\\\\n\\\\n \\\\t// create a fake namespace object\\\\n \\\\t// mode & 1: value is a module id, require it\\\\n \\\\t// mode & 2: merge all properties of value into the ns\\\\n \\\\t// mode & 4: return value when already ns object\\\\n \\\\t// mode & 8|1: behave like require\\\\n \\\\t__webpack_require__.t = function(value, mode) {\\\\n \\\\t\\\\tif(mode & 1) value = __webpack_require__(value);\\\\n \\\\t\\\\tif(mode & 8) return value;\\\\n \\\\t\\\\tif((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;\\\\n \\\\t\\\\tvar ns = Object.create(null);\\\\n \\\\t\\\\t__webpack_require__.r(ns);\\\\n \\\\t\\\\tObject.defineProperty(ns, 'default', { enumerable: true, value: value });\\\\n \\\\t\\\\tif(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));\\\\n \\\\t\\\\treturn ns;\\\\n \\\\t};\\\\n\\\\n \\\\t// getDefaultExport function for compatibility with non-harmony modules\\\\n \\\\t__webpack_require__.n = function(module) {\\\\n \\\\t\\\\tvar getter = module && module.__esModule ?\\\\n \\\\t\\\\t\\\\tfunction getDefault() { return module['default']; } :\\\\n \\\\t\\\\t\\\\tfunction getModuleExports() { return module; };\\\\n \\\\t\\\\t__webpack_require__.d(getter, 'a', getter);\\\\n \\\\t\\\\treturn getter;\\\\n \\\\t};\\\\n\\\\n \\\\t// Object.prototype.hasOwnProperty.call\\\\n \\\\t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\\\\n\\\\n \\\\t// __webpack_public_path__\\\\n \\\\t__webpack_require__.p = \\\\\\"\\\\\\";\\\\n\\\\n\\\\n \\\\t// Load entry module and return exports\\\\n \\\\treturn __webpack_require__(__webpack_require__.s = \\\\\\"./index.js\\\\\\");\\\\n\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
 
 exports[`Webpack 4 Source-map source-map inline 1`] = `
 "module.exports =
@@ -1985,7 +1985,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 /******/ });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9mb28uanMiLCJ3ZWJwYWNrOi8vLy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztRQUFBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTs7UUFFQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTtRQUNBOzs7UUFHQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTtRQUNBO1FBQ0EsMENBQTBDLGdDQUFnQztRQUMxRTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBLHdEQUF3RCxrQkFBa0I7UUFDMUU7UUFDQSxpREFBaUQsY0FBYztRQUMvRDs7UUFFQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0EseUNBQXlDLGlDQUFpQztRQUMxRSxnSEFBZ0gsbUJBQW1CLEVBQUU7UUFDckk7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQSwyQkFBMkIsMEJBQTBCLEVBQUU7UUFDdkQsaUNBQWlDLGVBQWU7UUFDaEQ7UUFDQTtRQUNBOztRQUVBO1FBQ0Esc0RBQXNELCtEQUErRDs7UUFFckg7UUFDQTs7O1FBR0E7UUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ2xGQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVTtBQUN0QixRQUFNLElBQUksQ0FBRSxHQUFHO0FBQ2YsTUFBSSxJQUFJLGFBQUk7QUFDWixNQUFRLFdBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVTtBQUN0QjtBQUNDLFdBQU87QUFBQSxXQUNBO0FBQUE7QUFBQTtBQUdGLE1BQU0sU0FBVTtBQWxCekI7QUFtQkcsUUFBTSxNQUFNO0FBQUEsSUFDWCxVQUFVO0FBQUE7QUFFWCxTQUFPO0FBQUEsSUFDTiwyQkFBSztBQUFBLElBQ0wsVUFBSSxTQUFKLFlBQVk7QUFBQSxJQUNaO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVTtBQTdCekI7QUE4QkcsTUFBSTtBQUNKLFNBQU87QUFBQSxJQUNOO0FBQUEsTUFoQ0o7QUFnQ1ksaUNBQUk7QUFBQTtBQUFBO0FBQUEsSUFoQ2hCO0FBQUEsT0FpQ21CLGNBakNuQixJQWlDbUIsS0FBSSxJQWpDdkI7QUFBQTtBQUFBO0FBa0NZO0FBQUE7QUFBQSxrQ0FBRTtBQUFBLE9BbENkO0FBQUE7QUFBQTtBQW1DWTtBQUFBO0FBQUEsNEJBbkNaO0FBQUE7QUFBQSxPQW9DbUIsNkJBQUU7QUFBQSxPQUFGLFFBcENuQjtBQUFBO0FBQUEsT0FxQ21CLDZCQXJDbkIsSUFxQ21CLFNBckNuQjtBQUFBLElBc0NJLG9CQUFNO0FBQUE7QUFBQTs7Ozs7Ozs7Ozs7OztBQ3JDUjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIgXHQvLyBUaGUgbW9kdWxlIGNhY2hlXG4gXHR2YXIgaW5zdGFsbGVkTW9kdWxlcyA9IHt9O1xuXG4gXHQvLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuIFx0ZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXG4gXHRcdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuIFx0XHRpZihpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSkge1xuIFx0XHRcdHJldHVybiBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXS5leHBvcnRzO1xuIFx0XHR9XG4gXHRcdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG4gXHRcdHZhciBtb2R1bGUgPSBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSA9IHtcbiBcdFx0XHRpOiBtb2R1bGVJZCxcbiBcdFx0XHRsOiBmYWxzZSxcbiBcdFx0XHRleHBvcnRzOiB7fVxuIFx0XHR9O1xuXG4gXHRcdC8vIEV4ZWN1dGUgdGhlIG1vZHVsZSBmdW5jdGlvblxuIFx0XHRtb2R1bGVzW21vZHVsZUlkXS5jYWxsKG1vZHVsZS5leHBvcnRzLCBtb2R1bGUsIG1vZHVsZS5leHBvcnRzLCBfX3dlYnBhY2tfcmVxdWlyZV9fKTtcblxuIFx0XHQvLyBGbGFnIHRoZSBtb2R1bGUgYXMgbG9hZGVkXG4gXHRcdG1vZHVsZS5sID0gdHJ1ZTtcblxuIFx0XHQvLyBSZXR1cm4gdGhlIGV4cG9ydHMgb2YgdGhlIG1vZHVsZVxuIFx0XHRyZXR1cm4gbW9kdWxlLmV4cG9ydHM7XG4gXHR9XG5cblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGVzIG9iamVjdCAoX193ZWJwYWNrX21vZHVsZXNfXylcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubSA9IG1vZHVsZXM7XG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlIGNhY2hlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmMgPSBpbnN0YWxsZWRNb2R1bGVzO1xuXG4gXHQvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9uIGZvciBoYXJtb255IGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uZCA9IGZ1bmN0aW9uKGV4cG9ydHMsIG5hbWUsIGdldHRlcikge1xuIFx0XHRpZighX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIG5hbWUpKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIG5hbWUsIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBnZXR0ZXIgfSk7XG4gXHRcdH1cbiBcdH07XG5cbiBcdC8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uciA9IGZ1bmN0aW9uKGV4cG9ydHMpIHtcbiBcdFx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG4gXHRcdH1cbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbiBcdH07XG5cbiBcdC8vIGNyZWF0ZSBhIGZha2UgbmFtZXNwYWNlIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDE6IHZhbHVlIGlzIGEgbW9kdWxlIGlkLCByZXF1aXJlIGl0XG4gXHQvLyBtb2RlICYgMjogbWVyZ2UgYWxsIHByb3BlcnRpZXMgb2YgdmFsdWUgaW50byB0aGUgbnNcbiBcdC8vIG1vZGUgJiA0OiByZXR1cm4gdmFsdWUgd2hlbiBhbHJlYWR5IG5zIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDh8MTogYmVoYXZlIGxpa2UgcmVxdWlyZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy50ID0gZnVuY3Rpb24odmFsdWUsIG1vZGUpIHtcbiBcdFx0aWYobW9kZSAmIDEpIHZhbHVlID0gX193ZWJwYWNrX3JlcXVpcmVfXyh2YWx1ZSk7XG4gXHRcdGlmKG1vZGUgJiA4KSByZXR1cm4gdmFsdWU7XG4gXHRcdGlmKChtb2RlICYgNCkgJiYgdHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAmJiB2YWx1ZS5fX2VzTW9kdWxlKSByZXR1cm4gdmFsdWU7XG4gXHRcdHZhciBucyA9IE9iamVjdC5jcmVhdGUobnVsbCk7XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18ucihucyk7XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShucywgJ2RlZmF1bHQnLCB7IGVudW1lcmFibGU6IHRydWUsIHZhbHVlOiB2YWx1ZSB9KTtcbiBcdFx0aWYobW9kZSAmIDIgJiYgdHlwZW9mIHZhbHVlICE9ICdzdHJpbmcnKSBmb3IodmFyIGtleSBpbiB2YWx1ZSkgX193ZWJwYWNrX3JlcXVpcmVfXy5kKG5zLCBrZXksIGZ1bmN0aW9uKGtleSkgeyByZXR1cm4gdmFsdWVba2V5XTsgfS5iaW5kKG51bGwsIGtleSkpO1xuIFx0XHRyZXR1cm4gbnM7XG4gXHR9O1xuXG4gXHQvLyBnZXREZWZhdWx0RXhwb3J0IGZ1bmN0aW9uIGZvciBjb21wYXRpYmlsaXR5IHdpdGggbm9uLWhhcm1vbnkgbW9kdWxlc1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5uID0gZnVuY3Rpb24obW9kdWxlKSB7XG4gXHRcdHZhciBnZXR0ZXIgPSBtb2R1bGUgJiYgbW9kdWxlLl9fZXNNb2R1bGUgP1xuIFx0XHRcdGZ1bmN0aW9uIGdldERlZmF1bHQoKSB7IHJldHVybiBtb2R1bGVbJ2RlZmF1bHQnXTsgfSA6XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0TW9kdWxlRXhwb3J0cygpIHsgcmV0dXJuIG1vZHVsZTsgfTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kKGdldHRlciwgJ2EnLCBnZXR0ZXIpO1xuIFx0XHRyZXR1cm4gZ2V0dGVyO1xuIFx0fTtcblxuIFx0Ly8gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSBmdW5jdGlvbihvYmplY3QsIHByb3BlcnR5KSB7IHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqZWN0LCBwcm9wZXJ0eSk7IH07XG5cbiBcdC8vIF9fd2VicGFja19wdWJsaWNfcGF0aF9fXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnAgPSBcIlwiO1xuXG5cbiBcdC8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuIFx0cmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oX193ZWJwYWNrX3JlcXVpcmVfXy5zID0gXCIuL2luZGV4LmpzXCIpO1xuIiwiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIlxuXHRcdGV4cG9ydCAqIGZyb20gJy4vZm9vLmpzJ1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9mb28uanMiLCJ3ZWJwYWNrOi8vLy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztRQUFBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTs7UUFFQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTtRQUNBOzs7UUFHQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTtRQUNBO1FBQ0EsMENBQTBDLGdDQUFnQztRQUMxRTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBLHdEQUF3RCxrQkFBa0I7UUFDMUU7UUFDQSxpREFBaUQsY0FBYztRQUMvRDs7UUFFQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0EseUNBQXlDLGlDQUFpQztRQUMxRSxnSEFBZ0gsbUJBQW1CLEVBQUU7UUFDckk7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQSwyQkFBMkIsMEJBQTBCLEVBQUU7UUFDdkQsaUNBQWlDLGVBQWU7UUFDaEQ7UUFDQTtRQUNBOztRQUVBO1FBQ0Esc0RBQXNELCtEQUErRDs7UUFFckg7UUFDQTs7O1FBR0E7UUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ2xGQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksYUFBSTtBQUNaLE1BQVEsV0FBSyxHQUFMO0FBQ1IsU0FBTztBQUFBO0FBR0QsTUFBTSxTQUFVLE9BQU07QUFDNUIsTUFBSTtBQUNILFdBQU87QUFBQSxXQUNBLEdBQU47QUFBQTtBQUFBO0FBR0ksTUFBTSxTQUFVLE9BQU07QUFsQi9CO0FBbUJHLFFBQU0sTUFBTTtBQUFBLElBQ1gsVUFBVTtBQUFBO0FBRVgsU0FBTztBQUFBLElBQ04sMkJBQUs7QUFBQSxJQUNMLFVBQUksU0FBSixZQUFZO0FBQUEsSUFDWjtBQUFBO0FBQUE7QUFJSyxNQUFNLFNBQVUsT0FBTTtBQTdCL0I7QUE4QkcsTUFBSTtBQUNKLFNBQU87QUFBQSxJQUNOLE1BQU07QUFBQSxNQUFOLGNBaENKO0FBZ0NZLGlDQUFJO0FBQUE7QUFBQTtBQUFBLElBQ1osWUFBTTtBQUFBLE9BQVMsY0FBZixJQUFlLEtBQUksSUFBbkI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBbENKO0FBa0NZO0FBQUE7QUFBQSxrQ0FBRSxXQUFHO0FBQUEsT0FBYjtBQUFBLElBQ0EsWUFBTTtBQUFBLE1BQU4sY0FuQ0o7QUFtQ1k7QUFBQTtBQUFBLDRCQUFSO0FBQUEsSUFDQSxZQUFNO0FBQUEsT0FBUyw2QkFBRSxXQUFHO0FBQUEsT0FBTCxRQUFmO0FBQUEsSUFDQSxZQUFNO0FBQUEsT0FBUyw2QkFBZixJQUFlLFNBQWY7QUFBQSxJQUNBLG9CQUFNO0FBQUE7QUFBQTs7Ozs7Ozs7Ozs7OztBQ3JDUjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIgXHQvLyBUaGUgbW9kdWxlIGNhY2hlXG4gXHR2YXIgaW5zdGFsbGVkTW9kdWxlcyA9IHt9O1xuXG4gXHQvLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuIFx0ZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXG4gXHRcdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuIFx0XHRpZihpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSkge1xuIFx0XHRcdHJldHVybiBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXS5leHBvcnRzO1xuIFx0XHR9XG4gXHRcdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG4gXHRcdHZhciBtb2R1bGUgPSBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSA9IHtcbiBcdFx0XHRpOiBtb2R1bGVJZCxcbiBcdFx0XHRsOiBmYWxzZSxcbiBcdFx0XHRleHBvcnRzOiB7fVxuIFx0XHR9O1xuXG4gXHRcdC8vIEV4ZWN1dGUgdGhlIG1vZHVsZSBmdW5jdGlvblxuIFx0XHRtb2R1bGVzW21vZHVsZUlkXS5jYWxsKG1vZHVsZS5leHBvcnRzLCBtb2R1bGUsIG1vZHVsZS5leHBvcnRzLCBfX3dlYnBhY2tfcmVxdWlyZV9fKTtcblxuIFx0XHQvLyBGbGFnIHRoZSBtb2R1bGUgYXMgbG9hZGVkXG4gXHRcdG1vZHVsZS5sID0gdHJ1ZTtcblxuIFx0XHQvLyBSZXR1cm4gdGhlIGV4cG9ydHMgb2YgdGhlIG1vZHVsZVxuIFx0XHRyZXR1cm4gbW9kdWxlLmV4cG9ydHM7XG4gXHR9XG5cblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGVzIG9iamVjdCAoX193ZWJwYWNrX21vZHVsZXNfXylcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubSA9IG1vZHVsZXM7XG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlIGNhY2hlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmMgPSBpbnN0YWxsZWRNb2R1bGVzO1xuXG4gXHQvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9uIGZvciBoYXJtb255IGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uZCA9IGZ1bmN0aW9uKGV4cG9ydHMsIG5hbWUsIGdldHRlcikge1xuIFx0XHRpZighX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIG5hbWUpKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIG5hbWUsIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBnZXR0ZXIgfSk7XG4gXHRcdH1cbiBcdH07XG5cbiBcdC8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uciA9IGZ1bmN0aW9uKGV4cG9ydHMpIHtcbiBcdFx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG4gXHRcdH1cbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbiBcdH07XG5cbiBcdC8vIGNyZWF0ZSBhIGZha2UgbmFtZXNwYWNlIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDE6IHZhbHVlIGlzIGEgbW9kdWxlIGlkLCByZXF1aXJlIGl0XG4gXHQvLyBtb2RlICYgMjogbWVyZ2UgYWxsIHByb3BlcnRpZXMgb2YgdmFsdWUgaW50byB0aGUgbnNcbiBcdC8vIG1vZGUgJiA0OiByZXR1cm4gdmFsdWUgd2hlbiBhbHJlYWR5IG5zIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDh8MTogYmVoYXZlIGxpa2UgcmVxdWlyZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy50ID0gZnVuY3Rpb24odmFsdWUsIG1vZGUpIHtcbiBcdFx0aWYobW9kZSAmIDEpIHZhbHVlID0gX193ZWJwYWNrX3JlcXVpcmVfXyh2YWx1ZSk7XG4gXHRcdGlmKG1vZGUgJiA4KSByZXR1cm4gdmFsdWU7XG4gXHRcdGlmKChtb2RlICYgNCkgJiYgdHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAmJiB2YWx1ZS5fX2VzTW9kdWxlKSByZXR1cm4gdmFsdWU7XG4gXHRcdHZhciBucyA9IE9iamVjdC5jcmVhdGUobnVsbCk7XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18ucihucyk7XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShucywgJ2RlZmF1bHQnLCB7IGVudW1lcmFibGU6IHRydWUsIHZhbHVlOiB2YWx1ZSB9KTtcbiBcdFx0aWYobW9kZSAmIDIgJiYgdHlwZW9mIHZhbHVlICE9ICdzdHJpbmcnKSBmb3IodmFyIGtleSBpbiB2YWx1ZSkgX193ZWJwYWNrX3JlcXVpcmVfXy5kKG5zLCBrZXksIGZ1bmN0aW9uKGtleSkgeyByZXR1cm4gdmFsdWVba2V5XTsgfS5iaW5kKG51bGwsIGtleSkpO1xuIFx0XHRyZXR1cm4gbnM7XG4gXHR9O1xuXG4gXHQvLyBnZXREZWZhdWx0RXhwb3J0IGZ1bmN0aW9uIGZvciBjb21wYXRpYmlsaXR5IHdpdGggbm9uLWhhcm1vbnkgbW9kdWxlc1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5uID0gZnVuY3Rpb24obW9kdWxlKSB7XG4gXHRcdHZhciBnZXR0ZXIgPSBtb2R1bGUgJiYgbW9kdWxlLl9fZXNNb2R1bGUgP1xuIFx0XHRcdGZ1bmN0aW9uIGdldERlZmF1bHQoKSB7IHJldHVybiBtb2R1bGVbJ2RlZmF1bHQnXTsgfSA6XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0TW9kdWxlRXhwb3J0cygpIHsgcmV0dXJuIG1vZHVsZTsgfTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kKGdldHRlciwgJ2EnLCBnZXR0ZXIpO1xuIFx0XHRyZXR1cm4gZ2V0dGVyO1xuIFx0fTtcblxuIFx0Ly8gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSBmdW5jdGlvbihvYmplY3QsIHByb3BlcnR5KSB7IHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqZWN0LCBwcm9wZXJ0eSk7IH07XG5cbiBcdC8vIF9fd2VicGFja19wdWJsaWNfcGF0aF9fXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnAgPSBcIlwiO1xuXG5cbiBcdC8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuIFx0cmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oX193ZWJwYWNrX3JlcXVpcmVfXy5zID0gXCIuL2luZGV4LmpzXCIpO1xuIiwiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIlxuXHRcdGV4cG9ydCAqIGZyb20gJy4vZm9vLmpzJ1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
 `;
 
 exports[`Webpack 4 Source-map source-map plugin 1`] = `
@@ -2638,26 +2638,9 @@ console.log(\\"bar\\" + 1);
 `;
 
 exports[`Webpack 5 Loader ambigious ts/tsx ambiguous ts 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
-/* harmony export */ });
-/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
-
-
-
-/***/ }),
 
 /***/ \\"./foo.ts\\":
 /*!****************!*\\\\
@@ -2682,8 +2665,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -2729,35 +2713,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
 
 exports[`Webpack 5 Loader ambigious ts/tsx ambiguous tsx 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.default)
-/* harmony export */ });
-/* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
-
-
-
-/***/ }),
 
 /***/ \\"./foo.tsx\\":
 /*!*****************!*\\\\
@@ -2782,8 +2761,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -2829,36 +2809,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
 
 exports[`Webpack 5 Loader ambigious ts/tsx ts via tsx 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_foo_ts__WEBPACK_IMPORTED_MODULE_0__.foo)());
-
-
-/***/ }),
 
 /***/ \\"./foo.ts\\":
 /*!****************!*\\\\
@@ -2899,8 +2873,9 @@ const bar = (value) => fn();
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -2946,35 +2921,31 @@ const bar = (value) => fn();
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_foo_ts__WEBPACK_IMPORTED_MODULE_0__.foo)());
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
 
 exports[`Webpack 5 Loader ambigious ts/tsx ts via tsx 2 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
-/* harmony export */ });
-/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
-
-
-
-/***/ }),
 
 /***/ \\"./foo.ts\\":
 /*!****************!*\\\\
@@ -3002,8 +2973,9 @@ const testFn = (l, options) => {
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -3049,10 +3021,22 @@ const testFn = (l, options) => {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
@@ -3060,8 +3044,7 @@ const testFn = (l, options) => {
 exports[`Webpack 5 Loader ambigious ts/tsx ts via tsx 2 2`] = `1`;
 
 exports[`Webpack 5 Loader js 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
 
@@ -3185,27 +3168,6 @@ const esnext = (() => {
 })();
 
 
-/***/ }),
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
-/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
-/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
-/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
-/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
-/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
-/* harmony export */ });
-/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
-
-
-
 /***/ })
 
 /******/ 	});
@@ -3216,8 +3178,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -3263,10 +3226,27 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
+/* harmony export */ });
+/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
@@ -3297,27 +3277,9 @@ Object {
 `;
 
 exports[`Webpack 5 Loader ts 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_foo_ts__WEBPACK_IMPORTED_MODULE_0__.foo)());
-
-
-/***/ }),
 
 /***/ \\"./foo.ts\\":
 /*!****************!*\\\\
@@ -3358,8 +3320,9 @@ const bar = (value) => fn();
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -3405,10 +3368,23 @@ const bar = (value) => fn();
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_foo_ts__WEBPACK_IMPORTED_MODULE_0__.foo)());
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
@@ -3420,26 +3396,9 @@ Object {
 `;
 
 exports[`Webpack 5 Loader ts w/ tsconfig 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
-/* harmony export */ });
-/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
-
-
-
-/***/ }),
 
 /***/ \\"./foo.ts\\":
 /*!****************!*\\\\
@@ -3476,8 +3435,9 @@ class A {
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -3523,39 +3483,30 @@ class A {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (/* reexport safe */ _foo_ts__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _foo_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.ts */ \\"./foo.ts\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
 
 exports[`Webpack 5 Loader tsx 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
-  _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.HelloWorld,
-  new _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.default().render()
-]);
-
-
-/***/ }),
 
 /***/ \\"./foo.tsx\\":
 /*!*****************!*\\\\
@@ -3588,8 +3539,9 @@ class Foo {
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -3635,10 +3587,26 @@ class Foo {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
+  _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.HelloWorld,
+  new _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.default().render()
+]);
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
@@ -3667,30 +3635,9 @@ Object {
 `;
 
 exports[`Webpack 5 Loader tsx w/ tsconfig 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
-  _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.HelloWorld,
-  new _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.default().render()
-]);
-
-
-/***/ }),
 
 /***/ \\"./foo.tsx\\":
 /*!*****************!*\\\\
@@ -3723,8 +3670,9 @@ class Foo {
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -3770,10 +3718,26 @@ class Foo {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _foo_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.tsx */ \\"./foo.tsx\\");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
+  _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.HelloWorld,
+  new _foo_tsx__WEBPACK_IMPORTED_MODULE_0__.default().render()
+]);
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
@@ -3810,7 +3774,6 @@ exports[`Webpack 5 Source-map source-map eval 1`] = `
  * or disable the default devtool with \\"devtool: false\\".
  * If you are looking for production-ready output files, see mode: \\"production\\" (https://webpack.js.org/configuration/mode/).
  */
-module.exports =
 /******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
@@ -3821,7 +3784,7 @@ module.exports =
   \\\\****************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => (/* binding */ es2016),\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => (/* binding */ es2017),\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => (/* binding */ es2018),\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => (/* binding */ es2019),\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => (/* binding */ es2020),\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => (/* binding */ esnext)\\\\n/* harmony export */ });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanM/MDhhYiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVO0FBQ3RCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksYUFBSTtBQUNaLE1BQVEsV0FBSyxHQUFMO0FBQ1IsU0FBTztBQUFBO0FBR0QsTUFBTSxTQUFVO0FBQ3RCO0FBQ0MsV0FBTztBQUFBLFdBQ0E7QUFBQTtBQUFBO0FBR0YsTUFBTSxTQUFVO0FBbEJ6QjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVO0FBN0J6QjtBQThCRyxNQUFJO0FBQ0osU0FBTztBQUFBLElBQ047QUFBQSxNQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQWhDaEI7QUFBQSxPQWlDbUIsY0FqQ25CLElBaUNtQixLQUFJLElBakN2QjtBQUFBO0FBQUE7QUFrQ1k7QUFBQTtBQUFBLGtDQUFFO0FBQUEsT0FsQ2Q7QUFBQTtBQUFBO0FBbUNZO0FBQUE7QUFBQSw0QkFuQ1o7QUFBQTtBQUFBLE9Bb0NtQiw2QkFBRTtBQUFBLE9BQUYsUUFwQ25CO0FBQUE7QUFBQSxPQXFDbUIsNkJBckNuQixJQXFDbUIsU0FyQ25CO0FBQUEsSUFzQ0ksb0JBQU07QUFBQTtBQUFBIiwiZmlsZSI6Ii4vZm9vLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./foo.js\\\\n\\");
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\\\\n/* harmony export */   \\\\\\"es2016\\\\\\": () => (/* binding */ es2016),\\\\n/* harmony export */   \\\\\\"es2017\\\\\\": () => (/* binding */ es2017),\\\\n/* harmony export */   \\\\\\"es2018\\\\\\": () => (/* binding */ es2018),\\\\n/* harmony export */   \\\\\\"es2019\\\\\\": () => (/* binding */ es2019),\\\\n/* harmony export */   \\\\\\"es2020\\\\\\": () => (/* binding */ es2020),\\\\n/* harmony export */   \\\\\\"esnext\\\\\\": () => (/* binding */ esnext)\\\\n/* harmony export */ });\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __assign = Object.assign;\\\\nvar __rest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  if (typeof key !== \\\\\\"symbol\\\\\\")\\\\n    key += \\\\\\"\\\\\\";\\\\n  if (key in obj)\\\\n    return __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value});\\\\n  return obj[key] = value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (result) => {\\\\n      return result.done ? resolve(result.value) : Promise.resolve(result.value).then(fulfilled, rejected);\\\\n    };\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __assign({}, y);\\\\n  let z = __rest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanM/MDhhYiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVLE9BQU07QUFDNUIsUUFBTSxJQUFJLENBQUUsR0FBRztBQUNmLE1BQUksSUFBSSxhQUFJO0FBQ1osTUFBUSxXQUFLLEdBQUw7QUFDUixTQUFPO0FBQUE7QUFHRCxNQUFNLFNBQVUsT0FBTTtBQUM1QixNQUFJO0FBQ0gsV0FBTztBQUFBLFdBQ0EsR0FBTjtBQUFBO0FBQUE7QUFHSSxNQUFNLFNBQVUsT0FBTTtBQWxCL0I7QUFtQkcsUUFBTSxNQUFNO0FBQUEsSUFDWCxVQUFVO0FBQUE7QUFFWCxTQUFPO0FBQUEsSUFDTiwyQkFBSztBQUFBLElBQ0wsVUFBSSxTQUFKLFlBQVk7QUFBQSxJQUNaO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBN0IvQjtBQThCRyxNQUFJO0FBQ0osU0FBTztBQUFBLElBQ04sTUFBTTtBQUFBLE1BQU4sY0FoQ0o7QUFnQ1ksaUNBQUk7QUFBQTtBQUFBO0FBQUEsSUFDWixZQUFNO0FBQUEsT0FBUyxjQUFmLElBQWUsS0FBSSxJQUFuQjtBQUFBLElBQ0EsWUFBTTtBQUFBLE1BQU4sY0FsQ0o7QUFrQ1k7QUFBQTtBQUFBLGtDQUFFLFdBQUc7QUFBQSxPQUFiO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQW5DSjtBQW1DWTtBQUFBO0FBQUEsNEJBQVI7QUFBQSxJQUNBLFlBQU07QUFBQSxPQUFTLDZCQUFFLFdBQUc7QUFBQSxPQUFMLFFBQWY7QUFBQSxJQUNBLFlBQU07QUFBQSxPQUFTLDZCQUFmLElBQWUsU0FBZjtBQUFBLElBQ0Esb0JBQU07QUFBQTtBQUFBIiwiZmlsZSI6Ii4vZm9vLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./foo.js\\\\n\\");
 
 /***/ }),
 
@@ -3843,8 +3806,9 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -3890,17 +3854,19 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
+/******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__(\\"./index.js\\");
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
 /******/ })()
 ;"
 `;
 
 exports[`Webpack 5 Source-map source-map file 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
 
@@ -4024,27 +3990,6 @@ const esnext = (() => {
 })();
 
 
-/***/ }),
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
-/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
-/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
-/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
-/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
-/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
-/* harmony export */ });
-/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
-
-
-
 /***/ })
 
 /******/ 	});
@@ -4055,8 +4000,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -4102,20 +4048,36 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
+/* harmony export */ });
+/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;
 //# sourceMappingURL=index.js.map"
 `;
 
-exports[`Webpack 5 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///./foo.js\\",\\"webpack:///./index.js\\",\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///webpack/startup\\"],\\"names\\":[],\\"mappings\\":\\";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU;AACtB,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,aAAI;AACZ,MAAQ,WAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU;AACtB;AACC,WAAO;AAAA,WACA;AAAA;AAAA;AAGF,MAAM,SAAU;AAlBzB;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU;AA7BzB;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN;AAAA,MAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IAhChB;AAAA,OAiCmB,cAjCnB,IAiCmB,KAAI,IAjCvB;AAAA;AAAA;AAkCY;AAAA;AAAA,kCAAE;AAAA,OAlCd;AAAA;AAAA;AAmCY;AAAA;AAAA,4BAnCZ;AAAA;AAAA,OAoCmB,6BAAE;AAAA,OAAF,QApCnB;AAAA;AAAA,OAqCmB,6BArCnB,IAqCmB,SArCnB;AAAA,IAsCI,oBAAM;AAAA;AAAA;;;;;;;;;;;;;;;;;;;;;ACrCR;;;;;;;UCDF;UACA;;UAEA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;;UAEA;UACA;;UAEA;UACA;UACA;;;;;WCrBA;WACA;WACA;WACA;WACA,wCAAwC,yCAAyC;WACjF;WACA;WACA,E;;;;;WCPA,wF;;;;;WCAA;WACA;WACA;WACA,sDAAsD,kBAAkB;WACxE;WACA,+CAA+C,cAAc;WAC7D,E;;;;UCNA;UACA;UACA;UACA\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\",\\"// The module cache\\\\nvar __webpack_module_cache__ = {};\\\\n\\\\n// The require function\\\\nfunction __webpack_require__(moduleId) {\\\\n\\\\t// Check if module is in cache\\\\n\\\\tif(__webpack_module_cache__[moduleId]) {\\\\n\\\\t\\\\treturn __webpack_module_cache__[moduleId].exports;\\\\n\\\\t}\\\\n\\\\t// Create a new module (and put it into the cache)\\\\n\\\\tvar module = __webpack_module_cache__[moduleId] = {\\\\n\\\\t\\\\t// no module.id needed\\\\n\\\\t\\\\t// no module.loaded needed\\\\n\\\\t\\\\texports: {}\\\\n\\\\t};\\\\n\\\\n\\\\t// Execute the module function\\\\n\\\\t__webpack_modules__[moduleId](module, module.exports, __webpack_require__);\\\\n\\\\n\\\\t// Return the exports of the module\\\\n\\\\treturn module.exports;\\\\n}\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"// module exports must be returned from runtime so entry inlining is disabled\\\\n// startup\\\\n// Load entry module and return exports\\\\nreturn __webpack_require__(\\\\\\"./index.js\\\\\\");\\\\n\\"],\\"sourceRoot\\":\\"\\"}"`;
+exports[`Webpack 5 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///./foo.js\\",\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///./index.js\\"],\\"names\\":[],\\"mappings\\":\\";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU,OAAM;AAC5B,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,aAAI;AACZ,MAAQ,WAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU,OAAM;AAC5B,MAAI;AACH,WAAO;AAAA,WACA,GAAN;AAAA;AAAA;AAGI,MAAM,SAAU,OAAM;AAlB/B;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AA7B/B;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN,MAAM;AAAA,MAAN,cAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IACZ,YAAM;AAAA,OAAS,cAAf,IAAe,KAAI,IAAnB;AAAA,IACA,YAAM;AAAA,MAAN,cAlCJ;AAkCY;AAAA;AAAA,kCAAE,WAAG;AAAA,OAAb;AAAA,IACA,YAAM;AAAA,MAAN,cAnCJ;AAmCY;AAAA;AAAA,4BAAR;AAAA,IACA,YAAM;AAAA,OAAS,6BAAE,WAAG;AAAA,OAAL,QAAf;AAAA,IACA,YAAM;AAAA,OAAS,6BAAf,IAAe,SAAf;AAAA,IACA,oBAAM;AAAA;AAAA;;;;;;;UCtCV;UACA;;UAEA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;;UAEA;UACA;;UAEA;UACA;UACA;;;;;WCtBA;WACA;WACA;WACA;WACA,wCAAwC,yCAAyC;WACjF;WACA;WACA,E;;;;;WCPA,wF;;;;;WCAA;WACA;WACA;WACA,sDAAsD,kBAAkB;WACxE;WACA,+CAA+C,cAAc;WAC7D,E;;;;;;;;;;;;;;;;;;;;ACLE\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"// The module cache\\\\nvar __webpack_module_cache__ = {};\\\\n\\\\n// The require function\\\\nfunction __webpack_require__(moduleId) {\\\\n\\\\t// Check if module is in cache\\\\n\\\\tvar cachedModule = __webpack_module_cache__[moduleId];\\\\n\\\\tif (cachedModule !== undefined) {\\\\n\\\\t\\\\treturn cachedModule.exports;\\\\n\\\\t}\\\\n\\\\t// Create a new module (and put it into the cache)\\\\n\\\\tvar module = __webpack_module_cache__[moduleId] = {\\\\n\\\\t\\\\t// no module.id needed\\\\n\\\\t\\\\t// no module.loaded needed\\\\n\\\\t\\\\texports: {}\\\\n\\\\t};\\\\n\\\\n\\\\t// Execute the module function\\\\n\\\\t__webpack_modules__[moduleId](module, module.exports, __webpack_require__);\\\\n\\\\n\\\\t// Return the exports of the module\\\\n\\\\treturn module.exports;\\\\n}\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
 
 exports[`Webpack 5 Source-map source-map inline 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
 
@@ -4239,27 +4201,6 @@ const esnext = (() => {
 })();
 
 
-/***/ }),
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
-/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
-/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
-/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
-/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
-/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
-/* harmony export */ });
-/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
-
-
-
 /***/ })
 
 /******/ 	});
@@ -4270,8 +4211,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -4317,13 +4259,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
+/* harmony export */ });
+/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanMiLCJ3ZWJwYWNrOi8vLy4vaW5kZXguanMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svYm9vdHN0cmFwIiwid2VicGFjazovLy93ZWJwYWNrL3J1bnRpbWUvZGVmaW5lIHByb3BlcnR5IGdldHRlcnMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9oYXNPd25Qcm9wZXJ0eSBzaG9ydGhhbmQiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9tYWtlIG5hbWVzcGFjZSBvYmplY3QiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svc3RhcnR1cCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDUyxNQUFNLFNBQVMsVUFBTTtBQUVyQixNQUFNLFNBQVM7QUFFZixNQUFNLFNBQVU7QUFDdEIsUUFBTSxJQUFJLENBQUUsR0FBRztBQUNmLE1BQUksSUFBSSxhQUFJO0FBQ1osTUFBUSxXQUFLLEdBQUw7QUFDUixTQUFPO0FBQUE7QUFHRCxNQUFNLFNBQVU7QUFDdEI7QUFDQyxXQUFPO0FBQUEsV0FDQTtBQUFBO0FBQUE7QUFHRixNQUFNLFNBQVU7QUFsQnpCO0FBbUJHLFFBQU0sTUFBTTtBQUFBLElBQ1gsVUFBVTtBQUFBO0FBRVgsU0FBTztBQUFBLElBQ04sMkJBQUs7QUFBQSxJQUNMLFVBQUksU0FBSixZQUFZO0FBQUEsSUFDWjtBQUFBO0FBQUE7QUFJSyxNQUFNLFNBQVU7QUE3QnpCO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTjtBQUFBLE1BaENKO0FBZ0NZLGlDQUFJO0FBQUE7QUFBQTtBQUFBLElBaENoQjtBQUFBLE9BaUNtQixjQWpDbkIsSUFpQ21CLEtBQUksSUFqQ3ZCO0FBQUE7QUFBQTtBQWtDWTtBQUFBO0FBQUEsa0NBQUU7QUFBQSxPQWxDZDtBQUFBO0FBQUE7QUFtQ1k7QUFBQTtBQUFBLDRCQW5DWjtBQUFBO0FBQUEsT0FvQ21CLDZCQUFFO0FBQUEsT0FBRixRQXBDbkI7QUFBQTtBQUFBLE9BcUNtQiw2QkFyQ25CLElBcUNtQixTQXJDbkI7QUFBQSxJQXNDSSxvQkFBTTtBQUFBO0FBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ3JDUjs7Ozs7OztVQ0RGO1VBQ0E7O1VBRUE7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBOztVQUVBO1VBQ0E7O1VBRUE7VUFDQTtVQUNBOzs7OztXQ3JCQTtXQUNBO1dBQ0E7V0FDQTtXQUNBLHdDQUF3Qyx5Q0FBeUM7V0FDakY7V0FDQTtXQUNBLEU7Ozs7O1dDUEEsd0Y7Ozs7O1dDQUE7V0FDQTtXQUNBO1dBQ0Esc0RBQXNELGtCQUFrQjtXQUN4RTtXQUNBLCtDQUErQyxjQUFjO1dBQzdELEU7Ozs7VUNOQTtVQUNBO1VBQ0E7VUFDQSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiLCJcblx0XHRleHBvcnQgKiBmcm9tICcuL2Zvby5qcydcblx0IiwiLy8gVGhlIG1vZHVsZSBjYWNoZVxudmFyIF9fd2VicGFja19tb2R1bGVfY2FjaGVfXyA9IHt9O1xuXG4vLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcblx0aWYoX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fW21vZHVsZUlkXSkge1xuXHRcdHJldHVybiBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdLmV4cG9ydHM7XG5cdH1cblx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcblx0dmFyIG1vZHVsZSA9IF9fd2VicGFja19tb2R1bGVfY2FjaGVfX1ttb2R1bGVJZF0gPSB7XG5cdFx0Ly8gbm8gbW9kdWxlLmlkIG5lZWRlZFxuXHRcdC8vIG5vIG1vZHVsZS5sb2FkZWQgbmVlZGVkXG5cdFx0ZXhwb3J0czoge31cblx0fTtcblxuXHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cblx0X193ZWJwYWNrX21vZHVsZXNfX1ttb2R1bGVJZF0obW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cblx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcblx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xufVxuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgcHJvcCkpIiwiLy8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5yID0gKGV4cG9ydHMpID0+IHtcblx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG5cdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG5cdH1cblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbn07IiwiLy8gbW9kdWxlIGV4cG9ydHMgbXVzdCBiZSByZXR1cm5lZCBmcm9tIHJ1bnRpbWUgc28gZW50cnkgaW5saW5pbmcgaXMgZGlzYWJsZWRcbi8vIHN0YXJ0dXBcbi8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xucmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oXCIuL2luZGV4LmpzXCIpO1xuIl0sInNvdXJjZVJvb3QiOiIifQ=="
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mb28uanMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svYm9vdHN0cmFwIiwid2VicGFjazovLy93ZWJwYWNrL3J1bnRpbWUvZGVmaW5lIHByb3BlcnR5IGdldHRlcnMiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9oYXNPd25Qcm9wZXJ0eSBzaG9ydGhhbmQiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9tYWtlIG5hbWVzcGFjZSBvYmplY3QiLCJ3ZWJwYWNrOi8vLy4vaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDUyxNQUFNLFNBQVMsVUFBTTtBQUVyQixNQUFNLFNBQVM7QUFFZixNQUFNLFNBQVUsT0FBTTtBQUM1QixRQUFNLElBQUksQ0FBRSxHQUFHO0FBQ2YsTUFBSSxJQUFJLGFBQUk7QUFDWixNQUFRLFdBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUE3Qi9CO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQWxDSjtBQWtDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBbkNKO0FBbUNZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQUUsV0FBRztBQUFBLE9BQUwsUUFBZjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQWYsSUFBZSxTQUFmO0FBQUEsSUFDQSxvQkFBTTtBQUFBO0FBQUE7Ozs7Ozs7VUN0Q1Y7VUFDQTs7VUFFQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTs7VUFFQTtVQUNBOztVQUVBO1VBQ0E7VUFDQTs7Ozs7V0N0QkE7V0FDQTtXQUNBO1dBQ0E7V0FDQSx3Q0FBd0MseUNBQXlDO1dBQ2pGO1dBQ0E7V0FDQSxFOzs7OztXQ1BBLHdGOzs7OztXQ0FBO1dBQ0E7V0FDQTtXQUNBLHNEQUFzRCxrQkFBa0I7V0FDeEU7V0FDQSwrQ0FBK0MsY0FBYztXQUM3RCxFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ0xFIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIi8vIFRoZSBtb2R1bGUgY2FjaGVcbnZhciBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX18gPSB7fTtcblxuLy8gVGhlIHJlcXVpcmUgZnVuY3Rpb25cbmZ1bmN0aW9uIF9fd2VicGFja19yZXF1aXJlX18obW9kdWxlSWQpIHtcblx0Ly8gQ2hlY2sgaWYgbW9kdWxlIGlzIGluIGNhY2hlXG5cdHZhciBjYWNoZWRNb2R1bGUgPSBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdO1xuXHRpZiAoY2FjaGVkTW9kdWxlICE9PSB1bmRlZmluZWQpIHtcblx0XHRyZXR1cm4gY2FjaGVkTW9kdWxlLmV4cG9ydHM7XG5cdH1cblx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcblx0dmFyIG1vZHVsZSA9IF9fd2VicGFja19tb2R1bGVfY2FjaGVfX1ttb2R1bGVJZF0gPSB7XG5cdFx0Ly8gbm8gbW9kdWxlLmlkIG5lZWRlZFxuXHRcdC8vIG5vIG1vZHVsZS5sb2FkZWQgbmVlZGVkXG5cdFx0ZXhwb3J0czoge31cblx0fTtcblxuXHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cblx0X193ZWJwYWNrX21vZHVsZXNfX1ttb2R1bGVJZF0obW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cblx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcblx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xufVxuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgcHJvcCkpIiwiLy8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5yID0gKGV4cG9ydHMpID0+IHtcblx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG5cdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG5cdH1cblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbn07IiwiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0="
 `;
 
 exports[`Webpack 5 Source-map source-map plugin 1`] = `
@@ -4335,7 +4294,6 @@ exports[`Webpack 5 Source-map source-map plugin 1`] = `
  * or disable the default devtool with \\"devtool: false\\".
  * If you are looking for production-ready output files, see mode: \\"production\\" (https://webpack.js.org/configuration/mode/).
  */
-module.exports =
 /******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
@@ -4368,8 +4326,9 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -4415,18 +4374,20 @@ eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony export */ __w
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
+/******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__(\\"./index.js\\");
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vd2VicGFjay9zdGFydHVwIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1VBQUE7VUFDQTs7VUFFQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7O1VBRUE7VUFDQTs7VUFFQTtVQUNBO1VBQ0E7Ozs7O1dDckJBO1dBQ0E7V0FDQTtXQUNBO1dBQ0Esd0NBQXdDLHlDQUF5QztXQUNqRjtXQUNBO1dBQ0EsRTs7Ozs7V0NQQSx3Rjs7Ozs7V0NBQTtXQUNBO1dBQ0E7V0FDQSxzREFBc0Qsa0JBQWtCO1dBQ3hFO1dBQ0EsK0NBQStDLGNBQWM7V0FDN0QsRTs7OztVQ05BO1VBQ0E7VUFDQTtVQUNBIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGhlIG1vZHVsZSBjYWNoZVxudmFyIF9fd2VicGFja19tb2R1bGVfY2FjaGVfXyA9IHt9O1xuXG4vLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcblx0aWYoX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fW21vZHVsZUlkXSkge1xuXHRcdHJldHVybiBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdLmV4cG9ydHM7XG5cdH1cblx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcblx0dmFyIG1vZHVsZSA9IF9fd2VicGFja19tb2R1bGVfY2FjaGVfX1ttb2R1bGVJZF0gPSB7XG5cdFx0Ly8gbm8gbW9kdWxlLmlkIG5lZWRlZFxuXHRcdC8vIG5vIG1vZHVsZS5sb2FkZWQgbmVlZGVkXG5cdFx0ZXhwb3J0czoge31cblx0fTtcblxuXHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cblx0X193ZWJwYWNrX21vZHVsZXNfX1ttb2R1bGVJZF0obW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cblx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcblx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xufVxuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgcHJvcCkpIiwiLy8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5yID0gKGV4cG9ydHMpID0+IHtcblx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG5cdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG5cdH1cblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbn07IiwiLy8gbW9kdWxlIGV4cG9ydHMgbXVzdCBiZSByZXR1cm5lZCBmcm9tIHJ1bnRpbWUgc28gZW50cnkgaW5saW5pbmcgaXMgZGlzYWJsZWRcbi8vIHN0YXJ0dXBcbi8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xucmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oXCIuL2luZGV4LmpzXCIpO1xuIl0sInNvdXJjZVJvb3QiOiIifQ=="
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vd2VicGFjay9zdGFydHVwIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7VUFBQTtVQUNBOztVQUVBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBO1VBQ0E7VUFDQTtVQUNBOztVQUVBO1VBQ0E7O1VBRUE7VUFDQTtVQUNBOzs7OztXQ3RCQTtXQUNBO1dBQ0E7V0FDQTtXQUNBLHdDQUF3Qyx5Q0FBeUM7V0FDakY7V0FDQTtXQUNBLEU7Ozs7O1dDUEEsd0Y7Ozs7O1dDQUE7V0FDQTtXQUNBO1dBQ0Esc0RBQXNELGtCQUFrQjtXQUN4RTtXQUNBLCtDQUErQyxjQUFjO1dBQzdELEU7Ozs7O1VDTkE7VUFDQTtVQUNBO1VBQ0EiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUaGUgbW9kdWxlIGNhY2hlXG52YXIgX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fID0ge307XG5cbi8vIFRoZSByZXF1aXJlIGZ1bmN0aW9uXG5mdW5jdGlvbiBfX3dlYnBhY2tfcmVxdWlyZV9fKG1vZHVsZUlkKSB7XG5cdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuXHR2YXIgY2FjaGVkTW9kdWxlID0gX193ZWJwYWNrX21vZHVsZV9jYWNoZV9fW21vZHVsZUlkXTtcblx0aWYgKGNhY2hlZE1vZHVsZSAhPT0gdW5kZWZpbmVkKSB7XG5cdFx0cmV0dXJuIGNhY2hlZE1vZHVsZS5leHBvcnRzO1xuXHR9XG5cdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG5cdHZhciBtb2R1bGUgPSBfX3dlYnBhY2tfbW9kdWxlX2NhY2hlX19bbW9kdWxlSWRdID0ge1xuXHRcdC8vIG5vIG1vZHVsZS5pZCBuZWVkZWRcblx0XHQvLyBubyBtb2R1bGUubG9hZGVkIG5lZWRlZFxuXHRcdGV4cG9ydHM6IHt9XG5cdH07XG5cblx0Ly8gRXhlY3V0ZSB0aGUgbW9kdWxlIGZ1bmN0aW9uXG5cdF9fd2VicGFja19tb2R1bGVzX19bbW9kdWxlSWRdKG1vZHVsZSwgbW9kdWxlLmV4cG9ydHMsIF9fd2VicGFja19yZXF1aXJlX18pO1xuXG5cdC8vIFJldHVybiB0aGUgZXhwb3J0cyBvZiB0aGUgbW9kdWxlXG5cdHJldHVybiBtb2R1bGUuZXhwb3J0cztcbn1cblxuIiwiLy8gZGVmaW5lIGdldHRlciBmdW5jdGlvbnMgZm9yIGhhcm1vbnkgZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5kID0gKGV4cG9ydHMsIGRlZmluaXRpb24pID0+IHtcblx0Zm9yKHZhciBrZXkgaW4gZGVmaW5pdGlvbikge1xuXHRcdGlmKF9fd2VicGFja19yZXF1aXJlX18ubyhkZWZpbml0aW9uLCBrZXkpICYmICFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywga2V5KSkge1xuXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIGtleSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGRlZmluaXRpb25ba2V5XSB9KTtcblx0XHR9XG5cdH1cbn07IiwiX193ZWJwYWNrX3JlcXVpcmVfXy5vID0gKG9iaiwgcHJvcCkgPT4gKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIHByb3ApKSIsIi8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uciA9IChleHBvcnRzKSA9PiB7XG5cdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuXHR9XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG59OyIsIi8vIHN0YXJ0dXBcbi8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuLy8gVGhpcyBlbnRyeSBtb2R1bGUgY2FuJ3QgYmUgaW5saW5lZCBiZWNhdXNlIHRoZSBldmFsIGRldnRvb2wgaXMgdXNlZC5cbnZhciBfX3dlYnBhY2tfZXhwb3J0c19fID0gX193ZWJwYWNrX3JlcXVpcmVfXyhcIi4vaW5kZXguanNcIik7XG4iXSwic291cmNlUm9vdCI6IiJ9"
 `;
 
 exports[`Webpack 5 target 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
+"/******/ (() => { // webpackBootstrap
 /******/ 	\\"use strict\\";
 /******/ 	var __webpack_modules__ = ({
 
@@ -4550,27 +4511,6 @@ const esnext = (() => {
 })();
 
 
-/***/ }),
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
-/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
-/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
-/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
-/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
-/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
-/* harmony export */ });
-/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
-
-
-
 /***/ })
 
 /******/ 	});
@@ -4581,8 +4521,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -4628,10 +4569,27 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"es2016\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2016),
+/* harmony export */   \\"es2017\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2017),
+/* harmony export */   \\"es2018\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2018),
+/* harmony export */   \\"es2019\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2019),
+/* harmony export */   \\"es2020\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.es2020),
+/* harmony export */   \\"esnext\\": () => (/* reexport safe */ _foo_js__WEBPACK_IMPORTED_MODULE_0__.esnext)
+/* harmony export */ });
+/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \\"./foo.js\\");
+
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;
@@ -4662,24 +4620,8 @@ Object {
 `;
 
 exports[`Webpack 5 webpack magic comments 1`] = `
-"module.exports =
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ \\"./index.js\\":
-/*!******************!*\\\\
-  !*** ./index.js ***!
-  \\\\******************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-const Foo = __webpack_require__.e(/*! import() | named-chunk-foo */ \\"named-chunk-foo\\").then(__webpack_require__.bind(__webpack_require__, /*! ./foo.js */ \\"./foo.js\\"));
-const Bar = __webpack_require__.e(/*! import() | named-chunk-bar */ \\"named-chunk-bar\\").then(__webpack_require__.bind(__webpack_require__, /*! ./bar.js */ \\"./bar.js\\"));
-Foo.then(console.log);
-
-
-/***/ })
-
-/******/ 	});
+"/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({});
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -4687,8 +4629,9 @@ Foo.then(console.log);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -4842,11 +4785,10 @@ Foo.then(console.log);
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// Promise = chunk loading, 0 = chunk loaded
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			\\"index\\": 0
 /******/ 		};
-/******/ 		
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
 /******/ 				// JSONP chunk loading for javascript
@@ -4897,21 +4839,14 @@ Foo.then(console.log);
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		// no deferred startup
+/******/ 		// no on chunks loaded
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
 /******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add \\"moreModules\\" to the modules object,
 /******/ 			// then flag all \\"chunkIds\\" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0, resolves = [];
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					resolves.push(installedChunks[chunkId][0]);
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
+/******/ 			var moduleId, chunkId, i = 0;
 /******/ 			for(moduleId in moreModules) {
 /******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
@@ -4919,8 +4854,12 @@ Foo.then(console.log);
 /******/ 			}
 /******/ 			if(runtime) runtime(__webpack_require__);
 /******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			while(resolves.length) {
-/******/ 				resolves.shift()();
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
 /******/ 		
 /******/ 		}
@@ -4928,15 +4867,18 @@ Foo.then(console.log);
 /******/ 		var chunkLoadingGlobal = self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 		
-/******/ 		// no deferred startup
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(\\"./index.js\\");
+var __webpack_exports__ = {};
+/*!******************!*\\\\
+  !*** ./index.js ***!
+  \\\\******************/
+const Foo = __webpack_require__.e(/*! import() | named-chunk-foo */ \\"named-chunk-foo\\").then(__webpack_require__.bind(__webpack_require__, /*! ./foo.js */ \\"./foo.js\\"));
+const Bar = __webpack_require__.e(/*! import() | named-chunk-bar */ \\"named-chunk-bar\\").then(__webpack_require__.bind(__webpack_require__, /*! ./bar.js */ \\"./bar.js\\"));
+Foo.then(console.log);
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;"
 `;

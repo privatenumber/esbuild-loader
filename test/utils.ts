@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import {ufs} from 'unionfs';
 import {Volume, DirectoryJSON} from 'memfs';
+import {runInNewContext} from 'vm';
 import {
 	Configuration as Wp4Configuration,
 	Stats,
@@ -30,7 +31,7 @@ export async function build(
 	return new Promise((resolve, reject) => {
 		const mfs = Volume.fromJSON(volJson);
 
-		(mfs as typeof mfs & { join: typeof path.join }).join = path.join.bind(path);
+		(mfs as typeof mfs & {join: typeof path.join}).join = path.join.bind(path);
 
 		const config: WpBuildConfig = {
 			mode: 'development',
@@ -94,13 +95,18 @@ export async function build(
 }
 
 export const getFile = (stats: Stats, filePath: string) => {
-	const content = (stats.compilation.compiler.outputFileSystem as any).readFileSync(filePath, 'utf-8');
+	const content: string = (stats.compilation.compiler.outputFileSystem as any).readFileSync(filePath, 'utf-8');
 
 	return {
 		content,
-		execute(prefixCode = '') {
-			// eslint-disable-next-line no-eval,@typescript-eslint/restrict-plus-operands
-			return eval(prefixCode + content);
+		execute(prefixCode = ''): any {
+			const context = {
+				module: {
+					exports: {},
+				},
+			};
+			runInNewContext(`${prefixCode}${content}`, context);
+			return context.module.exports;
 		},
 	};
 };
