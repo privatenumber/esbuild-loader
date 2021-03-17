@@ -101,7 +101,6 @@ In `webpack.config.js`:
     ...,
 
 +   optimization: {
-+     minimize: true,
 +     minimizer: [
 +       new ESBuildMinifyPlugin({
 +         target: 'es2015' // Syntax to compile to (see options below for possible values)
