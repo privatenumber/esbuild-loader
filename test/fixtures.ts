@@ -189,6 +189,22 @@ const webpackChunks = {
 	`,
 };
 
+const css = {
+	'/src/index.js': `
+		import './styles.css';
+	`,
+
+	'/src/styles.css': `
+	div {
+		color: red;
+	}
+
+	span {
+		margin: 0px 10px;
+	}
+	`,
+};
+
 export {
 	js,
 	ts,
@@ -199,4 +215,5 @@ export {
 	invalidTsx,
 	tsConfig,
 	webpackChunks,
+	css,
 };

@@ -33,6 +33,7 @@ type StatsPrinter = {
 const {version} = require('../package');
 
 const isJsFile = /\.js$/i;
+const isCssFile = /\.css$/i;
 const pluginName = 'esbuild-minify';
 
 const flatMap = <T, U>(
@@ -84,6 +85,8 @@ class ESBuildMinifyPlugin {
 					{
 						name: pluginName,
 						stage: wp5Compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+						// @ts-expect-error
+						additionalAssets: true,
 					},
 					async (assets: Asset[]) => this.transformAssets(compilation, Object.keys(assets)),
 				);
@@ -125,10 +128,24 @@ class ESBuildMinifyPlugin {
 				this.options.sourcemap
 		);
 
-		const {include, exclude, ...transformOptions} = this.options;
+		const {
+			css: minifyCss,
+			include,
+			exclude,
+			...transformOptions
+		} = this.options;
 
 		const transforms = assetNames
-			.filter(assetName => isJsFile.test(assetName) && matchObject({include, exclude}, assetName))
+			.filter(assetName => (
+				(
+					isJsFile.test(assetName) ||
+					(
+						minifyCss &&
+						isCssFile.test(assetName)
+					)
+				) &&
+				matchObject({include, exclude}, assetName)),
+			)
 			.map((assetName): [string, Asset] => [
 				assetName,
 				compilation.getAsset(assetName),
@@ -137,16 +154,26 @@ class ESBuildMinifyPlugin {
 				assetName,
 				{info, source: assetSource},
 			]) => {
+				const assetIsCss = isCssFile.test(assetName);
 				const {source, map} = assetSource.sourceAndMap();
 				const result = await transform(source.toString(), {
 					...transformOptions,
+					loader: (
+						assetIsCss ?
+							'css' :
+							transformOptions.loader
+					),
 					sourcemap,
 					sourcefile: assetName,
 				});
 
 				compilation.updateAsset(
 					assetName,
-					sourcemap ?
+					(
+						sourcemap &&
+						// CSS source-maps not supported yet https://github.com/evanw/esbuild/issues/519
+						!assetIsCss
+					) ?
 						new SourceMapSource(
 							result.code || '',
 							assetName,
