@@ -31,17 +31,25 @@ export async function build(
 	return new Promise((resolve, reject) => {
 		const mfs = Volume.fromJSON(volJson);
 
-		(mfs as typeof mfs & {join: typeof path.join}).join = path.join.bind(path);
+		type customMfs = typeof mfs & {
+			join: typeof path.join;
+		};
+		(mfs as customMfs).join = path.join.bind(path);
 
 		const config: WpBuildConfig = {
-			mode: 'development',
+			mode: 'production',
 			devtool: false,
 			bail: true,
 			cache: false,
 			context: '/',
 			entry: {
-				index: '/index.js',
+				index: '/src/index.js',
 			},
+
+			optimization: {
+				minimize: false,
+			},
+
 			output: {
 				path: '/dist',
 				filename: '[name].js',
@@ -50,6 +58,9 @@ export async function build(
 			},
 
 			resolveLoader: {
+				modules: [
+					path.join(__dirname, '../node_modules'),
+				],
 				alias: {
 					'esbuild-loader': esbuildLoaderPath,
 				},
@@ -61,12 +72,21 @@ export async function build(
 						test: /\.js$/,
 						loader: 'esbuild-loader',
 					},
+					{
+						test: /\.css$/,
+						use: [
+							'css-loader',
+						],
+					},
 				],
 			},
 			plugins: [],
 		};
 
 		configure?.(config);
+
+		// CI env was getting different chunk ids from snapshot/local
+		config.optimization.moduleIds = 'named';
 
 		const compiler = webpack(config);
 

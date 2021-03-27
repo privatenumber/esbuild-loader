@@ -2,6 +2,7 @@ import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import {build, getFile} from './utils';
 import {ESBuildMinifyPlugin} from '../dist/index.js';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as fixtures from './fixtures';
 
 describe.each([
@@ -140,13 +141,15 @@ describe.each([
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
-				minimizer: [new ESBuildMinifyPlugin()],
+				minimizer: [new ESBuildMinifyPlugin({
+					target: 'es2015',
+				})],
 			};
 		});
 		const file = getFile(stats, '/dist/index.js');
 
 		expect(file.content).toMatchSnapshot();
-		expect(file.content).toContain('//# sourceURL');
+		expect(file.content).not.toContain('//# sourceURL');
 		expect(file.execute()).toMatchSnapshot();
 	});
 
@@ -166,7 +169,7 @@ describe.each([
 		expect(file.content).toMatchSnapshot();
 	});
 
-	test('minify w/ devtool source-maps', async () => {
+	test('minify w/ devtool source-map', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			config.devtool = 'source-map';
 			config.optimization = {
@@ -180,7 +183,7 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
-	test('minify w/ sourcemap option', async () => {
+	test('minify w/ source-map option', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			delete config.devtool;
 			config.optimization = {
@@ -196,7 +199,7 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
-	test('minify w/ sourcemap option and source-map plugin inline', async () => {
+	test('minify w/ source-map option and source-map plugin inline', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			delete config.devtool;
 			config.optimization = {
@@ -215,7 +218,7 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
-	test('minify w/ sourcemap option and source-map plugin external', async () => {
+	test('minify w/ source-map option and source-map plugin external', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			delete config.devtool;
 			config.optimization = {
@@ -237,6 +240,84 @@ describe.each([
 
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 		expect(getFile(stats, '/dist/index.js.map').content).toMatchSnapshot();
+	});
+
+	describe('CSS', () => {
+		test('minify via loader', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.module.rules[1].use.push({
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'css',
+						minify: true,
+					},
+				});
+			});
+
+			const file = getFile(stats, '/dist/index.js');
+			expect(file.content).toContain('div{color:red}');
+		});
+
+		test('minify', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.optimization = {
+					minimize: true,
+					minimizer: [
+						new ESBuildMinifyPlugin({
+							css: true,
+						}),
+					],
+				};
+
+				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
+				config.plugins.push(new MiniCssExtractPlugin());
+			});
+
+			const file = getFile(stats, '/dist/index.css');
+			expect(file.content.trim()).not.toMatch(/\s{2,}/);
+		});
+
+		test('exclude css', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.optimization = {
+					minimize: true,
+					minimizer: [
+						new ESBuildMinifyPlugin({
+							css: true,
+							exclude: /\.css$/,
+						}),
+					],
+				};
+
+				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
+				config.plugins.push(new MiniCssExtractPlugin());
+			});
+
+			const file = getFile(stats, '/dist/index.css');
+			expect(file.content.trim()).toMatch(/\s{2,}/);
+		});
+
+		// Esbuild currently doesn't support CSS source-maps but checking to make sure no errors
+		// https://github.com/evanw/esbuild/issues/519
+		test('minify w/ source-map', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.devtool = 'source-map';
+				config.optimization = {
+					minimize: true,
+					minimizer: [
+						new ESBuildMinifyPlugin({
+							css: true,
+						}),
+					],
+				};
+
+				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
+				config.plugins.push(new MiniCssExtractPlugin());
+			});
+
+			const file = getFile(stats, '/dist/index.css');
+			expect(file.content.trim()).not.toMatch(/\s{2,}/);
+		});
 	});
 });
 

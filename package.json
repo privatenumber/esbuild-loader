@@ -38,24 +38,26 @@
 		]
 	},
 	"dependencies": {
-		"esbuild": "^0.9.2",
-		"joycon": "^2.2.5",
+		"esbuild": "^0.10.2",
+		"joycon": "^3.0.1",
 		"json5": "^2.2.0",
 		"loader-utils": "^2.0.0",
-		"type-fest": "^0.21.3",
+		"type-fest": "^1.0.1",
 		"webpack-sources": "^2.2.0"
 	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"
 	},
 	"devDependencies": {
-		"@types/jest": "^26.0.20",
-		"@types/loader-utils": "^2.0.1",
-		"@types/webpack": "^4.41.26",
+		"@types/jest": "^26.0.22",
+		"@types/loader-utils": "^2.0.2",
+		"@types/webpack": "^4.41.27",
+		"css-loader": "^5.2.0",
 		"husky": "^4.3.8",
 		"jest": "^26.6.3",
 		"lint-staged": "^10.5.4",
 		"memfs": "^3.2.0",
+		"mini-css-extract-plugin": "^1.4.0",
 		"typescript": "^4.2.3",
 		"unionfs": "^4.4.0",
 		"webpack": "^4.44.2",

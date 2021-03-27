@@ -79,6 +79,57 @@ describe.each([
 			expect(file.execute('const createElement = (...args) => args, Fragment = "Fragment";')).toMatchSnapshot();
 		});
 
+		test('ts w/ tsconfig', async () => {
+			const stats = await build(webpack, fixtures.tsConfig, config => {
+				config.module.rules.push({
+					test: /\.ts$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'ts',
+					},
+				});
+			});
+			const stats2 = await build(webpack, fixtures.tsConfig, config => {
+				config.module.rules.push({
+					test: /\.ts$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'ts',
+						tsconfigRaw: {
+							compilerOptions: {
+								useDefineForClassFields: true,
+							},
+						},
+					},
+				});
+			});
+
+			expect(getFile(stats, '/dist/index.js').content).not.toBe(getFile(stats2, '/dist/index.js').content);
+			expect(getFile(stats2, '/dist/index.js').content).toMatchSnapshot();
+		});
+
+		test('tsx w/ tsconfig', async () => {
+			const stats = await build(webpack, fixtures.tsx, config => {
+				config.module.rules.push({
+					test: /\.tsx$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'tsx',
+						tsconfigRaw: {
+							compilerOptions: {
+								jsxFactory: 'customFactory',
+								jsxFragmentFactory: 'customFragment',
+							},
+						},
+					},
+				});
+			});
+			const file = getFile(stats, '/dist/index.js');
+
+			expect(file.content).toMatchSnapshot();
+			expect(file.execute('const customFactory = (...args) => args, customFragment = "Fragment";')).toMatchSnapshot();
+		});
+
 		describe('ambigious ts/tsx', () => {
 			test('ts via tsx', async () => {
 				const stats = await build(webpack, fixtures.ts, config => {
@@ -141,57 +192,6 @@ describe.each([
 				expect(content).toContain('React.createElement');
 				expect(content).toMatchSnapshot();
 			});
-		});
-
-		test('ts w/ tsconfig', async () => {
-			const stats = await build(webpack, fixtures.tsConfig, config => {
-				config.module.rules.push({
-					test: /\.ts$/,
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'ts',
-					},
-				});
-			});
-			const stats2 = await build(webpack, fixtures.tsConfig, config => {
-				config.module.rules.push({
-					test: /\.ts$/,
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'ts',
-						tsconfigRaw: {
-							compilerOptions: {
-								useDefineForClassFields: true,
-							},
-						},
-					},
-				});
-			});
-
-			expect(getFile(stats, '/dist/index.js').content).not.toBe(getFile(stats2, '/dist/index.js').content);
-			expect(getFile(stats2, '/dist/index.js').content).toMatchSnapshot();
-		});
-
-		test('tsx w/ tsconfig', async () => {
-			const stats = await build(webpack, fixtures.tsx, config => {
-				config.module.rules.push({
-					test: /\.tsx$/,
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'tsx',
-						tsconfigRaw: {
-							compilerOptions: {
-								jsxFactory: 'customFactory',
-								jsxFragmentFactory: 'customFragment',
-							},
-						},
-					},
-				});
-			});
-			const file = getFile(stats, '/dist/index.js');
-
-			expect(file.content).toMatchSnapshot();
-			expect(file.execute('const customFactory = (...args) => args, customFragment = "Fragment";')).toMatchSnapshot();
 		});
 	});
 

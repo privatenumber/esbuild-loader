@@ -1,9 +1,13 @@
+// These files cannot be at the root and must be in a directory
+// Webpack v4 uses the directory name for the entry variable
+// https://github.com/webpack/webpack/blob/v4.46.0/lib/optimize/ConcatenatedModule.js#L1048
+
 const js = {
-	'/index.js': `
+	'/src/index.js': `
 		export * from './foo.js'
 	`,
 
-	'/foo.js': `
+	'/src/foo.js': `
 		export const es2016 = 10 ** 4;
 
 		export const es2017 = typeof (async () => {});
@@ -48,12 +52,12 @@ const js = {
 };
 
 const ts = {
-	'/index.js': `
+	'/src/index.js': `
 		import { foo } from './foo.ts'
 		export default foo()
 	`,
 
-	'/foo.ts': `
+	'/src/foo.ts': `
 		import type {Type} from 'foo'
 
 		interface Foo {}
@@ -85,11 +89,11 @@ const ts = {
 };
 
 const ts2 = {
-	'/index.js': `
+	'/src/index.js': `
 		export { default } from './foo.ts'
 	`,
 
-	'/foo.ts': `
+	'/src/foo.ts': `
 		const testFn = <V>(
 			l: obj,
 			options: { [key in obj]: V },
@@ -102,17 +106,17 @@ const ts2 = {
 };
 
 const tsAmbiguous = {
-	'/index.js': `
+	'/src/index.js': `
 		export { default } from './foo.ts'
 	`,
 
-	'/foo.ts': `
+	'/src/foo.ts': `
 		export default () => <a>1</a>/g
 	`,
 };
 
 const tsx = {
-	'/index.js': `
+	'/src/index.js': `
 		import Foo, { HelloWorld } from './foo.tsx'
 		export default [
 			HelloWorld,
@@ -120,7 +124,7 @@ const tsx = {
 		];
 	`,
 
-	'/foo.tsx': `
+	'/src/foo.tsx': `
 		export const HelloWorld = <><div>hello world</div></>;
 
 		export default class Foo {
@@ -132,22 +136,22 @@ const tsx = {
 };
 
 const tsxAmbiguous = {
-	'/index.js': `
+	'/src/index.js': `
 		export { default } from './foo.tsx'
 	`,
 
-	'/foo.tsx': `
+	'/src/foo.tsx': `
 		export default () => <a>1</a>/g
 	`,
 };
 
 const invalidTsx = {
-	'/index.js': `
+	'/src/index.js': `
 		import usePrevious from './use-previous.tsx'
 		console.log(usePrevious)
 	`,
 
-	'/use-previous.tsx': `
+	'/src/use-previous.tsx': `
 		const usePrevious = <T><INVALID TSX>(value: T) => {
 			const ref = useRef<T><asdf>();
 			return ref.current;
@@ -158,30 +162,46 @@ const invalidTsx = {
 };
 
 const tsConfig = {
-	'/index.js': `
+	'/src/index.js': `
 		export { default } from './foo.ts'
 	`,
-	'/foo.ts': `
+	'/src/foo.ts': `
 		export default class A { a }
 	`,
 };
 
 const webpackChunks = {
-	'/index.js': `
+	'/src/index.js': `
 		const Foo = import(/* webpackChunkName: "named-chunk-foo" */'./foo.js')
 		const Bar = import(/* webpackChunkName: "named-chunk-bar" */'./bar.js')
 
 		Foo.then(console.log)
 	`,
 
-	'/foo.js': `
+	'/src/foo.js': `
 	console.log('foo');
 	export default 1;
 	`,
 
-	'/bar.js': `
+	'/src/bar.js': `
 	console.log('bar' + 1);
 	export default Symbol('bar');
+	`,
+};
+
+const css = {
+	'/src/index.js': `
+		import './styles.css';
+	`,
+
+	'/src/styles.css': `
+	div {
+		color: red;
+	}
+
+	span {
+		margin: 0px 10px;
+	}
 	`,
 };
 
@@ -195,4 +215,5 @@ export {
 	invalidTsx,
 	tsConfig,
 	webpackChunks,
+	css,
 };
