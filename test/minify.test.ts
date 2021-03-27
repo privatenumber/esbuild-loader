@@ -146,7 +146,7 @@ describe.each([
 		const file = getFile(stats, '/dist/index.js');
 
 		expect(file.content).toMatchSnapshot();
-		expect(file.content).toContain('//# sourceURL');
+		expect(file.content).not.toContain('//# sourceURL');
 		expect(file.execute()).toMatchSnapshot();
 	});
 
