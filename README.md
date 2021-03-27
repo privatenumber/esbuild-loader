@@ -119,9 +119,9 @@ If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you c
 To minify CSS, you should already have CSS setup in your build using [`css-loader`](https://github.com/webpack-contrib/css-loader).
 
 #### CSS assets
-If your CSS is emitted as its own asset, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) or [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) with the same `ESBuildMinifyPlugin` by enabling the `css` option.
+If your CSS is extracted and emitted as a CSS file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) or [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) with the same `ESBuildMinifyPlugin` by enabling the `css` option.
 
-Assuming the CSS is emitted as its own asset using something like [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin), in `webpack.config.js`:
+Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin), in `webpack.config.js`:
 
 ```diff
   const { ESBuildMinifyPlugin } = require('esbuild-loader')
@@ -160,7 +160,7 @@ Assuming the CSS is emitted as its own asset using something like [MiniCssExtrac
 
 #### CSS in JS
 
-If your CSS isn't emitted as a CSS file, but rather loaded via JS using something like [`style-loader`](https://github.com/webpack-contrib/style-loader), you can use the loader for minification.
+If your CSS is not emitted as a CSS file, but rather loaded via JS using something like [`style-loader`](https://github.com/webpack-contrib/style-loader), you can use the loader for minification.
 
 
 In `webpack.config.js`:
@@ -189,6 +189,7 @@ In `webpack.config.js`:
     }
   }
 ```
+
 
 ### Examples
 If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).
