@@ -2453,7 +2453,7 @@ exports[`Webpack 4 webpack magic comments 2`] = `
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 console.log(\\"foo\\");
-undefined(1);
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (1);
 
 
 /***/ })
@@ -2469,7 +2469,7 @@ exports[`Webpack 4 webpack magic comments 3`] = `
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 console.log(\\"bar\\" + 1);
-undefined(Symbol(\\"bar\\"));
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (Symbol(\\"bar\\"));
 
 
 /***/ })

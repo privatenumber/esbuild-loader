@@ -140,7 +140,9 @@ describe.each([
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
-				minimizer: [new ESBuildMinifyPlugin()],
+				minimizer: [new ESBuildMinifyPlugin({
+					target: 'es2015',
+				})],
 			};
 		});
 		const file = getFile(stats, '/dist/index.js');

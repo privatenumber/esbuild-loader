@@ -37,12 +37,12 @@ exports[`Webpack 4 Loader + Minification minify chunks 1`] = `
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks 2`] = `
-"(window.webpackJsonp=window.webpackJsonp||[]).push([[2],[,function(e,o,n){\\"use strict\\";n.r(o),console.log(\\"foo\\"),(void 0)(1)}]]);
+"(window.webpackJsonp=window.webpackJsonp||[]).push([[2],[,function(s,o,n){\\"use strict\\";n.r(o),console.log(\\"foo\\"),o.default=1}]]);
 "
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks 3`] = `
-"(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{2:function(e,o,n){\\"use strict\\";n.r(o),console.log(\\"bar\\"+1),(void 0)(Symbol(\\"bar\\"))}}]);
+"(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{2:function(l,o,n){\\"use strict\\";n.r(o),console.log(\\"bar\\"+1),o.default=Symbol(\\"bar\\")}}]);
 "
 `;
 
@@ -53,7 +53,7 @@ exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 2`] = `
-"(window.webpackJsonp=window.webpackJsonp||[]).push([[2],[,function(e,o,n){\\"use strict\\";n.r(o),console.log(\\"foo\\"),(void 0)(1)}]]);
+"(window.webpackJsonp=window.webpackJsonp||[]).push([[2],[,function(s,o,n){\\"use strict\\";n.r(o),console.log(\\"foo\\"),o.default=1}]]);
 "
 `;
 
@@ -66,7 +66,7 @@ exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 console.log(\\"bar\\" + 1);
-undefined(Symbol(\\"bar\\"));
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (Symbol(\\"bar\\"));
 
 
 /***/ })
@@ -89,7 +89,7 @@ exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 console.log(\\"foo\\");
-undefined(1);
+/* harmony default export */ __webpack_exports__[\\"default\\"] = (1);
 
 
 /***/ })
@@ -97,7 +97,7 @@ undefined(1);
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 3`] = `
-"(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{2:function(e,o,n){\\"use strict\\";n.r(o),console.log(\\"bar\\"+1),(void 0)(Symbol(\\"bar\\"))}}]);
+"(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{2:function(l,o,n){\\"use strict\\";n.r(o),console.log(\\"bar\\"+1),o.default=Symbol(\\"bar\\")}}]);
 "
 `;
 
@@ -114,7 +114,7 @@ exports[`Webpack 4 Loader + Minification minify w/ devtool source-maps 1`] = `
 `;
 
 exports[`Webpack 4 Loader + Minification minify w/ no devtool 1`] = `
-"module.exports=function(O){var f={};function n(t){if(f[t])return f[t].exports;var e=f[t]={i:t,l:!1,exports:{}};return O[t].call(e.exports,e,e.exports,n),e.l=!0,e.exports}return n.m=O,n.c=f,n.d=function(t,e,u){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:u})},n.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},n.t=function(t,e){if(e&1&&(t=n(t)),e&8||e&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var u=Object.create(null);if(n.r(u),Object.defineProperty(u,\\"default\\",{enumerable:!0,value:t}),e&2&&typeof t!=\\"string\\")for(var y in t)n.d(u,y,function(b){return t[b]}.bind(null,y));return u},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,\\"a\\",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p=\\"\\",n(n.s=0)}([function(O,f,n){\\"use strict\\";n.r(f),n.d(f,\\"es2016\\",function(){return S}),n.d(f,\\"es2017\\",function(){return m}),n.d(f,\\"es2018\\",function(){return W}),n.d(f,\\"es2019\\",function(){return w}),n.d(f,\\"es2020\\",function(){return E}),n.d(f,\\"esnext\\",function(){return z});var t=Object.defineProperty,e=Object.prototype.hasOwnProperty,u=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,b=Math.pow,h=Object.assign,j=(r,o)=>{var i={};for(var s in r)e.call(r,s)&&o.indexOf(s)<0&&(i[s]=r[s]);if(r!=null&&u)for(var s of u(r))o.indexOf(s)<0&&y.call(r,s)&&(i[s]=r[s]);return i},P=(r,o,i)=>(typeof o!=\\"symbol\\"&&(o+=\\"\\"),o in r?t(r,o,{enumerable:!0,configurable:!0,writable:!0,value:i}):r[o]=i),T=(r,o,i)=>new Promise((s,d)=>{var p=c=>{try{a(i.next(c))}catch(l){d(l)}},v=c=>{try{a(i.throw(c))}catch(l){d(l)}},a=c=>c.done?s(c.value):Promise.resolve(c.value).then(p,v);a((i=i.apply(r,o)).next())});const M={},S=b(10,4),m=\\"function\\",W=(()=>{const r={a:1};let o=h({},r);return j(r,[])})(),w=(()=>{try{return\\"try\\"}catch(r){}})(),E=(()=>{var r;const o={property:1};return[o==null?void 0:o.property,(r=o.prop)!=null?r:2,M]})(),z=(()=>{var r,o,i,s,d,p,v,a,c,l,g;let x;return[class{constructor(){P(this,\\"x\\",2)}},(r=class{},P(r,\\"x\\",1),r),(s=class{constructor(){o.add(this)}},o=new WeakSet,i=function(){},s),(p=class{constructor(){d.set(this,void 0)}},d=new WeakMap,p),(a=class{},v=new WeakSet,c=function(){},v.add(a),a),(l=class{},g=new WeakMap,g.set(l,void 0),l),x??(x=2)]})()}]);
+"module.exports=function(O){var f={};function n(t){if(f[t])return f[t].exports;var e=f[t]={i:t,l:!1,exports:{}};return O[t].call(e.exports,e,e.exports,n),e.l=!0,e.exports}return n.m=O,n.c=f,n.d=function(t,e,u){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:u})},n.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},n.t=function(t,e){if(e&1&&(t=n(t)),e&8||e&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var u=Object.create(null);if(n.r(u),Object.defineProperty(u,\\"default\\",{enumerable:!0,value:t}),e&2&&typeof t!=\\"string\\")for(var y in t)n.d(u,y,function(b){return t[b]}.bind(null,y));return u},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,\\"a\\",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p=\\"\\",n(n.s=0)}([function(O,f,n){\\"use strict\\";n.r(f),n.d(f,\\"es2016\\",function(){return S}),n.d(f,\\"es2017\\",function(){return m}),n.d(f,\\"es2018\\",function(){return W}),n.d(f,\\"es2019\\",function(){return w}),n.d(f,\\"es2020\\",function(){return E}),n.d(f,\\"esnext\\",function(){return z});var t=Object.defineProperty,e=Object.prototype.hasOwnProperty,u=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,b=Math.pow,h=Object.assign,j=(r,o)=>{var i={};for(var s in r)e.call(r,s)&&o.indexOf(s)<0&&(i[s]=r[s]);if(r!=null&&u)for(var s of u(r))o.indexOf(s)<0&&y.call(r,s)&&(i[s]=r[s]);return i},P=(r,o,i)=>(typeof o!=\\"symbol\\"&&(o+=\\"\\"),o in r?t(r,o,{enumerable:!0,configurable:!0,writable:!0,value:i}):r[o]=i),T=(r,o,i)=>new Promise((s,d)=>{var p=c=>{try{a(i.next(c))}catch(l){d(l)}},v=c=>{try{a(i.throw(c))}catch(l){d(l)}},a=c=>c.done?s(c.value):Promise.resolve(c.value).then(p,v);a((i=i.apply(r,o)).next())});const M={},S=b(10,4),m=\\"function\\",W=(()=>{const r={a:1};let o=h({},r);return j(r,[])})(),w=(()=>{try{return\\"try\\"}catch(r){}})(),E=(()=>{var r;const o={property:1};return[o==null?void 0:o.property,(r=o.prop)!=null?r:2,M]})(),z=(()=>{var r,o,i,s,d,p,v,a,c,l,g;let x;return[class{constructor(){P(this,\\"x\\",2)}},(r=class{},P(r,\\"x\\",1),r),(s=class{constructor(){o.add(this)}},o=new WeakSet,i=function(){},s),(p=class{constructor(){d.set(this,void 0)}},d=new WeakMap,p),(a=class{},v=new WeakSet,c=function(){},v.add(a),a),(l=class{},g=new WeakMap,g.set(l,void 0),l),x!=null?x:x=2]})()}]);
 "
 `;
 
@@ -684,7 +684,7 @@ exports[`Webpack 5 Loader + Minification minify w/ devtool source-maps 1`] = `
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ no devtool 1`] = `
-"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,t)=>{for(var r in t)o.o(t,r)&&!o.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})}})(),(()=>{o.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>P,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,esnext:()=>W});var d=Object.defineProperty,y=Object.prototype.hasOwnProperty,f=Object.getOwnPropertySymbols,w=Object.prototype.propertyIsEnumerable,O=Math.pow,m=Object.assign,x=(e,t)=>{var r={};for(var a in e)y.call(e,a)&&t.indexOf(a)<0&&(r[a]=e[a]);if(e!=null&&f)for(var a of f(e))t.indexOf(a)<0&&w.call(e,a)&&(r[a]=e[a]);return r},v=(e,t,r)=>(typeof t!=\\"symbol\\"&&(t+=\\"\\"),t in e?d(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r),z=(e,t,r)=>new Promise((a,_)=>{var c=n=>{try{s(r.next(n))}catch(l){_(l)}},p=n=>{try{s(r.throw(n))}catch(l){_(l)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(c,p);s((r=r.apply(e,t)).next())});const h={},P=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let t=m({},e);return x(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const t={property:1};return[t==null?void 0:t.property,(e=t.prop)!=null?e:2,h]})(),W=(()=>{var e,t,r,a,_,c,p,s,n,l,b;let u;return[class{constructor(){v(this,\\"x\\",2)}},(e=class{},v(e,\\"x\\",1),e),(a=class{constructor(){t.add(this)}},t=new WeakSet,r=function(){},a),(c=class{constructor(){_.set(this,void 0)}},_=new WeakMap,c),(s=class{},p=new WeakSet,n=function(){},p.add(s),s),(l=class{},b=new WeakMap,b.set(l,void 0),l),u??(u=2)]})();module.exports=i})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,t)=>{for(var r in t)o.o(t,r)&&!o.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})}})(),(()=>{o.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>P,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,esnext:()=>W});var d=Object.defineProperty,y=Object.prototype.hasOwnProperty,f=Object.getOwnPropertySymbols,w=Object.prototype.propertyIsEnumerable,O=Math.pow,m=Object.assign,x=(e,t)=>{var r={};for(var a in e)y.call(e,a)&&t.indexOf(a)<0&&(r[a]=e[a]);if(e!=null&&f)for(var a of f(e))t.indexOf(a)<0&&w.call(e,a)&&(r[a]=e[a]);return r},v=(e,t,r)=>(typeof t!=\\"symbol\\"&&(t+=\\"\\"),t in e?d(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r),z=(e,t,r)=>new Promise((a,_)=>{var c=n=>{try{s(r.next(n))}catch(l){_(l)}},p=n=>{try{s(r.throw(n))}catch(l){_(l)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(c,p);s((r=r.apply(e,t)).next())});const h={},P=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let t=m({},e);return x(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const t={property:1};return[t==null?void 0:t.property,(e=t.prop)!=null?e:2,h]})(),W=(()=>{var e,t,r,a,_,c,p,s,n,l,b;let u;return[class{constructor(){v(this,\\"x\\",2)}},(e=class{},v(e,\\"x\\",1),e),(a=class{constructor(){t.add(this)}},t=new WeakSet,r=function(){},a),(c=class{constructor(){_.set(this,void 0)}},_=new WeakMap,c),(s=class{},p=new WeakSet,n=function(){},p.add(s),s),(l=class{},b=new WeakMap,b.set(l,void 0),l),u!=null?u:u=2]})();module.exports=i})();
 "
 `;
 
