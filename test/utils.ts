@@ -31,17 +31,25 @@ export async function build(
 	return new Promise((resolve, reject) => {
 		const mfs = Volume.fromJSON(volJson);
 
-		(mfs as typeof mfs & {join: typeof path.join}).join = path.join.bind(path);
+		type customMfs = typeof mfs & {
+			join: typeof path.join;
+		};
+		(mfs as customMfs).join = path.join.bind(path);
 
 		const config: WpBuildConfig = {
-			mode: 'development',
+			mode: 'production',
 			devtool: false,
 			bail: true,
 			cache: false,
 			context: '/',
 			entry: {
-				index: '/index.js',
+				index: '/src/index.js',
 			},
+
+			optimization: {
+				minimize: false,
+			},
+
 			output: {
 				path: '/dist',
 				filename: '[name].js',
