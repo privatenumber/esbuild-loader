@@ -133,10 +133,10 @@ class ESBuildMinifyPlugin {
 		const transforms = assetNames
 			.filter(assetName => (
 				(
-					isJsFile.test(assetName)
-					|| isCssFile.test(assetName)	
-				)
-				&& matchObject({include, exclude}, assetName))
+					isJsFile.test(assetName) ||
+					isCssFile.test(assetName)
+				) &&
+				matchObject({include, exclude}, assetName)),
 			)
 			.map((assetName): [string, Asset] => [
 				assetName,
@@ -150,9 +150,9 @@ class ESBuildMinifyPlugin {
 				const result = await transform(source.toString(), {
 					...transformOptions,
 					loader: (
-						isCssFile.test(assetName)
-							? 'css'
-							: transformOptions.loader
+						isCssFile.test(assetName) ?
+							'css' :
+							transformOptions.loader
 					),
 					sourcemap,
 					sourcefile: assetName,

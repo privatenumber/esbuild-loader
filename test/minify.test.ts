@@ -253,7 +253,7 @@ describe.each([
 					},
 				});
 			});
-	
+
 			const file = getFile(stats, '/dist/index.js');
 			expect(file.content).toContain('div{color:red}');
 		});
@@ -272,7 +272,7 @@ describe.each([
 				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
 				config.plugins.push(new MiniCssExtractPlugin());
 			});
-	
+
 			const file = getFile(stats, '/dist/index.css');
 			expect(file.content.trim()).not.toMatch(/\s+/);
 		});
@@ -292,11 +292,11 @@ describe.each([
 				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
 				config.plugins.push(new MiniCssExtractPlugin());
 			});
-	
+
 			const file = getFile(stats, '/dist/index.css');
 			expect(file.content.trim()).toMatch(/\s+/);
 		});
-	});	
+	});
 });
 
 test('Webpack 5 stats', async () => {
