@@ -42,16 +42,16 @@
 		"joycon": "^2.2.5",
 		"json5": "^2.2.0",
 		"loader-utils": "^2.0.0",
-		"type-fest": "^0.21.3",
+		"type-fest": "^1.0.1",
 		"webpack-sources": "^2.2.0"
 	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"
 	},
 	"devDependencies": {
-		"@types/jest": "^26.0.20",
-		"@types/loader-utils": "^2.0.1",
-		"@types/webpack": "^4.41.26",
+		"@types/jest": "^26.0.22",
+		"@types/loader-utils": "^2.0.2",
+		"@types/webpack": "^4.41.27",
 		"css-loader": "^5.2.0",
 		"husky": "^4.3.8",
 		"jest": "^26.6.3",
