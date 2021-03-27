@@ -146,11 +146,12 @@ class ESBuildMinifyPlugin {
 				assetName,
 				{info, source: assetSource},
 			]) => {
+				const assetIsCss = isCssFile.test(assetName);
 				const {source, map} = assetSource.sourceAndMap();
 				const result = await transform(source.toString(), {
 					...transformOptions,
 					loader: (
-						isCssFile.test(assetName) ?
+						assetIsCss ?
 							'css' :
 							transformOptions.loader
 					),
@@ -160,7 +161,11 @@ class ESBuildMinifyPlugin {
 
 				compilation.updateAsset(
 					assetName,
-					sourcemap ?
+					(
+						sourcemap &&
+						// CSS source-maps not supported yet https://github.com/evanw/esbuild/issues/519
+						!assetIsCss
+					) ?
 						new SourceMapSource(
 							result.code || '',
 							assetName,

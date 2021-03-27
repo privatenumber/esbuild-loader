@@ -169,7 +169,7 @@ describe.each([
 		expect(file.content).toMatchSnapshot();
 	});
 
-	test('minify w/ devtool source-maps', async () => {
+	test('minify w/ devtool source-map', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			config.devtool = 'source-map';
 			config.optimization = {
@@ -183,7 +183,7 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
-	test('minify w/ sourcemap option', async () => {
+	test('minify w/ source-map option', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			delete config.devtool;
 			config.optimization = {
@@ -199,7 +199,7 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
-	test('minify w/ sourcemap option and source-map plugin inline', async () => {
+	test('minify w/ source-map option and source-map plugin inline', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			delete config.devtool;
 			config.optimization = {
@@ -218,7 +218,7 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 	});
 
-	test('minify w/ sourcemap option and source-map plugin external', async () => {
+	test('minify w/ source-map option and source-map plugin external', async () => {
 		const stats = await build(webpack, fixtures.js, config => {
 			delete config.devtool;
 			config.optimization = {
@@ -295,6 +295,28 @@ describe.each([
 
 			const file = getFile(stats, '/dist/index.css');
 			expect(file.content.trim()).toMatch(/\s{2,}/);
+		});
+
+		// Esbuild currently doesn't support CSS source-maps but checking to make sure no errors
+		// https://github.com/evanw/esbuild/issues/519
+		test('minify w/ source-map', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.devtool = 'source-map';
+				config.optimization = {
+					minimize: true,
+					minimizer: [
+						new ESBuildMinifyPlugin({
+							target: 'es2019',
+						}),
+					],
+				};
+
+				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
+				config.plugins.push(new MiniCssExtractPlugin());
+			});
+
+			const file = getFile(stats, '/dist/index.css');
+			expect(file.content.trim()).not.toMatch(/\s{2,}/);
 		});
 	});
 });
