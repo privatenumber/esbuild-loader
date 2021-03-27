@@ -116,7 +116,9 @@ If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you c
 
 ### CSS Minification
 
-To minify CSS, you should already have CSS setup in your build using [`css-loader`](https://github.com/webpack-contrib/css-loader).
+There are two ways to minify CSS, depending on your setup. You should already have CSS setup in your build using [`css-loader`](https://github.com/webpack-contrib/css-loader).
+
+⚠️ esbuild currently [doesn't support source-maps for CSS minification](https://github.com/evanw/esbuild/issues/519).
 
 #### CSS assets
 If your CSS is extracted and emitted as a CSS file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) or [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) with the same `ESBuildMinifyPlugin` by enabling the `css` option.
@@ -213,6 +215,7 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 - `minifyIdentifiers` `Boolean` - Shorten identifiers
 - `minifySyntax` `Boolean` - Use equivalent but shorter syntax
 - `sourcemap` `Boolean` (defaults to Webpack `devtool`) - Whether to emit sourcemaps
+- `css` `Boolean` (`false`) - Whether to minify CSS files
 - `include` `String|RegExp|Array<String|RegExp>` - Filter assets for inclusion in minification
 - `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
 

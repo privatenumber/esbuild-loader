@@ -264,7 +264,7 @@ describe.each([
 					minimize: true,
 					minimizer: [
 						new ESBuildMinifyPlugin({
-							target: 'es2019',
+							css: true,
 						}),
 					],
 				};
@@ -283,7 +283,7 @@ describe.each([
 					minimize: true,
 					minimizer: [
 						new ESBuildMinifyPlugin({
-							target: 'es2019',
+							css: true,
 							exclude: /\.css$/,
 						}),
 					],
@@ -306,7 +306,7 @@ describe.each([
 					minimize: true,
 					minimizer: [
 						new ESBuildMinifyPlugin({
-							target: 'es2019',
+							css: true,
 						}),
 					],
 				};

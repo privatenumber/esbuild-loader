@@ -128,13 +128,21 @@ class ESBuildMinifyPlugin {
 				this.options.sourcemap
 		);
 
-		const {include, exclude, ...transformOptions} = this.options;
+		const {
+			css: minifyCss,
+			include,
+			exclude,
+			...transformOptions
+		} = this.options;
 
 		const transforms = assetNames
 			.filter(assetName => (
 				(
 					isJsFile.test(assetName) ||
-					isCssFile.test(assetName)
+					(
+						minifyCss &&
+						isCssFile.test(assetName)
+					)
 				) &&
 				matchObject({include, exclude}, assetName)),
 			)
