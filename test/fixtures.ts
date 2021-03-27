@@ -192,12 +192,15 @@ const webpackChunks = {
 const css = {
 	'/src/index.js': `
 		import './styles.css';
-		console.log(1);
 	`,
 
 	'/src/styles.css': `
 	div {
 		color: red;
+	}
+
+	span {
+		margin: 0px 10px;
 	}
 	`,
 };

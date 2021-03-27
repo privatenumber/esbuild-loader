@@ -274,7 +274,7 @@ describe.each([
 			});
 
 			const file = getFile(stats, '/dist/index.css');
-			expect(file.content.trim()).not.toMatch(/\s+/);
+			expect(file.content.trim()).not.toMatch(/\s{2,}/);
 		});
 
 		test('exclude css', async () => {
@@ -294,7 +294,7 @@ describe.each([
 			});
 
 			const file = getFile(stats, '/dist/index.css');
-			expect(file.content.trim()).toMatch(/\s+/);
+			expect(file.content.trim()).toMatch(/\s{2,}/);
 		});
 	});
 });
