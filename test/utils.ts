@@ -58,6 +58,9 @@ export async function build(
 			},
 
 			resolveLoader: {
+				modules: [
+					path.join(__dirname, '../node_modules'),
+				],
 				alias: {
 					'esbuild-loader': esbuildLoaderPath,
 				},
@@ -68,6 +71,12 @@ export async function build(
 					{
 						test: /\.js$/,
 						loader: 'esbuild-loader',
+					},
+					{
+						test: /\.css$/,
+						use: [
+							'css-loader',
+						],
 					},
 				],
 			},

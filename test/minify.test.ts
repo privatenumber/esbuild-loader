@@ -2,6 +2,7 @@ import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import {build, getFile} from './utils';
 import {ESBuildMinifyPlugin} from '../dist/index.js';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as fixtures from './fixtures';
 
 describe.each([
@@ -240,6 +241,62 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 		expect(getFile(stats, '/dist/index.js.map').content).toMatchSnapshot();
 	});
+
+	describe('CSS', () => {
+		test('minify via loader', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.module.rules[1].use.push({
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'css',
+						minify: true,
+					},
+				});
+			});
+	
+			const file = getFile(stats, '/dist/index.js');
+			expect(file.content).toContain('div{color:red}');
+		});
+
+		test('minify', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.optimization = {
+					minimize: true,
+					minimizer: [
+						new ESBuildMinifyPlugin({
+							target: 'es2019',
+						}),
+					],
+				};
+
+				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
+				config.plugins.push(new MiniCssExtractPlugin());
+			});
+	
+			const file = getFile(stats, '/dist/index.css');
+			expect(file.content.trim()).not.toMatch(/\s+/);
+		});
+
+		test('exclude css', async () => {
+			const stats = await build(webpack, fixtures.css, config => {
+				config.optimization = {
+					minimize: true,
+					minimizer: [
+						new ESBuildMinifyPlugin({
+							target: 'es2019',
+							exclude: /\.css$/,
+						}),
+					],
+				};
+
+				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
+				config.plugins.push(new MiniCssExtractPlugin());
+			});
+	
+			const file = getFile(stats, '/dist/index.css');
+			expect(file.content.trim()).toMatch(/\s+/);
+		});
+	});	
 });
 
 test('Webpack 5 stats', async () => {
