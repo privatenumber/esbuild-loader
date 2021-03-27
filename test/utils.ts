@@ -76,6 +76,9 @@ export async function build(
 
 		configure?.(config);
 
+		// CI env was getting different chunk ids from snapshot/local
+		config.optimization.moduleIds = 'named';
+
 		const compiler = webpack(config);
 
 		compiler.inputFileSystem = ufs.use(fs).use(mfs as any);
