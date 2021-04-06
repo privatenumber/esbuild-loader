@@ -1,5 +1,5 @@
 dependencies:
-  esbuild: 0.10.2
+  esbuild: 0.11.5
   joycon: 3.0.1
   json5: 2.2.0
   loader-utils: 2.0.0
@@ -2694,12 +2694,12 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==
-  /esbuild/0.10.2:
+  /esbuild/0.11.5:
     dev: false
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-/5vsZD7wTJJHC3yNXLUjXNvUDwqwNoIMvFvLd9tcDQ9el5l13pspYm3yufavjIeYvNtAbo+6N/6uoWx9dGA6ug==
+      integrity: sha512-aRs6jAE+bVRp1tyfzUugAw1T/Y0Fwzp4Z2ROikF3h+UifoD5QlEbEYQGc6orNnnSIRhWR5VWBH7LozlAumaLHg==
   /escalade/3.1.1:
     dev: true
     engines:
@@ -8356,7 +8356,7 @@ specifiers:
   '@types/loader-utils': ^2.0.2
   '@types/webpack': ^4.41.27
   css-loader: ^5.2.0
-  esbuild: ^0.10.2
+  esbuild: ^0.11.5
   husky: ^4.3.8
   jest: ^26.6.3
   joycon: ^3.0.1
