@@ -20,6 +20,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
-      run: npx pnpm i --frozen-lockfile
+      run: npx ci
     - name: Test
       run: npm run test --if-present
