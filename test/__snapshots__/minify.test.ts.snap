@@ -144,6 +144,36 @@ Object {
 }
 `;
 
+exports[`Webpack 4 Loader + Minification minify w/ query strings 1`] = `
+"module.exports=function(O){var c={};function o(t){if(c[t])return c[t].exports;var i=c[t]={i:t,l:!1,exports:{}};return O[t].call(i.exports,i,i.exports,o),i.l=!0,i.exports}return o.m=O,o.c=c,o.d=function(t,i,s){o.o(t,i)||Object.defineProperty(t,i,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,i){if(i&1&&(t=o(t)),i&8||i&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),i&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(x){return t[x]}.bind(null,d));return s},o.n=function(t){var i=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(i,\\"a\\",i),i},o.o=function(t,i){return Object.prototype.hasOwnProperty.call(t,i)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,c,o){\\"use strict\\";o.r(c),o.d(c,\\"es2016\\",function(){return m}),o.d(c,\\"es2017\\",function(){return W}),o.d(c,\\"es2018\\",function(){return w}),o.d(c,\\"es2019\\",function(){return E}),o.d(c,\\"es2020\\",function(){return z}),o.d(c,\\"esnext\\",function(){return T});var t=Object.defineProperty,i=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,x=Math.pow,P=(n,r,e)=>r in n?t(n,r,{enumerable:!0,configurable:!0,writable:!0,value:e}):n[r]=e,M=(n,r)=>{for(var e in r||(r={}))i.call(r,e)&&P(n,e,r[e]);if(s)for(var e of s(r))d.call(r,e)&&P(n,e,r[e]);return n},S=(n,r)=>{var e={};for(var f in n)i.call(n,f)&&r.indexOf(f)<0&&(e[f]=n[f]);if(n!=null&&s)for(var f of s(n))r.indexOf(f)<0&&d.call(n,f)&&(e[f]=n[f]);return e},j=(n,r,e)=>(P(n,typeof r!=\\"symbol\\"?r+\\"\\":r,e),e),D=(n,r,e)=>new Promise((f,y)=>{var p=u=>{try{a(e.next(u))}catch(l){y(l)}},v=u=>{try{a(e.throw(u))}catch(l){y(l)}},a=u=>u.done?f(u.value):Promise.resolve(u.value).then(p,v);a((e=e.apply(n,r)).next())});const b={},m=x(10,4),W=\\"function\\",w=(()=>{const n={a:1};let r=M({},n);return S(n,[])})(),E=(()=>{try{return\\"try\\"}catch(n){}})(),z=(()=>{var n;const r={property:1};return[r==null?void 0:r.property,(n=r.prop)!=null?n:2,b]})(),T=(()=>{var n,r,e,f,y,p,v,a,u,l,g;let h;return[class{constructor(){j(this,\\"x\\",2)}},(n=class{},j(n,\\"x\\",1),n),(f=class{constructor(){r.add(this)}},r=new WeakSet,e=function(){},f),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(a=class{},v=new WeakSet,u=function(){},v.add(a),a),(l=class{},g=new WeakMap,g.set(l,void 0),l),h!=null?h:h=2]})()}});
+"
+`;
+
+exports[`Webpack 4 Loader + Minification minify w/ query strings 2`] = `
+Object {
+  "es2016": 10000,
+  "es2017": "function",
+  "es2018": Object {
+    "a": 1,
+  },
+  "es2019": "try",
+  "es2020": Array [
+    1,
+    2,
+    Object {},
+  ],
+  "esnext": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    2,
+  ],
+}
+`;
+
 exports[`Webpack 4 Loader + Minification minify w/ source-map option 1`] = `
 "module.exports=function(O){var c={};function o(t){if(c[t])return c[t].exports;var i=c[t]={i:t,l:!1,exports:{}};return O[t].call(i.exports,i,i.exports,o),i.l=!0,i.exports}return o.m=O,o.c=c,o.d=function(t,i,s){o.o(t,i)||Object.defineProperty(t,i,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,i){if(i&1&&(t=o(t)),i&8||i&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),i&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(x){return t[x]}.bind(null,d));return s},o.n=function(t){var i=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(i,\\"a\\",i),i},o.o=function(t,i){return Object.prototype.hasOwnProperty.call(t,i)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,c,o){\\"use strict\\";o.r(c),o.d(c,\\"es2016\\",function(){return m}),o.d(c,\\"es2017\\",function(){return W}),o.d(c,\\"es2018\\",function(){return w}),o.d(c,\\"es2019\\",function(){return E}),o.d(c,\\"es2020\\",function(){return z}),o.d(c,\\"esnext\\",function(){return T});var t=Object.defineProperty,i=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,x=Math.pow,P=(n,r,e)=>r in n?t(n,r,{enumerable:!0,configurable:!0,writable:!0,value:e}):n[r]=e,M=(n,r)=>{for(var e in r||(r={}))i.call(r,e)&&P(n,e,r[e]);if(s)for(var e of s(r))d.call(r,e)&&P(n,e,r[e]);return n},S=(n,r)=>{var e={};for(var f in n)i.call(n,f)&&r.indexOf(f)<0&&(e[f]=n[f]);if(n!=null&&s)for(var f of s(n))r.indexOf(f)<0&&d.call(n,f)&&(e[f]=n[f]);return e},j=(n,r,e)=>(P(n,typeof r!=\\"symbol\\"?r+\\"\\":r,e),e),D=(n,r,e)=>new Promise((f,y)=>{var p=u=>{try{a(e.next(u))}catch(l){y(l)}},v=u=>{try{a(e.throw(u))}catch(l){y(l)}},a=u=>u.done?f(u.value):Promise.resolve(u.value).then(p,v);a((e=e.apply(n,r)).next())});const b={},m=x(10,4),W=\\"function\\",w=(()=>{const n={a:1};let r=M({},n);return S(n,[])})(),E=(()=>{try{return\\"try\\"}catch(n){}})(),z=(()=>{var n;const r={property:1};return[r==null?void 0:r.property,(n=r.prop)!=null?n:2,b]})(),T=(()=>{var n,r,e,f,y,p,v,a,u,l,g;let h;return[class{constructor(){j(this,\\"x\\",2)}},(n=class{},j(n,\\"x\\",1),n),(f=class{constructor(){r.add(this)}},r=new WeakSet,e=function(){},f),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(a=class{},v=new WeakSet,u=function(){},v.add(a),a),(l=class{},g=new WeakMap,g.set(l,void 0),l),h??(h=2)]})()}});
 "
@@ -705,6 +735,36 @@ exports[`Webpack 5 Loader + Minification minify w/ no devtool 1`] = `
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ no devtool 2`] = `
+Object {
+  "es2016": 10000,
+  "es2017": "function",
+  "es2018": Object {
+    "a": 1,
+  },
+  "es2019": "try",
+  "es2020": Array [
+    1,
+    2,
+    Object {},
+  ],
+  "esnext": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    2,
+  ],
+}
+`;
+
+exports[`Webpack 5 Loader + Minification minify w/ query strings 1`] = `
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};o.r(f),o.d(f,{es2016:()=>S,es2017:()=>g,es2018:()=>j,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,x=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},P=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var i=n=>{try{s(t.next(n))}catch(l){_(l)}},p=n=>{try{s(t.throw(n))}catch(l){_(l)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(i,p);s((t=t.apply(e,r)).next())});const h={},S=O(10,4),g=\\"function\\",j=(()=>{const e={a:1};let r=x({},e);return P(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,h]})(),z=(()=>{var e,r,t,a,_,i,p,s,n,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(i=class{constructor(){_.set(this,void 0)}},_=new WeakMap,i),(s=class{},p=new WeakSet,n=function(){},p.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v!=null?v:v=2]})();module.exports=f})();
+"
+`;
+
+exports[`Webpack 5 Loader + Minification minify w/ query strings 2`] = `
 Object {
   "es2016": 10000,
   "es2017": "function",
