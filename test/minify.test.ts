@@ -242,6 +242,32 @@ describe.each([
 		expect(getFile(stats, '/dist/index.js.map').content).toMatchSnapshot();
 	});
 
+	test('minify w/ query strings', async () => {
+		const statsUnminified = await build(webpack, fixtures.js, config => {
+			config.output.filename = '[name].js?foo=bar';
+			config.output.chunkFilename = '[name].js?foo=bar';
+		});
+		const stats = await build(webpack, fixtures.js, config => {
+			config.output.filename = '[name].js?foo=bar';
+			config.output.chunkFilename = '[name].js?foo=bar';
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						target: 'es2019',
+					}),
+				],
+			};
+		});
+		expect(statsUnminified.hash).not.toBe(stats.hash);
+
+		// Note: the actual file name does not include the query string
+		const file = getFile(stats, '/dist/index.js');
+
+		expect(file.content).toMatchSnapshot();
+		expect(file.execute()).toMatchSnapshot();
+	});
+
 	describe('CSS', () => {
 		test('minify via loader', async () => {
 			const stats = await build(webpack, fixtures.css, config => {
