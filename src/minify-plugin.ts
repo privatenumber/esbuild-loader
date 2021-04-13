@@ -32,8 +32,8 @@ type StatsPrinter = {
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const {version} = require('../package');
 
-const isJsFile = /\.js$/i;
-const isCssFile = /\.css$/i;
+const isJsFile = /\.[cm]?js(\?.*)?$/i;
+const isCssFile = /\.css(\?.*)?$/i;
 const pluginName = 'esbuild-minify';
 
 const flatMap = <T, U>(
