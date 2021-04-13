@@ -261,6 +261,7 @@ describe.each([
 		});
 		expect(statsUnminified.hash).not.toBe(stats.hash);
 
+		// Note: the actual file name does not include the query string
 		const file = getFile(stats, '/dist/index.js');
 
 		expect(file.content).toMatchSnapshot();
