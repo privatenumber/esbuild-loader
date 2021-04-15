@@ -193,6 +193,31 @@ In `webpack.config.js`:
 ```
 
 
+#### Custom esbuild implementation
+
+This loader ships with a stable esbuild version but you can override it in the loader options. This is useful when you want to use a more recent release of esbuild, for example.
+
+⚠️ Attention: using a different implementation is not guaranteed to work, be careful when overriding it in production.
+
+```diff
++ import { transform } from 'esbuild';
+
+  ...
+
+  {
+      test: /\.tsx?$/,
+      loader: 'esbuild-loader',
+      options: {
+          loader: 'tsx',
+          target: 'es2015',
++         implementation: { transform },
+      }
+  }
+```
+
+The minify plugin also accepts a custom esbuild implementation.
+
+
 ### Examples
 If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).
 
@@ -205,6 +230,7 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild/blob
   - [Possible values](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
 - `jsxFactory` `String` - What to use instead of React.createElement
 - `jsxFragment` `String` - What to use instead of React.Fragment
+- `implementation` `{ transform: Function }` - Custom ESBuild transform implementation
 
 Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
@@ -218,6 +244,7 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 - `css` `Boolean` (`false`) - Whether to minify CSS files
 - `include` `String|RegExp|Array<String|RegExp>` - Filter assets for inclusion in minification
 - `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
+- `implementation` `{ transform: Function }` - Custom ESBuild transform implementation
 
 
 ## 💼 License

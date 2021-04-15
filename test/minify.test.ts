@@ -9,6 +9,27 @@ describe.each([
 	['Webpack 4', webpack4],
 	['Webpack 5', webpack5],
 ])('%s Loader + Minification', (_name, webpack) => {
+	describe('Error handling', () => {
+		test('invalid implementation option', async () => {
+			const runWithImplementation = async (implementation: any) => {
+				return build(webpack, fixtures.js, config => {
+					config.optimization = {
+						minimize: true,
+						minimizer: [
+							new ESBuildMinifyPlugin({
+								implementation,
+							}),
+						],
+					};
+				});
+			};
+
+			await expect(runWithImplementation({})).rejects.toThrow('ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received undefined');
+
+			await expect(runWithImplementation({transform: 123})).rejects.toThrow('ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number');
+		});
+	});
+
 	test('minify', async () => {
 		const statsUnminified = await build(webpack, fixtures.js);
 		const stats = await build(webpack, fixtures.js, config => {
@@ -266,6 +287,33 @@ describe.each([
 
 		expect(file.content).toMatchSnapshot();
 		expect(file.execute()).toMatchSnapshot();
+	});
+
+	test('minify with custom implementation', async () => {
+		const statsUnminified = await build(webpack, fixtures.js);
+		const stats = await build(webpack, fixtures.js, config => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						implementation: {
+							transform: async () => {
+								return {
+									code: 'export function foo() { return "MY_CUSTOM_ESBUILD_IMPLEMENTATION"; }',
+									map: '',
+									warnings: [],
+								};
+							},
+						},
+					}),
+				],
+			};
+		});
+		expect(statsUnminified.hash).not.toBe(stats.hash);
+
+		const {content} = getFile(stats, '/dist/index.js');
+		expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
+		expect(content).toMatchSnapshot();
 	});
 
 	describe('CSS', () => {

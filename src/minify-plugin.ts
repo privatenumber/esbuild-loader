@@ -1,4 +1,4 @@
-import {transform} from 'esbuild';
+import {transform as defaultEsbuildTransform} from 'esbuild';
 import {RawSource, SourceMapSource} from 'webpack-sources';
 import webpack from 'webpack';
 import {matchObject} from 'webpack/lib/ModuleFilenameHelpers';
@@ -132,8 +132,15 @@ class ESBuildMinifyPlugin {
 			css: minifyCss,
 			include,
 			exclude,
+			implementation,
 			...transformOptions
 		} = this.options;
+
+		if (implementation && typeof implementation.transform !== 'function') {
+			throw new TypeError(
+				`ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received ${typeof implementation.transform}`,
+			);
+		}
 
 		const transforms = assetNames
 			.filter(assetName => (
@@ -156,6 +163,7 @@ class ESBuildMinifyPlugin {
 			]) => {
 				const assetIsCss = isCssFile.test(assetName);
 				const {source, map} = assetSource.sourceAndMap();
+				const transform = implementation?.transform ?? defaultEsbuildTransform;
 				const result = await transform(source.toString(), {
 					...transformOptions,
 					loader: (
