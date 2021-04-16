@@ -192,34 +192,43 @@ In `webpack.config.js`:
   }
 ```
 
+### Examples
+If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).
 
-#### Custom esbuild implementation
+### Bring your own esbuild (Advanced)
 
-This loader ships with a stable esbuild version but you can override it in the loader options. This is useful when you want to use a more recent release of esbuild, for example.
+esbuild-loader comes with a version of esbuild it has been tested to work with. However, [esbuild has a frequent release cadence](https://github.com/evanw/esbuild/releases), and while we try to keep up with the important releases, it can easily go out of date.
 
-⚠️ Attention: using a different implementation is not guaranteed to work, be careful when overriding it in production.
+Use the `implementation` option in the loader or the minify plugin to pass in your own version of esbuild (eg. a newer one).
+
+⚠️ esbuild is not stable yet and can have dramatic differences across releases. Using a different version of esbuild is not guaranteed to work.
+
 
 ```diff
-+ import { transform } from 'esbuild';
++ const esbuild = require('esbuild')
 
   ...
 
-  {
-      test: /\.tsx?$/,
-      loader: 'esbuild-loader',
-      options: {
-          loader: 'tsx',
-          target: 'es2015',
-+         implementation: { transform },
-      }
+  module.exports = {
+    ...,
+
+    module: {
+      rules: [
+        {
+          test: ...,
+          loader: 'esbuild-loader',
+          options: {
+            ...,
++           implementation: esbuild
+          }
+        }
+      ]
+    }
   }
 ```
 
-The minify plugin also accepts a custom esbuild implementation.
+_The `implementation` option will be removed once esbuild reaches a stable release. Instead esbuild will become a peerDependency so you always provide your own._
 
-
-### Examples
-If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).
 
 ## ⚙️ Options
 
