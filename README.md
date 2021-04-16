@@ -192,9 +192,43 @@ In `webpack.config.js`:
   }
 ```
 
-
 ### Examples
 If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).
+
+### Bring your own esbuild (Advanced)
+
+esbuild-loader comes with a version of esbuild it has been tested to work with. However, [esbuild has a frequent release cadence](https://github.com/evanw/esbuild/releases), and while we try to keep up with the important releases, it can easily go out of date.
+
+Use the `implementation` option in the loader or the minify plugin to pass in your own version of esbuild (eg. a newer one).
+
+⚠️ esbuild is not stable yet and can have dramatic differences across releases. Using a different version of esbuild is not guaranteed to work.
+
+
+```diff
++ const esbuild = require('esbuild')
+
+  ...
+
+  module.exports = {
+    ...,
+
+    module: {
+      rules: [
+        {
+          test: ...,
+          loader: 'esbuild-loader',
+          options: {
+            ...,
++           implementation: esbuild
+          }
+        }
+      ]
+    }
+  }
+```
+
+_The `implementation` option will be removed once esbuild reaches a stable release. Instead esbuild will become a peerDependency so you always provide your own._
+
 
 ## ⚙️ Options
 
@@ -205,6 +239,7 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild/blob
   - [Possible values](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
 - `jsxFactory` `String` - What to use instead of React.createElement
 - `jsxFragment` `String` - What to use instead of React.Fragment
+- `implementation` `{ transform: Function }` - esbuild module
 
 Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
@@ -218,6 +253,7 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 - `css` `Boolean` (`false`) - Whether to minify CSS files
 - `include` `String|RegExp|Array<String|RegExp>` - Filter assets for inclusion in minification
 - `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
+- `implementation` `{ transform: Function }` - esbuild module
 
 
 ## 💼 License

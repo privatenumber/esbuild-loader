@@ -34,6 +34,22 @@ describe.each([
 
 			await expect(runBuild).rejects.toThrow('Unexpected "const"');
 		});
+
+		test('invalid implementation option', async () => {
+			const runWithImplementation = async implementation => build(webpack, fixtures.invalidTsx, config => {
+				config.module.rules.push({
+					test: /\.js?$/,
+					loader: 'esbuild-loader',
+					options: {
+						implementation,
+					},
+				});
+			});
+
+			await expect(runWithImplementation({})).rejects.toThrow('esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received undefined');
+
+			await expect(runWithImplementation({transform: 123})).rejects.toThrow('esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received number');
+		});
 	});
 
 	describe('Loader', () => {
@@ -128,6 +144,31 @@ describe.each([
 
 			expect(file.content).toMatchSnapshot();
 			expect(file.execute('const customFactory = (...args) => args, customFragment = "Fragment";')).toMatchSnapshot();
+		});
+
+		test('custom esbuild transform function', async () => {
+			const stats = await build(webpack, fixtures.ts, config => {
+				config.module.rules.push({
+					test: /\.tsx?$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'tsx',
+						implementation: {
+							transform: async () => {
+								return {
+									code: 'export function foo() { return "MY_CUSTOM_ESBUILD_IMPLEMENTATION"; }',
+									map: '',
+									warnings: [],
+								};
+							},
+						},
+					},
+				});
+			});
+
+			const {content} = getFile(stats, '/dist/index.js');
+			expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
+			expect(content).toMatchSnapshot();
 		});
 
 		describe('ambigious ts/tsx', () => {
