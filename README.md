@@ -239,7 +239,7 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild/blob
   - [Possible values](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
 - `jsxFactory` `String` - What to use instead of React.createElement
 - `jsxFragment` `String` - What to use instead of React.Fragment
-- `implementation` `{ transform: Function }` - Custom ESBuild transform implementation
+- `implementation` `{ transform: Function }` - esbuild module
 
 Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
@@ -253,7 +253,7 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 - `css` `Boolean` (`false`) - Whether to minify CSS files
 - `include` `String|RegExp|Array<String|RegExp>` - Filter assets for inclusion in minification
 - `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
-- `implementation` `{ transform: Function }` - Custom ESBuild transform implementation
+- `implementation` `{ transform: Function }` - esbuild module
 
 
 ## 💼 License
