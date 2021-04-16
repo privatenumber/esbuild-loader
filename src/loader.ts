@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import {transform} from 'esbuild';
+import {transform as defaultEsbuildTransform} from 'esbuild';
 import {getOptions} from 'loader-utils';
 import webpack from 'webpack';
 import JoyCon, {LoadResult} from 'joycon';
@@ -32,9 +32,21 @@ async function ESBuildLoader(
 ): Promise<void> {
 	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
+	const {implementation, ...esbuildTransformOptions} = options;
+
+	if (implementation && typeof implementation.transform !== 'function') {
+		done(
+			new TypeError(
+				`esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received ${typeof implementation.transform}`,
+			),
+		);
+		return;
+	}
+
+	const transform = implementation?.transform ?? defaultEsbuildTransform;
 
 	const transformOptions = {
-		...options,
+		...esbuildTransformOptions,
 		target: options.target ?? 'es2015',
 		loader: options.loader ?? 'js',
 		sourcemap: this.sourceMap,
