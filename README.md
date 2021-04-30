@@ -255,6 +255,38 @@ Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/
 - `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
 - `implementation` `{ transform: Function }` - esbuild module
 
+## 🙋‍♀️ FAQ
+
+### Is it possible to use esbuild plugins?
+No. esbuild plugins are [only available in the build API](https://esbuild.github.io/plugins/#:~:text=plugins%20can%20also%20only%20be%20used%20with%20the%20build%20api%2C%20not%20with%20the%20transform%20api.). And esbuild-loader uses the transform API instead of the build API for two reasons:
+1. The build API is for creating JS bundles, which is what Webpack does. If you want to use esbuild's build API, consider using esbuild directly instead of Webpack.
+
+2. The build API reads directly from the file-system, but Webpack loaders operate in-memory. Webpack loaders are essentially just functions that are called with the source-code as the input. Not reading from the file-system allows loaders to be chainable. For example, using `vue-loader` to compile Single File Components (`.vue` files), then using `esbuild-loader` to transpile just the JS part of the SFC.
+
+### Is it possible to use esbuild's [inject](https://esbuild.github.io/api/#inject) option?
+
+No. The `inject` option is only available in the build API. And esbuild-loader uses the transform API.
+
+However, you can use the Webpack equivalent [ProvidePlugin](https://webpack.js.org/plugins/provide-plugin/) instead.
+
+If you're using React, check out [this example](https://github.com/privatenumber/esbuild-loader-examples/blob/52ca91b8cb2080de5fc63cc6e9371abfefe1f823/examples/react/webpack.config.js#L39-L41) on how to auto-import React in your components.
+
+### Is it possible to use Babel plugins?
+No. If you really need them, consider porting them over to a Webpack loader.
+
+And please don't chain `babel-loader` and `esbuild-loader`. The speed gains come from replacing `babel-loader`.
+
+### Why am I not getting a [100x speed improvement](https://esbuild.github.io/faq/#benchmark-details) as advertised?
+Running esbuild as a standalone bundler vs esbuild-loader + Webpack are completely different:
+- esbuild is highly optimized, written in Go, and compiled to native code. Read more about it [here](https://esbuild.github.io/faq/#why-is-esbuild-fast).
+- esbuild-loader is handled by Webpack in a JS runtime, which applies esbuild transforms per file. On top of that, there's likely other loaders & plugins in a Webpack config that slow it down.
+
+Using any JS bundler introduces a bottleneck that makes reaching those speeds impossible. However, esbuild-loader can still speed up your build by removing the bottlenecks created by [`babel-loader`](https://twitter.com/wSokra/status/1316274855042584577?s=20), `ts-loader`, Terser, etc.
+
+### Will there be type-checking support?
+esbuild-loader is more or less just a Webpack wrapper for esbuild.
+
+But according to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript%20type%20checking%20(just%20run%20tsc%20separately)), it will not be supported.
 
 ## 💼 License
 - MIT &copy; privatenumber
