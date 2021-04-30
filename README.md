@@ -8,7 +8,7 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 
 Curious how much faster your build will be? See [what users are saying](https://github.com/privatenumber/esbuild-loader/issues/13).
 
-<sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
+<sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🚀 Install
 
