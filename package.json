@@ -38,7 +38,7 @@
 		]
 	},
 	"dependencies": {
-		"esbuild": "^0.10.2",
+		"esbuild": "^0.11.6",
 		"joycon": "^3.0.1",
 		"json5": "^2.2.0",
 		"loader-utils": "^2.0.0",
