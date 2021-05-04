@@ -244,7 +244,7 @@ The loader supports options from [esbuild](https://github.com/evanw/esbuild/blob
 Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
 
 ### MinifyPlugin
-- `target` `String|Aray<String>` (`'esnext'`) - [Environment target](https://github.com/evanw/esbuild#javascript-syntax-support) (e.g. `'es2016'`, `['chrome80', 'esnext']`)
+- `target` `String|Aray<String>` (`'esnext'`) - [Environment target](https://esbuild.github.io/api/#target) (e.g. `'es2016'`, `['chrome80', 'esnext']`)
 - `minify` `Boolean` (`true`) - Sets all `minify` flags
 - `minifyWhitespace` `Boolean` - Remove whitespace
 - `minifyIdentifiers` `Boolean` - Shorten identifiers
