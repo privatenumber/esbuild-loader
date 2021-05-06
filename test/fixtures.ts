@@ -205,6 +205,13 @@ const css = {
 	`,
 };
 
+const legalComments = {
+	'/src/index.js': `
+		//! legal comment
+		globalCall();
+	`,
+};
+
 export {
 	js,
 	ts,
@@ -216,4 +223,5 @@ export {
 	tsConfig,
 	webpackChunks,
 	css,
+	legalComments,
 };
