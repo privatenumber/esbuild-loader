@@ -86,7 +86,7 @@ Alternatively, you can also pass it in directly via the [`tsconfigRaw` option](h
   }
 ```
 
-⚠️ esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L127-L133) and does not do type-checks. It's recommended to use a type-aware IDE or `tsc --noEmit` for type-checking instead. It is also recommended to enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) and [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) options in your `tsconfig` by the [esbuild docs](https://esbuild.github.io/content-types/#typescript-caveats).
+⚠️ esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L159-L165) and does not do type-checks. It's recommended to use a type-aware IDE or `tsc --noEmit` for type-checking instead. It is also recommended to enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) and [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) options in your `tsconfig` by the [esbuild docs](https://esbuild.github.io/content-types/#typescript-caveats).
 
 
 ### JS Minification (eg. Terser)
@@ -233,27 +233,144 @@ _The `implementation` option will be removed once esbuild reaches a stable relea
 ## ⚙️ Options
 
 ### Loader
-The loader supports options from [esbuild](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L126-L138).
-- `target` `String` (`'es2015'`) - [Environment target](https://esbuild.github.io/api/#target) (e.g. es2016, chrome80, esnext)
-- `loader` `String` (`'js'`) - Which loader to use to handle file
-  - [Possible values](https://github.com/evanw/esbuild/blob/b901055/lib/types.ts#L3): `js`, `jsx`, `ts`, `tsx`, `json`, `text`, `base64`, `file`, `dataurl`, `binary`
-- `jsxFactory` `String` - What to use instead of React.createElement
-- `jsxFragment` `String` - What to use instead of React.Fragment
-- `implementation` `{ transform: Function }` - esbuild module
+The loader supports [all Transform options from esbuild](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L158-L172).
 
-Enable source-maps via [`devtool`](https://webpack.js.org/configuration/devtool/)
+Note:
+- Source-maps are automatically configured for you via [`devtool`](https://webpack.js.org/configuration/devtool/).  `sourcemap`/`sourcefile` options are ignored.
+- The root `tsconfig.json` is automatically detected for you. You don't need to pass in [`tsconfigRaw`](https://esbuild.github.io/api/#tsconfig-raw) unless it's in a different path.
+
+
+Here are some common configurations and custom options:
+
+#### target
+Type: `string`
+
+Default: `'es2015'`
+
+The target environment (e.g. `es2016`, `chrome80`, `esnext`).
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#target).
+
+#### loader
+Type: `'js' | 'jsx' | 'ts' | 'tsx' | 'css' | 'json' | 'text' | 'base64' | 'file' | 'dataurl' | 'binary' | 'default'`
+
+Default: `'js'`
+
+The loader to use to handle the file.
+
+[Possible values](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L3).
+
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#loader).
+
+#### jsxFactory
+Type: `string`
+
+Default: `React.createElement`
+
+Customize the JSX factory function name to use.
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#jsx-factory).
+
+#### jsxFragment
+Type: `string`
+
+Default: `React.Fragment`
+
+Customize the JSX fragment function name to use.
+
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#jsx-fragment).
+
+#### implementation
+Type: `{ transform: Function }`
+
+_Custom esbuild-loader option._
+
+Use it to pass in a [different esbuild version](#bring-your-own-esbuild-advanced).
 
 ### MinifyPlugin
-- `target` `String|Aray<String>` (`'esnext'`) - [Environment target](https://esbuild.github.io/api/#target) (e.g. `'es2016'`, `['chrome80', 'esnext']`)
-- `minify` `Boolean` (`true`) - Sets all `minify` flags
-- `minifyWhitespace` `Boolean` - Remove whitespace
-- `minifyIdentifiers` `Boolean` - Shorten identifiers
-- `minifySyntax` `Boolean` - Use equivalent but shorter syntax
-- `sourcemap` `Boolean` (defaults to Webpack `devtool`) - Whether to emit sourcemaps
-- `css` `Boolean` (`false`) - Whether to minify CSS files
-- `include` `String|RegExp|Array<String|RegExp>` - Filter assets for inclusion in minification
-- `exclude` `String|RegExp|Array<String|RegExp>` - Filter assets for exclusion in minification
-- `implementation` `{ transform: Function }` - esbuild module
+
+The loader supports [all Transform options from esbuild](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L158-L172).
+
+#### target
+Type: `string | Array<string>`
+
+Default: `'esnext'`
+
+[Target environment](https://esbuild.github.io/api/#target) (e.g. `'es2016'`, `['chrome80', 'esnext']`)
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#target).
+
+Here are some common configurations and custom options:
+
+#### minify
+Type: `boolean`
+
+Default: `true`
+
+Enable JS minification. Enables all `minify*` flags below.
+
+To have nuanced control over minification, disable this and enable the specific minification you want below.
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#minify).
+
+#### minifyWhitespace
+Type: `boolean`
+
+Minify JS by removing whitespace.
+
+#### minifyIdentifiers
+Type: `boolean`
+
+Minify JS by shortening identifiers.
+
+#### minifySyntax
+Type: `boolean`
+
+Minify JS using equivalent but shorter syntax.
+
+#### sourcemap
+Type: `boolean`
+
+Default: Webpack `devtool` configuration
+
+Whether to emit sourcemaps.
+
+#### css
+Type: `boolean`
+
+Default: `false`
+
+Whether to minify CSS files.
+
+#### legalComments
+Type: `'none' | 'inline' | 'eof'`
+
+Default: `'inline'`
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#legal-comments).
+
+#### include
+Type: `string | RegExp | Array<string | RegExp>`
+
+_Custom esbuild-loader option._
+
+Filter assets to include in minification
+
+#### exclude
+Type: `string | RegExp | Array<string | RegExp>`
+
+_Custom esbuild-loader option._
+
+Filter assets to exclude from minification
+
+#### implementation
+Type: `{ transform: Function }`
+
+_Custom esbuild-loader option._
+
+Use it to pass in a [different esbuild version](#bring-your-own-esbuild-advanced).
 
 ## 🙋‍♀️ FAQ
 
