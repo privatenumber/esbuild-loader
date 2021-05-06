@@ -289,6 +289,66 @@ describe.each([
 		expect(file.execute()).toMatchSnapshot();
 	});
 
+	test('minify w/ legalComments - default is inline', async () => {
+		const statsDefault = await build(webpack, fixtures.legalComments, config => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin(),
+				],
+			};
+		});
+
+		const statsInline = await build(webpack, fixtures.legalComments, config => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						legalComments: 'inline',
+					}),
+				],
+			};
+		});
+
+		const fileInline = getFile(statsInline, '/dist/index.js');
+		const fileDefault = getFile(statsDefault, '/dist/index.js');
+
+		expect(fileDefault.content).toMatch('//! legal comment');
+		expect(fileDefault.content).toBe(fileInline.content);
+	});
+
+	test('minify w/ legalComments - eof', async () => {
+		const stats = await build(webpack, fixtures.legalComments, config => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						legalComments: 'eof',
+					}),
+				],
+			};
+		});
+
+		const file = getFile(stats, '/dist/index.js');
+		expect(file.content.trim().endsWith('//! legal comment')).toBe(true);
+	});
+
+	test('minify w/ legalComments - none', async () => {
+		const stats = await build(webpack, fixtures.legalComments, config => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						legalComments: 'none',
+					}),
+				],
+			};
+		});
+
+		const file = getFile(stats, '/dist/index.js');
+		expect(file.content).not.toMatch('//! legal comment');
+	});
+
 	test('minify with custom implementation', async () => {
 		const statsUnminified = await build(webpack, fixtures.js);
 		const stats = await build(webpack, fixtures.js, config => {
