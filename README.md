@@ -256,9 +256,7 @@ Type: `'js' | 'jsx' | 'ts' | 'tsx' | 'css' | 'json' | 'text' | 'base64' | 'file'
 
 Default: `'js'`
 
-The loader to use to handle the file.
-
-[Possible values](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L3).
+The loader to use to handle the file. See the type for [possible values](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L3).
 
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#loader).
@@ -298,7 +296,7 @@ Type: `string | Array<string>`
 
 Default: `'esnext'`
 
-[Target environment](https://esbuild.github.io/api/#target) (e.g. `'es2016'`, `['chrome80', 'esnext']`)
+Target environment (e.g. `'es2016'`, `['chrome80', 'esnext']`)
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#target).
 
@@ -330,6 +328,13 @@ Type: `boolean`
 
 Minify JS using equivalent but shorter syntax.
 
+#### legalComments
+Type: `'none' | 'inline' | 'eof'`
+
+Default: `'inline'`
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#legal-comments).
+
 #### sourcemap
 Type: `boolean`
 
@@ -342,14 +347,9 @@ Type: `boolean`
 
 Default: `false`
 
+_Custom esbuild-loader option._
+
 Whether to minify CSS files.
-
-#### legalComments
-Type: `'none' | 'inline' | 'eof'`
-
-Default: `'inline'`
-
-Read more about it in the [esbuild docs](https://esbuild.github.io/api/#legal-comments).
 
 #### include
 Type: `string | RegExp | Array<string | RegExp>`
