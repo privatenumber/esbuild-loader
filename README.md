@@ -243,7 +243,7 @@ Note:
 Here are some common configurations and custom options:
 
 #### target
-Type: `string`
+Type: `string | Array<string>`
 
 Default: `'es2015'`
 
