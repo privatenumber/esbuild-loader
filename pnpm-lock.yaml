@@ -5,7 +5,7 @@ specifiers:
   '@types/loader-utils': ^2.0.2
   '@types/webpack': ^4.41.27
   css-loader: ^5.2.0
-  esbuild: ^0.11.18
+  esbuild: ^0.11.19
   husky: ^4.3.8
   jest: ^26.6.3
   joycon: ^3.0.1
@@ -23,7 +23,7 @@ specifiers:
   xo: ^0.38.2
 
 dependencies:
-  esbuild: 0.11.18
+  esbuild: 0.11.19
   joycon: 3.0.1
   json5: 2.2.0
   loader-utils: 2.0.0
@@ -2617,8 +2617,8 @@ packages:
       is-symbol: 1.0.3
     dev: true
 
-  /esbuild/0.11.18:
-    resolution: {integrity: sha512-KD7v4N9b5B8bxPUNn/3GA9r0HWo4nJk3iwjZ+2zG1ffg+r8ig+wqj7sW6zgI6Sn4/B2FnbzqWxcAokAGGM5zwQ==}
+  /esbuild/0.11.19:
+    resolution: {integrity: sha512-X2h8UThAwKLxmc1OChHVegIScphS/qU9cUB5vCEV2T0A024E8Ptpg9xssXXcs+j1uEgXrDJZuVRzx2JsmGzq7A==}
     hasBin: true
     requiresBuild: true
     dev: false
