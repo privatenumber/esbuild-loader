@@ -6,16 +6,28 @@ labels: 'bug: pending triage'
 
 ## Bug description
 <!--
-  A clear and concise description of what the expected behavior is and what happened instead.
+  What did you do? (Provide code in next section)
+
+  What did you expect to happen?
+
+  What happened instead?
+
+  Do you have an error stack-trace?
 -->
 
-## Reproduction steps
+## Reproduction
 <!--
-  Providing reproduction steps are crucial for communicating the problem.
+  Provide one of the following:
+  1. A code-snippet that reproduces the issue
+  2. A reproduction repo that reproduces the issue
+  3. A PR with a failing test-case
 
-  Please open a PR with a failing test case or provide a link to a repo that can reproduce the problem you ran into.
+  Remove irrelevant code to make it easier for others to read and debug.
 
-  Keep your reproductions minimal. Follow guidelines here: https://stackoverflow.com/help/minimal-reproducible-example
+  -- Why?
+  The goal is to maximize communication efficiency.
+
+  When an issue is immediately reproducible, others can start debugging instead of following-up with questions.
 -->
 
 ## Environment
