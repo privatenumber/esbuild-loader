@@ -10,7 +10,7 @@ describe.each([
 ])('%s', (_name, webpack) => {
 	describe('Error handling', () => {
 		test('tsx handled as ts', async () => {
-			const runBuild = async () => (
+			await expect(async () => {
 				await build(webpack, fixtures.tsx, (config) => {
 					config.module.rules.push({
 						test: /\.tsx$/,
@@ -19,13 +19,12 @@ describe.each([
 							loader: 'ts',
 						},
 					});
-				})
-			);
-			await expect(runBuild).rejects.toThrow('Unexpected ">"');
+				});
+			}).rejects.toThrow('Unexpected ">"');
 		});
 
 		test('invalid tsx', async () => {
-			const runBuild = async () => (
+			await expect(async () => {
 				await build(webpack, fixtures.invalidTsx, (config) => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
@@ -34,10 +33,8 @@ describe.each([
 							loader: 'tsx',
 						},
 					});
-				})
-			);
-
-			await expect(runBuild).rejects.toThrow('Unexpected "const"');
+				});
+			}).rejects.toThrow('Unexpected "const"');
 		});
 
 		test('invalid implementation option', async () => {
