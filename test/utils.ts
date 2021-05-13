@@ -1,8 +1,8 @@
 import path from 'path';
 import fs from 'fs';
-import {ufs} from 'unionfs';
-import {Volume, DirectoryJSON} from 'memfs';
-import {runInNewContext} from 'vm';
+import { runInNewContext } from 'vm';
+import { ufs } from 'unionfs';
+import { Volume, DirectoryJSON } from 'memfs';
 import {
 	Configuration as Wp4Configuration,
 	Stats,
@@ -11,9 +11,9 @@ import {
 	Configuration as Wp5Configuration,
 	ModuleOptions,
 } from 'webpack5';
-import {SetRequired} from 'type-fest';
+import { SetRequired } from 'type-fest';
 
-const esbuildLoaderPath = require.resolve('esbuild-loader');
+const esbuildLoaderPath = require.resolve('../src/');
 
 type Wp4TestBuildConfig = SetRequired<Wp4Configuration, 'module' | 'plugins'>;
 
@@ -28,7 +28,7 @@ export async function build(
 	volJson: DirectoryJSON,
 	configure?: (config: WpBuildConfig) => void,
 ): Promise<Stats> {
-	return new Promise((resolve, reject) => {
+	return await new Promise((resolve, reject) => {
 		const mfs = Volume.fromJSON(volJson);
 
 		type customMfs = typeof mfs & {

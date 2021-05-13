@@ -1,6 +1,7 @@
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
-import {build, getFile} from './utils';
+import { MinifyPluginOptions } from '../src/interfaces';
+import { build, getFile } from './utils';
 import * as fixtures from './fixtures';
 
 describe.each([
@@ -9,46 +10,53 @@ describe.each([
 ])('%s', (_name, webpack) => {
 	describe('Error handling', () => {
 		test('tsx handled as ts', async () => {
-			const runBuild = async () => build(webpack, fixtures.tsx, config => {
-				config.module.rules.push({
-					test: /\.tsx$/,
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'ts',
-					},
+			await expect(async () => {
+				await build(webpack, fixtures.tsx, (config) => {
+					config.module.rules.push({
+						test: /\.tsx$/,
+						loader: 'esbuild-loader',
+						options: {
+							loader: 'ts',
+						},
+					});
 				});
-			});
-			await expect(runBuild).rejects.toThrow('Unexpected ">"');
+			}).rejects.toThrow('Unexpected ">"');
 		});
 
 		test('invalid tsx', async () => {
-			const runBuild = async () => build(webpack, fixtures.invalidTsx, config => {
-				config.module.rules.push({
-					test: /\.tsx?$/,
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'tsx',
-					},
+			await expect(async () => {
+				await build(webpack, fixtures.invalidTsx, (config) => {
+					config.module.rules.push({
+						test: /\.tsx?$/,
+						loader: 'esbuild-loader',
+						options: {
+							loader: 'tsx',
+						},
+					});
 				});
-			});
-
-			await expect(runBuild).rejects.toThrow('Unexpected "const"');
+			}).rejects.toThrow('Unexpected "const"');
 		});
 
 		test('invalid implementation option', async () => {
-			const runWithImplementation = async implementation => build(webpack, fixtures.invalidTsx, config => {
-				config.module.rules.push({
-					test: /\.js?$/,
-					loader: 'esbuild-loader',
-					options: {
-						implementation,
-					},
-				});
-			});
+			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => (
+				await build(webpack, fixtures.invalidTsx, (config) => {
+					config.module.rules.push({
+						test: /\.js?$/,
+						loader: 'esbuild-loader',
+						options: {
+							implementation,
+						},
+					});
+				})
+			);
 
-			await expect(runWithImplementation({})).rejects.toThrow('esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received undefined');
+			await expect(runWithImplementation({})).rejects.toThrow(
+				'esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received undefined',
+			);
 
-			await expect(runWithImplementation({transform: 123})).rejects.toThrow('esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received number');
+			await expect(runWithImplementation({ transform: 123 })).rejects.toThrow(
+				'esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received number',
+			);
 		});
 	});
 
@@ -62,7 +70,7 @@ describe.each([
 		});
 
 		test('ts', async () => {
-			const stats = await build(webpack, fixtures.ts, config => {
+			const stats = await build(webpack, fixtures.ts, (config) => {
 				config.module.rules.push({
 					test: /\.ts$/,
 					loader: 'esbuild-loader',
@@ -78,7 +86,7 @@ describe.each([
 		});
 
 		test('tsx', async () => {
-			const stats = await build(webpack, fixtures.tsx, config => {
+			const stats = await build(webpack, fixtures.tsx, (config) => {
 				config.module.rules.push({
 					test: /\.tsx$/,
 					loader: 'esbuild-loader',
@@ -96,7 +104,7 @@ describe.each([
 		});
 
 		test('ts w/ tsconfig', async () => {
-			const stats = await build(webpack, fixtures.tsConfig, config => {
+			const stats = await build(webpack, fixtures.tsConfig, (config) => {
 				config.module.rules.push({
 					test: /\.ts$/,
 					loader: 'esbuild-loader',
@@ -105,7 +113,7 @@ describe.each([
 					},
 				});
 			});
-			const stats2 = await build(webpack, fixtures.tsConfig, config => {
+			const stats2 = await build(webpack, fixtures.tsConfig, (config) => {
 				config.module.rules.push({
 					test: /\.ts$/,
 					loader: 'esbuild-loader',
@@ -125,7 +133,7 @@ describe.each([
 		});
 
 		test('tsx w/ tsconfig', async () => {
-			const stats = await build(webpack, fixtures.tsx, config => {
+			const stats = await build(webpack, fixtures.tsx, (config) => {
 				config.module.rules.push({
 					test: /\.tsx$/,
 					loader: 'esbuild-loader',
@@ -147,33 +155,31 @@ describe.each([
 		});
 
 		test('custom esbuild transform function', async () => {
-			const stats = await build(webpack, fixtures.ts, config => {
+			const stats = await build(webpack, fixtures.ts, (config) => {
 				config.module.rules.push({
 					test: /\.tsx?$/,
 					loader: 'esbuild-loader',
 					options: {
 						loader: 'tsx',
 						implementation: {
-							transform: async () => {
-								return {
-									code: 'export function foo() { return "MY_CUSTOM_ESBUILD_IMPLEMENTATION"; }',
-									map: '',
-									warnings: [],
-								};
-							},
+							transform: async () => ({
+								code: 'export function foo() { return "MY_CUSTOM_ESBUILD_IMPLEMENTATION"; }',
+								map: '',
+								warnings: [],
+							}),
 						},
 					},
 				});
 			});
 
-			const {content} = getFile(stats, '/dist/index.js');
+			const { content } = getFile(stats, '/dist/index.js');
 			expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
 			expect(content).toMatchSnapshot();
 		});
 
 		describe('ambigious ts/tsx', () => {
 			test('ts via tsx', async () => {
-				const stats = await build(webpack, fixtures.ts, config => {
+				const stats = await build(webpack, fixtures.ts, (config) => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -187,7 +193,7 @@ describe.each([
 			});
 
 			test('ts via tsx 2', async () => {
-				const stats = await build(webpack, fixtures.ts2, config => {
+				const stats = await build(webpack, fixtures.ts2, (config) => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -199,11 +205,11 @@ describe.each([
 				const file = getFile(stats, '/dist/index.js');
 
 				expect(file.content).toMatchSnapshot();
-				expect(file.execute().default('a', {a: 1})).toMatchSnapshot();
+				expect(file.execute().default('a', { a: 1 })).toMatchSnapshot();
 			});
 
 			test('ambiguous ts', async () => {
-				const stats = await build(webpack, fixtures.tsAmbiguous, config => {
+				const stats = await build(webpack, fixtures.tsAmbiguous, (config) => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -213,13 +219,13 @@ describe.each([
 					});
 				});
 
-				const {content} = getFile(stats, '/dist/index.js');
+				const { content } = getFile(stats, '/dist/index.js');
 				expect(content).toContain('(() => 1 < /a>/g)');
 				expect(content).toMatchSnapshot();
 			});
 
 			test('ambiguous tsx', async () => {
-				const stats = await build(webpack, fixtures.tsxAmbiguous, config => {
+				const stats = await build(webpack, fixtures.tsxAmbiguous, (config) => {
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -229,7 +235,7 @@ describe.each([
 					});
 				});
 
-				const {content} = getFile(stats, '/dist/index.js');
+				const { content } = getFile(stats, '/dist/index.js');
 				expect(content).toContain('React.createElement');
 				expect(content).toMatchSnapshot();
 			});
@@ -238,8 +244,7 @@ describe.each([
 
 	// Targets
 	test('target', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
-			// @ts-expect-error
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.module.rules[0].options = {
 				target: 'es2015',
 			};
@@ -252,7 +257,7 @@ describe.each([
 
 	describe('Source-map', () => {
 		test('source-map eval', async () => {
-			const stats = await build(webpack, fixtures.js, config => {
+			const stats = await build(webpack, fixtures.js, (config) => {
 				config.devtool = 'eval-source-map';
 			});
 			const file = getFile(stats, '/dist/index.js');
@@ -262,7 +267,7 @@ describe.each([
 		});
 
 		test('source-map inline', async () => {
-			const stats = await build(webpack, fixtures.js, config => {
+			const stats = await build(webpack, fixtures.js, (config) => {
 				config.devtool = 'inline-source-map';
 			});
 			const file = getFile(stats, '/dist/index.js');
@@ -272,7 +277,7 @@ describe.each([
 		});
 
 		test('source-map file', async () => {
-			const stats = await build(webpack, fixtures.js, config => {
+			const stats = await build(webpack, fixtures.js, (config) => {
 				config.devtool = 'source-map';
 			});
 
@@ -281,9 +286,8 @@ describe.each([
 		});
 
 		test('source-map plugin', async () => {
-			const stats = await build(webpack, fixtures.js, config => {
+			const stats = await build(webpack, fixtures.js, (config) => {
 				delete config.devtool;
-				// @ts-expect-error
 				config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
 			});
 			const file = getFile(stats, '/dist/index.js');
@@ -296,7 +300,7 @@ describe.each([
 	test('webpack magic comments', async () => {
 		const stats = await build(webpack, fixtures.webpackChunks);
 
-		const {assets} = stats.compilation;
+		const { assets } = stats.compilation;
 		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
 		expect(assets).toHaveProperty(['named-chunk-foo.js']);
 		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();

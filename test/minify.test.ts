@@ -1,8 +1,9 @@
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
-import {build, getFile} from './utils';
-import {ESBuildMinifyPlugin} from '../dist/index.js';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { MinifyPluginOptions } from '../src/interfaces';
+import { ESBuildMinifyPlugin } from '../src/index';
+import { build, getFile } from './utils';
 import * as fixtures from './fixtures';
 
 describe.each([
@@ -11,8 +12,8 @@ describe.each([
 ])('%s Loader + Minification', (_name, webpack) => {
 	describe('Error handling', () => {
 		test('invalid implementation option', async () => {
-			const runWithImplementation = async (implementation: any) => {
-				return build(webpack, fixtures.js, config => {
+			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => (
+				await build(webpack, fixtures.js, (config) => {
 					config.optimization = {
 						minimize: true,
 						minimizer: [
@@ -21,18 +22,18 @@ describe.each([
 							}),
 						],
 					};
-				});
-			};
+				})
+			);
 
 			await expect(runWithImplementation({})).rejects.toThrow('ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received undefined');
 
-			await expect(runWithImplementation({transform: 123})).rejects.toThrow('ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number');
+			await expect(runWithImplementation({ transform: 123 })).rejects.toThrow('ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number');
 		});
 	});
 
 	test('minify', async () => {
 		const statsUnminified = await build(webpack, fixtures.js);
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -51,7 +52,7 @@ describe.each([
 	});
 
 	test('minifyWhitespace', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -68,7 +69,7 @@ describe.each([
 	});
 
 	test('minifyIdentifiers', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -85,7 +86,7 @@ describe.each([
 	});
 
 	test('minifySyntax', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -103,7 +104,7 @@ describe.each([
 	});
 
 	test('minify chunks', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks, config => {
+		const stats = await build(webpack, fixtures.webpackChunks, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
@@ -116,7 +117,7 @@ describe.each([
 	});
 
 	test('minify chunks filtered using "include"', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks, config => {
+		const stats = await build(webpack, fixtures.webpackChunks, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin({
@@ -136,7 +137,7 @@ describe.each([
 	});
 
 	test('minify chunks filtered using "exclude"', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks, config => {
+		const stats = await build(webpack, fixtures.webpackChunks, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -158,7 +159,7 @@ describe.each([
 	});
 
 	test('minify w/ no devtool', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -175,7 +176,7 @@ describe.each([
 	});
 
 	test('minify w/ devtool inline-source-map', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.devtool = 'inline-source-map';
 			config.optimization = {
 				minimize: true,
@@ -191,7 +192,7 @@ describe.each([
 	});
 
 	test('minify w/ devtool source-map', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.devtool = 'source-map';
 			config.optimization = {
 				minimize: true,
@@ -205,7 +206,7 @@ describe.each([
 	});
 
 	test('minify w/ source-map option', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -221,7 +222,7 @@ describe.each([
 	});
 
 	test('minify w/ source-map option and source-map plugin inline', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -232,7 +233,6 @@ describe.each([
 				],
 			};
 
-			// @ts-expect-error
 			config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
 		});
 
@@ -240,7 +240,7 @@ describe.each([
 	});
 
 	test('minify w/ source-map option and source-map plugin external', async () => {
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -252,7 +252,6 @@ describe.each([
 			};
 
 			config.plugins.push(
-				// @ts-expect-error
 				new webpack.SourceMapDevToolPlugin({
 					filename: 'index.js.map',
 				}),
@@ -264,11 +263,11 @@ describe.each([
 	});
 
 	test('minify w/ query strings', async () => {
-		const statsUnminified = await build(webpack, fixtures.js, config => {
+		const statsUnminified = await build(webpack, fixtures.js, (config) => {
 			config.output.filename = '[name].js?foo=bar';
 			config.output.chunkFilename = '[name].js?foo=bar';
 		});
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.output.filename = '[name].js?foo=bar';
 			config.output.chunkFilename = '[name].js?foo=bar';
 			config.optimization = {
@@ -290,7 +289,7 @@ describe.each([
 	});
 
 	test('minify w/ legalComments - default is inline', async () => {
-		const statsDefault = await build(webpack, fixtures.legalComments, config => {
+		const statsDefault = await build(webpack, fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -299,7 +298,7 @@ describe.each([
 			};
 		});
 
-		const statsInline = await build(webpack, fixtures.legalComments, config => {
+		const statsInline = await build(webpack, fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -318,7 +317,7 @@ describe.each([
 	});
 
 	test('minify w/ legalComments - eof', async () => {
-		const stats = await build(webpack, fixtures.legalComments, config => {
+		const stats = await build(webpack, fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -334,7 +333,7 @@ describe.each([
 	});
 
 	test('minify w/ legalComments - none', async () => {
-		const stats = await build(webpack, fixtures.legalComments, config => {
+		const stats = await build(webpack, fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -351,19 +350,17 @@ describe.each([
 
 	test('minify with custom implementation', async () => {
 		const statsUnminified = await build(webpack, fixtures.js);
-		const stats = await build(webpack, fixtures.js, config => {
+		const stats = await build(webpack, fixtures.js, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
 					new ESBuildMinifyPlugin({
 						implementation: {
-							transform: async () => {
-								return {
-									code: 'export function foo() { return "MY_CUSTOM_ESBUILD_IMPLEMENTATION"; }',
-									map: '',
-									warnings: [],
-								};
-							},
+							transform: async () => ({
+								code: 'export function foo() { return "MY_CUSTOM_ESBUILD_IMPLEMENTATION"; }',
+								map: '',
+								warnings: [],
+							}),
 						},
 					}),
 				],
@@ -371,14 +368,14 @@ describe.each([
 		});
 		expect(statsUnminified.hash).not.toBe(stats.hash);
 
-		const {content} = getFile(stats, '/dist/index.js');
+		const { content } = getFile(stats, '/dist/index.js');
 		expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
 		expect(content).toMatchSnapshot();
 	});
 
 	describe('CSS', () => {
 		test('minify via loader', async () => {
-			const stats = await build(webpack, fixtures.css, config => {
+			const stats = await build(webpack, fixtures.css, (config) => {
 				config.module.rules[1].use.push({
 					loader: 'esbuild-loader',
 					options: {
@@ -393,7 +390,7 @@ describe.each([
 		});
 
 		test('minify', async () => {
-			const stats = await build(webpack, fixtures.css, config => {
+			const stats = await build(webpack, fixtures.css, (config) => {
 				config.optimization = {
 					minimize: true,
 					minimizer: [
@@ -412,7 +409,7 @@ describe.each([
 		});
 
 		test('exclude css', async () => {
-			const stats = await build(webpack, fixtures.css, config => {
+			const stats = await build(webpack, fixtures.css, (config) => {
 				config.optimization = {
 					minimize: true,
 					minimizer: [
@@ -434,7 +431,7 @@ describe.each([
 		// Esbuild currently doesn't support CSS source-maps but checking to make sure no errors
 		// https://github.com/evanw/esbuild/issues/519
 		test('minify w/ source-map', async () => {
-			const stats = await build(webpack, fixtures.css, config => {
+			const stats = await build(webpack, fixtures.css, (config) => {
 				config.devtool = 'source-map';
 				config.optimization = {
 					minimize: true,
@@ -456,7 +453,7 @@ describe.each([
 });
 
 test('Webpack 5 stats', async () => {
-	const stats = await build(webpack5, fixtures.js, config => {
+	const stats = await build(webpack5, fixtures.js, (config) => {
 		config.optimization = {
 			minimize: true,
 			minimizer: [new ESBuildMinifyPlugin()],

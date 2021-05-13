@@ -1,4 +1,4 @@
-declare module 'webpack/lib/ModuleFilenameHelpers' {
+declare module 'webpack/lib/ModuleFilenameHelpers.js' {
 	type Filter = string | RegExp;
 	type FilterObject = {
 		test?: Filter | Filter[];

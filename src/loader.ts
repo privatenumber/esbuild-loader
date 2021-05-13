@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import {transform as defaultEsbuildTransform} from 'esbuild';
-import {getOptions} from 'loader-utils';
+import { transform as defaultEsbuildTransform } from 'esbuild';
+import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
-import JoyCon, {LoadResult} from 'joycon';
+import JoyCon, { LoadResult } from 'joycon';
 import JSON5 from 'json5';
-import {LoaderOptions} from './interfaces';
+import { LoaderOptions } from './interfaces';
 
 const joycon = new JoyCon();
 
@@ -15,7 +15,7 @@ joycon.addLoader({
 		try {
 			const config = fs.readFileSync(filePath, 'utf8');
 			return JSON5.parse(config);
-		} catch (error: any) { // eslint-disable-line @typescript-eslint/no-implicit-any-catch
+		} catch (error: any) {
 			throw new Error(
 				`Failed to parse tsconfig at ${path.relative(process.cwd(), filePath)}: ${error.message as string}`,
 			);
@@ -32,7 +32,7 @@ async function ESBuildLoader(
 ): Promise<void> {
 	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
-	const {implementation, ...esbuildTransformOptions} = options;
+	const { implementation, ...esbuildTransformOptions } = options;
 
 	if (implementation && typeof implementation.transform !== 'function') {
 		done(
@@ -65,14 +65,14 @@ async function ESBuildLoader(
 
 	// https://github.com/privatenumber/esbuild-loader/pull/107
 	if (
-		transformOptions.loader === 'tsx' &&
-		isTsExtensionPtrn.test(this.resourcePath)
+		transformOptions.loader === 'tsx'
+		&& isTsExtensionPtrn.test(this.resourcePath)
 	) {
 		transformOptions.loader = 'ts';
 	}
 
 	try {
-		const {code, map} = await transform(source, transformOptions);
+		const { code, map } = await transform(source, transformOptions);
 		done(null, code, map && JSON.parse(map));
 	} catch (error: unknown) {
 		done(error as Error);
