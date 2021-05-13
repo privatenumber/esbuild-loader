@@ -1,5 +1,5 @@
-import {transform, TransformOptions} from 'esbuild';
-import {Except} from 'type-fest';
+import { transform, TransformOptions } from 'esbuild';
+import { Except } from 'type-fest';
 
 type Filter = string | RegExp;
 
