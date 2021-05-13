@@ -32,7 +32,10 @@ async function ESBuildLoader(
 ): Promise<void> {
 	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
-	const { implementation, ...esbuildTransformOptions } = options;
+	const {
+		implementation,
+		...esbuildTransformOptions
+	} = options;
 
 	if (implementation && typeof implementation.transform !== 'function') {
 		done(

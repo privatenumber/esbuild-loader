@@ -43,14 +43,18 @@ const flatMap = <T, U>(
 		Array.prototype.concat(...array.map(callback))
 	);
 
+const granularMinifyConfigs = ['minifyIdentifiers', 'minifySyntax', 'minifyWhitespace'] as const;
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
 
-	constructor(options?: MinifyPluginOptions) {
+	constructor(options: MinifyPluginOptions = {}) {
 		this.options = { ...options };
 
-		const hasMinify = Object.keys(this.options).some(k => k.startsWith('minify'));
-		if (!hasMinify) {
+		const hasGranularMinificationConfig = granularMinifyConfigs.some(
+			minifyConfig => minifyConfig in options,
+		);
+
+		if (!hasGranularMinificationConfig) {
 			this.options.minify = true;
 		}
 	}
