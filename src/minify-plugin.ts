@@ -8,8 +8,6 @@ import type { Source } from 'webpack-sources';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
 import { MinifyPluginOptions } from './interfaces';
 
-type Asset = webpack.compilation.Asset;
-
 type StatsPrinter = {
 	hooks: {
 		print: HookMap<SyncBailHook<any, string>>;
@@ -127,20 +125,18 @@ class ESBuildMinifyPlugin {
 			...transformOptions
 		} = this.options;
 
-		const assets = (compilation.getAssets() as Asset[])
-
-			// Filter out by file type
-			.filter(asset => (
-				isJsFile.test(asset.name)
-				|| (
-					minifyCss
-					&& isCssFile.test(asset.name)
-				)
-			)
-			&& matchObject({ include, exclude }, asset.name))
+		const assets = compilation.getAssets().filter(asset => (
 
 			// Filter out already minimized
-			.filter(asset => !asset.info.minimized);
+			!asset.info.minimized
+
+			// Filter out by file type
+			&& (
+				isJsFile.test(asset.name)
+				|| (minifyCss && isCssFile.test(asset.name))
+			)
+			&& matchObject({ include, exclude }, asset.name)
+		));
 
 		await Promise.all(assets.map(async (asset) => {
 			const assetIsCss = isCssFile.test(asset.name);
