@@ -1,31 +1,18 @@
 import { transform as defaultEsbuildTransform } from 'esbuild';
 import { RawSource, SourceMapSource } from 'webpack-sources';
 import webpack from 'webpack';
+import type {
+	SyncHook, SyncBailHook, AsyncSeriesHook, HookMap,
+} from 'tapable';
+import type { Source } from 'webpack-sources';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
 import { MinifyPluginOptions } from './interfaces';
 
 type Asset = webpack.compilation.Asset;
 
-type KnownStatsPrinterContext = {
-	formatFlag(flag: string): string;
-	green(string: string): string;
-};
-
-type Tappable = {
-	tap(
-		name: string,
-		callback: (
-			minimized: boolean,
-			statsPrinterContext: KnownStatsPrinterContext,
-		) => void,
-	): void;
-};
-
 type StatsPrinter = {
 	hooks: {
-		print: {
-			for(name: string): Tappable;
-		};
+		print: HookMap<SyncBailHook<any, string>>;
 	};
 };
 
@@ -33,8 +20,8 @@ type Compilation = webpack.compilation.Compilation;
 
 type Wp5Compilation = Compilation & {
 	hooks: Compilation['hooks'] & {
-		processAssets: Compilation['hooks']['optimizeAssets'];
-		statsPrinter: Compilation['hooks']['childCompiler']; // Could be any SyncHook
+		processAssets: AsyncSeriesHook<Record<string, Source>>;
+		statsPrinter: SyncHook<StatsPrinter>;
 	};
 	constructor: {
 		PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE: 400;
@@ -78,13 +65,13 @@ class ESBuildMinifyPlugin {
 	}
 
 	apply(compiler: webpack.Compiler): void {
-		compiler.hooks.compilation.tap(pluginName, (compilation) => {
-			const meta = JSON.stringify({
-				name: 'esbuild-loader',
-				version,
-				options: this.options,
-			});
+		const meta = JSON.stringify({
+			name: 'esbuild-loader',
+			version,
+			options: this.options,
+		});
 
+		compiler.hooks.compilation.tap(pluginName, (compilation) => {
 			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
 
 			if (isWebpack5(compilation)) {
@@ -98,12 +85,12 @@ class ESBuildMinifyPlugin {
 					async () => await this.transformAssets(compilation),
 				);
 
-				compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter: StatsPrinter) => {
+				compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter) => {
 					statsPrinter.hooks.print
 						.for('asset.info.minimized')
 						.tap(
 							pluginName,
-							(minimized, { green, formatFlag }: any) => (
+							(minimized, { green, formatFlag }) => (
 								minimized
 									? green(formatFlag('minimized'))
 									: undefined
@@ -119,7 +106,7 @@ class ESBuildMinifyPlugin {
 		});
 	}
 
-	async transformAssets(
+	private async transformAssets(
 		compilation: Compilation,
 	): Promise<void> {
 		const { options: { devtool } } = compilation.compiler;
@@ -158,7 +145,8 @@ class ESBuildMinifyPlugin {
 		await Promise.all(assets.map(async (asset) => {
 			const assetIsCss = isCssFile.test(asset.name);
 			const { source, map } = asset.source.sourceAndMap();
-			const result = await this.transform(source.toString(), {
+			const sourceAsString = source.toString();
+			const result = await this.transform(sourceAsString, {
 				...transformOptions,
 				loader: (
 					assetIsCss
@@ -177,14 +165,14 @@ class ESBuildMinifyPlugin {
 					&& !assetIsCss
 				)
 					? new SourceMapSource(
-						result.code || '',
+						result.code,
 						asset.name,
 						result.map as any,
-						source?.toString(),
-						map!,
+						sourceAsString,
+						map,
 						true,
 					)
-					: new RawSource(result.code || ''),
+					: new RawSource(result.code),
 				{
 					...asset.info,
 					minimized: true,

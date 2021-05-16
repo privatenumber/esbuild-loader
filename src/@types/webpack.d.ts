@@ -8,8 +8,7 @@ declare module 'webpack' {
 		}
 	}
 
-    interface AssetInfo {
+	interface AssetInfo {
 		minimized?: boolean;
 	}
 }
-

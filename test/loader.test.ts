@@ -38,8 +38,8 @@ describe.each([
 		});
 
 		test('invalid implementation option', async () => {
-			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => (
-				await build(webpack, fixtures.invalidTsx, (config) => {
+			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => {
+				await build(webpack, fixtures.tsx, (config) => {
 					config.module.rules.push({
 						test: /\.js?$/,
 						loader: 'esbuild-loader',
@@ -47,13 +47,15 @@ describe.each([
 							implementation,
 						},
 					});
-				})
-			);
+				});
+			};
 
+			// @ts-expect-error testing invalid type
 			await expect(runWithImplementation({})).rejects.toThrow(
 				'esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received undefined',
 			);
 
+			// @ts-expect-error testing invalid type
 			await expect(runWithImplementation({ transform: 123 })).rejects.toThrow(
 				'esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received number',
 			);
