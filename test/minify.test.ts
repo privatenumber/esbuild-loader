@@ -506,4 +506,38 @@ describe('Webpack 5', () => {
 		const file = getFile(stats, '/dist/test.js');
 		expect(file.content).toBe('const e=1;export default e;\n');
 	});
+
+	test('Doesn\'t minify minimized assets', async () => {
+		const sourceAndMap = jest.fn();
+
+		await build(webpack5, fixtures.js, (config) => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [new ESBuildMinifyPlugin()],
+			};
+
+			config.plugins.push({
+				apply(compiler) {
+					compiler.hooks.compilation.tap('test', (compilation) => {
+						compilation.hooks.processAssets.tap(
+							{ name: 'test' },
+							() => {
+								const asset = new RawSource('');
+
+								asset.sourceAndMap = sourceAndMap;
+
+								compilation.emitAsset(
+									'test.js',
+									asset,
+									{ minimized: true },
+								);
+							},
+						);
+					});
+				},
+			});
+		});
+
+		expect(sourceAndMap).not.toBeCalled();
+	});
 });
