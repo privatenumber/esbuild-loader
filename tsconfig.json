@@ -7,13 +7,9 @@
 		"target": "ES2018",
 		"lib": ["ES2018"],
 
-		"strict": true,
 		"declaration": true,
-		"noImplicitReturns": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noImplicitThis": true,
-		"noImplicitAny": true,
 		"esModuleInterop": true
 	},
 	"include": ["src"]

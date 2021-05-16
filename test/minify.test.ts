@@ -1,6 +1,7 @@
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { RawSource } from 'webpack-sources';
 import { MinifyPluginOptions } from '../src/interfaces';
 import { ESBuildMinifyPlugin } from '../src/index';
 import { build, getFile } from './utils';
@@ -12,7 +13,7 @@ describe.each([
 ])('%s Loader + Minification', (_name, webpack) => {
 	describe('Error handling', () => {
 		test('invalid implementation option', async () => {
-			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => (
+			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => {
 				await build(webpack, fixtures.js, (config) => {
 					config.optimization = {
 						minimize: true,
@@ -22,12 +23,22 @@ describe.each([
 							}),
 						],
 					};
-				})
+				});
+			};
+
+			await expect(
+				// @ts-expect-error testing invalid type
+				runWithImplementation({}),
+			).rejects.toThrow(
+				'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received undefined',
 			);
 
-			await expect(runWithImplementation({})).rejects.toThrow('ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received undefined');
-
-			await expect(runWithImplementation({ transform: 123 })).rejects.toThrow('ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number');
+			await expect(
+				// @ts-expect-error testing invalid type
+				runWithImplementation({ transform: 123 }),
+			).rejects.toThrow(
+				'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number',
+			);
 		});
 	});
 
@@ -452,13 +463,81 @@ describe.each([
 	});
 });
 
-test('Webpack 5 stats', async () => {
-	const stats = await build(webpack5, fixtures.js, (config) => {
-		config.optimization = {
-			minimize: true,
-			minimizer: [new ESBuildMinifyPlugin()],
-		};
+describe('Webpack 5', () => {
+	test('Stats', async () => {
+		const stats = await build(webpack5, fixtures.js, (config) => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [new ESBuildMinifyPlugin()],
+			};
+		});
+
+		expect(stats.toString().includes('[minimized]')).toBe(true);
 	});
 
-	expect(stats.toString().includes('[minimized]')).toBe(true);
+	test('Minifies new assets', async () => {
+		const stats = await build(webpack5, fixtures.js, (config) => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [new ESBuildMinifyPlugin()],
+			};
+
+			config.plugins.push({
+				apply(compiler) {
+					compiler.hooks.compilation.tap('test', (compilation) => {
+						compilation.hooks.processAssets.tap(
+							{ name: 'test' },
+							() => {
+								compilation.emitAsset(
+									'test.js',
+									new RawSource('const value = 1;\n\nexport default value;'),
+								);
+							},
+						);
+					});
+				},
+			});
+		});
+
+		const asset = stats.compilation.getAsset('test.js');
+
+		expect(asset.info.minimized).toBe(true);
+
+		const file = getFile(stats, '/dist/test.js');
+		expect(file.content).toBe('const e=1;export default e;\n');
+	});
+
+	test('Doesn\'t minify minimized assets', async () => {
+		const sourceAndMap = jest.fn();
+
+		await build(webpack5, fixtures.js, (config) => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [new ESBuildMinifyPlugin()],
+			};
+
+			config.plugins.push({
+				apply(compiler) {
+					compiler.hooks.compilation.tap('test', (compilation) => {
+						compilation.hooks.processAssets.tap(
+							{ name: 'test' },
+							() => {
+								const asset = new RawSource('');
+
+								asset.sourceAndMap = sourceAndMap;
+
+								compilation.emitAsset(
+									'test.js',
+									asset,
+									{ minimized: true },
+								);
+							},
+						);
+					});
+				},
+			});
+		});
+
+		expect(sourceAndMap).not.toBeCalled();
+	});
 });
