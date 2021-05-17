@@ -401,9 +401,9 @@ Running esbuild as a standalone bundler vs esbuild-loader + Webpack are complete
 Using any JS bundler introduces a bottleneck that makes reaching those speeds impossible. However, esbuild-loader can still speed up your build by removing the bottlenecks created by [`babel-loader`](https://twitter.com/wSokra/status/1316274855042584577?s=20), `ts-loader`, Terser, etc.
 
 ### Will there be type-checking support?
-esbuild-loader is more or less just a Webpack wrapper for esbuild.
+According to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript%20type%20checking%20(just%20run%20tsc%20separately)), it will not be supported.
 
-But according to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript%20type%20checking%20(just%20run%20tsc%20separately)), it will not be supported.
+However, IDEs like [VSCode](https://code.visualstudio.com/docs/languages/typescript) or [WebStorm](https://www.jetbrains.com/help/webstorm/typescript-support.html) have type-chekcing built in. And you can also run `tsc --noEmit` to type check.
 
 ## 🌱 Other Webpack plugins
 
