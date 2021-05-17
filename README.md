@@ -405,6 +405,11 @@ esbuild-loader is more or less just a Webpack wrapper for esbuild.
 
 But according to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript%20type%20checking%20(just%20run%20tsc%20separately)), it will not be supported.
 
-## 💼 License
-- MIT &copy; privatenumber
-- MIT &copy; [EGOIST (Kevin Titor)](https://github.com/sponsors/egoist)
+## 🌱 Other Webpack plugins
+
+#### [instant-mocha](https://github.com/privatenumber/instant-mocha)
+Webpack-integrated Mocha test-runner with Webpack 5 support.
+
+
+#### [webpack-localize-assets-plugin](https://github.com/privatenumber/webpack-localize-assets-plugin)
+Localize/i18nalize your Webpack build. Optimized for multiple locales!
