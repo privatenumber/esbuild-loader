@@ -1,131 +1,120 @@
-import {transform as defaultEsbuildTransform} from 'esbuild';
-import {RawSource, SourceMapSource} from 'webpack-sources';
+import { transform as defaultEsbuildTransform } from 'esbuild';
+import { RawSource, SourceMapSource } from 'webpack-sources';
 import webpack from 'webpack';
-import {matchObject} from 'webpack/lib/ModuleFilenameHelpers';
-import {MinifyPluginOptions} from './interfaces';
-
-type Asset = webpack.compilation.Asset;
-
-type KnownStatsPrinterContext = {
-	formatFlag(flag: string): string;
-	green(string: string): string;
-};
-
-type Tappable = {
-	tap(
-		name: string,
-		callback: (
-			minimized: boolean,
-			statsPrinterContext: KnownStatsPrinterContext,
-		) => void,
-	): void;
-};
+import type {
+	SyncHook, SyncBailHook, AsyncSeriesHook, HookMap,
+} from 'tapable';
+import type { Source } from 'webpack-sources';
+import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
+import { MinifyPluginOptions } from './interfaces';
 
 type StatsPrinter = {
 	hooks: {
-		print: {
-			for(name: string): Tappable;
-		};
+		print: HookMap<SyncBailHook<any, string>>;
 	};
 };
 
+type Compilation = webpack.compilation.Compilation;
+
+type Wp5Compilation = Compilation & {
+	hooks: Compilation['hooks'] & {
+		processAssets: AsyncSeriesHook<Record<string, Source>>;
+		statsPrinter: SyncHook<StatsPrinter>;
+	};
+	constructor: {
+		PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE: 400;
+	};
+};
+
+const isWebpack5 = (compilation: Compilation): compilation is Wp5Compilation => ('processAssets' in compilation.hooks);
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const {version} = require('../package');
+const { version } = require('../package.json');
 
 const isJsFile = /\.[cm]?js(\?.*)?$/i;
 const isCssFile = /\.css(\?.*)?$/i;
 const pluginName = 'esbuild-minify';
 
-const flatMap = <T, U>(
-	array: T[],
-	callback: (value: T) => U[],
-): U[] => (
-	// eslint-disable-next-line unicorn/no-array-callback-reference
-	Array.prototype.concat(...array.map(callback))
-);
-
+const granularMinifyConfigs = ['minifyIdentifiers', 'minifySyntax', 'minifyWhitespace'] as const;
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
 
-	constructor(options?: MinifyPluginOptions) {
-		this.options = {...options};
+	private readonly transform: typeof defaultEsbuildTransform;
 
-		const hasMinify = Object.keys(this.options).some(k =>
-			k.startsWith('minify'),
+	constructor(options: MinifyPluginOptions = {}) {
+		const { implementation } = options;
+		if (implementation && typeof implementation.transform !== 'function') {
+			throw new TypeError(
+				`ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received ${typeof implementation.transform}`,
+			);
+		}
+
+		this.transform = implementation?.transform ?? defaultEsbuildTransform;
+
+		this.options = { ...options };
+
+		const hasGranularMinificationConfig = granularMinifyConfigs.some(
+			minifyConfig => minifyConfig in options,
 		);
-		if (!hasMinify) {
+
+		if (!hasGranularMinificationConfig) {
 			this.options.minify = true;
 		}
 	}
 
 	apply(compiler: webpack.Compiler): void {
-		compiler.hooks.compilation.tap(pluginName, compilation => {
-			const meta = JSON.stringify({
-				name: 'esbuild-loader',
-				version,
-				options: this.options,
-			});
+		const meta = JSON.stringify({
+			name: 'esbuild-loader',
+			version,
+			options: this.options,
+		});
 
+		compiler.hooks.compilation.tap(pluginName, (compilation) => {
 			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
 
-			type Wp5Compilation = typeof compilation & {
-				hooks: typeof compilation.hooks & {
-					processAssets: typeof compilation.hooks.optimizeAssets;
-					statsPrinter: typeof compilation.hooks.childCompiler; // Could be any SyncHook
-				};
-				constructor: {
-					PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE: number;
-				};
-			};
-
-			if ('processAssets' in compilation.hooks) {
-				const wp5Compilation = compilation as Wp5Compilation;
-
-				wp5Compilation.hooks.processAssets.tapPromise(
+			if (isWebpack5(compilation)) {
+				compilation.hooks.processAssets.tapPromise(
 					{
 						name: pluginName,
-						stage: wp5Compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
-						// @ts-expect-error
+						stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+						// @ts-expect-error TODO: modify type
 						additionalAssets: true,
 					},
-					async (assets: Asset[]) => this.transformAssets(compilation, Object.keys(assets)),
+					async () => await this.transformAssets(compilation),
 				);
 
-				wp5Compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter: StatsPrinter) => {
+				compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter) => {
 					statsPrinter.hooks.print
 						.for('asset.info.minimized')
 						.tap(
 							pluginName,
-							(minimized, {green, formatFlag}: any) => (
-								minimized ?
-									green(formatFlag('minimized')) :
-									undefined
+							(minimized, { green, formatFlag }) => (
+								minimized
+									? green(formatFlag('minimized'))
+									: undefined
 							),
 						);
 				});
 			} else {
 				compilation.hooks.optimizeChunkAssets.tapPromise(
 					pluginName,
-					async chunks => this.transformAssets(
-						compilation,
-						flatMap(chunks, chunk => chunk.files),
-					),
+					async () => await this.transformAssets(compilation),
 				);
 			}
 		});
 	}
 
-	async transformAssets(
-		compilation: webpack.compilation.Compilation,
-		assetNames: string[],
+	private async transformAssets(
+		compilation: Compilation,
 	): Promise<void> {
-		const {options: {devtool}} = compilation.compiler;
+		const { options: { devtool } } = compilation.compiler;
 
 		const sourcemap = (
 			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
-			this.options.sourcemap === undefined ?
-				devtool && (devtool as string).includes('source-map') :
-				this.options.sourcemap
+			// Might still be necessary when SourceMap plugin is used
+			this.options.sourcemap === undefined
+				? devtool && (devtool as string).includes('source-map')
+				: this.options.sourcemap
 		);
 
 		const {
@@ -136,71 +125,56 @@ class ESBuildMinifyPlugin {
 			...transformOptions
 		} = this.options;
 
-		if (implementation && typeof implementation.transform !== 'function') {
-			throw new TypeError(
-				`ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received ${typeof implementation.transform}`,
-			);
-		}
+		const assets = compilation.getAssets().filter(asset => (
 
-		const transforms = assetNames
-			.filter(assetName => (
-				(
-					isJsFile.test(assetName) ||
-					(
-						minifyCss &&
-						isCssFile.test(assetName)
-					)
-				) &&
-				matchObject({include, exclude}, assetName)),
+			// Filter out already minimized
+			!asset.info.minimized
+
+			// Filter out by file type
+			&& (
+				isJsFile.test(asset.name)
+				|| (minifyCss && isCssFile.test(asset.name))
 			)
-			.map((assetName): [string, Asset] => [
-				assetName,
-				compilation.getAsset(assetName),
-			])
-			.map(async ([
-				assetName,
-				{info, source: assetSource},
-			]) => {
-				const assetIsCss = isCssFile.test(assetName);
-				const {source, map} = assetSource.sourceAndMap();
-				const transform = implementation?.transform ?? defaultEsbuildTransform;
-				const result = await transform(source.toString(), {
-					...transformOptions,
-					loader: (
-						assetIsCss ?
-							'css' :
-							transformOptions.loader
-					),
-					sourcemap,
-					sourcefile: assetName,
-				});
+			&& matchObject({ include, exclude }, asset.name)
+		));
 
-				compilation.updateAsset(
-					assetName,
-					(
-						sourcemap &&
-						// CSS source-maps not supported yet https://github.com/evanw/esbuild/issues/519
-						!assetIsCss
-					) ?
-						new SourceMapSource(
-							result.code || '',
-							assetName,
-							result.map as any,
-							source?.toString(),
-							map!,
-							true,
-						) :
-						new RawSource(result.code || ''),
-					{
-						...info,
-						minimized: true,
-					} as any,
-				);
+		await Promise.all(assets.map(async (asset) => {
+			const assetIsCss = isCssFile.test(asset.name);
+			const { source, map } = asset.source.sourceAndMap();
+			const sourceAsString = source.toString();
+			const result = await this.transform(sourceAsString, {
+				...transformOptions,
+				loader: (
+					assetIsCss
+						? 'css'
+						: transformOptions.loader
+				),
+				sourcemap,
+				sourcefile: asset.name,
 			});
 
-		if (transforms.length > 0) {
-			await Promise.all(transforms);
-		}
+			compilation.updateAsset(
+				asset.name,
+				(
+					sourcemap
+					// CSS source-maps not supported yet https://github.com/evanw/esbuild/issues/519
+					&& !assetIsCss
+				)
+					? new SourceMapSource(
+						result.code,
+						asset.name,
+						result.map as any,
+						sourceAsString,
+						map,
+						true,
+					)
+					: new RawSource(result.code),
+				{
+					...asset.info,
+					minimized: true,
+				},
+			);
+		}));
 	}
 }
 

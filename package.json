@@ -22,9 +22,8 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "tsc",
-		"pretest": "npm run build",
 		"test": "jest --coverage",
-		"lint": "xo"
+		"lint": "eslint ."
 	},
 	"husky": {
 		"hooks": {
@@ -33,26 +32,29 @@
 	},
 	"lint-staged": {
 		"*.ts": [
-			"xo",
+			"eslint",
 			"jest --bail --findRelatedTests"
 		]
+	},
+	"peerDependencies": {
+		"webpack": "^4.40.0 || ^5.0.0"
 	},
 	"dependencies": {
 		"esbuild": "^0.11.19",
 		"joycon": "^3.0.1",
 		"json5": "^2.2.0",
 		"loader-utils": "^2.0.0",
+		"tapable": "^2.2.0",
 		"type-fest": "^1.0.1",
 		"webpack-sources": "^2.2.0"
 	},
-	"peerDependencies": {
-		"webpack": "^4.40.0 || ^5.0.0"
-	},
 	"devDependencies": {
+		"@pvtnbr/eslint-config-typescript": "^0.1.16",
 		"@types/jest": "^26.0.22",
 		"@types/loader-utils": "^2.0.2",
 		"@types/webpack": "^4.41.27",
 		"css-loader": "^5.2.0",
+		"eslint": "^7.26.0",
 		"husky": "^4.3.8",
 		"jest": "^26.6.3",
 		"lint-staged": "^10.5.4",
@@ -61,7 +63,9 @@
 		"typescript": "^4.2.3",
 		"unionfs": "^4.4.0",
 		"webpack": "^4.44.2",
-		"webpack5": "npm:webpack@^5.0.0",
-		"xo": "^0.38.2"
+		"webpack5": "npm:webpack@^5.0.0"
+	},
+	"eslintConfig": {
+		"extends": "@pvtnbr/eslint-config-typescript"
 	}
 }

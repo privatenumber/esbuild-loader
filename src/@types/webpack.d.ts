@@ -1,10 +1,14 @@
-declare module 'webpack/lib/ModuleFilenameHelpers' {
-	type Filter = string | RegExp;
-	type FilterObject = {
-		test?: Filter | Filter[];
-		include?: Filter | Filter[];
-		exclude?: Filter | Filter[];
-	};
+import 'webpack';
 
-	export const matchObject: (filterObject: FilterObject, stringToCheck: string) => boolean;
+declare module 'webpack' {
+
+	namespace compilation {
+		interface Compilation {
+			getAssets(): Asset[];
+		}
+	}
+
+	interface AssetInfo {
+		minimized?: boolean;
+	}
 }

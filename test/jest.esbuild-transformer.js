@@ -1,4 +1,4 @@
-const {transformSync} = require('esbuild');
+const { transformSync } = require('esbuild');
 
 exports.process = (code, sourcefile) => transformSync(code, {
 	target: 'node12',
