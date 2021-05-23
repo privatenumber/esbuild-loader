@@ -405,6 +405,8 @@ According to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript
 
 However, IDEs like [VSCode](https://code.visualstudio.com/docs/languages/typescript) or [WebStorm](https://www.jetbrains.com/help/webstorm/typescript-support.html) have type-checking built in. And you can also run `tsc --noEmit` to type check.
 
+If you'd like type checking to be directly integrated into your webpack build, that is possible too. You can use the [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin), which is a webpack plugin that runs TypeScript type checker on a separate process.
+
 ## 🌱 Other Webpack plugins
 
 #### [instant-mocha](https://github.com/privatenumber/instant-mocha)
