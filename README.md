@@ -403,9 +403,10 @@ Using any JS bundler introduces a bottleneck that makes reaching those speeds im
 ### Will there be type-checking support?
 According to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript%20type%20checking%20(just%20run%20tsc%20separately)), it will not be supported.
 
-However, IDEs like [VSCode](https://code.visualstudio.com/docs/languages/typescript) or [WebStorm](https://www.jetbrains.com/help/webstorm/typescript-support.html) have type-checking built in. And you can also run `tsc --noEmit` to type check.
-
-If you'd like type checking to be directly integrated into your webpack build, that is possible too. You can use the [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin), which is a webpack plugin that runs TypeScript type checker on a separate process.
+Consider these type-checking alternatives:
+- Using an IDEs like [VSCode](https://code.visualstudio.com/docs/languages/typescript) or [WebStorm](https://www.jetbrains.com/help/webstorm/typescript-support.html) that has live type-checking built in
+- Running `tsc --noEmit` to type check
+- Integrating type-checking to your Webpack build as a separate process using [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin)
 
 ## 🌱 Other Webpack plugins
 
