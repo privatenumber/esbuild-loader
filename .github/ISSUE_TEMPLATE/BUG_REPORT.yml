@@ -41,7 +41,7 @@ body:
   - type: dropdown
     attributes:
       label: Node.js package manager
-      description: Select the used Node.js package manager
+      description: Which package manager are you using? [npm](https://docs.npmjs.com/cli/v7/commands/npm), [yarn](https://yarnpkg.com/), or [pnpm](https://pnpm.io/)
       options:
         - npm
         - yarn
