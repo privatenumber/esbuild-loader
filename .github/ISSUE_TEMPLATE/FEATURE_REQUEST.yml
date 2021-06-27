@@ -36,8 +36,6 @@ body:
 
           Do you have a workaround?
         -->
-    validations:
-      required: true
   - type: textarea
     attributes:
       label: Additional context
