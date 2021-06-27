@@ -26,7 +26,7 @@ body:
     attributes:
       label: Reproduction
       description: |
-        When an issue is immediately reproducible, others can start debugging instead of following-up with questions.
+        How can we reproduce the issue? When an issue is immediately reproducible, others can start debugging instead of following-up with questions.
       placeholder: |
         <!--
           Provide one of the following:
@@ -52,12 +52,12 @@ body:
     attributes:
       label: Environment
       description: |
-        The environment the issue is happening in. This information is used to for reproduction and debugging.
+        Describe the environment the issue is happening in. This information is used to for reproduction and debugging.
       placeholder: |
         <!--
           Run and paste the output of:
           ```
-          npx envinfo --system --npmPackages webpack,esbuild-loader --binaries --browsers
+          npx envinfo --system --npmPackages webpack,esbuild-loader --binaries
           ```
         -->
 
@@ -68,7 +68,6 @@ body:
         Binaries:
           Node:
           npm:
-        Browsers:
         npmPackages:
           webpack:
           esbuild-loader:
@@ -80,4 +79,4 @@ body:
       label: Can you contribute a fix?
       description: We would love it if you can open a pull request to fix this bug!
       options:
-        - label: I can submit a pull request for this issue.
+        - label: I'm interested in opening a pull request for this issue.
