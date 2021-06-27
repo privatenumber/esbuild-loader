@@ -35,7 +35,7 @@ body:
     attributes:
       label: Environment
       description: |
-        Run and paste the output of: `npx envinfo --system --npmPackages webpack,esbuild-loader --binaries --browsers`
+        The environment the issue is happening in. This information is used to for reproduction and debugging.
       placeholder: |
         <!--
           Run and paste the output of:
@@ -43,12 +43,24 @@ body:
           npx envinfo --system --npmPackages webpack,esbuild-loader --binaries --browsers
           ```
         -->
+
+        System:
+          OS:
+          CPU:
+          Shell:
+        Binaries:
+          Node:
+          npm:
+        Browsers:
+        npmPackages:
+          webpack:
+          esbuild-loader:
       render: shell
     validations:
       required: true
   - type: checkboxes
     attributes:
       label: Can you contribute a fix?
-      description: Let us know if you can open a pull request to fix this bug!
+      description: We would love it if you can open a pull request to fix this bug!
       options:
         - label: I can submit a pull request for this issue.
