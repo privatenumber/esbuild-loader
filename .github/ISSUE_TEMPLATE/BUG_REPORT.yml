@@ -21,9 +21,9 @@ body:
       placeholder: |
         <!--
           Provide one of the following:
-          1. A code-snippet that reproduces the issue
-          2. A reproduction repo that reproduces the issue
-          3. A pull request with a failing test-case
+            1. A code-snippet that reproduces the issue
+            2. A reproduction repo that reproduces the issue
+            3. A pull request with a failing test-case
 
           Please remove as much irrelevant code to make it easier for others to read and debug.
         -->
