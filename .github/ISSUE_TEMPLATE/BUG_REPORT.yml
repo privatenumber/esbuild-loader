@@ -79,4 +79,4 @@ body:
       label: Can you contribute a fix?
       description: We would love it if you can open a pull request to fix this bug!
       options:
-        - label: I'm interested in opening a pull request for this issue.
+        - label: I’m interested in opening a pull request for this issue.

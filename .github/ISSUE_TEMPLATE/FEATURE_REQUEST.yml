@@ -16,12 +16,12 @@ body:
     attributes:
       label: Why?
       description: |
-        Describe the problem you're tackling with this feature request.
+        Describe the problem you’re tackling with this feature request.
       placeholder: |
         <!--
-          What's the motivation behind this issue?
+          What’s the motivation behind this issue?
 
-          eg. “I'm frustrated when...”
+          eg. “I’m frustrated when...”
         -->
     validations:
       required: true
