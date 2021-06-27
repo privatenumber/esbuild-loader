@@ -35,13 +35,20 @@ body:
     attributes:
       label: Environment
       description: |
-        Run and paste the output of:\n`npx envinfo --system --npmPackages webpack,esbuild-loader --binaries --browsers`
+        Run and paste the output of: `npx envinfo --system --npmPackages webpack,esbuild-loader --binaries --browsers`
+      placeholder: |
+        <!--
+          Run and paste the output of:
+          ```
+          npx envinfo --system --npmPackages webpack,esbuild-loader --binaries --browsers
+          ```
+        -->
       render: shell
     validations:
       required: true
   - type: checkboxes
     attributes:
       label: Can you contribute a fix?
-      description: Let us know if you plan to open a pull request to fix this bug!
+      description: Let us know if you can open a pull request to fix this bug!
       options:
-        - label: I plan to submit a pull request for this issue.
+        - label: I can submit a pull request for this issue.
