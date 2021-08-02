@@ -38,13 +38,11 @@ const js = {
 
 		export const es2021 = (() => {
 			let a;
-			let x = 1;
+			let x = 0;
 			const y = 3;
-			x &&= y;
 			return [
 				a ??= 2,
-				x,
-				1_000_000_000,
+				x ||= y,
 			];
 		})();
 
@@ -56,6 +54,7 @@ const js = {
 				class { #x },
 				// class { static #x() {} },
 				class { static #x },
+				1_000_000_000,
 			];
 		})();
 	`,
