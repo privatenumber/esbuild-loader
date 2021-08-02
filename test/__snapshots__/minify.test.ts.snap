@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Webpack 4 Loader + Minification minify 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x!=null?x:x=2]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t!=null?t:t=2,n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 "
 `;
 
@@ -18,14 +18,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
@@ -103,19 +106,19 @@ exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 
 `;
 
 exports[`Webpack 4 Loader + Minification minify w/ devtool inline-source-map 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x??(x=2)]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t??(t=2),n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiIyQkFDRSxHQUFJLEdBQW1CLEdBR3ZCLFdBQTZCLEVBQVUsQ0FHdEMsR0FBRyxFQUFpQixHQUNuQixNQUFPLEdBQWlCLEdBQVUsUUFHbkMsR0FBSSxHQUFTLEVBQWlCLEdBQVksQ0FDekMsRUFBRyxFQUNILEVBQUcsR0FDSCxRQUFTLElBSVYsU0FBUSxHQUFVLEtBQUssRUFBTyxRQUFTLEVBQVEsRUFBTyxRQUFTLEdBRy9ELEVBQU8sRUFBSSxHQUdKLEVBQU8sUUFLZixTQUFvQixFQUFJLEVBR3hCLEVBQW9CLEVBQUksRUFHeEIsRUFBb0IsRUFBSSxTQUFTLEVBQVMsRUFBTSxFQUFRLENBQ25ELEVBQW9CLEVBQUUsRUFBUyxJQUNsQyxPQUFPLGVBQWUsRUFBUyxFQUFNLENBQUUsV0FBWSxHQUFNLElBQUssS0FLaEUsRUFBb0IsRUFBSSxTQUFTLEVBQVMsQ0FDdEMsTUFBTyxTQUFXLGFBQWUsT0FBTyxhQUMxQyxPQUFPLGVBQWUsRUFBUyxPQUFPLFlBQWEsQ0FBRSxNQUFPLFdBRTdELE9BQU8sZUFBZSxFQUFTLGFBQWMsQ0FBRSxNQUFPLE1BUXZELEVBQW9CLEVBQUksU0FBUyxFQUFPLEVBQU0sQ0FHN0MsR0FGRyxFQUFPLEdBQUcsR0FBUSxFQUFvQixJQUN0QyxFQUFPLEdBQ04sRUFBTyxHQUFNLE1BQU8sSUFBVSxVQUFZLEdBQVMsRUFBTSxXQUFZLE1BQU8sR0FDaEYsR0FBSSxHQUFLLE9BQU8sT0FBTyxNQUd2QixHQUZBLEVBQW9CLEVBQUUsR0FDdEIsT0FBTyxlQUFlLEVBQUksVUFBVyxDQUFFLFdBQVksR0FBTSxNQUFPLElBQzdELEVBQU8sR0FBSyxNQUFPLElBQVMsU0FBVSxPQUFRLEtBQU8sR0FBTyxFQUFvQixFQUFFLEVBQUksRUFBSyxTQUFTLEVBQUssQ0FBRSxNQUFPLEdBQU0sSUFBUSxLQUFLLEtBQU0sSUFDOUksTUFBTyxJQUlSLEVBQW9CLEVBQUksU0FBUyxFQUFRLENBQ3hDLEdBQUksR0FBUyxHQUFVLEVBQU8sV0FDN0IsVUFBc0IsQ0FBRSxNQUFPLEdBQU8sU0FDdEMsVUFBNEIsQ0FBRSxNQUFPLElBQ3RDLFNBQW9CLEVBQUUsRUFBUSxJQUFLLEdBQzVCLEdBSVIsRUFBb0IsRUFBSSxTQUFTLEVBQVEsRUFBVSxDQUFFLE1BQU8sUUFBTyxVQUFVLGVBQWUsS0FBSyxFQUFRLElBR3pHLEVBQW9CLEVBQUksR0FJakIsRUFBb0IsRUFBb0IsRUFBSSxtQixtZ0NDbEZyRCxXQUNlLEVBQVMsS0FBTSxHQUVmLEVBQVMsV0FFVCxFQUFXLEtBQUssQ0FDNUIsS0FBTSxHQUFJLENBQUUsRUFBRyxHQUNmLEdBQUksR0FBSSxLQUFJLEdBRVosTUFEUSxHQUFLLEVBQUwsUUFJSSxFQUFXLEtBQUssQ0FDNUIsR0FBSSxDQUNILE1BQU8sWUFDQSxFQURBLE9BSUksRUFBVyxLQUFLLENBbEIvQixNQW1CRyxLQUFNLEdBQU0sQ0FDWCxTQUFVLEdBRVgsTUFBTyxDQUNOLGlCQUFLLFNBQ0wsS0FBSSxPQUFKLE9BQVksRUFDWixPQUlXLEVBQVcsS0FBSyxDQTdCL0IsMEJBOEJHLEdBQUksR0FDSixNQUFPLENBQ04sS0FBTSxDQUFOLGFBaENKLENBZ0NZLFdBQUksS0FDWixRQUFNLEdBQVMsRUFBZixFQUFlLElBQUksR0FBbkIsR0FDQSxRQUFNLENBQU4sYUFsQ0osQ0FrQ1ksOEJBQUUsVUFBRyxHQUFiLEdBQ0EsUUFBTSxDQUFOLGFBbkNKLENBbUNZLG1DQUFSLEdBQ0EsUUFBTSxHQUFTLGdCQUFFLFVBQUcsR0FBTCxNQUFmLE1BQ0EsUUFBTSxHQUFTLG9CQUFmLEVBQWUsUUFBZixHQUNBLE1BQU0iLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIgXHQvLyBUaGUgbW9kdWxlIGNhY2hlXG4gXHR2YXIgaW5zdGFsbGVkTW9kdWxlcyA9IHt9O1xuXG4gXHQvLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuIFx0ZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXG4gXHRcdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuIFx0XHRpZihpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSkge1xuIFx0XHRcdHJldHVybiBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXS5leHBvcnRzO1xuIFx0XHR9XG4gXHRcdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG4gXHRcdHZhciBtb2R1bGUgPSBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSA9IHtcbiBcdFx0XHRpOiBtb2R1bGVJZCxcbiBcdFx0XHRsOiBmYWxzZSxcbiBcdFx0XHRleHBvcnRzOiB7fVxuIFx0XHR9O1xuXG4gXHRcdC8vIEV4ZWN1dGUgdGhlIG1vZHVsZSBmdW5jdGlvblxuIFx0XHRtb2R1bGVzW21vZHVsZUlkXS5jYWxsKG1vZHVsZS5leHBvcnRzLCBtb2R1bGUsIG1vZHVsZS5leHBvcnRzLCBfX3dlYnBhY2tfcmVxdWlyZV9fKTtcblxuIFx0XHQvLyBGbGFnIHRoZSBtb2R1bGUgYXMgbG9hZGVkXG4gXHRcdG1vZHVsZS5sID0gdHJ1ZTtcblxuIFx0XHQvLyBSZXR1cm4gdGhlIGV4cG9ydHMgb2YgdGhlIG1vZHVsZVxuIFx0XHRyZXR1cm4gbW9kdWxlLmV4cG9ydHM7XG4gXHR9XG5cblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGVzIG9iamVjdCAoX193ZWJwYWNrX21vZHVsZXNfXylcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubSA9IG1vZHVsZXM7XG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlIGNhY2hlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmMgPSBpbnN0YWxsZWRNb2R1bGVzO1xuXG4gXHQvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9uIGZvciBoYXJtb255IGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uZCA9IGZ1bmN0aW9uKGV4cG9ydHMsIG5hbWUsIGdldHRlcikge1xuIFx0XHRpZighX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIG5hbWUpKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIG5hbWUsIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBnZXR0ZXIgfSk7XG4gXHRcdH1cbiBcdH07XG5cbiBcdC8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uciA9IGZ1bmN0aW9uKGV4cG9ydHMpIHtcbiBcdFx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG4gXHRcdH1cbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbiBcdH07XG5cbiBcdC8vIGNyZWF0ZSBhIGZha2UgbmFtZXNwYWNlIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDE6IHZhbHVlIGlzIGEgbW9kdWxlIGlkLCByZXF1aXJlIGl0XG4gXHQvLyBtb2RlICYgMjogbWVyZ2UgYWxsIHByb3BlcnRpZXMgb2YgdmFsdWUgaW50byB0aGUgbnNcbiBcdC8vIG1vZGUgJiA0OiByZXR1cm4gdmFsdWUgd2hlbiBhbHJlYWR5IG5zIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDh8MTogYmVoYXZlIGxpa2UgcmVxdWlyZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy50ID0gZnVuY3Rpb24odmFsdWUsIG1vZGUpIHtcbiBcdFx0aWYobW9kZSAmIDEpIHZhbHVlID0gX193ZWJwYWNrX3JlcXVpcmVfXyh2YWx1ZSk7XG4gXHRcdGlmKG1vZGUgJiA4KSByZXR1cm4gdmFsdWU7XG4gXHRcdGlmKChtb2RlICYgNCkgJiYgdHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAmJiB2YWx1ZS5fX2VzTW9kdWxlKSByZXR1cm4gdmFsdWU7XG4gXHRcdHZhciBucyA9IE9iamVjdC5jcmVhdGUobnVsbCk7XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18ucihucyk7XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShucywgJ2RlZmF1bHQnLCB7IGVudW1lcmFibGU6IHRydWUsIHZhbHVlOiB2YWx1ZSB9KTtcbiBcdFx0aWYobW9kZSAmIDIgJiYgdHlwZW9mIHZhbHVlICE9ICdzdHJpbmcnKSBmb3IodmFyIGtleSBpbiB2YWx1ZSkgX193ZWJwYWNrX3JlcXVpcmVfXy5kKG5zLCBrZXksIGZ1bmN0aW9uKGtleSkgeyByZXR1cm4gdmFsdWVba2V5XTsgfS5iaW5kKG51bGwsIGtleSkpO1xuIFx0XHRyZXR1cm4gbnM7XG4gXHR9O1xuXG4gXHQvLyBnZXREZWZhdWx0RXhwb3J0IGZ1bmN0aW9uIGZvciBjb21wYXRpYmlsaXR5IHdpdGggbm9uLWhhcm1vbnkgbW9kdWxlc1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5uID0gZnVuY3Rpb24obW9kdWxlKSB7XG4gXHRcdHZhciBnZXR0ZXIgPSBtb2R1bGUgJiYgbW9kdWxlLl9fZXNNb2R1bGUgP1xuIFx0XHRcdGZ1bmN0aW9uIGdldERlZmF1bHQoKSB7IHJldHVybiBtb2R1bGVbJ2RlZmF1bHQnXTsgfSA6XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0TW9kdWxlRXhwb3J0cygpIHsgcmV0dXJuIG1vZHVsZTsgfTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kKGdldHRlciwgJ2EnLCBnZXR0ZXIpO1xuIFx0XHRyZXR1cm4gZ2V0dGVyO1xuIFx0fTtcblxuIFx0Ly8gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSBmdW5jdGlvbihvYmplY3QsIHByb3BlcnR5KSB7IHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqZWN0LCBwcm9wZXJ0eSk7IH07XG5cbiBcdC8vIF9fd2VicGFja19wdWJsaWNfcGF0aF9fXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnAgPSBcIlwiO1xuXG5cbiBcdC8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuIFx0cmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oX193ZWJwYWNrX3JlcXVpcmVfXy5zID0gXCIuL3NyYy9pbmRleC5qc1wiKTtcbiIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiIyQkFDRSxHQUFJLEdBQW1CLEdBR3ZCLFdBQTZCLEVBQVUsQ0FHdEMsR0FBRyxFQUFpQixHQUNuQixNQUFPLEdBQWlCLEdBQVUsUUFHbkMsR0FBSSxHQUFTLEVBQWlCLEdBQVksQ0FDekMsRUFBRyxFQUNILEVBQUcsR0FDSCxRQUFTLElBSVYsU0FBUSxHQUFVLEtBQUssRUFBTyxRQUFTLEVBQVEsRUFBTyxRQUFTLEdBRy9ELEVBQU8sRUFBSSxHQUdKLEVBQU8sUUFLZixTQUFvQixFQUFJLEVBR3hCLEVBQW9CLEVBQUksRUFHeEIsRUFBb0IsRUFBSSxTQUFTLEVBQVMsRUFBTSxFQUFRLENBQ25ELEVBQW9CLEVBQUUsRUFBUyxJQUNsQyxPQUFPLGVBQWUsRUFBUyxFQUFNLENBQUUsV0FBWSxHQUFNLElBQUssS0FLaEUsRUFBb0IsRUFBSSxTQUFTLEVBQVMsQ0FDdEMsTUFBTyxTQUFXLGFBQWUsT0FBTyxhQUMxQyxPQUFPLGVBQWUsRUFBUyxPQUFPLFlBQWEsQ0FBRSxNQUFPLFdBRTdELE9BQU8sZUFBZSxFQUFTLGFBQWMsQ0FBRSxNQUFPLE1BUXZELEVBQW9CLEVBQUksU0FBUyxFQUFPLEVBQU0sQ0FHN0MsR0FGRyxFQUFPLEdBQUcsR0FBUSxFQUFvQixJQUN0QyxFQUFPLEdBQ04sRUFBTyxHQUFNLE1BQU8sSUFBVSxVQUFZLEdBQVMsRUFBTSxXQUFZLE1BQU8sR0FDaEYsR0FBSSxHQUFLLE9BQU8sT0FBTyxNQUd2QixHQUZBLEVBQW9CLEVBQUUsR0FDdEIsT0FBTyxlQUFlLEVBQUksVUFBVyxDQUFFLFdBQVksR0FBTSxNQUFPLElBQzdELEVBQU8sR0FBSyxNQUFPLElBQVMsU0FBVSxPQUFRLEtBQU8sR0FBTyxFQUFvQixFQUFFLEVBQUksRUFBSyxTQUFTLEVBQUssQ0FBRSxNQUFPLEdBQU0sSUFBUSxLQUFLLEtBQU0sSUFDOUksTUFBTyxJQUlSLEVBQW9CLEVBQUksU0FBUyxFQUFRLENBQ3hDLEdBQUksR0FBUyxHQUFVLEVBQU8sV0FDN0IsVUFBc0IsQ0FBRSxNQUFPLEdBQU8sU0FDdEMsVUFBNEIsQ0FBRSxNQUFPLElBQ3RDLFNBQW9CLEVBQUUsRUFBUSxJQUFLLEdBQzVCLEdBSVIsRUFBb0IsRUFBSSxTQUFTLEVBQVEsRUFBVSxDQUFFLE1BQU8sUUFBTyxVQUFVLGVBQWUsS0FBSyxFQUFRLElBR3pHLEVBQW9CLEVBQUksR0FJakIsRUFBb0IsRUFBb0IsRUFBSSxtQiwrcUNDbEZyRCxXQUNlLEVBQVMsS0FBTSxHQUVmLEVBQVMsV0FFVCxFQUFXLEtBQUssQ0FDNUIsS0FBTSxHQUFJLENBQUUsRUFBRyxHQUNmLEdBQUksR0FBSSxLQUFJLEdBRVosTUFEUSxHQUFLLEVBQUwsUUFJSSxFQUFXLEtBQUssQ0FDNUIsR0FBSSxDQUNILE1BQU8sWUFDQSxFQURBLE9BSUksRUFBVyxLQUFLLENBbEIvQixNQW1CRyxLQUFNLEdBQU0sQ0FDWCxTQUFVLEdBRVgsTUFBTyxDQUNOLGlCQUFLLFNBQ0wsS0FBSSxPQUFKLE9BQVksRUFDWixPQUlXLEVBQVcsS0FBSyxDQUM1QixHQUFJLEdBQ0EsRUFBSSxFQUVSLGFBRFUsR0FFSCxDQUNOLE1BQU0sR0FDTixFQUNBLFNBSVcsRUFBVyxLQUFLLENBekMvQixvQkEwQ0csTUFBTyxDQUNOLEtBQU0sQ0FBTixhQTNDSixDQTJDWSxXQUFJLEtBQ1osUUFBTSxHQUFTLEVBQWYsRUFBZSxJQUFJLEdBQW5CLEdBQ0EsUUFBTSxDQUFOLGFBN0NKLENBNkNZLDRCQUFFLFVBQUcsR0FBYixHQUNBLFFBQU0sQ0FBTixhQTlDSixDQThDWSxpQ0FBUixHQUVBLFFBQU0sR0FBUyxnQkFBZixFQUFlLFVBQWYiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIgXHQvLyBUaGUgbW9kdWxlIGNhY2hlXG4gXHR2YXIgaW5zdGFsbGVkTW9kdWxlcyA9IHt9O1xuXG4gXHQvLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuIFx0ZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXG4gXHRcdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuIFx0XHRpZihpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSkge1xuIFx0XHRcdHJldHVybiBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXS5leHBvcnRzO1xuIFx0XHR9XG4gXHRcdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG4gXHRcdHZhciBtb2R1bGUgPSBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSA9IHtcbiBcdFx0XHRpOiBtb2R1bGVJZCxcbiBcdFx0XHRsOiBmYWxzZSxcbiBcdFx0XHRleHBvcnRzOiB7fVxuIFx0XHR9O1xuXG4gXHRcdC8vIEV4ZWN1dGUgdGhlIG1vZHVsZSBmdW5jdGlvblxuIFx0XHRtb2R1bGVzW21vZHVsZUlkXS5jYWxsKG1vZHVsZS5leHBvcnRzLCBtb2R1bGUsIG1vZHVsZS5leHBvcnRzLCBfX3dlYnBhY2tfcmVxdWlyZV9fKTtcblxuIFx0XHQvLyBGbGFnIHRoZSBtb2R1bGUgYXMgbG9hZGVkXG4gXHRcdG1vZHVsZS5sID0gdHJ1ZTtcblxuIFx0XHQvLyBSZXR1cm4gdGhlIGV4cG9ydHMgb2YgdGhlIG1vZHVsZVxuIFx0XHRyZXR1cm4gbW9kdWxlLmV4cG9ydHM7XG4gXHR9XG5cblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGVzIG9iamVjdCAoX193ZWJwYWNrX21vZHVsZXNfXylcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubSA9IG1vZHVsZXM7XG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlIGNhY2hlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmMgPSBpbnN0YWxsZWRNb2R1bGVzO1xuXG4gXHQvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9uIGZvciBoYXJtb255IGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uZCA9IGZ1bmN0aW9uKGV4cG9ydHMsIG5hbWUsIGdldHRlcikge1xuIFx0XHRpZighX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIG5hbWUpKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIG5hbWUsIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBnZXR0ZXIgfSk7XG4gXHRcdH1cbiBcdH07XG5cbiBcdC8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uciA9IGZ1bmN0aW9uKGV4cG9ydHMpIHtcbiBcdFx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG4gXHRcdH1cbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbiBcdH07XG5cbiBcdC8vIGNyZWF0ZSBhIGZha2UgbmFtZXNwYWNlIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDE6IHZhbHVlIGlzIGEgbW9kdWxlIGlkLCByZXF1aXJlIGl0XG4gXHQvLyBtb2RlICYgMjogbWVyZ2UgYWxsIHByb3BlcnRpZXMgb2YgdmFsdWUgaW50byB0aGUgbnNcbiBcdC8vIG1vZGUgJiA0OiByZXR1cm4gdmFsdWUgd2hlbiBhbHJlYWR5IG5zIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDh8MTogYmVoYXZlIGxpa2UgcmVxdWlyZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy50ID0gZnVuY3Rpb24odmFsdWUsIG1vZGUpIHtcbiBcdFx0aWYobW9kZSAmIDEpIHZhbHVlID0gX193ZWJwYWNrX3JlcXVpcmVfXyh2YWx1ZSk7XG4gXHRcdGlmKG1vZGUgJiA4KSByZXR1cm4gdmFsdWU7XG4gXHRcdGlmKChtb2RlICYgNCkgJiYgdHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAmJiB2YWx1ZS5fX2VzTW9kdWxlKSByZXR1cm4gdmFsdWU7XG4gXHRcdHZhciBucyA9IE9iamVjdC5jcmVhdGUobnVsbCk7XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18ucihucyk7XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShucywgJ2RlZmF1bHQnLCB7IGVudW1lcmFibGU6IHRydWUsIHZhbHVlOiB2YWx1ZSB9KTtcbiBcdFx0aWYobW9kZSAmIDIgJiYgdHlwZW9mIHZhbHVlICE9ICdzdHJpbmcnKSBmb3IodmFyIGtleSBpbiB2YWx1ZSkgX193ZWJwYWNrX3JlcXVpcmVfXy5kKG5zLCBrZXksIGZ1bmN0aW9uKGtleSkgeyByZXR1cm4gdmFsdWVba2V5XTsgfS5iaW5kKG51bGwsIGtleSkpO1xuIFx0XHRyZXR1cm4gbnM7XG4gXHR9O1xuXG4gXHQvLyBnZXREZWZhdWx0RXhwb3J0IGZ1bmN0aW9uIGZvciBjb21wYXRpYmlsaXR5IHdpdGggbm9uLWhhcm1vbnkgbW9kdWxlc1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5uID0gZnVuY3Rpb24obW9kdWxlKSB7XG4gXHRcdHZhciBnZXR0ZXIgPSBtb2R1bGUgJiYgbW9kdWxlLl9fZXNNb2R1bGUgP1xuIFx0XHRcdGZ1bmN0aW9uIGdldERlZmF1bHQoKSB7IHJldHVybiBtb2R1bGVbJ2RlZmF1bHQnXTsgfSA6XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0TW9kdWxlRXhwb3J0cygpIHsgcmV0dXJuIG1vZHVsZTsgfTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kKGdldHRlciwgJ2EnLCBnZXR0ZXIpO1xuIFx0XHRyZXR1cm4gZ2V0dGVyO1xuIFx0fTtcblxuIFx0Ly8gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSBmdW5jdGlvbihvYmplY3QsIHByb3BlcnR5KSB7IHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqZWN0LCBwcm9wZXJ0eSk7IH07XG5cbiBcdC8vIF9fd2VicGFja19wdWJsaWNfcGF0aF9fXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnAgPSBcIlwiO1xuXG5cbiBcdC8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuIFx0cmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oX193ZWJwYWNrX3JlcXVpcmVfXy5zID0gXCIuL3NyYy9pbmRleC5qc1wiKTtcbiIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjEgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRsZXQgeCA9IDE7XG5cdFx0XHRjb25zdCB5ID0gMztcblx0XHRcdHggJiY9IHk7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XHR4LFxuXHRcdFx0XHQxXzAwMF8wMDBfMDAwLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Ly8gY2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
 `;
 
 exports[`Webpack 4 Loader + Minification minify w/ devtool source-map 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x??(x=2)]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t??(t=2),n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 
 //# sourceMappingURL=index.js.map"
 `;
 
 exports[`Webpack 4 Loader + Minification minify w/ no devtool 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x!=null?x:x=2]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t!=null?t:t=2,n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 "
 `;
 
@@ -132,20 +135,23 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
 
 exports[`Webpack 4 Loader + Minification minify w/ query strings 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x!=null?x:x=2]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t!=null?t:t=2,n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 "
 `;
 
@@ -162,228 +168,245 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
 
 exports[`Webpack 4 Loader + Minification minify w/ source-map option 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x??(x=2)]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t??(t=2),n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 "
 `;
 
 exports[`Webpack 4 Loader + Minification minify w/ source-map option and source-map plugin external 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x??(x=2)]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t??(t=2),n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 
 //# sourceMappingURL=index.js.map"
 `;
 
-exports[`Webpack 4 Loader + Minification minify w/ source-map option and source-map plugin external 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:////src/foo.js\\"],\\"names\\":[],\\"mappings\\":\\"2BACE,GAAI,GAAmB,GAGvB,WAA6B,EAAU,CAGtC,GAAG,EAAiB,GACnB,MAAO,GAAiB,GAAU,QAGnC,GAAI,GAAS,EAAiB,GAAY,CACzC,EAAG,EACH,EAAG,GACH,QAAS,IAIV,SAAQ,GAAU,KAAK,EAAO,QAAS,EAAQ,EAAO,QAAS,GAG/D,EAAO,EAAI,GAGJ,EAAO,QAKf,SAAoB,EAAI,EAGxB,EAAoB,EAAI,EAGxB,EAAoB,EAAI,SAAS,EAAS,EAAM,EAAQ,CACnD,EAAoB,EAAE,EAAS,IAClC,OAAO,eAAe,EAAS,EAAM,CAAE,WAAY,GAAM,IAAK,KAKhE,EAAoB,EAAI,SAAS,EAAS,CACtC,MAAO,SAAW,aAAe,OAAO,aAC1C,OAAO,eAAe,EAAS,OAAO,YAAa,CAAE,MAAO,WAE7D,OAAO,eAAe,EAAS,aAAc,CAAE,MAAO,MAQvD,EAAoB,EAAI,SAAS,EAAO,EAAM,CAG7C,GAFG,EAAO,GAAG,GAAQ,EAAoB,IACtC,EAAO,GACN,EAAO,GAAM,MAAO,IAAU,UAAY,GAAS,EAAM,WAAY,MAAO,GAChF,GAAI,GAAK,OAAO,OAAO,MAGvB,GAFA,EAAoB,EAAE,GACtB,OAAO,eAAe,EAAI,UAAW,CAAE,WAAY,GAAM,MAAO,IAC7D,EAAO,GAAK,MAAO,IAAS,SAAU,OAAQ,KAAO,GAAO,EAAoB,EAAE,EAAI,EAAK,SAAS,EAAK,CAAE,MAAO,GAAM,IAAQ,KAAK,KAAM,IAC9I,MAAO,IAIR,EAAoB,EAAI,SAAS,EAAQ,CACxC,GAAI,GAAS,GAAU,EAAO,WAC7B,UAAsB,CAAE,MAAO,GAAO,SACtC,UAA4B,CAAE,MAAO,IACtC,SAAoB,EAAE,EAAQ,IAAK,GAC5B,GAIR,EAAoB,EAAI,SAAS,EAAQ,EAAU,CAAE,MAAO,QAAO,UAAU,eAAe,KAAK,EAAQ,IAGzG,EAAoB,EAAI,GAIjB,EAAoB,EAAoB,EAAI,mB,mgCClFrD,WACe,EAAS,KAAM,GAEf,EAAS,WAET,EAAW,KAAK,CAC5B,KAAM,GAAI,CAAE,EAAG,GACf,GAAI,GAAI,KAAI,GAEZ,MADQ,GAAK,EAAL,QAII,EAAW,KAAK,CAC5B,GAAI,CACH,MAAO,YACA,EADA,OAII,EAAW,KAAK,CAlB/B,MAmBG,KAAM,GAAM,CACX,SAAU,GAEX,MAAO,CACN,iBAAK,SACL,KAAI,OAAJ,OAAY,EACZ,OAIW,EAAW,KAAK,CA7B/B,0BA8BG,GAAI,GACJ,MAAO,CACN,KAAM,CAAN,aAhCJ,CAgCY,WAAI,KACZ,QAAM,GAAS,EAAf,EAAe,IAAI,GAAnB,GACA,QAAM,CAAN,aAlCJ,CAkCY,8BAAE,UAAG,GAAb,GACA,QAAM,CAAN,aAnCJ,CAmCY,mCAAR,GACA,QAAM,GAAS,gBAAE,UAAG,GAAL,MAAf,MACA,QAAM,GAAS,oBAAf,EAAe,QAAf,GACA,MAAM\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\" \\\\t// The module cache\\\\n \\\\tvar installedModules = {};\\\\n\\\\n \\\\t// The require function\\\\n \\\\tfunction __webpack_require__(moduleId) {\\\\n\\\\n \\\\t\\\\t// Check if module is in cache\\\\n \\\\t\\\\tif(installedModules[moduleId]) {\\\\n \\\\t\\\\t\\\\treturn installedModules[moduleId].exports;\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\t// Create a new module (and put it into the cache)\\\\n \\\\t\\\\tvar module = installedModules[moduleId] = {\\\\n \\\\t\\\\t\\\\ti: moduleId,\\\\n \\\\t\\\\t\\\\tl: false,\\\\n \\\\t\\\\t\\\\texports: {}\\\\n \\\\t\\\\t};\\\\n\\\\n \\\\t\\\\t// Execute the module function\\\\n \\\\t\\\\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\\\\n\\\\n \\\\t\\\\t// Flag the module as loaded\\\\n \\\\t\\\\tmodule.l = true;\\\\n\\\\n \\\\t\\\\t// Return the exports of the module\\\\n \\\\t\\\\treturn module.exports;\\\\n \\\\t}\\\\n\\\\n\\\\n \\\\t// expose the modules object (__webpack_modules__)\\\\n \\\\t__webpack_require__.m = modules;\\\\n\\\\n \\\\t// expose the module cache\\\\n \\\\t__webpack_require__.c = installedModules;\\\\n\\\\n \\\\t// define getter function for harmony exports\\\\n \\\\t__webpack_require__.d = function(exports, name, getter) {\\\\n \\\\t\\\\tif(!__webpack_require__.o(exports, name)) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, name, { enumerable: true, get: getter });\\\\n \\\\t\\\\t}\\\\n \\\\t};\\\\n\\\\n \\\\t// define __esModule on exports\\\\n \\\\t__webpack_require__.r = function(exports) {\\\\n \\\\t\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n \\\\t};\\\\n\\\\n \\\\t// create a fake namespace object\\\\n \\\\t// mode & 1: value is a module id, require it\\\\n \\\\t// mode & 2: merge all properties of value into the ns\\\\n \\\\t// mode & 4: return value when already ns object\\\\n \\\\t// mode & 8|1: behave like require\\\\n \\\\t__webpack_require__.t = function(value, mode) {\\\\n \\\\t\\\\tif(mode & 1) value = __webpack_require__(value);\\\\n \\\\t\\\\tif(mode & 8) return value;\\\\n \\\\t\\\\tif((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;\\\\n \\\\t\\\\tvar ns = Object.create(null);\\\\n \\\\t\\\\t__webpack_require__.r(ns);\\\\n \\\\t\\\\tObject.defineProperty(ns, 'default', { enumerable: true, value: value });\\\\n \\\\t\\\\tif(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));\\\\n \\\\t\\\\treturn ns;\\\\n \\\\t};\\\\n\\\\n \\\\t// getDefaultExport function for compatibility with non-harmony modules\\\\n \\\\t__webpack_require__.n = function(module) {\\\\n \\\\t\\\\tvar getter = module && module.__esModule ?\\\\n \\\\t\\\\t\\\\tfunction getDefault() { return module['default']; } :\\\\n \\\\t\\\\t\\\\tfunction getModuleExports() { return module; };\\\\n \\\\t\\\\t__webpack_require__.d(getter, 'a', getter);\\\\n \\\\t\\\\treturn getter;\\\\n \\\\t};\\\\n\\\\n \\\\t// Object.prototype.hasOwnProperty.call\\\\n \\\\t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\\\\n\\\\n \\\\t// __webpack_public_path__\\\\n \\\\t__webpack_require__.p = \\\\\\"\\\\\\";\\\\n\\\\n\\\\n \\\\t// Load entry module and return exports\\\\n \\\\treturn __webpack_require__(__webpack_require__.s = \\\\\\"./src/index.js\\\\\\");\\\\n\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
+exports[`Webpack 4 Loader + Minification minify w/ source-map option and source-map plugin external 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:////src/foo.js\\"],\\"names\\":[],\\"mappings\\":\\"2BACE,GAAI,GAAmB,GAGvB,WAA6B,EAAU,CAGtC,GAAG,EAAiB,GACnB,MAAO,GAAiB,GAAU,QAGnC,GAAI,GAAS,EAAiB,GAAY,CACzC,EAAG,EACH,EAAG,GACH,QAAS,IAIV,SAAQ,GAAU,KAAK,EAAO,QAAS,EAAQ,EAAO,QAAS,GAG/D,EAAO,EAAI,GAGJ,EAAO,QAKf,SAAoB,EAAI,EAGxB,EAAoB,EAAI,EAGxB,EAAoB,EAAI,SAAS,EAAS,EAAM,EAAQ,CACnD,EAAoB,EAAE,EAAS,IAClC,OAAO,eAAe,EAAS,EAAM,CAAE,WAAY,GAAM,IAAK,KAKhE,EAAoB,EAAI,SAAS,EAAS,CACtC,MAAO,SAAW,aAAe,OAAO,aAC1C,OAAO,eAAe,EAAS,OAAO,YAAa,CAAE,MAAO,WAE7D,OAAO,eAAe,EAAS,aAAc,CAAE,MAAO,MAQvD,EAAoB,EAAI,SAAS,EAAO,EAAM,CAG7C,GAFG,EAAO,GAAG,GAAQ,EAAoB,IACtC,EAAO,GACN,EAAO,GAAM,MAAO,IAAU,UAAY,GAAS,EAAM,WAAY,MAAO,GAChF,GAAI,GAAK,OAAO,OAAO,MAGvB,GAFA,EAAoB,EAAE,GACtB,OAAO,eAAe,EAAI,UAAW,CAAE,WAAY,GAAM,MAAO,IAC7D,EAAO,GAAK,MAAO,IAAS,SAAU,OAAQ,KAAO,GAAO,EAAoB,EAAE,EAAI,EAAK,SAAS,EAAK,CAAE,MAAO,GAAM,IAAQ,KAAK,KAAM,IAC9I,MAAO,IAIR,EAAoB,EAAI,SAAS,EAAQ,CACxC,GAAI,GAAS,GAAU,EAAO,WAC7B,UAAsB,CAAE,MAAO,GAAO,SACtC,UAA4B,CAAE,MAAO,IACtC,SAAoB,EAAE,EAAQ,IAAK,GAC5B,GAIR,EAAoB,EAAI,SAAS,EAAQ,EAAU,CAAE,MAAO,QAAO,UAAU,eAAe,KAAK,EAAQ,IAGzG,EAAoB,EAAI,GAIjB,EAAoB,EAAoB,EAAI,mB,+qCClFrD,WACe,EAAS,KAAM,GAEf,EAAS,WAET,EAAW,KAAK,CAC5B,KAAM,GAAI,CAAE,EAAG,GACf,GAAI,GAAI,KAAI,GAEZ,MADQ,GAAK,EAAL,QAII,EAAW,KAAK,CAC5B,GAAI,CACH,MAAO,YACA,EADA,OAII,EAAW,KAAK,CAlB/B,MAmBG,KAAM,GAAM,CACX,SAAU,GAEX,MAAO,CACN,iBAAK,SACL,KAAI,OAAJ,OAAY,EACZ,OAIW,EAAW,KAAK,CAC5B,GAAI,GACA,EAAI,EAER,aADU,GAEH,CACN,MAAM,GACN,EACA,SAIW,EAAW,KAAK,CAzC/B,oBA0CG,MAAO,CACN,KAAM,CAAN,aA3CJ,CA2CY,WAAI,KACZ,QAAM,GAAS,EAAf,EAAe,IAAI,GAAnB,GACA,QAAM,CAAN,aA7CJ,CA6CY,4BAAE,UAAG,GAAb,GACA,QAAM,CAAN,aA9CJ,CA8CY,iCAAR,GAEA,QAAM,GAAS,gBAAf,EAAe,UAAf\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\" \\\\t// The module cache\\\\n \\\\tvar installedModules = {};\\\\n\\\\n \\\\t// The require function\\\\n \\\\tfunction __webpack_require__(moduleId) {\\\\n\\\\n \\\\t\\\\t// Check if module is in cache\\\\n \\\\t\\\\tif(installedModules[moduleId]) {\\\\n \\\\t\\\\t\\\\treturn installedModules[moduleId].exports;\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\t// Create a new module (and put it into the cache)\\\\n \\\\t\\\\tvar module = installedModules[moduleId] = {\\\\n \\\\t\\\\t\\\\ti: moduleId,\\\\n \\\\t\\\\t\\\\tl: false,\\\\n \\\\t\\\\t\\\\texports: {}\\\\n \\\\t\\\\t};\\\\n\\\\n \\\\t\\\\t// Execute the module function\\\\n \\\\t\\\\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\\\\n\\\\n \\\\t\\\\t// Flag the module as loaded\\\\n \\\\t\\\\tmodule.l = true;\\\\n\\\\n \\\\t\\\\t// Return the exports of the module\\\\n \\\\t\\\\treturn module.exports;\\\\n \\\\t}\\\\n\\\\n\\\\n \\\\t// expose the modules object (__webpack_modules__)\\\\n \\\\t__webpack_require__.m = modules;\\\\n\\\\n \\\\t// expose the module cache\\\\n \\\\t__webpack_require__.c = installedModules;\\\\n\\\\n \\\\t// define getter function for harmony exports\\\\n \\\\t__webpack_require__.d = function(exports, name, getter) {\\\\n \\\\t\\\\tif(!__webpack_require__.o(exports, name)) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, name, { enumerable: true, get: getter });\\\\n \\\\t\\\\t}\\\\n \\\\t};\\\\n\\\\n \\\\t// define __esModule on exports\\\\n \\\\t__webpack_require__.r = function(exports) {\\\\n \\\\t\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n \\\\t};\\\\n\\\\n \\\\t// create a fake namespace object\\\\n \\\\t// mode & 1: value is a module id, require it\\\\n \\\\t// mode & 2: merge all properties of value into the ns\\\\n \\\\t// mode & 4: return value when already ns object\\\\n \\\\t// mode & 8|1: behave like require\\\\n \\\\t__webpack_require__.t = function(value, mode) {\\\\n \\\\t\\\\tif(mode & 1) value = __webpack_require__(value);\\\\n \\\\t\\\\tif(mode & 8) return value;\\\\n \\\\t\\\\tif((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;\\\\n \\\\t\\\\tvar ns = Object.create(null);\\\\n \\\\t\\\\t__webpack_require__.r(ns);\\\\n \\\\t\\\\tObject.defineProperty(ns, 'default', { enumerable: true, value: value });\\\\n \\\\t\\\\tif(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));\\\\n \\\\t\\\\treturn ns;\\\\n \\\\t};\\\\n\\\\n \\\\t// getDefaultExport function for compatibility with non-harmony modules\\\\n \\\\t__webpack_require__.n = function(module) {\\\\n \\\\t\\\\tvar getter = module && module.__esModule ?\\\\n \\\\t\\\\t\\\\tfunction getDefault() { return module['default']; } :\\\\n \\\\t\\\\t\\\\tfunction getModuleExports() { return module; };\\\\n \\\\t\\\\t__webpack_require__.d(getter, 'a', getter);\\\\n \\\\t\\\\treturn getter;\\\\n \\\\t};\\\\n\\\\n \\\\t// Object.prototype.hasOwnProperty.call\\\\n \\\\t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\\\\n\\\\n \\\\t// __webpack_public_path__\\\\n \\\\t__webpack_require__.p = \\\\\\"\\\\\\";\\\\n\\\\n\\\\n \\\\t// Load entry module and return exports\\\\n \\\\treturn __webpack_require__(__webpack_require__.s = \\\\\\"./src/index.js\\\\\\");\\\\n\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2021 = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\tlet x = 1;\\\\n\\\\t\\\\t\\\\tconst y = 3;\\\\n\\\\t\\\\t\\\\tx &&= y;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t\\\\tx,\\\\n\\\\t\\\\t\\\\t\\\\t1_000_000_000,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\t// class { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
 
 exports[`Webpack 4 Loader + Minification minify w/ source-map option and source-map plugin inline 1`] = `
-"module.exports=function(O){var u={};function o(t){if(u[t])return u[t].exports;var f=u[t]={i:t,l:!1,exports:{}};return O[t].call(f.exports,f,f.exports,o),f.l=!0,f.exports}return o.m=O,o.c=u,o.d=function(t,f,s){o.o(t,f)||Object.defineProperty(t,f,{enumerable:!0,get:s})},o.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},o.t=function(t,f){if(f&1&&(t=o(t)),f&8||f&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var s=Object.create(null);if(o.r(s),Object.defineProperty(s,\\"default\\",{enumerable:!0,value:t}),f&2&&typeof t!=\\"string\\")for(var d in t)o.d(s,d,function(j){return t[j]}.bind(null,d));return s},o.n=function(t){var f=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(f,\\"a\\",f),f},o.o=function(t,f){return Object.prototype.hasOwnProperty.call(t,f)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(O,u,o){\\"use strict\\";o.r(u),o.d(u,\\"es2016\\",function(){return m}),o.d(u,\\"es2017\\",function(){return W}),o.d(u,\\"es2018\\",function(){return w}),o.d(u,\\"es2019\\",function(){return E}),o.d(u,\\"es2020\\",function(){return z}),o.d(u,\\"esnext\\",function(){return T});var t=Object.defineProperty,f=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,d=Object.prototype.propertyIsEnumerable,j=Math.pow,P=(r,n,e)=>n in r?t(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e,g=(r,n)=>{for(var e in n||(n={}))f.call(n,e)&&P(r,e,n[e]);if(s)for(var e of s(n))d.call(n,e)&&P(r,e,n[e]);return r},S=(r,n)=>{var e={};for(var i in r)f.call(r,i)&&n.indexOf(i)<0&&(e[i]=r[i]);if(r!=null&&s)for(var i of s(r))n.indexOf(i)<0&&d.call(r,i)&&(e[i]=r[i]);return e},h=(r,n,e)=>(P(r,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),D=(r,n,e)=>new Promise((i,y)=>{var p=c=>{try{l(e.next(c))}catch(a){y(a)}},v=c=>{try{l(e.throw(c))}catch(a){y(a)}},l=c=>c.done?i(c.value):Promise.resolve(c.value).then(p,v);l((e=e.apply(r,n)).next())});const M={},m=j(10,4),W=\\"function\\",w=(()=>{const r={a:1};let n=g({},r);return S(r,[])})(),E=(()=>{try{return\\"try\\"}catch(r){}})(),z=(()=>{var r;const n={property:1};return[n==null?void 0:n.property,(r=n.prop)!=null?r:2,M]})(),T=(()=>{var r,n,e,i,y,p,v,l,c,a,b;let x;return[class{constructor(){h(this,\\"x\\",2)}},(r=class{},h(r,\\"x\\",1),r),(i=class{constructor(){n.add(this)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){y.set(this,void 0)}},y=new WeakMap,p),(l=class{},v=new WeakSet,c=function(){},v.add(l),l),(a=class{},b=new WeakMap,b.set(a,void 0),a),x??(x=2)]})()}});
+"module.exports=function(v){var f={};function o(r){if(f[r])return f[r].exports;var s=f[r]={i:r,l:!1,exports:{}};return v[r].call(s.exports,s,s.exports,o),s.l=!0,s.exports}return o.m=v,o.c=f,o.d=function(r,s,a){o.o(r,s)||Object.defineProperty(r,s,{enumerable:!0,get:a})},o.r=function(r){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})},o.t=function(r,s){if(s&1&&(r=o(r)),s&8||s&4&&typeof r==\\"object\\"&&r&&r.__esModule)return r;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,\\"default\\",{enumerable:!0,value:r}),s&2&&typeof r!=\\"string\\")for(var l in r)o.d(a,l,function(O){return r[O]}.bind(null,l));return a},o.n=function(r){var s=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(s,\\"a\\",s),s},o.o=function(r,s){return Object.prototype.hasOwnProperty.call(r,s)},o.p=\\"\\",o(o.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(v,f,o){\\"use strict\\";o.r(f),o.d(f,\\"es2016\\",function(){return m}),o.d(f,\\"es2017\\",function(){return E}),o.d(f,\\"es2018\\",function(){return W}),o.d(f,\\"es2019\\",function(){return b}),o.d(f,\\"es2020\\",function(){return T}),o.d(f,\\"es2021\\",function(){return z}),o.d(f,\\"esnext\\",function(){return w});var r=Object.defineProperty,s=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,l=Object.prototype.propertyIsEnumerable,O=Math.pow,h=(t,n,e)=>n in t?r(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e,g=(t,n)=>{for(var e in n||(n={}))a.call(n,e)&&h(t,e,n[e]);if(s)for(var e of s(n))l.call(n,e)&&h(t,e,n[e]);return t},M=(t,n)=>{var e={};for(var i in t)a.call(t,i)&&n.indexOf(i)<0&&(e[i]=t[i]);if(t!=null&&s)for(var i of s(t))n.indexOf(i)<0&&l.call(t,i)&&(e[i]=t[i]);return e},x=(t,n,e)=>(h(t,typeof n!=\\"symbol\\"?n+\\"\\":n,e),e),P=(t,n,e)=>{if(n.has(t))throw TypeError(\\"Cannot add the same private member more than once\\");n instanceof WeakSet?n.add(t):n.set(t,e)},A=(t,n,e)=>new Promise((i,d)=>{var p=u=>{try{c(e.next(u))}catch(j){d(j)}},y=u=>{try{c(e.throw(u))}catch(j){d(j)}},c=u=>u.done?i(u.value):Promise.resolve(u.value).then(p,y);c((e=e.apply(t,n)).next())});const S={},m=O(10,4),E=\\"function\\",W=(()=>{const t={a:1};let n=g({},t);return M(t,[])})(),b=(()=>{try{return\\"try\\"}catch(t){}})(),T=(()=>{var t;const n={property:1};return[n==null?void 0:n.property,(t=n.prop)!=null?t:2,S]})(),z=(()=>{let t,n=1;return n&&(n=3),[t??(t=2),n,1e9]})(),w=(()=>{var t,n,e,i,d,p,y,c;return[class{constructor(){x(this,\\"x\\",2)}},(t=class{},x(t,\\"x\\",1),t),(i=class{constructor(){P(this,n)}},n=new WeakSet,e=function(){},i),(p=class{constructor(){P(this,d,void 0)}},d=new WeakMap,p),(y=class{},c=new WeakMap,P(y,c,void 0),y)]})()}});
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiIyQkFDRSxHQUFJLEdBQW1CLEdBR3ZCLFdBQTZCLEVBQVUsQ0FHdEMsR0FBRyxFQUFpQixHQUNuQixNQUFPLEdBQWlCLEdBQVUsUUFHbkMsR0FBSSxHQUFTLEVBQWlCLEdBQVksQ0FDekMsRUFBRyxFQUNILEVBQUcsR0FDSCxRQUFTLElBSVYsU0FBUSxHQUFVLEtBQUssRUFBTyxRQUFTLEVBQVEsRUFBTyxRQUFTLEdBRy9ELEVBQU8sRUFBSSxHQUdKLEVBQU8sUUFLZixTQUFvQixFQUFJLEVBR3hCLEVBQW9CLEVBQUksRUFHeEIsRUFBb0IsRUFBSSxTQUFTLEVBQVMsRUFBTSxFQUFRLENBQ25ELEVBQW9CLEVBQUUsRUFBUyxJQUNsQyxPQUFPLGVBQWUsRUFBUyxFQUFNLENBQUUsV0FBWSxHQUFNLElBQUssS0FLaEUsRUFBb0IsRUFBSSxTQUFTLEVBQVMsQ0FDdEMsTUFBTyxTQUFXLGFBQWUsT0FBTyxhQUMxQyxPQUFPLGVBQWUsRUFBUyxPQUFPLFlBQWEsQ0FBRSxNQUFPLFdBRTdELE9BQU8sZUFBZSxFQUFTLGFBQWMsQ0FBRSxNQUFPLE1BUXZELEVBQW9CLEVBQUksU0FBUyxFQUFPLEVBQU0sQ0FHN0MsR0FGRyxFQUFPLEdBQUcsR0FBUSxFQUFvQixJQUN0QyxFQUFPLEdBQ04sRUFBTyxHQUFNLE1BQU8sSUFBVSxVQUFZLEdBQVMsRUFBTSxXQUFZLE1BQU8sR0FDaEYsR0FBSSxHQUFLLE9BQU8sT0FBTyxNQUd2QixHQUZBLEVBQW9CLEVBQUUsR0FDdEIsT0FBTyxlQUFlLEVBQUksVUFBVyxDQUFFLFdBQVksR0FBTSxNQUFPLElBQzdELEVBQU8sR0FBSyxNQUFPLElBQVMsU0FBVSxPQUFRLEtBQU8sR0FBTyxFQUFvQixFQUFFLEVBQUksRUFBSyxTQUFTLEVBQUssQ0FBRSxNQUFPLEdBQU0sSUFBUSxLQUFLLEtBQU0sSUFDOUksTUFBTyxJQUlSLEVBQW9CLEVBQUksU0FBUyxFQUFRLENBQ3hDLEdBQUksR0FBUyxHQUFVLEVBQU8sV0FDN0IsVUFBc0IsQ0FBRSxNQUFPLEdBQU8sU0FDdEMsVUFBNEIsQ0FBRSxNQUFPLElBQ3RDLFNBQW9CLEVBQUUsRUFBUSxJQUFLLEdBQzVCLEdBSVIsRUFBb0IsRUFBSSxTQUFTLEVBQVEsRUFBVSxDQUFFLE1BQU8sUUFBTyxVQUFVLGVBQWUsS0FBSyxFQUFRLElBR3pHLEVBQW9CLEVBQUksR0FJakIsRUFBb0IsRUFBb0IsRUFBSSxtQixtZ0NDbEZyRCxXQUNlLEVBQVMsS0FBTSxHQUVmLEVBQVMsV0FFVCxFQUFXLEtBQUssQ0FDNUIsS0FBTSxHQUFJLENBQUUsRUFBRyxHQUNmLEdBQUksR0FBSSxLQUFJLEdBRVosTUFEUSxHQUFLLEVBQUwsUUFJSSxFQUFXLEtBQUssQ0FDNUIsR0FBSSxDQUNILE1BQU8sWUFDQSxFQURBLE9BSUksRUFBVyxLQUFLLENBbEIvQixNQW1CRyxLQUFNLEdBQU0sQ0FDWCxTQUFVLEdBRVgsTUFBTyxDQUNOLGlCQUFLLFNBQ0wsS0FBSSxPQUFKLE9BQVksRUFDWixPQUlXLEVBQVcsS0FBSyxDQTdCL0IsMEJBOEJHLEdBQUksR0FDSixNQUFPLENBQ04sS0FBTSxDQUFOLGFBaENKLENBZ0NZLFdBQUksS0FDWixRQUFNLEdBQVMsRUFBZixFQUFlLElBQUksR0FBbkIsR0FDQSxRQUFNLENBQU4sYUFsQ0osQ0FrQ1ksOEJBQUUsVUFBRyxHQUFiLEdBQ0EsUUFBTSxDQUFOLGFBbkNKLENBbUNZLG1DQUFSLEdBQ0EsUUFBTSxHQUFTLGdCQUFFLFVBQUcsR0FBTCxNQUFmLE1BQ0EsUUFBTSxHQUFTLG9CQUFmLEVBQWUsUUFBZixHQUNBLE1BQU0iLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIgXHQvLyBUaGUgbW9kdWxlIGNhY2hlXG4gXHR2YXIgaW5zdGFsbGVkTW9kdWxlcyA9IHt9O1xuXG4gXHQvLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuIFx0ZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXG4gXHRcdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuIFx0XHRpZihpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSkge1xuIFx0XHRcdHJldHVybiBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXS5leHBvcnRzO1xuIFx0XHR9XG4gXHRcdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG4gXHRcdHZhciBtb2R1bGUgPSBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSA9IHtcbiBcdFx0XHRpOiBtb2R1bGVJZCxcbiBcdFx0XHRsOiBmYWxzZSxcbiBcdFx0XHRleHBvcnRzOiB7fVxuIFx0XHR9O1xuXG4gXHRcdC8vIEV4ZWN1dGUgdGhlIG1vZHVsZSBmdW5jdGlvblxuIFx0XHRtb2R1bGVzW21vZHVsZUlkXS5jYWxsKG1vZHVsZS5leHBvcnRzLCBtb2R1bGUsIG1vZHVsZS5leHBvcnRzLCBfX3dlYnBhY2tfcmVxdWlyZV9fKTtcblxuIFx0XHQvLyBGbGFnIHRoZSBtb2R1bGUgYXMgbG9hZGVkXG4gXHRcdG1vZHVsZS5sID0gdHJ1ZTtcblxuIFx0XHQvLyBSZXR1cm4gdGhlIGV4cG9ydHMgb2YgdGhlIG1vZHVsZVxuIFx0XHRyZXR1cm4gbW9kdWxlLmV4cG9ydHM7XG4gXHR9XG5cblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGVzIG9iamVjdCAoX193ZWJwYWNrX21vZHVsZXNfXylcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubSA9IG1vZHVsZXM7XG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlIGNhY2hlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmMgPSBpbnN0YWxsZWRNb2R1bGVzO1xuXG4gXHQvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9uIGZvciBoYXJtb255IGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uZCA9IGZ1bmN0aW9uKGV4cG9ydHMsIG5hbWUsIGdldHRlcikge1xuIFx0XHRpZighX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIG5hbWUpKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIG5hbWUsIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBnZXR0ZXIgfSk7XG4gXHRcdH1cbiBcdH07XG5cbiBcdC8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uciA9IGZ1bmN0aW9uKGV4cG9ydHMpIHtcbiBcdFx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG4gXHRcdH1cbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbiBcdH07XG5cbiBcdC8vIGNyZWF0ZSBhIGZha2UgbmFtZXNwYWNlIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDE6IHZhbHVlIGlzIGEgbW9kdWxlIGlkLCByZXF1aXJlIGl0XG4gXHQvLyBtb2RlICYgMjogbWVyZ2UgYWxsIHByb3BlcnRpZXMgb2YgdmFsdWUgaW50byB0aGUgbnNcbiBcdC8vIG1vZGUgJiA0OiByZXR1cm4gdmFsdWUgd2hlbiBhbHJlYWR5IG5zIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDh8MTogYmVoYXZlIGxpa2UgcmVxdWlyZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy50ID0gZnVuY3Rpb24odmFsdWUsIG1vZGUpIHtcbiBcdFx0aWYobW9kZSAmIDEpIHZhbHVlID0gX193ZWJwYWNrX3JlcXVpcmVfXyh2YWx1ZSk7XG4gXHRcdGlmKG1vZGUgJiA4KSByZXR1cm4gdmFsdWU7XG4gXHRcdGlmKChtb2RlICYgNCkgJiYgdHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAmJiB2YWx1ZS5fX2VzTW9kdWxlKSByZXR1cm4gdmFsdWU7XG4gXHRcdHZhciBucyA9IE9iamVjdC5jcmVhdGUobnVsbCk7XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18ucihucyk7XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShucywgJ2RlZmF1bHQnLCB7IGVudW1lcmFibGU6IHRydWUsIHZhbHVlOiB2YWx1ZSB9KTtcbiBcdFx0aWYobW9kZSAmIDIgJiYgdHlwZW9mIHZhbHVlICE9ICdzdHJpbmcnKSBmb3IodmFyIGtleSBpbiB2YWx1ZSkgX193ZWJwYWNrX3JlcXVpcmVfXy5kKG5zLCBrZXksIGZ1bmN0aW9uKGtleSkgeyByZXR1cm4gdmFsdWVba2V5XTsgfS5iaW5kKG51bGwsIGtleSkpO1xuIFx0XHRyZXR1cm4gbnM7XG4gXHR9O1xuXG4gXHQvLyBnZXREZWZhdWx0RXhwb3J0IGZ1bmN0aW9uIGZvciBjb21wYXRpYmlsaXR5IHdpdGggbm9uLWhhcm1vbnkgbW9kdWxlc1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5uID0gZnVuY3Rpb24obW9kdWxlKSB7XG4gXHRcdHZhciBnZXR0ZXIgPSBtb2R1bGUgJiYgbW9kdWxlLl9fZXNNb2R1bGUgP1xuIFx0XHRcdGZ1bmN0aW9uIGdldERlZmF1bHQoKSB7IHJldHVybiBtb2R1bGVbJ2RlZmF1bHQnXTsgfSA6XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0TW9kdWxlRXhwb3J0cygpIHsgcmV0dXJuIG1vZHVsZTsgfTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kKGdldHRlciwgJ2EnLCBnZXR0ZXIpO1xuIFx0XHRyZXR1cm4gZ2V0dGVyO1xuIFx0fTtcblxuIFx0Ly8gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSBmdW5jdGlvbihvYmplY3QsIHByb3BlcnR5KSB7IHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqZWN0LCBwcm9wZXJ0eSk7IH07XG5cbiBcdC8vIF9fd2VicGFja19wdWJsaWNfcGF0aF9fXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnAgPSBcIlwiO1xuXG5cbiBcdC8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuIFx0cmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oX193ZWJwYWNrX3JlcXVpcmVfXy5zID0gXCIuL3NyYy9pbmRleC5qc1wiKTtcbiIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiIyQkFDRSxHQUFJLEdBQW1CLEdBR3ZCLFdBQTZCLEVBQVUsQ0FHdEMsR0FBRyxFQUFpQixHQUNuQixNQUFPLEdBQWlCLEdBQVUsUUFHbkMsR0FBSSxHQUFTLEVBQWlCLEdBQVksQ0FDekMsRUFBRyxFQUNILEVBQUcsR0FDSCxRQUFTLElBSVYsU0FBUSxHQUFVLEtBQUssRUFBTyxRQUFTLEVBQVEsRUFBTyxRQUFTLEdBRy9ELEVBQU8sRUFBSSxHQUdKLEVBQU8sUUFLZixTQUFvQixFQUFJLEVBR3hCLEVBQW9CLEVBQUksRUFHeEIsRUFBb0IsRUFBSSxTQUFTLEVBQVMsRUFBTSxFQUFRLENBQ25ELEVBQW9CLEVBQUUsRUFBUyxJQUNsQyxPQUFPLGVBQWUsRUFBUyxFQUFNLENBQUUsV0FBWSxHQUFNLElBQUssS0FLaEUsRUFBb0IsRUFBSSxTQUFTLEVBQVMsQ0FDdEMsTUFBTyxTQUFXLGFBQWUsT0FBTyxhQUMxQyxPQUFPLGVBQWUsRUFBUyxPQUFPLFlBQWEsQ0FBRSxNQUFPLFdBRTdELE9BQU8sZUFBZSxFQUFTLGFBQWMsQ0FBRSxNQUFPLE1BUXZELEVBQW9CLEVBQUksU0FBUyxFQUFPLEVBQU0sQ0FHN0MsR0FGRyxFQUFPLEdBQUcsR0FBUSxFQUFvQixJQUN0QyxFQUFPLEdBQ04sRUFBTyxHQUFNLE1BQU8sSUFBVSxVQUFZLEdBQVMsRUFBTSxXQUFZLE1BQU8sR0FDaEYsR0FBSSxHQUFLLE9BQU8sT0FBTyxNQUd2QixHQUZBLEVBQW9CLEVBQUUsR0FDdEIsT0FBTyxlQUFlLEVBQUksVUFBVyxDQUFFLFdBQVksR0FBTSxNQUFPLElBQzdELEVBQU8sR0FBSyxNQUFPLElBQVMsU0FBVSxPQUFRLEtBQU8sR0FBTyxFQUFvQixFQUFFLEVBQUksRUFBSyxTQUFTLEVBQUssQ0FBRSxNQUFPLEdBQU0sSUFBUSxLQUFLLEtBQU0sSUFDOUksTUFBTyxJQUlSLEVBQW9CLEVBQUksU0FBUyxFQUFRLENBQ3hDLEdBQUksR0FBUyxHQUFVLEVBQU8sV0FDN0IsVUFBc0IsQ0FBRSxNQUFPLEdBQU8sU0FDdEMsVUFBNEIsQ0FBRSxNQUFPLElBQ3RDLFNBQW9CLEVBQUUsRUFBUSxJQUFLLEdBQzVCLEdBSVIsRUFBb0IsRUFBSSxTQUFTLEVBQVEsRUFBVSxDQUFFLE1BQU8sUUFBTyxVQUFVLGVBQWUsS0FBSyxFQUFRLElBR3pHLEVBQW9CLEVBQUksR0FJakIsRUFBb0IsRUFBb0IsRUFBSSxtQiwrcUNDbEZyRCxXQUNlLEVBQVMsS0FBTSxHQUVmLEVBQVMsV0FFVCxFQUFXLEtBQUssQ0FDNUIsS0FBTSxHQUFJLENBQUUsRUFBRyxHQUNmLEdBQUksR0FBSSxLQUFJLEdBRVosTUFEUSxHQUFLLEVBQUwsUUFJSSxFQUFXLEtBQUssQ0FDNUIsR0FBSSxDQUNILE1BQU8sWUFDQSxFQURBLE9BSUksRUFBVyxLQUFLLENBbEIvQixNQW1CRyxLQUFNLEdBQU0sQ0FDWCxTQUFVLEdBRVgsTUFBTyxDQUNOLGlCQUFLLFNBQ0wsS0FBSSxPQUFKLE9BQVksRUFDWixPQUlXLEVBQVcsS0FBSyxDQUM1QixHQUFJLEdBQ0EsRUFBSSxFQUVSLGFBRFUsR0FFSCxDQUNOLE1BQU0sR0FDTixFQUNBLFNBSVcsRUFBVyxLQUFLLENBekMvQixvQkEwQ0csTUFBTyxDQUNOLEtBQU0sQ0FBTixhQTNDSixDQTJDWSxXQUFJLEtBQ1osUUFBTSxHQUFTLEVBQWYsRUFBZSxJQUFJLEdBQW5CLEdBQ0EsUUFBTSxDQUFOLGFBN0NKLENBNkNZLDRCQUFFLFVBQUcsR0FBYixHQUNBLFFBQU0sQ0FBTixhQTlDSixDQThDWSxpQ0FBUixHQUVBLFFBQU0sR0FBUyxnQkFBZixFQUFlLFVBQWYiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIgXHQvLyBUaGUgbW9kdWxlIGNhY2hlXG4gXHR2YXIgaW5zdGFsbGVkTW9kdWxlcyA9IHt9O1xuXG4gXHQvLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuIFx0ZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXG4gXHRcdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuIFx0XHRpZihpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSkge1xuIFx0XHRcdHJldHVybiBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXS5leHBvcnRzO1xuIFx0XHR9XG4gXHRcdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG4gXHRcdHZhciBtb2R1bGUgPSBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSA9IHtcbiBcdFx0XHRpOiBtb2R1bGVJZCxcbiBcdFx0XHRsOiBmYWxzZSxcbiBcdFx0XHRleHBvcnRzOiB7fVxuIFx0XHR9O1xuXG4gXHRcdC8vIEV4ZWN1dGUgdGhlIG1vZHVsZSBmdW5jdGlvblxuIFx0XHRtb2R1bGVzW21vZHVsZUlkXS5jYWxsKG1vZHVsZS5leHBvcnRzLCBtb2R1bGUsIG1vZHVsZS5leHBvcnRzLCBfX3dlYnBhY2tfcmVxdWlyZV9fKTtcblxuIFx0XHQvLyBGbGFnIHRoZSBtb2R1bGUgYXMgbG9hZGVkXG4gXHRcdG1vZHVsZS5sID0gdHJ1ZTtcblxuIFx0XHQvLyBSZXR1cm4gdGhlIGV4cG9ydHMgb2YgdGhlIG1vZHVsZVxuIFx0XHRyZXR1cm4gbW9kdWxlLmV4cG9ydHM7XG4gXHR9XG5cblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGVzIG9iamVjdCAoX193ZWJwYWNrX21vZHVsZXNfXylcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubSA9IG1vZHVsZXM7XG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlIGNhY2hlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmMgPSBpbnN0YWxsZWRNb2R1bGVzO1xuXG4gXHQvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9uIGZvciBoYXJtb255IGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uZCA9IGZ1bmN0aW9uKGV4cG9ydHMsIG5hbWUsIGdldHRlcikge1xuIFx0XHRpZighX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIG5hbWUpKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIG5hbWUsIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBnZXR0ZXIgfSk7XG4gXHRcdH1cbiBcdH07XG5cbiBcdC8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uciA9IGZ1bmN0aW9uKGV4cG9ydHMpIHtcbiBcdFx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG4gXHRcdH1cbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbiBcdH07XG5cbiBcdC8vIGNyZWF0ZSBhIGZha2UgbmFtZXNwYWNlIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDE6IHZhbHVlIGlzIGEgbW9kdWxlIGlkLCByZXF1aXJlIGl0XG4gXHQvLyBtb2RlICYgMjogbWVyZ2UgYWxsIHByb3BlcnRpZXMgb2YgdmFsdWUgaW50byB0aGUgbnNcbiBcdC8vIG1vZGUgJiA0OiByZXR1cm4gdmFsdWUgd2hlbiBhbHJlYWR5IG5zIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDh8MTogYmVoYXZlIGxpa2UgcmVxdWlyZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy50ID0gZnVuY3Rpb24odmFsdWUsIG1vZGUpIHtcbiBcdFx0aWYobW9kZSAmIDEpIHZhbHVlID0gX193ZWJwYWNrX3JlcXVpcmVfXyh2YWx1ZSk7XG4gXHRcdGlmKG1vZGUgJiA4KSByZXR1cm4gdmFsdWU7XG4gXHRcdGlmKChtb2RlICYgNCkgJiYgdHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAmJiB2YWx1ZS5fX2VzTW9kdWxlKSByZXR1cm4gdmFsdWU7XG4gXHRcdHZhciBucyA9IE9iamVjdC5jcmVhdGUobnVsbCk7XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18ucihucyk7XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShucywgJ2RlZmF1bHQnLCB7IGVudW1lcmFibGU6IHRydWUsIHZhbHVlOiB2YWx1ZSB9KTtcbiBcdFx0aWYobW9kZSAmIDIgJiYgdHlwZW9mIHZhbHVlICE9ICdzdHJpbmcnKSBmb3IodmFyIGtleSBpbiB2YWx1ZSkgX193ZWJwYWNrX3JlcXVpcmVfXy5kKG5zLCBrZXksIGZ1bmN0aW9uKGtleSkgeyByZXR1cm4gdmFsdWVba2V5XTsgfS5iaW5kKG51bGwsIGtleSkpO1xuIFx0XHRyZXR1cm4gbnM7XG4gXHR9O1xuXG4gXHQvLyBnZXREZWZhdWx0RXhwb3J0IGZ1bmN0aW9uIGZvciBjb21wYXRpYmlsaXR5IHdpdGggbm9uLWhhcm1vbnkgbW9kdWxlc1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5uID0gZnVuY3Rpb24obW9kdWxlKSB7XG4gXHRcdHZhciBnZXR0ZXIgPSBtb2R1bGUgJiYgbW9kdWxlLl9fZXNNb2R1bGUgP1xuIFx0XHRcdGZ1bmN0aW9uIGdldERlZmF1bHQoKSB7IHJldHVybiBtb2R1bGVbJ2RlZmF1bHQnXTsgfSA6XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0TW9kdWxlRXhwb3J0cygpIHsgcmV0dXJuIG1vZHVsZTsgfTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kKGdldHRlciwgJ2EnLCBnZXR0ZXIpO1xuIFx0XHRyZXR1cm4gZ2V0dGVyO1xuIFx0fTtcblxuIFx0Ly8gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSBmdW5jdGlvbihvYmplY3QsIHByb3BlcnR5KSB7IHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqZWN0LCBwcm9wZXJ0eSk7IH07XG5cbiBcdC8vIF9fd2VicGFja19wdWJsaWNfcGF0aF9fXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnAgPSBcIlwiO1xuXG5cbiBcdC8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuIFx0cmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oX193ZWJwYWNrX3JlcXVpcmVfXy5zID0gXCIuL3NyYy9pbmRleC5qc1wiKTtcbiIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjEgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRsZXQgeCA9IDE7XG5cdFx0XHRjb25zdCB5ID0gMztcblx0XHRcdHggJiY9IHk7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XHR4LFxuXHRcdFx0XHQxXzAwMF8wMDBfMDAwLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Ly8gY2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
 `;
 
 exports[`Webpack 4 Loader + Minification minify with custom implementation 1`] = `"export function foo() { return \\"MY_CUSTOM_ESBUILD_IMPLEMENTATION\\"; }"`;
 
 exports[`Webpack 4 Loader + Minification minifyIdentifiers 1`] = `
-"module.exports = function(O) {
-  var u = {};
-  function o(t) {
-    if (u[t]) {
-      return u[t].exports;
+"module.exports = function(v) {
+  var f = {};
+  function o(r) {
+    if (f[r]) {
+      return f[r].exports;
     }
-    var f = u[t] = {
-      i: t,
+    var s = f[r] = {
+      i: r,
       l: false,
       exports: {}
     };
-    O[t].call(f.exports, f, f.exports, o);
-    f.l = true;
-    return f.exports;
+    v[r].call(s.exports, s, s.exports, o);
+    s.l = true;
+    return s.exports;
   }
-  o.m = O;
-  o.c = u;
-  o.d = function(t, f, s) {
-    if (!o.o(t, f)) {
-      Object.defineProperty(t, f, {enumerable: true, get: s});
+  o.m = v;
+  o.c = f;
+  o.d = function(r, s, a) {
+    if (!o.o(r, s)) {
+      Object.defineProperty(r, s, { enumerable: true, get: a });
     }
   };
-  o.r = function(t) {
+  o.r = function(r) {
     if (typeof Symbol !== \\"undefined\\" && Symbol.toStringTag) {
-      Object.defineProperty(t, Symbol.toStringTag, {value: \\"Module\\"});
+      Object.defineProperty(r, Symbol.toStringTag, { value: \\"Module\\" });
     }
-    Object.defineProperty(t, \\"__esModule\\", {value: true});
+    Object.defineProperty(r, \\"__esModule\\", { value: true });
   };
-  o.t = function(t, f) {
-    if (f & 1)
-      t = o(t);
-    if (f & 8)
-      return t;
-    if (f & 4 && typeof t === \\"object\\" && t && t.__esModule)
-      return t;
-    var s = Object.create(null);
-    o.r(s);
-    Object.defineProperty(s, \\"default\\", {enumerable: true, value: t});
-    if (f & 2 && typeof t != \\"string\\")
-      for (var d in t)
-        o.d(s, d, function(j) {
-          return t[j];
-        }.bind(null, d));
+  o.t = function(r, s) {
+    if (s & 1)
+      r = o(r);
+    if (s & 8)
+      return r;
+    if (s & 4 && typeof r === \\"object\\" && r && r.__esModule)
+      return r;
+    var a = Object.create(null);
+    o.r(a);
+    Object.defineProperty(a, \\"default\\", { enumerable: true, value: r });
+    if (s & 2 && typeof r != \\"string\\")
+      for (var l in r)
+        o.d(a, l, function(O) {
+          return r[O];
+        }.bind(null, l));
+    return a;
+  };
+  o.n = function(r) {
+    var s = r && r.__esModule ? function a() {
+      return r[\\"default\\"];
+    } : function a() {
+      return r;
+    };
+    o.d(s, \\"a\\", s);
     return s;
   };
-  o.n = function(t) {
-    var f = t && t.__esModule ? function s() {
-      return t[\\"default\\"];
-    } : function s() {
-      return t;
-    };
-    o.d(f, \\"a\\", f);
-    return f;
-  };
-  o.o = function(t, f) {
-    return Object.prototype.hasOwnProperty.call(t, f);
+  o.o = function(r, s) {
+    return Object.prototype.hasOwnProperty.call(r, s);
   };
   o.p = \\"\\";
   return o(o.s = \\"./src/index.js\\");
 }({
-  \\"./src/index.js\\": function(O, u, o) {
+  \\"./src/index.js\\": function(v, f, o) {
     \\"use strict\\";
-    o.r(u);
-    o.d(u, \\"es2016\\", function() {
+    o.r(f);
+    o.d(f, \\"es2016\\", function() {
       return m;
     });
-    o.d(u, \\"es2017\\", function() {
-      return W;
-    });
-    o.d(u, \\"es2018\\", function() {
-      return w;
-    });
-    o.d(u, \\"es2019\\", function() {
+    o.d(f, \\"es2017\\", function() {
       return E;
     });
-    o.d(u, \\"es2020\\", function() {
+    o.d(f, \\"es2018\\", function() {
+      return W;
+    });
+    o.d(f, \\"es2019\\", function() {
+      return b;
+    });
+    o.d(f, \\"es2020\\", function() {
       return T;
     });
-    o.d(u, \\"esnext\\", function() {
+    o.d(f, \\"es2021\\", function() {
+      return w;
+    });
+    o.d(f, \\"esnext\\", function() {
       return z;
     });
-    var t = Object.defineProperty;
-    var f = Object.prototype.hasOwnProperty;
+    var r = Object.defineProperty;
     var s = Object.getOwnPropertySymbols;
-    var d = Object.prototype.propertyIsEnumerable;
-    var j = Math.pow;
-    var P = (r, n, e) => n in r ? t(r, n, {enumerable: true, configurable: true, writable: true, value: e}) : r[n] = e;
-    var g = (r, n) => {
+    var a = Object.prototype.hasOwnProperty;
+    var l = Object.prototype.propertyIsEnumerable;
+    var O = Math.pow;
+    var h = (t, n, e) => n in t ? r(t, n, { enumerable: true, configurable: true, writable: true, value: e }) : t[n] = e;
+    var g = (t, n) => {
       for (var e in n || (n = {}))
-        if (f.call(n, e))
-          P(r, e, n[e]);
+        if (a.call(n, e))
+          h(t, e, n[e]);
       if (s)
         for (var e of s(n)) {
-          if (d.call(n, e))
-            P(r, e, n[e]);
+          if (l.call(n, e))
+            h(t, e, n[e]);
         }
-      return r;
+      return t;
     };
-    var S = (r, n) => {
+    var M = (t, n) => {
       var e = {};
-      for (var i in r)
-        if (f.call(r, i) && n.indexOf(i) < 0)
-          e[i] = r[i];
-      if (r != null && s)
-        for (var i of s(r)) {
-          if (n.indexOf(i) < 0 && d.call(r, i))
-            e[i] = r[i];
+      for (var i in t)
+        if (a.call(t, i) && n.indexOf(i) < 0)
+          e[i] = t[i];
+      if (t != null && s)
+        for (var i of s(t)) {
+          if (n.indexOf(i) < 0 && l.call(t, i))
+            e[i] = t[i];
         }
       return e;
     };
-    var h = (r, n, e) => {
-      P(r, typeof n !== \\"symbol\\" ? n + \\"\\" : n, e);
+    var x = (t, n, e) => {
+      h(t, typeof n !== \\"symbol\\" ? n + \\"\\" : n, e);
       return e;
     };
-    var D = (r, n, e) => {
-      return new Promise((i, y) => {
-        var p = (c) => {
+    var P = (t, n, e) => {
+      if (n.has(t))
+        throw TypeError(\\"Cannot add the same private member more than once\\");
+      n instanceof WeakSet ? n.add(t) : n.set(t, e);
+    };
+    var A = (t, n, e) => {
+      return new Promise((i, d) => {
+        var p = (u) => {
           try {
-            l(e.next(c));
-          } catch (a) {
-            y(a);
+            c(e.next(u));
+          } catch (j) {
+            d(j);
           }
         };
-        var v = (c) => {
+        var y = (u) => {
           try {
-            l(e.throw(c));
-          } catch (a) {
-            y(a);
+            c(e.throw(u));
+          } catch (j) {
+            d(j);
           }
         };
-        var l = (c) => c.done ? i(c.value) : Promise.resolve(c.value).then(p, v);
-        l((e = e.apply(r, n)).next());
+        var c = (u) => u.done ? i(u.value) : Promise.resolve(u.value).then(p, y);
+        c((e = e.apply(t, n)).next());
       });
     };
-    const M = {};
-    const m = j(10, 4);
-    const W = \\"function\\";
-    const w = (() => {
-      const r = {a: 1};
-      let n = g({}, r);
-      let e = S(r, []);
+    const S = {};
+    const m = O(10, 4);
+    const E = \\"function\\";
+    const W = (() => {
+      const t = { a: 1 };
+      let n = g({}, t);
+      let e = M(t, []);
       return e;
     })();
-    const E = (() => {
+    const b = (() => {
       try {
         return \\"try\\";
-      } catch (r) {
+      } catch (t) {
       }
     })();
     const T = (() => {
-      var r;
+      var t;
       const n = {
         property: 1
       };
       return [
         n == null ? void 0 : n.property,
-        (r = n.prop) != null ? r : 2,
-        M
+        (t = n.prop) != null ? t : 2,
+        S
+      ];
+    })();
+    const w = (() => {
+      let t;
+      let n = 1;
+      const e = 3;
+      n && (n = e);
+      return [
+        t != null ? t : t = 2,
+        n,
+        1e9
       ];
     })();
     const z = (() => {
-      var r, n, e, i, y, p, v, l, c, a, b;
-      let x;
+      var t, n, e, i, d, p, y, c;
       return [
         class {
           constructor() {
-            h(this, \\"x\\", 2);
+            x(this, \\"x\\", 2);
           }
         },
-        (r = class {
-        }, h(r, \\"x\\", 1), r),
+        (t = class {
+        }, x(t, \\"x\\", 1), t),
         (i = class {
           constructor() {
-            n.add(this);
+            P(this, n);
           }
         }, n = new WeakSet(), e = function() {
         }, i),
         (p = class {
           constructor() {
-            y.set(this, void 0);
+            P(this, d, void 0);
           }
-        }, y = new WeakMap(), p),
-        (l = class {
-        }, v = new WeakSet(), c = function() {
-        }, v.add(l), l),
-        (a = class {
-        }, b = new WeakMap(), b.set(a, void 0), a),
-        x != null ? x : x = 2
+        }, d = new WeakMap(), p),
+        (y = class {
+        }, c = new WeakMap(), P(y, c, void 0), y)
       ];
     })();
   }
@@ -404,14 +427,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
@@ -430,14 +456,14 @@ exports[`Webpack 4 Loader + Minification minifySyntax 1`] = `
     return modules[moduleId].call(module2.exports, module2, module2.exports, __webpack_require__), module2.l = !0, module2.exports;
   }
   return __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
-    __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, {enumerable: !0, get: getter});
+    __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, { enumerable: !0, get: getter });
   }, __webpack_require__.r = function(exports) {
-    typeof Symbol != \\"undefined\\" && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, {value: \\"Module\\"}), Object.defineProperty(exports, \\"__esModule\\", {value: !0});
+    typeof Symbol != \\"undefined\\" && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, { value: \\"Module\\" }), Object.defineProperty(exports, \\"__esModule\\", { value: !0 });
   }, __webpack_require__.t = function(value, mode) {
     if (mode & 1 && (value = __webpack_require__(value)), mode & 8 || mode & 4 && typeof value == \\"object\\" && value && value.__esModule)
       return value;
     var ns = Object.create(null);
-    if (__webpack_require__.r(ns), Object.defineProperty(ns, \\"default\\", {enumerable: !0, value}), mode & 2 && typeof value != \\"string\\")
+    if (__webpack_require__.r(ns), Object.defineProperty(ns, \\"default\\", { enumerable: !0, value }), mode & 2 && typeof value != \\"string\\")
       for (var key in value)
         __webpack_require__.d(ns, key, function(key2) {
           return value[key2];
@@ -466,10 +492,12 @@ exports[`Webpack 4 Loader + Minification minifySyntax 1`] = `
       return es2019;
     }), __webpack_require__.d(__webpack_exports__, \\"es2020\\", function() {
       return es2020;
+    }), __webpack_require__.d(__webpack_exports__, \\"es2021\\", function() {
+      return es2021;
     }), __webpack_require__.d(__webpack_exports__, \\"esnext\\", function() {
       return esnext;
     });
-    var __defProp = Object.defineProperty, __hasOwnProp = Object.prototype.hasOwnProperty, __getOwnPropSymbols = Object.getOwnPropertySymbols, __propIsEnum = Object.prototype.propertyIsEnumerable, __pow = Math.pow, __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: !0, configurable: !0, writable: !0, value}) : obj[key] = value, __objSpread = (a, b) => {
+    var __defProp = Object.defineProperty, __getOwnPropSymbols = Object.getOwnPropertySymbols, __hasOwnProp = Object.prototype.hasOwnProperty, __propIsEnum = Object.prototype.propertyIsEnumerable, __pow = Math.pow, __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: !0, configurable: !0, writable: !0, value }) : obj[key] = value, __spreadValues = (a, b) => {
       for (var prop in b || (b = {}))
         __hasOwnProp.call(b, prop) && __defNormalProp(a, prop, b[prop]);
       if (__getOwnPropSymbols)
@@ -484,7 +512,11 @@ exports[`Webpack 4 Loader + Minification minifySyntax 1`] = `
         for (var prop of __getOwnPropSymbols(source))
           exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop) && (target[prop] = source[prop]);
       return target;
-    }, __publicField = (obj, key, value) => (__defNormalProp(obj, typeof key != \\"symbol\\" ? key + \\"\\" : key, value), value), __async = (__this, __arguments, generator) => new Promise((resolve, reject) => {
+    }, __publicField = (obj, key, value) => (__defNormalProp(obj, typeof key != \\"symbol\\" ? key + \\"\\" : key, value), value), __privateAdd = (obj, member, value) => {
+      if (member.has(obj))
+        throw TypeError(\\"Cannot add the same private member more than once\\");
+      member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+    }, __async = (__this, __arguments, generator) => new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
           step(generator.next(value));
@@ -501,8 +533,8 @@ exports[`Webpack 4 Loader + Minification minifySyntax 1`] = `
       step((generator = generator.apply(__this, __arguments)).next());
     });
     const import_meta = {}, es2016 = __pow(10, 4), es2017 = \\"function\\", es2018 = (() => {
-      const y = {a: 1};
-      let x = __objSpread({}, y);
+      const y = { a: 1 };
+      let x = __spreadValues({}, y);
       return __objRest(y, []);
     })(), es2019 = (() => {
       try {
@@ -519,9 +551,15 @@ exports[`Webpack 4 Loader + Minification minifySyntax 1`] = `
         (_a = obj.prop) != null ? _a : 2,
         import_meta
       ];
+    })(), es2021 = (() => {
+      let a, x = 1;
+      return x && (x = 3), [
+        a != null ? a : a = 2,
+        x,
+        1e9
+      ];
     })(), esnext = (() => {
-      var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
-      let a;
+      var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
       return [
         class {
           constructor() {
@@ -532,21 +570,17 @@ exports[`Webpack 4 Loader + Minification minifySyntax 1`] = `
         }, __publicField(_a, \\"x\\", 1), _a),
         (_b = class {
           constructor() {
-            _x.add(this);
+            __privateAdd(this, _x);
           }
         }, _x = new WeakSet(), x_fn = function() {
         }, _b),
         (_c = class {
           constructor() {
-            _x2.set(this, void 0);
+            __privateAdd(this, _x2, void 0);
           }
         }, _x2 = new WeakMap(), _c),
         (_d = class {
-        }, _x3 = new WeakSet(), x_fn2 = function() {
-        }, _x3.add(_d), _d),
-        (_e = class {
-        }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-        a != null ? a : a = 2
+        }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
       ];
     })();
   }
@@ -567,20 +601,23 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
 
 exports[`Webpack 4 Loader + Minification minifyWhitespace 1`] = `
-"module.exports=function(modules){var installedModules={};function __webpack_require__(moduleId){if(installedModules[moduleId]){return installedModules[moduleId].exports}var module2=installedModules[moduleId]={i:moduleId,l:false,exports:{}};modules[moduleId].call(module2.exports,module2,module2.exports,__webpack_require__);module2.l=true;return module2.exports}__webpack_require__.m=modules;__webpack_require__.c=installedModules;__webpack_require__.d=function(exports,name,getter){if(!__webpack_require__.o(exports,name)){Object.defineProperty(exports,name,{enumerable:true,get:getter})}};__webpack_require__.r=function(exports){if(typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag){Object.defineProperty(exports,Symbol.toStringTag,{value:\\"Module\\"})}Object.defineProperty(exports,\\"__esModule\\",{value:true})};__webpack_require__.t=function(value,mode){if(mode&1)value=__webpack_require__(value);if(mode&8)return value;if(mode&4&&typeof value===\\"object\\"&&value&&value.__esModule)return value;var ns=Object.create(null);__webpack_require__.r(ns);Object.defineProperty(ns,\\"default\\",{enumerable:true,value});if(mode&2&&typeof value!=\\"string\\")for(var key in value)__webpack_require__.d(ns,key,function(key2){return value[key2]}.bind(null,key));return ns};__webpack_require__.n=function(module2){var getter=module2&&module2.__esModule?function getDefault(){return module2[\\"default\\"]}:function getModuleExports(){return module2};__webpack_require__.d(getter,\\"a\\",getter);return getter};__webpack_require__.o=function(object,property){return Object.prototype.hasOwnProperty.call(object,property)};__webpack_require__.p=\\"\\";return __webpack_require__(__webpack_require__.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(module2,__webpack_exports__,__webpack_require__){\\"use strict\\";__webpack_require__.r(__webpack_exports__);__webpack_require__.d(__webpack_exports__,\\"es2016\\",function(){return es2016});__webpack_require__.d(__webpack_exports__,\\"es2017\\",function(){return es2017});__webpack_require__.d(__webpack_exports__,\\"es2018\\",function(){return es2018});__webpack_require__.d(__webpack_exports__,\\"es2019\\",function(){return es2019});__webpack_require__.d(__webpack_exports__,\\"es2020\\",function(){return es2020});__webpack_require__.d(__webpack_exports__,\\"esnext\\",function(){return esnext});var __defProp=Object.defineProperty;var __hasOwnProp=Object.prototype.hasOwnProperty;var __getOwnPropSymbols=Object.getOwnPropertySymbols;var __propIsEnum=Object.prototype.propertyIsEnumerable;var __pow=Math.pow;var __defNormalProp=(obj,key,value)=>key in obj?__defProp(obj,key,{enumerable:true,configurable:true,writable:true,value}):obj[key]=value;var __objSpread=(a,b)=>{for(var prop in b||(b={}))if(__hasOwnProp.call(b,prop))__defNormalProp(a,prop,b[prop]);if(__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(b)){if(__propIsEnum.call(b,prop))__defNormalProp(a,prop,b[prop])}return a};var __objRest=(source,exclude)=>{var target={};for(var prop in source)if(__hasOwnProp.call(source,prop)&&exclude.indexOf(prop)<0)target[prop]=source[prop];if(source!=null&&__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(source)){if(exclude.indexOf(prop)<0&&__propIsEnum.call(source,prop))target[prop]=source[prop]}return target};var __publicField=(obj,key,value)=>{__defNormalProp(obj,typeof key!==\\"symbol\\"?key+\\"\\":key,value);return value};var __async=(__this,__arguments,generator)=>{return new Promise((resolve,reject)=>{var fulfilled=value=>{try{step(generator.next(value))}catch(e){reject(e)}};var rejected=value=>{try{step(generator.throw(value))}catch(e){reject(e)}};var step=x=>x.done?resolve(x.value):Promise.resolve(x.value).then(fulfilled,rejected);step((generator=generator.apply(__this,__arguments)).next())})};const import_meta={};const es2016=__pow(10,4);const es2017=\\"function\\";const es2018=(()=>{const y={a:1};let x=__objSpread({},y);let z=__objRest(y,[]);return z})();const es2019=(()=>{try{return\\"try\\"}catch(e){}})();const es2020=(()=>{var _a;const obj={property:1};return[obj==null?void 0:obj.property,(_a=obj.prop)!=null?_a:2,import_meta]})();const esnext=(()=>{var _a,_x,x_fn,_b,_x2,_c,_x3,_d,x_fn2,_e,_x4;let a;return[class{constructor(){__publicField(this,\\"x\\",2)}},(_a=class{},__publicField(_a,\\"x\\",1),_a),(_b=class{constructor(){_x.add(this)}},_x=new WeakSet,x_fn=function(){},_b),(_c=class{constructor(){_x2.set(this,void 0)}},_x2=new WeakMap,_c),(_d=class{},_x3=new WeakSet,x_fn2=function(){},_x3.add(_d),_d),(_e=class{},_x4=new WeakMap,_x4.set(_e,void 0),_e),a!=null?a:a=2]})()}});
+"module.exports=function(modules){var installedModules={};function __webpack_require__(moduleId){if(installedModules[moduleId]){return installedModules[moduleId].exports}var module2=installedModules[moduleId]={i:moduleId,l:false,exports:{}};modules[moduleId].call(module2.exports,module2,module2.exports,__webpack_require__);module2.l=true;return module2.exports}__webpack_require__.m=modules;__webpack_require__.c=installedModules;__webpack_require__.d=function(exports,name,getter){if(!__webpack_require__.o(exports,name)){Object.defineProperty(exports,name,{enumerable:true,get:getter})}};__webpack_require__.r=function(exports){if(typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag){Object.defineProperty(exports,Symbol.toStringTag,{value:\\"Module\\"})}Object.defineProperty(exports,\\"__esModule\\",{value:true})};__webpack_require__.t=function(value,mode){if(mode&1)value=__webpack_require__(value);if(mode&8)return value;if(mode&4&&typeof value===\\"object\\"&&value&&value.__esModule)return value;var ns=Object.create(null);__webpack_require__.r(ns);Object.defineProperty(ns,\\"default\\",{enumerable:true,value});if(mode&2&&typeof value!=\\"string\\")for(var key in value)__webpack_require__.d(ns,key,function(key2){return value[key2]}.bind(null,key));return ns};__webpack_require__.n=function(module2){var getter=module2&&module2.__esModule?function getDefault(){return module2[\\"default\\"]}:function getModuleExports(){return module2};__webpack_require__.d(getter,\\"a\\",getter);return getter};__webpack_require__.o=function(object,property){return Object.prototype.hasOwnProperty.call(object,property)};__webpack_require__.p=\\"\\";return __webpack_require__(__webpack_require__.s=\\"./src/index.js\\")}({\\"./src/index.js\\":function(module2,__webpack_exports__,__webpack_require__){\\"use strict\\";__webpack_require__.r(__webpack_exports__);__webpack_require__.d(__webpack_exports__,\\"es2016\\",function(){return es2016});__webpack_require__.d(__webpack_exports__,\\"es2017\\",function(){return es2017});__webpack_require__.d(__webpack_exports__,\\"es2018\\",function(){return es2018});__webpack_require__.d(__webpack_exports__,\\"es2019\\",function(){return es2019});__webpack_require__.d(__webpack_exports__,\\"es2020\\",function(){return es2020});__webpack_require__.d(__webpack_exports__,\\"es2021\\",function(){return es2021});__webpack_require__.d(__webpack_exports__,\\"esnext\\",function(){return esnext});var __defProp=Object.defineProperty;var __getOwnPropSymbols=Object.getOwnPropertySymbols;var __hasOwnProp=Object.prototype.hasOwnProperty;var __propIsEnum=Object.prototype.propertyIsEnumerable;var __pow=Math.pow;var __defNormalProp=(obj,key,value)=>key in obj?__defProp(obj,key,{enumerable:true,configurable:true,writable:true,value}):obj[key]=value;var __spreadValues=(a,b)=>{for(var prop in b||(b={}))if(__hasOwnProp.call(b,prop))__defNormalProp(a,prop,b[prop]);if(__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(b)){if(__propIsEnum.call(b,prop))__defNormalProp(a,prop,b[prop])}return a};var __objRest=(source,exclude)=>{var target={};for(var prop in source)if(__hasOwnProp.call(source,prop)&&exclude.indexOf(prop)<0)target[prop]=source[prop];if(source!=null&&__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(source)){if(exclude.indexOf(prop)<0&&__propIsEnum.call(source,prop))target[prop]=source[prop]}return target};var __publicField=(obj,key,value)=>{__defNormalProp(obj,typeof key!==\\"symbol\\"?key+\\"\\":key,value);return value};var __privateAdd=(obj,member,value)=>{if(member.has(obj))throw TypeError(\\"Cannot add the same private member more than once\\");member instanceof WeakSet?member.add(obj):member.set(obj,value)};var __async=(__this,__arguments,generator)=>{return new Promise((resolve,reject)=>{var fulfilled=value=>{try{step(generator.next(value))}catch(e){reject(e)}};var rejected=value=>{try{step(generator.throw(value))}catch(e){reject(e)}};var step=x=>x.done?resolve(x.value):Promise.resolve(x.value).then(fulfilled,rejected);step((generator=generator.apply(__this,__arguments)).next())})};const import_meta={};const es2016=__pow(10,4);const es2017=\\"function\\";const es2018=(()=>{const y={a:1};let x=__spreadValues({},y);let z=__objRest(y,[]);return z})();const es2019=(()=>{try{return\\"try\\"}catch(e){}})();const es2020=(()=>{var _a;const obj={property:1};return[obj==null?void 0:obj.property,(_a=obj.prop)!=null?_a:2,import_meta]})();const es2021=(()=>{let a;let x=1;const y=3;x&&(x=y);return[a!=null?a:a=2,x,1e9]})();const esnext=(()=>{var _a,_x,x_fn,_b,_x2,_c,_d,_x3;return[class{constructor(){__publicField(this,\\"x\\",2)}},(_a=class{},__publicField(_a,\\"x\\",1),_a),(_b=class{constructor(){__privateAdd(this,_x)}},_x=new WeakSet,x_fn=function(){},_b),(_c=class{constructor(){__privateAdd(this,_x2,void 0)}},_x2=new WeakMap,_c),(_d=class{},_x3=new WeakMap,__privateAdd(_d,_x3,void 0),_d)]})()}});
 "
 `;
 
@@ -597,20 +634,23 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
 
 exports[`Webpack 5 Loader + Minification minify 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v!=null?v:v=2]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e!=null?e:e=2,r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 "
 `;
 
@@ -627,14 +667,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
@@ -718,19 +761,19 @@ exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ devtool inline-source-map 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v??(v=2)]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e??(e=2),r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJtQkFDQSxHQUFJLEdBQXNCLEcsTUNBMUIsRUFBb0IsRUFBSSxDQUFDLEVBQVMsSUFBZSxDQUNoRCxPQUFRLEtBQU8sR0FDWCxFQUFvQixFQUFFLEVBQVksSUFBUSxDQUFDLEVBQW9CLEVBQUUsRUFBUyxJQUM1RSxPQUFPLGVBQWUsRUFBUyxFQUFLLENBQUUsV0FBWSxHQUFNLElBQUssRUFBVyxVLE1DSjNFLEVBQW9CLEVBQUksQ0FBQyxFQUFLLElBQVUsT0FBTyxVQUFVLGVBQWUsS0FBSyxFQUFLLE8sTUNDbEYsRUFBb0IsRUFBSyxHQUFZLENBQ2pDLE1BQU8sU0FBVyxhQUFlLE9BQU8sYUFDMUMsT0FBTyxlQUFlLEVBQVMsT0FBTyxZQUFhLENBQUUsTUFBTyxXQUU3RCxPQUFPLGVBQWUsRUFBUyxhQUFjLENBQUUsTUFBTyxVLHMxQkNMdkQsV0FDZSxFQUFTLEtBQU0sR0FFZixFQUFTLFdBRVQsRUFBVyxLQUFLLENBQzVCLEtBQU0sR0FBSSxDQUFFLEVBQUcsR0FDZixHQUFJLEdBQUksS0FBSSxHQUVaLE1BRFEsR0FBSyxFQUFMLFFBSUksRUFBVyxLQUFLLENBQzVCLEdBQUksQ0FDSCxNQUFPLFlBQ0EsRUFEQSxPQUlJLEVBQVcsS0FBSyxDQWxCL0IsTUFtQkcsS0FBTSxHQUFNLENBQ1gsU0FBVSxHQUVYLE1BQU8sQ0FDTixpQkFBSyxTQUNMLEtBQUksT0FBSixPQUFZLEVBQ1osT0FJVyxFQUFXLEtBQUssQ0E3Qi9CLDBCQThCRyxHQUFJLEdBQ0osTUFBTyxDQUNOLEtBQU0sQ0FBTixhQWhDSixDQWdDWSxXQUFJLEtBQ1osUUFBTSxHQUFTLEVBQWYsRUFBZSxJQUFJLEdBQW5CLEdBQ0EsUUFBTSxDQUFOLGFBbENKLENBa0NZLDhCQUFFLFVBQUcsR0FBYixHQUNBLFFBQU0sQ0FBTixhQW5DSixDQW1DWSxtQ0FBUixHQUNBLFFBQU0sR0FBUyxnQkFBRSxVQUFHLEdBQUwsTUFBZixNQUNBLFFBQU0sR0FBUyxvQkFBZixFQUFlLFFBQWYsR0FDQSxNQUFNLFEiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUaGUgcmVxdWlyZSBzY29wZVxudmFyIF9fd2VicGFja19yZXF1aXJlX18gPSB7fTtcblxuIiwiLy8gZGVmaW5lIGdldHRlciBmdW5jdGlvbnMgZm9yIGhhcm1vbnkgZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5kID0gKGV4cG9ydHMsIGRlZmluaXRpb24pID0+IHtcblx0Zm9yKHZhciBrZXkgaW4gZGVmaW5pdGlvbikge1xuXHRcdGlmKF9fd2VicGFja19yZXF1aXJlX18ubyhkZWZpbml0aW9uLCBrZXkpICYmICFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywga2V5KSkge1xuXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIGtleSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGRlZmluaXRpb25ba2V5XSB9KTtcblx0XHR9XG5cdH1cbn07IiwiX193ZWJwYWNrX3JlcXVpcmVfXy5vID0gKG9iaiwgcHJvcCkgPT4gKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIHByb3ApKSIsIi8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uciA9IChleHBvcnRzKSA9PiB7XG5cdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuXHR9XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG59OyIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJtQkFDQSxHQUFJLEdBQXNCLEcsTUNBMUIsRUFBb0IsRUFBSSxDQUFDLEVBQVMsSUFBZSxDQUNoRCxPQUFRLEtBQU8sR0FDWCxFQUFvQixFQUFFLEVBQVksSUFBUSxDQUFDLEVBQW9CLEVBQUUsRUFBUyxJQUM1RSxPQUFPLGVBQWUsRUFBUyxFQUFLLENBQUUsV0FBWSxHQUFNLElBQUssRUFBVyxVLE1DSjNFLEVBQW9CLEVBQUksQ0FBQyxFQUFLLElBQVUsT0FBTyxVQUFVLGVBQWUsS0FBSyxFQUFLLE8sTUNDbEYsRUFBb0IsRUFBSyxHQUFZLENBQ2pDLE1BQU8sU0FBVyxhQUFlLE9BQU8sYUFDMUMsT0FBTyxlQUFlLEVBQVMsT0FBTyxZQUFhLENBQUUsTUFBTyxXQUU3RCxPQUFPLGVBQWUsRUFBUyxhQUFjLENBQUUsTUFBTyxVLDArQkNMdkQsV0FDZSxFQUFTLEtBQU0sR0FFZixFQUFTLFdBRVQsRUFBVyxLQUFLLENBQzVCLEtBQU0sR0FBSSxDQUFFLEVBQUcsR0FDZixHQUFJLEdBQUksS0FBSSxHQUVaLE1BRFEsR0FBSyxFQUFMLFFBSUksRUFBVyxLQUFLLENBQzVCLEdBQUksQ0FDSCxNQUFPLFlBQ0EsRUFEQSxPQUlJLEVBQVcsS0FBSyxDQWxCL0IsTUFtQkcsS0FBTSxHQUFNLENBQ1gsU0FBVSxHQUVYLE1BQU8sQ0FDTixpQkFBSyxTQUNMLEtBQUksT0FBSixPQUFZLEVBQ1osT0FJVyxFQUFXLEtBQUssQ0FDNUIsR0FBSSxHQUNBLEVBQUksRUFFUixhQURVLEdBRUgsQ0FDTixNQUFNLEdBQ04sRUFDQSxTQUlXLEVBQVcsS0FBSyxDQXpDL0Isb0JBMENHLE1BQU8sQ0FDTixLQUFNLENBQU4sYUEzQ0osQ0EyQ1ksV0FBSSxLQUNaLFFBQU0sR0FBUyxFQUFmLEVBQWUsSUFBSSxHQUFuQixHQUNBLFFBQU0sQ0FBTixhQTdDSixDQTZDWSw0QkFBRSxVQUFHLEdBQWIsR0FDQSxRQUFNLENBQU4sYUE5Q0osQ0E4Q1ksaUNBQVIsR0FFQSxRQUFNLEdBQVMsZ0JBQWYsRUFBZSxVQUFmLFEiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUaGUgcmVxdWlyZSBzY29wZVxudmFyIF9fd2VicGFja19yZXF1aXJlX18gPSB7fTtcblxuIiwiLy8gZGVmaW5lIGdldHRlciBmdW5jdGlvbnMgZm9yIGhhcm1vbnkgZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5kID0gKGV4cG9ydHMsIGRlZmluaXRpb24pID0+IHtcblx0Zm9yKHZhciBrZXkgaW4gZGVmaW5pdGlvbikge1xuXHRcdGlmKF9fd2VicGFja19yZXF1aXJlX18ubyhkZWZpbml0aW9uLCBrZXkpICYmICFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywga2V5KSkge1xuXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIGtleSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGRlZmluaXRpb25ba2V5XSB9KTtcblx0XHR9XG5cdH1cbn07IiwiX193ZWJwYWNrX3JlcXVpcmVfXy5vID0gKG9iaiwgcHJvcCkgPT4gKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIHByb3ApKSIsIi8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uciA9IChleHBvcnRzKSA9PiB7XG5cdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuXHR9XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG59OyIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjEgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRsZXQgeCA9IDE7XG5cdFx0XHRjb25zdCB5ID0gMztcblx0XHRcdHggJiY9IHk7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XHR4LFxuXHRcdFx0XHQxXzAwMF8wMDBfMDAwLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Ly8gY2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ devtool source-map 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v??(v=2)]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e??(e=2),r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 
 //# sourceMappingURL=index.js.map"
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ no devtool 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v!=null?v:v=2]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e!=null?e:e=2,r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 "
 `;
 
@@ -747,20 +790,23 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ query strings 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v!=null?v:v=2]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e!=null?e:e=2,r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 "
 `;
 
@@ -777,35 +823,38 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ source-map option 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v??(v=2)]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e??(e=2),r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 "
 `;
 
 exports[`Webpack 5 Loader + Minification minify w/ source-map option and source-map plugin external 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v??(v=2)]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e??(e=2),r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 
 //# sourceMappingURL=index.js.map"
 `;
 
-exports[`Webpack 5 Loader + Minification minify w/ source-map option and source-map plugin external 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///./src/foo.js\\"],\\"names\\":[],\\"mappings\\":\\"mBACA,GAAI,GAAsB,G,MCA1B,EAAoB,EAAI,CAAC,EAAS,IAAe,CAChD,OAAQ,KAAO,GACX,EAAoB,EAAE,EAAY,IAAQ,CAAC,EAAoB,EAAE,EAAS,IAC5E,OAAO,eAAe,EAAS,EAAK,CAAE,WAAY,GAAM,IAAK,EAAW,U,MCJ3E,EAAoB,EAAI,CAAC,EAAK,IAAU,OAAO,UAAU,eAAe,KAAK,EAAK,O,MCClF,EAAoB,EAAK,GAAY,CACjC,MAAO,SAAW,aAAe,OAAO,aAC1C,OAAO,eAAe,EAAS,OAAO,YAAa,CAAE,MAAO,WAE7D,OAAO,eAAe,EAAS,aAAc,CAAE,MAAO,U,s1BCLvD,WACe,EAAS,KAAM,GAEf,EAAS,WAET,EAAW,KAAK,CAC5B,KAAM,GAAI,CAAE,EAAG,GACf,GAAI,GAAI,KAAI,GAEZ,MADQ,GAAK,EAAL,QAII,EAAW,KAAK,CAC5B,GAAI,CACH,MAAO,YACA,EADA,OAII,EAAW,KAAK,CAlB/B,MAmBG,KAAM,GAAM,CACX,SAAU,GAEX,MAAO,CACN,iBAAK,SACL,KAAI,OAAJ,OAAY,EACZ,OAIW,EAAW,KAAK,CA7B/B,0BA8BG,GAAI,GACJ,MAAO,CACN,KAAM,CAAN,aAhCJ,CAgCY,WAAI,KACZ,QAAM,GAAS,EAAf,EAAe,IAAI,GAAnB,GACA,QAAM,CAAN,aAlCJ,CAkCY,8BAAE,UAAG,GAAb,GACA,QAAM,CAAN,aAnCJ,CAmCY,mCAAR,GACA,QAAM,GAAS,gBAAE,UAAG,GAAL,MAAf,MACA,QAAM,GAAS,oBAAf,EAAe,QAAf,GACA,MAAM,Q\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"// The require scope\\\\nvar __webpack_require__ = {};\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
+exports[`Webpack 5 Loader + Minification minify w/ source-map option and source-map plugin external 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///./src/foo.js\\"],\\"names\\":[],\\"mappings\\":\\"mBACA,GAAI,GAAsB,G,MCA1B,EAAoB,EAAI,CAAC,EAAS,IAAe,CAChD,OAAQ,KAAO,GACX,EAAoB,EAAE,EAAY,IAAQ,CAAC,EAAoB,EAAE,EAAS,IAC5E,OAAO,eAAe,EAAS,EAAK,CAAE,WAAY,GAAM,IAAK,EAAW,U,MCJ3E,EAAoB,EAAI,CAAC,EAAK,IAAU,OAAO,UAAU,eAAe,KAAK,EAAK,O,MCClF,EAAoB,EAAK,GAAY,CACjC,MAAO,SAAW,aAAe,OAAO,aAC1C,OAAO,eAAe,EAAS,OAAO,YAAa,CAAE,MAAO,WAE7D,OAAO,eAAe,EAAS,aAAc,CAAE,MAAO,U,0+BCLvD,WACe,EAAS,KAAM,GAEf,EAAS,WAET,EAAW,KAAK,CAC5B,KAAM,GAAI,CAAE,EAAG,GACf,GAAI,GAAI,KAAI,GAEZ,MADQ,GAAK,EAAL,QAII,EAAW,KAAK,CAC5B,GAAI,CACH,MAAO,YACA,EADA,OAII,EAAW,KAAK,CAlB/B,MAmBG,KAAM,GAAM,CACX,SAAU,GAEX,MAAO,CACN,iBAAK,SACL,KAAI,OAAJ,OAAY,EACZ,OAIW,EAAW,KAAK,CAC5B,GAAI,GACA,EAAI,EAER,aADU,GAEH,CACN,MAAM,GACN,EACA,SAIW,EAAW,KAAK,CAzC/B,oBA0CG,MAAO,CACN,KAAM,CAAN,aA3CJ,CA2CY,WAAI,KACZ,QAAM,GAAS,EAAf,EAAe,IAAI,GAAnB,GACA,QAAM,CAAN,aA7CJ,CA6CY,4BAAE,UAAG,GAAb,GACA,QAAM,CAAN,aA9CJ,CA8CY,iCAAR,GAEA,QAAM,GAAS,gBAAf,EAAe,UAAf,Q\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"// The require scope\\\\nvar __webpack_require__ = {};\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2021 = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\tlet x = 1;\\\\n\\\\t\\\\t\\\\tconst y = 3;\\\\n\\\\t\\\\t\\\\tx &&= y;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t\\\\tx,\\\\n\\\\t\\\\t\\\\t\\\\t1_000_000_000,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\t// class { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
 
 exports[`Webpack 5 Loader + Minification minify w/ source-map option and source-map plugin inline 1`] = `
-"(()=>{\\"use strict\\";var n={};(()=>{n.d=(e,r)=>{for(var t in r)n.o(r,t)&&!n.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{n.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{n.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var f={};n.r(f),n.d(f,{es2016:()=>S,es2017:()=>j,es2018:()=>g,es2019:()=>M,es2020:()=>W,esnext:()=>z});var w=Object.defineProperty,d=Object.prototype.hasOwnProperty,c=Object.getOwnPropertySymbols,y=Object.prototype.propertyIsEnumerable,O=Math.pow,u=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,P=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&u(e,t,r[t]);if(c)for(var t of c(r))y.call(r,t)&&u(e,t,r[t]);return e},h=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&c)for(var a of c(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},b=(e,r,t)=>(u(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),E=(e,r,t)=>new Promise((a,_)=>{var p=o=>{try{s(t.next(o))}catch(l){_(l)}},i=o=>{try{s(t.throw(o))}catch(l){_(l)}},s=o=>o.done?a(o.value):Promise.resolve(o.value).then(p,i);s((t=t.apply(e,r)).next())});const x={},S=O(10,4),j=\\"function\\",g=(()=>{const e={a:1};let r=P({},e);return h(e,[])})(),M=(()=>{try{return\\"try\\"}catch(e){}})(),W=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,x]})(),z=(()=>{var e,r,t,a,_,p,i,s,o,l,m;let v;return[class{constructor(){b(this,\\"x\\",2)}},(e=class{},b(e,\\"x\\",1),e),(a=class{constructor(){r.add(this)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){_.set(this,void 0)}},_=new WeakMap,p),(s=class{},i=new WeakSet,o=function(){},i.add(s),s),(l=class{},m=new WeakMap,m.set(l,void 0),l),v??(v=2)]})();module.exports=f})();
+"(()=>{\\"use strict\\";var o={};(()=>{o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})}})(),(()=>{o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r)})(),(()=>{o.r=e=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})}})();var i={};o.r(i),o.d(i,{es2016:()=>x,es2017:()=>S,es2018:()=>g,es2019:()=>j,es2020:()=>M,es2021:()=>W,esnext:()=>E});var w=Object.defineProperty,_=Object.getOwnPropertySymbols,d=Object.prototype.hasOwnProperty,y=Object.prototype.propertyIsEnumerable,O=Math.pow,f=(e,r,t)=>r in e?w(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))d.call(r,t)&&f(e,t,r[t]);if(_)for(var t of _(r))y.call(r,t)&&f(e,t,r[t]);return e},b=(e,r)=>{var t={};for(var a in e)d.call(e,a)&&r.indexOf(a)<0&&(t[a]=e[a]);if(e!=null&&_)for(var a of _(e))r.indexOf(a)<0&&y.call(e,a)&&(t[a]=e[a]);return t},h=(e,r,t)=>(f(e,typeof r!=\\"symbol\\"?r+\\"\\":r,t),t),u=(e,r,t)=>{if(r.has(e))throw TypeError(\\"Cannot add the same private member more than once\\");r instanceof WeakSet?r.add(e):r.set(e,t)},T=(e,r,t)=>new Promise((a,l)=>{var p=n=>{try{s(t.next(n))}catch(v){l(v)}},c=n=>{try{s(t.throw(n))}catch(v){l(v)}},s=n=>n.done?a(n.value):Promise.resolve(n.value).then(p,c);s((t=t.apply(e,r)).next())});const P={},x=O(10,4),S=\\"function\\",g=(()=>{const e={a:1};let r=m({},e);return b(e,[])})(),j=(()=>{try{return\\"try\\"}catch(e){}})(),M=(()=>{var e;const r={property:1};return[r==null?void 0:r.property,(e=r.prop)!=null?e:2,P]})(),W=(()=>{let e,r=1;return r&&(r=3),[e??(e=2),r,1e9]})(),E=(()=>{var e,r,t,a,l,p,c,s;return[class{constructor(){h(this,\\"x\\",2)}},(e=class{},h(e,\\"x\\",1),e),(a=class{constructor(){u(this,r)}},r=new WeakSet,t=function(){},a),(p=class{constructor(){u(this,l,void 0)}},l=new WeakMap,p),(c=class{},s=new WeakMap,u(c,s,void 0),c)]})();module.exports=i})();
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJtQkFDQSxHQUFJLEdBQXNCLEcsTUNBMUIsRUFBb0IsRUFBSSxDQUFDLEVBQVMsSUFBZSxDQUNoRCxPQUFRLEtBQU8sR0FDWCxFQUFvQixFQUFFLEVBQVksSUFBUSxDQUFDLEVBQW9CLEVBQUUsRUFBUyxJQUM1RSxPQUFPLGVBQWUsRUFBUyxFQUFLLENBQUUsV0FBWSxHQUFNLElBQUssRUFBVyxVLE1DSjNFLEVBQW9CLEVBQUksQ0FBQyxFQUFLLElBQVUsT0FBTyxVQUFVLGVBQWUsS0FBSyxFQUFLLE8sTUNDbEYsRUFBb0IsRUFBSyxHQUFZLENBQ2pDLE1BQU8sU0FBVyxhQUFlLE9BQU8sYUFDMUMsT0FBTyxlQUFlLEVBQVMsT0FBTyxZQUFhLENBQUUsTUFBTyxXQUU3RCxPQUFPLGVBQWUsRUFBUyxhQUFjLENBQUUsTUFBTyxVLHMxQkNMdkQsV0FDZSxFQUFTLEtBQU0sR0FFZixFQUFTLFdBRVQsRUFBVyxLQUFLLENBQzVCLEtBQU0sR0FBSSxDQUFFLEVBQUcsR0FDZixHQUFJLEdBQUksS0FBSSxHQUVaLE1BRFEsR0FBSyxFQUFMLFFBSUksRUFBVyxLQUFLLENBQzVCLEdBQUksQ0FDSCxNQUFPLFlBQ0EsRUFEQSxPQUlJLEVBQVcsS0FBSyxDQWxCL0IsTUFtQkcsS0FBTSxHQUFNLENBQ1gsU0FBVSxHQUVYLE1BQU8sQ0FDTixpQkFBSyxTQUNMLEtBQUksT0FBSixPQUFZLEVBQ1osT0FJVyxFQUFXLEtBQUssQ0E3Qi9CLDBCQThCRyxHQUFJLEdBQ0osTUFBTyxDQUNOLEtBQU0sQ0FBTixhQWhDSixDQWdDWSxXQUFJLEtBQ1osUUFBTSxHQUFTLEVBQWYsRUFBZSxJQUFJLEdBQW5CLEdBQ0EsUUFBTSxDQUFOLGFBbENKLENBa0NZLDhCQUFFLFVBQUcsR0FBYixHQUNBLFFBQU0sQ0FBTixhQW5DSixDQW1DWSxtQ0FBUixHQUNBLFFBQU0sR0FBUyxnQkFBRSxVQUFHLEdBQUwsTUFBZixNQUNBLFFBQU0sR0FBUyxvQkFBZixFQUFlLFFBQWYsR0FDQSxNQUFNLFEiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUaGUgcmVxdWlyZSBzY29wZVxudmFyIF9fd2VicGFja19yZXF1aXJlX18gPSB7fTtcblxuIiwiLy8gZGVmaW5lIGdldHRlciBmdW5jdGlvbnMgZm9yIGhhcm1vbnkgZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5kID0gKGV4cG9ydHMsIGRlZmluaXRpb24pID0+IHtcblx0Zm9yKHZhciBrZXkgaW4gZGVmaW5pdGlvbikge1xuXHRcdGlmKF9fd2VicGFja19yZXF1aXJlX18ubyhkZWZpbml0aW9uLCBrZXkpICYmICFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywga2V5KSkge1xuXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIGtleSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGRlZmluaXRpb25ba2V5XSB9KTtcblx0XHR9XG5cdH1cbn07IiwiX193ZWJwYWNrX3JlcXVpcmVfXy5vID0gKG9iaiwgcHJvcCkgPT4gKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIHByb3ApKSIsIi8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uciA9IChleHBvcnRzKSA9PiB7XG5cdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuXHR9XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG59OyIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJtQkFDQSxHQUFJLEdBQXNCLEcsTUNBMUIsRUFBb0IsRUFBSSxDQUFDLEVBQVMsSUFBZSxDQUNoRCxPQUFRLEtBQU8sR0FDWCxFQUFvQixFQUFFLEVBQVksSUFBUSxDQUFDLEVBQW9CLEVBQUUsRUFBUyxJQUM1RSxPQUFPLGVBQWUsRUFBUyxFQUFLLENBQUUsV0FBWSxHQUFNLElBQUssRUFBVyxVLE1DSjNFLEVBQW9CLEVBQUksQ0FBQyxFQUFLLElBQVUsT0FBTyxVQUFVLGVBQWUsS0FBSyxFQUFLLE8sTUNDbEYsRUFBb0IsRUFBSyxHQUFZLENBQ2pDLE1BQU8sU0FBVyxhQUFlLE9BQU8sYUFDMUMsT0FBTyxlQUFlLEVBQVMsT0FBTyxZQUFhLENBQUUsTUFBTyxXQUU3RCxPQUFPLGVBQWUsRUFBUyxhQUFjLENBQUUsTUFBTyxVLDArQkNMdkQsV0FDZSxFQUFTLEtBQU0sR0FFZixFQUFTLFdBRVQsRUFBVyxLQUFLLENBQzVCLEtBQU0sR0FBSSxDQUFFLEVBQUcsR0FDZixHQUFJLEdBQUksS0FBSSxHQUVaLE1BRFEsR0FBSyxFQUFMLFFBSUksRUFBVyxLQUFLLENBQzVCLEdBQUksQ0FDSCxNQUFPLFlBQ0EsRUFEQSxPQUlJLEVBQVcsS0FBSyxDQWxCL0IsTUFtQkcsS0FBTSxHQUFNLENBQ1gsU0FBVSxHQUVYLE1BQU8sQ0FDTixpQkFBSyxTQUNMLEtBQUksT0FBSixPQUFZLEVBQ1osT0FJVyxFQUFXLEtBQUssQ0FDNUIsR0FBSSxHQUNBLEVBQUksRUFFUixhQURVLEdBRUgsQ0FDTixNQUFNLEdBQ04sRUFDQSxTQUlXLEVBQVcsS0FBSyxDQXpDL0Isb0JBMENHLE1BQU8sQ0FDTixLQUFNLENBQU4sYUEzQ0osQ0EyQ1ksV0FBSSxLQUNaLFFBQU0sR0FBUyxFQUFmLEVBQWUsSUFBSSxHQUFuQixHQUNBLFFBQU0sQ0FBTixhQTdDSixDQTZDWSw0QkFBRSxVQUFHLEdBQWIsR0FDQSxRQUFNLENBQU4sYUE5Q0osQ0E4Q1ksaUNBQVIsR0FFQSxRQUFNLEdBQVMsZ0JBQWYsRUFBZSxVQUFmLFEiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUaGUgcmVxdWlyZSBzY29wZVxudmFyIF9fd2VicGFja19yZXF1aXJlX18gPSB7fTtcblxuIiwiLy8gZGVmaW5lIGdldHRlciBmdW5jdGlvbnMgZm9yIGhhcm1vbnkgZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5kID0gKGV4cG9ydHMsIGRlZmluaXRpb24pID0+IHtcblx0Zm9yKHZhciBrZXkgaW4gZGVmaW5pdGlvbikge1xuXHRcdGlmKF9fd2VicGFja19yZXF1aXJlX18ubyhkZWZpbml0aW9uLCBrZXkpICYmICFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywga2V5KSkge1xuXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIGtleSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGRlZmluaXRpb25ba2V5XSB9KTtcblx0XHR9XG5cdH1cbn07IiwiX193ZWJwYWNrX3JlcXVpcmVfXy5vID0gKG9iaiwgcHJvcCkgPT4gKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIHByb3ApKSIsIi8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uciA9IChleHBvcnRzKSA9PiB7XG5cdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuXHR9XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG59OyIsIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjEgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRsZXQgeCA9IDE7XG5cdFx0XHRjb25zdCB5ID0gMztcblx0XHRcdHggJiY9IHk7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XHR4LFxuXHRcdFx0XHQxXzAwMF8wMDBfMDAwLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Ly8gY2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
 `;
 
 exports[`Webpack 5 Loader + Minification minify with custom implementation 1`] = `"export function foo() { return \\"MY_CUSTOM_ESBUILD_IMPLEMENTATION\\"; }"`;
@@ -813,107 +862,113 @@ exports[`Webpack 5 Loader + Minification minify with custom implementation 1`] =
 exports[`Webpack 5 Loader + Minification minifyIdentifiers 1`] = `
 "(() => {
   \\"use strict\\";
-  var n = {};
+  var o = {};
   (() => {
-    n.d = (e, r) => {
+    o.d = (e, r) => {
       for (var t in r) {
-        if (n.o(r, t) && !n.o(e, t)) {
-          Object.defineProperty(e, t, {enumerable: true, get: r[t]});
+        if (o.o(r, t) && !o.o(e, t)) {
+          Object.defineProperty(e, t, { enumerable: true, get: r[t] });
         }
       }
     };
   })();
   (() => {
-    n.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r);
+    o.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r);
   })();
   (() => {
-    n.r = (e) => {
+    o.r = (e) => {
       if (typeof Symbol !== \\"undefined\\" && Symbol.toStringTag) {
-        Object.defineProperty(e, Symbol.toStringTag, {value: \\"Module\\"});
+        Object.defineProperty(e, Symbol.toStringTag, { value: \\"Module\\" });
       }
-      Object.defineProperty(e, \\"__esModule\\", {value: true});
+      Object.defineProperty(e, \\"__esModule\\", { value: true });
     };
   })();
-  var f = {};
-  n.r(f);
-  n.d(f, {
-    \\"es2016\\": () => S,
-    \\"es2017\\": () => j,
+  var i = {};
+  o.r(i);
+  o.d(i, {
+    \\"es2016\\": () => x,
+    \\"es2017\\": () => S,
     \\"es2018\\": () => g,
-    \\"es2019\\": () => M,
-    \\"es2020\\": () => W,
+    \\"es2019\\": () => j,
+    \\"es2020\\": () => M,
+    \\"es2021\\": () => W,
     \\"esnext\\": () => E
   });
   ;
   var w = Object.defineProperty;
+  var _ = Object.getOwnPropertySymbols;
   var d = Object.prototype.hasOwnProperty;
-  var c = Object.getOwnPropertySymbols;
   var y = Object.prototype.propertyIsEnumerable;
   var O = Math.pow;
-  var u = (e, r, t) => r in e ? w(e, r, {enumerable: true, configurable: true, writable: true, value: t}) : e[r] = t;
-  var P = (e, r) => {
+  var f = (e, r, t) => r in e ? w(e, r, { enumerable: true, configurable: true, writable: true, value: t }) : e[r] = t;
+  var m = (e, r) => {
     for (var t in r || (r = {}))
       if (d.call(r, t))
-        u(e, t, r[t]);
-    if (c)
-      for (var t of c(r)) {
+        f(e, t, r[t]);
+    if (_)
+      for (var t of _(r)) {
         if (y.call(r, t))
-          u(e, t, r[t]);
+          f(e, t, r[t]);
       }
     return e;
   };
-  var h = (e, r) => {
+  var b = (e, r) => {
     var t = {};
     for (var a in e)
       if (d.call(e, a) && r.indexOf(a) < 0)
         t[a] = e[a];
-    if (e != null && c)
-      for (var a of c(e)) {
+    if (e != null && _)
+      for (var a of _(e)) {
         if (r.indexOf(a) < 0 && y.call(e, a))
           t[a] = e[a];
       }
     return t;
   };
-  var b = (e, r, t) => {
-    u(e, typeof r !== \\"symbol\\" ? r + \\"\\" : r, t);
+  var h = (e, r, t) => {
+    f(e, typeof r !== \\"symbol\\" ? r + \\"\\" : r, t);
     return t;
   };
-  var I = (e, r, t) => {
-    return new Promise((a, _) => {
-      var p = (o) => {
+  var u = (e, r, t) => {
+    if (r.has(e))
+      throw TypeError(\\"Cannot add the same private member more than once\\");
+    r instanceof WeakSet ? r.add(e) : r.set(e, t);
+  };
+  var T = (e, r, t) => {
+    return new Promise((a, l) => {
+      var p = (n) => {
         try {
-          s(t.next(o));
-        } catch (l) {
-          _(l);
+          s(t.next(n));
+        } catch (v) {
+          l(v);
         }
       };
-      var i = (o) => {
+      var c = (n) => {
         try {
-          s(t.throw(o));
-        } catch (l) {
-          _(l);
+          s(t.throw(n));
+        } catch (v) {
+          l(v);
         }
       };
-      var s = (o) => o.done ? a(o.value) : Promise.resolve(o.value).then(p, i);
+      var s = (n) => n.done ? a(n.value) : Promise.resolve(n.value).then(p, c);
       s((t = t.apply(e, r)).next());
     });
   };
-  const x = {};
-  const S = O(10, 4);
-  const j = \\"function\\";
+  const P = {};
+  const x = O(10, 4);
+  const S = \\"function\\";
   const g = (() => {
-    const e = {a: 1};
-    let r = P({}, e);
-    let t = h(e, []);
+    const e = { a: 1 };
+    let r = m({}, e);
+    let t = b(e, []);
     return t;
   })();
-  const M = (() => {
+  const j = (() => {
     try {
       return \\"try\\";
     } catch (e) {
     }
   })();
-  const W = (() => {
+  const M = (() => {
     var e;
     const r = {
       property: 1
@@ -921,41 +976,47 @@ exports[`Webpack 5 Loader + Minification minifyIdentifiers 1`] = `
     return [
       r == null ? void 0 : r.property,
       (e = r.prop) != null ? e : 2,
-      x
+      P
+    ];
+  })();
+  const W = (() => {
+    let e;
+    let r = 1;
+    const t = 3;
+    r && (r = t);
+    return [
+      e != null ? e : e = 2,
+      r,
+      1e9
     ];
   })();
   const E = (() => {
-    var e, r, t, a, _, p, i, s, o, l, m;
-    let v;
+    var e, r, t, a, l, p, c, s;
     return [
       class {
         constructor() {
-          b(this, \\"x\\", 2);
+          h(this, \\"x\\", 2);
         }
       },
       (e = class {
-      }, b(e, \\"x\\", 1), e),
+      }, h(e, \\"x\\", 1), e),
       (a = class {
         constructor() {
-          r.add(this);
+          u(this, r);
         }
       }, r = new WeakSet(), t = function() {
       }, a),
       (p = class {
         constructor() {
-          _.set(this, void 0);
+          u(this, l, void 0);
         }
-      }, _ = new WeakMap(), p),
-      (s = class {
-      }, i = new WeakSet(), o = function() {
-      }, i.add(s), s),
-      (l = class {
-      }, m = new WeakMap(), m.set(l, void 0), l),
-      v != null ? v : v = 2
+      }, l = new WeakMap(), p),
+      (c = class {
+      }, s = new WeakMap(), u(c, s, void 0), c)
     ];
   })();
   ;
-  module.exports = f;
+  module.exports = i;
 })();
 "
 `;
@@ -973,14 +1034,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
@@ -992,13 +1056,13 @@ exports[`Webpack 5 Loader + Minification minifySyntax 1`] = `
   (() => {
     __webpack_require__.d = (exports, definition) => {
       for (var key in definition)
-        __webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key) && Object.defineProperty(exports, key, {enumerable: !0, get: definition[key]});
+        __webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key) && Object.defineProperty(exports, key, { enumerable: !0, get: definition[key] });
     };
   })(), (() => {
     __webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop);
   })(), (() => {
     __webpack_require__.r = (exports) => {
-      typeof Symbol != \\"undefined\\" && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, {value: \\"Module\\"}), Object.defineProperty(exports, \\"__esModule\\", {value: !0});
+      typeof Symbol != \\"undefined\\" && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, { value: \\"Module\\" }), Object.defineProperty(exports, \\"__esModule\\", { value: !0 });
     };
   })();
   var __webpack_exports__ = {};
@@ -1008,9 +1072,10 @@ exports[`Webpack 5 Loader + Minification minifySyntax 1`] = `
     es2018: () => es2018,
     es2019: () => es2019,
     es2020: () => es2020,
+    es2021: () => es2021,
     esnext: () => esnext
   });
-  var __defProp = Object.defineProperty, __hasOwnProp = Object.prototype.hasOwnProperty, __getOwnPropSymbols = Object.getOwnPropertySymbols, __propIsEnum = Object.prototype.propertyIsEnumerable, __pow = Math.pow, __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: !0, configurable: !0, writable: !0, value}) : obj[key] = value, __objSpread = (a, b) => {
+  var __defProp = Object.defineProperty, __getOwnPropSymbols = Object.getOwnPropertySymbols, __hasOwnProp = Object.prototype.hasOwnProperty, __propIsEnum = Object.prototype.propertyIsEnumerable, __pow = Math.pow, __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: !0, configurable: !0, writable: !0, value }) : obj[key] = value, __spreadValues = (a, b) => {
     for (var prop in b || (b = {}))
       __hasOwnProp.call(b, prop) && __defNormalProp(a, prop, b[prop]);
     if (__getOwnPropSymbols)
@@ -1025,7 +1090,11 @@ exports[`Webpack 5 Loader + Minification minifySyntax 1`] = `
       for (var prop of __getOwnPropSymbols(source))
         exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop) && (target[prop] = source[prop]);
     return target;
-  }, __publicField = (obj, key, value) => (__defNormalProp(obj, typeof key != \\"symbol\\" ? key + \\"\\" : key, value), value), __async = (__this, __arguments, generator) => new Promise((resolve, reject) => {
+  }, __publicField = (obj, key, value) => (__defNormalProp(obj, typeof key != \\"symbol\\" ? key + \\"\\" : key, value), value), __privateAdd = (obj, member, value) => {
+    if (member.has(obj))
+      throw TypeError(\\"Cannot add the same private member more than once\\");
+    member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+  }, __async = (__this, __arguments, generator) => new Promise((resolve, reject) => {
     var fulfilled = (value) => {
       try {
         step(generator.next(value));
@@ -1042,8 +1111,8 @@ exports[`Webpack 5 Loader + Minification minifySyntax 1`] = `
     step((generator = generator.apply(__this, __arguments)).next());
   });
   const import_meta = {}, es2016 = __pow(10, 4), es2017 = \\"function\\", es2018 = (() => {
-    const y = {a: 1};
-    let x = __objSpread({}, y);
+    const y = { a: 1 };
+    let x = __spreadValues({}, y);
     return __objRest(y, []);
   })(), es2019 = (() => {
     try {
@@ -1060,9 +1129,15 @@ exports[`Webpack 5 Loader + Minification minifySyntax 1`] = `
       (_a = obj.prop) != null ? _a : 2,
       import_meta
     ];
+  })(), es2021 = (() => {
+    let a, x = 1;
+    return x && (x = 3), [
+      a != null ? a : a = 2,
+      x,
+      1e9
+    ];
   })(), esnext = (() => {
-    var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
-    let a;
+    var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
     return [
       class {
         constructor() {
@@ -1073,21 +1148,17 @@ exports[`Webpack 5 Loader + Minification minifySyntax 1`] = `
       }, __publicField(_a, \\"x\\", 1), _a),
       (_b = class {
         constructor() {
-          _x.add(this);
+          __privateAdd(this, _x);
         }
       }, _x = new WeakSet(), x_fn = function() {
       }, _b),
       (_c = class {
         constructor() {
-          _x2.set(this, void 0);
+          __privateAdd(this, _x2, void 0);
         }
       }, _x2 = new WeakMap(), _c),
       (_d = class {
-      }, _x3 = new WeakSet(), x_fn2 = function() {
-      }, _x3.add(_d), _d),
-      (_e = class {
-      }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-      a != null ? a : a = 2
+      }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
     ];
   })();
   module.exports = __webpack_exports__;
@@ -1108,20 +1179,23 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
 
 exports[`Webpack 5 Loader + Minification minifyWhitespace 1`] = `
-"(()=>{\\"use strict\\";var __webpack_require__={};(()=>{__webpack_require__.d=(exports,definition)=>{for(var key in definition){if(__webpack_require__.o(definition,key)&&!__webpack_require__.o(exports,key)){Object.defineProperty(exports,key,{enumerable:true,get:definition[key]})}}}})();(()=>{__webpack_require__.o=(obj,prop)=>Object.prototype.hasOwnProperty.call(obj,prop)})();(()=>{__webpack_require__.r=exports=>{if(typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag){Object.defineProperty(exports,Symbol.toStringTag,{value:\\"Module\\"})}Object.defineProperty(exports,\\"__esModule\\",{value:true})}})();var __webpack_exports__={};__webpack_require__.r(__webpack_exports__);__webpack_require__.d(__webpack_exports__,{\\"es2016\\":()=>es2016,\\"es2017\\":()=>es2017,\\"es2018\\":()=>es2018,\\"es2019\\":()=>es2019,\\"es2020\\":()=>es2020,\\"esnext\\":()=>esnext});;var __defProp=Object.defineProperty;var __hasOwnProp=Object.prototype.hasOwnProperty;var __getOwnPropSymbols=Object.getOwnPropertySymbols;var __propIsEnum=Object.prototype.propertyIsEnumerable;var __pow=Math.pow;var __defNormalProp=(obj,key,value)=>key in obj?__defProp(obj,key,{enumerable:true,configurable:true,writable:true,value}):obj[key]=value;var __objSpread=(a,b)=>{for(var prop in b||(b={}))if(__hasOwnProp.call(b,prop))__defNormalProp(a,prop,b[prop]);if(__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(b)){if(__propIsEnum.call(b,prop))__defNormalProp(a,prop,b[prop])}return a};var __objRest=(source,exclude)=>{var target={};for(var prop in source)if(__hasOwnProp.call(source,prop)&&exclude.indexOf(prop)<0)target[prop]=source[prop];if(source!=null&&__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(source)){if(exclude.indexOf(prop)<0&&__propIsEnum.call(source,prop))target[prop]=source[prop]}return target};var __publicField=(obj,key,value)=>{__defNormalProp(obj,typeof key!==\\"symbol\\"?key+\\"\\":key,value);return value};var __async=(__this,__arguments,generator)=>{return new Promise((resolve,reject)=>{var fulfilled=value=>{try{step(generator.next(value))}catch(e){reject(e)}};var rejected=value=>{try{step(generator.throw(value))}catch(e){reject(e)}};var step=x=>x.done?resolve(x.value):Promise.resolve(x.value).then(fulfilled,rejected);step((generator=generator.apply(__this,__arguments)).next())})};const import_meta={};const es2016=__pow(10,4);const es2017=\\"function\\";const es2018=(()=>{const y={a:1};let x=__objSpread({},y);let z=__objRest(y,[]);return z})();const es2019=(()=>{try{return\\"try\\"}catch(e){}})();const es2020=(()=>{var _a;const obj={property:1};return[obj==null?void 0:obj.property,(_a=obj.prop)!=null?_a:2,import_meta]})();const esnext=(()=>{var _a,_x,x_fn,_b,_x2,_c,_x3,_d,x_fn2,_e,_x4;let a;return[class{constructor(){__publicField(this,\\"x\\",2)}},(_a=class{},__publicField(_a,\\"x\\",1),_a),(_b=class{constructor(){_x.add(this)}},_x=new WeakSet,x_fn=function(){},_b),(_c=class{constructor(){_x2.set(this,void 0)}},_x2=new WeakMap,_c),(_d=class{},_x3=new WeakSet,x_fn2=function(){},_x3.add(_d),_d),(_e=class{},_x4=new WeakMap,_x4.set(_e,void 0),_e),a!=null?a:a=2]})();;module.exports=__webpack_exports__})();
+"(()=>{\\"use strict\\";var __webpack_require__={};(()=>{__webpack_require__.d=(exports,definition)=>{for(var key in definition){if(__webpack_require__.o(definition,key)&&!__webpack_require__.o(exports,key)){Object.defineProperty(exports,key,{enumerable:true,get:definition[key]})}}}})();(()=>{__webpack_require__.o=(obj,prop)=>Object.prototype.hasOwnProperty.call(obj,prop)})();(()=>{__webpack_require__.r=exports=>{if(typeof Symbol!==\\"undefined\\"&&Symbol.toStringTag){Object.defineProperty(exports,Symbol.toStringTag,{value:\\"Module\\"})}Object.defineProperty(exports,\\"__esModule\\",{value:true})}})();var __webpack_exports__={};__webpack_require__.r(__webpack_exports__);__webpack_require__.d(__webpack_exports__,{\\"es2016\\":()=>es2016,\\"es2017\\":()=>es2017,\\"es2018\\":()=>es2018,\\"es2019\\":()=>es2019,\\"es2020\\":()=>es2020,\\"es2021\\":()=>es2021,\\"esnext\\":()=>esnext});;var __defProp=Object.defineProperty;var __getOwnPropSymbols=Object.getOwnPropertySymbols;var __hasOwnProp=Object.prototype.hasOwnProperty;var __propIsEnum=Object.prototype.propertyIsEnumerable;var __pow=Math.pow;var __defNormalProp=(obj,key,value)=>key in obj?__defProp(obj,key,{enumerable:true,configurable:true,writable:true,value}):obj[key]=value;var __spreadValues=(a,b)=>{for(var prop in b||(b={}))if(__hasOwnProp.call(b,prop))__defNormalProp(a,prop,b[prop]);if(__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(b)){if(__propIsEnum.call(b,prop))__defNormalProp(a,prop,b[prop])}return a};var __objRest=(source,exclude)=>{var target={};for(var prop in source)if(__hasOwnProp.call(source,prop)&&exclude.indexOf(prop)<0)target[prop]=source[prop];if(source!=null&&__getOwnPropSymbols)for(var prop of __getOwnPropSymbols(source)){if(exclude.indexOf(prop)<0&&__propIsEnum.call(source,prop))target[prop]=source[prop]}return target};var __publicField=(obj,key,value)=>{__defNormalProp(obj,typeof key!==\\"symbol\\"?key+\\"\\":key,value);return value};var __privateAdd=(obj,member,value)=>{if(member.has(obj))throw TypeError(\\"Cannot add the same private member more than once\\");member instanceof WeakSet?member.add(obj):member.set(obj,value)};var __async=(__this,__arguments,generator)=>{return new Promise((resolve,reject)=>{var fulfilled=value=>{try{step(generator.next(value))}catch(e){reject(e)}};var rejected=value=>{try{step(generator.throw(value))}catch(e){reject(e)}};var step=x=>x.done?resolve(x.value):Promise.resolve(x.value).then(fulfilled,rejected);step((generator=generator.apply(__this,__arguments)).next())})};const import_meta={};const es2016=__pow(10,4);const es2017=\\"function\\";const es2018=(()=>{const y={a:1};let x=__spreadValues({},y);let z=__objRest(y,[]);return z})();const es2019=(()=>{try{return\\"try\\"}catch(e){}})();const es2020=(()=>{var _a;const obj={property:1};return[obj==null?void 0:obj.property,(_a=obj.prop)!=null?_a:2,import_meta]})();const es2021=(()=>{let a;let x=1;const y=3;x&&(x=y);return[a!=null?a:a=2,x,1e9]})();const esnext=(()=>{var _a,_x,x_fn,_b,_x2,_c,_d,_x3;return[class{constructor(){__publicField(this,\\"x\\",2)}},(_a=class{},__publicField(_a,\\"x\\",1),_a),(_b=class{constructor(){__privateAdd(this,_x)}},_x=new WeakSet,x_fn=function(){},_b),(_c=class{constructor(){__privateAdd(this,_x2,void 0)}},_x2=new WeakMap,_c),(_d=class{},_x3=new WeakMap,__privateAdd(_d,_x3,void 0),_d)]})();;module.exports=__webpack_exports__})();
 "
 `;
 
@@ -1138,14 +1212,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;

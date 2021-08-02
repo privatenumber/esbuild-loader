@@ -36,16 +36,26 @@ const js = {
 			];
 		})();
 
-		export const esnext = (() => {
+		export const es2021 = (() => {
 			let a;
+			let x = 1;
+			const y = 3;
+			x &&= y;
+			return [
+				a ??= 2,
+				x,
+				1_000_000_000,
+			];
+		})();
+
+		export const esnext = (() => {
 			return [
 				class { x = 2; },
 				class { static x = 1; },
 				class { #x() {} },
 				class { #x },
-				class { static #x() {} },
+				// class { static #x() {} },
 				class { static #x },
-				a ??= 2,
 			];
 		})();
 	`,

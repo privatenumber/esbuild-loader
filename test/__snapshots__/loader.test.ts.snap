@@ -677,16 +677,17 @@ __webpack_require__.d(__webpack_exports__, \\"es2017\\", function() { return /* 
 __webpack_require__.d(__webpack_exports__, \\"es2018\\", function() { return /* reexport */ es2018; });
 __webpack_require__.d(__webpack_exports__, \\"es2019\\", function() { return /* reexport */ es2019; });
 __webpack_require__.d(__webpack_exports__, \\"es2020\\", function() { return /* reexport */ es2020; });
+__webpack_require__.d(__webpack_exports__, \\"es2021\\", function() { return /* reexport */ es2021; });
 __webpack_require__.d(__webpack_exports__, \\"esnext\\", function() { return /* reexport */ esnext; });
 
 // CONCATENATED MODULE: /src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -713,6 +714,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -737,8 +743,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -759,9 +765,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -772,21 +788,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -812,14 +824,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
@@ -1056,7 +1071,7 @@ __webpack_require__.d(__webpack_exports__, \\"default\\", function() { return /*
 
 // CONCATENATED MODULE: /src/foo.ts
 var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
@@ -1456,7 +1471,7 @@ exports[`Webpack 4 Source-map source-map eval 1`] = `
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-eval(\\"// ESM COMPAT FLAG\\\\n__webpack_require__.r(__webpack_exports__);\\\\n\\\\n// EXPORTS\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2016\\\\\\", function() { return /* reexport */ es2016; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2017\\\\\\", function() { return /* reexport */ es2017; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2018\\\\\\", function() { return /* reexport */ es2018; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2019\\\\\\", function() { return /* reexport */ es2019; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2020\\\\\\", function() { return /* reexport */ es2020; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"esnext\\\\\\", function() { return /* reexport */ esnext; });\\\\n\\\\n// CONCATENATED MODULE: /src/foo.js\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;\\\\nvar __objSpread = (a, b) => {\\\\n  for (var prop in b || (b = {}))\\\\n    if (__hasOwnProp.call(b, prop))\\\\n      __defNormalProp(a, prop, b[prop]);\\\\n  if (__getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(b)) {\\\\n      if (__propIsEnum.call(b, prop))\\\\n        __defNormalProp(a, prop, b[prop]);\\\\n    }\\\\n  return a;\\\\n};\\\\nvar __objRest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  __defNormalProp(obj, typeof key !== \\\\\\"symbol\\\\\\" ? key + \\\\\\"\\\\\\" : key, value);\\\\n  return value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __objSpread({}, y);\\\\n  let z = __objRest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n\\\\n// CONCATENATED MODULE: /src/index.js\\\\n\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vL3NyYy9mb28uanM/ODA3OCIsIndlYnBhY2s6Ly8vL3NyYy9pbmRleC5qcz9kYTE5Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDUyxNQUFNLFNBQVMsVUFBTTtBQUVyQixNQUFNLFNBQVM7QUFFZixNQUFNLFNBQVUsT0FBTTtBQUM1QixRQUFNLElBQUksQ0FBRSxHQUFHO0FBQ2YsTUFBSSxJQUFJLGdCQUFJO0FBQ1osTUFBUSxjQUFLLEdBQUw7QUFDUixTQUFPO0FBQUE7QUFHRCxNQUFNLFNBQVUsT0FBTTtBQUM1QixNQUFJO0FBQ0gsV0FBTztBQUFBLFdBQ0EsR0FBTjtBQUFBO0FBQUE7QUFHSSxNQUFNLFNBQVUsT0FBTTtBQWxCL0I7QUFtQkcsUUFBTSxNQUFNO0FBQUEsSUFDWCxVQUFVO0FBQUE7QUFFWCxTQUFPO0FBQUEsSUFDTiwyQkFBSztBQUFBLElBQ0wsVUFBSSxTQUFKLFlBQVk7QUFBQSxJQUNaO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBN0IvQjtBQThCRyxNQUFJO0FBQ0osU0FBTztBQUFBLElBQ04sTUFBTTtBQUFBLE1BQU4sY0FoQ0o7QUFnQ1ksaUNBQUk7QUFBQTtBQUFBO0FBQUEsSUFDWixZQUFNO0FBQUEsT0FBUyxjQUFmLElBQWUsS0FBSSxJQUFuQjtBQUFBLElBQ0EsWUFBTTtBQUFBLE1BQU4sY0FsQ0o7QUFrQ1k7QUFBQTtBQUFBLGtDQUFFLFdBQUc7QUFBQSxPQUFiO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQW5DSjtBQW1DWTtBQUFBO0FBQUEsNEJBQVI7QUFBQSxJQUNBLFlBQU07QUFBQSxPQUFTLDZCQUFFLFdBQUc7QUFBQSxPQUFMLFFBQWY7QUFBQSxJQUNBLFlBQU07QUFBQSxPQUFTLDZCQUFmLElBQWUsU0FBZjtBQUFBLElBQ0Esb0JBQU07QUFBQTtBQUFBOzs7QUNyQ1IiLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcblx0XHRleHBvcnQgY29uc3QgZXMyMDE2ID0gMTAgKiogNDtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTcgPSB0eXBlb2YgKGFzeW5jICgpID0+IHt9KTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTggPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3QgeSA9IHsgYTogMSB9XG5cdFx0XHRsZXQgeCA9IHsuLi55fVxuXHRcdFx0bGV0IHsuLi56fSA9IHlcblx0XHRcdHJldHVybiB6O1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE5ID0gKCgpID0+IHtcblx0XHRcdHRyeSB7XG5cdFx0XHRcdHJldHVybiAndHJ5J1xuXHRcdFx0fSBjYXRjaCB7fVxuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIwID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IG9iaiA9IHtcblx0XHRcdFx0cHJvcGVydHk6IDEsXG5cdFx0XHR9O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0b2JqPy5wcm9wZXJ0eSxcblx0XHRcdFx0b2JqLnByb3AgPz8gMixcblx0XHRcdFx0aW1wb3J0Lm1ldGEsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXNuZXh0ID0gKCgpID0+IHtcblx0XHRcdGxldCBhO1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0Y2xhc3MgeyB4ID0gMjsgfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgeCA9IDE7IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3ggfSxcblx0XHRcdFx0YSA/Pz0gMixcblx0XHRcdF07XG5cdFx0fSkoKTtcblx0IiwiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./src/index.js\\\\n\\");
+eval(\\"// ESM COMPAT FLAG\\\\n__webpack_require__.r(__webpack_exports__);\\\\n\\\\n// EXPORTS\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2016\\\\\\", function() { return /* reexport */ es2016; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2017\\\\\\", function() { return /* reexport */ es2017; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2018\\\\\\", function() { return /* reexport */ es2018; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2019\\\\\\", function() { return /* reexport */ es2019; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2020\\\\\\", function() { return /* reexport */ es2020; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"es2021\\\\\\", function() { return /* reexport */ es2021; });\\\\n__webpack_require__.d(__webpack_exports__, \\\\\\"esnext\\\\\\", function() { return /* reexport */ esnext; });\\\\n\\\\n// CONCATENATED MODULE: /src/foo.js\\\\nvar __defProp = Object.defineProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;\\\\nvar __spreadValues = (a, b) => {\\\\n  for (var prop in b || (b = {}))\\\\n    if (__hasOwnProp.call(b, prop))\\\\n      __defNormalProp(a, prop, b[prop]);\\\\n  if (__getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(b)) {\\\\n      if (__propIsEnum.call(b, prop))\\\\n        __defNormalProp(a, prop, b[prop]);\\\\n    }\\\\n  return a;\\\\n};\\\\nvar __objRest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  __defNormalProp(obj, typeof key !== \\\\\\"symbol\\\\\\" ? key + \\\\\\"\\\\\\" : key, value);\\\\n  return value;\\\\n};\\\\nvar __privateAdd = (obj, member, value) => {\\\\n  if (member.has(obj))\\\\n    throw TypeError(\\\\\\"Cannot add the same private member more than once\\\\\\");\\\\n  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = { a: 1 };\\\\n  let x = __spreadValues({}, y);\\\\n  let z = __objRest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst es2021 = (() => {\\\\n  let a;\\\\n  let x = 1;\\\\n  const y = 3;\\\\n  x && (x = y);\\\\n  return [\\\\n    a != null ? a : a = 2,\\\\n    x,\\\\n    1e9\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        __privateAdd(this, _x);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        __privateAdd(this, _x2, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)\\\\n  ];\\\\n})();\\\\n\\\\n// CONCATENATED MODULE: /src/index.js\\\\n\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vL3NyYy9mb28uanM/ODA3OCIsIndlYnBhY2s6Ly8vL3NyYy9pbmRleC5qcz9kYTE5Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDUyxNQUFNLFNBQVMsVUFBTTtBQUVyQixNQUFNLFNBQVM7QUFFZixNQUFNLFNBQVUsT0FBTTtBQUM1QixRQUFNLElBQUksRUFBRSxHQUFHO0FBQ2YsTUFBSSxJQUFJLG1CQUFJO0FBQ1osTUFBUSxjQUFLLEdBQUw7QUFDUixTQUFPO0FBQUE7QUFHRCxNQUFNLFNBQVUsT0FBTTtBQUM1QixNQUFJO0FBQ0gsV0FBTztBQUFBLFdBQ0EsR0FBTjtBQUFBO0FBQUE7QUFHSSxNQUFNLFNBQVUsT0FBTTtBQWxCL0I7QUFtQkcsUUFBTSxNQUFNO0FBQUEsSUFDWCxVQUFVO0FBQUE7QUFFWCxTQUFPO0FBQUEsSUFDTiwyQkFBSztBQUFBLElBQ0wsVUFBSSxTQUFKLFlBQVk7QUFBQSxJQUNaO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSixNQUFJLElBQUk7QUFDUixRQUFNLElBQUk7QUFDVixZQUFNO0FBQ04sU0FBTztBQUFBLElBQ04sb0JBQU07QUFBQSxJQUNOO0FBQUEsSUFDQTtBQUFBO0FBQUE7QUFJSyxNQUFNLFNBQVUsT0FBTTtBQXpDL0I7QUEwQ0csU0FBTztBQUFBLElBQ04sTUFBTTtBQUFBLE1BQU4sY0EzQ0o7QUEyQ1ksaUNBQUk7QUFBQTtBQUFBO0FBQUEsSUFDWixZQUFNO0FBQUEsT0FBUyxjQUFmLElBQWUsS0FBSSxJQUFuQjtBQUFBLElBQ0EsWUFBTTtBQUFBLE1BQU4sY0E3Q0o7QUE2Q1k7QUFBQTtBQUFBLGtDQUFFLFdBQUc7QUFBQSxPQUFiO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQTlDSjtBQThDWTtBQUFBO0FBQUEsNEJBQVI7QUFBQSxJQUVBLFlBQU07QUFBQSxPQUFTLGtDQUFmLElBQWUsY0FBZjtBQUFBO0FBQUE7OztBQy9DRiIsImZpbGUiOiIuL3NyYy9pbmRleC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTYgPSAxMCAqKiA0O1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNyA9IHR5cGVvZiAoYXN5bmMgKCkgPT4ge30pO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCB5ID0geyBhOiAxIH1cblx0XHRcdGxldCB4ID0gey4uLnl9XG5cdFx0XHRsZXQgey4uLnp9ID0geVxuXHRcdFx0cmV0dXJuIHo7XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTkgPSAoKCkgPT4ge1xuXHRcdFx0dHJ5IHtcblx0XHRcdFx0cmV0dXJuICd0cnknXG5cdFx0XHR9IGNhdGNoIHt9XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjAgPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3Qgb2JqID0ge1xuXHRcdFx0XHRwcm9wZXJ0eTogMSxcblx0XHRcdH07XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRvYmo/LnByb3BlcnR5LFxuXHRcdFx0XHRvYmoucHJvcCA/PyAyLFxuXHRcdFx0XHRpbXBvcnQubWV0YSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMjEgPSAoKCkgPT4ge1xuXHRcdFx0bGV0IGE7XG5cdFx0XHRsZXQgeCA9IDE7XG5cdFx0XHRjb25zdCB5ID0gMztcblx0XHRcdHggJiY9IHk7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRhID8/PSAyLFxuXHRcdFx0XHR4LFxuXHRcdFx0XHQxXzAwMF8wMDBfMDAwLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRyZXR1cm4gW1xuXHRcdFx0XHRjbGFzcyB7IHggPSAyOyB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyB4ID0gMTsgfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3ggfSxcblx0XHRcdFx0Ly8gY2xhc3MgeyBzdGF0aWMgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCB9LFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXHQiLCJcblx0XHRleHBvcnQgKiBmcm9tICcuL2Zvby5qcydcblx0Il0sInNvdXJjZVJvb3QiOiIifQ==\\\\n//# sourceURL=webpack-internal:///./src/index.js\\\\n\\");
 
 /***/ })
 
@@ -1566,16 +1581,17 @@ __webpack_require__.d(__webpack_exports__, \\"es2017\\", function() { return /* 
 __webpack_require__.d(__webpack_exports__, \\"es2018\\", function() { return /* reexport */ es2018; });
 __webpack_require__.d(__webpack_exports__, \\"es2019\\", function() { return /* reexport */ es2019; });
 __webpack_require__.d(__webpack_exports__, \\"es2020\\", function() { return /* reexport */ es2020; });
+__webpack_require__.d(__webpack_exports__, \\"es2021\\", function() { return /* reexport */ es2021; });
 __webpack_require__.d(__webpack_exports__, \\"esnext\\", function() { return /* reexport */ esnext; });
 
 // CONCATENATED MODULE: /src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -1602,6 +1618,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -1626,8 +1647,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -1648,9 +1669,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -1661,21 +1692,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -1689,7 +1716,7 @@ const esnext = (() => {
 //# sourceMappingURL=index.js.map"
 `;
 
-exports[`Webpack 4 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:////src/foo.js\\",\\"webpack:////src/index.js\\"],\\"names\\":[],\\"mappings\\":\\";;QAAA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;QAEA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;;;QAGA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA,0CAA0C,gCAAgC;QAC1E;QACA;;QAEA;QACA;QACA;QACA,wDAAwD,kBAAkB;QAC1E;QACA,iDAAiD,cAAc;QAC/D;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA,yCAAyC,iCAAiC;QAC1E,gHAAgH,mBAAmB,EAAE;QACrI;QACA;;QAEA;QACA;QACA;QACA,2BAA2B,0BAA0B,EAAE;QACvD,iCAAiC,eAAe;QAChD;QACA;QACA;;QAEA;QACA,sDAAsD,+DAA+D;;QAErH;QACA;;;QAGA;QACA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AClFA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU,OAAM;AAC5B,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,gBAAI;AACZ,MAAQ,cAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU,OAAM;AAC5B,MAAI;AACH,WAAO;AAAA,WACA,GAAN;AAAA;AAAA;AAGI,MAAM,SAAU,OAAM;AAlB/B;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AA7B/B;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN,MAAM;AAAA,MAAN,cAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IACZ,YAAM;AAAA,OAAS,cAAf,IAAe,KAAI,IAAnB;AAAA,IACA,YAAM;AAAA,MAAN,cAlCJ;AAkCY;AAAA;AAAA,kCAAE,WAAG;AAAA,OAAb;AAAA,IACA,YAAM;AAAA,MAAN,cAnCJ;AAmCY;AAAA;AAAA,4BAAR;AAAA,IACA,YAAM;AAAA,OAAS,6BAAE,WAAG;AAAA,OAAL,QAAf;AAAA,IACA,YAAM;AAAA,OAAS,6BAAf,IAAe,SAAf;AAAA,IACA,oBAAM;AAAA;AAAA;;;ACrCR\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\" \\\\t// The module cache\\\\n \\\\tvar installedModules = {};\\\\n\\\\n \\\\t// The require function\\\\n \\\\tfunction __webpack_require__(moduleId) {\\\\n\\\\n \\\\t\\\\t// Check if module is in cache\\\\n \\\\t\\\\tif(installedModules[moduleId]) {\\\\n \\\\t\\\\t\\\\treturn installedModules[moduleId].exports;\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\t// Create a new module (and put it into the cache)\\\\n \\\\t\\\\tvar module = installedModules[moduleId] = {\\\\n \\\\t\\\\t\\\\ti: moduleId,\\\\n \\\\t\\\\t\\\\tl: false,\\\\n \\\\t\\\\t\\\\texports: {}\\\\n \\\\t\\\\t};\\\\n\\\\n \\\\t\\\\t// Execute the module function\\\\n \\\\t\\\\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\\\\n\\\\n \\\\t\\\\t// Flag the module as loaded\\\\n \\\\t\\\\tmodule.l = true;\\\\n\\\\n \\\\t\\\\t// Return the exports of the module\\\\n \\\\t\\\\treturn module.exports;\\\\n \\\\t}\\\\n\\\\n\\\\n \\\\t// expose the modules object (__webpack_modules__)\\\\n \\\\t__webpack_require__.m = modules;\\\\n\\\\n \\\\t// expose the module cache\\\\n \\\\t__webpack_require__.c = installedModules;\\\\n\\\\n \\\\t// define getter function for harmony exports\\\\n \\\\t__webpack_require__.d = function(exports, name, getter) {\\\\n \\\\t\\\\tif(!__webpack_require__.o(exports, name)) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, name, { enumerable: true, get: getter });\\\\n \\\\t\\\\t}\\\\n \\\\t};\\\\n\\\\n \\\\t// define __esModule on exports\\\\n \\\\t__webpack_require__.r = function(exports) {\\\\n \\\\t\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n \\\\t};\\\\n\\\\n \\\\t// create a fake namespace object\\\\n \\\\t// mode & 1: value is a module id, require it\\\\n \\\\t// mode & 2: merge all properties of value into the ns\\\\n \\\\t// mode & 4: return value when already ns object\\\\n \\\\t// mode & 8|1: behave like require\\\\n \\\\t__webpack_require__.t = function(value, mode) {\\\\n \\\\t\\\\tif(mode & 1) value = __webpack_require__(value);\\\\n \\\\t\\\\tif(mode & 8) return value;\\\\n \\\\t\\\\tif((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;\\\\n \\\\t\\\\tvar ns = Object.create(null);\\\\n \\\\t\\\\t__webpack_require__.r(ns);\\\\n \\\\t\\\\tObject.defineProperty(ns, 'default', { enumerable: true, value: value });\\\\n \\\\t\\\\tif(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));\\\\n \\\\t\\\\treturn ns;\\\\n \\\\t};\\\\n\\\\n \\\\t// getDefaultExport function for compatibility with non-harmony modules\\\\n \\\\t__webpack_require__.n = function(module) {\\\\n \\\\t\\\\tvar getter = module && module.__esModule ?\\\\n \\\\t\\\\t\\\\tfunction getDefault() { return module['default']; } :\\\\n \\\\t\\\\t\\\\tfunction getModuleExports() { return module; };\\\\n \\\\t\\\\t__webpack_require__.d(getter, 'a', getter);\\\\n \\\\t\\\\treturn getter;\\\\n \\\\t};\\\\n\\\\n \\\\t// Object.prototype.hasOwnProperty.call\\\\n \\\\t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\\\\n\\\\n \\\\t// __webpack_public_path__\\\\n \\\\t__webpack_require__.p = \\\\\\"\\\\\\";\\\\n\\\\n\\\\n \\\\t// Load entry module and return exports\\\\n \\\\treturn __webpack_require__(__webpack_require__.s = \\\\\\"./src/index.js\\\\\\");\\\\n\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
+exports[`Webpack 4 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:////src/foo.js\\",\\"webpack:////src/index.js\\"],\\"names\\":[],\\"mappings\\":\\";;QAAA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;QAEA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;;;QAGA;QACA;;QAEA;QACA;;QAEA;QACA;QACA;QACA,0CAA0C,gCAAgC;QAC1E;QACA;;QAEA;QACA;QACA;QACA,wDAAwD,kBAAkB;QAC1E;QACA,iDAAiD,cAAc;QAC/D;;QAEA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA,yCAAyC,iCAAiC;QAC1E,gHAAgH,mBAAmB,EAAE;QACrI;QACA;;QAEA;QACA;QACA;QACA,2BAA2B,0BAA0B,EAAE;QACvD,iCAAiC,eAAe;QAChD;QACA;QACA;;QAEA;QACA,sDAAsD,+DAA+D;;QAErH;QACA;;;QAGA;QACA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AClFA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU,OAAM;AAC5B,QAAM,IAAI,EAAE,GAAG;AACf,MAAI,IAAI,mBAAI;AACZ,MAAQ,cAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU,OAAM;AAC5B,MAAI;AACH,WAAO;AAAA,WACA,GAAN;AAAA;AAAA;AAGI,MAAM,SAAU,OAAM;AAlB/B;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AAC5B,MAAI;AACJ,MAAI,IAAI;AACR,QAAM,IAAI;AACV,YAAM;AACN,SAAO;AAAA,IACN,oBAAM;AAAA,IACN;AAAA,IACA;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AAzC/B;AA0CG,SAAO;AAAA,IACN,MAAM;AAAA,MAAN,cA3CJ;AA2CY,iCAAI;AAAA;AAAA;AAAA,IACZ,YAAM;AAAA,OAAS,cAAf,IAAe,KAAI,IAAnB;AAAA,IACA,YAAM;AAAA,MAAN,cA7CJ;AA6CY;AAAA;AAAA,kCAAE,WAAG;AAAA,OAAb;AAAA,IACA,YAAM;AAAA,MAAN,cA9CJ;AA8CY;AAAA;AAAA,4BAAR;AAAA,IAEA,YAAM;AAAA,OAAS,kCAAf,IAAe,cAAf;AAAA;AAAA;;;AC/CF\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\" \\\\t// The module cache\\\\n \\\\tvar installedModules = {};\\\\n\\\\n \\\\t// The require function\\\\n \\\\tfunction __webpack_require__(moduleId) {\\\\n\\\\n \\\\t\\\\t// Check if module is in cache\\\\n \\\\t\\\\tif(installedModules[moduleId]) {\\\\n \\\\t\\\\t\\\\treturn installedModules[moduleId].exports;\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\t// Create a new module (and put it into the cache)\\\\n \\\\t\\\\tvar module = installedModules[moduleId] = {\\\\n \\\\t\\\\t\\\\ti: moduleId,\\\\n \\\\t\\\\t\\\\tl: false,\\\\n \\\\t\\\\t\\\\texports: {}\\\\n \\\\t\\\\t};\\\\n\\\\n \\\\t\\\\t// Execute the module function\\\\n \\\\t\\\\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\\\\n\\\\n \\\\t\\\\t// Flag the module as loaded\\\\n \\\\t\\\\tmodule.l = true;\\\\n\\\\n \\\\t\\\\t// Return the exports of the module\\\\n \\\\t\\\\treturn module.exports;\\\\n \\\\t}\\\\n\\\\n\\\\n \\\\t// expose the modules object (__webpack_modules__)\\\\n \\\\t__webpack_require__.m = modules;\\\\n\\\\n \\\\t// expose the module cache\\\\n \\\\t__webpack_require__.c = installedModules;\\\\n\\\\n \\\\t// define getter function for harmony exports\\\\n \\\\t__webpack_require__.d = function(exports, name, getter) {\\\\n \\\\t\\\\tif(!__webpack_require__.o(exports, name)) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, name, { enumerable: true, get: getter });\\\\n \\\\t\\\\t}\\\\n \\\\t};\\\\n\\\\n \\\\t// define __esModule on exports\\\\n \\\\t__webpack_require__.r = function(exports) {\\\\n \\\\t\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n \\\\t\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n \\\\t\\\\t}\\\\n \\\\t\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n \\\\t};\\\\n\\\\n \\\\t// create a fake namespace object\\\\n \\\\t// mode & 1: value is a module id, require it\\\\n \\\\t// mode & 2: merge all properties of value into the ns\\\\n \\\\t// mode & 4: return value when already ns object\\\\n \\\\t// mode & 8|1: behave like require\\\\n \\\\t__webpack_require__.t = function(value, mode) {\\\\n \\\\t\\\\tif(mode & 1) value = __webpack_require__(value);\\\\n \\\\t\\\\tif(mode & 8) return value;\\\\n \\\\t\\\\tif((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;\\\\n \\\\t\\\\tvar ns = Object.create(null);\\\\n \\\\t\\\\t__webpack_require__.r(ns);\\\\n \\\\t\\\\tObject.defineProperty(ns, 'default', { enumerable: true, value: value });\\\\n \\\\t\\\\tif(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));\\\\n \\\\t\\\\treturn ns;\\\\n \\\\t};\\\\n\\\\n \\\\t// getDefaultExport function for compatibility with non-harmony modules\\\\n \\\\t__webpack_require__.n = function(module) {\\\\n \\\\t\\\\tvar getter = module && module.__esModule ?\\\\n \\\\t\\\\t\\\\tfunction getDefault() { return module['default']; } :\\\\n \\\\t\\\\t\\\\tfunction getModuleExports() { return module; };\\\\n \\\\t\\\\t__webpack_require__.d(getter, 'a', getter);\\\\n \\\\t\\\\treturn getter;\\\\n \\\\t};\\\\n\\\\n \\\\t// Object.prototype.hasOwnProperty.call\\\\n \\\\t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\\\\n\\\\n \\\\t// __webpack_public_path__\\\\n \\\\t__webpack_require__.p = \\\\\\"\\\\\\";\\\\n\\\\n\\\\n \\\\t// Load entry module and return exports\\\\n \\\\treturn __webpack_require__(__webpack_require__.s = \\\\\\"./src/index.js\\\\\\");\\\\n\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2021 = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\tlet x = 1;\\\\n\\\\t\\\\t\\\\tconst y = 3;\\\\n\\\\t\\\\t\\\\tx &&= y;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t\\\\tx,\\\\n\\\\t\\\\t\\\\t\\\\t1_000_000_000,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\t// class { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
 
 exports[`Webpack 4 Source-map source-map inline 1`] = `
 "module.exports =
@@ -1794,16 +1821,17 @@ __webpack_require__.d(__webpack_exports__, \\"es2017\\", function() { return /* 
 __webpack_require__.d(__webpack_exports__, \\"es2018\\", function() { return /* reexport */ es2018; });
 __webpack_require__.d(__webpack_exports__, \\"es2019\\", function() { return /* reexport */ es2019; });
 __webpack_require__.d(__webpack_exports__, \\"es2020\\", function() { return /* reexport */ es2020; });
+__webpack_require__.d(__webpack_exports__, \\"es2021\\", function() { return /* reexport */ es2021; });
 __webpack_require__.d(__webpack_exports__, \\"esnext\\", function() { return /* reexport */ esnext; });
 
 // CONCATENATED MODULE: /src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -1830,6 +1858,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -1854,8 +1887,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -1876,9 +1909,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -1889,21 +1932,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -1914,7 +1953,7 @@ const esnext = (() => {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIiwid2VicGFjazovLy8vc3JjL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O1FBQUE7UUFDQTs7UUFFQTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7OztRQUdBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQSwwQ0FBMEMsZ0NBQWdDO1FBQzFFO1FBQ0E7O1FBRUE7UUFDQTtRQUNBO1FBQ0Esd0RBQXdELGtCQUFrQjtRQUMxRTtRQUNBLGlEQUFpRCxjQUFjO1FBQy9EOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQSx5Q0FBeUMsaUNBQWlDO1FBQzFFLGdIQUFnSCxtQkFBbUIsRUFBRTtRQUNySTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBLDJCQUEyQiwwQkFBMEIsRUFBRTtRQUN2RCxpQ0FBaUMsZUFBZTtRQUNoRDtRQUNBO1FBQ0E7O1FBRUE7UUFDQSxzREFBc0QsK0RBQStEOztRQUVySDtRQUNBOzs7UUFHQTtRQUNBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ2xGQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksZ0JBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUE3Qi9CO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQWxDSjtBQWtDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBbkNKO0FBbUNZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQUUsV0FBRztBQUFBLE9BQUwsUUFBZjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQWYsSUFBZSxTQUFmO0FBQUEsSUFDQSxvQkFBTTtBQUFBO0FBQUE7OztBQ3JDUiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIiBcdC8vIFRoZSBtb2R1bGUgY2FjaGVcbiBcdHZhciBpbnN0YWxsZWRNb2R1bGVzID0ge307XG5cbiBcdC8vIFRoZSByZXF1aXJlIGZ1bmN0aW9uXG4gXHRmdW5jdGlvbiBfX3dlYnBhY2tfcmVxdWlyZV9fKG1vZHVsZUlkKSB7XG5cbiBcdFx0Ly8gQ2hlY2sgaWYgbW9kdWxlIGlzIGluIGNhY2hlXG4gXHRcdGlmKGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdKSB7XG4gXHRcdFx0cmV0dXJuIGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdLmV4cG9ydHM7XG4gXHRcdH1cbiBcdFx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcbiBcdFx0dmFyIG1vZHVsZSA9IGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdID0ge1xuIFx0XHRcdGk6IG1vZHVsZUlkLFxuIFx0XHRcdGw6IGZhbHNlLFxuIFx0XHRcdGV4cG9ydHM6IHt9XG4gXHRcdH07XG5cbiBcdFx0Ly8gRXhlY3V0ZSB0aGUgbW9kdWxlIGZ1bmN0aW9uXG4gXHRcdG1vZHVsZXNbbW9kdWxlSWRdLmNhbGwobW9kdWxlLmV4cG9ydHMsIG1vZHVsZSwgbW9kdWxlLmV4cG9ydHMsIF9fd2VicGFja19yZXF1aXJlX18pO1xuXG4gXHRcdC8vIEZsYWcgdGhlIG1vZHVsZSBhcyBsb2FkZWRcbiBcdFx0bW9kdWxlLmwgPSB0cnVlO1xuXG4gXHRcdC8vIFJldHVybiB0aGUgZXhwb3J0cyBvZiB0aGUgbW9kdWxlXG4gXHRcdHJldHVybiBtb2R1bGUuZXhwb3J0cztcbiBcdH1cblxuXG4gXHQvLyBleHBvc2UgdGhlIG1vZHVsZXMgb2JqZWN0IChfX3dlYnBhY2tfbW9kdWxlc19fKVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5tID0gbW9kdWxlcztcblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGUgY2FjaGVcbiBcdF9fd2VicGFja19yZXF1aXJlX18uYyA9IGluc3RhbGxlZE1vZHVsZXM7XG5cbiBcdC8vIGRlZmluZSBnZXR0ZXIgZnVuY3Rpb24gZm9yIGhhcm1vbnkgZXhwb3J0c1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kID0gZnVuY3Rpb24oZXhwb3J0cywgbmFtZSwgZ2V0dGVyKSB7XG4gXHRcdGlmKCFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywgbmFtZSkpIHtcbiBcdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgbmFtZSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGdldHRlciB9KTtcbiBcdFx0fVxuIFx0fTtcblxuIFx0Ly8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5yID0gZnVuY3Rpb24oZXhwb3J0cykge1xuIFx0XHRpZih0eXBlb2YgU3ltYm9sICE9PSAndW5kZWZpbmVkJyAmJiBTeW1ib2wudG9TdHJpbmdUYWcpIHtcbiBcdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgU3ltYm9sLnRvU3RyaW5nVGFnLCB7IHZhbHVlOiAnTW9kdWxlJyB9KTtcbiBcdFx0fVxuIFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgJ19fZXNNb2R1bGUnLCB7IHZhbHVlOiB0cnVlIH0pO1xuIFx0fTtcblxuIFx0Ly8gY3JlYXRlIGEgZmFrZSBuYW1lc3BhY2Ugb2JqZWN0XG4gXHQvLyBtb2RlICYgMTogdmFsdWUgaXMgYSBtb2R1bGUgaWQsIHJlcXVpcmUgaXRcbiBcdC8vIG1vZGUgJiAyOiBtZXJnZSBhbGwgcHJvcGVydGllcyBvZiB2YWx1ZSBpbnRvIHRoZSBuc1xuIFx0Ly8gbW9kZSAmIDQ6IHJldHVybiB2YWx1ZSB3aGVuIGFscmVhZHkgbnMgb2JqZWN0XG4gXHQvLyBtb2RlICYgOHwxOiBiZWhhdmUgbGlrZSByZXF1aXJlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnQgPSBmdW5jdGlvbih2YWx1ZSwgbW9kZSkge1xuIFx0XHRpZihtb2RlICYgMSkgdmFsdWUgPSBfX3dlYnBhY2tfcmVxdWlyZV9fKHZhbHVlKTtcbiBcdFx0aWYobW9kZSAmIDgpIHJldHVybiB2YWx1ZTtcbiBcdFx0aWYoKG1vZGUgJiA0KSAmJiB0eXBlb2YgdmFsdWUgPT09ICdvYmplY3QnICYmIHZhbHVlICYmIHZhbHVlLl9fZXNNb2R1bGUpIHJldHVybiB2YWx1ZTtcbiBcdFx0dmFyIG5zID0gT2JqZWN0LmNyZWF0ZShudWxsKTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5yKG5zKTtcbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KG5zLCAnZGVmYXVsdCcsIHsgZW51bWVyYWJsZTogdHJ1ZSwgdmFsdWU6IHZhbHVlIH0pO1xuIFx0XHRpZihtb2RlICYgMiAmJiB0eXBlb2YgdmFsdWUgIT0gJ3N0cmluZycpIGZvcih2YXIga2V5IGluIHZhbHVlKSBfX3dlYnBhY2tfcmVxdWlyZV9fLmQobnMsIGtleSwgZnVuY3Rpb24oa2V5KSB7IHJldHVybiB2YWx1ZVtrZXldOyB9LmJpbmQobnVsbCwga2V5KSk7XG4gXHRcdHJldHVybiBucztcbiBcdH07XG5cbiBcdC8vIGdldERlZmF1bHRFeHBvcnQgZnVuY3Rpb24gZm9yIGNvbXBhdGliaWxpdHkgd2l0aCBub24taGFybW9ueSBtb2R1bGVzXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm4gPSBmdW5jdGlvbihtb2R1bGUpIHtcbiBcdFx0dmFyIGdldHRlciA9IG1vZHVsZSAmJiBtb2R1bGUuX19lc01vZHVsZSA/XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0RGVmYXVsdCgpIHsgcmV0dXJuIG1vZHVsZVsnZGVmYXVsdCddOyB9IDpcbiBcdFx0XHRmdW5jdGlvbiBnZXRNb2R1bGVFeHBvcnRzKCkgeyByZXR1cm4gbW9kdWxlOyB9O1xuIFx0XHRfX3dlYnBhY2tfcmVxdWlyZV9fLmQoZ2V0dGVyLCAnYScsIGdldHRlcik7XG4gXHRcdHJldHVybiBnZXR0ZXI7XG4gXHR9O1xuXG4gXHQvLyBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGxcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubyA9IGZ1bmN0aW9uKG9iamVjdCwgcHJvcGVydHkpIHsgcmV0dXJuIE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmplY3QsIHByb3BlcnR5KTsgfTtcblxuIFx0Ly8gX193ZWJwYWNrX3B1YmxpY19wYXRoX19cbiBcdF9fd2VicGFja19yZXF1aXJlX18ucCA9IFwiXCI7XG5cblxuIFx0Ly8gTG9hZCBlbnRyeSBtb2R1bGUgYW5kIHJldHVybiBleHBvcnRzXG4gXHRyZXR1cm4gX193ZWJwYWNrX3JlcXVpcmVfXyhfX3dlYnBhY2tfcmVxdWlyZV9fLnMgPSBcIi4vc3JjL2luZGV4LmpzXCIpO1xuIiwiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIlxuXHRcdGV4cG9ydCAqIGZyb20gJy4vZm9vLmpzJ1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIiwid2VicGFjazovLy8vc3JjL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O1FBQUE7UUFDQTs7UUFFQTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7OztRQUdBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQSwwQ0FBMEMsZ0NBQWdDO1FBQzFFO1FBQ0E7O1FBRUE7UUFDQTtRQUNBO1FBQ0Esd0RBQXdELGtCQUFrQjtRQUMxRTtRQUNBLGlEQUFpRCxjQUFjO1FBQy9EOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQSx5Q0FBeUMsaUNBQWlDO1FBQzFFLGdIQUFnSCxtQkFBbUIsRUFBRTtRQUNySTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBLDJCQUEyQiwwQkFBMEIsRUFBRTtRQUN2RCxpQ0FBaUMsZUFBZTtRQUNoRDtRQUNBO1FBQ0E7O1FBRUE7UUFDQSxzREFBc0QsK0RBQStEOztRQUVySDtRQUNBOzs7UUFHQTtRQUNBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ2xGQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxFQUFFLEdBQUc7QUFDZixNQUFJLElBQUksbUJBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUFDNUIsTUFBSTtBQUNKLE1BQUksSUFBSTtBQUNSLFFBQU0sSUFBSTtBQUNWLFlBQU07QUFDTixTQUFPO0FBQUEsSUFDTixvQkFBTTtBQUFBLElBQ047QUFBQSxJQUNBO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBekMvQjtBQTBDRyxTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQTNDSjtBQTJDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQTdDSjtBQTZDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBOUNKO0FBOENZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBRUEsWUFBTTtBQUFBLE9BQVMsa0NBQWYsSUFBZSxjQUFmO0FBQUE7QUFBQTs7O0FDL0NGIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiIFx0Ly8gVGhlIG1vZHVsZSBjYWNoZVxuIFx0dmFyIGluc3RhbGxlZE1vZHVsZXMgPSB7fTtcblxuIFx0Ly8gVGhlIHJlcXVpcmUgZnVuY3Rpb25cbiBcdGZ1bmN0aW9uIF9fd2VicGFja19yZXF1aXJlX18obW9kdWxlSWQpIHtcblxuIFx0XHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcbiBcdFx0aWYoaW5zdGFsbGVkTW9kdWxlc1ttb2R1bGVJZF0pIHtcbiBcdFx0XHRyZXR1cm4gaW5zdGFsbGVkTW9kdWxlc1ttb2R1bGVJZF0uZXhwb3J0cztcbiBcdFx0fVxuIFx0XHQvLyBDcmVhdGUgYSBuZXcgbW9kdWxlIChhbmQgcHV0IGl0IGludG8gdGhlIGNhY2hlKVxuIFx0XHR2YXIgbW9kdWxlID0gaW5zdGFsbGVkTW9kdWxlc1ttb2R1bGVJZF0gPSB7XG4gXHRcdFx0aTogbW9kdWxlSWQsXG4gXHRcdFx0bDogZmFsc2UsXG4gXHRcdFx0ZXhwb3J0czoge31cbiBcdFx0fTtcblxuIFx0XHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cbiBcdFx0bW9kdWxlc1ttb2R1bGVJZF0uY2FsbChtb2R1bGUuZXhwb3J0cywgbW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cbiBcdFx0Ly8gRmxhZyB0aGUgbW9kdWxlIGFzIGxvYWRlZFxuIFx0XHRtb2R1bGUubCA9IHRydWU7XG5cbiBcdFx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcbiBcdFx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xuIFx0fVxuXG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlcyBvYmplY3QgKF9fd2VicGFja19tb2R1bGVzX18pXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm0gPSBtb2R1bGVzO1xuXG4gXHQvLyBleHBvc2UgdGhlIG1vZHVsZSBjYWNoZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5jID0gaW5zdGFsbGVkTW9kdWxlcztcblxuIFx0Ly8gZGVmaW5lIGdldHRlciBmdW5jdGlvbiBmb3IgaGFybW9ueSBleHBvcnRzXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSBmdW5jdGlvbihleHBvcnRzLCBuYW1lLCBnZXR0ZXIpIHtcbiBcdFx0aWYoIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBuYW1lKSkge1xuIFx0XHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBuYW1lLCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZ2V0dGVyIH0pO1xuIFx0XHR9XG4gXHR9O1xuXG4gXHQvLyBkZWZpbmUgX19lc01vZHVsZSBvbiBleHBvcnRzXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnIgPSBmdW5jdGlvbihleHBvcnRzKSB7XG4gXHRcdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuIFx0XHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuIFx0XHR9XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG4gXHR9O1xuXG4gXHQvLyBjcmVhdGUgYSBmYWtlIG5hbWVzcGFjZSBvYmplY3RcbiBcdC8vIG1vZGUgJiAxOiB2YWx1ZSBpcyBhIG1vZHVsZSBpZCwgcmVxdWlyZSBpdFxuIFx0Ly8gbW9kZSAmIDI6IG1lcmdlIGFsbCBwcm9wZXJ0aWVzIG9mIHZhbHVlIGludG8gdGhlIG5zXG4gXHQvLyBtb2RlICYgNDogcmV0dXJuIHZhbHVlIHdoZW4gYWxyZWFkeSBucyBvYmplY3RcbiBcdC8vIG1vZGUgJiA4fDE6IGJlaGF2ZSBsaWtlIHJlcXVpcmVcbiBcdF9fd2VicGFja19yZXF1aXJlX18udCA9IGZ1bmN0aW9uKHZhbHVlLCBtb2RlKSB7XG4gXHRcdGlmKG1vZGUgJiAxKSB2YWx1ZSA9IF9fd2VicGFja19yZXF1aXJlX18odmFsdWUpO1xuIFx0XHRpZihtb2RlICYgOCkgcmV0dXJuIHZhbHVlO1xuIFx0XHRpZigobW9kZSAmIDQpICYmIHR5cGVvZiB2YWx1ZSA9PT0gJ29iamVjdCcgJiYgdmFsdWUgJiYgdmFsdWUuX19lc01vZHVsZSkgcmV0dXJuIHZhbHVlO1xuIFx0XHR2YXIgbnMgPSBPYmplY3QuY3JlYXRlKG51bGwpO1xuIFx0XHRfX3dlYnBhY2tfcmVxdWlyZV9fLnIobnMpO1xuIFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkobnMsICdkZWZhdWx0JywgeyBlbnVtZXJhYmxlOiB0cnVlLCB2YWx1ZTogdmFsdWUgfSk7XG4gXHRcdGlmKG1vZGUgJiAyICYmIHR5cGVvZiB2YWx1ZSAhPSAnc3RyaW5nJykgZm9yKHZhciBrZXkgaW4gdmFsdWUpIF9fd2VicGFja19yZXF1aXJlX18uZChucywga2V5LCBmdW5jdGlvbihrZXkpIHsgcmV0dXJuIHZhbHVlW2tleV07IH0uYmluZChudWxsLCBrZXkpKTtcbiBcdFx0cmV0dXJuIG5zO1xuIFx0fTtcblxuIFx0Ly8gZ2V0RGVmYXVsdEV4cG9ydCBmdW5jdGlvbiBmb3IgY29tcGF0aWJpbGl0eSB3aXRoIG5vbi1oYXJtb255IG1vZHVsZXNcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubiA9IGZ1bmN0aW9uKG1vZHVsZSkge1xuIFx0XHR2YXIgZ2V0dGVyID0gbW9kdWxlICYmIG1vZHVsZS5fX2VzTW9kdWxlID9cbiBcdFx0XHRmdW5jdGlvbiBnZXREZWZhdWx0KCkgeyByZXR1cm4gbW9kdWxlWydkZWZhdWx0J107IH0gOlxuIFx0XHRcdGZ1bmN0aW9uIGdldE1vZHVsZUV4cG9ydHMoKSB7IHJldHVybiBtb2R1bGU7IH07XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18uZChnZXR0ZXIsICdhJywgZ2V0dGVyKTtcbiBcdFx0cmV0dXJuIGdldHRlcjtcbiBcdH07XG5cbiBcdC8vIE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbFxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5vID0gZnVuY3Rpb24ob2JqZWN0LCBwcm9wZXJ0eSkgeyByZXR1cm4gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iamVjdCwgcHJvcGVydHkpOyB9O1xuXG4gXHQvLyBfX3dlYnBhY2tfcHVibGljX3BhdGhfX1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5wID0gXCJcIjtcblxuXG4gXHQvLyBMb2FkIGVudHJ5IG1vZHVsZSBhbmQgcmV0dXJuIGV4cG9ydHNcbiBcdHJldHVybiBfX3dlYnBhY2tfcmVxdWlyZV9fKF9fd2VicGFja19yZXF1aXJlX18ucyA9IFwiLi9zcmMvaW5kZXguanNcIik7XG4iLCJcblx0XHRleHBvcnQgY29uc3QgZXMyMDE2ID0gMTAgKiogNDtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTcgPSB0eXBlb2YgKGFzeW5jICgpID0+IHt9KTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTggPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3QgeSA9IHsgYTogMSB9XG5cdFx0XHRsZXQgeCA9IHsuLi55fVxuXHRcdFx0bGV0IHsuLi56fSA9IHlcblx0XHRcdHJldHVybiB6O1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE5ID0gKCgpID0+IHtcblx0XHRcdHRyeSB7XG5cdFx0XHRcdHJldHVybiAndHJ5J1xuXHRcdFx0fSBjYXRjaCB7fVxuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIwID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IG9iaiA9IHtcblx0XHRcdFx0cHJvcGVydHk6IDEsXG5cdFx0XHR9O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0b2JqPy5wcm9wZXJ0eSxcblx0XHRcdFx0b2JqLnByb3AgPz8gMixcblx0XHRcdFx0aW1wb3J0Lm1ldGEsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIxID0gKCgpID0+IHtcblx0XHRcdGxldCBhO1xuXHRcdFx0bGV0IHggPSAxO1xuXHRcdFx0Y29uc3QgeSA9IDM7XG5cdFx0XHR4ICYmPSB5O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0YSA/Pz0gMixcblx0XHRcdFx0eCxcblx0XHRcdFx0MV8wMDBfMDAwXzAwMCxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0Y2xhc3MgeyB4ID0gMjsgfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgeCA9IDE7IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4IH0sXG5cdFx0XHRcdC8vIGNsYXNzIHsgc3RhdGljICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3ggfSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblx0IiwiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0="
 `;
 
 exports[`Webpack 4 Source-map source-map plugin 1`] = `
@@ -2020,16 +2059,17 @@ __webpack_require__.d(__webpack_exports__, \\"es2017\\", function() { return /* 
 __webpack_require__.d(__webpack_exports__, \\"es2018\\", function() { return /* reexport */ es2018; });
 __webpack_require__.d(__webpack_exports__, \\"es2019\\", function() { return /* reexport */ es2019; });
 __webpack_require__.d(__webpack_exports__, \\"es2020\\", function() { return /* reexport */ es2020; });
+__webpack_require__.d(__webpack_exports__, \\"es2021\\", function() { return /* reexport */ es2021; });
 __webpack_require__.d(__webpack_exports__, \\"esnext\\", function() { return /* reexport */ esnext; });
 
 // CONCATENATED MODULE: /src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -2056,6 +2096,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -2080,8 +2125,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -2102,9 +2147,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -2115,21 +2170,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -2140,7 +2191,7 @@ const esnext = (() => {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIiwid2VicGFjazovLy8vc3JjL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O1FBQUE7UUFDQTs7UUFFQTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7OztRQUdBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQSwwQ0FBMEMsZ0NBQWdDO1FBQzFFO1FBQ0E7O1FBRUE7UUFDQTtRQUNBO1FBQ0Esd0RBQXdELGtCQUFrQjtRQUMxRTtRQUNBLGlEQUFpRCxjQUFjO1FBQy9EOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQSx5Q0FBeUMsaUNBQWlDO1FBQzFFLGdIQUFnSCxtQkFBbUIsRUFBRTtRQUNySTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBLDJCQUEyQiwwQkFBMEIsRUFBRTtRQUN2RCxpQ0FBaUMsZUFBZTtRQUNoRDtRQUNBO1FBQ0E7O1FBRUE7UUFDQSxzREFBc0QsK0RBQStEOztRQUVySDtRQUNBOzs7UUFHQTtRQUNBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ2xGQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksZ0JBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUE3Qi9CO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQWxDSjtBQWtDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBbkNKO0FBbUNZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQUUsV0FBRztBQUFBLE9BQUwsUUFBZjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQWYsSUFBZSxTQUFmO0FBQUEsSUFDQSxvQkFBTTtBQUFBO0FBQUE7OztBQ3JDUiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIiBcdC8vIFRoZSBtb2R1bGUgY2FjaGVcbiBcdHZhciBpbnN0YWxsZWRNb2R1bGVzID0ge307XG5cbiBcdC8vIFRoZSByZXF1aXJlIGZ1bmN0aW9uXG4gXHRmdW5jdGlvbiBfX3dlYnBhY2tfcmVxdWlyZV9fKG1vZHVsZUlkKSB7XG5cbiBcdFx0Ly8gQ2hlY2sgaWYgbW9kdWxlIGlzIGluIGNhY2hlXG4gXHRcdGlmKGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdKSB7XG4gXHRcdFx0cmV0dXJuIGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdLmV4cG9ydHM7XG4gXHRcdH1cbiBcdFx0Ly8gQ3JlYXRlIGEgbmV3IG1vZHVsZSAoYW5kIHB1dCBpdCBpbnRvIHRoZSBjYWNoZSlcbiBcdFx0dmFyIG1vZHVsZSA9IGluc3RhbGxlZE1vZHVsZXNbbW9kdWxlSWRdID0ge1xuIFx0XHRcdGk6IG1vZHVsZUlkLFxuIFx0XHRcdGw6IGZhbHNlLFxuIFx0XHRcdGV4cG9ydHM6IHt9XG4gXHRcdH07XG5cbiBcdFx0Ly8gRXhlY3V0ZSB0aGUgbW9kdWxlIGZ1bmN0aW9uXG4gXHRcdG1vZHVsZXNbbW9kdWxlSWRdLmNhbGwobW9kdWxlLmV4cG9ydHMsIG1vZHVsZSwgbW9kdWxlLmV4cG9ydHMsIF9fd2VicGFja19yZXF1aXJlX18pO1xuXG4gXHRcdC8vIEZsYWcgdGhlIG1vZHVsZSBhcyBsb2FkZWRcbiBcdFx0bW9kdWxlLmwgPSB0cnVlO1xuXG4gXHRcdC8vIFJldHVybiB0aGUgZXhwb3J0cyBvZiB0aGUgbW9kdWxlXG4gXHRcdHJldHVybiBtb2R1bGUuZXhwb3J0cztcbiBcdH1cblxuXG4gXHQvLyBleHBvc2UgdGhlIG1vZHVsZXMgb2JqZWN0IChfX3dlYnBhY2tfbW9kdWxlc19fKVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5tID0gbW9kdWxlcztcblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGUgY2FjaGVcbiBcdF9fd2VicGFja19yZXF1aXJlX18uYyA9IGluc3RhbGxlZE1vZHVsZXM7XG5cbiBcdC8vIGRlZmluZSBnZXR0ZXIgZnVuY3Rpb24gZm9yIGhhcm1vbnkgZXhwb3J0c1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kID0gZnVuY3Rpb24oZXhwb3J0cywgbmFtZSwgZ2V0dGVyKSB7XG4gXHRcdGlmKCFfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZXhwb3J0cywgbmFtZSkpIHtcbiBcdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgbmFtZSwgeyBlbnVtZXJhYmxlOiB0cnVlLCBnZXQ6IGdldHRlciB9KTtcbiBcdFx0fVxuIFx0fTtcblxuIFx0Ly8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5yID0gZnVuY3Rpb24oZXhwb3J0cykge1xuIFx0XHRpZih0eXBlb2YgU3ltYm9sICE9PSAndW5kZWZpbmVkJyAmJiBTeW1ib2wudG9TdHJpbmdUYWcpIHtcbiBcdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgU3ltYm9sLnRvU3RyaW5nVGFnLCB7IHZhbHVlOiAnTW9kdWxlJyB9KTtcbiBcdFx0fVxuIFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgJ19fZXNNb2R1bGUnLCB7IHZhbHVlOiB0cnVlIH0pO1xuIFx0fTtcblxuIFx0Ly8gY3JlYXRlIGEgZmFrZSBuYW1lc3BhY2Ugb2JqZWN0XG4gXHQvLyBtb2RlICYgMTogdmFsdWUgaXMgYSBtb2R1bGUgaWQsIHJlcXVpcmUgaXRcbiBcdC8vIG1vZGUgJiAyOiBtZXJnZSBhbGwgcHJvcGVydGllcyBvZiB2YWx1ZSBpbnRvIHRoZSBuc1xuIFx0Ly8gbW9kZSAmIDQ6IHJldHVybiB2YWx1ZSB3aGVuIGFscmVhZHkgbnMgb2JqZWN0XG4gXHQvLyBtb2RlICYgOHwxOiBiZWhhdmUgbGlrZSByZXF1aXJlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnQgPSBmdW5jdGlvbih2YWx1ZSwgbW9kZSkge1xuIFx0XHRpZihtb2RlICYgMSkgdmFsdWUgPSBfX3dlYnBhY2tfcmVxdWlyZV9fKHZhbHVlKTtcbiBcdFx0aWYobW9kZSAmIDgpIHJldHVybiB2YWx1ZTtcbiBcdFx0aWYoKG1vZGUgJiA0KSAmJiB0eXBlb2YgdmFsdWUgPT09ICdvYmplY3QnICYmIHZhbHVlICYmIHZhbHVlLl9fZXNNb2R1bGUpIHJldHVybiB2YWx1ZTtcbiBcdFx0dmFyIG5zID0gT2JqZWN0LmNyZWF0ZShudWxsKTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5yKG5zKTtcbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KG5zLCAnZGVmYXVsdCcsIHsgZW51bWVyYWJsZTogdHJ1ZSwgdmFsdWU6IHZhbHVlIH0pO1xuIFx0XHRpZihtb2RlICYgMiAmJiB0eXBlb2YgdmFsdWUgIT0gJ3N0cmluZycpIGZvcih2YXIga2V5IGluIHZhbHVlKSBfX3dlYnBhY2tfcmVxdWlyZV9fLmQobnMsIGtleSwgZnVuY3Rpb24oa2V5KSB7IHJldHVybiB2YWx1ZVtrZXldOyB9LmJpbmQobnVsbCwga2V5KSk7XG4gXHRcdHJldHVybiBucztcbiBcdH07XG5cbiBcdC8vIGdldERlZmF1bHRFeHBvcnQgZnVuY3Rpb24gZm9yIGNvbXBhdGliaWxpdHkgd2l0aCBub24taGFybW9ueSBtb2R1bGVzXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm4gPSBmdW5jdGlvbihtb2R1bGUpIHtcbiBcdFx0dmFyIGdldHRlciA9IG1vZHVsZSAmJiBtb2R1bGUuX19lc01vZHVsZSA/XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0RGVmYXVsdCgpIHsgcmV0dXJuIG1vZHVsZVsnZGVmYXVsdCddOyB9IDpcbiBcdFx0XHRmdW5jdGlvbiBnZXRNb2R1bGVFeHBvcnRzKCkgeyByZXR1cm4gbW9kdWxlOyB9O1xuIFx0XHRfX3dlYnBhY2tfcmVxdWlyZV9fLmQoZ2V0dGVyLCAnYScsIGdldHRlcik7XG4gXHRcdHJldHVybiBnZXR0ZXI7XG4gXHR9O1xuXG4gXHQvLyBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGxcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubyA9IGZ1bmN0aW9uKG9iamVjdCwgcHJvcGVydHkpIHsgcmV0dXJuIE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmplY3QsIHByb3BlcnR5KTsgfTtcblxuIFx0Ly8gX193ZWJwYWNrX3B1YmxpY19wYXRoX19cbiBcdF9fd2VicGFja19yZXF1aXJlX18ucCA9IFwiXCI7XG5cblxuIFx0Ly8gTG9hZCBlbnRyeSBtb2R1bGUgYW5kIHJldHVybiBleHBvcnRzXG4gXHRyZXR1cm4gX193ZWJwYWNrX3JlcXVpcmVfXyhfX3dlYnBhY2tfcmVxdWlyZV9fLnMgPSBcIi4vc3JjL2luZGV4LmpzXCIpO1xuIiwiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIlxuXHRcdGV4cG9ydCAqIGZyb20gJy4vZm9vLmpzJ1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy9zcmMvZm9vLmpzIiwid2VicGFjazovLy8vc3JjL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O1FBQUE7UUFDQTs7UUFFQTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBOztRQUVBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7OztRQUdBO1FBQ0E7O1FBRUE7UUFDQTs7UUFFQTtRQUNBO1FBQ0E7UUFDQSwwQ0FBMEMsZ0NBQWdDO1FBQzFFO1FBQ0E7O1FBRUE7UUFDQTtRQUNBO1FBQ0Esd0RBQXdELGtCQUFrQjtRQUMxRTtRQUNBLGlEQUFpRCxjQUFjO1FBQy9EOztRQUVBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQSx5Q0FBeUMsaUNBQWlDO1FBQzFFLGdIQUFnSCxtQkFBbUIsRUFBRTtRQUNySTtRQUNBOztRQUVBO1FBQ0E7UUFDQTtRQUNBLDJCQUEyQiwwQkFBMEIsRUFBRTtRQUN2RCxpQ0FBaUMsZUFBZTtRQUNoRDtRQUNBO1FBQ0E7O1FBRUE7UUFDQSxzREFBc0QsK0RBQStEOztRQUVySDtRQUNBOzs7UUFHQTtRQUNBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQ2xGQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxFQUFFLEdBQUc7QUFDZixNQUFJLElBQUksbUJBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUFDNUIsTUFBSTtBQUNKLE1BQUksSUFBSTtBQUNSLFFBQU0sSUFBSTtBQUNWLFlBQU07QUFDTixTQUFPO0FBQUEsSUFDTixvQkFBTTtBQUFBLElBQ047QUFBQSxJQUNBO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBekMvQjtBQTBDRyxTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQTNDSjtBQTJDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQTdDSjtBQTZDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBOUNKO0FBOENZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBRUEsWUFBTTtBQUFBLE9BQVMsa0NBQWYsSUFBZSxjQUFmO0FBQUE7QUFBQTs7O0FDL0NGIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiIFx0Ly8gVGhlIG1vZHVsZSBjYWNoZVxuIFx0dmFyIGluc3RhbGxlZE1vZHVsZXMgPSB7fTtcblxuIFx0Ly8gVGhlIHJlcXVpcmUgZnVuY3Rpb25cbiBcdGZ1bmN0aW9uIF9fd2VicGFja19yZXF1aXJlX18obW9kdWxlSWQpIHtcblxuIFx0XHQvLyBDaGVjayBpZiBtb2R1bGUgaXMgaW4gY2FjaGVcbiBcdFx0aWYoaW5zdGFsbGVkTW9kdWxlc1ttb2R1bGVJZF0pIHtcbiBcdFx0XHRyZXR1cm4gaW5zdGFsbGVkTW9kdWxlc1ttb2R1bGVJZF0uZXhwb3J0cztcbiBcdFx0fVxuIFx0XHQvLyBDcmVhdGUgYSBuZXcgbW9kdWxlIChhbmQgcHV0IGl0IGludG8gdGhlIGNhY2hlKVxuIFx0XHR2YXIgbW9kdWxlID0gaW5zdGFsbGVkTW9kdWxlc1ttb2R1bGVJZF0gPSB7XG4gXHRcdFx0aTogbW9kdWxlSWQsXG4gXHRcdFx0bDogZmFsc2UsXG4gXHRcdFx0ZXhwb3J0czoge31cbiBcdFx0fTtcblxuIFx0XHQvLyBFeGVjdXRlIHRoZSBtb2R1bGUgZnVuY3Rpb25cbiBcdFx0bW9kdWxlc1ttb2R1bGVJZF0uY2FsbChtb2R1bGUuZXhwb3J0cywgbW9kdWxlLCBtb2R1bGUuZXhwb3J0cywgX193ZWJwYWNrX3JlcXVpcmVfXyk7XG5cbiBcdFx0Ly8gRmxhZyB0aGUgbW9kdWxlIGFzIGxvYWRlZFxuIFx0XHRtb2R1bGUubCA9IHRydWU7XG5cbiBcdFx0Ly8gUmV0dXJuIHRoZSBleHBvcnRzIG9mIHRoZSBtb2R1bGVcbiBcdFx0cmV0dXJuIG1vZHVsZS5leHBvcnRzO1xuIFx0fVxuXG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlcyBvYmplY3QgKF9fd2VicGFja19tb2R1bGVzX18pXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm0gPSBtb2R1bGVzO1xuXG4gXHQvLyBleHBvc2UgdGhlIG1vZHVsZSBjYWNoZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5jID0gaW5zdGFsbGVkTW9kdWxlcztcblxuIFx0Ly8gZGVmaW5lIGdldHRlciBmdW5jdGlvbiBmb3IgaGFybW9ueSBleHBvcnRzXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSBmdW5jdGlvbihleHBvcnRzLCBuYW1lLCBnZXR0ZXIpIHtcbiBcdFx0aWYoIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBuYW1lKSkge1xuIFx0XHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBuYW1lLCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZ2V0dGVyIH0pO1xuIFx0XHR9XG4gXHR9O1xuXG4gXHQvLyBkZWZpbmUgX19lc01vZHVsZSBvbiBleHBvcnRzXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnIgPSBmdW5jdGlvbihleHBvcnRzKSB7XG4gXHRcdGlmKHR5cGVvZiBTeW1ib2wgIT09ICd1bmRlZmluZWQnICYmIFN5bWJvbC50b1N0cmluZ1RhZykge1xuIFx0XHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBTeW1ib2wudG9TdHJpbmdUYWcsIHsgdmFsdWU6ICdNb2R1bGUnIH0pO1xuIFx0XHR9XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCAnX19lc01vZHVsZScsIHsgdmFsdWU6IHRydWUgfSk7XG4gXHR9O1xuXG4gXHQvLyBjcmVhdGUgYSBmYWtlIG5hbWVzcGFjZSBvYmplY3RcbiBcdC8vIG1vZGUgJiAxOiB2YWx1ZSBpcyBhIG1vZHVsZSBpZCwgcmVxdWlyZSBpdFxuIFx0Ly8gbW9kZSAmIDI6IG1lcmdlIGFsbCBwcm9wZXJ0aWVzIG9mIHZhbHVlIGludG8gdGhlIG5zXG4gXHQvLyBtb2RlICYgNDogcmV0dXJuIHZhbHVlIHdoZW4gYWxyZWFkeSBucyBvYmplY3RcbiBcdC8vIG1vZGUgJiA4fDE6IGJlaGF2ZSBsaWtlIHJlcXVpcmVcbiBcdF9fd2VicGFja19yZXF1aXJlX18udCA9IGZ1bmN0aW9uKHZhbHVlLCBtb2RlKSB7XG4gXHRcdGlmKG1vZGUgJiAxKSB2YWx1ZSA9IF9fd2VicGFja19yZXF1aXJlX18odmFsdWUpO1xuIFx0XHRpZihtb2RlICYgOCkgcmV0dXJuIHZhbHVlO1xuIFx0XHRpZigobW9kZSAmIDQpICYmIHR5cGVvZiB2YWx1ZSA9PT0gJ29iamVjdCcgJiYgdmFsdWUgJiYgdmFsdWUuX19lc01vZHVsZSkgcmV0dXJuIHZhbHVlO1xuIFx0XHR2YXIgbnMgPSBPYmplY3QuY3JlYXRlKG51bGwpO1xuIFx0XHRfX3dlYnBhY2tfcmVxdWlyZV9fLnIobnMpO1xuIFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkobnMsICdkZWZhdWx0JywgeyBlbnVtZXJhYmxlOiB0cnVlLCB2YWx1ZTogdmFsdWUgfSk7XG4gXHRcdGlmKG1vZGUgJiAyICYmIHR5cGVvZiB2YWx1ZSAhPSAnc3RyaW5nJykgZm9yKHZhciBrZXkgaW4gdmFsdWUpIF9fd2VicGFja19yZXF1aXJlX18uZChucywga2V5LCBmdW5jdGlvbihrZXkpIHsgcmV0dXJuIHZhbHVlW2tleV07IH0uYmluZChudWxsLCBrZXkpKTtcbiBcdFx0cmV0dXJuIG5zO1xuIFx0fTtcblxuIFx0Ly8gZ2V0RGVmYXVsdEV4cG9ydCBmdW5jdGlvbiBmb3IgY29tcGF0aWJpbGl0eSB3aXRoIG5vbi1oYXJtb255IG1vZHVsZXNcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubiA9IGZ1bmN0aW9uKG1vZHVsZSkge1xuIFx0XHR2YXIgZ2V0dGVyID0gbW9kdWxlICYmIG1vZHVsZS5fX2VzTW9kdWxlID9cbiBcdFx0XHRmdW5jdGlvbiBnZXREZWZhdWx0KCkgeyByZXR1cm4gbW9kdWxlWydkZWZhdWx0J107IH0gOlxuIFx0XHRcdGZ1bmN0aW9uIGdldE1vZHVsZUV4cG9ydHMoKSB7IHJldHVybiBtb2R1bGU7IH07XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18uZChnZXR0ZXIsICdhJywgZ2V0dGVyKTtcbiBcdFx0cmV0dXJuIGdldHRlcjtcbiBcdH07XG5cbiBcdC8vIE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbFxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5vID0gZnVuY3Rpb24ob2JqZWN0LCBwcm9wZXJ0eSkgeyByZXR1cm4gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iamVjdCwgcHJvcGVydHkpOyB9O1xuXG4gXHQvLyBfX3dlYnBhY2tfcHVibGljX3BhdGhfX1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5wID0gXCJcIjtcblxuXG4gXHQvLyBMb2FkIGVudHJ5IG1vZHVsZSBhbmQgcmV0dXJuIGV4cG9ydHNcbiBcdHJldHVybiBfX3dlYnBhY2tfcmVxdWlyZV9fKF9fd2VicGFja19yZXF1aXJlX18ucyA9IFwiLi9zcmMvaW5kZXguanNcIik7XG4iLCJcblx0XHRleHBvcnQgY29uc3QgZXMyMDE2ID0gMTAgKiogNDtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTcgPSB0eXBlb2YgKGFzeW5jICgpID0+IHt9KTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTggPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3QgeSA9IHsgYTogMSB9XG5cdFx0XHRsZXQgeCA9IHsuLi55fVxuXHRcdFx0bGV0IHsuLi56fSA9IHlcblx0XHRcdHJldHVybiB6O1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE5ID0gKCgpID0+IHtcblx0XHRcdHRyeSB7XG5cdFx0XHRcdHJldHVybiAndHJ5J1xuXHRcdFx0fSBjYXRjaCB7fVxuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIwID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IG9iaiA9IHtcblx0XHRcdFx0cHJvcGVydHk6IDEsXG5cdFx0XHR9O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0b2JqPy5wcm9wZXJ0eSxcblx0XHRcdFx0b2JqLnByb3AgPz8gMixcblx0XHRcdFx0aW1wb3J0Lm1ldGEsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIxID0gKCgpID0+IHtcblx0XHRcdGxldCBhO1xuXHRcdFx0bGV0IHggPSAxO1xuXHRcdFx0Y29uc3QgeSA9IDM7XG5cdFx0XHR4ICYmPSB5O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0YSA/Pz0gMixcblx0XHRcdFx0eCxcblx0XHRcdFx0MV8wMDBfMDAwXzAwMCxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0Y2xhc3MgeyB4ID0gMjsgfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgeCA9IDE7IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4IH0sXG5cdFx0XHRcdC8vIGNsYXNzIHsgc3RhdGljICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3ggfSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblx0IiwiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0="
 `;
 
 exports[`Webpack 4 target 1`] = `
@@ -2246,16 +2297,17 @@ __webpack_require__.d(__webpack_exports__, \\"es2017\\", function() { return /* 
 __webpack_require__.d(__webpack_exports__, \\"es2018\\", function() { return /* reexport */ es2018; });
 __webpack_require__.d(__webpack_exports__, \\"es2019\\", function() { return /* reexport */ es2019; });
 __webpack_require__.d(__webpack_exports__, \\"es2020\\", function() { return /* reexport */ es2020; });
+__webpack_require__.d(__webpack_exports__, \\"es2021\\", function() { return /* reexport */ es2021; });
 __webpack_require__.d(__webpack_exports__, \\"esnext\\", function() { return /* reexport */ esnext; });
 
 // CONCATENATED MODULE: /src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -2282,6 +2334,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -2306,8 +2363,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -2328,9 +2385,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -2341,21 +2408,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -2381,14 +2444,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
@@ -2992,17 +3058,18 @@ __webpack_require__.d(__webpack_exports__, {
   \\"es2018\\": () => (/* reexport */ es2018),
   \\"es2019\\": () => (/* reexport */ es2019),
   \\"es2020\\": () => (/* reexport */ es2020),
+  \\"es2021\\": () => (/* reexport */ es2021),
   \\"esnext\\": () => (/* reexport */ esnext)
 });
 
 ;// CONCATENATED MODULE: ./src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -3029,6 +3096,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -3053,8 +3125,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -3075,9 +3147,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -3088,21 +3170,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -3127,14 +3205,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
@@ -3263,7 +3344,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./src/foo.ts
 var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
@@ -3478,7 +3559,7 @@ exports[`Webpack 5 Source-map source-map eval 1`] = `
 /***/ \\"./src/index.js\\":
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval(\\"// ESM COMPAT FLAG\\\\n__webpack_require__.r(__webpack_exports__);\\\\n\\\\n// EXPORTS\\\\n__webpack_require__.d(__webpack_exports__, {\\\\n  \\\\\\"es2016\\\\\\": () => (/* reexport */ es2016),\\\\n  \\\\\\"es2017\\\\\\": () => (/* reexport */ es2017),\\\\n  \\\\\\"es2018\\\\\\": () => (/* reexport */ es2018),\\\\n  \\\\\\"es2019\\\\\\": () => (/* reexport */ es2019),\\\\n  \\\\\\"es2020\\\\\\": () => (/* reexport */ es2020),\\\\n  \\\\\\"esnext\\\\\\": () => (/* reexport */ esnext)\\\\n});\\\\n\\\\n;// CONCATENATED MODULE: ./src/foo.js\\\\nvar __defProp = Object.defineProperty;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;\\\\nvar __objSpread = (a, b) => {\\\\n  for (var prop in b || (b = {}))\\\\n    if (__hasOwnProp.call(b, prop))\\\\n      __defNormalProp(a, prop, b[prop]);\\\\n  if (__getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(b)) {\\\\n      if (__propIsEnum.call(b, prop))\\\\n        __defNormalProp(a, prop, b[prop]);\\\\n    }\\\\n  return a;\\\\n};\\\\nvar __objRest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  __defNormalProp(obj, typeof key !== \\\\\\"symbol\\\\\\" ? key + \\\\\\"\\\\\\" : key, value);\\\\n  return value;\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = {a: 1};\\\\n  let x = __objSpread({}, y);\\\\n  let z = __objRest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;\\\\n  let a;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        _x.add(this);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        _x2.set(this, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakSet(), x_fn2 = function() {\\\\n    }, _x3.add(_d), _d),\\\\n    (_e = class {\\\\n    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),\\\\n    a != null ? a : a = 2\\\\n  ];\\\\n})();\\\\n\\\\n;// CONCATENATED MODULE: ./src/index.js\\\\n\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzPzA1NTQiLCJ3ZWJwYWNrOi8vLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVLE9BQU07QUFDNUIsUUFBTSxJQUFJLENBQUUsR0FBRztBQUNmLE1BQUksSUFBSSxnQkFBSTtBQUNaLE1BQVEsY0FBSyxHQUFMO0FBQ1IsU0FBTztBQUFBO0FBR0QsTUFBTSxTQUFVLE9BQU07QUFDNUIsTUFBSTtBQUNILFdBQU87QUFBQSxXQUNBLEdBQU47QUFBQTtBQUFBO0FBR0ksTUFBTSxTQUFVLE9BQU07QUFsQi9CO0FBbUJHLFFBQU0sTUFBTTtBQUFBLElBQ1gsVUFBVTtBQUFBO0FBRVgsU0FBTztBQUFBLElBQ04sMkJBQUs7QUFBQSxJQUNMLFVBQUksU0FBSixZQUFZO0FBQUEsSUFDWjtBQUFBO0FBQUE7QUFJSyxNQUFNLFNBQVUsT0FBTTtBQTdCL0I7QUE4QkcsTUFBSTtBQUNKLFNBQU87QUFBQSxJQUNOLE1BQU07QUFBQSxNQUFOLGNBaENKO0FBZ0NZLGlDQUFJO0FBQUE7QUFBQTtBQUFBLElBQ1osWUFBTTtBQUFBLE9BQVMsY0FBZixJQUFlLEtBQUksSUFBbkI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBbENKO0FBa0NZO0FBQUE7QUFBQSxrQ0FBRSxXQUFHO0FBQUEsT0FBYjtBQUFBLElBQ0EsWUFBTTtBQUFBLE1BQU4sY0FuQ0o7QUFtQ1k7QUFBQTtBQUFBLDRCQUFSO0FBQUEsSUFDQSxZQUFNO0FBQUEsT0FBUyw2QkFBRSxXQUFHO0FBQUEsT0FBTCxRQUFmO0FBQUEsSUFDQSxZQUFNO0FBQUEsT0FBUyw2QkFBZixJQUFlLFNBQWY7QUFBQSxJQUNBLG9CQUFNO0FBQUE7QUFBQTs7O0FDckNSIiwiZmlsZSI6Ii4vc3JjL2luZGV4LmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIlxuXHRcdGV4cG9ydCAqIGZyb20gJy4vZm9vLmpzJ1xuXHQiXSwic291cmNlUm9vdCI6IiJ9\\\\n//# sourceURL=webpack-internal:///./src/index.js\\\\n\\");
+eval(\\"// ESM COMPAT FLAG\\\\n__webpack_require__.r(__webpack_exports__);\\\\n\\\\n// EXPORTS\\\\n__webpack_require__.d(__webpack_exports__, {\\\\n  \\\\\\"es2016\\\\\\": () => (/* reexport */ es2016),\\\\n  \\\\\\"es2017\\\\\\": () => (/* reexport */ es2017),\\\\n  \\\\\\"es2018\\\\\\": () => (/* reexport */ es2018),\\\\n  \\\\\\"es2019\\\\\\": () => (/* reexport */ es2019),\\\\n  \\\\\\"es2020\\\\\\": () => (/* reexport */ es2020),\\\\n  \\\\\\"es2021\\\\\\": () => (/* reexport */ es2021),\\\\n  \\\\\\"esnext\\\\\\": () => (/* reexport */ esnext)\\\\n});\\\\n\\\\n;// CONCATENATED MODULE: ./src/foo.js\\\\nvar __defProp = Object.defineProperty;\\\\nvar __getOwnPropSymbols = Object.getOwnPropertySymbols;\\\\nvar __hasOwnProp = Object.prototype.hasOwnProperty;\\\\nvar __propIsEnum = Object.prototype.propertyIsEnumerable;\\\\nvar __pow = Math.pow;\\\\nvar __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;\\\\nvar __spreadValues = (a, b) => {\\\\n  for (var prop in b || (b = {}))\\\\n    if (__hasOwnProp.call(b, prop))\\\\n      __defNormalProp(a, prop, b[prop]);\\\\n  if (__getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(b)) {\\\\n      if (__propIsEnum.call(b, prop))\\\\n        __defNormalProp(a, prop, b[prop]);\\\\n    }\\\\n  return a;\\\\n};\\\\nvar __objRest = (source, exclude) => {\\\\n  var target = {};\\\\n  for (var prop in source)\\\\n    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)\\\\n      target[prop] = source[prop];\\\\n  if (source != null && __getOwnPropSymbols)\\\\n    for (var prop of __getOwnPropSymbols(source)) {\\\\n      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))\\\\n        target[prop] = source[prop];\\\\n    }\\\\n  return target;\\\\n};\\\\nvar __publicField = (obj, key, value) => {\\\\n  __defNormalProp(obj, typeof key !== \\\\\\"symbol\\\\\\" ? key + \\\\\\"\\\\\\" : key, value);\\\\n  return value;\\\\n};\\\\nvar __privateAdd = (obj, member, value) => {\\\\n  if (member.has(obj))\\\\n    throw TypeError(\\\\\\"Cannot add the same private member more than once\\\\\\");\\\\n  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);\\\\n};\\\\nvar __async = (__this, __arguments, generator) => {\\\\n  return new Promise((resolve, reject) => {\\\\n    var fulfilled = (value) => {\\\\n      try {\\\\n        step(generator.next(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var rejected = (value) => {\\\\n      try {\\\\n        step(generator.throw(value));\\\\n      } catch (e) {\\\\n        reject(e);\\\\n      }\\\\n    };\\\\n    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);\\\\n    step((generator = generator.apply(__this, __arguments)).next());\\\\n  });\\\\n};\\\\nconst import_meta = {};\\\\nconst es2016 = __pow(10, 4);\\\\nconst es2017 = \\\\\\"function\\\\\\";\\\\nconst es2018 = (() => {\\\\n  const y = { a: 1 };\\\\n  let x = __spreadValues({}, y);\\\\n  let z = __objRest(y, []);\\\\n  return z;\\\\n})();\\\\nconst es2019 = (() => {\\\\n  try {\\\\n    return \\\\\\"try\\\\\\";\\\\n  } catch (e) {\\\\n  }\\\\n})();\\\\nconst es2020 = (() => {\\\\n  var _a;\\\\n  const obj = {\\\\n    property: 1\\\\n  };\\\\n  return [\\\\n    obj == null ? void 0 : obj.property,\\\\n    (_a = obj.prop) != null ? _a : 2,\\\\n    import_meta\\\\n  ];\\\\n})();\\\\nconst es2021 = (() => {\\\\n  let a;\\\\n  let x = 1;\\\\n  const y = 3;\\\\n  x && (x = y);\\\\n  return [\\\\n    a != null ? a : a = 2,\\\\n    x,\\\\n    1e9\\\\n  ];\\\\n})();\\\\nconst esnext = (() => {\\\\n  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;\\\\n  return [\\\\n    class {\\\\n      constructor() {\\\\n        __publicField(this, \\\\\\"x\\\\\\", 2);\\\\n      }\\\\n    },\\\\n    (_a = class {\\\\n    }, __publicField(_a, \\\\\\"x\\\\\\", 1), _a),\\\\n    (_b = class {\\\\n      constructor() {\\\\n        __privateAdd(this, _x);\\\\n      }\\\\n    }, _x = new WeakSet(), x_fn = function() {\\\\n    }, _b),\\\\n    (_c = class {\\\\n      constructor() {\\\\n        __privateAdd(this, _x2, void 0);\\\\n      }\\\\n    }, _x2 = new WeakMap(), _c),\\\\n    (_d = class {\\\\n    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)\\\\n  ];\\\\n})();\\\\n\\\\n;// CONCATENATED MODULE: ./src/index.js\\\\n\\\\n//# sourceURL=[module]\\\\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzPzA1NTQiLCJ3ZWJwYWNrOi8vLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ1MsTUFBTSxTQUFTLFVBQU07QUFFckIsTUFBTSxTQUFTO0FBRWYsTUFBTSxTQUFVLE9BQU07QUFDNUIsUUFBTSxJQUFJLEVBQUUsR0FBRztBQUNmLE1BQUksSUFBSSxtQkFBSTtBQUNaLE1BQVEsY0FBSyxHQUFMO0FBQ1IsU0FBTztBQUFBO0FBR0QsTUFBTSxTQUFVLE9BQU07QUFDNUIsTUFBSTtBQUNILFdBQU87QUFBQSxXQUNBLEdBQU47QUFBQTtBQUFBO0FBR0ksTUFBTSxTQUFVLE9BQU07QUFsQi9CO0FBbUJHLFFBQU0sTUFBTTtBQUFBLElBQ1gsVUFBVTtBQUFBO0FBRVgsU0FBTztBQUFBLElBQ04sMkJBQUs7QUFBQSxJQUNMLFVBQUksU0FBSixZQUFZO0FBQUEsSUFDWjtBQUFBO0FBQUE7QUFJSyxNQUFNLFNBQVUsT0FBTTtBQUM1QixNQUFJO0FBQ0osTUFBSSxJQUFJO0FBQ1IsUUFBTSxJQUFJO0FBQ1YsWUFBTTtBQUNOLFNBQU87QUFBQSxJQUNOLG9CQUFNO0FBQUEsSUFDTjtBQUFBLElBQ0E7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUF6Qy9CO0FBMENHLFNBQU87QUFBQSxJQUNOLE1BQU07QUFBQSxNQUFOLGNBM0NKO0FBMkNZLGlDQUFJO0FBQUE7QUFBQTtBQUFBLElBQ1osWUFBTTtBQUFBLE9BQVMsY0FBZixJQUFlLEtBQUksSUFBbkI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBN0NKO0FBNkNZO0FBQUE7QUFBQSxrQ0FBRSxXQUFHO0FBQUEsT0FBYjtBQUFBLElBQ0EsWUFBTTtBQUFBLE1BQU4sY0E5Q0o7QUE4Q1k7QUFBQTtBQUFBLDRCQUFSO0FBQUEsSUFFQSxZQUFNO0FBQUEsT0FBUyxrQ0FBZixJQUFlLGNBQWY7QUFBQTtBQUFBOzs7QUMvQ0YiLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcblx0XHRleHBvcnQgY29uc3QgZXMyMDE2ID0gMTAgKiogNDtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTcgPSB0eXBlb2YgKGFzeW5jICgpID0+IHt9KTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTggPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3QgeSA9IHsgYTogMSB9XG5cdFx0XHRsZXQgeCA9IHsuLi55fVxuXHRcdFx0bGV0IHsuLi56fSA9IHlcblx0XHRcdHJldHVybiB6O1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE5ID0gKCgpID0+IHtcblx0XHRcdHRyeSB7XG5cdFx0XHRcdHJldHVybiAndHJ5J1xuXHRcdFx0fSBjYXRjaCB7fVxuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIwID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IG9iaiA9IHtcblx0XHRcdFx0cHJvcGVydHk6IDEsXG5cdFx0XHR9O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0b2JqPy5wcm9wZXJ0eSxcblx0XHRcdFx0b2JqLnByb3AgPz8gMixcblx0XHRcdFx0aW1wb3J0Lm1ldGEsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIxID0gKCgpID0+IHtcblx0XHRcdGxldCBhO1xuXHRcdFx0bGV0IHggPSAxO1xuXHRcdFx0Y29uc3QgeSA9IDM7XG5cdFx0XHR4ICYmPSB5O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0YSA/Pz0gMixcblx0XHRcdFx0eCxcblx0XHRcdFx0MV8wMDBfMDAwXzAwMCxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0Y2xhc3MgeyB4ID0gMjsgfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgeCA9IDE7IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4IH0sXG5cdFx0XHRcdC8vIGNsYXNzIHsgc3RhdGljICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3ggfSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblx0IiwiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0=\\\\n//# sourceURL=webpack-internal:///./src/index.js\\\\n\\");
 
 /***/ })
 
@@ -3576,17 +3657,18 @@ __webpack_require__.d(__webpack_exports__, {
   \\"es2018\\": () => (/* reexport */ es2018),
   \\"es2019\\": () => (/* reexport */ es2019),
   \\"es2020\\": () => (/* reexport */ es2020),
+  \\"es2021\\": () => (/* reexport */ es2021),
   \\"esnext\\": () => (/* reexport */ esnext)
 });
 
 ;// CONCATENATED MODULE: ./src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -3613,6 +3695,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -3637,8 +3724,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -3659,9 +3746,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -3672,21 +3769,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -3699,7 +3792,7 @@ module.exports = __webpack_exports__;
 //# sourceMappingURL=index.js.map"
 `;
 
-exports[`Webpack 5 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///./src/foo.js\\",\\"webpack:///./src/index.js\\"],\\"names\\":[],\\"mappings\\":\\";;UAAA;UACA;;;;;WCDA;WACA;WACA;WACA;WACA,wCAAwC,yCAAyC;WACjF;WACA;WACA,E;;;;;WCPA,wF;;;;;WCAA;WACA;WACA;WACA,sDAAsD,kBAAkB;WACxE;WACA,+CAA+C,cAAc;WAC7D,E;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;ACNA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU,OAAM;AAC5B,QAAM,IAAI,CAAE,GAAG;AACf,MAAI,IAAI,gBAAI;AACZ,MAAQ,cAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU,OAAM;AAC5B,MAAI;AACH,WAAO;AAAA,WACA,GAAN;AAAA;AAAA;AAGI,MAAM,SAAU,OAAM;AAlB/B;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AA7B/B;AA8BG,MAAI;AACJ,SAAO;AAAA,IACN,MAAM;AAAA,MAAN,cAhCJ;AAgCY,iCAAI;AAAA;AAAA;AAAA,IACZ,YAAM;AAAA,OAAS,cAAf,IAAe,KAAI,IAAnB;AAAA,IACA,YAAM;AAAA,MAAN,cAlCJ;AAkCY;AAAA;AAAA,kCAAE,WAAG;AAAA,OAAb;AAAA,IACA,YAAM;AAAA,MAAN,cAnCJ;AAmCY;AAAA;AAAA,4BAAR;AAAA,IACA,YAAM;AAAA,OAAS,6BAAE,WAAG;AAAA,OAAL,QAAf;AAAA,IACA,YAAM;AAAA,OAAS,6BAAf,IAAe,SAAf;AAAA,IACA,oBAAM;AAAA;AAAA;;;ACrCR\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"// The require scope\\\\nvar __webpack_require__ = {};\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
+exports[`Webpack 5 Source-map source-map file 2`] = `"{\\"version\\":3,\\"sources\\":[\\"webpack:///webpack/bootstrap\\",\\"webpack:///webpack/runtime/define property getters\\",\\"webpack:///webpack/runtime/hasOwnProperty shorthand\\",\\"webpack:///webpack/runtime/make namespace object\\",\\"webpack:///./src/foo.js\\",\\"webpack:///./src/index.js\\"],\\"names\\":[],\\"mappings\\":\\";;UAAA;UACA;;;;;WCDA;WACA;WACA;WACA;WACA,wCAAwC,yCAAyC;WACjF;WACA;WACA,E;;;;;WCPA,wF;;;;;WCAA;WACA;WACA;WACA,sDAAsD,kBAAkB;WACxE;WACA,+CAA+C,cAAc;WAC7D,E;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;ACNA;AACS,MAAM,SAAS,UAAM;AAErB,MAAM,SAAS;AAEf,MAAM,SAAU,OAAM;AAC5B,QAAM,IAAI,EAAE,GAAG;AACf,MAAI,IAAI,mBAAI;AACZ,MAAQ,cAAK,GAAL;AACR,SAAO;AAAA;AAGD,MAAM,SAAU,OAAM;AAC5B,MAAI;AACH,WAAO;AAAA,WACA,GAAN;AAAA;AAAA;AAGI,MAAM,SAAU,OAAM;AAlB/B;AAmBG,QAAM,MAAM;AAAA,IACX,UAAU;AAAA;AAEX,SAAO;AAAA,IACN,2BAAK;AAAA,IACL,UAAI,SAAJ,YAAY;AAAA,IACZ;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AAC5B,MAAI;AACJ,MAAI,IAAI;AACR,QAAM,IAAI;AACV,YAAM;AACN,SAAO;AAAA,IACN,oBAAM;AAAA,IACN;AAAA,IACA;AAAA;AAAA;AAIK,MAAM,SAAU,OAAM;AAzC/B;AA0CG,SAAO;AAAA,IACN,MAAM;AAAA,MAAN,cA3CJ;AA2CY,iCAAI;AAAA;AAAA;AAAA,IACZ,YAAM;AAAA,OAAS,cAAf,IAAe,KAAI,IAAnB;AAAA,IACA,YAAM;AAAA,MAAN,cA7CJ;AA6CY;AAAA;AAAA,kCAAE,WAAG;AAAA,OAAb;AAAA,IACA,YAAM;AAAA,MAAN,cA9CJ;AA8CY;AAAA;AAAA,4BAAR;AAAA,IAEA,YAAM;AAAA,OAAS,kCAAf,IAAe,cAAf;AAAA;AAAA;;;AC/CF\\",\\"file\\":\\"index.js\\",\\"sourcesContent\\":[\\"// The require scope\\\\nvar __webpack_require__ = {};\\\\n\\\\n\\",\\"// define getter functions for harmony exports\\\\n__webpack_require__.d = (exports, definition) => {\\\\n\\\\tfor(var key in definition) {\\\\n\\\\t\\\\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\\\\n\\\\t\\\\t\\\\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\",\\"__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))\\",\\"// define __esModule on exports\\\\n__webpack_require__.r = (exports) => {\\\\n\\\\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\\\\n\\\\t\\\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\\\n\\\\t}\\\\n\\\\tObject.defineProperty(exports, '__esModule', { value: true });\\\\n};\\",\\"\\\\n\\\\t\\\\texport const es2016 = 10 ** 4;\\\\n\\\\n\\\\t\\\\texport const es2017 = typeof (async () => {});\\\\n\\\\n\\\\t\\\\texport const es2018 = (() => {\\\\n\\\\t\\\\t\\\\tconst y = { a: 1 }\\\\n\\\\t\\\\t\\\\tlet x = {...y}\\\\n\\\\t\\\\t\\\\tlet {...z} = y\\\\n\\\\t\\\\t\\\\treturn z;\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2019 = (() => {\\\\n\\\\t\\\\t\\\\ttry {\\\\n\\\\t\\\\t\\\\t\\\\treturn 'try'\\\\n\\\\t\\\\t\\\\t} catch {}\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2020 = (() => {\\\\n\\\\t\\\\t\\\\tconst obj = {\\\\n\\\\t\\\\t\\\\t\\\\tproperty: 1,\\\\n\\\\t\\\\t\\\\t};\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tobj?.property,\\\\n\\\\t\\\\t\\\\t\\\\tobj.prop ?? 2,\\\\n\\\\t\\\\t\\\\t\\\\timport.meta,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const es2021 = (() => {\\\\n\\\\t\\\\t\\\\tlet a;\\\\n\\\\t\\\\t\\\\tlet x = 1;\\\\n\\\\t\\\\t\\\\tconst y = 3;\\\\n\\\\t\\\\t\\\\tx &&= y;\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\ta ??= 2,\\\\n\\\\t\\\\t\\\\t\\\\tx,\\\\n\\\\t\\\\t\\\\t\\\\t1_000_000_000,\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\n\\\\t\\\\texport const esnext = (() => {\\\\n\\\\t\\\\t\\\\treturn [\\\\n\\\\t\\\\t\\\\t\\\\tclass { x = 2; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static x = 1; },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { #x },\\\\n\\\\t\\\\t\\\\t\\\\t// class { static #x() {} },\\\\n\\\\t\\\\t\\\\t\\\\tclass { static #x },\\\\n\\\\t\\\\t\\\\t];\\\\n\\\\t\\\\t})();\\\\n\\\\t\\",\\"\\\\n\\\\t\\\\texport * from './foo.js'\\\\n\\\\t\\"],\\"sourceRoot\\":\\"\\"}"`;
 
 exports[`Webpack 5 Source-map source-map inline 1`] = `
 "/******/ (() => { // webpackBootstrap
@@ -3748,17 +3841,18 @@ __webpack_require__.d(__webpack_exports__, {
   \\"es2018\\": () => (/* reexport */ es2018),
   \\"es2019\\": () => (/* reexport */ es2019),
   \\"es2020\\": () => (/* reexport */ es2020),
+  \\"es2021\\": () => (/* reexport */ es2021),
   \\"esnext\\": () => (/* reexport */ esnext)
 });
 
 ;// CONCATENATED MODULE: ./src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -3785,6 +3879,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -3809,8 +3908,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -3831,9 +3930,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -3844,21 +3953,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -3868,7 +3973,7 @@ const esnext = (() => {
 module.exports = __webpack_exports__;
 /******/ })()
 ;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIiwid2VicGFjazovLy8uL3NyYy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztVQUFBO1VBQ0E7Ozs7O1dDREE7V0FDQTtXQUNBO1dBQ0E7V0FDQSx3Q0FBd0MseUNBQXlDO1dBQ2pGO1dBQ0E7V0FDQSxFOzs7OztXQ1BBLHdGOzs7OztXQ0FBO1dBQ0E7V0FDQTtXQUNBLHNEQUFzRCxrQkFBa0I7V0FDeEU7V0FDQSwrQ0FBK0MsY0FBYztXQUM3RCxFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUNOQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksZ0JBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUE3Qi9CO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQWxDSjtBQWtDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBbkNKO0FBbUNZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQUUsV0FBRztBQUFBLE9BQUwsUUFBZjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQWYsSUFBZSxTQUFmO0FBQUEsSUFDQSxvQkFBTTtBQUFBO0FBQUE7OztBQ3JDUiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIFRoZSByZXF1aXJlIHNjb3BlXG52YXIgX193ZWJwYWNrX3JlcXVpcmVfXyA9IHt9O1xuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgcHJvcCkpIiwiLy8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5yID0gKGV4cG9ydHMpID0+IHtcblx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG5cdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG5cdH1cblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbn07IiwiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIlxuXHRcdGV4cG9ydCAqIGZyb20gJy4vZm9vLmpzJ1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIiwid2VicGFjazovLy8uL3NyYy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztVQUFBO1VBQ0E7Ozs7O1dDREE7V0FDQTtXQUNBO1dBQ0E7V0FDQSx3Q0FBd0MseUNBQXlDO1dBQ2pGO1dBQ0E7V0FDQSxFOzs7OztXQ1BBLHdGOzs7OztXQ0FBO1dBQ0E7V0FDQTtXQUNBLHNEQUFzRCxrQkFBa0I7V0FDeEU7V0FDQSwrQ0FBK0MsY0FBYztXQUM3RCxFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUNOQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxFQUFFLEdBQUc7QUFDZixNQUFJLElBQUksbUJBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUFDNUIsTUFBSTtBQUNKLE1BQUksSUFBSTtBQUNSLFFBQU0sSUFBSTtBQUNWLFlBQU07QUFDTixTQUFPO0FBQUEsSUFDTixvQkFBTTtBQUFBLElBQ047QUFBQSxJQUNBO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBekMvQjtBQTBDRyxTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQTNDSjtBQTJDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQTdDSjtBQTZDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBOUNKO0FBOENZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBRUEsWUFBTTtBQUFBLE9BQVMsa0NBQWYsSUFBZSxjQUFmO0FBQUE7QUFBQTs7O0FDL0NGIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGhlIHJlcXVpcmUgc2NvcGVcbnZhciBfX3dlYnBhY2tfcmVxdWlyZV9fID0ge307XG5cbiIsIi8vIGRlZmluZSBnZXR0ZXIgZnVuY3Rpb25zIGZvciBoYXJtb255IGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uZCA9IChleHBvcnRzLCBkZWZpbml0aW9uKSA9PiB7XG5cdGZvcih2YXIga2V5IGluIGRlZmluaXRpb24pIHtcblx0XHRpZihfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZGVmaW5pdGlvbiwga2V5KSAmJiAhX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIGtleSkpIHtcblx0XHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBrZXksIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBkZWZpbml0aW9uW2tleV0gfSk7XG5cdFx0fVxuXHR9XG59OyIsIl9fd2VicGFja19yZXF1aXJlX18ubyA9IChvYmosIHByb3ApID0+IChPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBwcm9wKSkiLCIvLyBkZWZpbmUgX19lc01vZHVsZSBvbiBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLnIgPSAoZXhwb3J0cykgPT4ge1xuXHRpZih0eXBlb2YgU3ltYm9sICE9PSAndW5kZWZpbmVkJyAmJiBTeW1ib2wudG9TdHJpbmdUYWcpIHtcblx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgU3ltYm9sLnRvU3RyaW5nVGFnLCB7IHZhbHVlOiAnTW9kdWxlJyB9KTtcblx0fVxuXHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgJ19fZXNNb2R1bGUnLCB7IHZhbHVlOiB0cnVlIH0pO1xufTsiLCJcblx0XHRleHBvcnQgY29uc3QgZXMyMDE2ID0gMTAgKiogNDtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTcgPSB0eXBlb2YgKGFzeW5jICgpID0+IHt9KTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTggPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3QgeSA9IHsgYTogMSB9XG5cdFx0XHRsZXQgeCA9IHsuLi55fVxuXHRcdFx0bGV0IHsuLi56fSA9IHlcblx0XHRcdHJldHVybiB6O1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE5ID0gKCgpID0+IHtcblx0XHRcdHRyeSB7XG5cdFx0XHRcdHJldHVybiAndHJ5J1xuXHRcdFx0fSBjYXRjaCB7fVxuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIwID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IG9iaiA9IHtcblx0XHRcdFx0cHJvcGVydHk6IDEsXG5cdFx0XHR9O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0b2JqPy5wcm9wZXJ0eSxcblx0XHRcdFx0b2JqLnByb3AgPz8gMixcblx0XHRcdFx0aW1wb3J0Lm1ldGEsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIxID0gKCgpID0+IHtcblx0XHRcdGxldCBhO1xuXHRcdFx0bGV0IHggPSAxO1xuXHRcdFx0Y29uc3QgeSA9IDM7XG5cdFx0XHR4ICYmPSB5O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0YSA/Pz0gMixcblx0XHRcdFx0eCxcblx0XHRcdFx0MV8wMDBfMDAwXzAwMCxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0Y2xhc3MgeyB4ID0gMjsgfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgeCA9IDE7IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4IH0sXG5cdFx0XHRcdC8vIGNsYXNzIHsgc3RhdGljICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3ggfSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblx0IiwiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0="
 `;
 
 exports[`Webpack 5 Source-map source-map plugin 1`] = `
@@ -3918,17 +4023,18 @@ __webpack_require__.d(__webpack_exports__, {
   \\"es2018\\": () => (/* reexport */ es2018),
   \\"es2019\\": () => (/* reexport */ es2019),
   \\"es2020\\": () => (/* reexport */ es2020),
+  \\"es2021\\": () => (/* reexport */ es2021),
   \\"esnext\\": () => (/* reexport */ esnext)
 });
 
 ;// CONCATENATED MODULE: ./src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -3955,6 +4061,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -3979,8 +4090,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -4001,9 +4112,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -4014,21 +4135,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -4038,7 +4155,7 @@ const esnext = (() => {
 module.exports = __webpack_exports__;
 /******/ })()
 ;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIiwid2VicGFjazovLy8uL3NyYy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztVQUFBO1VBQ0E7Ozs7O1dDREE7V0FDQTtXQUNBO1dBQ0E7V0FDQSx3Q0FBd0MseUNBQXlDO1dBQ2pGO1dBQ0E7V0FDQSxFOzs7OztXQ1BBLHdGOzs7OztXQ0FBO1dBQ0E7V0FDQTtXQUNBLHNEQUFzRCxrQkFBa0I7V0FDeEU7V0FDQSwrQ0FBK0MsY0FBYztXQUM3RCxFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUNOQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxDQUFFLEdBQUc7QUFDZixNQUFJLElBQUksZ0JBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUE3Qi9CO0FBOEJHLE1BQUk7QUFDSixTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQWhDSjtBQWdDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQWxDSjtBQWtDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBbkNKO0FBbUNZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQUUsV0FBRztBQUFBLE9BQUwsUUFBZjtBQUFBLElBQ0EsWUFBTTtBQUFBLE9BQVMsNkJBQWYsSUFBZSxTQUFmO0FBQUEsSUFDQSxvQkFBTTtBQUFBO0FBQUE7OztBQ3JDUiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIFRoZSByZXF1aXJlIHNjb3BlXG52YXIgX193ZWJwYWNrX3JlcXVpcmVfXyA9IHt9O1xuXG4iLCIvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9ucyBmb3IgaGFybW9ueSBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLmQgPSAoZXhwb3J0cywgZGVmaW5pdGlvbikgPT4ge1xuXHRmb3IodmFyIGtleSBpbiBkZWZpbml0aW9uKSB7XG5cdFx0aWYoX193ZWJwYWNrX3JlcXVpcmVfXy5vKGRlZmluaXRpb24sIGtleSkgJiYgIV9fd2VicGFja19yZXF1aXJlX18ubyhleHBvcnRzLCBrZXkpKSB7XG5cdFx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywga2V5LCB7IGVudW1lcmFibGU6IHRydWUsIGdldDogZGVmaW5pdGlvbltrZXldIH0pO1xuXHRcdH1cblx0fVxufTsiLCJfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSAob2JqLCBwcm9wKSA9PiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgcHJvcCkpIiwiLy8gZGVmaW5lIF9fZXNNb2R1bGUgb24gZXhwb3J0c1xuX193ZWJwYWNrX3JlcXVpcmVfXy5yID0gKGV4cG9ydHMpID0+IHtcblx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG5cdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG5cdH1cblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbn07IiwiXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxNiA9IDEwICoqIDQ7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE3ID0gdHlwZW9mIChhc3luYyAoKSA9PiB7fSk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE4ID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IHkgPSB7IGE6IDEgfVxuXHRcdFx0bGV0IHggPSB7Li4ueX1cblx0XHRcdGxldCB7Li4uen0gPSB5XG5cdFx0XHRyZXR1cm4gejtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAxOSA9ICgoKSA9PiB7XG5cdFx0XHR0cnkge1xuXHRcdFx0XHRyZXR1cm4gJ3RyeSdcblx0XHRcdH0gY2F0Y2gge31cblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzMjAyMCA9ICgoKSA9PiB7XG5cdFx0XHRjb25zdCBvYmogPSB7XG5cdFx0XHRcdHByb3BlcnR5OiAxLFxuXHRcdFx0fTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdG9iaj8ucHJvcGVydHksXG5cdFx0XHRcdG9iai5wcm9wID8/IDIsXG5cdFx0XHRcdGltcG9ydC5tZXRhLFxuXHRcdFx0XTtcblx0XHR9KSgpO1xuXG5cdFx0ZXhwb3J0IGNvbnN0IGVzbmV4dCA9ICgoKSA9PiB7XG5cdFx0XHRsZXQgYTtcblx0XHRcdHJldHVybiBbXG5cdFx0XHRcdGNsYXNzIHsgeCA9IDI7IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljIHggPSAxOyB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyAjeCB9LFxuXHRcdFx0XHRjbGFzcyB7IHN0YXRpYyAjeCgpIHt9IH0sXG5cdFx0XHRcdGNsYXNzIHsgc3RhdGljICN4IH0sXG5cdFx0XHRcdGEgPz89IDIsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cdCIsIlxuXHRcdGV4cG9ydCAqIGZyb20gJy4vZm9vLmpzJ1xuXHQiXSwic291cmNlUm9vdCI6IiJ9"
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vL3dlYnBhY2svcnVudGltZS9kZWZpbmUgcHJvcGVydHkgZ2V0dGVycyIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL2hhc093blByb3BlcnR5IHNob3J0aGFuZCIsIndlYnBhY2s6Ly8vd2VicGFjay9ydW50aW1lL21ha2UgbmFtZXNwYWNlIG9iamVjdCIsIndlYnBhY2s6Ly8vLi9zcmMvZm9vLmpzIiwid2VicGFjazovLy8uL3NyYy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztVQUFBO1VBQ0E7Ozs7O1dDREE7V0FDQTtXQUNBO1dBQ0E7V0FDQSx3Q0FBd0MseUNBQXlDO1dBQ2pGO1dBQ0E7V0FDQSxFOzs7OztXQ1BBLHdGOzs7OztXQ0FBO1dBQ0E7V0FDQTtXQUNBLHNEQUFzRCxrQkFBa0I7V0FDeEU7V0FDQSwrQ0FBK0MsY0FBYztXQUM3RCxFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUNOQTtBQUNTLE1BQU0sU0FBUyxVQUFNO0FBRXJCLE1BQU0sU0FBUztBQUVmLE1BQU0sU0FBVSxPQUFNO0FBQzVCLFFBQU0sSUFBSSxFQUFFLEdBQUc7QUFDZixNQUFJLElBQUksbUJBQUk7QUFDWixNQUFRLGNBQUssR0FBTDtBQUNSLFNBQU87QUFBQTtBQUdELE1BQU0sU0FBVSxPQUFNO0FBQzVCLE1BQUk7QUFDSCxXQUFPO0FBQUEsV0FDQSxHQUFOO0FBQUE7QUFBQTtBQUdJLE1BQU0sU0FBVSxPQUFNO0FBbEIvQjtBQW1CRyxRQUFNLE1BQU07QUFBQSxJQUNYLFVBQVU7QUFBQTtBQUVYLFNBQU87QUFBQSxJQUNOLDJCQUFLO0FBQUEsSUFDTCxVQUFJLFNBQUosWUFBWTtBQUFBLElBQ1o7QUFBQTtBQUFBO0FBSUssTUFBTSxTQUFVLE9BQU07QUFDNUIsTUFBSTtBQUNKLE1BQUksSUFBSTtBQUNSLFFBQU0sSUFBSTtBQUNWLFlBQU07QUFDTixTQUFPO0FBQUEsSUFDTixvQkFBTTtBQUFBLElBQ047QUFBQSxJQUNBO0FBQUE7QUFBQTtBQUlLLE1BQU0sU0FBVSxPQUFNO0FBekMvQjtBQTBDRyxTQUFPO0FBQUEsSUFDTixNQUFNO0FBQUEsTUFBTixjQTNDSjtBQTJDWSxpQ0FBSTtBQUFBO0FBQUE7QUFBQSxJQUNaLFlBQU07QUFBQSxPQUFTLGNBQWYsSUFBZSxLQUFJLElBQW5CO0FBQUEsSUFDQSxZQUFNO0FBQUEsTUFBTixjQTdDSjtBQTZDWTtBQUFBO0FBQUEsa0NBQUUsV0FBRztBQUFBLE9BQWI7QUFBQSxJQUNBLFlBQU07QUFBQSxNQUFOLGNBOUNKO0FBOENZO0FBQUE7QUFBQSw0QkFBUjtBQUFBLElBRUEsWUFBTTtBQUFBLE9BQVMsa0NBQWYsSUFBZSxjQUFmO0FBQUE7QUFBQTs7O0FDL0NGIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGhlIHJlcXVpcmUgc2NvcGVcbnZhciBfX3dlYnBhY2tfcmVxdWlyZV9fID0ge307XG5cbiIsIi8vIGRlZmluZSBnZXR0ZXIgZnVuY3Rpb25zIGZvciBoYXJtb255IGV4cG9ydHNcbl9fd2VicGFja19yZXF1aXJlX18uZCA9IChleHBvcnRzLCBkZWZpbml0aW9uKSA9PiB7XG5cdGZvcih2YXIga2V5IGluIGRlZmluaXRpb24pIHtcblx0XHRpZihfX3dlYnBhY2tfcmVxdWlyZV9fLm8oZGVmaW5pdGlvbiwga2V5KSAmJiAhX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIGtleSkpIHtcblx0XHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBrZXksIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBkZWZpbml0aW9uW2tleV0gfSk7XG5cdFx0fVxuXHR9XG59OyIsIl9fd2VicGFja19yZXF1aXJlX18ubyA9IChvYmosIHByb3ApID0+IChPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBwcm9wKSkiLCIvLyBkZWZpbmUgX19lc01vZHVsZSBvbiBleHBvcnRzXG5fX3dlYnBhY2tfcmVxdWlyZV9fLnIgPSAoZXhwb3J0cykgPT4ge1xuXHRpZih0eXBlb2YgU3ltYm9sICE9PSAndW5kZWZpbmVkJyAmJiBTeW1ib2wudG9TdHJpbmdUYWcpIHtcblx0XHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgU3ltYm9sLnRvU3RyaW5nVGFnLCB7IHZhbHVlOiAnTW9kdWxlJyB9KTtcblx0fVxuXHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgJ19fZXNNb2R1bGUnLCB7IHZhbHVlOiB0cnVlIH0pO1xufTsiLCJcblx0XHRleHBvcnQgY29uc3QgZXMyMDE2ID0gMTAgKiogNDtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTcgPSB0eXBlb2YgKGFzeW5jICgpID0+IHt9KTtcblxuXHRcdGV4cG9ydCBjb25zdCBlczIwMTggPSAoKCkgPT4ge1xuXHRcdFx0Y29uc3QgeSA9IHsgYTogMSB9XG5cdFx0XHRsZXQgeCA9IHsuLi55fVxuXHRcdFx0bGV0IHsuLi56fSA9IHlcblx0XHRcdHJldHVybiB6O1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDE5ID0gKCgpID0+IHtcblx0XHRcdHRyeSB7XG5cdFx0XHRcdHJldHVybiAndHJ5J1xuXHRcdFx0fSBjYXRjaCB7fVxuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIwID0gKCgpID0+IHtcblx0XHRcdGNvbnN0IG9iaiA9IHtcblx0XHRcdFx0cHJvcGVydHk6IDEsXG5cdFx0XHR9O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0b2JqPy5wcm9wZXJ0eSxcblx0XHRcdFx0b2JqLnByb3AgPz8gMixcblx0XHRcdFx0aW1wb3J0Lm1ldGEsXG5cdFx0XHRdO1xuXHRcdH0pKCk7XG5cblx0XHRleHBvcnQgY29uc3QgZXMyMDIxID0gKCgpID0+IHtcblx0XHRcdGxldCBhO1xuXHRcdFx0bGV0IHggPSAxO1xuXHRcdFx0Y29uc3QgeSA9IDM7XG5cdFx0XHR4ICYmPSB5O1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0YSA/Pz0gMixcblx0XHRcdFx0eCxcblx0XHRcdFx0MV8wMDBfMDAwXzAwMCxcblx0XHRcdF07XG5cdFx0fSkoKTtcblxuXHRcdGV4cG9ydCBjb25zdCBlc25leHQgPSAoKCkgPT4ge1xuXHRcdFx0cmV0dXJuIFtcblx0XHRcdFx0Y2xhc3MgeyB4ID0gMjsgfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgeCA9IDE7IH0sXG5cdFx0XHRcdGNsYXNzIHsgI3goKSB7fSB9LFxuXHRcdFx0XHRjbGFzcyB7ICN4IH0sXG5cdFx0XHRcdC8vIGNsYXNzIHsgc3RhdGljICN4KCkge30gfSxcblx0XHRcdFx0Y2xhc3MgeyBzdGF0aWMgI3ggfSxcblx0XHRcdF07XG5cdFx0fSkoKTtcblx0IiwiXG5cdFx0ZXhwb3J0ICogZnJvbSAnLi9mb28uanMnXG5cdCJdLCJzb3VyY2VSb290IjoiIn0="
 `;
 
 exports[`Webpack 5 target 1`] = `
@@ -4088,17 +4205,18 @@ __webpack_require__.d(__webpack_exports__, {
   \\"es2018\\": () => (/* reexport */ es2018),
   \\"es2019\\": () => (/* reexport */ es2019),
   \\"es2020\\": () => (/* reexport */ es2020),
+  \\"es2021\\": () => (/* reexport */ es2021),
   \\"esnext\\": () => (/* reexport */ esnext)
 });
 
 ;// CONCATENATED MODULE: ./src/foo.js
 var __defProp = Object.defineProperty;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, {enumerable: true, configurable: true, writable: true, value}) : obj[key] = value;
-var __objSpread = (a, b) => {
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
       __defNormalProp(a, prop, b[prop]);
@@ -4125,6 +4243,11 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== \\"symbol\\" ? key + \\"\\" : key, value);
   return value;
 };
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError(\\"Cannot add the same private member more than once\\");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -4149,8 +4272,8 @@ const import_meta = {};
 const es2016 = __pow(10, 4);
 const es2017 = \\"function\\";
 const es2018 = (() => {
-  const y = {a: 1};
-  let x = __objSpread({}, y);
+  const y = { a: 1 };
+  let x = __spreadValues({}, y);
   let z = __objRest(y, []);
   return z;
 })();
@@ -4171,9 +4294,19 @@ const es2020 = (() => {
     import_meta
   ];
 })();
-const esnext = (() => {
-  var _a, _x, x_fn, _b, _x2, _c, _x3, _d, x_fn2, _e, _x4;
+const es2021 = (() => {
   let a;
+  let x = 1;
+  const y = 3;
+  x && (x = y);
+  return [
+    a != null ? a : a = 2,
+    x,
+    1e9
+  ];
+})();
+const esnext = (() => {
+  var _a, _x, x_fn, _b, _x2, _c, _d, _x3;
   return [
     class {
       constructor() {
@@ -4184,21 +4317,17 @@ const esnext = (() => {
     }, __publicField(_a, \\"x\\", 1), _a),
     (_b = class {
       constructor() {
-        _x.add(this);
+        __privateAdd(this, _x);
       }
     }, _x = new WeakSet(), x_fn = function() {
     }, _b),
     (_c = class {
       constructor() {
-        _x2.set(this, void 0);
+        __privateAdd(this, _x2, void 0);
       }
     }, _x2 = new WeakMap(), _c),
     (_d = class {
-    }, _x3 = new WeakSet(), x_fn2 = function() {
-    }, _x3.add(_d), _d),
-    (_e = class {
-    }, _x4 = new WeakMap(), _x4.set(_e, void 0), _e),
-    a != null ? a : a = 2
+    }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d)
   ];
 })();
 
@@ -4223,14 +4352,17 @@ Object {
     2,
     Object {},
   ],
+  "es2021": Array [
+    2,
+    3,
+    1000000000,
+  ],
   "esnext": Array [
     [Function],
     [Function],
     [Function],
     [Function],
     [Function],
-    [Function],
-    2,
   ],
 }
 `;
