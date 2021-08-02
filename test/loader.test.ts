@@ -4,6 +4,11 @@ import { MinifyPluginOptions } from '../src/interfaces';
 import { build, getFile } from './utils';
 import * as fixtures from './fixtures';
 
+type WebpackSourceMapDevToolPlugin =
+  | webpack4.SourceMapDevToolPlugin
+  | webpack5.SourceMapDevToolPlugin;
+type WebpackRuleSetRule = webpack4.RuleSetRule | webpack5.RuleSetRule;
+
 describe.each([
 	['Webpack 4', webpack4],
 	['Webpack 5', webpack5],
@@ -247,7 +252,7 @@ describe.each([
 	// Targets
 	test('target', async () => {
 		const stats = await build(webpack, fixtures.js, (config) => {
-			config.module.rules[0].options = {
+			(config.module.rules as WebpackRuleSetRule[])[0].options = {
 				target: 'es2015',
 			};
 		});
@@ -290,7 +295,9 @@ describe.each([
 		test('source-map plugin', async () => {
 			const stats = await build(webpack, fixtures.js, (config) => {
 				delete config.devtool;
-				config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
+				(config.plugins as WebpackSourceMapDevToolPlugin[]).push(
+					new webpack.SourceMapDevToolPlugin({}),
+				);
 			});
 			const file = getFile(stats, '/dist/index.js');
 
