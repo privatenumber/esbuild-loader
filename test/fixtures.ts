@@ -36,16 +36,27 @@ const js = {
 			];
 		})();
 
-		export const esnext = (() => {
+		export const es2021 = (() => {
 			let a;
+			let x = 0;
+			const y = 3;
+			return [
+				a ??= 2,
+				x ||= y,
+			];
+		})();
+
+		export const esnext = (() => {
+			class PrivateStatic {
+				static #x() {}
+			}
 			return [
 				class { x = 2; },
 				class { static x = 1; },
 				class { #x() {} },
 				class { #x },
-				class { static #x() {} },
 				class { static #x },
-				a ??= 2,
+				1_000_000_000,
 			];
 		})();
 	`,
