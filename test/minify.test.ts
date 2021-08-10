@@ -439,8 +439,6 @@ describe.each([
 			expect(file.content.trim()).toMatch(/\s{2,}/);
 		});
 
-		// Esbuild currently doesn't support CSS source-maps but checking to make sure no errors
-		// https://github.com/evanw/esbuild/issues/519
 		test('minify w/ source-map', async () => {
 			const stats = await build(webpack, fixtures.css, (config) => {
 				config.devtool = 'source-map';
@@ -457,8 +455,13 @@ describe.each([
 				config.plugins.push(new MiniCssExtractPlugin());
 			});
 
-			const file = getFile(stats, '/dist/index.css');
-			expect(file.content.trim()).not.toMatch(/\s{2,}/);
+			const cssFile = getFile(stats, '/dist/index.css');
+			const css = cssFile.content.trim().split('\n');
+			expect(css[0]).not.toMatch(/\s{2,}/);
+			expect(css[2]).toMatch(/sourceMappingURL/);
+
+			const sourcemapFile = getFile(stats, '/dist/index.css.map');
+			expect(sourcemapFile.content).toMatch(/styles\.css/);
 		});
 	});
 });
