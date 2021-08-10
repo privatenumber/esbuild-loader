@@ -47,15 +47,13 @@ const js = {
 		})();
 
 		export const esnext = (() => {
-			class PrivateStatic {
-				static #x() {}
-			}
 			return [
 				class { x = 2; },
 				class { static x = 1; },
 				class { #x() {} },
 				class { #x },
 				class { static #x },
+				class { static #x() {} },
 				1_000_000_000,
 			];
 		})();
