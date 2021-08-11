@@ -702,12 +702,12 @@ exports[`Webpack 5 Loader + Minification minify chunks 1`] = `
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks 2`] = `
-"(self.webpackChunk=self.webpackChunk||[]).push([[600],{\\"./src/foo.js\\":(l,s,o)=>{\\"use strict\\";o.r(s),o.d(s,{default:()=>u}),console.log(\\"foo\\");const u=1}}]);
+"\\"use strict\\";(self.webpackChunk=self.webpackChunk||[]).push([[600],{\\"./src/foo.js\\":(l,s,o)=>{o.r(s),o.d(s,{default:()=>u}),console.log(\\"foo\\");const u=1}}]);
 "
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks 3`] = `
-"(self.webpackChunk=self.webpackChunk||[]).push([[376],{\\"./src/bar.js\\":(a,s,l)=>{\\"use strict\\";l.r(s),l.d(s,{default:()=>u}),console.log(\\"bar\\"+1);const u=Symbol(\\"bar\\")}}]);
+"\\"use strict\\";(self.webpackChunk=self.webpackChunk||[]).push([[376],{\\"./src/bar.js\\":(a,s,l)=>{l.r(s),l.d(s,{default:()=>u}),console.log(\\"bar\\"+1);const u=Symbol(\\"bar\\")}}]);
 "
 `;
 
@@ -718,17 +718,17 @@ exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 2`] = `
-"(self.webpackChunk=self.webpackChunk||[]).push([[600],{\\"./src/foo.js\\":(l,s,o)=>{\\"use strict\\";o.r(s),o.d(s,{default:()=>u}),console.log(\\"foo\\");const u=1}}]);
+"\\"use strict\\";(self.webpackChunk=self.webpackChunk||[]).push([[600],{\\"./src/foo.js\\":(l,s,o)=>{o.r(s),o.d(s,{default:()=>u}),console.log(\\"foo\\");const u=1}}]);
 "
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 3`] = `
-"(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[376],{
+"\\"use strict\\";
+(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[376],{
 
 /***/ \\"./src/bar.js\\":
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-\\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -749,12 +749,12 @@ exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 2`] = `
-"(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[600],{
+"\\"use strict\\";
+(self[\\"webpackChunk\\"] = self[\\"webpackChunk\\"] || []).push([[600],{
 
 /***/ \\"./src/foo.js\\":
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-\\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -769,7 +769,7 @@ console.log(\\"foo\\");
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 3`] = `
-"(self.webpackChunk=self.webpackChunk||[]).push([[376],{\\"./src/bar.js\\":(a,s,l)=>{\\"use strict\\";l.r(s),l.d(s,{default:()=>u}),console.log(\\"bar\\"+1);const u=Symbol(\\"bar\\")}}]);
+"\\"use strict\\";(self.webpackChunk=self.webpackChunk||[]).push([[376],{\\"./src/bar.js\\":(a,s,l)=>{l.r(s),l.d(s,{default:()=>u}),console.log(\\"bar\\"+1);const u=Symbol(\\"bar\\")}}]);
 "
 `;
 

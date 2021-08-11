@@ -121,7 +121,6 @@ class ESBuildMinifyPlugin {
 			css: minifyCss,
 			include,
 			exclude,
-			implementation,
 			...transformOptions
 		} = this.options;
 
