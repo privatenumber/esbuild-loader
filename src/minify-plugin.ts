@@ -121,7 +121,6 @@ class ESBuildMinifyPlugin {
 			css: minifyCss,
 			include,
 			exclude,
-			implementation,
 			...transformOptions
 		} = this.options;
 
@@ -157,18 +156,16 @@ class ESBuildMinifyPlugin {
 				asset.name,
 				(
 					sourcemap
-					// CSS source-maps not supported yet https://github.com/evanw/esbuild/issues/519
-					&& !assetIsCss
-				)
-					? new SourceMapSource(
-						result.code,
-						asset.name,
-						result.map as any,
-						sourceAsString,
-						map,
-						true,
-					)
-					: new RawSource(result.code),
+						? new SourceMapSource(
+							result.code,
+							asset.name,
+							result.map as any,
+							sourceAsString,
+							map,
+							true,
+						)
+						: new RawSource(result.code)
+				),
 				{
 					...asset.info,
 					minimized: true,
