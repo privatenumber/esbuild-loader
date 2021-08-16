@@ -42,7 +42,7 @@ class ESBuildMinifyPlugin {
 	private readonly transform: typeof defaultEsbuildTransform;
 
 	constructor(options: MinifyPluginOptions = {}) {
-		const { implementation } = options;
+		const { implementation, ...esbuildTransformOptions } = options;
 		if (implementation && typeof implementation.transform !== 'function') {
 			throw new TypeError(
 				`ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received ${typeof implementation.transform}`,
@@ -51,7 +51,7 @@ class ESBuildMinifyPlugin {
 
 		this.transform = implementation?.transform ?? defaultEsbuildTransform;
 
-		this.options = { ...options };
+		this.options = { ...esbuildTransformOptions };
 
 		const hasGranularMinificationConfig = granularMinifyConfigs.some(
 			minifyConfig => minifyConfig in options,
