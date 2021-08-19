@@ -2,6 +2,7 @@ import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RawSource } from 'webpack-sources';
+import * as esbuild from 'esbuild';
 import { MinifyPluginOptions } from '../src/interfaces';
 import { ESBuildMinifyPlugin } from '../src/index';
 import { build, getFile } from './utils';
@@ -382,6 +383,24 @@ describe.each([
 		const { content } = getFile(stats, '/dist/index.js');
 		expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
 		expect(content).toMatchSnapshot();
+	});
+
+	test('minify with custom implementation - real', async () => {
+		const statsUnminified = await build(webpack, fixtures.js);
+		const stats = await build(webpack, fixtures.js, (config) => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						implementation: esbuild,
+					}),
+				],
+			};
+		});
+		expect(statsUnminified.hash).not.toBe(stats.hash);
+
+		const file = getFile(stats, '/dist/index.js');
+		expect(file.execute()).toMatchSnapshot();
 	});
 
 	describe('CSS', () => {
