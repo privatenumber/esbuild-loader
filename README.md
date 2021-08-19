@@ -118,8 +118,6 @@ If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you c
 
 There are two ways to minify CSS, depending on your setup. You should already have CSS setup in your build using [`css-loader`](https://github.com/webpack-contrib/css-loader).
 
-⚠️ esbuild currently [doesn't support source-maps for CSS minification](https://github.com/evanw/esbuild/issues/519).
-
 #### CSS assets
 If your CSS is extracted and emitted as a CSS file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) or [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) with the same `ESBuildMinifyPlugin` by enabling the `css` option.
 
