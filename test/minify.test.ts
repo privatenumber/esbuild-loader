@@ -392,6 +392,7 @@ describe.each([
 				minimize: true,
 				minimizer: [
 					new ESBuildMinifyPlugin({
+						target: 'es2019',
 						implementation: esbuild,
 					}),
 				],
