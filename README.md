@@ -2,11 +2,11 @@
 
 Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! 🔥
 
-[esbuild](https://github.com/evanw/esbuild) is a JavaScript bundler written in Go that supports blazing fast ESNext & TypeScript transpilation and JS minification.
+[_esbuild_](https://github.com/evanw/esbuild) is a JavaScript bundler written in Go that supports blazing fast ESNext & TypeScript transpilation and [JS minification](https://github.com/privatenumber/minification-benchmarks/).
 
-[esbuild-loader](https://github.com/privatenumber/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. babel-loader/ts-loader) and minification (eg. Terser)!
+[_esbuild-loader_](https://github.com/privatenumber/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. babel-loader/ts-loader) and minification (eg. Terser)!
 
-Curious how much faster your build will be? See [what users are saying](https://github.com/privatenumber/esbuild-loader/issues/13).
+Curious how much faster your build will be? See [what users are saying](https://github.com/privatenumber/esbuild-loader/discussions/138).
 
 <sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
