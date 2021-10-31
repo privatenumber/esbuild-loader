@@ -22,6 +22,7 @@ specifiers:
   unionfs: ^4.4.0
   webpack: ^4.44.2
   webpack-sources: ^2.2.0
+  webpack-test-utils: ^1.0.0
   webpack5: npm:webpack@^5.0.0
 
 dependencies:
@@ -48,6 +49,7 @@ devDependencies:
   typescript: 4.3.5
   unionfs: 4.4.0
   webpack: 4.46.0
+  webpack-test-utils: 1.0.0_webpack@4.46.0
   webpack5: /webpack/5.58.0_esbuild@0.13.4
 
 packages:
@@ -3201,6 +3203,10 @@ packages:
     resolution: {integrity: sha512-cybjIfiiE+pTWicSCLFHSrXZ6EilF30oh91FDP9S2B051prEa7QWfrVTQm10/dDpswBDXZugPa1Ogu8Yh+HV0Q==}
     dev: true
 
+  /fs-require/1.4.0:
+    resolution: {integrity: sha512-ZytCzc6QAE0lprblNErZJuDVNoT0JPRSBCUXIMrIB0mLlwcAppbE5fqUyqC8zhgrrR3+whvpKLxOqtk8EnSbeA==}
+    dev: true
+
   /fs-write-stream-atomic/1.0.10:
     resolution: {integrity: sha1-tH31NJPvkR33VzHnCp3tAYnbQMk=}
     dependencies:
@@ -4779,6 +4785,13 @@ packages:
 
   /memfs/3.2.2:
     resolution: {integrity: sha512-RE0CwmIM3CEvpcdK3rZ19BC4E6hv9kADkMN5rPduRak58cNArWLi/9jFLsa4rhsjfVxMP3v0jO7FHXq7SvFY5Q==}
+    engines: {node: '>= 4.0.0'}
+    dependencies:
+      fs-monkey: 1.0.3
+    dev: true
+
+  /memfs/3.3.0:
+    resolution: {integrity: sha512-BEE62uMfKOavX3iG7GYX43QJ+hAeeWnwIAuJ/R6q96jaMtiLzhsxHJC8B1L7fK7Pt/vXDRwb3SG/yBpNGDPqzg==}
     engines: {node: '>= 4.0.0'}
     dependencies:
       fs-monkey: 1.0.3
@@ -6760,6 +6773,17 @@ packages:
   /webpack-sources/3.2.1:
     resolution: {integrity: sha512-t6BMVLQ0AkjBOoRTZgqrWm7xbXMBzD+XDq2EZ96+vMfn3qKgsvdXZhbPZ4ElUOpdv4u+iiGe+w3+J75iy/bYGA==}
     engines: {node: '>=10.13.0'}
+    dev: true
+
+  /webpack-test-utils/1.0.0_webpack@4.46.0:
+    resolution: {integrity: sha512-6znws8PI+1jQXlNuwULUtRYIZjy4ZtBXxWBmmoin/GFxDex6YCs9YC9sjH+vuxOHpJOP0ZFkdSCTAyrmMSJ53w==}
+    peerDependencies:
+      webpack: ^4.40.0 || ^5.0.0
+    dependencies:
+      fs-require: 1.4.0
+      memfs: 3.3.0
+      unionfs: 4.4.0
+      webpack: 4.46.0
     dev: true
 
   /webpack/4.46.0:

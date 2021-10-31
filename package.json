@@ -63,6 +63,7 @@
 		"typescript": "^4.3.5",
 		"unionfs": "^4.4.0",
 		"webpack": "^4.44.2",
+		"webpack-test-utils": "^1.0.0",
 		"webpack5": "npm:webpack@^5.0.0"
 	},
 	"eslintConfig": {

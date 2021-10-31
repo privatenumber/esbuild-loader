@@ -4,7 +4,8 @@
 
 const js = {
 	'/src/index.js': `
-		export * from './foo.js'
+		import * as all from './foo.js'
+		export default all
 	`,
 
 	'/src/foo.js': `
