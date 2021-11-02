@@ -1,13 +1,13 @@
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
+import { build } from 'webpack-test-utils';
 import { MinifyPluginOptions } from '../src/interfaces';
-import { build, getFile } from './utils';
 import * as fixtures from './fixtures';
+import { configureEsbuildLoader } from './utils';
 
 type WebpackSourceMapDevToolPlugin =
   | webpack4.SourceMapDevToolPlugin
   | webpack5.SourceMapDevToolPlugin;
-type WebpackRuleSetRule = webpack4.RuleSetRule | webpack5.RuleSetRule;
 
 describe.each([
 	['Webpack 4', webpack4],
@@ -15,36 +15,46 @@ describe.each([
 ])('%s', (_name, webpack) => {
 	describe('Error handling', () => {
 		test('tsx handled as ts', async () => {
-			await expect(async () => {
-				await build(webpack, fixtures.tsx, (config) => {
-					config.module.rules.push({
-						test: /\.tsx$/,
-						loader: 'esbuild-loader',
-						options: {
-							loader: 'ts',
-						},
-					});
+			const built = await build(fixtures.tsx, (config) => {
+				configureEsbuildLoader(config);
+
+				config.module.rules.push({
+					test: /\.tsx$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'ts',
+					},
 				});
-			}).rejects.toThrow('Unexpected ">"');
+			}, webpack);
+
+			expect(built.stats.hasErrors()).toBe(true);
+			const [error] = built.stats.compilation.errors;
+			expect(error.message).toMatch('Unexpected ">"');
 		});
 
 		test('invalid tsx', async () => {
-			await expect(async () => {
-				await build(webpack, fixtures.invalidTsx, (config) => {
-					config.module.rules.push({
-						test: /\.tsx?$/,
-						loader: 'esbuild-loader',
-						options: {
-							loader: 'tsx',
-						},
-					});
+			const built = await build(fixtures.invalidTsx, (config) => {
+				configureEsbuildLoader(config);
+
+				config.module.rules.push({
+					test: /\.tsx?$/,
+					loader: 'esbuild-loader',
+					options: {
+						loader: 'tsx',
+					},
 				});
-			}).rejects.toThrow('Unexpected "const"');
+			}, webpack);
+
+			expect(built.stats.hasErrors()).toBe(true);
+			const [error] = built.stats.compilation.errors;
+			expect(error.message).toMatch('Unexpected "const"');
 		});
 
 		test('invalid implementation option', async () => {
 			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => {
-				await build(webpack, fixtures.tsx, (config) => {
+				const built = await build(fixtures.tsx, (config) => {
+					configureEsbuildLoader(config);
+
 					config.module.rules.push({
 						test: /\.js?$/,
 						loader: 'esbuild-loader',
@@ -52,7 +62,11 @@ describe.each([
 							implementation,
 						},
 					});
-				});
+				}, webpack);
+
+				expect(built.stats.hasErrors()).toBe(true);
+				const [error] = built.stats.compilation.errors;
+				throw error;
 			};
 
 			// @ts-expect-error testing invalid type
@@ -69,15 +83,20 @@ describe.each([
 
 	describe('Loader', () => {
 		test('js', async () => {
-			const stats = await build(webpack, fixtures.js);
-			const file = getFile(stats, '/dist/index.js');
+			const built = await build(fixtures.js, configureEsbuildLoader, webpack);
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.execute()).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			expect(
+				built.require('/dist'),
+			).toMatchSnapshot();
 		});
 
 		test('ts', async () => {
-			const stats = await build(webpack, fixtures.ts, (config) => {
+			const built = await build(fixtures.ts, (config) => {
+				configureEsbuildLoader(config);
+
 				config.module.rules.push({
 					test: /\.ts$/,
 					loader: 'esbuild-loader',
@@ -85,15 +104,18 @@ describe.each([
 						loader: 'ts',
 					},
 				});
-			});
-			const file = getFile(stats, '/dist/index.js');
+			}, webpack);
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.execute()).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			expect(built.require('/dist')).toBe('foo');
 		});
 
 		test('tsx', async () => {
-			const stats = await build(webpack, fixtures.tsx, (config) => {
+			const built = await build(fixtures.tsx, (config) => {
+				configureEsbuildLoader(config);
+
 				config.module.rules.push({
 					test: /\.tsx$/,
 					loader: 'esbuild-loader',
@@ -103,15 +125,26 @@ describe.each([
 						jsxFragment: 'Fragment',
 					},
 				});
-			});
-			const file = getFile(stats, '/dist/index.js');
+			}, webpack);
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.execute('const createElement = (...args) => args, Fragment = "Fragment";')).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			built.fs.writeFileSync(
+				'/dist/index.js',
+				`const createElement = (...args) => args, Fragment = "Fragment";${dist}`,
+			);
+
+			expect(
+				built.require('/dist'),
+			).toMatchSnapshot();
 		});
 
 		test('ts w/ tsconfig', async () => {
-			const stats = await build(webpack, fixtures.tsConfig, (config) => {
+			const builtA = await build(fixtures.tsConfig, (config) => {
+				configureEsbuildLoader(config);
+
 				config.module.rules.push({
 					test: /\.ts$/,
 					loader: 'esbuild-loader',
@@ -119,8 +152,16 @@ describe.each([
 						loader: 'ts',
 					},
 				});
-			});
-			const stats2 = await build(webpack, fixtures.tsConfig, (config) => {
+			}, webpack);
+
+			expect(builtA.stats.hasWarnings()).toBe(false);
+			expect(builtA.stats.hasErrors()).toBe(false);
+
+			const distA = builtA.fs.readFileSync('/dist/index.js', 'utf-8');
+
+			const builtB = await build(fixtures.tsConfig, (config) => {
+				configureEsbuildLoader(config);
+
 				config.module.rules.push({
 					test: /\.ts$/,
 					loader: 'esbuild-loader',
@@ -133,14 +174,19 @@ describe.each([
 						},
 					},
 				});
-			});
+			}, webpack);
 
-			expect(getFile(stats, '/dist/index.js').content).not.toBe(getFile(stats2, '/dist/index.js').content);
-			expect(getFile(stats2, '/dist/index.js').content).toMatchSnapshot();
+			expect(builtB.stats.hasWarnings()).toBe(false);
+			expect(builtB.stats.hasErrors()).toBe(false);
+
+			const distB = builtB.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(distB).not.toBe(distA);
 		});
 
 		test('tsx w/ tsconfig', async () => {
-			const stats = await build(webpack, fixtures.tsx, (config) => {
+			const built = await build(fixtures.tsx, (config) => {
+				configureEsbuildLoader(config);
+
 				config.module.rules.push({
 					test: /\.tsx$/,
 					loader: 'esbuild-loader',
@@ -154,15 +200,26 @@ describe.each([
 						},
 					},
 				});
-			});
-			const file = getFile(stats, '/dist/index.js');
+			}, webpack);
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.execute('const customFactory = (...args) => args, customFragment = "Fragment";')).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			built.fs.writeFileSync(
+				'/dist/index.js',
+				`const customFactory = (...args) => args, customFragment = "Fragment";${dist}`,
+			);
+
+			expect(
+				built.require('/dist'),
+			).toMatchSnapshot();
 		});
 
 		test('custom esbuild transform function', async () => {
-			const stats = await build(webpack, fixtures.ts, (config) => {
+			const built = await build(fixtures.ts, (config) => {
+				configureEsbuildLoader(config);
+
 				config.module.rules.push({
 					test: /\.tsx?$/,
 					loader: 'esbuild-loader',
@@ -177,16 +234,21 @@ describe.each([
 						},
 					},
 				});
-			});
+			}, webpack);
 
-			const { content } = getFile(stats, '/dist/index.js');
-			expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
-			expect(content).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+
+			expect(dist).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
 		});
 
 		describe('ambigious ts/tsx', () => {
 			test('ts via tsx', async () => {
-				const stats = await build(webpack, fixtures.ts, (config) => {
+				const built = await build(fixtures.ts, (config) => {
+					configureEsbuildLoader(config);
+
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -194,13 +256,18 @@ describe.each([
 							loader: 'tsx',
 						},
 					});
-				});
+				}, webpack);
 
-				expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				expect(built.require('/dist')).toBe('foo');
 			});
 
 			test('ts via tsx 2', async () => {
-				const stats = await build(webpack, fixtures.ts2, (config) => {
+				const built = await build(fixtures.ts2, (config) => {
+					configureEsbuildLoader(config);
+
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -208,15 +275,20 @@ describe.each([
 							loader: 'tsx',
 						},
 					});
-				});
-				const file = getFile(stats, '/dist/index.js');
+				}, webpack);
 
-				expect(file.content).toMatchSnapshot();
-				expect(file.execute().default('a', { a: 1 })).toMatchSnapshot();
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				expect(
+					built.require('/dist')('a', { a: 1 }),
+				).toMatchSnapshot();
 			});
 
 			test('ambiguous ts', async () => {
-				const stats = await build(webpack, fixtures.tsAmbiguous, (config) => {
+				const built = await build(fixtures.tsAmbiguous, (config) => {
+					configureEsbuildLoader(config);
+
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -224,15 +296,19 @@ describe.each([
 							loader: 'tsx',
 						},
 					});
-				});
+				}, webpack);
 
-				const { content } = getFile(stats, '/dist/index.js');
-				expect(content).toContain('(() => 1 < /a>/g)');
-				expect(content).toMatchSnapshot();
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+				expect(dist).toContain('(() => 1 < /a>/g)');
 			});
 
 			test('ambiguous tsx', async () => {
-				const stats = await build(webpack, fixtures.tsxAmbiguous, (config) => {
+				const built = await build(fixtures.tsxAmbiguous, (config) => {
+					configureEsbuildLoader(config);
+
 					config.module.rules.push({
 						test: /\.tsx?$/,
 						loader: 'esbuild-loader',
@@ -240,80 +316,107 @@ describe.each([
 							loader: 'tsx',
 						},
 					});
-				});
+				}, webpack);
 
-				const { content } = getFile(stats, '/dist/index.js');
-				expect(content).toContain('React.createElement');
-				expect(content).toMatchSnapshot();
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+				expect(dist).toContain('React.createElement');
 			});
 		});
 	});
 
 	// Targets
 	test('target', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
-			(config.module.rules as WebpackRuleSetRule[])[0].options = {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
+			config.module.rules[0].options = {
 				target: 'es2015',
 			};
-		});
-		const file = getFile(stats, '/dist/index.js');
+		}, webpack);
 
-		expect(file.content).toMatchSnapshot();
-		expect(file.execute()).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	describe('Source-map', () => {
 		test('source-map eval', async () => {
-			const stats = await build(webpack, fixtures.js, (config) => {
-				config.devtool = 'eval-source-map';
-			});
-			const file = getFile(stats, '/dist/index.js');
+			const built = await build(fixtures.js, (config) => {
+				configureEsbuildLoader(config);
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.content).toContain('eval');
+				config.devtool = 'eval-source-map';
+			}, webpack);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(dist).toContain('eval');
 		});
 
 		test('source-map inline', async () => {
-			const stats = await build(webpack, fixtures.js, (config) => {
-				config.devtool = 'inline-source-map';
-			});
-			const file = getFile(stats, '/dist/index.js');
+			const built = await build(fixtures.js, (config) => {
+				configureEsbuildLoader(config);
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.content).toContain('sourceMappingURL');
+				config.devtool = 'inline-source-map';
+			}, webpack);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(dist).toContain('sourceMappingURL');
 		});
 
 		test('source-map file', async () => {
-			const stats = await build(webpack, fixtures.js, (config) => {
-				config.devtool = 'source-map';
-			});
+			const built = await build(fixtures.js, (config) => {
+				configureEsbuildLoader(config);
 
-			expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
-			expect(getFile(stats, '/dist/index.js.map').content).toMatchSnapshot();
+				config.devtool = 'source-map';
+			}, webpack);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const { assets } = built.stats.compilation;
+
+			expect(assets).toHaveProperty(['index.js']);
+			expect(assets).toHaveProperty(['index.js.map']);
 		});
 
 		test('source-map plugin', async () => {
-			const stats = await build(webpack, fixtures.js, (config) => {
+			const built = await build(fixtures.js, (config) => {
+				configureEsbuildLoader(config);
+
 				delete config.devtool;
 				(config.plugins as WebpackSourceMapDevToolPlugin[]).push(
 					new webpack.SourceMapDevToolPlugin({}),
 				);
-			});
-			const file = getFile(stats, '/dist/index.js');
+			}, webpack);
 
-			expect(file.content).toMatchSnapshot();
-			expect(file.content).toContain('sourceMappingURL');
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(dist).toContain('sourceMappingURL');
 		});
 	});
 
 	test('webpack magic comments', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks);
+		const built = await build(fixtures.webpackChunks, configureEsbuildLoader, webpack);
 
-		const { assets } = stats.compilation;
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const { assets } = built.stats.compilation;
+
+		expect(assets).toHaveProperty(['index.js']);
 		expect(assets).toHaveProperty(['named-chunk-foo.js']);
-		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();
 		expect(assets).toHaveProperty(['named-chunk-bar.js']);
-		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toMatchSnapshot();
+		expect(await built.require('/dist')()).toBe('foobar');
 	});
 });

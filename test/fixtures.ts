@@ -4,7 +4,8 @@
 
 const js = {
 	'/src/index.js': `
-		export * from './foo.js'
+		import * as all from './foo.js'
+		export default all
 	`,
 
 	'/src/foo.js': `
@@ -184,17 +185,15 @@ const webpackChunks = {
 		const Foo = import(/* webpackChunkName: "named-chunk-foo" */'./foo.js')
 		const Bar = import(/* webpackChunkName: "named-chunk-bar" */'./bar.js')
 
-		Foo.then(console.log)
+		export default async () => (await Foo).default + (await Bar).default;
 	`,
 
 	'/src/foo.js': `
-	console.log('foo');
-	export default 1;
+	export default 'foo';
 	`,
 
 	'/src/bar.js': `
-	console.log('bar' + 1);
-	export default Symbol('bar');
+	export default 'bar';
 	`,
 };
 
