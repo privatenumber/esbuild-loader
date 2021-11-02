@@ -6,13 +6,8 @@ const esbuildLoaderPath = require.resolve('../src/');
 
 export function configureEsbuildLoader<T extends(webpack4.Configuration | webpack5.Configuration)>(
 	config: T) {
-	config.resolveLoader = {
-		modules: [
-			path.join(__dirname, '../node_modules'),
-		],
-		alias: {
-			'esbuild-loader': esbuildLoaderPath,
-		},
+	config.resolveLoader.alias = {
+		'esbuild-loader': esbuildLoaderPath,
 	};
 
 	config.module.rules.push(
