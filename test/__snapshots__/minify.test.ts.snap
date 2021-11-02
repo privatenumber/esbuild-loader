@@ -35,27 +35,27 @@ Object {
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks 1`] = `
-"module.exports=function(u){var i={},o={0:0};function r(t){if(i[t])return i[t].exports;var n=i[t]={i:t,l:!1,exports:{}};return u[t].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.e=function(n){var e=[];if(o[n]!==0){var f=require(\\"./\\"+({\\"1\\":\\"named-chunk-bar\\",\\"2\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"),c=f.modules,l=f.ids;for(var a in c)u[a]=c[a];for(var s=0;s<l.length;s++)o[l[s]]=0}return Promise.all(e)},r.m=u,r.c=i,r.d=function(t,n,e){r.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:e})},r.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},r.t=function(t,n){if(n&1&&(t=r(t)),n&8||n&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var e=Object.create(null);if(r.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:t}),n&2&&typeof t!=\\"string\\")for(var f in t)r.d(e,f,function(c){return t[c]}.bind(null,f));return e},r.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(n,\\"a\\",n),n},r.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},r.p=\\"\\",r.oe=function(t){process.nextTick(function(){throw t})},r(r.s=0)}([function(u,i,o){const r=o.e(2).then(o.bind(null,1)),t=o.e(1).then(o.bind(null,2));r.then(console.log)}]).default;
+"module.exports=function(u){var f={},o={0:0};function r(t){if(f[t])return f[t].exports;var n=f[t]={i:t,l:!1,exports:{}};return u[t].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.e=function(n){var e=[];if(o[n]!==0){var i=require(\\"./\\"+({\\"1\\":\\"named-chunk-bar\\",\\"2\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"),a=i.modules,s=i.ids;for(var c in a)u[c]=a[c];for(var l=0;l<s.length;l++)o[s[l]]=0}return Promise.all(e)},r.m=u,r.c=f,r.d=function(t,n,e){r.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:e})},r.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},r.t=function(t,n){if(n&1&&(t=r(t)),n&8||n&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var e=Object.create(null);if(r.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:t}),n&2&&typeof t!=\\"string\\")for(var i in t)r.d(e,i,function(a){return t[a]}.bind(null,i));return e},r.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(n,\\"a\\",n),n},r.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},r.p=\\"\\",r.oe=function(t){process.nextTick(function(){throw t})},r(r.s=0)}([function(u,f,o){\\"use strict\\";o.r(f);const r=o.e(2).then(o.bind(null,1)),t=o.e(1).then(o.bind(null,2));f.default=async()=>(await r).default+(await t).default}]).default;
 "
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks 2`] = `
-"exports.ids=[2],exports.modules=[,function(e,o,s){\\"use strict\\";s.r(o),console.log(\\"foo\\"),o.default=1}];
+"exports.ids=[2],exports.modules=[,function(t,o,s){\\"use strict\\";s.r(o),o.default=\\"foo\\"}];
 "
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks 3`] = `
-"exports.ids=[1],exports.modules={2:function(s,o,l){\\"use strict\\";l.r(o),console.log(\\"bar\\"+1),o.default=Symbol(\\"bar\\")}};
+"exports.ids=[1],exports.modules={2:function(u,s,t){\\"use strict\\";t.r(s),s.default=\\"bar\\"}};
 "
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 1`] = `
-"module.exports=function(u){var i={},o={0:0};function r(t){if(i[t])return i[t].exports;var n=i[t]={i:t,l:!1,exports:{}};return u[t].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.e=function(n){var e=[];if(o[n]!==0){var f=require(\\"./\\"+({\\"1\\":\\"named-chunk-bar\\",\\"2\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"),c=f.modules,l=f.ids;for(var a in c)u[a]=c[a];for(var s=0;s<l.length;s++)o[l[s]]=0}return Promise.all(e)},r.m=u,r.c=i,r.d=function(t,n,e){r.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:e})},r.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},r.t=function(t,n){if(n&1&&(t=r(t)),n&8||n&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var e=Object.create(null);if(r.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:t}),n&2&&typeof t!=\\"string\\")for(var f in t)r.d(e,f,function(c){return t[c]}.bind(null,f));return e},r.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(n,\\"a\\",n),n},r.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},r.p=\\"\\",r.oe=function(t){process.nextTick(function(){throw t})},r(r.s=0)}([function(u,i,o){const r=o.e(2).then(o.bind(null,1)),t=o.e(1).then(o.bind(null,2));r.then(console.log)}]).default;
+"module.exports=function(u){var f={},o={0:0};function r(t){if(f[t])return f[t].exports;var n=f[t]={i:t,l:!1,exports:{}};return u[t].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.e=function(n){var e=[];if(o[n]!==0){var i=require(\\"./\\"+({\\"1\\":\\"named-chunk-bar\\",\\"2\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"),a=i.modules,s=i.ids;for(var c in a)u[c]=a[c];for(var l=0;l<s.length;l++)o[s[l]]=0}return Promise.all(e)},r.m=u,r.c=f,r.d=function(t,n,e){r.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:e})},r.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},r.t=function(t,n){if(n&1&&(t=r(t)),n&8||n&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var e=Object.create(null);if(r.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:t}),n&2&&typeof t!=\\"string\\")for(var i in t)r.d(e,i,function(a){return t[a]}.bind(null,i));return e},r.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(n,\\"a\\",n),n},r.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},r.p=\\"\\",r.oe=function(t){process.nextTick(function(){throw t})},r(r.s=0)}([function(u,f,o){\\"use strict\\";o.r(f);const r=o.e(2).then(o.bind(null,1)),t=o.e(1).then(o.bind(null,2));f.default=async()=>(await r).default+(await t).default}]).default;
 "
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks filtered using "exclude" 2`] = `
-"exports.ids=[2],exports.modules=[,function(e,o,s){\\"use strict\\";s.r(o),console.log(\\"foo\\"),o.default=1}];
+"exports.ids=[2],exports.modules=[,function(t,o,s){\\"use strict\\";s.r(o),o.default=\\"foo\\"}];
 "
 `;
 
@@ -69,8 +69,7 @@ exports.modules = {
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 
-	console.log('bar' + 1);
-	/* harmony default export */ __webpack_exports__[\\"default\\"] = (Symbol('bar'));
+	/* harmony default export */ __webpack_exports__[\\"default\\"] = ('bar');
 	
 
 /***/ })
@@ -79,7 +78,7 @@ __webpack_require__.r(__webpack_exports__);
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 1`] = `
-"module.exports=function(u){var i={},o={0:0};function r(t){if(i[t])return i[t].exports;var n=i[t]={i:t,l:!1,exports:{}};return u[t].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.e=function(n){var e=[];if(o[n]!==0){var f=require(\\"./\\"+({\\"1\\":\\"named-chunk-bar\\",\\"2\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"),c=f.modules,l=f.ids;for(var a in c)u[a]=c[a];for(var s=0;s<l.length;s++)o[l[s]]=0}return Promise.all(e)},r.m=u,r.c=i,r.d=function(t,n,e){r.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:e})},r.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},r.t=function(t,n){if(n&1&&(t=r(t)),n&8||n&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var e=Object.create(null);if(r.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:t}),n&2&&typeof t!=\\"string\\")for(var f in t)r.d(e,f,function(c){return t[c]}.bind(null,f));return e},r.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(n,\\"a\\",n),n},r.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},r.p=\\"\\",r.oe=function(t){process.nextTick(function(){throw t})},r(r.s=0)}([function(u,i,o){const r=o.e(2).then(o.bind(null,1)),t=o.e(1).then(o.bind(null,2));r.then(console.log)}]).default;
+"module.exports=function(u){var f={},o={0:0};function r(t){if(f[t])return f[t].exports;var n=f[t]={i:t,l:!1,exports:{}};return u[t].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.e=function(n){var e=[];if(o[n]!==0){var i=require(\\"./\\"+({\\"1\\":\\"named-chunk-bar\\",\\"2\\":\\"named-chunk-foo\\"}[n]||n)+\\".js\\"),a=i.modules,s=i.ids;for(var c in a)u[c]=a[c];for(var l=0;l<s.length;l++)o[s[l]]=0}return Promise.all(e)},r.m=u,r.c=f,r.d=function(t,n,e){r.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:e})},r.r=function(t){typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(t,\\"__esModule\\",{value:!0})},r.t=function(t,n){if(n&1&&(t=r(t)),n&8||n&4&&typeof t==\\"object\\"&&t&&t.__esModule)return t;var e=Object.create(null);if(r.r(e),Object.defineProperty(e,\\"default\\",{enumerable:!0,value:t}),n&2&&typeof t!=\\"string\\")for(var i in t)r.d(e,i,function(a){return t[a]}.bind(null,i));return e},r.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(n,\\"a\\",n),n},r.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},r.p=\\"\\",r.oe=function(t){process.nextTick(function(){throw t})},r(r.s=0)}([function(u,f,o){\\"use strict\\";o.r(f);const r=o.e(2).then(o.bind(null,1)),t=o.e(1).then(o.bind(null,2));f.default=async()=>(await r).default+(await t).default}]).default;
 "
 `;
 
@@ -93,8 +92,7 @@ exports.modules = [
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 
-	console.log('foo');
-	/* harmony default export */ __webpack_exports__[\\"default\\"] = (1);
+	/* harmony default export */ __webpack_exports__[\\"default\\"] = ('foo');
 	
 
 /***/ })
@@ -102,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 `;
 
 exports[`Webpack 4 Loader + Minification minify chunks filtered using "include" 3`] = `
-"exports.ids=[1],exports.modules={2:function(s,o,l){\\"use strict\\";l.r(o),console.log(\\"bar\\"+1),o.default=Symbol(\\"bar\\")}};
+"exports.ids=[1],exports.modules={2:function(u,s,t){\\"use strict\\";t.r(s),s.default=\\"bar\\"}};
 "
 `;
 
@@ -731,27 +729,27 @@ Object {
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks 1`] = `
-"(()=>{var l={},s={};function e(r){var o=s[r];if(o!==void 0)return o.exports;var t=s[r]={exports:{}};return l[r](t,t.exports,e),t.exports}e.m=l,(()=>{e.d=(r,o)=>{for(var t in o)e.o(o,t)&&!e.o(r,t)&&Object.defineProperty(r,t,{enumerable:!0,get:o[t]})}})(),(()=>{e.f={},e.e=r=>Promise.all(Object.keys(e.f).reduce((o,t)=>(e.f[t](r,o),o),[]))})(),(()=>{e.u=r=>\\"\\"+{\\"376\\":\\"named-chunk-bar\\",\\"600\\":\\"named-chunk-foo\\"}[r]+\\".js\\"})(),(()=>{e.o=(r,o)=>Object.prototype.hasOwnProperty.call(r,o)})(),(()=>{e.r=r=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})}})(),(()=>{var r={826:1},o=t=>{var n=t.modules,_=t.ids,f=t.runtime;for(var a in n)e.o(n,a)&&(e.m[a]=n[a]);f&&f(e);for(var u=0;u<_.length;u++)r[_[u]]=1};e.f.require=(t,n)=>{r[t]||o(require(\\"./\\"+e.u(t)))}})();var i={};const c=e.e(600).then(e.bind(e,49)),d=e.e(376).then(e.bind(e,196));c.then(console.log),module.exports=i.default})();
+"(()=>{\\"use strict\\";var _={},l={};function e(r){var a=l[r];if(a!==void 0)return a.exports;var t=l[r]={exports:{}};return _[r](t,t.exports,e),t.exports}e.m=_,(()=>{e.d=(r,a)=>{for(var t in a)e.o(a,t)&&!e.o(r,t)&&Object.defineProperty(r,t,{enumerable:!0,get:a[t]})}})(),(()=>{e.f={},e.e=r=>Promise.all(Object.keys(e.f).reduce((a,t)=>(e.f[t](r,a),a),[]))})(),(()=>{e.u=r=>\\"\\"+{\\"376\\":\\"named-chunk-bar\\",\\"600\\":\\"named-chunk-foo\\"}[r]+\\".js\\"})(),(()=>{e.o=(r,a)=>Object.prototype.hasOwnProperty.call(r,a)})(),(()=>{e.r=r=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})}})(),(()=>{var r={826:1},a=t=>{var n=t.modules,f=t.ids,i=t.runtime;for(var o in n)e.o(n,o)&&(e.m[o]=n[o]);i&&i(e);for(var u=0;u<f.length;u++)r[f[u]]=1};e.f.require=(t,n)=>{r[t]||a(require(\\"./\\"+e.u(t)))}})();var s={};e.d(s,{default:()=>b});const c=e.e(600).then(e.bind(e,49)),d=e.e(376).then(e.bind(e,196)),b=async()=>(await c).default+(await d).default;module.exports=s.default})();
 "
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks 2`] = `
-"\\"use strict\\";exports.id=600,exports.ids=[600],exports.modules={49:(t,o,s)=>{s.r(o),s.d(o,{default:()=>d}),console.log(\\"foo\\");const d=1}};
+"\\"use strict\\";exports.id=600,exports.ids=[600],exports.modules={49:(t,s,d)=>{d.r(s),d.d(s,{default:()=>o});const o=\\"foo\\"}};
 "
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks 3`] = `
-"\\"use strict\\";exports.id=376,exports.ids=[376],exports.modules={196:(l,o,s)=>{s.r(o),s.d(o,{default:()=>d}),console.log(\\"bar\\"+1);const d=Symbol(\\"bar\\")}};
+"\\"use strict\\";exports.id=376,exports.ids=[376],exports.modules={196:(o,s,d)=>{d.r(s),d.d(s,{default:()=>t});const t=\\"bar\\"}};
 "
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 1`] = `
-"(()=>{var l={},s={};function e(r){var o=s[r];if(o!==void 0)return o.exports;var t=s[r]={exports:{}};return l[r](t,t.exports,e),t.exports}e.m=l,(()=>{e.d=(r,o)=>{for(var t in o)e.o(o,t)&&!e.o(r,t)&&Object.defineProperty(r,t,{enumerable:!0,get:o[t]})}})(),(()=>{e.f={},e.e=r=>Promise.all(Object.keys(e.f).reduce((o,t)=>(e.f[t](r,o),o),[]))})(),(()=>{e.u=r=>\\"\\"+{\\"376\\":\\"named-chunk-bar\\",\\"600\\":\\"named-chunk-foo\\"}[r]+\\".js\\"})(),(()=>{e.o=(r,o)=>Object.prototype.hasOwnProperty.call(r,o)})(),(()=>{e.r=r=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})}})(),(()=>{var r={826:1},o=t=>{var n=t.modules,_=t.ids,f=t.runtime;for(var a in n)e.o(n,a)&&(e.m[a]=n[a]);f&&f(e);for(var u=0;u<_.length;u++)r[_[u]]=1};e.f.require=(t,n)=>{r[t]||o(require(\\"./\\"+e.u(t)))}})();var i={};const c=e.e(600).then(e.bind(e,49)),d=e.e(376).then(e.bind(e,196));c.then(console.log),module.exports=i.default})();
+"(()=>{\\"use strict\\";var _={},l={};function e(r){var a=l[r];if(a!==void 0)return a.exports;var t=l[r]={exports:{}};return _[r](t,t.exports,e),t.exports}e.m=_,(()=>{e.d=(r,a)=>{for(var t in a)e.o(a,t)&&!e.o(r,t)&&Object.defineProperty(r,t,{enumerable:!0,get:a[t]})}})(),(()=>{e.f={},e.e=r=>Promise.all(Object.keys(e.f).reduce((a,t)=>(e.f[t](r,a),a),[]))})(),(()=>{e.u=r=>\\"\\"+{\\"376\\":\\"named-chunk-bar\\",\\"600\\":\\"named-chunk-foo\\"}[r]+\\".js\\"})(),(()=>{e.o=(r,a)=>Object.prototype.hasOwnProperty.call(r,a)})(),(()=>{e.r=r=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})}})(),(()=>{var r={826:1},a=t=>{var n=t.modules,f=t.ids,i=t.runtime;for(var o in n)e.o(n,o)&&(e.m[o]=n[o]);i&&i(e);for(var u=0;u<f.length;u++)r[f[u]]=1};e.f.require=(t,n)=>{r[t]||a(require(\\"./\\"+e.u(t)))}})();var s={};e.d(s,{default:()=>b});const c=e.e(600).then(e.bind(e,49)),d=e.e(376).then(e.bind(e,196)),b=async()=>(await c).default+(await d).default;module.exports=s.default})();
 "
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "exclude" 2`] = `
-"\\"use strict\\";exports.id=600,exports.ids=[600],exports.modules={49:(t,o,s)=>{s.r(o),s.d(o,{default:()=>d}),console.log(\\"foo\\");const d=1}};
+"\\"use strict\\";exports.id=600,exports.ids=[600],exports.modules={49:(t,s,d)=>{d.r(s),d.d(s,{default:()=>o});const o=\\"foo\\"}};
 "
 `;
 
@@ -769,8 +767,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 
-	console.log('bar' + 1);
-	/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Symbol('bar'));
+	/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ('bar');
 	
 
 /***/ })
@@ -780,7 +777,7 @@ __webpack_require__.r(__webpack_exports__);
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 1`] = `
-"(()=>{var l={},s={};function e(r){var o=s[r];if(o!==void 0)return o.exports;var t=s[r]={exports:{}};return l[r](t,t.exports,e),t.exports}e.m=l,(()=>{e.d=(r,o)=>{for(var t in o)e.o(o,t)&&!e.o(r,t)&&Object.defineProperty(r,t,{enumerable:!0,get:o[t]})}})(),(()=>{e.f={},e.e=r=>Promise.all(Object.keys(e.f).reduce((o,t)=>(e.f[t](r,o),o),[]))})(),(()=>{e.u=r=>\\"\\"+{\\"376\\":\\"named-chunk-bar\\",\\"600\\":\\"named-chunk-foo\\"}[r]+\\".js\\"})(),(()=>{e.o=(r,o)=>Object.prototype.hasOwnProperty.call(r,o)})(),(()=>{e.r=r=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})}})(),(()=>{var r={826:1},o=t=>{var n=t.modules,_=t.ids,f=t.runtime;for(var a in n)e.o(n,a)&&(e.m[a]=n[a]);f&&f(e);for(var u=0;u<_.length;u++)r[_[u]]=1};e.f.require=(t,n)=>{r[t]||o(require(\\"./\\"+e.u(t)))}})();var i={};const c=e.e(600).then(e.bind(e,49)),d=e.e(376).then(e.bind(e,196));c.then(console.log),module.exports=i.default})();
+"(()=>{\\"use strict\\";var _={},l={};function e(r){var a=l[r];if(a!==void 0)return a.exports;var t=l[r]={exports:{}};return _[r](t,t.exports,e),t.exports}e.m=_,(()=>{e.d=(r,a)=>{for(var t in a)e.o(a,t)&&!e.o(r,t)&&Object.defineProperty(r,t,{enumerable:!0,get:a[t]})}})(),(()=>{e.f={},e.e=r=>Promise.all(Object.keys(e.f).reduce((a,t)=>(e.f[t](r,a),a),[]))})(),(()=>{e.u=r=>\\"\\"+{\\"376\\":\\"named-chunk-bar\\",\\"600\\":\\"named-chunk-foo\\"}[r]+\\".js\\"})(),(()=>{e.o=(r,a)=>Object.prototype.hasOwnProperty.call(r,a)})(),(()=>{e.r=r=>{typeof Symbol!=\\"undefined\\"&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(r,\\"__esModule\\",{value:!0})}})(),(()=>{var r={826:1},a=t=>{var n=t.modules,f=t.ids,i=t.runtime;for(var o in n)e.o(n,o)&&(e.m[o]=n[o]);i&&i(e);for(var u=0;u<f.length;u++)r[f[u]]=1};e.f.require=(t,n)=>{r[t]||a(require(\\"./\\"+e.u(t)))}})();var s={};e.d(s,{default:()=>b});const c=e.e(600).then(e.bind(e,49)),d=e.e(376).then(e.bind(e,196)),b=async()=>(await c).default+(await d).default;module.exports=s.default})();
 "
 `;
 
@@ -798,8 +795,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   \\"default\\": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 
-	console.log('foo');
-	/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (1);
+	/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ('foo');
 	
 
 /***/ })
@@ -809,7 +805,7 @@ __webpack_require__.r(__webpack_exports__);
 `;
 
 exports[`Webpack 5 Loader + Minification minify chunks filtered using "include" 3`] = `
-"\\"use strict\\";exports.id=376,exports.ids=[376],exports.modules={196:(l,o,s)=>{s.r(o),s.d(o,{default:()=>d}),console.log(\\"bar\\"+1);const d=Symbol(\\"bar\\")}};
+"\\"use strict\\";exports.id=376,exports.ids=[376],exports.modules={196:(o,s,d)=>{d.r(s),d.d(s,{default:()=>t});const t=\\"bar\\"}};
 "
 `;
 

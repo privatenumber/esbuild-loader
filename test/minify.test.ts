@@ -60,6 +60,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
@@ -79,6 +82,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
@@ -96,6 +102,9 @@ describe.each([
 				],
 			};
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
@@ -116,6 +125,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
@@ -127,6 +139,9 @@ describe.each([
 				minimizer: [new ESBuildMinifyPlugin()],
 			};
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toMatchSnapshot();
@@ -142,6 +157,9 @@ describe.each([
 				})],
 			};
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		// The string "__webpack_require__" is only present in unminified chunks
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).not.toContain('__webpack_require__');
@@ -164,6 +182,9 @@ describe.each([
 				],
 			};
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		// The string "__webpack_require__" is only present in unminified chunks
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).not.toContain('__webpack_require__');
@@ -188,6 +209,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
 
 		expect(file).toMatchSnapshot();
@@ -208,6 +232,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
 		expect(file).toContain('//# sourceMappingURL=data:application/');
 		expect(file).toMatchSnapshot();
@@ -223,6 +250,9 @@ describe.each([
 				minimizer: [new ESBuildMinifyPlugin()],
 			};
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
 		expect(file).toContain('//# sourceMappingURL=index.js.map');
@@ -244,6 +274,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 	});
 
@@ -263,6 +296,9 @@ describe.each([
 
 			config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 	});
@@ -288,6 +324,9 @@ describe.each([
 			);
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 		expect(built.fs.readFileSync('/dist/index.js.map', 'utf-8')).toMatchSnapshot();
 	});
@@ -311,6 +350,9 @@ describe.each([
 				],
 			};
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
 
@@ -361,6 +403,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		const file = built.fs.readFileSync('/dist/index.js').toString();
 		expect(file.trim().endsWith('//! legal comment')).toBe(true);
 	});
@@ -376,6 +421,9 @@ describe.each([
 				],
 			};
 		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
 		expect(file).not.toMatch('//! legal comment');
@@ -402,6 +450,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
 
 		const content = built.fs.readFileSync('/dist/index.js', 'utf-8');
@@ -425,6 +476,9 @@ describe.each([
 			};
 		}, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
@@ -442,6 +496,9 @@ describe.each([
 					},
 				});
 			}, webpack);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
 
 			const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
 			expect(file).toContain('div{color:red}');
@@ -463,6 +520,9 @@ describe.each([
 				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
 				config.plugins.push(new MiniCssExtractPlugin());
 			}, webpack);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
 
 			const file = built.fs.readFileSync('/dist/index.css').toString();
 			expect(file.trim()).not.toMatch(/\s{2,}/);
@@ -486,6 +546,9 @@ describe.each([
 				config.plugins.push(new MiniCssExtractPlugin());
 			}, webpack);
 
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			const file = built.fs.readFileSync('/dist/index.css').toString();
 			expect(file.trim()).toMatch(/\s{2,}/);
 		});
@@ -508,6 +571,9 @@ describe.each([
 				config.plugins.push(new MiniCssExtractPlugin());
 			}, webpack);
 
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			const cssFile = built.fs.readFileSync('/dist/index.css').toString();
 			const css = cssFile.trim().split('\n');
 			expect(css[0]).not.toMatch(/\s{2,}/);
@@ -522,17 +588,24 @@ describe.each([
 describe('Webpack 5', () => {
 	test('Stats', async () => {
 		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
 			};
 		}, webpack5);
 
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
 		expect(built.stats.toString().includes('[minimized]')).toBe(true);
 	});
 
 	test('Minifies new assets', async () => {
 		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
@@ -554,6 +627,9 @@ describe('Webpack 5', () => {
 				},
 			});
 		}, webpack5);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		const asset = built.stats.compilation.getAsset('test.js');
 

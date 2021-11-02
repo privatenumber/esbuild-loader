@@ -85,9 +85,9 @@ describe.each([
 		test('js', async () => {
 			const built = await build(fixtures.js, configureEsbuildLoader, webpack);
 
-			expect(
-				built.fs.readFileSync('/dist/index.js', 'utf-8'),
-			).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			expect(
 				built.require('/dist'),
 			).toMatchSnapshot();
@@ -106,12 +106,10 @@ describe.each([
 				});
 			}, webpack);
 
-			expect(
-				built.fs.readFileSync('/dist/index.js', 'utf-8'),
-			).toMatchSnapshot();
-			expect(
-				built.require('/dist'),
-			).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			expect(built.require('/dist')).toBe('foo');
 		});
 
 		test('tsx', async () => {
@@ -129,10 +127,10 @@ describe.each([
 				});
 			}, webpack);
 
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
-
-			expect(dist).toMatchSnapshot();
-
 			built.fs.writeFileSync(
 				'/dist/index.js',
 				`const createElement = (...args) => args, Fragment = "Fragment";${dist}`,
@@ -156,6 +154,9 @@ describe.each([
 				});
 			}, webpack);
 
+			expect(builtA.stats.hasWarnings()).toBe(false);
+			expect(builtA.stats.hasErrors()).toBe(false);
+
 			const distA = builtA.fs.readFileSync('/dist/index.js', 'utf-8');
 
 			const builtB = await build(fixtures.tsConfig, (config) => {
@@ -175,10 +176,11 @@ describe.each([
 				});
 			}, webpack);
 
-			const distB = builtB.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(builtB.stats.hasWarnings()).toBe(false);
+			expect(builtB.stats.hasErrors()).toBe(false);
 
-			expect(distA).not.toBe(distB);
-			expect(distB).toMatchSnapshot();
+			const distB = builtB.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(distB).not.toBe(distA);
 		});
 
 		test('tsx w/ tsconfig', async () => {
@@ -200,10 +202,10 @@ describe.each([
 				});
 			}, webpack);
 
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
-
-			expect(dist).toMatchSnapshot();
-
 			built.fs.writeFileSync(
 				'/dist/index.js',
 				`const customFactory = (...args) => args, customFragment = "Fragment";${dist}`,
@@ -234,10 +236,12 @@ describe.each([
 				});
 			}, webpack);
 
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
 
 			expect(dist).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
-			expect(dist).toMatchSnapshot();
 		});
 
 		describe('ambigious ts/tsx', () => {
@@ -254,9 +258,10 @@ describe.each([
 					});
 				}, webpack);
 
-				expect(
-					built.fs.readFileSync('/dist/index.js', 'utf-8'),
-				).toMatchSnapshot();
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				expect(built.require('/dist')).toBe('foo');
 			});
 
 			test('ts via tsx 2', async () => {
@@ -272,9 +277,8 @@ describe.each([
 					});
 				}, webpack);
 
-				expect(
-					built.fs.readFileSync('/dist/index.js', 'utf-8'),
-				).toMatchSnapshot();
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
 
 				expect(
 					built.require('/dist')('a', { a: 1 }),
@@ -294,10 +298,11 @@ describe.each([
 					});
 				}, webpack);
 
-				const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
 
+				const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
 				expect(dist).toContain('(() => 1 < /a>/g)');
-				expect(dist).toMatchSnapshot();
 			});
 
 			test('ambiguous tsx', async () => {
@@ -313,9 +318,11 @@ describe.each([
 					});
 				}, webpack);
 
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
 				const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
 				expect(dist).toContain('React.createElement');
-				expect(dist).toMatchSnapshot();
 			});
 		});
 	});
@@ -330,12 +337,10 @@ describe.each([
 			};
 		}, webpack);
 
-		expect(
-			built.fs.readFileSync('/dist/index.js', 'utf-8'),
-		).toMatchSnapshot();
-		expect(
-			built.require('/dist'),
-		).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	describe('Source-map', () => {
@@ -346,8 +351,10 @@ describe.each([
 				config.devtool = 'eval-source-map';
 			}, webpack);
 
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
-			expect(dist).toMatchSnapshot();
 			expect(dist).toContain('eval');
 		});
 
@@ -358,8 +365,10 @@ describe.each([
 				config.devtool = 'inline-source-map';
 			}, webpack);
 
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
 			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
-			expect(dist).toMatchSnapshot();
 			expect(dist).toContain('sourceMappingURL');
 		});
 
@@ -370,12 +379,13 @@ describe.each([
 				config.devtool = 'source-map';
 			}, webpack);
 
-			expect(
-				built.fs.readFileSync('/dist/index.js', 'utf-8'),
-			).toMatchSnapshot();
-			expect(
-				built.fs.readFileSync('/dist/index.js.map', 'utf-8'),
-			).toMatchSnapshot();
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const { assets } = built.stats.compilation;
+
+			expect(assets).toHaveProperty(['index.js']);
+			expect(assets).toHaveProperty(['index.js.map']);
 		});
 
 		test('source-map plugin', async () => {
@@ -388,9 +398,10 @@ describe.each([
 				);
 			}, webpack);
 
-			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
 
-			expect(dist).toMatchSnapshot();
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
 			expect(dist).toContain('sourceMappingURL');
 		});
 	});
@@ -398,18 +409,14 @@ describe.each([
 	test('webpack magic comments', async () => {
 		const built = await build(fixtures.webpackChunks, configureEsbuildLoader, webpack);
 
+		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(
-			built.fs.readFileSync('/dist/index.js', 'utf-8'),
-		).toMatchSnapshot();
+		const { assets } = built.stats.compilation;
 
-		expect(
-			built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8'),
-		).toMatchSnapshot();
-
-		expect(
-			built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8'),
-		).toMatchSnapshot();
+		expect(assets).toHaveProperty(['index.js']);
+		expect(assets).toHaveProperty(['named-chunk-foo.js']);
+		expect(assets).toHaveProperty(['named-chunk-bar.js']);
+		expect(await built.require('/dist')()).toBe('foobar');
 	});
 });
