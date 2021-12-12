@@ -31,8 +31,8 @@ const isWebpack5 = (compilation: Compilation): compilation is Wp5Compilation => 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require('../package.json');
 
-const isJsFile = /\.[cm]?js(\?.*)?$/i;
-const isCssFile = /\.css(\?.*)?$/i;
+const isJsFile = /\.[cm]?js(?:\?.*)?$/i;
+const isCssFile = /\.css(?:\?.*)?$/i;
 const pluginName = 'esbuild-minify';
 
 const granularMinifyConfigs = ['minifyIdentifiers', 'minifySyntax', 'minifyWhitespace'] as const;
