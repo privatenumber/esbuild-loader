@@ -48,12 +48,12 @@
 		"webpack-sources": "^2.2.0"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config-typescript": "^0.1.22",
+		"@pvtnbr/eslint-config": "^0.7.1",
 		"@types/jest": "^27.0.3",
 		"@types/loader-utils": "^2.0.3",
 		"@types/webpack": "^4.41.32",
 		"css-loader": "^5.2.0",
-		"eslint": "^7.32.0",
+		"eslint": "^8.4.1",
 		"husky": "^4.3.8",
 		"jest": "^27.4.4",
 		"lint-staged": "^12.1.2",
@@ -66,6 +66,6 @@
 		"webpack5": "npm:webpack@^5.0.0"
 	},
 	"eslintConfig": {
-		"extends": "@pvtnbr/eslint-config-typescript"
+		"extends": "@pvtnbr"
 	}
 }
