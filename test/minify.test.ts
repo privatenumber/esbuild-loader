@@ -3,10 +3,12 @@ import webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RawSource } from 'webpack-sources';
 import * as esbuild from 'esbuild';
+import { build } from 'webpack-test-utils';
 import { MinifyPluginOptions } from '../src/interfaces';
 import { ESBuildMinifyPlugin } from '../src/index';
-import { build, getFile } from './utils';
+// import { build, getFile } from './utils';
 import * as fixtures from './fixtures';
+import { configureEsbuildLoader } from './utils';
 
 describe.each([
 	['Webpack 4', webpack4],
@@ -15,7 +17,7 @@ describe.each([
 	describe('Error handling', () => {
 		test('invalid implementation option', async () => {
 			const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => {
-				await build(webpack, fixtures.js, (config) => {
+				await build(fixtures.js, (config) => {
 					config.optimization = {
 						minimize: true,
 						minimizer: [
@@ -24,7 +26,7 @@ describe.each([
 							}),
 						],
 					};
-				});
+				}, webpack);
 			};
 
 			await expect(
@@ -44,8 +46,10 @@ describe.each([
 	});
 
 	test('minify', async () => {
-		const statsUnminified = await build(webpack, fixtures.js);
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const builtUnminified = await build(fixtures.js, null, webpack);
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -54,17 +58,20 @@ describe.each([
 					}),
 				],
 			};
-		});
-		expect(statsUnminified.hash).not.toBe(stats.hash);
+		}, webpack);
 
-		const file = getFile(stats, '/dist/index.js');
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(file.content).toMatchSnapshot();
-		expect(file.execute()).toMatchSnapshot();
+		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	test('minifyWhitespace', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -73,15 +80,19 @@ describe.each([
 					}),
 				],
 			};
-		});
-		const file = getFile(stats, '/dist/index.js');
+		}, webpack);
 
-		expect(file.content).toMatchSnapshot();
-		expect(file.execute()).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	test('minifyIdentifiers', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -90,15 +101,19 @@ describe.each([
 					}),
 				],
 			};
-		});
-		const file = getFile(stats, '/dist/index.js');
+		}, webpack);
 
-		expect(file.content).toMatchSnapshot();
-		expect(file.execute()).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	test('minifySyntax', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -108,48 +123,56 @@ describe.each([
 					}),
 				],
 			};
-		});
-		const file = getFile(stats, '/dist/index.js');
+		}, webpack);
 
-		expect(file.content).toMatchSnapshot();
-		expect(file.execute()).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	test('minify chunks', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks, (config) => {
+		const built = await build(fixtures.webpackChunks, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
 			};
-		});
+		}, webpack);
 
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toMatchSnapshot();
 	});
 
 	test('minify chunks filtered using "include"', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks, (config) => {
+		const built = await build(fixtures.webpackChunks, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin({
 					include: /(index|bar)/,
 				})],
 			};
-		});
+		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		// The string "__webpack_require__" is only present in unminified chunks
-		expect(getFile(stats, '/dist/index.js').content).not.toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-bar.js').content).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).not.toContain('__webpack_require__');
 
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toMatchSnapshot();
 	});
 
 	test('minify chunks filtered using "exclude"', async () => {
-		const stats = await build(webpack, fixtures.webpackChunks, (config) => {
+		const built = await build(fixtures.webpackChunks, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -158,20 +181,25 @@ describe.each([
 					}),
 				],
 			};
-		});
+		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
 
 		// The string "__webpack_require__" is only present in unminified chunks
-		expect(getFile(stats, '/dist/index.js').content).not.toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-foo.js').content).not.toContain('__webpack_require__');
-		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toContain('__webpack_require__');
 
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-foo.js').content).toMatchSnapshot();
-		expect(getFile(stats, '/dist/named-chunk-bar.js').content).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toMatchSnapshot();
 	});
 
 	test('minify w/ no devtool', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -179,16 +207,22 @@ describe.each([
 					target: 'es2015',
 				})],
 			};
-		});
-		const file = getFile(stats, '/dist/index.js');
+		}, webpack);
 
-		expect(file.content).toMatchSnapshot();
-		expect(file.content).not.toContain('//# sourceURL');
-		expect(file.execute()).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+
+		expect(file).toMatchSnapshot();
+		expect(file).not.toContain('//# sourceURL');
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	test('minify w/ devtool inline-source-map', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.devtool = 'inline-source-map';
 			config.optimization = {
 				minimize: true,
@@ -196,29 +230,39 @@ describe.each([
 					new ESBuildMinifyPlugin(),
 				],
 			};
-		});
+		}, webpack);
 
-		const file = getFile(stats, '/dist/index.js');
-		expect(file.content).toContain('//# sourceMappingURL=data:application/');
-		expect(file.content).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		expect(file).toContain('//# sourceMappingURL=data:application/');
+		expect(file).toMatchSnapshot();
 	});
 
 	test('minify w/ devtool source-map', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.devtool = 'source-map';
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
 			};
-		});
+		}, webpack);
 
-		const file = getFile(stats, '/dist/index.js');
-		expect(file.content).toContain('//# sourceMappingURL=index.js.map');
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		expect(file).toContain('//# sourceMappingURL=index.js.map');
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 	});
 
 	test('minify w/ source-map option', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -228,13 +272,18 @@ describe.each([
 					}),
 				],
 			};
-		});
+		}, webpack);
 
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 	});
 
 	test('minify w/ source-map option and source-map plugin inline', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -246,13 +295,18 @@ describe.each([
 			};
 
 			config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
-		});
+		}, webpack);
 
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
 	});
 
 	test('minify w/ source-map option and source-map plugin external', async () => {
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			delete config.devtool;
 			config.optimization = {
 				minimize: true,
@@ -268,18 +322,23 @@ describe.each([
 					filename: 'index.js.map',
 				}),
 			);
-		});
+		}, webpack);
 
-		expect(getFile(stats, '/dist/index.js').content).toMatchSnapshot();
-		expect(getFile(stats, '/dist/index.js.map').content).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js.map', 'utf-8')).toMatchSnapshot();
 	});
 
 	test('minify w/ query strings', async () => {
-		const statsUnminified = await build(webpack, fixtures.js, (config) => {
+		const builtUnminified = await build(fixtures.js, (config) => {
 			config.output.filename = '[name].js?foo=bar';
 			config.output.chunkFilename = '[name].js?foo=bar';
-		});
-		const stats = await build(webpack, fixtures.js, (config) => {
+		}, webpack);
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.output.filename = '[name].js?foo=bar';
 			config.output.chunkFilename = '[name].js?foo=bar';
 			config.optimization = {
@@ -290,27 +349,31 @@ describe.each([
 					}),
 				],
 			};
-		});
-		expect(statsUnminified.hash).not.toBe(stats.hash);
+		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
 
 		// Note: the actual file name does not include the query string
-		const file = getFile(stats, '/dist/index.js');
+		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
 
-		expect(file.content).toMatchSnapshot();
-		expect(file.execute()).toMatchSnapshot();
+		expect(file).toMatchSnapshot();
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	test('minify w/ legalComments - default is inline', async () => {
-		const statsDefault = await build(webpack, fixtures.legalComments, (config) => {
+		const builtDefault = await build(fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
 					new ESBuildMinifyPlugin(),
 				],
 			};
-		});
+		}, webpack);
 
-		const statsInline = await build(webpack, fixtures.legalComments, (config) => {
+		const builtInline = await build(fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -319,17 +382,17 @@ describe.each([
 					}),
 				],
 			};
-		});
+		}, webpack);
 
-		const fileInline = getFile(statsInline, '/dist/index.js');
-		const fileDefault = getFile(statsDefault, '/dist/index.js');
+		const fileInline = builtInline.fs.readFileSync('/dist/index.js', 'utf-8');
+		const fileDefault = builtDefault.fs.readFileSync('/dist/index.js', 'utf-8');
 
-		expect(fileDefault.content).toMatch('//! legal comment');
-		expect(fileDefault.content).toBe(fileInline.content);
+		expect(fileDefault).toMatch('//! legal comment');
+		expect(fileDefault).toBe(fileInline);
 	});
 
 	test('minify w/ legalComments - eof', async () => {
-		const stats = await build(webpack, fixtures.legalComments, (config) => {
+		const built = await build(fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -338,14 +401,17 @@ describe.each([
 					}),
 				],
 			};
-		});
+		}, webpack);
 
-		const file = getFile(stats, '/dist/index.js');
-		expect(file.content.trim().endsWith('//! legal comment')).toBe(true);
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const file = built.fs.readFileSync('/dist/index.js').toString();
+		expect(file.trim().endsWith('//! legal comment')).toBe(true);
 	});
 
 	test('minify w/ legalComments - none', async () => {
-		const stats = await build(webpack, fixtures.legalComments, (config) => {
+		const built = await build(fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -354,15 +420,20 @@ describe.each([
 					}),
 				],
 			};
-		});
+		}, webpack);
 
-		const file = getFile(stats, '/dist/index.js');
-		expect(file.content).not.toMatch('//! legal comment');
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		expect(file).not.toMatch('//! legal comment');
 	});
 
 	test('minify with custom implementation', async () => {
-		const statsUnminified = await build(webpack, fixtures.js);
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const builtUnminified = await build(fixtures.js);
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -377,17 +448,23 @@ describe.each([
 					}),
 				],
 			};
-		});
-		expect(statsUnminified.hash).not.toBe(stats.hash);
+		}, webpack);
 
-		const { content } = getFile(stats, '/dist/index.js');
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
+
+		const content = built.fs.readFileSync('/dist/index.js', 'utf-8');
 		expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
 		expect(content).toMatchSnapshot();
 	});
 
 	test('minify with custom implementation - real', async () => {
-		const statsUnminified = await build(webpack, fixtures.js);
-		const stats = await build(webpack, fixtures.js, (config) => {
+		const builtUnminified = await build(fixtures.js);
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [
@@ -397,16 +474,20 @@ describe.each([
 					}),
 				],
 			};
-		});
-		expect(statsUnminified.hash).not.toBe(stats.hash);
+		}, webpack);
 
-		const file = getFile(stats, '/dist/index.js');
-		expect(file.execute()).toMatchSnapshot();
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
+		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
 	describe('CSS', () => {
 		test('minify via loader', async () => {
-			const stats = await build(webpack, fixtures.css, (config) => {
+			const built = await build(fixtures.css, (config) => {
+				configureEsbuildLoader(config);
+
 				config.module.rules[1].use.push({
 					loader: 'esbuild-loader',
 					options: {
@@ -414,14 +495,19 @@ describe.each([
 						minify: true,
 					},
 				});
-			});
+			}, webpack);
 
-			const file = getFile(stats, '/dist/index.js');
-			expect(file.content).toContain('div{color:red}');
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			expect(file).toContain('div{color:red}');
 		});
 
 		test('minify', async () => {
-			const stats = await build(webpack, fixtures.css, (config) => {
+			const built = await build(fixtures.css, (config) => {
+				configureEsbuildLoader(config);
+
 				config.optimization = {
 					minimize: true,
 					minimizer: [
@@ -433,14 +519,19 @@ describe.each([
 
 				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
 				config.plugins.push(new MiniCssExtractPlugin());
-			});
+			}, webpack);
 
-			const file = getFile(stats, '/dist/index.css');
-			expect(file.content.trim()).not.toMatch(/\s{2,}/);
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const file = built.fs.readFileSync('/dist/index.css').toString();
+			expect(file.trim()).not.toMatch(/\s{2,}/);
 		});
 
 		test('exclude css', async () => {
-			const stats = await build(webpack, fixtures.css, (config) => {
+			const built = await build(fixtures.css, (config) => {
+				configureEsbuildLoader(config);
+
 				config.optimization = {
 					minimize: true,
 					minimizer: [
@@ -453,14 +544,19 @@ describe.each([
 
 				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
 				config.plugins.push(new MiniCssExtractPlugin());
-			});
+			}, webpack);
 
-			const file = getFile(stats, '/dist/index.css');
-			expect(file.content.trim()).toMatch(/\s{2,}/);
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const file = built.fs.readFileSync('/dist/index.css').toString();
+			expect(file.trim()).toMatch(/\s{2,}/);
 		});
 
 		test('minify w/ source-map', async () => {
-			const stats = await build(webpack, fixtures.css, (config) => {
+			const built = await build(fixtures.css, (config) => {
+				configureEsbuildLoader(config);
+
 				config.devtool = 'source-map';
 				config.optimization = {
 					minimize: true,
@@ -473,33 +569,43 @@ describe.each([
 
 				config.module.rules[1].use.unshift(MiniCssExtractPlugin.loader);
 				config.plugins.push(new MiniCssExtractPlugin());
-			});
+			}, webpack);
 
-			const cssFile = getFile(stats, '/dist/index.css');
-			const css = cssFile.content.trim().split('\n');
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const cssFile = built.fs.readFileSync('/dist/index.css').toString();
+			const css = cssFile.trim().split('\n');
 			expect(css[0]).not.toMatch(/\s{2,}/);
 			expect(css[2]).toMatch(/sourceMappingURL/);
 
-			const sourcemapFile = getFile(stats, '/dist/index.css.map');
-			expect(sourcemapFile.content).toMatch(/styles\.css/);
+			const sourcemapFile = built.fs.readFileSync('/dist/index.css.map', 'utf-8');
+			expect(sourcemapFile).toMatch(/styles\.css/);
 		});
 	});
 });
 
 describe('Webpack 5', () => {
 	test('Stats', async () => {
-		const stats = await build(webpack5, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
 			};
-		});
+		}, webpack5);
 
-		expect(stats.toString().includes('[minimized]')).toBe(true);
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		expect(built.stats.toString().includes('[minimized]')).toBe(true);
 	});
 
 	test('Minifies new assets', async () => {
-		const stats = await build(webpack5, fixtures.js, (config) => {
+		const built = await build(fixtures.js, (config) => {
+			configureEsbuildLoader(config);
+
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
@@ -520,20 +626,23 @@ describe('Webpack 5', () => {
 					});
 				},
 			});
-		});
+		}, webpack5);
 
-		const asset = stats.compilation.getAsset('test.js');
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const asset = built.stats.compilation.getAsset('test.js');
 
 		expect(asset.info.minimized).toBe(true);
 
-		const file = getFile(stats, '/dist/test.js');
-		expect(file.content).toBe('const e=1;export default e;\n');
+		const file = built.fs.readFileSync('/dist/test.js', 'utf-8');
+		expect(file).toBe('const e=1;export default e;\n');
 	});
 
 	test('Doesn\'t minify minimized assets', async () => {
 		const sourceAndMap = jest.fn();
 
-		await build(webpack5, fixtures.js, (config) => {
+		await build(fixtures.js, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [new ESBuildMinifyPlugin()],
@@ -559,7 +668,7 @@ describe('Webpack 5', () => {
 					});
 				},
 			});
-		});
+		}, webpack5);
 
 		expect(sourceAndMap).not.toBeCalled();
 	});
