@@ -1,3 +1,8 @@
-export { default } from './loader';
-export { default as ESBuildPlugin } from './plugin';
-export { default as ESBuildMinifyPlugin } from './minify-plugin';
+import esbuildLoader from './loader';
+import ESBuildPlugin from './plugin';
+import ESBuildMinifyPlugin from './minify-plugin';
+
+/* eslint-disable unicorn/prefer-export-from */
+export default esbuildLoader;
+export { ESBuildPlugin, ESBuildMinifyPlugin };
+/* eslint-enable unicorn/prefer-export-from */
