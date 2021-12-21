@@ -21,5 +21,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: npx ci
+    - name: Lint
+      if: ${{ matrix.node-version == '14.x' }}
+      run: npm run lint
     - name: Test
       run: npm run test --if-present
