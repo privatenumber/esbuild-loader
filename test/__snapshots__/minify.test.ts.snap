@@ -428,17 +428,17 @@ exports[`Webpack 4 Loader + Minification minifyIdentifiers 1`] = `
           constructor() {
             O(this, n);
           }
-        }, n = new WeakSet(), e = function() {
+        }, n = /* @__PURE__ */ new WeakSet(), e = function() {
         }, a),
         (x = class {
           constructor() {
             O(this, d, void 0);
           }
-        }, d = new WeakMap(), x),
+        }, d = /* @__PURE__ */ new WeakMap(), x),
         (y = class {
-        }, l = new WeakMap(), O(y, l, void 0), y),
+        }, l = /* @__PURE__ */ new WeakMap(), O(y, l, void 0), y),
         (u = class {
-        }, c = new WeakSet(), A = function() {
+        }, c = /* @__PURE__ */ new WeakSet(), A = function() {
         }, O(u, c), u),
         1e9
       ];
@@ -610,17 +610,17 @@ exports[`Webpack 4 Loader + Minification minifySyntax 1`] = `
           constructor() {
             __privateAdd(this, _x);
           }
-        }, _x = new WeakSet(), x_fn = function() {
+        }, _x = /* @__PURE__ */ new WeakSet(), x_fn = function() {
         }, _b),
         (_c = class {
           constructor() {
             __privateAdd(this, _x2, void 0);
           }
-        }, _x2 = new WeakMap(), _c),
+        }, _x2 = /* @__PURE__ */ new WeakMap(), _c),
         (_d = class {
-        }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d),
+        }, _x3 = /* @__PURE__ */ new WeakMap(), __privateAdd(_d, _x3, void 0), _d),
         (_e = class {
-        }, _x4 = new WeakSet(), x_fn2 = function() {
+        }, _x4 = /* @__PURE__ */ new WeakSet(), x_fn2 = function() {
         }, __privateAdd(_e, _x4), _e),
         1e9
       ];
@@ -1086,17 +1086,17 @@ exports[`Webpack 5 Loader + Minification minifyIdentifiers 1`] = `
         constructor() {
           i(this, t);
         }
-      }, t = new WeakSet(), r = function() {
+      }, t = /* @__PURE__ */ new WeakSet(), r = function() {
       }, a),
       (f = class {
         constructor() {
           i(this, c, void 0);
         }
-      }, c = new WeakMap(), f),
+      }, c = /* @__PURE__ */ new WeakMap(), f),
       (_ = class {
-      }, l = new WeakMap(), i(_, l, void 0), _),
+      }, l = /* @__PURE__ */ new WeakMap(), i(_, l, void 0), _),
       (s = class {
-      }, n = new WeakSet(), q = function() {
+      }, n = /* @__PURE__ */ new WeakSet(), q = function() {
       }, i(s, n), s),
       1e9
     ];
@@ -1242,17 +1242,17 @@ exports[`Webpack 5 Loader + Minification minifySyntax 1`] = `
         constructor() {
           __privateAdd(this, _x);
         }
-      }, _x = new WeakSet(), x_fn = function() {
+      }, _x = /* @__PURE__ */ new WeakSet(), x_fn = function() {
       }, _b),
       (_c = class {
         constructor() {
           __privateAdd(this, _x2, void 0);
         }
-      }, _x2 = new WeakMap(), _c),
+      }, _x2 = /* @__PURE__ */ new WeakMap(), _c),
       (_d = class {
-      }, _x3 = new WeakMap(), __privateAdd(_d, _x3, void 0), _d),
+      }, _x3 = /* @__PURE__ */ new WeakMap(), __privateAdd(_d, _x3, void 0), _d),
       (_e = class {
-      }, _x4 = new WeakSet(), x_fn2 = function() {
+      }, _x4 = /* @__PURE__ */ new WeakSet(), x_fn2 = function() {
       }, __privateAdd(_e, _x4), _e),
       1e9
     ];
