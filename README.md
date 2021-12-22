@@ -278,6 +278,14 @@ Customize the JSX fragment function name to use.
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#jsx-fragment).
 
+#### jsxInject
+Type: `string`
+
+Default: ''
+
+Customize the JSX helper you want to use
+
+
 #### implementation
 Type: `{ transform: Function }`
 

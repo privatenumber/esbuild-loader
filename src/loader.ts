@@ -33,6 +33,7 @@ async function ESBuildLoader(
 	const done = this.async();
 	const options: LoaderOptions = getOptions(this);
 	const {
+		jsxInject,
 		implementation,
 		...esbuildTransformOptions
 	} = options;
@@ -72,6 +73,10 @@ async function ESBuildLoader(
 		&& isTsExtensionPtrn.test(this.resourcePath)
 	) {
 		transformOptions.loader = 'ts';
+	}
+	// Inject JSX helper before JSX and TSX files are processed by esbuild
+	if (jsxInject && /\.(?:j|t)sx\b/.test(this.resourcePath)) {
+		source = jsxInject + ';' + source
 	}
 
 	try {
