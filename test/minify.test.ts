@@ -636,7 +636,7 @@ describe('Webpack 5', () => {
 		expect(asset.info.minimized).toBe(true);
 
 		const file = built.fs.readFileSync('/dist/test.js', 'utf-8');
-		expect(file).toBe('const e=1;export default e;\n');
+		expect(file).toBe('const e=1;export default 1;\n');
 	});
 
 	test('Doesn\'t minify minimized assets', async () => {
