@@ -64,7 +64,7 @@ describe.each([
 		expect(built.stats.hasErrors()).toBe(false);
 
 		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
@@ -85,7 +85,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
@@ -106,7 +106,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
@@ -128,7 +128,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
@@ -143,9 +143,9 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
-		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toMatchSnapshot();
-		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf8')).toMatchSnapshot();
 	});
 
 	test('minify chunks filtered using "include"', async () => {
@@ -162,13 +162,13 @@ describe.each([
 		expect(built.stats.hasErrors()).toBe(false);
 
 		// The string "__webpack_require__" is only present in unminified chunks
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).not.toContain('__webpack_require__');
-		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toContain('__webpack_require__');
-		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf8')).toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf8')).not.toContain('__webpack_require__');
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
-		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toMatchSnapshot();
-		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf8')).toMatchSnapshot();
 	});
 
 	test('minify chunks filtered using "exclude"', async () => {
@@ -187,13 +187,13 @@ describe.each([
 		expect(built.stats.hasErrors()).toBe(false);
 
 		// The string "__webpack_require__" is only present in unminified chunks
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).not.toContain('__webpack_require__');
-		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).not.toContain('__webpack_require__');
-		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf8')).not.toContain('__webpack_require__');
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf8')).toContain('__webpack_require__');
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
-		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf-8')).toMatchSnapshot();
-		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-foo.js', 'utf8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/named-chunk-bar.js', 'utf8')).toMatchSnapshot();
 	});
 
 	test('minify w/ no devtool', async () => {
@@ -212,7 +212,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 
 		expect(file).toMatchSnapshot();
 		expect(file).not.toContain('//# sourceURL');
@@ -235,7 +235,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 		expect(file).toContain('//# sourceMappingURL=data:application/');
 		expect(file).toMatchSnapshot();
 	});
@@ -254,9 +254,9 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 		expect(file).toContain('//# sourceMappingURL=index.js.map');
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
 	});
 
 	test('minify w/ source-map option', async () => {
@@ -277,7 +277,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
 	});
 
 	test('minify w/ source-map option and source-map plugin inline', async () => {
@@ -300,7 +300,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
 	});
 
 	test('minify w/ source-map option and source-map plugin external', async () => {
@@ -327,8 +327,8 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		expect(built.fs.readFileSync('/dist/index.js', 'utf-8')).toMatchSnapshot();
-		expect(built.fs.readFileSync('/dist/index.js.map', 'utf-8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
+		expect(built.fs.readFileSync('/dist/index.js.map', 'utf8')).toMatchSnapshot();
 	});
 
 	test('minify w/ query strings', async () => {
@@ -357,7 +357,7 @@ describe.each([
 		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
 
 		// Note: the actual file name does not include the query string
-		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 
 		expect(file).toMatchSnapshot();
 		expect(built.require('/dist')).toMatchSnapshot();
@@ -384,8 +384,8 @@ describe.each([
 			};
 		}, webpack);
 
-		const fileInline = builtInline.fs.readFileSync('/dist/index.js', 'utf-8');
-		const fileDefault = builtDefault.fs.readFileSync('/dist/index.js', 'utf-8');
+		const fileInline = builtInline.fs.readFileSync('/dist/index.js', 'utf8');
+		const fileDefault = builtDefault.fs.readFileSync('/dist/index.js', 'utf8');
 
 		expect(fileDefault).toMatch('//! legal comment');
 		expect(fileDefault).toBe(fileInline);
@@ -425,7 +425,7 @@ describe.each([
 		expect(built.stats.hasWarnings()).toBe(false);
 		expect(built.stats.hasErrors()).toBe(false);
 
-		const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 		expect(file).not.toMatch('//! legal comment');
 	});
 
@@ -455,7 +455,7 @@ describe.each([
 
 		expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
 
-		const content = built.fs.readFileSync('/dist/index.js', 'utf-8');
+		const content = built.fs.readFileSync('/dist/index.js', 'utf8');
 		expect(content).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
 		expect(content).toMatchSnapshot();
 	});
@@ -500,7 +500,7 @@ describe.each([
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 
-			const file = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 			expect(file).toContain('div{color:red}');
 		});
 
@@ -579,7 +579,7 @@ describe.each([
 			expect(css[0]).not.toMatch(/\s{2,}/);
 			expect(css[2]).toMatch(/sourceMappingURL/);
 
-			const sourcemapFile = built.fs.readFileSync('/dist/index.css.map', 'utf-8');
+			const sourcemapFile = built.fs.readFileSync('/dist/index.css.map', 'utf8');
 			expect(sourcemapFile).toMatch(/styles\.css/);
 		});
 	});
@@ -635,7 +635,7 @@ describe('Webpack 5', () => {
 
 		expect(asset.info.minimized).toBe(true);
 
-		const file = built.fs.readFileSync('/dist/test.js', 'utf-8');
+		const file = built.fs.readFileSync('/dist/test.js', 'utf8');
 		expect(file).toBe('const e=1;export default 1;\n');
 	});
 
