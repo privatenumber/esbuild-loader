@@ -130,7 +130,7 @@ describe.each([
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 
-			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 			built.fs.writeFileSync(
 				'/dist/index.js',
 				`const createElement = (...args) => args, Fragment = "Fragment";${dist}`,
@@ -157,7 +157,7 @@ describe.each([
 			expect(builtA.stats.hasWarnings()).toBe(false);
 			expect(builtA.stats.hasErrors()).toBe(false);
 
-			const distA = builtA.fs.readFileSync('/dist/index.js', 'utf-8');
+			const distA = builtA.fs.readFileSync('/dist/index.js', 'utf8');
 
 			const builtB = await build(fixtures.tsConfig, (config) => {
 				configureEsbuildLoader(config);
@@ -179,7 +179,7 @@ describe.each([
 			expect(builtB.stats.hasWarnings()).toBe(false);
 			expect(builtB.stats.hasErrors()).toBe(false);
 
-			const distB = builtB.fs.readFileSync('/dist/index.js', 'utf-8');
+			const distB = builtB.fs.readFileSync('/dist/index.js', 'utf8');
 			expect(distB).not.toBe(distA);
 		});
 
@@ -205,7 +205,7 @@ describe.each([
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 
-			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 			built.fs.writeFileSync(
 				'/dist/index.js',
 				`const customFactory = (...args) => args, customFragment = "Fragment";${dist}`,
@@ -239,7 +239,7 @@ describe.each([
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 
-			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 
 			expect(dist).toContain('MY_CUSTOM_ESBUILD_IMPLEMENTATION');
 		});
@@ -301,7 +301,7 @@ describe.each([
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
 
-				const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+				const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 				expect(dist).toContain('(() => 1 < /a>/g)');
 			});
 
@@ -321,7 +321,7 @@ describe.each([
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
 
-				const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+				const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 				expect(dist).toContain('React.createElement');
 			});
 		});
@@ -354,7 +354,7 @@ describe.each([
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 
-			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 			expect(dist).toContain('eval');
 		});
 
@@ -368,7 +368,7 @@ describe.each([
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 
-			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 			expect(dist).toContain('sourceMappingURL');
 		});
 
@@ -401,7 +401,7 @@ describe.each([
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 
-			const dist = built.fs.readFileSync('/dist/index.js', 'utf-8');
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 			expect(dist).toContain('sourceMappingURL');
 		});
 	});

@@ -40,7 +40,7 @@
 		"webpack": "^4.40.0 || ^5.0.0"
 	},
 	"dependencies": {
-		"esbuild": "^0.14.6",
+		"esbuild": "^0.14.39",
 		"joycon": "^3.0.1",
 		"json5": "^2.2.0",
 		"loader-utils": "^2.0.0",
@@ -48,12 +48,12 @@
 		"webpack-sources": "^2.2.0"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.8.0",
+		"@pvtnbr/eslint-config": "^0.22.0",
 		"@types/jest": "^27.0.3",
 		"@types/loader-utils": "^2.0.3",
 		"@types/webpack": "^4.41.32",
 		"css-loader": "^5.2.0",
-		"eslint": "^8.5.0",
+		"eslint": "^8.15.0",
 		"husky": "^4.3.8",
 		"jest": "^27.4.4",
 		"lint-staged": "^12.1.2",
