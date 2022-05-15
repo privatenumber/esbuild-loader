@@ -22,6 +22,7 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "tsc",
+		"pretest": "npm run build",
 		"test": "jest --coverage",
 		"lint": "eslint ."
 	},
@@ -59,7 +60,7 @@
 		"lint-staged": "^12.1.2",
 		"memfs": "^3.4.0",
 		"mini-css-extract-plugin": "^1.4.0",
-		"typescript": "^4.5.4",
+		"typescript": "^4.6.4",
 		"unionfs": "^4.4.0",
 		"webpack": "^4.44.2",
 		"webpack-test-utils": "^1.1.0",
