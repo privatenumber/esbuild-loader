@@ -6,6 +6,14 @@ type Implementation = {
 	transform: typeof transform;
 };
 
+type TransformImports = {
+	[key: string]: {
+		transform: (importName:string, matches:RegExpMatchArray) => string | string;
+		preventFullImport?: boolean;
+		skipDefaultConversion?: boolean;
+	};
+}
+
 type Except<ObjectType, Properties> = {
 	[Key in keyof ObjectType as (Key extends Properties ? never : Key)]: ObjectType[Key];
 };
@@ -13,6 +21,7 @@ type Except<ObjectType, Properties> = {
 type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'> & {
 	/** Pass a custom esbuild implementation */
 	implementation?: Implementation;
+	transformImports?: TransformImports;
 };
 
 type MinifyPluginOptions = Except<TransformOptions, 'sourcefile'> & {
@@ -25,5 +34,6 @@ type MinifyPluginOptions = Except<TransformOptions, 'sourcefile'> & {
 
 export {
 	LoaderOptions,
+	TransformImports,
 	MinifyPluginOptions,
 };

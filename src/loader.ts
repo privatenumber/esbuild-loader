@@ -5,7 +5,7 @@ import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
 import JoyCon, { LoadResult } from 'joycon';
 import JSON5 from 'json5';
-import { LoaderOptions } from './interfaces';
+import { LoaderOptions, TransformImports } from './interfaces';
 
 const joycon = new JoyCon();
 
@@ -75,11 +75,92 @@ async function ESBuildLoader(
 	}
 
 	try {
+		if (options.transformImports) {
+			source = replaceTransformImports(source, options.transformImports);
+		}
 		const { code, map } = await transform(source, transformOptions);
 		done(null, code, map && JSON.parse(map));
 	} catch (error: unknown) {
 		done(error as Error);
 	}
+}
+
+function replaceTransformImports(source: string, config: TransformImports) {
+	// Match import statement, e.g.
+	//	 import { bindingA, bindingB } from 'module';
+	//	 import moduleName, { bindingC, bindingD } from 'module';
+	//	 import * as name from 'module';
+	const regImport = /import(\s+(\w+|\*\s+as\s+\w+),?)?(\s*\{([^}]+)\})?\s+from\s+(['"])(.*)\5(;)?/g;
+
+	return source.replace(regImport, (...args: string[]) => {
+		const matches = args[0];
+		const defaultName = args[2];
+		const importedBindings = args[4];
+		const quote = args[5];
+		const importFrom = args[6];
+		const lineEnd = args[7];
+
+		const replacements: string[] = [];
+		Object.keys(config).forEach((key: string) => {
+			const configItem = config[key];
+			const moduleMatches = new RegExp(key).exec(importFrom);
+
+			if (!moduleMatches) {
+				return;
+			}
+
+			// Throw full import error when preventFullImport is true, e.g.
+			//	 import * as name from 'module';
+			//	 import name from 'module';
+			if (configItem.preventFullImport && defaultName) {
+				throw new Error(
+					`esbuild-loader: import of entire module ${importFrom} not allowed due to preventFullImport setting`,
+				);
+			}
+
+			// Add defaultName import, e.g.
+			// transform this:
+			//	 import name, { bindingA } from 'module';
+			// into this:
+			//	 import name from 'module';
+			if (defaultName) {
+				replacements.push(
+					`import ${defaultName} from ${quote}${importFrom}${quote}${
+						lineEnd || ''
+					}`,
+				);
+			}
+
+			if (importedBindings) {
+				// Add import bindings, e.g.
+				// transform this:
+				//	 import name, { bindingA } from 'module';
+				//	 import { bindingB, xx as bindingC } from 'module';
+				// into this:
+				//	 import bindingA from 'module/lib/bindingA';
+				//	 import bindingB from 'module/lib/bindingB';
+				//	 import bindingC from 'module/lib/bindingC';
+				importedBindings
+					.split(',')
+					.map((name: string) => name.trim())
+					.filter(Boolean)
+					.map((name: string) => (/as\s+/.test(name) ? name.split(/as\s+/) : [name]))
+					.forEach(([importName, asName]) => {
+						importName = importName.trim();
+						asName = asName && asName.trim();
+						const newFrom = typeof config[key].transform === 'string'
+							? config[key].transform
+							: config[key].transform(importName, moduleMatches);
+						replacements.push(
+							`import ${asName || importName} from ${quote}${newFrom}${quote}${
+								lineEnd || ''
+							}`,
+						);
+					});
+			}
+		});
+		return replacements.length > 0 ? replacements.join('\n') : matches;
+	});
 }
 
 export default ESBuildLoader;
