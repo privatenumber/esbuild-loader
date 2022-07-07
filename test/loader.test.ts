@@ -404,6 +404,25 @@ describe.each([
 			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
 			expect(dist).toContain('sourceMappingURL');
 		});
+
+		test('source-map plugin with publicpath', async () => {
+			const built = await build(fixtures.js, (config) => {
+				configureEsbuildLoader(config);
+
+				delete config.devtool;
+				(config.plugins as WebpackSourceMapDevToolPlugin[]).push(
+					new webpack.SourceMapDevToolPlugin({
+						publicPath: '/foo/bar/'
+					}),
+				);
+			}, webpack);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
+			expect(dist).toContain('/foo/bar/');
+		});
 	});
 
 	test('webpack magic comments', async () => {
