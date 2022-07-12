@@ -21,6 +21,8 @@ type MinifyPluginOptions = Except<TransformOptions, 'sourcefile'> & {
 	css?: boolean;
 	/** Pass a custom esbuild implementation */
 	implementation?: Implementation;
+	/** Partial support */
+	legalComments?: 'none' | 'inline' | 'eof' | 'linked';
 };
 
 export {

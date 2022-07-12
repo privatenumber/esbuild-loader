@@ -429,6 +429,29 @@ describe.each([
 		expect(file).not.toMatch('//! legal comment');
 	});
 
+	test('minify w/ legalComments - linked', async () => {
+		const built = await build(fixtures.legalComments, (config) => {
+			config.optimization = {
+				minimize: true,
+				minimizer: [
+					new ESBuildMinifyPlugin({
+						legalComments: 'linked',
+					}),
+				],
+			};
+		}, webpack);
+
+		expect(built.stats.hasWarnings()).toBe(false);
+		expect(built.stats.hasErrors()).toBe(false);
+
+		const file = built.fs.readFileSync('/dist/index.js', 'utf8');
+		expect(file).not.toMatch('//! legal comment');
+		expect(file).toMatch('/*! For license information please see index.js.LEGAL.txt */');
+
+		const legalFile = built.fs.readFileSync('/dist/index.js.LEGAL.txt', 'utf8');
+		expect(legalFile).toMatch('//! legal comment');
+	});
+
 	test('minify with custom implementation', async () => {
 		const builtUnminified = await build(fixtures.js);
 		const built = await build(fixtures.js, (config) => {

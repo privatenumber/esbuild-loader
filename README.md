@@ -336,7 +336,7 @@ Type: `boolean`
 Minify JS using equivalent but shorter syntax.
 
 #### legalComments
-Type: `'none' | 'inline' | 'eof'`
+Type: `'none' | 'inline' | 'eof' | 'linked'`
 
 Default: `'inline'`
 

@@ -124,6 +124,13 @@ class ESBuildMinifyPlugin {
 			...transformOptions
 		} = this.options;
 
+		// NOTE: esbuild fails with 'linked', so this code uses a workaround.
+		// See https://github.com/privatenumber/esbuild-loader/issues/263
+		const isLegalCommentsLinked = transformOptions.legalComments === 'linked';
+		if (isLegalCommentsLinked) {
+			transformOptions.legalComments = 'eof';
+		}
+
 		const assets = compilation.getAssets().filter(asset => (
 
 			// Filter out already minimized
@@ -152,19 +159,30 @@ class ESBuildMinifyPlugin {
 				sourcefile: asset.name,
 			});
 
+			let transformedCode = result.code;
+			if (isLegalCommentsLinked) {
+				const extracted = this.extractLegalComments(transformedCode, asset.name);
+				if (extracted) {
+					const [code, comments, filename] = extracted;
+					// @ts-expect-error -- `emitAsset()` implementation exists.
+					compilation.emitAsset(filename, new RawSource(comments));
+					transformedCode = code;
+				}
+			}
+
 			compilation.updateAsset(
 				asset.name,
 				(
 					sourcemap
 						? new SourceMapSource(
-							result.code,
+							transformedCode,
 							asset.name,
-							result.map as any,
+							result.map,
 							sourceAsString,
 							map,
 							true,
 						)
-						: new RawSource(result.code)
+						: new RawSource(transformedCode)
 				),
 				{
 					...asset.info,
@@ -172,6 +190,20 @@ class ESBuildMinifyPlugin {
 				},
 			);
 		}));
+	}
+
+	private extractLegalComments(code: string, assetName: string): string[] | undefined {
+		// Search the first position of legal comments
+		const index = code.search(/^\/[/*]/m);
+		if (index === -1) {
+			return undefined;
+		}
+
+		const legalFilename = `${assetName}.LEGAL.txt`;
+		const link = `/*! For license information please see ${legalFilename} */`;
+		const minifiedCode = code.slice(0, index) + link;
+		const legalComments = code.slice(index);
+		return [minifiedCode, legalComments, legalFilename];
 	}
 }
 
