@@ -26,17 +26,6 @@
 		"test": "jest --coverage",
 		"lint": "eslint ."
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.ts": [
-			"eslint",
-			"jest --bail --findRelatedTests"
-		]
-	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"
 	},
