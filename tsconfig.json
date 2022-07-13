@@ -8,8 +8,7 @@
 		"lib": ["ES2018"],
 
 		"declaration": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
+		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true
 	},

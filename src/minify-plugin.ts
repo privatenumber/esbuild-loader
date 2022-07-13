@@ -113,7 +113,7 @@ class ESBuildMinifyPlugin {
 			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
 			// Might still be necessary when SourceMap plugin is used
 			this.options.sourcemap === undefined
-				? devtool && (devtool as string).includes('source-map')
+				? Boolean(devtool && (devtool as string).includes('source-map'))
 				: this.options.sourcemap
 		);
 
@@ -161,7 +161,7 @@ class ESBuildMinifyPlugin {
 							asset.name,
 							result.map as any,
 							sourceAsString,
-							map,
+							map!,
 							true,
 						)
 						: new RawSource(result.code)
