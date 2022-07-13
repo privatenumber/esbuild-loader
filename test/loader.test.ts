@@ -1,7 +1,7 @@
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import { build } from 'webpack-test-utils';
-import { MinifyPluginOptions } from '../dist/interfaces';
+import { MinifyPluginOptions } from '../dist/interfaces.js';
 import * as fixtures from './fixtures';
 import { configureEsbuildLoader } from './utils';
 
