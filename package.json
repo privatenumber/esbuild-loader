@@ -42,6 +42,7 @@
 		"@types/jest": "^27.0.3",
 		"@types/loader-utils": "^2.0.3",
 		"@types/webpack": "^4.41.32",
+		"@types/webpack-sources": "^3.2.0",
 		"css-loader": "^5.2.0",
 		"eslint": "^8.19.0",
 		"jest": "^27.4.4",

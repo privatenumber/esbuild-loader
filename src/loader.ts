@@ -30,7 +30,7 @@ async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
 	source: string,
 ): Promise<void> {
-	const done = this.async();
+	const done = this.async()!;
 	const options: LoaderOptions = getOptions(this);
 	const {
 		implementation,

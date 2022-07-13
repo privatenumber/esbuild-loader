@@ -5,6 +5,7 @@ specifiers:
   '@types/jest': ^27.0.3
   '@types/loader-utils': ^2.0.3
   '@types/webpack': ^4.41.32
+  '@types/webpack-sources': ^3.2.0
   css-loader: ^5.2.0
   esbuild: ^0.14.39
   eslint: ^8.19.0
@@ -35,6 +36,7 @@ devDependencies:
   '@types/jest': 27.0.3
   '@types/loader-utils': 2.0.3
   '@types/webpack': 4.41.32
+  '@types/webpack-sources': 3.2.0
   css-loader: 5.2.7_webpack@4.46.0
   eslint: 8.19.0
   jest: 27.4.4
@@ -473,7 +475,7 @@ packages:
       '@jest/test-result': 27.4.2
       '@jest/transform': 27.4.4
       '@jest/types': 27.4.2
-      '@types/node': 16.11.12
+      '@types/node': 18.0.4
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.8.1
@@ -895,9 +897,9 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 16.11.12
+      '@types/node': 18.0.4
       '@types/source-list-map': 0.1.2
-      source-map: 0.7.3
+      source-map: 0.7.4
     dev: true
 
   /@types/webpack/4.41.32:
@@ -6269,11 +6271,6 @@ packages:
   /source-map/0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
-
-  /source-map/0.7.3:
-    resolution: {integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==}
-    engines: {node: '>= 8'}
-    dev: true
 
   /source-map/0.7.4:
     resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
