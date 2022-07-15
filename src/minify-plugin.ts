@@ -124,7 +124,7 @@ class ESBuildMinifyPlugin {
 			...transformOptions
 		} = this.options;
 
-		// NOTE: esbuild fails with 'linked', so this code uses a workaround.
+		// esbuild Transform API doesn't support 'linked', so we fake it with 'eof'
 		// See https://github.com/privatenumber/esbuild-loader/issues/263
 		const isLegalCommentsLinked = transformOptions.legalComments === 'linked';
 		if (isLegalCommentsLinked) {
