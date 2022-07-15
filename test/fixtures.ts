@@ -217,6 +217,8 @@ const legalComments = {
 	'/src/index.js': `
 		//! legal comment
 		globalCall();
+		/*! legal comment 2 */
+		globalCall2();
 	`,
 };
 

@@ -449,7 +449,7 @@ describe.each([
 		expect(file).toMatch('/*! For license information please see index.js.LEGAL.txt */');
 
 		const legalFile = built.fs.readFileSync('/dist/index.js.LEGAL.txt', 'utf8');
-		expect(legalFile).toMatch('//! legal comment');
+		expect(legalFile).toMatch('/*! legal comment 2 */\n//! legal comment');
 	});
 
 	test('minify with custom implementation', async () => {
