@@ -8,6 +8,15 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 
 Curious how much faster your build will be? See [what users are saying](https://github.com/privatenumber/esbuild-loader/discussions/138).
 
+
+---
+
+> **🤫 Psst! Want to power up your Node.js with esbuild?**
+>
+> Checkout our new project [`tsx`](https://github.com/esbuild-kit/tsx), an esbuild enhanced Node.js runtime that can run TypeScript instantly!
+
+---
+
 <sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🚀 Install

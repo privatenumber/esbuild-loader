@@ -19,29 +19,19 @@
 	"files": [
 		"dist"
 	],
-	"main": "dist/index.js",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
 		"pretest": "npm run build",
 		"test": "jest --coverage",
 		"lint": "eslint ."
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.ts": [
-			"eslint",
-			"jest --bail --findRelatedTests"
-		]
-	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"
 	},
 	"dependencies": {
-		"esbuild": "^0.14.39",
+		"esbuild": "^0.15.6",
 		"joycon": "^3.0.1",
 		"json5": "^2.2.0",
 		"loader-utils": "^2.0.0",
@@ -49,18 +39,18 @@
 		"webpack-sources": "^2.2.0"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.22.0",
+		"@pvtnbr/eslint-config": "^0.26.2",
 		"@types/jest": "^27.0.3",
 		"@types/loader-utils": "^2.0.3",
+		"@types/node": "^18.0.4",
 		"@types/webpack": "^4.41.32",
+		"@types/webpack-sources": "^3.2.0",
 		"css-loader": "^5.2.0",
-		"eslint": "^8.15.0",
-		"husky": "^4.3.8",
+		"eslint": "^8.19.0",
 		"jest": "^27.4.4",
-		"lint-staged": "^12.1.2",
 		"memfs": "^3.4.0",
 		"mini-css-extract-plugin": "^1.4.0",
-		"typescript": "^4.6.4",
+		"typescript": "^4.7.4",
 		"unionfs": "^4.4.0",
 		"webpack": "^4.44.2",
 		"webpack-test-utils": "^1.1.0",
