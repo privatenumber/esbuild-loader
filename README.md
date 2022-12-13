@@ -338,7 +338,7 @@ Minify JS using equivalent but shorter syntax.
 #### legalComments
 Type: `'none' | 'inline' | 'eof'`
 
-Default: `'inline'`
+Default: `'none'`
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#legal-comments).
 

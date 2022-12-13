@@ -363,12 +363,14 @@ describe.each([
 		expect(built.require('/dist')).toMatchSnapshot();
 	});
 
-	test('minify w/ legalComments - default is inline', async () => {
+	test('minify w/ legalComments - default is none', async () => {
 		const builtDefault = await build(fixtures.legalComments, (config) => {
 			config.optimization = {
 				minimize: true,
 				minimizer: [
-					new ESBuildMinifyPlugin(),
+					new ESBuildMinifyPlugin({
+						legalComments: 'inline',
+					}),
 				],
 			};
 		}, webpack);
