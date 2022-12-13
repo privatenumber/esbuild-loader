@@ -368,9 +368,7 @@ describe.each([
 			config.optimization = {
 				minimize: true,
 				minimizer: [
-					new ESBuildMinifyPlugin({
-						legalComments: 'inline',
-					}),
+					new ESBuildMinifyPlugin(),
 				],
 			};
 		}, webpack);
@@ -389,8 +387,8 @@ describe.each([
 		const fileInline = builtInline.fs.readFileSync('/dist/index.js', 'utf8');
 		const fileDefault = builtDefault.fs.readFileSync('/dist/index.js', 'utf8');
 
-		expect(fileDefault).toMatch('//! legal comment');
-		expect(fileDefault).toBe(fileInline);
+		expect(fileDefault).not.toMatch('//! legal comment');
+		expect(fileDefault).not.toBe(fileInline);
 	});
 
 	test('minify w/ legalComments - eof', async () => {
