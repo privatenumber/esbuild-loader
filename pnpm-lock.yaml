@@ -13,7 +13,7 @@ specifiers:
   jest: ^27.4.4
   joycon: ^3.0.1
   json5: ^2.2.0
-  loader-utils: ^2.0.0
+  loader-utils: ^2.0.4
   memfs: ^3.4.0
   mini-css-extract-plugin: ^1.4.0
   tapable: ^2.2.0
@@ -28,7 +28,7 @@ dependencies:
   esbuild: 0.15.6
   joycon: 3.0.1
   json5: 2.2.0
-  loader-utils: 2.0.0
+  loader-utils: 2.0.4
   tapable: 2.2.0
   webpack-sources: 2.3.1
 
@@ -2169,7 +2169,7 @@ packages:
       webpack: ^4.27.0 || ^5.0.0
     dependencies:
       icss-utils: 5.1.0_postcss@8.3.6
-      loader-utils: 2.0.0
+      loader-utils: 2.0.4
       postcss: 8.3.6
       postcss-modules-extract-imports: 3.0.0_postcss@8.3.6
       postcss-modules-local-by-default: 4.0.0_postcss@8.3.6
@@ -4733,12 +4733,12 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.5
+    dev: false
 
   /json5/2.2.1:
     resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: true
 
   /jsonc-eslint-parser/2.1.0:
     resolution: {integrity: sha512-qCRJWlbP2v6HbmKW7R3lFbeiVWHo+oMJ0j+MizwvauqnCV/EvtAeEeuCgoc/ErtsuoKgYB8U4Ih8AxJbXoE6/g==}
@@ -4831,13 +4831,13 @@ packages:
       json5: 1.0.1
     dev: true
 
-  /loader-utils/2.0.0:
-    resolution: {integrity: sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==}
+  /loader-utils/2.0.4:
+    resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
     engines: {node: '>=8.9.0'}
     dependencies:
       big.js: 5.2.2
       emojis-list: 3.0.0
-      json5: 2.2.0
+      json5: 2.2.1
 
   /locate-path/2.0.0:
     resolution: {integrity: sha512-NCI2kiDkyR7VeEKm27Kda/iQHyKJe1Bu0FlTbYp3CqJu+9IFe9bLyAjMxf5ZDDbEg+iMPzB5zYyUTSm8wVTKmA==}
@@ -5065,7 +5065,7 @@ packages:
     peerDependencies:
       webpack: ^4.4.0 || ^5.0.0
     dependencies:
-      loader-utils: 2.0.0
+      loader-utils: 2.0.4
       schema-utils: 3.1.1
       webpack: 4.46.0
       webpack-sources: 1.4.3

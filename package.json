@@ -34,7 +34,7 @@
 		"esbuild": "^0.15.6",
 		"joycon": "^3.0.1",
 		"json5": "^2.2.0",
-		"loader-utils": "^2.0.0",
+		"loader-utils": "^2.0.4",
 		"tapable": "^2.2.0",
 		"webpack-sources": "^2.2.0"
 	},
