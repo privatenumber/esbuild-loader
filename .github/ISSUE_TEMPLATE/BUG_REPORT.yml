@@ -52,15 +52,8 @@ body:
     attributes:
       label: Environment
       description: |
-        Describe the environment the issue is happening in. This information is used to for reproduction and debugging.
+        Describe the environment the issue is happening in. This information is used to for reproduction and debugging. Run and paste the output of: `npx envinfo --system --npmPackages webpack,esbuild-loader --binaries`.
       placeholder: |
-        <!--
-          Run and paste the output of:
-          ```
-          npx envinfo --system --npmPackages webpack,esbuild-loader --binaries
-          ```
-        -->
-
         System:
           OS:
           CPU:
