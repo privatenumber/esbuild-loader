@@ -23,7 +23,6 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
-		"pretest": "npm run build",
 		"test": "jest --coverage",
 		"lint": "eslint ."
 	},
