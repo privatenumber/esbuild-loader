@@ -29,6 +29,8 @@ jobs:
       run: pnpm build
 
     - name: Test
+      env:
+        NODE_OPTIONS: --openssl-legacy-provider 
       run: pnpm test
 
     - name: Lint
