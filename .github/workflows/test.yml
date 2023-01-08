@@ -25,6 +25,9 @@ jobs:
         version: 7
         run_install: true
 
+    - name: Build
+      run: pnpm build
+
     - name: Test
       run: pnpm test
 

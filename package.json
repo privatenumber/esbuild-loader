@@ -23,7 +23,7 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
-		"test": "pnpm build && NODE_OPTIONS=--openssl-legacy-provider jest --coverage",
+		"test": "NODE_OPTIONS=--openssl-legacy-provider jest --coverage",
 		"lint": "eslint ."
 	},
 	"peerDependencies": {
