@@ -23,8 +23,7 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
-		"pretest": "npm run build",
-		"test": "jest --coverage",
+		"test": "pnpm build && jest --coverage",
 		"lint": "eslint ."
 	},
 	"peerDependencies": {
