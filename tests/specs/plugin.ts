@@ -295,8 +295,10 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							],
 						};
 
-						// @ts-expect-error webpack types are wrong
-						config.plugins!.push(new webpack.SourceMapDevToolPlugin({}));
+						config.plugins!.push(
+							// @ts-expect-error webpack types are wrong
+							new webpack.SourceMapDevToolPlugin({}),
+						);
 					}, webpack);
 
 					const { stats } = built;
@@ -309,132 +311,154 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 					expect(file).toContain('//# sourceMappingURL=data:application/');
 				});
+
+				test('minify w/ source-map option and source-map plugin external', async () => {
+					const built = await build({
+						'/src/index.js': '',
+					}, (config) => {
+						configureEsbuildLoader(config);
+
+						delete config.devtool;
+						config.optimization = {
+							minimize: true,
+							minimizer: [
+								new ESBuildMinifyPlugin({
+									sourcemap: true,
+								}),
+							],
+						};
+
+						config.plugins!.push(
+							// @ts-expect-error webpack types are wrong
+							new webpack.SourceMapDevToolPlugin({
+								filename: 'index.js.map',
+							}),
+						);
+					}, webpack);
+
+					const { stats } = built;
+					expect(stats.hasWarnings()).toBe(false);
+					expect(stats.hasErrors()).toBe(false);
+					expect(
+						Object.keys(stats.compilation.assets),
+					).toStrictEqual([
+						'index.js',
+						'index.js.map',
+					]);
+
+					const file = built.fs.readFileSync('/dist/index.js', 'utf8');
+					expect(file).toContain('//# sourceMappingURL=index.js.map');
+				});
 			});
-			// test('minify w/ source-map option and source-map plugin external', async () => {
-			// 	const built = await build(fixtures.js, (config) => {
-			// 		configureEsbuildLoader(config);
 
-			// 		delete config.devtool;
-			// 		config.optimization = {
-			// 			minimize: true,
-			// 			minimizer: [
-			// 				new ESBuildMinifyPlugin({
-			// 					sourcemap: true,
-			// 				}),
-			// 			],
-			// 		};
+			test('minify w/ query strings', async () => {
+				const built = await build({
+					'/src/index.js': 'import(/* webpackChunkName: "chunk" */"./chunk.js")',
+					'/src/chunk.js': '',
+				}, (config) => {
+					configureEsbuildLoader(config);
 
-			// 		config.plugins.push(
-			// 			new webpack.SourceMapDevToolPlugin({
-			// 				filename: 'index.js.map',
-			// 			}),
-			// 		);
-			// 	}, webpack);
+					config.output!.filename = '[name].js?foo=bar';
+					config.output!.chunkFilename = '[name].js?foo=bar';
+					config.optimization = {
+						minimize: true,
+						minimizer: [
+							new ESBuildMinifyPlugin({
+								target: 'es2019',
+							}),
+						],
+					};
+				}, webpack);
 
-			// 	expect(built.stats.hasWarnings()).toBe(false);
-			// 	expect(built.stats.hasErrors()).toBe(false);
+				const { stats } = built;
+				expect(stats.hasWarnings()).toBe(false);
+				expect(stats.hasErrors()).toBe(false);
+				expect(
+					Object.keys(stats.compilation.assets).sort(),
+				).toStrictEqual([
+					'chunk.js?foo=bar',
+					'index.js?foo=bar',
+				]);
 
-			// 	expect(built.fs.readFileSync('/dist/index.js', 'utf8')).toMatchSnapshot();
-			// 	expect(built.fs.readFileSync('/dist/index.js.map', 'utf8')).toMatchSnapshot();
-			// });
+				// The actual file name does not include the query string
+				const file = built.fs.readFileSync('/dist/index.js', 'utf8');
+				expect(file).toMatch('?foo=bar');
+			});
 
-			// test('minify w/ query strings', async () => {
-			// 	const builtUnminified = await build(fixtures.js, (config) => {
-			// 		config.output.filename = '[name].js?foo=bar';
-			// 		config.output.chunkFilename = '[name].js?foo=bar';
-			// 	}, webpack);
-			// 	const built = await build(fixtures.js, (config) => {
-			// 		configureEsbuildLoader(config);
+			describe('legalComments', ({ test }) => {
+				const legalComments = {
+					'/src/index.js': `
+						//! legal comment
+						globalCall();
+					`,
+				};
 
-			// 		config.output.filename = '[name].js?foo=bar';
-			// 		config.output.chunkFilename = '[name].js?foo=bar';
-			// 		config.optimization = {
-			// 			minimize: true,
-			// 			minimizer: [
-			// 				new ESBuildMinifyPlugin({
-			// 					target: 'es2019',
-			// 				}),
-			// 			],
-			// 		};
-			// 	}, webpack);
+				test('minify w/ legalComments - default is inline', async () => {
+					const builtDefault = await build(legalComments, (config) => {
+						config.optimization = {
+							minimize: true,
+							minimizer: [
+								new ESBuildMinifyPlugin(),
+							],
+						};
+					}, webpack);
 
-			// 	expect(built.stats.hasWarnings()).toBe(false);
-			// 	expect(built.stats.hasErrors()).toBe(false);
+					const builtInline = await build(legalComments, (config) => {
+						config.optimization = {
+							minimize: true,
+							minimizer: [
+								new ESBuildMinifyPlugin({
+									legalComments: 'inline',
+								}),
+							],
+						};
+					}, webpack);
 
-			// 	expect(builtUnminified.stats.hash).not.toBe(built.stats.hash);
+					const fileInline = builtInline.fs.readFileSync('/dist/index.js', 'utf8');
+					const fileDefault = builtDefault.fs.readFileSync('/dist/index.js', 'utf8');
 
-			// 	// Note: the actual file name does not include the query string
-			// 	const file = built.fs.readFileSync('/dist/index.js', 'utf8');
+					expect(fileDefault).toMatch('//! legal comment');
+					expect(fileDefault).toBe(fileInline);
+				});
 
-			// 	expect(file).toMatchSnapshot();
-			// 	expect(built.require('/dist')).toMatchSnapshot();
-			// });
+				test('minify w/ legalComments - eof', async () => {
+					const built = await build(legalComments, (config) => {
+						config.optimization = {
+							minimize: true,
+							minimizer: [
+								new ESBuildMinifyPlugin({
+									legalComments: 'eof',
+								}),
+							],
+						};
+					}, webpack);
 
-			// test('minify w/ legalComments - default is inline', async () => {
-			// 	const builtDefault = await build(fixtures.legalComments, (config) => {
-			// 		config.optimization = {
-			// 			minimize: true,
-			// 			minimizer: [
-			// 				new ESBuildMinifyPlugin(),
-			// 			],
-			// 		};
-			// 	}, webpack);
+					expect(built.stats.hasWarnings()).toBe(false);
+					expect(built.stats.hasErrors()).toBe(false);
 
-			// 	const builtInline = await build(fixtures.legalComments, (config) => {
-			// 		config.optimization = {
-			// 			minimize: true,
-			// 			minimizer: [
-			// 				new ESBuildMinifyPlugin({
-			// 					legalComments: 'inline',
-			// 				}),
-			// 			],
-			// 		};
-			// 	}, webpack);
+					const file = built.fs.readFileSync('/dist/index.js').toString();
+					expect(file.trim().endsWith('//! legal comment')).toBe(true);
+				});
 
-			// 	const fileInline = builtInline.fs.readFileSync('/dist/index.js', 'utf8');
-			// 	const fileDefault = builtDefault.fs.readFileSync('/dist/index.js', 'utf8');
+				test('minify w/ legalComments - none', async () => {
+					const built = await build(legalComments, (config) => {
+						config.optimization = {
+							minimize: true,
+							minimizer: [
+								new ESBuildMinifyPlugin({
+									legalComments: 'none',
+								}),
+							],
+						};
+					}, webpack);
 
-			// 	expect(fileDefault).toMatch('//! legal comment');
-			// 	expect(fileDefault).toBe(fileInline);
-			// });
+					expect(built.stats.hasWarnings()).toBe(false);
+					expect(built.stats.hasErrors()).toBe(false);
 
-			// test('minify w/ legalComments - eof', async () => {
-			// 	const built = await build(fixtures.legalComments, (config) => {
-			// 		config.optimization = {
-			// 			minimize: true,
-			// 			minimizer: [
-			// 				new ESBuildMinifyPlugin({
-			// 					legalComments: 'eof',
-			// 				}),
-			// 			],
-			// 		};
-			// 	}, webpack);
-
-			// 	expect(built.stats.hasWarnings()).toBe(false);
-			// 	expect(built.stats.hasErrors()).toBe(false);
-
-			// 	const file = built.fs.readFileSync('/dist/index.js').toString();
-			// 	expect(file.trim().endsWith('//! legal comment')).toBe(true);
-			// });
-
-			// test('minify w/ legalComments - none', async () => {
-			// 	const built = await build(fixtures.legalComments, (config) => {
-			// 		config.optimization = {
-			// 			minimize: true,
-			// 			minimizer: [
-			// 				new ESBuildMinifyPlugin({
-			// 					legalComments: 'none',
-			// 				}),
-			// 			],
-			// 		};
-			// 	}, webpack);
-
-			// 	expect(built.stats.hasWarnings()).toBe(false);
-			// 	expect(built.stats.hasErrors()).toBe(false);
-
-			// 	const file = built.fs.readFileSync('/dist/index.js', 'utf8');
-			// 	expect(file).not.toMatch('//! legal comment');
-			// });
+					const file = built.fs.readFileSync('/dist/index.js', 'utf8');
+					expect(file).not.toMatch('//! legal comment');
+				});
+			});
 		});
 
 		describe('implementation', ({ test }) => {
