@@ -20,7 +20,6 @@ specifiers:
   tapable: ^2.2.0
   tsx: ^3.12.2
   typescript: ^4.9.4
-  unionfs: ^4.4.0
   webpack: ^4.44.2
   webpack-sources: ^2.2.0
   webpack-test-utils: ^2.1.0
@@ -49,7 +48,6 @@ devDependencies:
   mini-css-extract-plugin: 1.6.2_webpack@4.46.0
   tsx: 3.12.2
   typescript: 4.9.4
-  unionfs: 4.4.0
   webpack: 4.46.0
   webpack-test-utils: 2.1.0_webpack@4.46.0
   webpack5: /webpack/5.75.0_esbuild@0.15.6
