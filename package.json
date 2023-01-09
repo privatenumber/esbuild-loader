@@ -23,7 +23,8 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
-		"test": "jest --coverage",
+		"test": "tsx tests",
+		"dev": "tsx watch tests",
 		"lint": "eslint ."
 	},
 	"peerDependencies": {
