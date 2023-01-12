@@ -3,11 +3,11 @@ import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import type { MinifyPluginOptions } from '../../dist/interfaces.js';
-import { configureEsbuildLoader } from '../utils';
-
-type WebpackSourceMapDevToolPlugin =
-  | webpack4.SourceMapDevToolPlugin
-  | webpack5.SourceMapDevToolPlugin;
+import {
+	configureEsbuildLoader,
+	configureCssLoader,
+	type SourceMapDevToolPlugin,
+} from '../utils';
 
 const trySyntax = (
 	name: string,
@@ -585,7 +585,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					configureEsbuildLoader(config);
 
 					delete config.devtool;
-					(config.plugins as WebpackSourceMapDevToolPlugin[]).push(
+					(config.plugins as SourceMapDevToolPlugin[]).push(
 						new webpack.SourceMapDevToolPlugin({}),
 					);
 				}, webpack);
@@ -632,11 +632,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				`,
 			}, (config) => {
 				configureEsbuildLoader(config);
-
-				const { rules } = config.module!;
-				// @ts-expect-error strange type error on .find
-				const cssRule = Array.isArray(rules) && rules.find(rule => rule.use?.[0] === 'css-loader');
-
+				const cssRule = configureCssLoader(config);
 				cssRule.use.push({
 					loader: 'esbuild-loader',
 					options: {
