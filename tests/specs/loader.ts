@@ -6,140 +6,23 @@ import type { MinifyPluginOptions } from '../../dist/interfaces.js';
 import {
 	configureEsbuildLoader,
 	configureCssLoader,
-	type SourceMapDevToolPlugin,
 } from '../utils';
+import * as fixtures from '../fixtures.js';
 
-const trySyntax = (
-	name: string,
-	code: string,
-) => `
-(() => {
-	try {
-		${code}
-		return ${JSON.stringify(name)};
-	} catch (error) {
-		return error;
-	}
-})()
-`;
-
-const exportFrom = (filePath: string) => `export { default } from ${JSON.stringify(filePath)};`;
-
-const js = `
-export default [${[
-	trySyntax(
-		'es2016 - Exponentiation operator',
-		'10 ** 4',
-	),
-
-	trySyntax(
-		'es2017 - Async functions',
-		'typeof (async () => {})',
-	),
-
-	// trySyntax(
-	// 	'es2018 - Asynchronous iteration',
-	// 	'for await (let x of []) {}',
-	// ),
-
-	trySyntax(
-		'es2018 - Spread properties',
-		'let x = {...Object}',
-	),
-
-	trySyntax(
-		'es2018 - Rest properties',
-		'let {...x} = Object',
-	),
-
-	trySyntax(
-		'es2019 - Optional catch binding',
-		'try {} catch {}',
-	),
-
-	trySyntax(
-		'es2020 - Optional chaining',
-		'Object?.keys',
-	),
-
-	trySyntax(
-		'es2020 - Nullish coalescing',
-		'Object ?? true',
-	),
-
-	trySyntax(
-		'es2020 - import.meta',
-		'import.meta',
-	),
-
-	trySyntax(
-		'es2021 - Logical assignment operators',
-		'let a = false; a ??= true; a ||= true; a &&= true;',
-	),
-
-	trySyntax(
-		'es2022 - Class instance fields',
-		'(class { x })',
-	),
-
-	trySyntax(
-		'es2022 - Static class fields',
-		'(class { static x })',
-	),
-
-	trySyntax(
-		'es2022 - Private instance methods',
-		'(class { #x() {} })',
-	),
-
-	trySyntax(
-		'es2022 - Private instance fields',
-		'(class { #x })',
-	),
-
-	trySyntax(
-		'es2022 - Private static methods',
-		'(class { static #x() {} })',
-	),
-
-	trySyntax(
-		'es2022 - Private static fields',
-		'(class { static #x })',
-	),
-
-	// trySyntax(
-	// 	'es2022 - Ergonomic brand checks',
-	// 	'(class { #brand; static isC(obj) { return try obj.#brand; } })',
-	// ),
-
-	trySyntax(
-		'es2022 - Class static blocks',
-		'(class { static {} })',
-	),
-
-	// trySyntax(
-	// 	'esnext - Import assertions',
-	// 	'import "x" assert {}',
-	// ),
-
-].join(',')}];
-`;
+const { exportFile } = fixtures;
 
 export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpack5) => {
 	describe('Loader', ({ test, describe }) => {
 		describe('Error handling', ({ test }) => {
 			test('tsx fails to be parsed as ts', async () => {
 				const built = await build(
-					{
-						'/src/index.js': exportFrom('./foo.tsx'),
-						'/src/foo.tsx': 'export default <div>hello world</div>',
-					},
+					exportFile(
+						'tsx.tsx',
+						'export default <div>hello world</div>',
+					),
 					(config) => {
-						configureEsbuildLoader(config);
-
-						config.module!.rules!.push({
+						configureEsbuildLoader(config, {
 							test: /\.tsx$/,
-							loader: 'esbuild-loader',
 							options: {
 								loader: 'ts',
 							},
@@ -156,10 +39,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 		test('transforms syntax', async () => {
 			const built = await build(
-				{
-					'/src/index.js': exportFrom('./js.js'),
-					'/src/js.js': js,
-				},
+				fixtures.js,
 				configureEsbuildLoader,
 				webpack,
 			);
@@ -188,44 +68,10 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 		test('transforms TypeScript', async () => {
 			const built = await build(
-				{
-					'/src/index.js': exportFrom('./ts.ts'),
-					'/src/ts.ts': `
-						import type {Type} from 'foo'
-				
-						interface Foo {}
-				
-						type Foo = number
-				
-						declare module 'foo' {}
-				
-						enum BasicEnum {
-							Left,
-							Right,
-						}
-				
-						enum NamedEnum {
-							SomeEnum = 'some-value',
-						}
-				
-						const a = BasicEnum.Left;
-				
-						const b = NamedEnum.SomeEnum;
-				
-						export default function foo(): string {
-							return 'foo'
-						}
-				
-						// For "ts as tsx" test
-						const bar = <T>(value: T) => fn<T>();
-					`,
-				},
+				fixtures.ts,
 				(config) => {
-					configureEsbuildLoader(config);
-
-					config.module!.rules!.push({
+					configureEsbuildLoader(config, {
 						test: /\.ts$/,
-						loader: 'esbuild-loader',
 						options: {
 							loader: 'ts',
 						},
@@ -242,16 +88,13 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 		test('transforms TSX', async () => {
 			const built = await build(
-				{
-					'/src/index.js': exportFrom('./tsx.tsx'),
-					'/src/tsx.tsx': 'export default (<><div>hello world</div></>);',
-				},
+				exportFile(
+					'tsx.tsx',
+					'export default (<><div>hello world</div></>)',
+				),
 				(config) => {
-					configureEsbuildLoader(config);
-
-					config.module!.rules!.push({
+					configureEsbuildLoader(config, {
 						test: /\.tsx$/,
-						loader: 'esbuild-loader',
 						options: {
 							loader: 'tsx',
 							jsxFactory: 'Array',
@@ -278,16 +121,13 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 		test('tsconfig', async () => {
 			const built = await build(
-				{
-					'/src/index.js': exportFrom('./tsx.tsx'),
-					'/src/tsx.tsx': 'export default (<div>hello world</div>);',
-				},
+				exportFile(
+					'tsx.tsx',
+					'export default (<div>hello world</div>)',
+				),
 				(config) => {
-					configureEsbuildLoader(config);
-
-					config.module!.rules!.push({
+					configureEsbuildLoader(config, {
 						test: /\.tsx$/,
-						loader: 'esbuild-loader',
 						options: {
 							loader: 'tsx',
 							tsconfigRaw: {
@@ -312,13 +152,9 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					implementation: MinifyPluginOptions['implementation'],
 				) => {
 					const built = await build(
-						{ '/src/index.js': '' },
+						fixtures.blank,
 						(config) => {
-							configureEsbuildLoader(config);
-
-							config.module!.rules!.push({
-								test: /\.js$/,
-								loader: 'esbuild-loader',
+							configureEsbuildLoader(config, {
 								options: {
 									implementation,
 								},
@@ -345,18 +181,10 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			test('custom transform function', async () => {
 				const built = await build(
-					{
-						'/src/index.js': exportFrom('./ts.ts'),
-						'/src/ts.ts': '',
-					},
+					fixtures.blank,
 					(config) => {
-						configureEsbuildLoader(config);
-
-						config.module!.rules!.push({
-							test: /\.ts$/,
-							loader: 'esbuild-loader',
+						configureEsbuildLoader(config, {
 							options: {
-								loader: 'tsx',
 								implementation: {
 									transform: async () => ({
 										code: 'export default "CUSTOM_ESBUILD_IMPLEMENTATION"',
@@ -381,43 +209,10 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 		describe('ambigious ts/tsx', () => {
 			test('ts via tsx', async () => {
 				const built = await build(
-					{
-						'/src/index.js': exportFrom('./foo.ts'),
-						'/src/foo.ts': `
-							import type {Type} from 'foo'
-					
-							interface Foo {}
-					
-							type Foo = number
-					
-							declare module 'foo' {}
-					
-							enum BasicEnum {
-								Left,
-								Right,
-							}
-					
-							enum NamedEnum {
-								SomeEnum = 'some-value',
-							}
-					
-							export const a = BasicEnum.Left;
-					
-							export const b = NamedEnum.SomeEnum;
-					
-							export default function foo(): string {
-								return 'foo'
-							}
-					
-							// For "ts as tsx" test
-							const bar = <T>(value: T) => fn<T>();
-						`,
-					},
+					fixtures.ts,
 					(config) => {
-						configureEsbuildLoader(config);
-						config.module!.rules!.push({
+						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							loader: 'esbuild-loader',
 							options: {
 								loader: 'tsx',
 							},
@@ -434,27 +229,19 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			test('ts via tsx 2', async () => {
 				const built = await build(
-					{
-						'/src/index.js': `
-							export { default } from './foo.ts'
-						`,
-						'/src/foo.ts': `
-							const testFn = <V>(
-								l: obj,
-								options: { [key in obj]: V },
-							): V => {
-								return options[l];
-							};
-					
-							export default testFn;
-						`,
-					},
+					exportFile(
+						'ts.ts', `
+						export default <V>(
+							l: obj,
+							options: { [key in obj]: V },
+						): V => {
+							return options[l];
+						};
+					`,
+					),
 					(config) => {
-						configureEsbuildLoader(config);
-
-						config.module!.rules!.push({
+						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							loader: 'esbuild-loader',
 							options: {
 								loader: 'tsx',
 							},
@@ -471,15 +258,13 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			test('ambiguous ts', async () => {
 				const built = await build(
-					{
-						'/src/index.js': 'export { default } from "./foo.ts"',
-						'/src/foo.ts': 'export default () => <a>1</a>/g',
-					},
+					exportFile(
+						'ts.ts',
+						'export default () => <a>1</a>/g',
+					),
 					(config) => {
-						configureEsbuildLoader(config);
-						config.module!.rules!.push({
+						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							loader: 'esbuild-loader',
 							options: {
 								loader: 'tsx',
 							},
@@ -497,16 +282,13 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			test('ambiguous tsx', async () => {
 				const built = await build(
-					{
-						'/src/index.js': 'export { default } from "./tsx.tsx"',
-						'/src/tsx.tsx': 'export default () => <a>1</a>/g',
-					},
+					exportFile(
+						'tsx.tsx',
+						'export default () => <a>1</a>/g',
+					),
 					(config) => {
-						configureEsbuildLoader(config);
-
-						config.module!.rules!.push({
+						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							loader: 'esbuild-loader',
 							options: {
 								loader: 'tsx',
 							},
@@ -526,10 +308,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 		describe('Source-map', ({ test }) => {
 			test('source-map eval', async () => {
 				const built = await build(
-					{
-						'/src/index.js': 'export { default } from "./js.js"',
-						'/src/js.js': js,
-					},
+					fixtures.js,
 					(config) => {
 						configureEsbuildLoader(config);
 						config.devtool = 'eval-source-map';
@@ -545,13 +324,14 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('source-map inline', async () => {
-				const built = await build({
-					'/src/index.js': 'export { default } from "./js.js"',
-					'/src/js.js': js,
-				}, (config) => {
-					configureEsbuildLoader(config);
-					config.devtool = 'inline-source-map';
-				}, webpack);
+				const built = await build(
+					fixtures.js,
+					(config) => {
+						configureEsbuildLoader(config);
+						config.devtool = 'inline-source-map';
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -561,13 +341,14 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('source-map file', async () => {
-				const built = await build({
-					'/src/index.js': 'export { default } from "./js.js"',
-					'/src/js.js': js,
-				}, (config) => {
-					configureEsbuildLoader(config);
-					config.devtool = 'source-map';
-				}, webpack);
+				const built = await build(
+					fixtures.js,
+					(config) => {
+						configureEsbuildLoader(config);
+						config.devtool = 'source-map';
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -578,17 +359,18 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('source-map plugin', async () => {
-				const built = await build({
-					'/src/index.js': 'export { default } from "./js.js"',
-					'/src/js.js': js,
-				}, (config) => {
-					configureEsbuildLoader(config);
+				const built = await build(
+					fixtures.js,
+					(config) => {
+						configureEsbuildLoader(config);
 
-					delete config.devtool;
-					(config.plugins as SourceMapDevToolPlugin[]).push(
-						new webpack.SourceMapDevToolPlugin({}),
-					);
-				}, webpack);
+						delete config.devtool;
+						config.plugins!.push(
+							new webpack.SourceMapDevToolPlugin({}) as any,
+						);
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -620,27 +402,21 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 		});
 
 		test('CSS minification', async () => {
-			const built = await build({
-				'/src/index.js': 'import "./styles.css"',
-				'/src/styles.css': `
-				div {
-					color: red;
-				}
-				span {
-					margin: 0px 10px;
-				}
-				`,
-			}, (config) => {
-				configureEsbuildLoader(config);
-				const cssRule = configureCssLoader(config);
-				cssRule.use.push({
-					loader: 'esbuild-loader',
-					options: {
-						loader: 'css',
-						minify: true,
-					},
-				});
-			}, webpack);
+			const built = await build(
+				fixtures.css,
+				(config) => {
+					configureEsbuildLoader(config);
+					const cssRule = configureCssLoader(config);
+					cssRule.use.push({
+						loader: 'esbuild-loader',
+						options: {
+							loader: 'css',
+							minify: true,
+						},
+					});
+				},
+				webpack,
+			);
 
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);

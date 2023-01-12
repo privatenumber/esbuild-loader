@@ -3,9 +3,11 @@ import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import * as esbuild from 'esbuild';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type { MinifyPluginOptions } from '../../dist/interfaces.js';
-import { configureEsbuildMinifyPlugin, configureCssLoader, type WebpackConfiguration } from '../utils';
+import {
+	configureEsbuildMinifyPlugin,
+	configureMiniCssExtractPlugin,
+} from '../utils';
 import * as fixtures from '../fixtures.js';
 
 const assertMinified = (code: string) => {
@@ -18,9 +20,13 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 	describe('Plugin', ({ test, describe }) => {
 		describe('Minify JS', ({ test }) => {
 			test('minify', async () => {
-				const built = await build(fixtures.minification, (config) => {
-					configureEsbuildMinifyPlugin(config);
-				}, webpack);
+				const built = await build(
+					fixtures.minification,
+					(config) => {
+						configureEsbuildMinifyPlugin(config);
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -54,11 +60,15 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('minifyIdentifiers', async () => {
-				const built = await build(fixtures.minification, (config) => {
-					configureEsbuildMinifyPlugin(config, {
-						minifyIdentifiers: true,
-					});
-				}, webpack);
+				const built = await build(
+					fixtures.minification,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							minifyIdentifiers: true,
+						});
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -73,11 +83,15 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('minifySyntax', async () => {
-				const built = await build(fixtures.minification, (config) => {
-					configureEsbuildMinifyPlugin(config, {
-						minifySyntax: true,
-					});
-				}, webpack);
+				const built = await build(
+					fixtures.minification,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							minifySyntax: true,
+						});
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -127,10 +141,14 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			describe('devtool', ({ test }) => {
 				test('minify w/ no devtool', async () => {
-					const built = await build(fixtures.blank, (config) => {
-						delete config.devtool;
-						configureEsbuildMinifyPlugin(config);
-					}, webpack);
+					const built = await build(
+						fixtures.blank,
+						(config) => {
+							delete config.devtool;
+							configureEsbuildMinifyPlugin(config);
+						},
+						webpack,
+					);
 
 					const { stats } = built;
 					expect(stats.hasWarnings()).toBe(false);
@@ -144,10 +162,14 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				});
 
 				test('minify w/ devtool inline-source-map', async () => {
-					const built = await build(fixtures.blank, (config) => {
-						config.devtool = 'inline-source-map';
-						configureEsbuildMinifyPlugin(config);
-					}, webpack);
+					const built = await build(
+						fixtures.blank,
+						(config) => {
+							config.devtool = 'inline-source-map';
+							configureEsbuildMinifyPlugin(config);
+						},
+						webpack,
+					);
 
 					const { stats } = built;
 					expect(stats.hasWarnings()).toBe(false);
@@ -161,10 +183,14 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				});
 
 				test('minify w/ devtool source-map', async () => {
-					const built = await build(fixtures.blank, (config) => {
-						config.devtool = 'source-map';
-						configureEsbuildMinifyPlugin(config);
-					}, webpack);
+					const built = await build(
+						fixtures.blank,
+						(config) => {
+							config.devtool = 'source-map';
+							configureEsbuildMinifyPlugin(config);
+						},
+						webpack,
+					);
 
 					const { stats } = built;
 					expect(stats.hasWarnings()).toBe(false);
@@ -212,17 +238,20 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				// });
 
 				test('minify w/ source-map option and source-map plugin inline', async () => {
-					const built = await build(fixtures.blank, (config) => {
-						delete config.devtool;
-						configureEsbuildMinifyPlugin(config, {
-							sourcemap: true,
-						});
+					const built = await build(
+						fixtures.blank,
+						(config) => {
+							delete config.devtool;
+							configureEsbuildMinifyPlugin(config, {
+								sourcemap: true,
+							});
 
-						config.plugins!.push(
-							// @ts-expect-error webpack types are wrong
-							new webpack.SourceMapDevToolPlugin({}),
-						);
-					}, webpack);
+							config.plugins!.push(
+								new webpack.SourceMapDevToolPlugin({}) as any,
+							);
+						},
+						webpack,
+					);
 
 					const { stats } = built;
 					expect(stats.hasWarnings()).toBe(false);
@@ -236,19 +265,22 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				});
 
 				test('minify w/ source-map option and source-map plugin external', async () => {
-					const built = await build(fixtures.blank, (config) => {
-						delete config.devtool;
-						configureEsbuildMinifyPlugin(config, {
-							sourcemap: true,
-						});
+					const built = await build(
+						fixtures.blank,
+						(config) => {
+							delete config.devtool;
+							configureEsbuildMinifyPlugin(config, {
+								sourcemap: true,
+							});
 
-						config.plugins!.push(
-							// @ts-expect-error webpack types are wrong
-							new webpack.SourceMapDevToolPlugin({
-								filename: 'index.js.map',
-							}),
-						);
-					}, webpack);
+							config.plugins!.push(
+								new webpack.SourceMapDevToolPlugin({
+									filename: 'index.js.map',
+								}) as any,
+							);
+						},
+						webpack,
+					);
 
 					const { stats } = built;
 					expect(stats.hasWarnings()).toBe(false);
@@ -266,15 +298,19 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('minify w/ query strings', async () => {
-				const built = await build({
-					'/src/index.js': 'import(/* webpackChunkName: "chunk" */"./chunk.js")',
-					'/src/chunk.js': '',
-				}, (config) => {
-					config.output!.filename = '[name].js?foo=bar';
-					config.output!.chunkFilename = '[name].js?foo=bar';
+				const built = await build(
+					{
+						'/src/index.js': 'import(/* webpackChunkName: "chunk" */"./chunk.js")',
+						'/src/chunk.js': '',
+					},
+					(config) => {
+						config.output!.filename = '[name].js?foo=bar';
+						config.output!.chunkFilename = '[name].js?foo=bar';
 
-					configureEsbuildMinifyPlugin(config);
-				}, webpack);
+						configureEsbuildMinifyPlugin(config);
+					},
+					webpack,
+				);
 
 				const { stats } = built;
 				expect(stats.hasWarnings()).toBe(false);
@@ -293,15 +329,23 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			describe('legalComments', ({ test }) => {
 				test('minify w/ legalComments - default is inline', async () => {
-					const builtDefault = await build(fixtures.legalComments, (config) => {
-						configureEsbuildMinifyPlugin(config);
-					}, webpack);
+					const builtDefault = await build(
+						fixtures.legalComments,
+						(config) => {
+							configureEsbuildMinifyPlugin(config);
+						},
+						webpack,
+					);
 
-					const builtInline = await build(fixtures.legalComments, (config) => {
-						configureEsbuildMinifyPlugin(config, {
-							legalComments: 'inline',
-						});
-					}, webpack);
+					const builtInline = await build(
+						fixtures.legalComments,
+						(config) => {
+							configureEsbuildMinifyPlugin(config, {
+								legalComments: 'inline',
+							});
+						},
+						webpack,
+					);
 
 					const fileInline = builtInline.fs.readFileSync('/dist/index.js', 'utf8');
 					const fileDefault = builtDefault.fs.readFileSync('/dist/index.js', 'utf8');
@@ -311,11 +355,15 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				});
 
 				test('minify w/ legalComments - eof', async () => {
-					const built = await build(fixtures.legalComments, (config) => {
-						configureEsbuildMinifyPlugin(config, {
-							legalComments: 'eof',
-						});
-					}, webpack);
+					const built = await build(
+						fixtures.legalComments,
+						(config) => {
+							configureEsbuildMinifyPlugin(config, {
+								legalComments: 'eof',
+							});
+						},
+						webpack,
+					);
 
 					expect(built.stats.hasWarnings()).toBe(false);
 					expect(built.stats.hasErrors()).toBe(false);
@@ -325,11 +373,15 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				});
 
 				test('minify w/ legalComments - none', async () => {
-					const built = await build(fixtures.legalComments, (config) => {
-						configureEsbuildMinifyPlugin(config, {
-							legalComments: 'none',
-						});
-					}, webpack);
+					const built = await build(
+						fixtures.legalComments,
+						(config) => {
+							configureEsbuildMinifyPlugin(config, {
+								legalComments: 'none',
+							});
+						},
+						webpack,
+					);
 
 					expect(built.stats.hasWarnings()).toBe(false);
 					expect(built.stats.hasErrors()).toBe(false);
@@ -371,17 +423,21 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			test('customizable', async () => {
 				const code = 'export function foo() { return "CUSTOM_ESBUILD_IMPLEMENTATION"; }';
-				const built = await build(fixtures.blank, (config) => {
-					configureEsbuildMinifyPlugin(config, {
-						implementation: {
-							transform: async () => ({
-								code,
-								map: '',
-								warnings: [],
-							}),
-						},
-					});
-				}, webpack);
+				const built = await build(
+					fixtures.blank,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							implementation: {
+								transform: async () => ({
+									code,
+									map: '',
+									warnings: [],
+								}),
+							},
+						});
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -391,11 +447,15 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('customize with real esbuild', async () => {
-				const built = await build(fixtures.minification, (config) => {
-					configureEsbuildMinifyPlugin(config, {
-						implementation: esbuild,
-					});
-				}, webpack);
+				const built = await build(
+					fixtures.minification,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							implementation: esbuild,
+						});
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -407,31 +467,17 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 		});
 
 		describe('CSS', () => {
-			const cssFixture = {
-				'/src/index.js': 'import "./styles.css"',
-				'/src/styles.css': `
-				div {
-					color: red;
-				}
-				span {
-					margin: 0px 10px;
-				}
-				`,
-			};
-
-			const setupMiniCssExtractPlugin = (config: WebpackConfiguration) => {
-				const cssRule = configureCssLoader(config);
-				cssRule.use.unshift(MiniCssExtractPlugin.loader);
-				config.plugins!.push(new MiniCssExtractPlugin());
-			};
-
 			test('minify CSS asset', async () => {
-				const built = await build(cssFixture, (config) => {
-					configureEsbuildMinifyPlugin(config, {
-						css: true,
-					});
-					setupMiniCssExtractPlugin(config);
-				}, webpack);
+				const built = await build(
+					fixtures.css,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							css: true,
+						});
+						configureMiniCssExtractPlugin(config);
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -441,13 +487,17 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('exclude', async () => {
-				const built = await build(cssFixture, (config) => {
-					configureEsbuildMinifyPlugin(config, {
-						css: true,
-						exclude: /index\.css$/,
-					});
-					setupMiniCssExtractPlugin(config);
-				}, webpack);
+				const built = await build(
+					fixtures.css,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							css: true,
+							exclude: /index\.css$/,
+						});
+						configureMiniCssExtractPlugin(config);
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
@@ -457,13 +507,17 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 
 			test('minify w/ source-map', async () => {
-				const built = await build(cssFixture, (config) => {
-					config.devtool = 'source-map';
-					configureEsbuildMinifyPlugin(config, {
-						css: true,
-					});
-					setupMiniCssExtractPlugin(config);
-				}, webpack);
+				const built = await build(
+					fixtures.css,
+					(config) => {
+						config.devtool = 'source-map';
+						configureEsbuildMinifyPlugin(config, {
+							css: true,
+						});
+						configureMiniCssExtractPlugin(config);
+					},
+					webpack,
+				);
 
 				expect(built.stats.hasWarnings()).toBe(false);
 				expect(built.stats.hasErrors()).toBe(false);
