@@ -1,4 +1,3 @@
-
 export const exportFile = (
 	name: string,
 	code: string,
@@ -28,97 +27,97 @@ export const js = exportFile(
 			'es2016 - Exponentiation operator',
 			'10 ** 4',
 		),
-	
+
 		trySyntax(
 			'es2017 - Async functions',
 			'typeof (async () => {})',
 		),
-	
+
 		// trySyntax(
 		// 	'es2018 - Asynchronous iteration',
 		// 	'for await (let x of []) {}',
 		// ),
-	
+
 		trySyntax(
 			'es2018 - Spread properties',
 			'let x = {...Object}',
 		),
-	
+
 		trySyntax(
 			'es2018 - Rest properties',
 			'let {...x} = Object',
 		),
-	
+
 		trySyntax(
 			'es2019 - Optional catch binding',
 			'try {} catch {}',
 		),
-	
+
 		trySyntax(
 			'es2020 - Optional chaining',
 			'Object?.keys',
 		),
-	
+
 		trySyntax(
 			'es2020 - Nullish coalescing',
 			'Object ?? true',
 		),
-	
+
 		trySyntax(
 			'es2020 - import.meta',
 			'import.meta',
 		),
-	
+
 		trySyntax(
 			'es2021 - Logical assignment operators',
 			'let a = false; a ??= true; a ||= true; a &&= true;',
 		),
-	
+
 		trySyntax(
 			'es2022 - Class instance fields',
 			'(class { x })',
 		),
-	
+
 		trySyntax(
 			'es2022 - Static class fields',
 			'(class { static x })',
 		),
-	
+
 		trySyntax(
 			'es2022 - Private instance methods',
 			'(class { #x() {} })',
 		),
-	
+
 		trySyntax(
 			'es2022 - Private instance fields',
 			'(class { #x })',
 		),
-	
+
 		trySyntax(
 			'es2022 - Private static methods',
 			'(class { static #x() {} })',
 		),
-	
+
 		trySyntax(
 			'es2022 - Private static fields',
 			'(class { static #x })',
 		),
-	
+
 		// trySyntax(
 		// 	'es2022 - Ergonomic brand checks',
 		// 	'(class { #brand; static isC(obj) { return try obj.#brand; } })',
 		// ),
-	
+
 		trySyntax(
 			'es2022 - Class static blocks',
 			'(class { static {} })',
 		),
-	
+
 		// trySyntax(
 		// 	'esnext - Import assertions',
 		// 	'import "x" assert {}',
 		// ),
-	
+
 	].join(',')}];`,
 );
 
