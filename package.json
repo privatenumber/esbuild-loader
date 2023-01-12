@@ -39,13 +39,13 @@
 		"webpack-sources": "^2.2.0"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.26.2",
+		"@pvtnbr/eslint-config": "^0.33.0",
 		"@types/loader-utils": "^2.0.3",
 		"@types/node": "^18.0.4",
 		"@types/webpack": "^4.41.32",
 		"@types/webpack-sources": "^3.2.0",
 		"css-loader": "^5.2.0",
-		"eslint": "^8.19.0",
+		"eslint": "^8.31.0",
 		"manten": "^0.6.0",
 		"memfs": "^3.4.13",
 		"mini-css-extract-plugin": "^1.4.0",
