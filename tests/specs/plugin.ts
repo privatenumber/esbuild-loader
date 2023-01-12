@@ -400,7 +400,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 					expect(Object.keys(built.stats.compilation.assets)).toStrictEqual([
 						'index.js',
-						'index.js.LEGAL.txt'
+						'index.js.LEGAL.txt',
 					]);
 					const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 					expect(file).not.toMatch('//! legal comment');
