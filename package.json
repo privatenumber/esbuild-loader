@@ -41,8 +41,8 @@
 	"devDependencies": {
 		"@pvtnbr/eslint-config": "^0.33.0",
 		"@types/loader-utils": "^2.0.3",
-		"@types/node": "^18.0.4",
-		"@types/webpack": "^4.41.32",
+		"@types/node": "^18.11.18",
+		"@types/webpack": "^4.41.33",
 		"@types/webpack-sources": "^3.2.0",
 		"css-loader": "^5.2.0",
 		"eslint": "^8.31.0",

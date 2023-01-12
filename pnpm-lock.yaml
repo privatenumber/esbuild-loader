@@ -3,8 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@pvtnbr/eslint-config': ^0.33.0
   '@types/loader-utils': ^2.0.3
-  '@types/node': ^18.0.4
-  '@types/webpack': ^4.41.32
+  '@types/node': ^18.11.18
+  '@types/webpack': ^4.41.33
   '@types/webpack-sources': ^3.2.0
   css-loader: ^5.2.0
   esbuild: ^0.16.17
@@ -34,8 +34,8 @@ dependencies:
 devDependencies:
   '@pvtnbr/eslint-config': 0.33.0_iukboom6ndih5an6iafl45j2fe
   '@types/loader-utils': 2.0.3
-  '@types/node': 18.0.4
-  '@types/webpack': 4.41.32
+  '@types/node': 18.11.18
+  '@types/webpack': 4.41.33
   '@types/webpack-sources': 3.2.0
   css-loader: 5.2.7_webpack@4.46.0
   eslint: 8.31.0
@@ -365,7 +365,7 @@ packages:
       '@jest/schemas': 29.0.0
       '@types/istanbul-lib-coverage': 2.0.3
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.0.4
+      '@types/node': 18.11.18
       '@types/yargs': 17.0.19
       chalk: 4.1.2
     dev: true
@@ -517,18 +517,14 @@ packages:
   /@types/loader-utils/2.0.3:
     resolution: {integrity: sha512-sDXXzZnTLXgdso54/iOpAFSDgqhVXabCvwGAt77Agadh/Xk0QYgOk520r3tpOouI098gyqGIFywx8Op1voc3vQ==}
     dependencies:
-      '@types/node': 18.0.4
-      '@types/webpack': 4.41.32
+      '@types/node': 18.11.18
+      '@types/webpack': 4.41.33
     dev: true
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
-    dev: true
-
-  /@types/node/18.0.4:
-    resolution: {integrity: sha512-M0+G6V0Y4YV8cqzHssZpaNCqvYwlCiulmm0PwpNLF55r/+cT8Ol42CHRU1SEaYFH2rTwiiE1aYg/2g2rrtGdPA==}
     dev: true
 
   /@types/node/18.11.18:
@@ -568,15 +564,15 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 18.0.4
+      '@types/node': 18.11.18
       '@types/source-list-map': 0.1.2
       source-map: 0.7.4
     dev: true
 
-  /@types/webpack/4.41.32:
-    resolution: {integrity: sha512-cb+0ioil/7oz5//7tZUSwbrSAN/NWHrQylz5cW8G0dWTcF/g+/dSdMlKVZspBYuMAN1+WnwHrkxiRrLcwd0Heg==}
+  /@types/webpack/4.41.33:
+    resolution: {integrity: sha512-PPajH64Ft2vWevkerISMtnZ8rTs4YmRbs+23c402J0INmxDKCrhZNvwZYtzx96gY2wAtXdrK1BS2fiC8MlLr3g==}
     dependencies:
-      '@types/node': 18.0.4
+      '@types/node': 18.11.18
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.13.1
       '@types/webpack-sources': 3.2.0
@@ -3562,7 +3558,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.3.1
-      '@types/node': 18.0.4
+      '@types/node': 18.11.18
       chalk: 4.1.2
       ci-info: 3.3.2
       graceful-fs: 4.2.10
