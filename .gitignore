@@ -23,3 +23,6 @@ coverage
 
 # Distribution files
 dist
+
+# Cache
+.eslintcache
