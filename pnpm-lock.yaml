@@ -5,7 +5,7 @@ specifiers:
   '@types/loader-utils': ^2.0.3
   '@types/node': ^18.11.18
   '@types/webpack': ^4.41.33
-  '@types/webpack-sources': ^3.2.0
+  '@types/webpack-sources': ^0.1.9
   css-loader: ^5.2.7
   esbuild: ^0.16.17
   eslint: ^8.31.0
@@ -19,7 +19,7 @@ specifiers:
   tsx: ^3.12.2
   typescript: ^4.9.4
   webpack: ^4.44.2
-  webpack-sources: ^2.2.0
+  webpack-sources: ^1.4.3
   webpack-test-utils: ^2.1.0
   webpack5: npm:webpack@^5.0.0
 
@@ -29,14 +29,14 @@ dependencies:
   json5: 2.2.0
   loader-utils: 2.0.0
   tapable: 2.2.0
-  webpack-sources: 2.3.1
+  webpack-sources: 1.4.3
 
 devDependencies:
   '@pvtnbr/eslint-config': 0.33.0_iukboom6ndih5an6iafl45j2fe
   '@types/loader-utils': 2.0.3
   '@types/node': 18.11.18
   '@types/webpack': 4.41.33
-  '@types/webpack-sources': 3.2.0
+  '@types/webpack-sources': 0.1.9
   css-loader: 5.2.7_webpack@4.46.0
   eslint: 8.31.0
   manten: 0.6.0
@@ -559,6 +559,14 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: true
+
+  /@types/webpack-sources/0.1.9:
+    resolution: {integrity: sha512-bvzMnzqoK16PQIC8AYHNdW45eREJQMd6WG/msQWX5V2+vZmODCOPb4TJcbgRljTZZTwTM4wUMcsI8FftNA7new==}
+    dependencies:
+      '@types/node': 18.11.18
+      '@types/source-list-map': 0.1.2
+      source-map: 0.6.1
     dev: true
 
   /@types/webpack-sources/3.2.0:
@@ -5575,15 +5583,6 @@ packages:
     dependencies:
       source-list-map: 2.0.1
       source-map: 0.6.1
-    dev: true
-
-  /webpack-sources/2.3.1:
-    resolution: {integrity: sha512-y9EI9AO42JjEcrTJFOYmVywVZdKVUfOvDUPsJea5GIr1JOEGFVqwlY2K098fFoIjOkDzHn2AjRvM8dsBZu+gCA==}
-    engines: {node: '>=10.13.0'}
-    dependencies:
-      source-list-map: 2.0.1
-      source-map: 0.6.1
-    dev: false
 
   /webpack-sources/3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}

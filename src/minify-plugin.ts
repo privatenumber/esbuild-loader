@@ -107,7 +107,11 @@ class ESBuildMinifyPlugin {
 	private async transformAssets(
 		compilation: Compilation,
 	): Promise<void> {
-		const { options: { devtool } } = compilation.compiler;
+		const { compiler } = compilation;
+		const { options: { devtool } } = compiler;
+
+		// @ts-expect-error Only exists on Webpack 5
+		const sources = compiler.webpack?.sources;
 
 		const sourcemap = (
 			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
@@ -156,7 +160,7 @@ class ESBuildMinifyPlugin {
 				asset.name,
 				(
 					sourcemap
-						? new SourceMapSource(
+						? new (sources ? sources.SourceMapSource : SourceMapSource)(
 							result.code,
 							asset.name,
 							result.map as any,
@@ -164,7 +168,7 @@ class ESBuildMinifyPlugin {
 							map!,
 							true,
 						)
-						: new RawSource(result.code)
+						: new (sources ? sources.RawSource : RawSource)(result.code)
 				),
 				{
 					...asset.info,

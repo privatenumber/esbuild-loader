@@ -36,14 +36,14 @@
 		"json5": "^2.2.0",
 		"loader-utils": "^2.0.0",
 		"tapable": "^2.2.0",
-		"webpack-sources": "^2.2.0"
+		"webpack-sources": "^1.4.3"
 	},
 	"devDependencies": {
 		"@pvtnbr/eslint-config": "^0.33.0",
 		"@types/loader-utils": "^2.0.3",
 		"@types/node": "^18.11.18",
 		"@types/webpack": "^4.41.33",
-		"@types/webpack-sources": "^3.2.0",
+		"@types/webpack-sources": "^0.1.9",
 		"css-loader": "^5.2.7",
 		"eslint": "^8.31.0",
 		"manten": "^0.6.0",
