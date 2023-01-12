@@ -33,5 +33,8 @@ jobs:
         NODE_OPTIONS: --openssl-legacy-provider 
       run: pnpm test
 
+    - name: Test Node.js v12
+      run: pnpm --use-node-version=12.22.12 test
+
     - name: Lint
       run: pnpm lint
