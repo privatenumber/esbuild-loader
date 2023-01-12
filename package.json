@@ -44,7 +44,7 @@
 		"@types/node": "^18.11.18",
 		"@types/webpack": "^4.41.33",
 		"@types/webpack-sources": "^3.2.0",
-		"css-loader": "^5.2.0",
+		"css-loader": "^5.2.7",
 		"eslint": "^8.31.0",
 		"manten": "^0.6.0",
 		"memfs": "^3.4.13",

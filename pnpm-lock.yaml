@@ -6,7 +6,7 @@ specifiers:
   '@types/node': ^18.11.18
   '@types/webpack': ^4.41.33
   '@types/webpack-sources': ^3.2.0
-  css-loader: ^5.2.0
+  css-loader: ^5.2.7
   esbuild: ^0.16.17
   eslint: ^8.31.0
   joycon: ^3.0.1
@@ -1677,7 +1677,7 @@ packages:
       postcss-modules-values: 4.0.0_postcss@8.3.6
       postcss-value-parser: 4.1.0
       schema-utils: 3.1.1
-      semver: 7.3.5
+      semver: 7.3.8
       webpack: 4.46.0
     dev: true
 
@@ -4418,7 +4418,7 @@ packages:
     dependencies:
       icss-utils: 5.1.0_postcss@8.3.6
       postcss: 8.3.6
-      postcss-selector-parser: 6.0.6
+      postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.1.0
     dev: true
 
@@ -4429,7 +4429,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       postcss: 8.3.6
-      postcss-selector-parser: 6.0.6
+      postcss-selector-parser: 6.0.11
     dev: true
 
   /postcss-modules-values/4.0.0_postcss@8.3.6:
@@ -4444,14 +4444,6 @@ packages:
 
   /postcss-selector-parser/6.0.11:
     resolution: {integrity: sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g==}
-    engines: {node: '>=4'}
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-    dev: true
-
-  /postcss-selector-parser/6.0.6:
-    resolution: {integrity: sha512-9LXrvaaX3+mcv5xkg5kFwqSzSH1JIObIx51PrndZwlmznwXRfxMddDvo9gve3gVR8ZTKgoFDdWkbRFmEhT4PMg==}
     engines: {node: '>=4'}
     dependencies:
       cssesc: 3.0.0
@@ -4863,14 +4855,6 @@ packages:
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
-    dev: true
-
-  /semver/7.3.5:
-    resolution: {integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: true
 
   /semver/7.3.8:
