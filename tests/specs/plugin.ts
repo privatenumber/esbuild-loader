@@ -383,6 +383,31 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					const file = built.fs.readFileSync('/dist/index.js', 'utf8');
 					expect(file).not.toMatch('//! legal comment');
 				});
+
+				test('minify w/ legalComments - external', async () => {
+					const built = await build(
+						fixtures.legalComments,
+						(config) => {
+							configureEsbuildMinifyPlugin(config, {
+								legalComments: 'external',
+							});
+						},
+						webpack,
+					);
+
+					expect(built.stats.hasWarnings()).toBe(false);
+					expect(built.stats.hasErrors()).toBe(false);
+
+					expect(Object.keys(built.stats.compilation.assets)).toStrictEqual([
+						'index.js',
+						'index.js.LEGAL.txt',
+					]);
+					const file = built.fs.readFileSync('/dist/index.js', 'utf8');
+					expect(file).not.toMatch('//! legal comment');
+
+					const extracted = built.fs.readFileSync('/dist/index.js.LEGAL.txt', 'utf8');
+					expect(extracted).toMatch('//! legal comment');
+				});
 			});
 		});
 
