@@ -206,21 +206,15 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					expect(file).toContain('//# sourceMappingURL=index.js.map');
 				});
 
-				// test('minify w/ source-map option', async () => {
+				// TODO: This doesn't work, so maybe we should just remove the option?
+				// test('minify w/ plugin sourcemap option', async () => {
 				// 	const built = await build({
 				// 		'/src/index.js': '',
 				// 	}, (config) => {
-				// 		configureEsbuildLoader(config);
-
 				// 		delete config.devtool;
-				// 		config.optimization = {
-				// 			minimize: true,
-				// 			minimizer: [
-				// 				new ESBuildMinifyPlugin({
-				// 					sourcemap: true,
-				// 				}),
-				// 			],
-				// 		};
+				// 		configureEsbuildMinifyPlugin(config, {
+				// 			sourcemap: true,
+				// 		});
 				// 	}, webpack);
 
 				// 	const { stats } = built;
