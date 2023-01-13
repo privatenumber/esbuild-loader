@@ -1,4 +1,4 @@
-import { transform as defaultEsbuildTransform } from 'esbuild';
+import { transform } from 'esbuild';
 import {
 	RawSource as WP4RawSource,
 	SourceMapSource as WP4SourceMapSource,
@@ -42,19 +42,8 @@ const granularMinifyConfigs = ['minifyIdentifiers', 'minifySyntax', 'minifyWhite
 class ESBuildMinifyPlugin {
 	private readonly options: MinifyPluginOptions;
 
-	private readonly transform: typeof defaultEsbuildTransform;
-
 	constructor(options: MinifyPluginOptions = {}) {
-		const { implementation, ...remainingOptions } = options;
-		if (implementation && typeof implementation.transform !== 'function') {
-			throw new TypeError(
-				`ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received ${typeof implementation.transform}`,
-			);
-		}
-
-		this.transform = implementation?.transform ?? defaultEsbuildTransform;
-
-		this.options = remainingOptions;
+		this.options = options;
 
 		const hasGranularMinificationConfig = granularMinifyConfigs.some(
 			minifyConfig => minifyConfig in options,
@@ -163,7 +152,7 @@ class ESBuildMinifyPlugin {
 			}
 
 			const sourceAsString = source.toString();
-			const result = await this.transform(sourceAsString, {
+			const result = await transform(sourceAsString, {
 				...transformOptions,
 				loader: (
 					assetIsCss

@@ -7,7 +7,6 @@ import {
 	configureCssLoader,
 } from '../utils';
 import * as fixtures from '../fixtures.js';
-import type { MinifyPluginOptions } from '#esbuild-loader';
 
 const { exportFile } = fixtures;
 
@@ -144,66 +143,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			expect(built.stats.hasWarnings()).toBe(false);
 			expect(built.stats.hasErrors()).toBe(false);
 			expect(built.require('/dist/index.js')).toStrictEqual(['div', null, 'hello world']);
-		});
-
-		describe('implementation', ({ test }) => {
-			test('error', async () => {
-				const runWithImplementation = async (
-					implementation: MinifyPluginOptions['implementation'],
-				) => {
-					const built = await build(
-						fixtures.blank,
-						(config) => {
-							configureEsbuildLoader(config, {
-								options: {
-									implementation,
-								},
-							});
-						},
-						webpack,
-					);
-
-					expect(built.stats.hasErrors()).toBe(true);
-					const [error] = built.stats.compilation.errors;
-					throw error;
-				};
-
-				// @ts-expect-error testing invalid type
-				await expect(runWithImplementation({})).rejects.toThrow(
-					'esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received undefined',
-				);
-
-				// @ts-expect-error testing invalid type
-				await expect(runWithImplementation({ transform: 123 })).rejects.toThrow(
-					'esbuild-loader: options.implementation.transform must be an ESBuild transform function. Received number',
-				);
-			});
-
-			test('custom transform function', async () => {
-				const built = await build(
-					fixtures.blank,
-					(config) => {
-						configureEsbuildLoader(config, {
-							options: {
-								implementation: {
-									transform: async () => ({
-										code: 'export default "CUSTOM_ESBUILD_IMPLEMENTATION"',
-										map: '',
-										warnings: [],
-									}),
-								},
-							},
-						});
-					},
-					webpack,
-				);
-
-				expect(built.stats.hasWarnings()).toBe(false);
-				expect(built.stats.hasErrors()).toBe(false);
-
-				const dist = built.fs.readFileSync('/dist/index.js', 'utf8');
-				expect(dist).toContain('CUSTOM_ESBUILD_IMPLEMENTATION');
-			});
 		});
 
 		describe('ambigious ts/tsx', () => {

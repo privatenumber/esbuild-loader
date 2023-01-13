@@ -2,13 +2,11 @@ import { testSuite, expect } from 'manten';
 import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
-import * as esbuild from 'esbuild';
 import {
 	configureEsbuildMinifyPlugin,
 	configureMiniCssExtractPlugin,
 } from '../utils';
 import * as fixtures from '../fixtures.js';
-import type { MinifyPluginOptions } from '#esbuild-loader';
 
 const assertMinified = (code: string) => {
 	expect(code).not.toMatch(/\s{2,}/);
@@ -408,80 +406,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					const extracted = built.fs.readFileSync('/dist/index.js.LEGAL.txt', 'utf8');
 					expect(extracted).toMatch('//! legal comment');
 				});
-			});
-		});
-
-		describe('implementation', ({ test }) => {
-			test('error', async () => {
-				const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => {
-					await build(
-						fixtures.blank,
-						(config) => {
-							configureEsbuildMinifyPlugin(config, {
-								implementation,
-							});
-						},
-						webpack,
-					);
-				};
-
-				await expect(
-					// @ts-expect-error testing invalid type
-					runWithImplementation({}),
-				).rejects.toThrow(
-					'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received undefined',
-				);
-
-				await expect(
-					// @ts-expect-error testing invalid type
-					runWithImplementation({ transform: 123 }),
-				).rejects.toThrow(
-					'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number',
-				);
-			});
-
-			test('customizable', async () => {
-				const code = 'export function foo() { return "CUSTOM_ESBUILD_IMPLEMENTATION"; }';
-				const built = await build(
-					fixtures.blank,
-					(config) => {
-						configureEsbuildMinifyPlugin(config, {
-							implementation: {
-								transform: async () => ({
-									code,
-									map: '',
-									warnings: [],
-								}),
-							},
-						});
-					},
-					webpack,
-				);
-
-				expect(built.stats.hasWarnings()).toBe(false);
-				expect(built.stats.hasErrors()).toBe(false);
-				expect(
-					built.fs.readFileSync('/dist/index.js', 'utf8'),
-				).toBe(code);
-			});
-
-			test('customize with real esbuild', async () => {
-				const built = await build(
-					fixtures.minification,
-					(config) => {
-						configureEsbuildMinifyPlugin(config, {
-							implementation: esbuild,
-						});
-					},
-					webpack,
-				);
-
-				expect(built.stats.hasWarnings()).toBe(false);
-				expect(built.stats.hasErrors()).toBe(false);
-
-				const exportedFunction = built.require('/dist/');
-				expect(exportedFunction('hello world')).toBe('hello world');
-				assertMinified(exportedFunction.toString());
 			});
 		});
 
