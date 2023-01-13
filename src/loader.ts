@@ -5,7 +5,7 @@ import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
 import JoyCon, { LoadResult } from 'joycon';
 import JSON5 from 'json5';
-import { LoaderOptions } from './interfaces';
+import type { LoaderOptions } from './types';
 
 const joycon = new JoyCon();
 
