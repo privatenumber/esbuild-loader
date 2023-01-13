@@ -9,20 +9,32 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    strategy:
-      matrix:
-        node-version: [10.x, 16.x]
+
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: npx ci
-    - name: Lint
-      if: ${{ matrix.node-version == '14.x' }}
-      run: npm run lint
+        node-version-file: '.nvmrc'
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2.2.2
+      with:
+        version: 7
+        run_install: true
+
+    - name: Build
+      run: pnpm build
+
     - name: Test
-      run: npm run test --if-present
+      env:
+        NODE_OPTIONS: --openssl-legacy-provider 
+      run: pnpm test
+
+    - name: Test Node.js v12
+      run: pnpm --use-node-version=12.22.12 test
+
+    - name: Lint
+      run: pnpm lint

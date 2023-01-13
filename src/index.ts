@@ -4,3 +4,4 @@ import ESBuildMinifyPlugin from './minify-plugin';
 
 export default esbuildLoader;
 export { ESBuildPlugin, ESBuildMinifyPlugin };
+export * from './interfaces';

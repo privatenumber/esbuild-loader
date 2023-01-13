@@ -1,5 +1,8 @@
 import { transform as defaultEsbuildTransform } from 'esbuild';
-import { RawSource, SourceMapSource } from 'webpack-sources';
+import {
+	RawSource as WP4RawSource,
+	SourceMapSource as WP4SourceMapSource,
+} from 'webpack-sources';
 import webpack from 'webpack';
 import type {
 	SyncHook, SyncBailHook, AsyncSeriesHook, HookMap,
@@ -107,7 +110,13 @@ class ESBuildMinifyPlugin {
 	private async transformAssets(
 		compilation: Compilation,
 	): Promise<void> {
-		const { options: { devtool } } = compilation.compiler;
+		const { compiler } = compilation;
+		const { options: { devtool } } = compiler;
+
+		// @ts-expect-error Only exists on Webpack 5
+		const sources = compiler.webpack?.sources;
+		const SourceMapSource = (sources ? sources.SourceMapSource : WP4SourceMapSource);
+		const RawSource = (sources ? sources.RawSource : WP4RawSource);
 
 		const sourcemap = (
 			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
@@ -139,7 +148,20 @@ class ESBuildMinifyPlugin {
 
 		await Promise.all(assets.map(async (asset) => {
 			const assetIsCss = isCssFile.test(asset.name);
-			const { source, map } = asset.source.sourceAndMap();
+			let source: string | Buffer | ArrayBuffer;
+			let map = null;
+
+			if (asset.source.sourceAndMap) {
+				const sourceAndMap = asset.source.sourceAndMap();
+				source = sourceAndMap.source;
+				map = sourceAndMap.map;
+			} else {
+				source = asset.source.source();
+				if (asset.source.map) {
+					map = asset.source.map();
+				}
+			}
+
 			const sourceAsString = source.toString();
 			const result = await this.transform(sourceAsString, {
 				...transformOptions,
@@ -151,6 +173,13 @@ class ESBuildMinifyPlugin {
 				sourcemap,
 				sourcefile: asset.name,
 			});
+
+			if (result.legalComments) {
+				compilation.emitAsset(
+					`${asset.name}.LEGAL.txt`,
+					new RawSource(result.legalComments),
+				);
+			}
 
 			compilation.updateAsset(
 				asset.name,
