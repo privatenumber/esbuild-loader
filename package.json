@@ -27,13 +27,13 @@
 	},
 	"imports": {
 		"#esbuild-loader": {
-			"types": "./src/index.ts",
+			"types": "./src/index.d.ts",
 			"development": "./src/index.ts",
 			"default": "./dist/index.js"
 		}
 	},
 	"scripts": {
-		"build": "pkgroll --minify --target=node12.20.0",
+		"build": "pkgroll --target=node12.20.0",
 		"test": "tsx tests",
 		"dev": "tsx watch --conditions=development tests",
 		"lint": "eslint --cache .",
