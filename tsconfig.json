@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"outDir": "dist",
 		"module": "Node16",
 
 		// Node 10
@@ -12,5 +11,4 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true
 	},
-	"include": ["src"]
 }
