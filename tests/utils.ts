@@ -1,8 +1,7 @@
 import type webpack4 from 'webpack';
 import type webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ESBuildMinifyPlugin } from '../src/index.js';
-import type { MinifyPluginOptions } from '../src/interfaces.js';
+import { ESBuildMinifyPlugin, type MinifyPluginOptions } from '..';
 
 const esbuildLoaderPath = require.resolve('../src/');
 

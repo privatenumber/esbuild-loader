@@ -2,7 +2,7 @@ import { testSuite, expect } from 'manten';
 import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
-import type { MinifyPluginOptions } from '../../dist/interfaces.js';
+import type { MinifyPluginOptions } from '../../dist/index.js';
 import {
 	configureEsbuildLoader,
 	configureCssLoader,
