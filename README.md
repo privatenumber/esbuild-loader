@@ -22,7 +22,7 @@ Curious how much faster your build will be? See [what users are saying](https://
 ## 🚀 Install
 
 ```bash
-npm i -D esbuild-loader
+npm i -D esbuild-loader esbuild
 ```
 
 ## 🚦 Quick Setup
@@ -207,41 +207,6 @@ In `webpack.config.js`:
 
 ### Examples
 If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/privatenumber/esbuild-loader-examples).
-
-### Bring your own esbuild (Advanced)
-
-esbuild-loader comes with a version of esbuild it has been tested to work with. However, [esbuild has a frequent release cadence](https://github.com/evanw/esbuild/releases), and while we try to keep up with the important releases, it can easily go out of date.
-
-Use the `implementation` option in the loader or the minify plugin to pass in your own version of esbuild (eg. a newer one).
-
-⚠️ esbuild is not stable yet and can have dramatic differences across releases. Using a different version of esbuild is not guaranteed to work.
-
-
-```diff
-+ const esbuild = require('esbuild')
-
-  ...
-
-  module.exports = {
-    ...,
-
-    module: {
-      rules: [
-        {
-          test: ...,
-          loader: 'esbuild-loader',
-          options: {
-            ...,
-+           implementation: esbuild
-          }
-        }
-      ]
-    }
-  }
-```
-
-_The `implementation` option will be removed once esbuild reaches a stable release. Instead esbuild will become a peerDependency so you always provide your own._
-
 
 ## ⚙️ Options
 
