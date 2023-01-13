@@ -550,5 +550,43 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				expect(sourcemapFile).toMatch(/styles\.css/);
 			});
 		});
+
+		test('supports Source without #sourceAndMap()', async () => {
+			const createSource = (content: string) => ({
+				source: () => content,
+				size: () => Buffer.byteLength(content),
+			});
+
+			const built = await build({ '/src/index.js': '' }, (config) => {
+				configureEsbuildMinifyPlugin(config);
+
+				config.plugins!.push({
+					apply(compiler) {
+						compiler.hooks.compilation.tap('test', (compilation) => {
+							compilation.hooks.processAssets.tap(
+								{ name: 'test' },
+								() => {
+									compilation.emitAsset(
+										'test.js',
+										createSource(' 1  +  1'),
+									);
+								},
+							);
+						});
+					},
+				});
+			}, webpack5);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			expect(Object.keys(built.stats.compilation.assets)).toStrictEqual([
+				'index.js',
+				'test.js',
+			]);
+			expect(
+				built.fs.readFileSync('/dist/test.js', 'utf8'),
+			).toBe('1+1;\n');
+		});
 	});
 });

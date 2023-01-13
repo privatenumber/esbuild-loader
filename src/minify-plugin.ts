@@ -148,7 +148,20 @@ class ESBuildMinifyPlugin {
 
 		await Promise.all(assets.map(async (asset) => {
 			const assetIsCss = isCssFile.test(asset.name);
-			const { source, map } = asset.source.sourceAndMap();
+			let source: string | Buffer | ArrayBuffer;
+			let map = null;
+
+			if (asset.source.sourceAndMap) {
+				const sourceAndMap = asset.source.sourceAndMap();
+				source = sourceAndMap.source;
+				map = sourceAndMap.map;
+			} else {
+				source = asset.source.source();
+				if (asset.source.map) {
+					map = asset.source.map();
+				}
+			}
+
 			const sourceAsString = source.toString();
 			const result = await this.transform(sourceAsString, {
 				...transformOptions,
