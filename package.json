@@ -21,18 +21,18 @@
 	],
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"scripts": {
-		"build": "tsc",
-		"test": "tsx tests",
-		"dev": "tsx watch --conditions=development tests",
-		"lint": "eslint --cache ."
-	},
 	"imports": {
 		"#esbuild-loader": {
 			"types": "./src/index.ts",
 			"development": "./src/index.ts",
 			"default": "./dist/index.js"
 		}
+	},
+	"scripts": {
+		"build": "tsc",
+		"test": "tsx tests",
+		"dev": "tsx watch --conditions=development tests",
+		"lint": "eslint --cache ."
 	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"

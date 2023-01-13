@@ -3,12 +3,12 @@ import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import * as esbuild from 'esbuild';
-import type { MinifyPluginOptions } from '#esbuild-loader';
 import {
 	configureEsbuildMinifyPlugin,
 	configureMiniCssExtractPlugin,
 } from '../utils';
 import * as fixtures from '../fixtures.js';
+import type { MinifyPluginOptions } from '#esbuild-loader';
 
 const assertMinified = (code: string) => {
 	expect(code).not.toMatch(/\s{2,}/);

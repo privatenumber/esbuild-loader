@@ -2,12 +2,12 @@ import { testSuite, expect } from 'manten';
 import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
-import type { MinifyPluginOptions } from '#esbuild-loader';
 import {
 	configureEsbuildLoader,
 	configureCssLoader,
 } from '../utils';
 import * as fixtures from '../fixtures.js';
+import type { MinifyPluginOptions } from '#esbuild-loader';
 
 const { exportFile } = fixtures;
 
