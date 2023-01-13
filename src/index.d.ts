@@ -1,4 +1,4 @@
-import type { MinifyPluginOptions } from './interfaces';
+import { MinifyPluginOptions } from './interfaces';
 
 export class ESBuildMinifyPlugin {
 	constructor(options?: MinifyPluginOptions);
