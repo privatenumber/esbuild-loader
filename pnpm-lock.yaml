@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@pvtnbr/eslint-config': ^0.33.0
   '@types/loader-utils': ^2.0.3
+  '@types/mini-css-extract-plugin': ^2.5.1
   '@types/node': ^18.11.18
   '@types/webpack': ^4.41.33
   '@types/webpack-sources': ^0.1.9
@@ -34,6 +35,7 @@ dependencies:
 devDependencies:
   '@pvtnbr/eslint-config': 0.33.0_iukboom6ndih5an6iafl45j2fe
   '@types/loader-utils': 2.0.3
+  '@types/mini-css-extract-plugin': 2.5.1_webpack@4.46.0
   '@types/node': 18.11.18
   '@types/webpack': 4.41.33
   '@types/webpack-sources': 0.1.9
@@ -525,6 +527,15 @@ packages:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: true
+
+  /@types/mini-css-extract-plugin/2.5.1_webpack@4.46.0:
+    resolution: {integrity: sha512-evjjtJttaUexgg3au9ZJFy76tV9mySwX3a4Jl82BuormBYluWLRt0xk2urWrhOdPgDWzulRFyotwYOJTmkSgKw==}
+    deprecated: This is a stub types definition. mini-css-extract-plugin provides its own type definitions, so you do not need this installed.
+    dependencies:
+      mini-css-extract-plugin: 1.6.2_webpack@4.46.0
+    transitivePeerDependencies:
+      - webpack
     dev: true
 
   /@types/node/18.11.18:

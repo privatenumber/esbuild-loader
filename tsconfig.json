@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"outDir": "dist",
-		"module": "commonjs",
+		"module": "Node16",
 
 		// Node 10
 		"target": "ES2018",

@@ -24,8 +24,15 @@
 	"scripts": {
 		"build": "tsc",
 		"test": "tsx tests",
-		"dev": "tsx watch tests",
+		"dev": "tsx watch --conditions=development tests",
 		"lint": "eslint --cache ."
+	},
+	"imports": {
+		"#esbuild-loader": {
+			"types": "./src/index.ts",
+			"development": "./src/index.ts",
+			"default": "./dist/index.js"
+		}
 	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"
@@ -41,6 +48,7 @@
 	"devDependencies": {
 		"@pvtnbr/eslint-config": "^0.33.0",
 		"@types/loader-utils": "^2.0.3",
+		"@types/mini-css-extract-plugin": "^2.5.1",
 		"@types/node": "^18.11.18",
 		"@types/webpack": "^4.41.33",
 		"@types/webpack-sources": "^0.1.9",
