@@ -415,11 +415,13 @@ Consider these type-checking alternatives:
 - Running `tsc --noEmit` to type check
 - Integrating type-checking to your Webpack build as a separate process using [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin)
 
-## 🌱 Other Webpack plugins
+## 💞 Related
+
+#### [tsx](https://github.com/esbuild-kit/tsx)
+Node.js enhanced with esbuild to run TypeScript and ESM.
 
 #### [instant-mocha](https://github.com/privatenumber/instant-mocha)
 Webpack-integrated Mocha test-runner with Webpack 5 support.
-
 
 #### [webpack-localize-assets-plugin](https://github.com/privatenumber/webpack-localize-assets-plugin)
 Localize/i18nalize your Webpack build. Optimized for multiple locales!
