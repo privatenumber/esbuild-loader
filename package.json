@@ -40,7 +40,8 @@
 		"test": "tsx tests",
 		"dev": "tsx watch --conditions=development tests",
 		"lint": "eslint --cache .",
-		"type-check": "tsc --noEmit"
+		"type-check": "tsc --noEmit",
+		"prepack": "pnpm build && clean-pkg-json"
 	},
 	"peerDependencies": {
 		"webpack": "^4.40.0 || ^5.0.0"
@@ -60,6 +61,7 @@
 		"@types/node": "^18.11.18",
 		"@types/webpack": "^4.41.33",
 		"@types/webpack-sources": "^0.1.9",
+		"clean-pkg-json": "^1.2.0",
 		"css-loader": "^5.2.7",
 		"eslint": "^8.31.0",
 		"manten": "^0.6.0",

@@ -7,6 +7,7 @@ specifiers:
   '@types/node': ^18.11.18
   '@types/webpack': ^4.41.33
   '@types/webpack-sources': ^0.1.9
+  clean-pkg-json: ^1.2.0
   css-loader: ^5.2.7
   esbuild: ^0.16.17
   eslint: ^8.31.0
@@ -40,6 +41,7 @@ devDependencies:
   '@types/node': 18.11.18
   '@types/webpack': 4.41.33
   '@types/webpack-sources': 0.1.9
+  clean-pkg-json: 1.2.0
   css-loader: 5.2.7_webpack@4.46.0
   eslint: 8.31.0
   manten: 0.6.0
@@ -1626,6 +1628,11 @@ packages:
       define-property: 0.2.5
       isobject: 3.0.1
       static-extend: 0.1.2
+    dev: true
+
+  /clean-pkg-json/1.2.0:
+    resolution: {integrity: sha512-QHBWWOtpSCv5nfMFKwyxn4WMvkYE0msxj5xiqejYGqYepWVrK7O/om1Vn6nSl/WPtYn8ge9YmSCbTi1Hp8k+Hg==}
+    hasBin: true
     dev: true
 
   /clean-regexp/1.0.0:
