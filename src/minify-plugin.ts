@@ -161,6 +161,13 @@ class ESBuildMinifyPlugin {
 				sourcefile: asset.name,
 			});
 
+			if (result.legalComments) {
+				compilation.emitAsset(
+					`${asset.name}.LEGAL.txt`,
+					new RawSource(result.legalComments),
+				);
+			}
+
 			compilation.updateAsset(
 				asset.name,
 				(
