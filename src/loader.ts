@@ -23,7 +23,6 @@ joycon.addLoader({
 	},
 });
 
-const isTsExtensionPtrn = /\.ts$/i;
 let tsConfig: LoadResult;
 
 async function ESBuildLoader(
@@ -51,7 +50,7 @@ async function ESBuildLoader(
 	const transformOptions = {
 		...esbuildTransformOptions,
 		target: options.target ?? 'es2015',
-		loader: options.loader ?? 'js',
+		loader: options.loader ?? 'default',
 		sourcemap: this.sourceMap,
 		sourcefile: this.resourcePath,
 	};
@@ -64,14 +63,6 @@ async function ESBuildLoader(
 		if (tsConfig.data) {
 			transformOptions.tsconfigRaw = tsConfig.data;
 		}
-	}
-
-	// https://github.com/privatenumber/esbuild-loader/pull/107
-	if (
-		transformOptions.loader === 'tsx'
-		&& isTsExtensionPtrn.test(this.resourcePath)
-	) {
-		transformOptions.loader = 'ts';
 	}
 
 	try {

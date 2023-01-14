@@ -72,9 +72,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				(config) => {
 					configureEsbuildLoader(config, {
 						test: /\.ts$/,
-						options: {
-							loader: 'ts',
-						},
 					});
 				},
 				webpack,
@@ -96,7 +93,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					configureEsbuildLoader(config, {
 						test: /\.tsx$/,
 						options: {
-							loader: 'tsx',
 							jsxFactory: 'Array',
 							jsxFragment: '"Fragment"',
 						},
@@ -129,7 +125,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					configureEsbuildLoader(config, {
 						test: /\.tsx$/,
 						options: {
-							loader: 'tsx',
 							tsconfigRaw: {
 								compilerOptions: {
 									jsxFactory: 'Array',
@@ -213,9 +208,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					(config) => {
 						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							options: {
-								loader: 'tsx',
-							},
 						});
 					},
 					webpack,
@@ -242,9 +234,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					(config) => {
 						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							options: {
-								loader: 'tsx',
-							},
 						});
 					},
 					webpack,
@@ -265,9 +254,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					(config) => {
 						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							options: {
-								loader: 'tsx',
-							},
 						});
 					},
 					webpack,
@@ -289,9 +275,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					(config) => {
 						configureEsbuildLoader(config, {
 							test: /\.tsx?$/,
-							options: {
-								loader: 'tsx',
-							},
 						});
 					},
 					webpack,
