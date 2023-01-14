@@ -42,7 +42,6 @@ In `webpack.config.js`:
 +         test: /\.js$/,
 +         loader: 'esbuild-loader',
 +         options: {
-+           loader: 'jsx',  // Remove this if you're not using JSX
 +           target: 'es2015'  // Syntax to compile to (see options below for possible values)
 +         }
 +       },
@@ -68,7 +67,6 @@ In `webpack.config.js`:
 +         test: /\.tsx?$/,
 +         loader: 'esbuild-loader',
 +         options: {
-+           loader: 'tsx',  // Or 'ts' if you don't need tsx
 +           target: 'es2015'
 +         }
 +       },
@@ -88,8 +86,6 @@ Alternatively, you can also pass it in directly via the [`tsconfigRaw` option](h
       test: /\.tsx?$/,
       loader: 'esbuild-loader',
       options: {
-          loader: 'tsx',
-          target: 'es2015',
 +         tsconfigRaw: require('./tsconfig.json')
       }
   }
@@ -194,7 +190,6 @@ In `webpack.config.js`:
 +           {
 +             loader: 'esbuild-loader',
 +             options: {
-+               loader: 'css',
 +               minify: true
 +             }
 +           }
@@ -267,10 +262,11 @@ Read more about it in the [esbuild docs](https://esbuild.github.io/api/#target).
 #### loader
 Type: `'js' | 'jsx' | 'ts' | 'tsx' | 'css' | 'json' | 'text' | 'base64' | 'file' | 'dataurl' | 'binary' | 'default'`
 
-Default: `'js'`
+Default: `'default'`
 
 The loader to use to handle the file. See the type for [possible values](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L3).
 
+By default, it automatically detects the loader based on the file extension.
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#loader).
 

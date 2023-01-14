@@ -393,7 +393,6 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					cssRule.use.push({
 						loader: 'esbuild-loader',
 						options: {
-							loader: 'css',
 							minify: true,
 						},
 					});
