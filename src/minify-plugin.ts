@@ -3,33 +3,14 @@ import {
 	RawSource as WP4RawSource,
 	SourceMapSource as WP4SourceMapSource,
 } from 'webpack-sources';
-import webpack from 'webpack';
-import type {
-	SyncHook, SyncBailHook, AsyncSeriesHook, HookMap,
-} from 'tapable';
-import type { Source } from 'webpack-sources';
+import webpack4 from 'webpack';
+import webpack5 from 'webpack5';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
 import type { MinifyPluginOptions } from './types';
 
-type StatsPrinter = {
-	hooks: {
-		print: HookMap<SyncBailHook<any, string>>;
-	};
-};
-
-type Compilation = webpack.compilation.Compilation;
-
-type Wp5Compilation = Compilation & {
-	hooks: Compilation['hooks'] & {
-		processAssets: AsyncSeriesHook<Record<string, Source>>;
-		statsPrinter: SyncHook<StatsPrinter>;
-	};
-	constructor: {
-		PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE: 400;
-	};
-};
-
-const isWebpack5 = (compilation: Compilation): compilation is Wp5Compilation => ('processAssets' in compilation.hooks);
+type Compiler = webpack4.Compiler | webpack5.Compiler;
+type Compilation = webpack4.compilation.Compilation | webpack5.Compilation;
+type Asset = webpack4.compilation.Asset | Readonly<webpack5.Asset>;
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require('../package.json');
@@ -65,7 +46,7 @@ class ESBuildMinifyPlugin {
 		}
 	}
 
-	apply(compiler: webpack.Compiler): void {
+	apply(compiler: Compiler): void {
 		const meta = JSON.stringify({
 			name: 'esbuild-loader',
 			version,
@@ -75,12 +56,12 @@ class ESBuildMinifyPlugin {
 		compiler.hooks.compilation.tap(pluginName, (compilation) => {
 			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
 
-			if (isWebpack5(compilation)) {
+			if ('processAssets' in compilation.hooks) {
 				compilation.hooks.processAssets.tapPromise(
 					{
 						name: pluginName,
+						// @ts-expect-error undefined on Function type
 						stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
-						// @ts-expect-error TODO: modify type
 						additionalAssets: true,
 					},
 					async () => await this.transformAssets(compilation),
@@ -91,11 +72,14 @@ class ESBuildMinifyPlugin {
 						.for('asset.info.minimized')
 						.tap(
 							pluginName,
-							(minimized, { green, formatFlag }) => (
-								minimized
-									? green(formatFlag('minimized'))
-									: undefined
-							),
+							(minimized, { green, formatFlag }) => 
+								// @ts-expect-error type incorrectly doesn't accept undefined
+								(
+									minimized
+										// @ts-expect-error type incorrectly doesn't accept undefined
+										? green(formatFlag('minimized'))
+										: undefined
+								),
 						);
 				});
 			} else {
@@ -113,8 +97,7 @@ class ESBuildMinifyPlugin {
 		const { compiler } = compilation;
 		const { options: { devtool } } = compiler;
 
-		// @ts-expect-error Only exists on Webpack 5
-		const sources = compiler.webpack?.sources;
+		const sources = 'webpack' in compiler && compiler.webpack.sources;
 		const SourceMapSource = (sources ? sources.SourceMapSource : WP4SourceMapSource);
 		const RawSource = (sources ? sources.RawSource : WP4RawSource);
 
@@ -133,7 +116,7 @@ class ESBuildMinifyPlugin {
 			...transformOptions
 		} = this.options;
 
-		const assets = compilation.getAssets().filter(asset => (
+		const assets = (compilation.getAssets() as Asset[]).filter((asset) => (
 
 			// Filter out already minimized
 			!asset.info.minimized
@@ -177,7 +160,7 @@ class ESBuildMinifyPlugin {
 			if (result.legalComments) {
 				compilation.emitAsset(
 					`${asset.name}.LEGAL.txt`,
-					new RawSource(result.legalComments),
+					new RawSource(result.legalComments) as any,
 				);
 			}
 
@@ -190,11 +173,11 @@ class ESBuildMinifyPlugin {
 							asset.name,
 							result.map as any,
 							sourceAsString,
-							map!,
+							map as any,
 							true,
 						)
 						: new RawSource(result.code)
-				),
+				) as any,
 				{
 					...asset.info,
 					minimized: true,
