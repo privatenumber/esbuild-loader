@@ -118,14 +118,6 @@ class ESBuildMinifyPlugin {
 		const SourceMapSource = (sources ? sources.SourceMapSource : WP4SourceMapSource);
 		const RawSource = (sources ? sources.RawSource : WP4RawSource);
 
-		const sourcemap = (
-			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
-			// Might still be necessary when SourceMap plugin is used
-			this.options.sourcemap === undefined
-				? Boolean(devtool && (devtool as string).includes('source-map'))
-				: this.options.sourcemap
-		);
-
 		const {
 			css: minifyCss,
 			include,
@@ -147,6 +139,7 @@ class ESBuildMinifyPlugin {
 		));
 
 		await Promise.all(assets.map(async (asset) => {
+
 			const assetIsCss = isCssFile.test(asset.name);
 			let source: string | Buffer | ArrayBuffer;
 			let map = null;
@@ -170,7 +163,7 @@ class ESBuildMinifyPlugin {
 						? 'css'
 						: transformOptions.loader
 				),
-				sourcemap,
+				sourcemap: true,
 				sourcefile: asset.name,
 			});
 
@@ -184,11 +177,11 @@ class ESBuildMinifyPlugin {
 			compilation.updateAsset(
 				asset.name,
 				(
-					sourcemap
+					result.map
 						? new SourceMapSource(
 							result.code,
 							asset.name,
-							result.map as any,
+							result.map,
 							sourceAsString,
 							map!,
 							true,
