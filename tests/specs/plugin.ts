@@ -206,39 +206,12 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					expect(file).toContain('//# sourceMappingURL=index.js.map');
 				});
 
-				// TODO: This doesn't work, so maybe we should just remove the option?
-				// test('minify w/ plugin sourcemap option', async () => {
-				// 	const built = await build({
-				// 		'/src/index.js': '',
-				// 	}, (config) => {
-				// 		delete config.devtool;
-				// 		configureEsbuildMinifyPlugin(config, {
-				// 			sourcemap: true,
-				// 		});
-				// 	}, webpack);
-
-				// 	const { stats } = built;
-				// 	expect(stats.hasWarnings()).toBe(false);
-				// 	expect(stats.hasErrors()).toBe(false);
-				// 	expect(
-				// 		Object.keys(stats.compilation.assets),
-				// 	).toStrictEqual([
-				// 		'index.js',
-				// 		// 'index.js.map',
-				// 	]);
-
-				// 	const file = built.fs.readFileSync('/dist/index.js', 'utf8');
-				// 	expect(file).toContain('//# sourceMappingURL=index.js.map');
-				// });
-
 				test('minify w/ source-map option and source-map plugin inline', async () => {
 					const built = await build(
 						fixtures.blank,
 						(config) => {
 							delete config.devtool;
-							configureEsbuildMinifyPlugin(config, {
-								sourcemap: true,
-							});
+							configureEsbuildMinifyPlugin(config);
 
 							config.plugins!.push(
 								new webpack.SourceMapDevToolPlugin({}) as any,
@@ -263,9 +236,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 						fixtures.blank,
 						(config) => {
 							delete config.devtool;
-							configureEsbuildMinifyPlugin(config, {
-								sourcemap: true,
-							});
+							configureEsbuildMinifyPlugin(config);
 
 							config.plugins!.push(
 								new webpack.SourceMapDevToolPlugin({
