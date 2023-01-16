@@ -56,6 +56,11 @@ class ESBuildMinifyPlugin {
 		compiler.hooks.compilation.tap(pluginName, (compilation) => {
 			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
 
+			/**
+			 * Check if sourcemaps are enabled
+			 * Webpack 4: https://github.com/webpack/webpack/blob/v4.46.0/lib/SourceMapDevToolModuleOptionsPlugin.js#L20
+			 * Webpack 5: https://github.com/webpack/webpack/blob/v5.75.0/lib/SourceMapDevToolModuleOptionsPlugin.js#LL27
+			 */
 			let useSourceMap = false;
 			compilation.hooks.finishModules.tap(
 				pluginName,
