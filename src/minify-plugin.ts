@@ -56,6 +56,24 @@ class ESBuildMinifyPlugin {
 		compiler.hooks.compilation.tap(pluginName, (compilation) => {
 			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
 
+			/**
+			 * Check if sourcemaps are enabled
+			 * Webpack 4: https://github.com/webpack/webpack/blob/v4.46.0/lib/SourceMapDevToolModuleOptionsPlugin.js#L20
+			 * Webpack 5: https://github.com/webpack/webpack/blob/v5.75.0/lib/SourceMapDevToolModuleOptionsPlugin.js#LL27
+			 */
+			let useSourceMap = false;
+			compilation.hooks.finishModules.tap(
+				pluginName,
+				(modules) => {
+					const firstModule = (
+						Array.isArray(modules)
+							? modules[0]
+							: (modules as Set<webpack5.Module>).values().next().value as webpack5.Module
+					);
+					useSourceMap = firstModule.useSourceMap;
+				},
+			);
+
 			if ('processAssets' in compilation.hooks) {
 				compilation.hooks.processAssets.tapPromise(
 					{
@@ -64,7 +82,7 @@ class ESBuildMinifyPlugin {
 						stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
 						additionalAssets: true,
 					},
-					async () => await this.transformAssets(compilation),
+					async () => await this.transformAssets(compilation, useSourceMap),
 				);
 
 				compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter) => {
@@ -72,20 +90,22 @@ class ESBuildMinifyPlugin {
 						.for('asset.info.minimized')
 						.tap(
 							pluginName,
-							(minimized, { green, formatFlag }) => 
-								// @ts-expect-error type incorrectly doesn't accept undefined
-								(
-									minimized
-										// @ts-expect-error type incorrectly doesn't accept undefined
-										? green(formatFlag('minimized'))
-										: undefined
-								),
+							(
+								minimized,
+								{ green, formatFlag },
+							// @ts-expect-error type incorrectly doesn't accept undefined
+							) => (
+								minimized
+									// @ts-expect-error type incorrectly doesn't accept undefined
+									? green(formatFlag('minimized'))
+									: undefined
+							),
 						);
 				});
 			} else {
 				compilation.hooks.optimizeChunkAssets.tapPromise(
 					pluginName,
-					async () => await this.transformAssets(compilation),
+					async () => await this.transformAssets(compilation, useSourceMap),
 				);
 			}
 		});
@@ -93,21 +113,12 @@ class ESBuildMinifyPlugin {
 
 	private async transformAssets(
 		compilation: Compilation,
+		useSourceMap: boolean,
 	): Promise<void> {
 		const { compiler } = compilation;
-		const { options: { devtool } } = compiler;
-
 		const sources = 'webpack' in compiler && compiler.webpack.sources;
 		const SourceMapSource = (sources ? sources.SourceMapSource : WP4SourceMapSource);
 		const RawSource = (sources ? sources.RawSource : WP4RawSource);
-
-		const sourcemap = (
-			// TODO: drop support for esbuild sourcemap in future so it all goes through WP API
-			// Might still be necessary when SourceMap plugin is used
-			this.options.sourcemap === undefined
-				? Boolean(devtool && (devtool as string).includes('source-map'))
-				: this.options.sourcemap
-		);
 
 		const {
 			css: minifyCss,
@@ -116,7 +127,7 @@ class ESBuildMinifyPlugin {
 			...transformOptions
 		} = this.options;
 
-		const assets = (compilation.getAssets() as Asset[]).filter((asset) => (
+		const assets = (compilation.getAssets() as Asset[]).filter(asset => (
 
 			// Filter out already minimized
 			!asset.info.minimized
@@ -153,7 +164,7 @@ class ESBuildMinifyPlugin {
 						? 'css'
 						: transformOptions.loader
 				),
-				sourcemap,
+				sourcemap: useSourceMap,
 				sourcefile: asset.name,
 			});
 
@@ -167,7 +178,7 @@ class ESBuildMinifyPlugin {
 			compilation.updateAsset(
 				asset.name,
 				(
-					sourcemap
+					result.map
 						? new SourceMapSource(
 							result.code,
 							asset.name,

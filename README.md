@@ -344,13 +344,6 @@ Default: `'inline'`
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#legal-comments).
 
-#### sourcemap
-Type: `boolean`
-
-Default: Webpack `devtool` configuration
-
-Whether to emit sourcemaps.
-
 #### css
 Type: `boolean`
 
