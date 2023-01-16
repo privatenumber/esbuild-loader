@@ -8,7 +8,7 @@ import {
 	configureMiniCssExtractPlugin,
 } from '../utils';
 import * as fixtures from '../fixtures.js';
-import type { MinifyPluginOptions } from '#esbuild-loader';
+import type { EsbuildPluginOptions } from '#esbuild-loader';
 
 const assertMinified = (code: string) => {
 	expect(code).not.toMatch(/\s{2,}/);
@@ -384,7 +384,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 		describe('implementation', ({ test }) => {
 			test('error', async () => {
-				const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => {
+				const runWithImplementation = async (implementation: EsbuildPluginOptions['implementation']) => {
 					await build(
 						fixtures.blank,
 						(config) => {
@@ -400,14 +400,14 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					// @ts-expect-error testing invalid type
 					runWithImplementation({}),
 				).rejects.toThrow(
-					'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received undefined',
+					'[EsbuildPlugin] implementation.transform must be an esbuild transform function. Received undefined',
 				);
 
 				await expect(
 					// @ts-expect-error testing invalid type
 					runWithImplementation({ transform: 123 }),
 				).rejects.toThrow(
-					'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number',
+					'[EsbuildPlugin] implementation.transform must be an esbuild transform function. Received number',
 				);
 			});
 
