@@ -106,14 +106,14 @@ You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](
 In `webpack.config.js`:
 
 ```diff
-+ const { ESBuildMinifyPlugin } = require('esbuild-loader')
++ const { EsbuildPlugin } = require('esbuild-loader')
 
   module.exports = {
     ...,
 
 +   optimization: {
 +     minimizer: [
-+       new ESBuildMinifyPlugin({
++       new EsbuildPlugin({
 +         target: 'es2015'  // Syntax to compile to (see options below for possible values)
 +       })
 +     ]
@@ -121,7 +121,7 @@ In `webpack.config.js`:
   }
 ```
 
-#### _💁‍♀️ Protip: Use the minify plugin in-place of the loader to transpile the JS_
+#### _💁‍♀️ Protip: Use the plugin in-place of the loader to transpile the JS_
 If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel). It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file. Simply set the `target` option on the minifier to specify which support level you want.
 
 
@@ -130,12 +130,12 @@ If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you c
 There are two ways to minify CSS, depending on your setup. You should already have CSS setup in your build using [`css-loader`](https://github.com/webpack-contrib/css-loader).
 
 #### CSS assets
-If your CSS is extracted and emitted as a CSS file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) or [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) with the same `ESBuildMinifyPlugin` by enabling the `css` option.
+If your CSS is extracted and emitted as a CSS file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) or [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) with the `EsbuildPlugin`.
 
 Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin), in `webpack.config.js`:
 
 ```diff
-  const { ESBuildMinifyPlugin } = require('esbuild-loader')
+  const { EsbuildPlugin } = require('esbuild-loader')
   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
   module.exports = {
@@ -143,7 +143,7 @@ Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https:
 
     optimization: {
       minimizer: [
-        new ESBuildMinifyPlugin({
+        new EsbuildPlugin({
           target: 'es2015',
 +         css: true  // Apply minification to CSS assets
         })
@@ -205,9 +205,9 @@ If you'd like to see working Webpack builds that use esbuild-loader for basic JS
 
 ### Bring your own esbuild (Advanced)
 
-esbuild-loader comes with a version of esbuild it has been tested to work with. However, [esbuild has a frequent release cadence](https://github.com/evanw/esbuild/releases), and while we try to keep up with the important releases, it can easily go out of date.
+esbuild-loader comes with a version of esbuild it has been tested to work with. However, [esbuild has a frequent release cadence](https://github.com/evanw/esbuild/releases), and while we try to keep up with the important releases, it can get outdated.
 
-Use the `implementation` option in the loader or the minify plugin to pass in your own version of esbuild (eg. a newer one).
+To work around this, you can use the `implementation` option in the loader or the plugin to pass in your own version of esbuild (eg. a newer one).
 
 ⚠️ esbuild is not stable yet and can have dramatic differences across releases. Using a different version of esbuild is not guaranteed to work.
 
@@ -296,7 +296,7 @@ _Custom esbuild-loader option._
 
 Use it to pass in a [different esbuild version](#bring-your-own-esbuild-advanced).
 
-### MinifyPlugin
+### EsbuildPlugin
 
 The loader supports [all Transform options from esbuild](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L158-L172).
 
