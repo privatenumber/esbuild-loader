@@ -6,14 +6,12 @@ import {
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
+import { version } from '../package.json';
 import type { EsbuildPluginOptions } from './types';
 
 type Compiler = webpack4.Compiler | webpack5.Compiler;
 type Compilation = webpack4.compilation.Compilation | webpack5.Compilation;
 type Asset = webpack4.compilation.Asset | Readonly<webpack5.Asset>;
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { version } = require('../package.json');
 
 const isJsFile = /\.[cm]?js(?:\?.*)?$/i;
 const isCssFile = /\.css(?:\?.*)?$/i;
