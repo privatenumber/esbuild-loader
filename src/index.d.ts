@@ -1,7 +1,7 @@
-import { MinifyPluginOptions } from './types';
+import { EsbuildPluginOptions } from './types';
 
-export class ESBuildMinifyPlugin {
-	constructor(options?: MinifyPluginOptions);
+export class EsbuildPlugin {
+	constructor(options?: EsbuildPluginOptions);
 
 	apply(compiler: any): void;
 }
