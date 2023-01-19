@@ -16,7 +16,11 @@ const assertMinified = (code: string) => {
 	expect(code).not.toMatch('return ');
 };
 
+const countIife = (code: string) => Array.from(code.matchAll(/\(\(\)=>\{/g)).length;
+
 export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpack5) => {
+	const isWebpack4 = webpack.version?.startsWith('4.');
+
 	describe('Plugin', ({ test, describe }) => {
 		describe('Minify JS', ({ test }) => {
 			test('minify', async () => {
@@ -561,7 +565,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 		});
 
 		describe('minify targets', ({ test }) => {
-			test('minify for node', async () => {
+			test('no iife for node', async () => {
 				const built = await build(
 					fixtures.getHelpers,
 					(config) => {
@@ -569,11 +573,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							target: 'es2015',
 						});
 
-						config.target = (
-							webpack.version?.startsWith('4.')
-								? 'node'
-								: ['node']
-						);
+						config.target = isWebpack4 ? 'node' : ['node'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -587,19 +587,13 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				expect(code.startsWith('var ')).toBe(true);
 			});
 
-			test('minify for web', async () => {
+			test('no iife for web with high target (no helpers are added)', async () => {
 				const built = await build(
 					fixtures.getHelpers,
 					(config) => {
-						configureEsbuildMinifyPlugin(config, {
-							target: 'es2015',
-						});
+						configureEsbuildMinifyPlugin(config);
 
-						config.target = (
-							webpack.version?.startsWith('4.')
-								? 'web'
-								: ['web']
-						);
+						config.target = isWebpack4 ? 'web' : ['web'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -610,8 +604,32 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				expect(built.stats.hasErrors()).toBe(false);
 
 				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
-				expect(code.startsWith('(()=>{')).toBe(true);
+				expect(code.startsWith('(()=>{var ')).toBe(false);
+				expect(countIife(code)).toBe(isWebpack4 ? 0 : 1);
+			});
+
+			test('iife for web & low target', async () => {
+				const built = await build(
+					fixtures.getHelpers,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							target: 'es2015',
+						});
+
+						config.target = isWebpack4 ? 'web' : ['web'];
+						delete config.output?.libraryTarget;
+						delete config.output?.libraryExport;
+					},
+					webpack,
+				);
+
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
+				expect(code.startsWith('(()=>{var ')).toBe(true);
 				expect(code.endsWith('})();\n')).toBe(true);
+				expect(countIife(code)).toBe(isWebpack4 ? 1 : 2);
 			});
 		});
 	});

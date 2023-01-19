@@ -51,18 +51,31 @@ class EsbuildPlugin {
 	}
 
 	apply(compiler: Compiler): void {
+		const { options } = this;
 		const meta = JSON.stringify({
 			name: 'esbuild-loader',
 			version,
-			options: this.options,
+			options,
 		});
 
-		if (!('format' in this.options)) {
+		if (!('format' in options)) {
 			const { target } = compiler.options;
-			const isWebTarget = Array.isArray(target) ? target.includes('web') : target === 'web';
+			const isWebTarget = (
+				Array.isArray(target)
+					? target.includes('web')
+					: target === 'web'
+			);
+			const wontGenerateHelpers = !options.target || (
+				Array.isArray(options.target)
+					? (
+						options.target.length === 1
+						&& options.target[0] === 'esnext'
+					)
+					: options.target === 'esnext'
+			);
 
-			if (isWebTarget) {
-				this.options.format = 'iife';
+			if (isWebTarget && !wontGenerateHelpers) {
+				options.format = 'iife';
 			}
 		}
 

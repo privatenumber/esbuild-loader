@@ -311,6 +311,19 @@ Read more about it in the [esbuild docs](https://esbuild.github.io/api/#target).
 
 Here are some common configurations and custom options:
 
+#### format
+Type: `'iife' | 'cjs' | 'esm'`
+
+Default:
+  - `iife` if both of these conditions are met:
+    - Webpack's [`target`](https://webpack.js.org/configuration/target/) is set to `web`
+    -  esbuild's [`target`](#target-1) is not `esnext`
+  - `undefined` (no format conversion) otherwise
+
+The default is `iife` when esbuild is configured to support a low target, because esbuild injects helper functions at the top of the code. On the web, having functions declared at the top of a script can pollute the global scope. In some cases, this can lead to a variable collision error. By setting `format: 'iife'`, esbuild wraps the helper functions in an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) to prevent them from polluting the global.
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#format).
+
 #### minify
 Type: `boolean`
 
