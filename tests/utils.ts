@@ -1,7 +1,7 @@
 import type webpack4 from 'webpack';
 import type webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ESBuildMinifyPlugin, type MinifyPluginOptions } from '#esbuild-loader';
+import { EsbuildPlugin, type EsbuildPluginOptions } from '#esbuild-loader';
 
 const esbuildLoaderPath = require.resolve('../src/');
 
@@ -28,12 +28,12 @@ export const configureEsbuildLoader = (
 
 export const configureEsbuildMinifyPlugin = (
 	config: WebpackConfiguration,
-	options?: MinifyPluginOptions,
+	options?: EsbuildPluginOptions,
 ) => {
 	config.optimization = {
 		minimize: true,
 		minimizer: [
-			new ESBuildMinifyPlugin(options),
+			new EsbuildPlugin(options),
 		],
 	};
 };

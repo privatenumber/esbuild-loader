@@ -15,7 +15,7 @@ export type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'>
 	implementation?: Implementation;
 };
 
-export type MinifyPluginOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'> & {
+export type EsbuildPluginOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'> & {
 	include?: Filter | Filter[];
 	exclude?: Filter | Filter[];
 	css?: boolean;

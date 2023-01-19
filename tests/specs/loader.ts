@@ -7,7 +7,7 @@ import {
 	configureCssLoader,
 } from '../utils';
 import * as fixtures from '../fixtures.js';
-import type { MinifyPluginOptions } from '#esbuild-loader';
+import type { EsbuildPluginOptions } from '#esbuild-loader';
 
 const { exportFile } = fixtures;
 
@@ -144,7 +144,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 		describe('implementation', ({ test }) => {
 			test('error', async () => {
 				const runWithImplementation = async (
-					implementation: MinifyPluginOptions['implementation'],
+					implementation: EsbuildPluginOptions['implementation'],
 				) => {
 					const built = await build(
 						fixtures.blank,
