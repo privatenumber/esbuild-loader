@@ -26,7 +26,11 @@ class EsbuildPlugin {
 	private readonly transform: typeof defaultEsbuildTransform;
 
 	constructor(options: EsbuildPluginOptions = {}) {
-		const { implementation, ...remainingOptions } = options;
+		const {
+			implementation,
+			...remainingOptions
+		} = options;
+
 		if (implementation && typeof implementation.transform !== 'function') {
 			throw new TypeError(
 				`[${EsbuildPlugin.name}] implementation.transform must be an esbuild transform function. Received ${typeof implementation.transform}`,
@@ -35,15 +39,15 @@ class EsbuildPlugin {
 
 		this.transform = implementation?.transform ?? defaultEsbuildTransform;
 
-		this.options = remainingOptions;
-
 		const hasGranularMinificationConfig = granularMinifyConfigs.some(
 			minifyConfig => minifyConfig in options,
 		);
 
 		if (!hasGranularMinificationConfig) {
-			this.options.minify = true;
+			remainingOptions.minify = true;
 		}
+
+		this.options = remainingOptions;
 	}
 
 	apply(compiler: Compiler): void {
@@ -52,6 +56,15 @@ class EsbuildPlugin {
 			version,
 			options: this.options,
 		});
+
+		if (!('format' in this.options)) {
+			const { target } = compiler.options;
+			const isWebTarget = Array.isArray(target) ? target.includes('web') : target === 'web';
+
+			if (isWebTarget) {
+				this.options.format = 'iife';
+			}
+		}
 
 		compiler.hooks.compilation.tap(pluginName, (compilation) => {
 			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));

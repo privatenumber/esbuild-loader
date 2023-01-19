@@ -528,7 +528,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				size: () => Buffer.byteLength(content),
 			});
 
-			const built = await build({ '/src/index.js': '' }, (config) => {
+			const built = await build(fixtures.blank, (config) => {
 				configureEsbuildMinifyPlugin(config);
 
 				config.plugins!.push({
@@ -558,6 +558,61 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			expect(
 				built.fs.readFileSync('/dist/test.js', 'utf8'),
 			).toBe('1+1;\n');
+		});
+
+		describe('minify targets', ({ test }) => {
+			test('minify for node', async () => {
+				const built = await build(
+					fixtures.getHelpers,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							target: 'es2015',
+						});
+
+						config.target = (
+							webpack.version?.startsWith('4.')
+								? 'node'
+								: ['node']
+						);
+						delete config.output?.libraryTarget;
+						delete config.output?.libraryExport;
+					},
+					webpack,
+				);
+
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
+				expect(code.startsWith('var ')).toBe(true);
+			});
+
+			test('minify for web', async () => {
+				const built = await build(
+					fixtures.getHelpers,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							target: 'es2015',
+						});
+
+						config.target = (
+							webpack.version?.startsWith('4.')
+								? 'web'
+								: ['web']
+						);
+						delete config.output?.libraryTarget;
+						delete config.output?.libraryExport;
+					},
+					webpack,
+				);
+
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
+				expect(code.startsWith('(()=>{')).toBe(true);
+				expect(code.endsWith('})();\n')).toBe(true);
+			});
 		});
 	});
 });
