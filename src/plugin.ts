@@ -26,7 +26,11 @@ class EsbuildPlugin {
 	private readonly transform: typeof defaultEsbuildTransform;
 
 	constructor(options: EsbuildPluginOptions = {}) {
-		const { implementation, ...remainingOptions } = options;
+		const {
+			implementation,
+			...remainingOptions
+		} = options;
+
 		if (implementation && typeof implementation.transform !== 'function') {
 			throw new TypeError(
 				`[${EsbuildPlugin.name}] implementation.transform must be an esbuild transform function. Received ${typeof implementation.transform}`,
@@ -35,23 +39,45 @@ class EsbuildPlugin {
 
 		this.transform = implementation?.transform ?? defaultEsbuildTransform;
 
-		this.options = remainingOptions;
-
 		const hasGranularMinificationConfig = granularMinifyConfigs.some(
 			minifyConfig => minifyConfig in options,
 		);
 
 		if (!hasGranularMinificationConfig) {
-			this.options.minify = true;
+			remainingOptions.minify = true;
 		}
+
+		this.options = remainingOptions;
 	}
 
 	apply(compiler: Compiler): void {
+		const { options } = this;
 		const meta = JSON.stringify({
 			name: 'esbuild-loader',
 			version,
-			options: this.options,
+			options,
 		});
+
+		if (!('format' in options)) {
+			const { target } = compiler.options;
+			const isWebTarget = (
+				Array.isArray(target)
+					? target.includes('web')
+					: target === 'web'
+			);
+			const wontGenerateHelpers = !options.target || (
+				Array.isArray(options.target)
+					? (
+						options.target.length === 1
+						&& options.target[0] === 'esnext'
+					)
+					: options.target === 'esnext'
+			);
+
+			if (isWebTarget && !wontGenerateHelpers) {
+				options.format = 'iife';
+			}
+		}
 
 		compiler.hooks.compilation.tap(pluginName, (compilation) => {
 			compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
