@@ -11,8 +11,7 @@ specifiers:
   css-loader: ^5.2.7
   esbuild: ^0.16.17
   eslint: ^8.31.0
-  joycon: ^3.0.1
-  json5: ^2.2.0
+  get-tsconfig: ^4.3.0
   loader-utils: ^2.0.0
   manten: ^0.6.0
   memfs: ^3.4.13
@@ -28,8 +27,7 @@ specifiers:
 
 dependencies:
   esbuild: 0.16.17
-  joycon: 3.0.1
-  json5: 2.2.0
+  get-tsconfig: 4.3.0
   loader-utils: 2.0.0
   tapable: 2.2.0
   webpack-sources: 1.4.3
@@ -3043,7 +3041,6 @@ packages:
 
   /get-tsconfig/4.3.0:
     resolution: {integrity: sha512-YCcF28IqSay3fqpIu5y3Krg/utCBHBeoflkZyHj/QcqI2nrLPC3ZegS9CmIo+hJb8K7aiGsuUl7PwWVjNG2HQQ==}
-    dev: true
 
   /get-value/2.0.6:
     resolution: {integrity: sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=}
@@ -3725,11 +3722,6 @@ packages:
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
-
-  /joycon/3.0.1:
-    resolution: {integrity: sha512-SJcJNBg32dGgxhPtM0wQqxqV0ax9k/9TaUskGDSJkSFSQOEWWvQ3zzWdGQRIUry2j1zA5+ReH13t0Mf3StuVZA==}
-    engines: {node: '>=10'}
-    dev: false
 
   /js-sdsl/4.2.0:
     resolution: {integrity: sha512-dyBIzQBDkCqCu+0upx25Y2jGdbTGxE9fshMsCdK0ViOongpV+n5tXRcZY9v7CaVQ79AGS9KA1KHtojxiM7aXSQ==}

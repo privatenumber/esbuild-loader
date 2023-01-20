@@ -48,8 +48,7 @@
 	},
 	"dependencies": {
 		"esbuild": "^0.16.17",
-		"joycon": "^3.0.1",
-		"json5": "^2.2.0",
+		"get-tsconfig": "^4.3.0",
 		"loader-utils": "^2.0.0",
 		"tapable": "^2.2.0",
 		"webpack-sources": "^1.4.3"

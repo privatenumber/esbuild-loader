@@ -8,6 +8,7 @@ import webpack5 from 'webpack5';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
 import { version } from '../package.json';
 import type { EsbuildPluginOptions } from './types';
+import { tsconfig } from './tsconfig';
 
 type Compiler = webpack4.Compiler | webpack5.Compiler;
 type Compilation = webpack4.compilation.Compilation | webpack5.Compilation;
@@ -23,7 +24,7 @@ const transformAssets = async (
 	transform: EsbuildTransform,
 	compilation: Compilation,
 	useSourceMap: boolean,
-): Promise<void> => {
+) => {
 	const { compiler } = compilation;
 	const sources = 'webpack' in compiler && compiler.webpack.sources;
 	const SourceMapSource = (sources ? sources.SourceMapSource : WP4SourceMapSource);
@@ -136,8 +137,12 @@ export default function EsbuildPlugin(
 		options.minify = true;
 	}
 
+	if (!('tsconfigRaw' in options)) {
+		options.tsconfigRaw = tsconfig;
+	}
+
 	return {
-		apply(compiler: Compiler): void {
+		apply(compiler: Compiler) {
 			if (!('format' in options)) {
 				const { target } = compiler.options;
 				const isWebTarget = (
