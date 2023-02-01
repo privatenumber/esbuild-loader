@@ -1,29 +1,8 @@
-import fs from 'fs';
-import path from 'path';
 import { transform as defaultEsbuildTransform } from 'esbuild';
 import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
-import JoyCon, { LoadResult } from 'joycon';
-import JSON5 from 'json5';
-import type { LoaderOptions } from './types';
-
-const joycon = new JoyCon();
-
-joycon.addLoader({
-	test: /\.json$/,
-	async load(filePath) {
-		try {
-			const config = fs.readFileSync(filePath, 'utf8');
-			return JSON5.parse(config);
-		} catch (error: any) {
-			throw new Error(
-				`Failed to parse tsconfig at ${path.relative(process.cwd(), filePath)}: ${error.message as string}`,
-			);
-		}
-	},
-});
-
-let tsConfig: LoadResult;
+import type { LoaderOptions } from './types.js';
+import { tsconfig } from './tsconfig.js';
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
@@ -56,13 +35,7 @@ async function ESBuildLoader(
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
-		if (!tsConfig) {
-			tsConfig = await joycon.load(['tsconfig.json']);
-		}
-
-		if (tsConfig.data) {
-			transformOptions.tsconfigRaw = tsConfig.data;
-		}
+		transformOptions.tsconfigRaw = tsconfig;
 	}
 
 	try {

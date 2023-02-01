@@ -15,5 +15,6 @@ describe('esbuild-loader', ({ describe, runTestSuite }) => {
 		});
 	}
 
+	runTestSuite(import('./specs/tsconfig.js'));
 	runTestSuite(import('./specs/webpack5.js'));
 });
