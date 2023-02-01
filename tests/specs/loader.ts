@@ -5,7 +5,7 @@ import webpack5 from 'webpack5';
 import {
 	configureEsbuildLoader,
 	configureCssLoader,
-} from '../utils';
+} from '../utils.js';
 import * as fixtures from '../fixtures.js';
 import type { EsbuildPluginOptions } from '#esbuild-loader';
 

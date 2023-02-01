@@ -6,7 +6,7 @@ import * as esbuild from 'esbuild';
 import {
 	configureEsbuildMinifyPlugin,
 	configureMiniCssExtractPlugin,
-} from '../utils';
+} from '../utils.js';
 import * as fixtures from '../fixtures.js';
 import type { EsbuildPluginOptions } from '#esbuild-loader';
 
