@@ -1,8 +1,8 @@
 import { transform as defaultEsbuildTransform } from 'esbuild';
 import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
-import type { LoaderOptions } from './types';
-import { tsconfig } from './tsconfig';
+import type { LoaderOptions } from './types.js';
+import { tsconfig } from './tsconfig.js';
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,

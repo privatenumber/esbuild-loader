@@ -1,9 +1,10 @@
+import path from 'path';
 import type webpack4 from 'webpack';
 import type webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { EsbuildPlugin, type EsbuildPluginOptions } from '#esbuild-loader';
 
-const esbuildLoaderPath = require.resolve('../src/');
+const esbuildLoaderPath = path.resolve('./src/index.ts');
 
 export type Webpack = typeof webpack4 | typeof webpack5;
 

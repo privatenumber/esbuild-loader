@@ -1,7 +1,7 @@
 import { testSuite, expect } from 'manten';
 import { build } from 'webpack-test-utils';
 import webpack5 from 'webpack5';
-import { configureEsbuildMinifyPlugin } from '../utils';
+import { configureEsbuildMinifyPlugin } from '../utils.js';
 
 const { RawSource } = webpack5.sources;
 

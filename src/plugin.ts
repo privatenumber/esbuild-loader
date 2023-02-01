@@ -7,8 +7,8 @@ import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
 import { version } from '../package.json';
-import type { EsbuildPluginOptions } from './types';
-import { tsconfig } from './tsconfig';
+import type { EsbuildPluginOptions } from './types.js';
+import { tsconfig } from './tsconfig.js';
 
 type Compiler = webpack4.Compiler | webpack5.Compiler;
 type Compilation = webpack4.compilation.Compilation | webpack5.Compilation;
