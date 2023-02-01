@@ -24,6 +24,12 @@ jobs:
         version: 7
         run_install: true
 
+    - name: Lint
+      run: pnpm lint
+
+    - name: Type check
+      run: pnpm type-check
+
     - name: Build
       run: pnpm build
 
@@ -34,6 +40,3 @@ jobs:
 
     - name: Test Node.js v16
       run: pnpm --use-node-version=16.19.0 test
-
-    - name: Lint
-      run: pnpm lint

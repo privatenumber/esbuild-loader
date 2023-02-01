@@ -530,7 +530,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			const createSource = (content: string) => ({
 				source: () => content,
 				size: () => Buffer.byteLength(content),
-			});
+			}) as webpack5.sources.Source;
 
 			const built = await build(fixtures.blank, (config) => {
 				configureEsbuildMinifyPlugin(config);
