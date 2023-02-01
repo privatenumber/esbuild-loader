@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@pvtnbr/eslint-config': ^0.33.0
   '@types/loader-utils': ^2.0.3
-  '@types/mini-css-extract-plugin': ^2.5.1
+  '@types/mini-css-extract-plugin': 2.4.0
   '@types/node': ^18.11.18
   '@types/webpack': ^4.41.33
   '@types/webpack-sources': ^0.1.9
@@ -37,7 +37,7 @@ dependencies:
 devDependencies:
   '@pvtnbr/eslint-config': 0.33.0_iukboom6ndih5an6iafl45j2fe
   '@types/loader-utils': 2.0.3
-  '@types/mini-css-extract-plugin': 2.5.1_webpack@4.46.0
+  '@types/mini-css-extract-plugin': 2.4.0_esbuild@0.16.17
   '@types/node': 18.11.18
   '@types/webpack': 4.41.33
   '@types/webpack-sources': 0.1.9
@@ -628,13 +628,17 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /@types/mini-css-extract-plugin/2.5.1_webpack@4.46.0:
-    resolution: {integrity: sha512-evjjtJttaUexgg3au9ZJFy76tV9mySwX3a4Jl82BuormBYluWLRt0xk2urWrhOdPgDWzulRFyotwYOJTmkSgKw==}
-    deprecated: This is a stub types definition. mini-css-extract-plugin provides its own type definitions, so you do not need this installed.
+  /@types/mini-css-extract-plugin/2.4.0_esbuild@0.16.17:
+    resolution: {integrity: sha512-1Pq4i+2+c8jncxfX5k7BzPIEoyrq+n7L319zMxiLUH4RlWTGcQJjemtMftLQnoTt21oHhZE0PjXd2W1xM1m4Hg==}
     dependencies:
-      mini-css-extract-plugin: 1.6.2_webpack@4.46.0
+      '@types/node': 18.11.18
+      tapable: 2.2.1
+      webpack: 5.75.0_esbuild@0.16.17
     transitivePeerDependencies:
-      - webpack
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
     dev: true
 
   /@types/node/18.11.18:
@@ -5414,7 +5418,7 @@ packages:
       worker-farm: 1.7.0
     dev: true
 
-  /terser-webpack-plugin/5.3.6_h5vyqageqm634ioygmnxx6wkla:
+  /terser-webpack-plugin/5.3.6_htvmhiqynazf46fjrszipnqp7a:
     resolution: {integrity: sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -5436,7 +5440,7 @@ packages:
       schema-utils: 3.1.1
       serialize-javascript: 6.0.0
       terser: 5.16.1
-      webpack: 4.46.0
+      webpack: 5.75.0_esbuild@0.16.17
     dev: true
 
   /terser/4.8.1:
@@ -5863,7 +5867,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.6_h5vyqageqm634ioygmnxx6wkla
+      terser-webpack-plugin: 5.3.6_htvmhiqynazf46fjrszipnqp7a
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
