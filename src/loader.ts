@@ -1,11 +1,21 @@
+import path from 'path';
 import {
 	transform as defaultEsbuildTransform,
 	type TransformOptions,
 } from 'esbuild';
 import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
+import {
+	getTsconfig,
+	parseTsconfig,
+	createFilesMatcher,
+	type TsConfigResult,
+	type FileMatcher,
+} from 'get-tsconfig';
 import type { LoaderOptions } from './types.js';
-import { fileMatcher } from './tsconfig.js';
+
+let foundTsconfig: TsConfigResult | null;
+let fileMatcher: FileMatcher;
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
@@ -15,6 +25,7 @@ async function ESBuildLoader(
 	const options: LoaderOptions = getOptions(this);
 	const {
 		implementation,
+		tsconfig,
 		...esbuildTransformOptions
 	} = options;
 
@@ -38,7 +49,22 @@ async function ESBuildLoader(
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
-		transformOptions.tsconfigRaw = fileMatcher?.(this.resourcePath) as TransformOptions['tsconfigRaw'];
+		if (fileMatcher) {
+			transformOptions.tsconfigRaw = fileMatcher(this.resourcePath) as TransformOptions['tsconfigRaw'];
+		} else {
+			const tsconfigPath = tsconfig && path.resolve(tsconfig);
+			foundTsconfig = (
+				tsconfigPath
+					? {
+						config: parseTsconfig(tsconfigPath),
+						path: tsconfigPath,
+					}
+					: getTsconfig()
+			);
+			if (foundTsconfig) {
+				fileMatcher = createFilesMatcher(foundTsconfig);
+			}
+		}
 	}
 
 	try {

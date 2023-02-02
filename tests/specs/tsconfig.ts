@@ -72,6 +72,65 @@ export default testSuite(({ describe }) => {
 
 				await fixture.rm();
 			});
+
+			test('accepts custom tsconfig.json path', async () => {
+				const fixture = await createFixture({
+					src: {
+						'index.ts': `module.exports = [${detectStrictMode}, require("./strict.ts")];`,
+						'strict.ts': `module.exports = ${detectStrictMode}`,
+					},
+					'webpack.config.js': `
+					module.exports = {
+						mode: 'production',
+	
+						optimization: {
+							minimize: false,
+						},
+	
+						resolveLoader: {
+							alias: {
+								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
+							},
+						},
+	
+						module: {
+							rules: [{
+								test: /\\.ts$/,
+								loader: 'esbuild-loader',
+								options: {
+									tsconfig: './tsconfig.custom.json',
+								}
+							}],
+						},
+	
+						entry: './src/index.ts',
+
+						output: {
+							libraryTarget: 'commonjs2',
+						},
+					};
+					`,
+					'tsconfig.custom.json': JSON.stringify({
+						compilerOptions: {
+							strict: true,
+						},
+						include: [
+							'src/strict.ts',
+						],
+					}),
+				});
+
+				await execa(webpackCli, {
+					cwd: fixture.path,
+				});
+
+				const require = createRequire(import.meta.url);
+				expect(
+					require(path.join(fixture.path, 'dist/main.js')),
+				).toStrictEqual([false, true]);
+
+				await fixture.rm();
+			});
 		});
 
 		describe('plugin', ({ test }) => {
