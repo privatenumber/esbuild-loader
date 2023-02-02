@@ -77,10 +77,10 @@ In `webpack.config.js`:
   }
 ```
 
-#### Configuration
+#### `tsconfig.json`
 If you have a `tsconfig.json` file in your project, esbuild-loader will automatically load it.
 
-To pass in a tsconfig with a custom name, you can pass in the path via `tsconfig` option:
+If you use a custom name, you can pass it in the path via `tsconfig` option:
 ```diff
   {
       test: /\.tsx?$/,
@@ -91,7 +91,7 @@ To pass in a tsconfig with a custom name, you can pass in the path via `tsconfig
   }
 ```
 
-Behind the scenes, this uses [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) to load the tsconfig, and also resolve the `extends` property if it exists.
+Behind the scenes, [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) is used to load the tsconfig, and to also resolve the `extends` property if it exists.
 
 You can also use the `tsconfigRaw` option to pass in a raw `tsconfig` object, but it will not resolve the `extends` property.
 
@@ -99,10 +99,9 @@ You can also use the `tsconfigRaw` option to pass in a raw `tsconfig` object, bu
 
 
 #### `tsconfig.json` Paths
-Use [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin) to add support for `tsconfig.json#paths`.
+Use [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin) to add support for [`tsconfig.json#paths`](https://www.typescriptlang.org/tsconfig/paths.html).
 
-Since esbuild-loader only uses esbuild to transform code, it cannot help Webpack with resolving [tsconfig.json#paths](https://www.typescriptlang.org/tsconfig/paths.html). 
-
+Since esbuild-loader only uses esbuild to transform code, it cannot help Webpack with resolving paths.
 
 ### JS Minification (eg. Terser)
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
