@@ -27,7 +27,6 @@ npm i -D esbuild-loader
 
 ## 🚦 Quick Setup
 
-### Javascript & JSX transpilation (eg. Babel)
 In `webpack.config.js`:
 
 ```diff
@@ -36,13 +35,19 @@ In `webpack.config.js`:
       rules: [
 -       {
 -         test: /\.js$/,
--         use: 'babel-loader',
+-         use: 'babel-loader'
+-       },
+-       {
+-         test: /\.tsx?$/,
+-         use: 'ts-loader'
 -       },
 +       {
-+         test: /\.js$/,
++         // Match js, jsx, ts & tsx files
++         test: /\.[jt]sx?$/,
 +         loader: 'esbuild-loader',
 +         options: {
-+           target: 'es2015'  // Syntax to compile to (see options below for possible values)
++           // JavaScript version to compile to
++           target: 'es2015'
 +         }
 +       },
 
@@ -52,30 +57,7 @@ In `webpack.config.js`:
   }
 ```
 
-### TypeScript & TSX
-In `webpack.config.js`:
-
-```diff
-  module.exports = {
-    module: {
-      rules: [
--       {
--         test: /\.tsx?$/,
--         use: 'ts-loader'
--       },
-+       {
-+         test: /\.tsx?$/,
-+         loader: 'esbuild-loader',
-+         options: {
-+           target: 'es2015'
-+         }
-+       },
-
-        ...
-      ]
-    },
-  }
-```
+### TypeScript
 
 #### `tsconfig.json`
 If you have a `tsconfig.json` file in your project, esbuild-loader will automatically load it.
@@ -83,11 +65,11 @@ If you have a `tsconfig.json` file in your project, esbuild-loader will automati
 If you use a custom name, you can pass it in the path via `tsconfig` option:
 ```diff
   {
-      test: /\.tsx?$/,
-      loader: 'esbuild-loader',
-      options: {
-+         tsconfig: './tsconfig.custom.json'
-      }
+     test: /\.tsx?$/,
+     loader: 'esbuild-loader',
+     options: {
++      tsconfig: './tsconfig.custom.json'
+     }
   }
 ```
 
@@ -103,7 +85,7 @@ Use [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-we
 
 Since esbuild-loader only uses esbuild to transform code, it cannot help Webpack with resolving paths.
 
-### JS Minification (eg. Terser)
+### Minification
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
 
 In `webpack.config.js`:
@@ -133,7 +115,7 @@ If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you c
 There are two ways to minify CSS, depending on your setup. You should already have CSS setup in your build using [`css-loader`](https://github.com/webpack-contrib/css-loader).
 
 #### CSS assets
-If your CSS is extracted and emitted as a CSS file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) or [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) with the `EsbuildPlugin`.
+If the CSS is extracted and emitted as a separate file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) with the `EsbuildPlugin`.
 
 Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin), in `webpack.config.js`:
 
@@ -254,6 +236,7 @@ Note:
 Here are some common configurations and custom options:
 
 #### tsconfig
+
 Type: `string`
 
 Pass in the file path to a **custom** tsconfig file. If the file name is `tsconfig.json`, it will automatically detect it.
@@ -370,28 +353,20 @@ Type: `boolean`
 
 Default: `false`
 
-_Custom esbuild-loader option._
-
 Whether to minify CSS files.
 
 #### include
 Type: `string | RegExp | Array<string | RegExp>`
 
-_Custom esbuild-loader option._
-
-Filter assets to include in minification
+To only apply the plugin to certain assets, pass in filters include
 
 #### exclude
 Type: `string | RegExp | Array<string | RegExp>`
 
-_Custom esbuild-loader option._
-
-Filter assets to exclude from minification
+To prevent the plugin from applying to certain assets, pass in filters to exclude
 
 #### implementation
 Type: `{ transform: Function }`
-
-_Custom esbuild-loader option._
 
 Use it to pass in a [different esbuild version](#bring-your-own-esbuild-advanced).
 
