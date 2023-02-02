@@ -1,8 +1,11 @@
-import { transform as defaultEsbuildTransform } from 'esbuild';
+import {
+	transform as defaultEsbuildTransform,
+	type TransformOptions,
+} from 'esbuild';
 import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
 import type { LoaderOptions } from './types.js';
-import { tsconfig } from './tsconfig.js';
+import { fileMatcher } from './tsconfig.js';
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
@@ -35,7 +38,7 @@ async function ESBuildLoader(
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
-		transformOptions.tsconfigRaw = tsconfig;
+		transformOptions.tsconfigRaw = fileMatcher?.(this.resourcePath) as TransformOptions['tsconfigRaw'];
 	}
 
 	try {
