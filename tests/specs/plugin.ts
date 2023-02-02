@@ -426,6 +426,8 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 									code,
 									map: '',
 									warnings: [],
+									mangleCache: {},
+									legalComments: '',
 								}),
 							},
 						});
