@@ -13,6 +13,11 @@ type Except<ObjectType, Properties> = {
 export type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'> & {
 	/** Pass a custom esbuild implementation */
 	implementation?: Implementation;
+
+	/**
+	 * Path to tsconfig.json file
+	 */
+	tsconfig?: string;
 };
 
 export type EsbuildPluginOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'> & {

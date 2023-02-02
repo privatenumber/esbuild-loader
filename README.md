@@ -77,28 +77,31 @@ In `webpack.config.js`:
   }
 ```
 
-#### Configuration
-If you have a `tsconfig.json` file, esbuild-loader will automatically detect it.
+#### `tsconfig.json`
+If you have a `tsconfig.json` file in your project, esbuild-loader will automatically load it.
 
-Alternatively, you can also pass it in directly via the [`tsconfigRaw` option](https://esbuild.github.io/api/#tsconfig-raw):
+If you use a custom name, you can pass it in the path via `tsconfig` option:
 ```diff
   {
       test: /\.tsx?$/,
       loader: 'esbuild-loader',
       options: {
-+         tsconfigRaw: require('./tsconfig.json')
++         tsconfig: './tsconfig.custom.json'
       }
   }
 ```
+
+Behind the scenes, [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) is used to load the tsconfig, and to also resolve the `extends` property if it exists.
+
+You can also use the `tsconfigRaw` option to pass in a raw `tsconfig` object, but it will not resolve the `extends` property.
 
 ⚠️ esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L159-L165) and does not do type-checks. It's recommended to use a type-aware IDE or `tsc --noEmit` for type-checking instead. It is also recommended to enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) and [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) options in your `tsconfig` by the [esbuild docs](https://esbuild.github.io/content-types/#typescript-caveats).
 
 
 #### `tsconfig.json` Paths
-Use [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin) to add support for `tsconfig.json#paths`.
+Use [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin) to add support for [`tsconfig.json#paths`](https://www.typescriptlang.org/tsconfig/paths.html).
 
-Since esbuild-loader only uses esbuild to transform code, it cannot help Webpack with resolving [tsconfig.json#paths](https://www.typescriptlang.org/tsconfig/paths.html). 
-
+Since esbuild-loader only uses esbuild to transform code, it cannot help Webpack with resolving paths.
 
 ### JS Minification (eg. Terser)
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
@@ -249,6 +252,11 @@ Note:
 
 
 Here are some common configurations and custom options:
+
+#### tsconfig
+Type: `string`
+
+Pass in the file path to a **custom** tsconfig file. If the file name is `tsconfig.json`, it will automatically detect it.
 
 #### target
 Type: `string | Array<string>`
