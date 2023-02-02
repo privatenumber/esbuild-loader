@@ -27,8 +27,14 @@ npm i -D esbuild-loader
 
 ## 🚦 Quick Setup
 
-In `webpack.config.js`:
+`esbuild-loader` can transform JavaScript to support older browsers, and TypeScript to JavaScript.
 
+
+In your Webpack configuration, add a new rule for `esbuild-loader` matching the files you want to transform (e.g. `.js`, `.jsx`, `.ts`, `.tsx`).
+
+If you were using other loaders before (e.g. `babel-loader`/`ts-loader`), make sure to remove them.
+
+`webpack.config.js`:
 ```diff
   module.exports = {
     module: {
