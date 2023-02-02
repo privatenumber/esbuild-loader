@@ -14,7 +14,7 @@ specifiers:
   execa: ^6.1.0
   fs-fixture: ^1.2.0
   get-tsconfig: github:privatenumber/get-tsconfig#npm/file-matcher
-  loader-utils: ^2.0.0
+  loader-utils: ^2.0.4
   manten: ^0.6.1
   memfs: ^3.4.13
   mini-css-extract-plugin: ^1.6.2
@@ -30,7 +30,7 @@ specifiers:
 dependencies:
   esbuild: 0.17.5
   get-tsconfig: github.com/privatenumber/get-tsconfig/2a9640126cbcea030c9d2e762f5b4411136b296d
-  loader-utils: 2.0.0
+  loader-utils: 2.0.4
   webpack-sources: 1.4.3
 
 devDependencies:
@@ -1829,7 +1829,7 @@ packages:
       webpack: ^4.27.0 || ^5.0.0
     dependencies:
       icss-utils: 5.1.0_postcss@8.3.6
-      loader-utils: 2.0.0
+      loader-utils: 2.0.4
       postcss: 8.3.6
       postcss-modules-extract-imports: 3.0.0_postcss@8.3.6
       postcss-modules-local-by-default: 4.0.0_postcss@8.3.6
@@ -3944,8 +3944,8 @@ packages:
     engines: {node: '>=6.11.5'}
     dev: true
 
-  /loader-utils/1.4.0:
-    resolution: {integrity: sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==}
+  /loader-utils/1.4.2:
+    resolution: {integrity: sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==}
     engines: {node: '>=4.0.0'}
     dependencies:
       big.js: 5.2.2
@@ -3953,8 +3953,8 @@ packages:
       json5: 1.0.1
     dev: true
 
-  /loader-utils/2.0.0:
-    resolution: {integrity: sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==}
+  /loader-utils/2.0.4:
+    resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
     engines: {node: '>=8.9.0'}
     dependencies:
       big.js: 5.2.2
@@ -4184,7 +4184,7 @@ packages:
     peerDependencies:
       webpack: ^4.4.0 || ^5.0.0
     dependencies:
-      loader-utils: 2.0.0
+      loader-utils: 2.0.4
       schema-utils: 3.1.1
       webpack: 4.46.0_webpack-cli@4.10.0
       webpack-sources: 1.4.3
@@ -6003,7 +6003,7 @@ packages:
       eslint-scope: 4.0.3
       json-parse-better-errors: 1.0.2
       loader-runner: 2.4.0
-      loader-utils: 1.4.0
+      loader-utils: 1.4.2
       memory-fs: 0.4.1
       micromatch: 3.1.10
       mkdirp: 0.5.5

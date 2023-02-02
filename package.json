@@ -50,7 +50,7 @@
 	"dependencies": {
 		"esbuild": "^0.17.5",
 		"get-tsconfig": "github:privatenumber/get-tsconfig#npm/file-matcher",
-		"loader-utils": "^2.0.0",
+		"loader-utils": "^2.0.4",
 		"webpack-sources": "^1.4.3"
 	},
 	"devDependencies": {
