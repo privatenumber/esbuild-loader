@@ -8,7 +8,6 @@ import webpack5 from 'webpack5';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
 import { version } from '../package.json';
 import type { EsbuildPluginOptions } from './types.js';
-import { tsconfig } from './tsconfig.js';
 
 type Compiler = webpack4.Compiler | webpack5.Compiler;
 type Compilation = webpack4.compilation.Compilation | webpack5.Compilation;
@@ -135,10 +134,6 @@ export default function EsbuildPlugin(
 
 	if (!hasGranularMinificationConfig) {
 		options.minify = true;
-	}
-
-	if (!('tsconfigRaw' in options)) {
-		options.tsconfigRaw = tsconfig;
 	}
 
 	return {
