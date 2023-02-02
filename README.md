@@ -78,18 +78,22 @@ In `webpack.config.js`:
 ```
 
 #### Configuration
-If you have a `tsconfig.json` file, esbuild-loader will automatically detect it.
+If you have a `tsconfig.json` file in your project, esbuild-loader will automatically load it.
 
-Alternatively, you can also pass it in directly via the [`tsconfigRaw` option](https://esbuild.github.io/api/#tsconfig-raw):
+To pass in a tsconfig with a custom name, you can pass in the path via `tsconfig` option:
 ```diff
   {
       test: /\.tsx?$/,
       loader: 'esbuild-loader',
       options: {
-+         tsconfigRaw: require('./tsconfig.json')
++         tsconfig: './tsconfig.custom.json'
       }
   }
 ```
+
+Behind the scenes, this uses [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) to load the tsconfig, and also resolve the `extends` property if it exists.
+
+You can also use the `tsconfigRaw` option to pass in a raw `tsconfig` object, but it will not resolve the `extends` property.
 
 ⚠️ esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L159-L165) and does not do type-checks. It's recommended to use a type-aware IDE or `tsc --noEmit` for type-checking instead. It is also recommended to enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) and [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) options in your `tsconfig` by the [esbuild docs](https://esbuild.github.io/content-types/#typescript-caveats).
 
@@ -249,6 +253,11 @@ Note:
 
 
 Here are some common configurations and custom options:
+
+#### tsconfig
+Type: `string`
+
+Pass in the file path to a **custom** tsconfig file. If the file name is `tsconfig.json`, it will automatically detect it.
 
 #### target
 Type: `string | Array<string>`
