@@ -49,9 +49,7 @@ async function ESBuildLoader(
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
-		if (fileMatcher) {
-			transformOptions.tsconfigRaw = fileMatcher(this.resourcePath) as TransformOptions['tsconfigRaw'];
-		} else {
+		if (!fileMatcher) {
 			const tsconfigPath = tsconfig && path.resolve(tsconfig);
 			foundTsconfig = (
 				tsconfigPath
@@ -64,6 +62,13 @@ async function ESBuildLoader(
 			if (foundTsconfig) {
 				fileMatcher = createFilesMatcher(foundTsconfig);
 			}
+		}
+
+		if (fileMatcher) {
+			transformOptions.tsconfigRaw = fileMatcher(
+				// Doesn't include query
+				this.resourcePath,
+			) as TransformOptions['tsconfigRaw'];
 		}
 	}
 
