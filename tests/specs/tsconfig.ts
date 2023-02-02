@@ -20,8 +20,8 @@ export default testSuite(({ describe }) => {
 			test('finds tsconfig.json and applies strict mode', async () => {
 				const fixture = await createFixture({
 					src: {
-						'index.ts': `module.exports = [${detectStrictMode}, require("./strict.ts")];`,
-						'strict.ts': `module.exports = ${detectStrictMode}`,
+						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts")];`,
+						'not-strict.ts': `module.exports = ${detectStrictMode}`,
 					},
 					'webpack.config.js': `
 					module.exports = {
@@ -56,7 +56,7 @@ export default testSuite(({ describe }) => {
 							strict: true,
 						},
 						include: [
-							'src/strict.ts',
+							'src/index.ts',
 						],
 					}),
 				});
@@ -68,7 +68,63 @@ export default testSuite(({ describe }) => {
 				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
-				).toStrictEqual([false, true]);
+				).toStrictEqual([true, false]);
+
+				await fixture.rm();
+			});
+
+			test('handles resource with query', async () => {
+				const fixture = await createFixture({
+					src: {
+						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts?some-query")];`,
+						'not-strict.ts': `module.exports = ${detectStrictMode}`,
+					},
+					'webpack.config.js': `
+					module.exports = {
+						mode: 'production',
+	
+						optimization: {
+							minimize: false,
+						},
+	
+						resolveLoader: {
+							alias: {
+								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
+							},
+						},
+	
+						module: {
+							rules: [{
+								test: /\\.ts$/,
+								loader: 'esbuild-loader',
+							}],
+						},
+	
+						entry: './src/index.ts',
+
+						output: {
+							libraryTarget: 'commonjs2',
+						},
+					};
+					`,
+					'tsconfig.json': JSON.stringify({
+						compilerOptions: {
+							strict: true,
+						},
+						include: [
+							'src/index.ts',
+						],
+					}),
+				});
+
+				await execa(webpackCli, {
+					cwd: fixture.path,
+				});
+
+				const require = createRequire(import.meta.url);
+				expect(
+					require(path.join(fixture.path, 'dist/main.js')),
+				).toStrictEqual([true, false]);
 
 				await fixture.rm();
 			});
