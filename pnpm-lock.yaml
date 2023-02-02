@@ -19,7 +19,6 @@ specifiers:
   memfs: ^3.4.13
   mini-css-extract-plugin: ^1.6.2
   pkgroll: ^1.8.0
-  tapable: ^2.2.0
   tsx: github:esbuild-kit/tsx#npm/ts-file-matcher
   typescript: ^4.9.4
   webpack: ^4.44.2
@@ -32,7 +31,6 @@ dependencies:
   esbuild: 0.16.17
   get-tsconfig: github.com/privatenumber/get-tsconfig/2a9640126cbcea030c9d2e762f5b4411136b296d
   loader-utils: 2.0.0
-  tapable: 2.2.0
   webpack-sources: 1.4.3
 
 devDependencies:
@@ -5554,11 +5552,6 @@ packages:
     resolution: {integrity: sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==}
     engines: {node: '>=6'}
     dev: true
-
-  /tapable/2.2.0:
-    resolution: {integrity: sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==}
-    engines: {node: '>=6'}
-    dev: false
 
   /tapable/2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
