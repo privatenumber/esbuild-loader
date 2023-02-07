@@ -49,7 +49,7 @@
 	},
 	"dependencies": {
 		"esbuild": "^0.17.5",
-		"get-tsconfig": "github:privatenumber/get-tsconfig#npm/file-matcher",
+		"get-tsconfig": "^4.4.0",
 		"loader-utils": "^2.0.4",
 		"webpack-sources": "^1.4.3"
 	},

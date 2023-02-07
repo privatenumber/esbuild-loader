@@ -13,7 +13,7 @@ specifiers:
   eslint: ^8.33.0
   execa: ^6.1.0
   fs-fixture: ^1.2.0
-  get-tsconfig: github:privatenumber/get-tsconfig#npm/file-matcher
+  get-tsconfig: ^4.4.0
   loader-utils: ^2.0.4
   manten: ^0.6.1
   memfs: ^3.4.13
@@ -29,7 +29,7 @@ specifiers:
 
 dependencies:
   esbuild: 0.17.5
-  get-tsconfig: github.com/privatenumber/get-tsconfig/2a9640126cbcea030c9d2e762f5b4411136b296d
+  get-tsconfig: 4.4.0
   loader-utils: 2.0.4
   webpack-sources: 1.4.3
 
@@ -545,13 +545,13 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.10
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/8.4.10:
     resolution: {integrity: sha512-Sl/HOqN8NKPmhWo2VBEPm0nvHnu2LL3v9vKo8MEq0EtbJ4eVzGPl41VNPvn5E1i5poMk4/XD8UriLHpJvEP/Nw==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -1113,12 +1113,6 @@ packages:
 
   /acorn/6.4.2:
     resolution: {integrity: sha512-XtGIhXwF8YM8bJhGxG5kXgjkEuNGLTkoYqVE+KMR+aspr4KGYmKYg7yUe3KghyQ9yheNwLnjmzh/7+gfDBmHCQ==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: true
-
-  /acorn/8.8.1:
-    resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
@@ -2398,7 +2392,7 @@ packages:
       enhanced-resolve: 5.12.0
       eslint: 8.33.0
       eslint-plugin-import: 2.27.4_i5n76ortidj3h7iqerugswgd3q
-      get-tsconfig: 4.3.0
+      get-tsconfig: 4.4.0
       globby: 13.1.3
       is-core-module: 2.11.0
       is-glob: 4.0.3
@@ -3108,9 +3102,8 @@ packages:
       get-intrinsic: 1.1.3
     dev: true
 
-  /get-tsconfig/4.3.0:
-    resolution: {integrity: sha512-YCcF28IqSay3fqpIu5y3Krg/utCBHBeoflkZyHj/QcqI2nrLPC3ZegS9CmIo+hJb8K7aiGsuUl7PwWVjNG2HQQ==}
-    dev: true
+  /get-tsconfig/4.4.0:
+    resolution: {integrity: sha512-0Gdjo/9+FzsYhXCEFueo2aY1z1tpXrxWZzP7k8ul9qt1U5o8rYJwTJYmaeHdrVosYIVYkOy2iwCJ9FdpocJhPQ==}
 
   /get-value/2.0.6:
     resolution: {integrity: sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=}
@@ -3884,7 +3877,7 @@ packages:
     resolution: {integrity: sha512-qCRJWlbP2v6HbmKW7R3lFbeiVWHo+oMJ0j+MizwvauqnCV/EvtAeEeuCgoc/ErtsuoKgYB8U4Ih8AxJbXoE6/g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.8.1
+      acorn: 8.8.2
       eslint-visitor-keys: 3.3.0
       espree: 9.4.1
       semver: 7.3.8
@@ -5598,7 +5591,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      acorn: 8.8.1
+      acorn: 8.8.2
       commander: 2.20.3
       source-map: 0.6.1
       source-map-support: 0.5.21
@@ -6136,22 +6129,22 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/esbuild-kit/cjs-loader/592345ba978c64c98bd3f2797904335f17c7ec0c:
-    resolution: {tarball: https://codeload.github.com/esbuild-kit/cjs-loader/tar.gz/592345ba978c64c98bd3f2797904335f17c7ec0c}
+  github.com/esbuild-kit/cjs-loader/bd6cd2b5785abf86bb0912624a0c4c6c7a278fd6:
+    resolution: {tarball: https://codeload.github.com/esbuild-kit/cjs-loader/tar.gz/bd6cd2b5785abf86bb0912624a0c4c6c7a278fd6}
     name: '@esbuild-kit/cjs-loader'
     version: 0.0.0-semantic-release
     dependencies:
       '@esbuild-kit/core-utils': 3.0.0
-      get-tsconfig: github.com/privatenumber/get-tsconfig/2a9640126cbcea030c9d2e762f5b4411136b296d
+      get-tsconfig: 4.4.0
     dev: true
 
-  github.com/esbuild-kit/esm-loader/bba6380ec81039dd5e41b0e5be491a7149393f7f:
-    resolution: {tarball: https://codeload.github.com/esbuild-kit/esm-loader/tar.gz/bba6380ec81039dd5e41b0e5be491a7149393f7f}
+  github.com/esbuild-kit/esm-loader/975ebc01ae671bc282f82cdaa2bee557d8e59510:
+    resolution: {tarball: https://codeload.github.com/esbuild-kit/esm-loader/tar.gz/975ebc01ae671bc282f82cdaa2bee557d8e59510}
     name: '@esbuild-kit/esm-loader'
     version: 0.0.0-semantic-release
     dependencies:
       '@esbuild-kit/core-utils': 3.0.0
-      get-tsconfig: github.com/privatenumber/get-tsconfig/2a9640126cbcea030c9d2e762f5b4411136b296d
+      get-tsconfig: 4.4.0
     dev: true
 
   github.com/esbuild-kit/tsx/0276e1aefd83ecf151e43c74b5402c1b296af1f7:
@@ -6160,14 +6153,9 @@ packages:
     version: 0.0.0-semantic-release
     hasBin: true
     dependencies:
-      '@esbuild-kit/cjs-loader': github.com/esbuild-kit/cjs-loader/592345ba978c64c98bd3f2797904335f17c7ec0c
+      '@esbuild-kit/cjs-loader': github.com/esbuild-kit/cjs-loader/bd6cd2b5785abf86bb0912624a0c4c6c7a278fd6
       '@esbuild-kit/core-utils': 3.0.0
-      '@esbuild-kit/esm-loader': github.com/esbuild-kit/esm-loader/bba6380ec81039dd5e41b0e5be491a7149393f7f
+      '@esbuild-kit/esm-loader': github.com/esbuild-kit/esm-loader/975ebc01ae671bc282f82cdaa2bee557d8e59510
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
-
-  github.com/privatenumber/get-tsconfig/2a9640126cbcea030c9d2e762f5b4411136b296d:
-    resolution: {tarball: https://codeload.github.com/privatenumber/get-tsconfig/tar.gz/2a9640126cbcea030c9d2e762f5b4411136b296d}
-    name: get-tsconfig
-    version: 0.0.0-semantic-release
