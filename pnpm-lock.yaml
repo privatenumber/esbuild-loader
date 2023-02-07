@@ -19,7 +19,7 @@ specifiers:
   memfs: ^3.4.13
   mini-css-extract-plugin: ^1.6.2
   pkgroll: ^1.8.2
-  tsx: github:esbuild-kit/tsx#npm/ts-file-matcher
+  tsx: ^3.12.3
   typescript: ^4.9.5
   webpack: ^4.44.2
   webpack-cli: ^4.10.0
@@ -49,7 +49,7 @@ devDependencies:
   memfs: 3.4.13
   mini-css-extract-plugin: 1.6.2_webpack@4.46.0
   pkgroll: 1.8.2_typescript@4.9.5
-  tsx: github.com/esbuild-kit/tsx/0276e1aefd83ecf151e43c74b5402c1b296af1f7
+  tsx: 3.12.3
   typescript: 4.9.5
   webpack: 4.46.0_webpack-cli@4.10.0
   webpack-cli: 4.10.0_webpack@4.46.0
@@ -84,11 +84,25 @@ packages:
     engines: {node: '>=10.0.0'}
     dev: true
 
+  /@esbuild-kit/cjs-loader/2.4.2:
+    resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}
+    dependencies:
+      '@esbuild-kit/core-utils': 3.0.0
+      get-tsconfig: 4.4.0
+    dev: true
+
   /@esbuild-kit/core-utils/3.0.0:
     resolution: {integrity: sha512-TXmwH9EFS3DC2sI2YJWJBgHGhlteK0Xyu1VabwetMULfm3oYhbrsWV5yaSr2NTWZIgDGVLHbRf0inxbjXqAcmQ==}
     dependencies:
       esbuild: 0.15.18
       source-map-support: 0.5.21
+    dev: true
+
+  /@esbuild-kit/esm-loader/2.5.5:
+    resolution: {integrity: sha512-Qwfvj/qoPbClxCRNuac1Du01r9gvNOT+pMYtJDapfB1eoGN1YlJ1BixLyL9WVENRx5RXgNLdfYdx/CuswlGhMw==}
+    dependencies:
+      '@esbuild-kit/core-utils': 3.0.0
+      get-tsconfig: 4.4.0
     dev: true
 
   /@esbuild/android-arm/0.15.18:
@@ -5696,6 +5710,17 @@ packages:
       typescript: 4.9.5
     dev: true
 
+  /tsx/3.12.3:
+    resolution: {integrity: sha512-Wc5BFH1xccYTXaQob+lEcimkcb/Pq+0en2s+ruiX0VEIC80nV7/0s7XRahx8NnsoCnpCVUPz8wrqVSPi760LkA==}
+    hasBin: true
+    dependencies:
+      '@esbuild-kit/cjs-loader': 2.4.2
+      '@esbuild-kit/core-utils': 3.0.0
+      '@esbuild-kit/esm-loader': 2.5.5
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /tty-browserify/0.0.0:
     resolution: {integrity: sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=}
     dev: true
@@ -6127,35 +6152,4 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: true
-
-  github.com/esbuild-kit/cjs-loader/bd6cd2b5785abf86bb0912624a0c4c6c7a278fd6:
-    resolution: {tarball: https://codeload.github.com/esbuild-kit/cjs-loader/tar.gz/bd6cd2b5785abf86bb0912624a0c4c6c7a278fd6}
-    name: '@esbuild-kit/cjs-loader'
-    version: 0.0.0-semantic-release
-    dependencies:
-      '@esbuild-kit/core-utils': 3.0.0
-      get-tsconfig: 4.4.0
-    dev: true
-
-  github.com/esbuild-kit/esm-loader/975ebc01ae671bc282f82cdaa2bee557d8e59510:
-    resolution: {tarball: https://codeload.github.com/esbuild-kit/esm-loader/tar.gz/975ebc01ae671bc282f82cdaa2bee557d8e59510}
-    name: '@esbuild-kit/esm-loader'
-    version: 0.0.0-semantic-release
-    dependencies:
-      '@esbuild-kit/core-utils': 3.0.0
-      get-tsconfig: 4.4.0
-    dev: true
-
-  github.com/esbuild-kit/tsx/0276e1aefd83ecf151e43c74b5402c1b296af1f7:
-    resolution: {tarball: https://codeload.github.com/esbuild-kit/tsx/tar.gz/0276e1aefd83ecf151e43c74b5402c1b296af1f7}
-    name: tsx
-    version: 0.0.0-semantic-release
-    hasBin: true
-    dependencies:
-      '@esbuild-kit/cjs-loader': github.com/esbuild-kit/cjs-loader/bd6cd2b5785abf86bb0912624a0c4c6c7a278fd6
-      '@esbuild-kit/core-utils': 3.0.0
-      '@esbuild-kit/esm-loader': github.com/esbuild-kit/esm-loader/975ebc01ae671bc282f82cdaa2bee557d8e59510
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
