@@ -69,7 +69,7 @@
 		"memfs": "^3.4.13",
 		"mini-css-extract-plugin": "^1.6.2",
 		"pkgroll": "^1.8.2",
-		"tsx": "github:esbuild-kit/tsx#npm/ts-file-matcher",
+		"tsx": "^3.12.3",
 		"typescript": "^4.9.5",
 		"webpack": "^4.44.2",
 		"webpack-cli": "^4.10.0",
