@@ -1,16 +1,14 @@
 {
 	"compilerOptions": {
-		"outDir": "dist",
 		"module": "Node16",
 
 		// Node 10
 		"target": "ES2018",
 		"lib": ["ES2018"],
 
-		"declaration": true,
 		"strict": true,
 		"esModuleInterop": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
 	},
-	"include": ["src"]
 }

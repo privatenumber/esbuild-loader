@@ -1,30 +1,21 @@
-import fs from 'fs';
 import path from 'path';
-import { transform as defaultEsbuildTransform } from 'esbuild';
+import {
+	transform as defaultEsbuildTransform,
+	type TransformOptions,
+} from 'esbuild';
 import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
-import JoyCon, { LoadResult } from 'joycon';
-import JSON5 from 'json5';
-import { LoaderOptions } from './interfaces';
+import {
+	getTsconfig,
+	parseTsconfig,
+	createFilesMatcher,
+	type TsConfigResult,
+	type FileMatcher,
+} from 'get-tsconfig';
+import type { LoaderOptions } from './types.js';
 
-const joycon = new JoyCon();
-
-joycon.addLoader({
-	test: /\.json$/,
-	async load(filePath) {
-		try {
-			const config = fs.readFileSync(filePath, 'utf8');
-			return JSON5.parse(config);
-		} catch (error: any) {
-			throw new Error(
-				`Failed to parse tsconfig at ${path.relative(process.cwd(), filePath)}: ${error.message as string}`,
-			);
-		}
-	},
-});
-
-const isTsExtensionPtrn = /\.ts$/i;
-let tsConfig: LoadResult;
+let foundTsconfig: TsConfigResult | null;
+let fileMatcher: FileMatcher;
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
@@ -34,6 +25,7 @@ async function ESBuildLoader(
 	const options: LoaderOptions = getOptions(this);
 	const {
 		implementation,
+		tsconfig,
 		...esbuildTransformOptions
 	} = options;
 
@@ -51,27 +43,33 @@ async function ESBuildLoader(
 	const transformOptions = {
 		...esbuildTransformOptions,
 		target: options.target ?? 'es2015',
-		loader: options.loader ?? 'js',
+		loader: options.loader ?? 'default',
 		sourcemap: this.sourceMap,
 		sourcefile: this.resourcePath,
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
-		if (!tsConfig) {
-			tsConfig = await joycon.load(['tsconfig.json']);
+		if (!fileMatcher) {
+			const tsconfigPath = tsconfig && path.resolve(tsconfig);
+			foundTsconfig = (
+				tsconfigPath
+					? {
+						config: parseTsconfig(tsconfigPath),
+						path: tsconfigPath,
+					}
+					: getTsconfig()
+			);
+			if (foundTsconfig) {
+				fileMatcher = createFilesMatcher(foundTsconfig);
+			}
 		}
 
-		if (tsConfig.data) {
-			transformOptions.tsconfigRaw = tsConfig.data;
+		if (fileMatcher) {
+			transformOptions.tsconfigRaw = fileMatcher(
+				// Doesn't include query
+				this.resourcePath,
+			) as TransformOptions['tsconfigRaw'];
 		}
-	}
-
-	// https://github.com/privatenumber/esbuild-loader/pull/107
-	if (
-		transformOptions.loader === 'tsx'
-		&& isTsExtensionPtrn.test(this.resourcePath)
-	) {
-		transformOptions.loader = 'ts';
 	}
 
 	try {

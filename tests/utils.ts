@@ -1,9 +1,10 @@
+import path from 'path';
 import type webpack4 from 'webpack';
 import type webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ESBuildMinifyPlugin, type MinifyPluginOptions } from '#esbuild-loader';
+import { EsbuildPlugin, type EsbuildPluginOptions } from '#esbuild-loader';
 
-const esbuildLoaderPath = require.resolve('../src/');
+const esbuildLoaderPath = path.resolve('./src/index.ts');
 
 export type Webpack = typeof webpack4 | typeof webpack5;
 
@@ -13,7 +14,7 @@ type RuleSetUseItem = webpack4.RuleSetUseItem & webpack5.RuleSetUseItem;
 
 export const configureEsbuildLoader = (
 	config: WebpackConfiguration,
-	options?: any,
+	rulesConfig?: any,
 ) => {
 	config.resolveLoader!.alias = {
 		'esbuild-loader': esbuildLoaderPath,
@@ -22,18 +23,25 @@ export const configureEsbuildLoader = (
 	config.module!.rules!.push({
 		test: /\.js$/,
 		loader: 'esbuild-loader',
-		...options,
+		...rulesConfig,
+		options: {
+			tsconfigRaw: undefined,
+			...rulesConfig?.options,
+		},
 	});
 };
 
 export const configureEsbuildMinifyPlugin = (
 	config: WebpackConfiguration,
-	options?: MinifyPluginOptions,
+	options?: EsbuildPluginOptions,
 ) => {
 	config.optimization = {
 		minimize: true,
 		minimizer: [
-			new ESBuildMinifyPlugin(options),
+			new EsbuildPlugin({
+				tsconfigRaw: undefined,
+				...options,
+			}),
 		],
 	};
 };
@@ -56,5 +64,7 @@ export const configureMiniCssExtractPlugin = (
 ) => {
 	const cssRule = configureCssLoader(config);
 	cssRule.use.unshift(MiniCssExtractPlugin.loader);
+
+	// @ts-expect-error Forcing it to Webpack 5
 	config.plugins!.push(new MiniCssExtractPlugin());
 };

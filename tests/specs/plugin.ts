@@ -6,9 +6,9 @@ import * as esbuild from 'esbuild';
 import {
 	configureEsbuildMinifyPlugin,
 	configureMiniCssExtractPlugin,
-} from '../utils';
+} from '../utils.js';
 import * as fixtures from '../fixtures.js';
-import type { MinifyPluginOptions } from '#esbuild-loader';
+import type { EsbuildPluginOptions } from '#esbuild-loader';
 
 const assertMinified = (code: string) => {
 	expect(code).not.toMatch(/\s{2,}/);
@@ -16,7 +16,11 @@ const assertMinified = (code: string) => {
 	expect(code).not.toMatch('return ');
 };
 
+const countIife = (code: string) => Array.from(code.matchAll(/\(\(\)=>\{/g)).length;
+
 export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpack5) => {
+	const isWebpack4 = webpack.version?.startsWith('4.');
+
 	describe('Plugin', ({ test, describe }) => {
 		describe('Minify JS', ({ test }) => {
 			test('minify', async () => {
@@ -206,39 +210,12 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					expect(file).toContain('//# sourceMappingURL=index.js.map');
 				});
 
-				// TODO: This doesn't work, so maybe we should just remove the option?
-				// test('minify w/ plugin sourcemap option', async () => {
-				// 	const built = await build({
-				// 		'/src/index.js': '',
-				// 	}, (config) => {
-				// 		delete config.devtool;
-				// 		configureEsbuildMinifyPlugin(config, {
-				// 			sourcemap: true,
-				// 		});
-				// 	}, webpack);
-
-				// 	const { stats } = built;
-				// 	expect(stats.hasWarnings()).toBe(false);
-				// 	expect(stats.hasErrors()).toBe(false);
-				// 	expect(
-				// 		Object.keys(stats.compilation.assets),
-				// 	).toStrictEqual([
-				// 		'index.js',
-				// 		// 'index.js.map',
-				// 	]);
-
-				// 	const file = built.fs.readFileSync('/dist/index.js', 'utf8');
-				// 	expect(file).toContain('//# sourceMappingURL=index.js.map');
-				// });
-
 				test('minify w/ source-map option and source-map plugin inline', async () => {
 					const built = await build(
 						fixtures.blank,
 						(config) => {
 							delete config.devtool;
-							configureEsbuildMinifyPlugin(config, {
-								sourcemap: true,
-							});
+							configureEsbuildMinifyPlugin(config);
 
 							config.plugins!.push(
 								new webpack.SourceMapDevToolPlugin({}) as any,
@@ -263,9 +240,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 						fixtures.blank,
 						(config) => {
 							delete config.devtool;
-							configureEsbuildMinifyPlugin(config, {
-								sourcemap: true,
-							});
+							configureEsbuildMinifyPlugin(config);
 
 							config.plugins!.push(
 								new webpack.SourceMapDevToolPlugin({
@@ -413,7 +388,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 		describe('implementation', ({ test }) => {
 			test('error', async () => {
-				const runWithImplementation = async (implementation: MinifyPluginOptions['implementation']) => {
+				const runWithImplementation = async (implementation: EsbuildPluginOptions['implementation']) => {
 					await build(
 						fixtures.blank,
 						(config) => {
@@ -429,14 +404,14 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					// @ts-expect-error testing invalid type
 					runWithImplementation({}),
 				).rejects.toThrow(
-					'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received undefined',
+					'[EsbuildPlugin] implementation.transform must be an esbuild transform function. Received undefined',
 				);
 
 				await expect(
 					// @ts-expect-error testing invalid type
 					runWithImplementation({ transform: 123 }),
 				).rejects.toThrow(
-					'ESBuildMinifyPlugin: implementation.transform must be an ESBuild transform function. Received number',
+					'[EsbuildPlugin] implementation.transform must be an esbuild transform function. Received number',
 				);
 			});
 
@@ -451,6 +426,8 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 									code,
 									map: '',
 									warnings: [],
+									mangleCache: {},
+									legalComments: '',
 								}),
 							},
 						});
@@ -555,9 +532,9 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			const createSource = (content: string) => ({
 				source: () => content,
 				size: () => Buffer.byteLength(content),
-			});
+			}) as webpack5.sources.Source;
 
-			const built = await build({ '/src/index.js': '' }, (config) => {
+			const built = await build(fixtures.blank, (config) => {
 				configureEsbuildMinifyPlugin(config);
 
 				config.plugins!.push({
@@ -587,6 +564,75 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			expect(
 				built.fs.readFileSync('/dist/test.js', 'utf8'),
 			).toBe('1+1;\n');
+		});
+
+		describe('minify targets', ({ test }) => {
+			test('no iife for node', async () => {
+				const built = await build(
+					fixtures.getHelpers,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							target: 'es2015',
+						});
+
+						config.target = isWebpack4 ? 'node' : ['node'];
+						delete config.output?.libraryTarget;
+						delete config.output?.libraryExport;
+					},
+					webpack,
+				);
+
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
+				expect(code.startsWith('var ')).toBe(true);
+			});
+
+			test('no iife for web with high target (no helpers are added)', async () => {
+				const built = await build(
+					fixtures.getHelpers,
+					(config) => {
+						configureEsbuildMinifyPlugin(config);
+
+						config.target = isWebpack4 ? 'web' : ['web'];
+						delete config.output?.libraryTarget;
+						delete config.output?.libraryExport;
+					},
+					webpack,
+				);
+
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
+				expect(code.startsWith('(()=>{var ')).toBe(false);
+				expect(countIife(code)).toBe(isWebpack4 ? 0 : 1);
+			});
+
+			test('iife for web & low target', async () => {
+				const built = await build(
+					fixtures.getHelpers,
+					(config) => {
+						configureEsbuildMinifyPlugin(config, {
+							target: 'es2015',
+						});
+
+						config.target = isWebpack4 ? 'web' : ['web'];
+						delete config.output?.libraryTarget;
+						delete config.output?.libraryExport;
+					},
+					webpack,
+				);
+
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
+				expect(code.startsWith('(()=>{var ')).toBe(true);
+				expect(code.endsWith('})();\n')).toBe(true);
+				expect(countIife(code)).toBe(isWebpack4 ? 1 : 2);
+			});
 		});
 	});
 });

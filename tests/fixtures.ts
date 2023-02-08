@@ -162,6 +162,10 @@ export const minification = {
 	'/src/index.js': 'export default ( stringVal )  =>  { return stringVal }',
 };
 
+export const getHelpers = {
+	'/src/index.js': 'export default async () => {}',
+};
+
 export const legalComments = {
 	'/src/index.js': `
 		//! legal comment
