@@ -56,18 +56,20 @@ const transformAssets = async (
 		const assetIsCss = isCssFile.test(asset.name);
 		let source: string | Buffer | ArrayBuffer;
 		let map = null;
-
-		if (asset.source.sourceAndMap) {
-			const sourceAndMap = asset.source.sourceAndMap();
-			source = sourceAndMap.source;
-			map = sourceAndMap.map;
+		if (useSourceMap) {
+			if (asset.source.sourceAndMap) {
+				const sourceAndMap = asset.source.sourceAndMap();
+				source = sourceAndMap.source;
+				map = sourceAndMap.map;
+			} else {
+				source = asset.source.source();
+				if (asset.source.map) {
+					map = asset.source.map();
+				}
+			}
 		} else {
 			source = asset.source.source();
-			if (asset.source.map) {
-				map = asset.source.map();
-			}
 		}
-
 		const sourceAsString = source.toString();
 		const result = await transform(sourceAsString, {
 			...transformOptions,
