@@ -26,16 +26,16 @@ body:
     attributes:
       label: Reproduction
       description: |
-        How can we reproduce the issue? When an issue is immediately reproducible, others can start debugging instead of following-up with questions.
-      placeholder: |
-        <!--
-          Provide one of the following:
-            1. A code-snippet that reproduces the issue
-            2. A reproduction repository that reproduces the issue
-            3. A pull request with a failing test-case
+        A minimal reproduction is necessary so others can understand and debug your bug.
 
-          Please remove as much irrelevant code to make it easier for others to read and debug.
-        -->
+        Provide a link to a minimal reproduction repository:
+        - Set the command to run in the `package.json` script `start`
+        - For a starter template, [fork this template on StackBlitz](https://stackblitz.com/edit/node-guv65j?file=webpack.config.js&view=editor)
+        - No more than 10 files. Delete irrelevant files (e.g. `LICENSE`, `.npmrc`, `.github`). This is the first step of debugging so doing this will save us work.
+          👉 **Tip:** The _smaller_ the reproduction, the _faster_ we can debug and resolve your issue
+
+        ⚠️ If a _minimal_ reproduction is not provided, the issue will be closed
+      placeholder: 👆 Your issue will be CLOSED if it doesn't follow the instructions above.
     validations:
       required: true
   - type: dropdown
@@ -52,7 +52,12 @@ body:
     attributes:
       label: Environment
       description: |
-        Describe the environment the issue is happening in. This information is used to for reproduction and debugging. Run and paste the output of: `npx envinfo --system --npmPackages webpack,esbuild-loader --binaries`.
+        Run and paste the output of:
+        ```
+        npx envinfo --system --npmPackages webpack,esbuild-loader --binaries
+        ```
+        
+        This information is used to for reproduction and debugging.
       placeholder: |
         System:
           OS:
