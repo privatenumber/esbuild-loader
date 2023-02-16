@@ -190,9 +190,6 @@ In `webpack.config.js`:
   }
 ```
 
-### Examples
-If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, or Next.js, check out the [examples repo](https://github.com/esbuild-kit/esbuild-loader-examples).
-
 ### Bring your own esbuild (Advanced)
 
 esbuild-loader comes with a version of esbuild it has been tested to work with. However, [esbuild has a frequent release cadence](https://github.com/evanw/esbuild/releases), and while we try to keep up with the important releases, it can get outdated.
@@ -227,6 +224,11 @@ To work around this, you can use the `implementation` option in the loader or th
 
 _The `implementation` option will be removed once esbuild reaches a stable release. Instead esbuild will become a peerDependency so you always provide your own._
 
+
+## Setup examples
+If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, Next.js, etc. check out the examples repo:
+
+[→ esbuild-loader examples](https://github.com/esbuild-kit/esbuild-loader-examples)
 
 ## ⚙️ Options
 
