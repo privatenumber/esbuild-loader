@@ -22,30 +22,24 @@ body:
         -->
     validations:
       required: true
-  - type: textarea
+  - type: input
     attributes:
-      label: Reproduction
+      label: Minimal reproduction link
       description: |
-        A minimal reproduction is necessary so others can understand and debug your bug.
+        > ⚠️ A minimal reproduction is required to demonstrate the bug, and for us to debug it. If not provided, the issue will be closed.
 
-        Provide a link to a minimal reproduction repository:
-        - Set the command to run in the `package.json` script `start`
-        - For a starter template, [fork this template on StackBlitz](https://stackblitz.com/edit/node-guv65j?file=webpack.config.js&view=editor)
-        - No more than 10 files. Delete irrelevant files (e.g. `LICENSE`, `.npmrc`, `.github`). This is the first step of debugging so doing this will save us work.
+        Provide a link to a minimal reproduction repository so we can `git clone`, run `npm start`, and reproduce the bug right away.
+
+        Starter template: [fork this template on StackBlitz](https://stackblitz.com/edit/node-guv65j?file=webpack.config.js&view=editor)
+
+        #### Requirements:
+        - No more than 10 files
+          Delete irrelevant files (e.g. `LICENSE`, `.npmrc`, `.github`). This is the first step of debugging so doing this will save us work.
           👉 **Tip:** The _smaller_ the reproduction, the _faster_ we can debug and resolve your issue
 
-        ⚠️ If a _minimal_ reproduction is not provided, the issue will be closed
-      placeholder: 👆 Your issue will be CLOSED if it doesn't follow the instructions above.
-    validations:
-      required: true
-  - type: dropdown
-    attributes:
-      label: Node.js package manager
-      description: Which package manager are you using? [npm](https://docs.npmjs.com/cli/v7/commands/npm), [yarn](https://yarnpkg.com/), or [pnpm](https://pnpm.io/)
-      options:
-        - npm
-        - yarn
-        - pnpm
+        - Set the `start` script in `package.json` to the command that shows the bug
+
+      placeholder: Minimal reproduction URL
     validations:
       required: true
   - type: textarea
