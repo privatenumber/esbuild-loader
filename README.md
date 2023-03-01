@@ -62,6 +62,13 @@ If you were using other loaders before (e.g. `babel-loader`/`ts-loader`), make s
   }
 ```
 
+> **Note:**
+> 
+> This setup determines how to handle each file based on the extension: `.js` files will be treated as JS (no JSX allowed), `.jsx` files as JSX, `.ts` as TS (no TSX allowed), and so on. See ebuild docs on [Content Types](https://esbuild.github.io/content-types/) for more information.
+>
+> To force a specific handler on different file extensions (e.g. JSX in `.js` files), use the [`loader`](https://github.com/esbuild-kit/esbuild-loader/#loader) option.
+
+
 ### TypeScript
 
 #### `tsconfig.json`
