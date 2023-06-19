@@ -6,11 +6,15 @@ import { EsbuildPlugin, type EsbuildPluginOptions } from '#esbuild-loader';
 
 const esbuildLoaderPath = path.resolve('./src/index.ts');
 
-export type Webpack = typeof webpack4 | typeof webpack5;
+type Webpack4 = typeof webpack4;
+
+export type Webpack = Webpack4 | typeof webpack5;
 
 export type WebpackConfiguration = webpack4.Configuration | webpack5.Configuration;
 
 type RuleSetUseItem = webpack4.RuleSetUseItem & webpack5.RuleSetUseItem;
+
+export const isWebpack4 = (webpack: Webpack): webpack is Webpack4 => Boolean(webpack.version?.startsWith('4.'));
 
 export const configureEsbuildLoader = (
 	config: WebpackConfiguration,
@@ -65,6 +69,8 @@ export const configureMiniCssExtractPlugin = (
 	const cssRule = configureCssLoader(config);
 	cssRule.use.unshift(MiniCssExtractPlugin.loader);
 
-	// @ts-expect-error Forcing it to Webpack 5
-	config.plugins!.push(new MiniCssExtractPlugin());
+	config.plugins!.push(
+		// @ts-expect-error Forcing it to Webpack 5
+		new MiniCssExtractPlugin(),
+	);
 };

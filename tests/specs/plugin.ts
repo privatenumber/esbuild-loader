@@ -4,6 +4,7 @@ import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import * as esbuild from 'esbuild';
 import {
+	isWebpack4,
 	configureEsbuildMinifyPlugin,
 	configureMiniCssExtractPlugin,
 } from '../utils.js';
@@ -19,7 +20,7 @@ const assertMinified = (code: string) => {
 const countIife = (code: string) => Array.from(code.matchAll(/\(\(\)=>\{/g)).length;
 
 export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpack5) => {
-	const isWebpack4 = webpack.version?.startsWith('4.');
+	const webpack4 = isWebpack4(webpack);
 
 	describe('Plugin', ({ test, describe }) => {
 		describe('Minify JS', ({ test }) => {
@@ -462,7 +463,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			});
 		});
 
-		describe('CSS', () => {
+		describe('CSS', ({ test }) => {
 			test('minify CSS asset', async () => {
 				const built = await build(
 					fixtures.css,
@@ -575,7 +576,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							target: 'es2015',
 						});
 
-						config.target = isWebpack4 ? 'node' : ['node'];
+						config.target = webpack4 ? 'node' : ['node'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -595,7 +596,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					(config) => {
 						configureEsbuildMinifyPlugin(config);
 
-						config.target = isWebpack4 ? 'web' : ['web'];
+						config.target = webpack4 ? 'web' : ['web'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -607,7 +608,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
 				expect(code.startsWith('(()=>{var ')).toBe(false);
-				expect(countIife(code)).toBe(isWebpack4 ? 0 : 1);
+				expect(countIife(code)).toBe(webpack4 ? 0 : 1);
 			});
 
 			test('iife for web & low target', async () => {
@@ -618,7 +619,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							target: 'es2015',
 						});
 
-						config.target = isWebpack4 ? 'web' : ['web'];
+						config.target = webpack4 ? 'web' : ['web'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -631,7 +632,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
 				expect(code.startsWith('(()=>{var ')).toBe(true);
 				expect(code.endsWith('})();\n')).toBe(true);
-				expect(countIife(code)).toBe(isWebpack4 ? 1 : 2);
+				expect(countIife(code)).toBe(webpack4 ? 1 : 2);
 			});
 		});
 	});
