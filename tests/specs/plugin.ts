@@ -20,7 +20,7 @@ const assertMinified = (code: string) => {
 const countIife = (code: string) => Array.from(code.matchAll(/\(\(\)=>\{/g)).length;
 
 export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpack5) => {
-	const webpack4 = isWebpack4(webpack);
+	const webpackIs4 = isWebpack4(webpack);
 
 	describe('Plugin', ({ test, describe }) => {
 		describe('Minify JS', ({ test }) => {
@@ -576,7 +576,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							target: 'es2015',
 						});
 
-						config.target = webpack4 ? 'node' : ['node'];
+						config.target = webpackIs4 ? 'node' : ['node'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -596,7 +596,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					(config) => {
 						configureEsbuildMinifyPlugin(config);
 
-						config.target = webpack4 ? 'web' : ['web'];
+						config.target = webpackIs4 ? 'web' : ['web'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -608,7 +608,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
 				expect(code.startsWith('(()=>{var ')).toBe(false);
-				expect(countIife(code)).toBe(webpack4 ? 0 : 1);
+				expect(countIife(code)).toBe(webpackIs4 ? 0 : 1);
 			});
 
 			test('iife for web & low target', async () => {
@@ -619,7 +619,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							target: 'es2015',
 						});
 
-						config.target = webpack4 ? 'web' : ['web'];
+						config.target = webpackIs4 ? 'web' : ['web'];
 						delete config.output?.libraryTarget;
 						delete config.output?.libraryExport;
 					},
@@ -632,7 +632,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				const code = built.fs.readFileSync('/dist/index.js', 'utf8').toString();
 				expect(code.startsWith('(()=>{var ')).toBe(true);
 				expect(code.endsWith('})();\n')).toBe(true);
-				expect(countIife(code)).toBe(webpack4 ? 1 : 2);
+				expect(countIife(code)).toBe(webpackIs4 ? 1 : 2);
 			});
 		});
 	});
