@@ -14,8 +14,8 @@ import {
 } from 'get-tsconfig';
 import type { LoaderOptions } from './types.js';
 
-let foundTsconfig: TsConfigResult | null;
-let fileMatcher: FileMatcher;
+const foundTsconfigMap = new Map<string | undefined, TsConfigResult | null>();
+const fileMatcherMap = new Map<string | undefined, FileMatcher>();
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext,
@@ -49,18 +49,26 @@ async function ESBuildLoader(
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
+		let fileMatcher = fileMatcherMap.get(tsconfig);
 		if (!fileMatcher) {
 			const tsconfigPath = tsconfig && path.resolve(tsconfig);
-			foundTsconfig = (
-				tsconfigPath
-					? {
-						config: parseTsconfig(tsconfigPath),
-						path: tsconfigPath,
-					}
-					: getTsconfig()
-			);
+			let foundTsconfig = foundTsconfigMap.get(tsconfig);
+			if (!foundTsconfig) {
+				foundTsconfig = (
+					tsconfigPath
+						? {
+							config: parseTsconfig(tsconfigPath),
+							path: tsconfigPath,
+						}
+						: getTsconfig()
+				);
+			}
 			if (foundTsconfig) {
+				foundTsconfigMap.set(tsconfig, foundTsconfig);
 				fileMatcher = createFilesMatcher(foundTsconfig);
+				if (fileMatcher) {
+					fileMatcherMap.set(tsconfig, fileMatcher);
+				}
 			}
 		}
 
