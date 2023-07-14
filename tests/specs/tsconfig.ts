@@ -187,6 +187,82 @@ export default testSuite(({ describe }) => {
 
 				await fixture.rm();
 			});
+
+			test('accepts multiple custom tsconfig.json paths', async () => {
+				const fixture = await createFixture({
+					src: {
+						'index.ts': 'export class C { foo = 100; }',
+						'index2.ts': 'export class C { foo = 100; }',
+					},
+					'webpack.config.js': `
+					module.exports = {
+						mode: 'production',
+
+						optimization: {
+							minimize: false,
+						},
+
+						resolveLoader: {
+							alias: {
+								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
+							},
+						},
+
+						module: {
+							rules: [
+								{
+									test: /index\\.ts$/,
+									loader: 'esbuild-loader',
+									options: {
+										tsconfig: './tsconfig.custom1.json',
+									}
+								},
+								{
+									test: /index2\\.ts$/,
+									loader: 'esbuild-loader',
+									options: {
+										tsconfig: './tsconfig.custom2.json',
+									}
+								}
+							],
+						},
+
+						entry: {
+							index1: './src/index.ts',
+							index2: './src/index2.ts',
+						},
+
+						output: {
+							libraryTarget: 'commonjs2',
+						},
+					};
+					`,
+					'tsconfig.custom1.json': JSON.stringify({
+						compilerOptions: {
+							strict: true,
+							useDefineForClassFields: false,
+						},
+					}),
+					'tsconfig.custom2.json': JSON.stringify({
+						compilerOptions: {
+							strict: true,
+							useDefineForClassFields: true,
+						},
+					}),
+				});
+
+				await execa(webpackCli, {
+					cwd: fixture.path,
+				});
+
+				let code = await fixture.readFile('dist/index1.js', 'utf8');
+				expect(code).toMatch('this.foo = 100;');
+
+				code = await fixture.readFile('dist/index2.js', 'utf8');
+				expect(code).not.toMatch('this.foo = 100;');
+
+				await fixture.rm();
+			});
 		});
 
 		describe('plugin', ({ test }) => {
