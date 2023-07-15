@@ -17,7 +17,7 @@ Curious how much faster your build will be? See [what users are saying](https://
 
 ---
 
-<sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
+<sub>Found this package useful? Show your support & appreciation by [sponsoring](https://github.com/sponsors/privatenumber)! ❤️</sub>
 
 ## 🚀 Install
 
@@ -430,3 +430,11 @@ Webpack-integrated Mocha test-runner with Webpack 5 support.
 
 #### [webpack-localize-assets-plugin](https://github.com/privatenumber/webpack-localize-assets-plugin)
 Localize/i18nalize your Webpack build. Optimized for multiple locales!
+
+## Sponsors
+<p align="center">
+	<a href="https://github.com/sponsors/privatenumber">
+		<img src="https://cdn.jsdelivr.net/gh/privatenumber/sponsors/sponsorkit/sponsors.svg">
+	</a>
+</p>
+
