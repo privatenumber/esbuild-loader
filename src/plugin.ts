@@ -33,6 +33,7 @@ const transformAssets = async (
 		css: minifyCss,
 		include,
 		exclude,
+		implementation,
 		...transformOptions
 	} = options;
 
