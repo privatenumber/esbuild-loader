@@ -4,18 +4,15 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 
 [_esbuild_](https://github.com/evanw/esbuild) is a JavaScript bundler written in Go that supports blazing fast ESNext & TypeScript transpilation and [JS minification](https://github.com/privatenumber/minification-benchmarks/).
 
-[_esbuild-loader_](https://github.com/esbuild-kit/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. babel-loader/ts-loader) and minification (eg. Terser)!
+[_esbuild-loader_](https://github.com/esbuild-kit/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. `babel-loader`/`ts-loader`) and minification (eg. Terser)!
 
 Curious how much faster your build will be? See [what users are saying](https://github.com/esbuild-kit/esbuild-loader/discussions/138).
 
 
----
-
-> **🤫 Psst! Want to power up your Node.js with esbuild?**
+> **💡 Protip: Enhance your Node.js DX with `tsx`**
 >
-> Checkout our new project [`tsx`](https://github.com/esbuild-kit/tsx), an esbuild enhanced Node.js runtime that can run TypeScript instantly!
+> If you're interested in supercharging your Node.js runtime with esbuild, take a look at our new project [`tsx`](https://github.com/esbuild-kit/tsx). It's an esbuild-enhanced Node.js runtime that can run TypeScript instantly!
 
----
 
 <sub>Found this package useful? Show your support & appreciation by [sponsoring](https://github.com/sponsors/privatenumber)! ❤️</sub>
 
@@ -27,27 +24,28 @@ npm i -D esbuild-loader
 
 ## 🚦 Quick Setup
 
-Use `esbuild-loader` to transform new JavaScript syntax to support older browsers, and TypeScript to JavaScript
+To leverage `esbuild-loader` in your Webpack configuration, add a new rule for `esbuild-loader` matching the files you want to transform, such as `.js`, `.jsx`, `.ts`, or `.tsx`. Make sure to remove any other loaders you were using before (e.g. `babel-loader`/`ts-loader`).
 
-In your Webpack configuration, add a new rule for `esbuild-loader` matching the files you want to transform (e.g. `.js`, `.jsx`, `.ts`, `.tsx`).
+Here's an example of how to set it up in your `webpack.config.js`:
 
-If you were using other loaders before (e.g. `babel-loader`/`ts-loader`), make sure to remove them.
-
-`webpack.config.js`:
 ```diff
   module.exports = {
     module: {
       rules: [
+-       // Transpile JavaScript
 -       {
 -         test: /\.js$/,
 -         use: 'babel-loader'
 -       },
+-
+-       // Compile TypeScript
 -       {
 -         test: /\.tsx?$/,
 -         use: 'ts-loader'
 -       },
++       // Use esbuild to compile JavaScript & TypeScript
 +       {
-+         // Match js, jsx, ts & tsx files
++         // Match `.js`, `.jsx`, `.ts` or `.tsx` files
 +         test: /\.[jt]sx?$/,
 +         loader: 'esbuild-loader',
 +         options: {
@@ -56,25 +54,80 @@ If you were using other loaders before (e.g. `babel-loader`/`ts-loader`), make s
 +         }
 +       },
 
-        ...
+        // Other rules...
       ],
     },
   }
 ```
 
-> **Note:**
-> 
-> In this setup, esbuild determines how to handle each file based on the extension: `.js` files will be treated as JS (no JSX allowed), `.jsx` files as JSX, `.ts` as TS (no TSX allowed), and so on. See ebuild docs on [Content Types](https://esbuild.github.io/content-types/) for more information.
->
-> To force a specific handler on different file extensions (e.g. JSX in `.js` files), use the [`loader`](https://github.com/esbuild-kit/esbuild-loader/#loader) option.
+In this setup, esbuild will automatically determine how to handle each file based on its extension:
+- `.js` files will be treated as JS (no JSX allowed)
+- `.jsx` & `.tsx` files as JSX
+- `.ts` as TS (no JSX allowed)
+- `.tsx` as TSX
 
+
+If you want to force a specific handler on different file extensions (e.g. to allow JSX in `.js` files), you can use the [`loader`](https://github.com/esbuild-kit/esbuild-loader/#loader) option:
+
+```diff
+ {
+   test: /\.js$/,
+   loader: 'esbuild-loader',
+   options: {
++    // Treat `.js` files as `.jsx` files
++    loader: 'jsx',
+
+     // JavaScript version to transpile to
+     target: 'es2015'
+   }
+ }
+```
+
+
+## Loader
+
+### JavaScript
+
+You can replace `babel-loader` with `esbuild-loader` to transpile new JavaScript syntax into code compatible with older JavaScript engines.
+
+While this ensures your code can run smoothly across various environments, note that it can bloat your output code (like Babel).
+
+By default, the target to `esnext`, which means it doesn't perform any transpilations.
+
+To specify a target JavaScript engine that only supports ES2015, use the following configuration in your `webpack.config.js`:
+
+```diff
+  {
+     test: /\.jsx?$/,
+     loader: 'esbuild-loader',
+     options: {
++      target: 'es2015'
+     }
+  }
+```
+
+For a detailed list of supported transpilations and versions, refer to [the esbuild documentation](https://esbuild.github.io/content-types/#javascript).
 
 ### TypeScript
 
-#### `tsconfig.json`
-If you have a `tsconfig.json` file in your project, esbuild-loader will automatically load it.
+`esbuild-loader` can be used in-place of `ts-loader` to compile TypeScript.
 
-If you use a custom name, you can pass it in the path via `tsconfig` option:
+```js
+{
+  // `.ts` or `.tsx` files
+  test: /\.tsx?$/,
+  loader: 'esbuild-loader',
+}
+```
+
+> Note: You cannot use the `tsx` loader for `*.ts` files as it has incompatible syntax with the `ts` loader.
+>
+> [→ Read more](https://esbuild.github.io/content-types/#ts-vs-tsx)
+
+#### `tsconfig.json`
+If you have a `tsconfig.json` file in your project, `esbuild-loader` will automatically load it.
+
+If it's under a custom name, you can pass in the path via `tsconfig` option:
 ```diff
   {
      test: /\.tsx?$/,
@@ -85,17 +138,38 @@ If you use a custom name, you can pass it in the path via `tsconfig` option:
   }
 ```
 
-Behind the scenes, [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) is used to load the tsconfig, and to also resolve the `extends` property if it exists.
+> Behind the scenes: [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) is used to load the tsconfig, and to also resolve the `extends` property if it exists.
 
 You can also use the `tsconfigRaw` option to pass in a raw `tsconfig` object, but it will not resolve the `extends` property.
 
-⚠️ esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L159-L165) and does not do type-checks. It's recommended to use a type-aware IDE or `tsc --noEmit` for type-checking instead. It is also recommended to enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) and [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) options in your `tsconfig` by the [esbuild docs](https://esbuild.github.io/content-types/#typescript-caveats).
 
+##### Caveats
+- esbuild only supports a subset of `tsconfig` options [(see `TransformOptions` interface)](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L159-L165).
+
+- Enable [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) to avoid mis-compilation with features like re-exporting types.
+
+- Enable [`esModuleInterop`](https://www.typescriptlang.org/tsconfig/#esModuleInterop) to make TypeScript's type system compatible with ESM imports.
+
+- Features that require type interpretation, such as `emitDecoratorMetadata` and declaration, are not supported.
+
+[→ Read more about TypeScript Caveats](https://esbuild.github.io/content-types/#typescript-caveats)
 
 #### `tsconfig.json` Paths
 Use [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin) to add support for [`tsconfig.json#paths`](https://www.typescriptlang.org/tsconfig/paths.html).
 
-Since esbuild-loader only uses esbuild to transform code, it cannot help Webpack with resolving paths.
+Since `esbuild-loader` only transforms code, it cannot aid Webpack with resolving paths.
+
+
+#### Type-checking
+
+esbuild **does not** type check your code. And according to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript%20type%20checking%20(just%20run%20tsc%20separately)), it will not be supported.
+
+Consider these type-checking alternatives:
+- Using an IDEs like [VSCode](https://code.visualstudio.com/docs/languages/typescript) or [WebStorm](https://www.jetbrains.com/help/webstorm/typescript-support.html) that has live type-checking built in
+- Running `tsc --noEmit` to type check
+- Integrating type-checking to your Webpack build as a separate process using [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin)
+
+## EsbuildPlugin
 
 ### Minification
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
@@ -111,23 +185,57 @@ In `webpack.config.js`:
 +   optimization: {
 +     minimizer: [
 +       new EsbuildPlugin({
-+         target: 'es2015'  // Syntax to compile to (see options below for possible values)
++         target: 'es2015'  // Syntax to transpile to (see options below for possible values)
 +       })
 +     ]
 +   },
   }
 ```
 
-#### _💁‍♀️ Protip: Use the plugin in-place of the loader to transpile the JS_
-If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel). It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file. Simply set the `target` option on the minifier to specify which support level you want.
+### Defining constants
+
+You can replace the [`DefinePlugin`](https://webpack.js.org/plugins/define-plugin/) to define global constants. The parsing cost of the DefinePlugin is often overlooked so replacing it with esbuild can speed up the build.
+
+In `webpack.config.js`:
+
+```diff
+- const { DefinePlugin } = require('webpack')
++ const { EsbuildPlugin } = require('esbuild-loader')
+
+  module.exports = {
+    // ...,
+
+    plugins:[
+-     new DefinePlugin({
+-       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+-     })
++     new EsbuildPlugin({
++       options: {
++         define: {
++           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
++         },
++       },
++     })
+    ]
+  }
+```
+
+### Transpilation
+
+If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel).
+
+It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
+
+Simply set the `target` option on the minifier to specify which support level you want.
 
 
-### CSS Minification
 
-There are two ways to minify CSS, depending on your setup. You should already have CSS setup in your build using [`css-loader`](https://github.com/webpack-contrib/css-loader).
+## CSS Minification
 
-#### CSS assets
-If the CSS is extracted and emitted as a separate file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) with the `EsbuildPlugin`.
+Depending on your setup, there are two ways to minify CSS. You should already have CSS loading setup using [`css-loader`](https://github.com/webpack-contrib/css-loader).
+
+### CSS assets
+If the CSS is extracted and emitted as `.css` file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) with the `EsbuildPlugin`.
 
 Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin), in `webpack.config.js`:
 
@@ -166,9 +274,9 @@ Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https:
 ```
 
 
-#### CSS in JS
+### CSS in JS
 
-If your CSS is not emitted as a CSS file, but rather loaded via JS using something like [`style-loader`](https://github.com/webpack-contrib/style-loader), you can use the loader for minification.
+If your CSS is not emitted as a `.css` file, but rather inserted from the JavaScript using something like [`style-loader`](https://github.com/webpack-contrib/style-loader), you can use the loader for minification.
 
 
 In `webpack.config.js`:
@@ -197,7 +305,7 @@ In `webpack.config.js`:
   }
 ```
 
-### Bring your own esbuild (Advanced)
+## Bring your own esbuild (Advanced)
 
 esbuild-loader comes with a version of esbuild it has been tested to work with. However, [esbuild has a frequent release cadence](https://github.com/evanw/esbuild/releases), and while we try to keep up with the important releases, it can get outdated.
 
@@ -412,13 +520,6 @@ Running esbuild as a standalone bundler vs esbuild-loader + Webpack are complete
 
 Using any JS bundler introduces a bottleneck that makes reaching those speeds impossible. However, esbuild-loader can still speed up your build by removing the bottlenecks created by [`babel-loader`](https://twitter.com/wSokra/status/1316274855042584577?s=20), `ts-loader`, Terser, etc.
 
-### Will there be type-checking support?
-According to the [esbuild FAQ](https://esbuild.github.io/faq/#:~:text=typescript%20type%20checking%20(just%20run%20tsc%20separately)), it will not be supported.
-
-Consider these type-checking alternatives:
-- Using an IDEs like [VSCode](https://code.visualstudio.com/docs/languages/typescript) or [WebStorm](https://www.jetbrains.com/help/webstorm/typescript-support.html) that has live type-checking built in
-- Running `tsc --noEmit` to type check
-- Integrating type-checking to your Webpack build as a separate process using [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin)
 
 ## 💞 Related
 
