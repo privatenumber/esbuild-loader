@@ -30,33 +30,33 @@ Here's an example of how to set it up in your `webpack.config.js`:
 
 ```diff
   module.exports = {
-    module: {
-      rules: [
--       // Transpile JavaScript
--       {
--         test: /\.js$/,
--         use: 'babel-loader'
--       },
+      module: {
+          rules: [
+-             // Transpile JavaScript
+-             {
+-                 test: /\.js$/,
+-                 use: 'babel-loader'
+-             },
 -
--       // Compile TypeScript
--       {
--         test: /\.tsx?$/,
--         use: 'ts-loader'
--       },
-+       // Use esbuild to compile JavaScript & TypeScript
-+       {
-+         // Match `.js`, `.jsx`, `.ts` or `.tsx` files
-+         test: /\.[jt]sx?$/,
-+         loader: 'esbuild-loader',
-+         options: {
-+           // JavaScript version to compile to
-+           target: 'es2015'
-+         }
-+       },
+-             // Compile TypeScript
+-             {
+-                 test: /\.tsx?$/,
+-                 use: 'ts-loader'
+-             },
++             // Use esbuild to compile JavaScript & TypeScript
++             {
++                 // Match `.js`, `.jsx`, `.ts` or `.tsx` files
++                 test: /\.[jt]sx?$/,
++                 loader: 'esbuild-loader',
++                 options: {
++                     // JavaScript version to compile to
++                     target: 'es2015'
++                 }
++             },
 
-        // Other rules...
-      ],
-    },
+              // Other rules...
+          ],
+      },
   }
 ```
 
@@ -71,15 +71,15 @@ If you want to force a specific handler on different file extensions (e.g. to al
 
 ```diff
  {
-   test: /\.js$/,
-   loader: 'esbuild-loader',
-   options: {
-+    // Treat `.js` files as `.jsx` files
-+    loader: 'jsx',
+     test: /\.js$/,
+     loader: 'esbuild-loader',
+     options: {
++        // Treat `.js` files as `.jsx` files
++        loader: 'jsx',
 
-     // JavaScript version to transpile to
-     target: 'es2015'
-   }
+         // JavaScript version to transpile to
+         target: 'es2015'
+     }
  }
 ```
 
@@ -97,13 +97,13 @@ By default, the target to `esnext`, which means it doesn't perform any transpila
 To specify a target JavaScript engine that only supports ES2015, use the following configuration in your `webpack.config.js`:
 
 ```diff
-  {
+ {
      test: /\.jsx?$/,
      loader: 'esbuild-loader',
      options: {
-+      target: 'es2015'
-     }
-  }
++        target: 'es2015',
+     },
+ }
 ```
 
 For a detailed list of supported transpilations and versions, refer to [the esbuild documentation](https://esbuild.github.io/content-types/#javascript).
@@ -112,11 +112,11 @@ For a detailed list of supported transpilations and versions, refer to [the esbu
 
 `esbuild-loader` can be used in-place of `ts-loader` to compile TypeScript.
 
-```js
+```json5
 {
-  // `.ts` or `.tsx` files
-  test: /\.tsx?$/,
-  loader: 'esbuild-loader',
+    // `.ts` or `.tsx` files
+    test: /\.tsx?$/,
+    loader: 'esbuild-loader',
 }
 ```
 
@@ -129,13 +129,13 @@ If you have a `tsconfig.json` file in your project, `esbuild-loader` will automa
 
 If it's under a custom name, you can pass in the path via `tsconfig` option:
 ```diff
-  {
+ {
      test: /\.tsx?$/,
      loader: 'esbuild-loader',
      options: {
-+      tsconfig: './tsconfig.custom.json'
-     }
-  }
++        tsconfig: './tsconfig.custom.json',
+     },
+ },
 ```
 
 > Behind the scenes: [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) is used to load the tsconfig, and to also resolve the `extends` property if it exists.
@@ -180,15 +180,15 @@ In `webpack.config.js`:
 + const { EsbuildPlugin } = require('esbuild-loader')
 
   module.exports = {
-    ...,
+      ...,
 
-+   optimization: {
-+     minimizer: [
-+       new EsbuildPlugin({
-+         target: 'es2015'  // Syntax to transpile to (see options below for possible values)
-+       })
-+     ]
-+   },
++     optimization: {
++         minimizer: [
++             new EsbuildPlugin({
++                 target: 'es2015'  // Syntax to transpile to (see options below for possible values)
++             })
++         ]
++     },
   }
 ```
 
@@ -203,20 +203,20 @@ In `webpack.config.js`:
 + const { EsbuildPlugin } = require('esbuild-loader')
 
   module.exports = {
-    // ...,
+      // ...,
 
-    plugins:[
--     new DefinePlugin({
--       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
--     })
-+     new EsbuildPlugin({
-+       options: {
-+         define: {
-+           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-+         },
-+       },
-+     })
-    ]
+      plugins:[
+-         new DefinePlugin({
+-             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+-         })
++         new EsbuildPlugin({
++             options: {
++                 define: {
++                     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
++                 },
++             },
++         }),
+      ]
   }
 ```
 
@@ -244,32 +244,32 @@ Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https:
   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
   module.exports = {
-    ...,
+      // ...,
 
-    optimization: {
-      minimizer: [
-        new EsbuildPlugin({
-          target: 'es2015',
-+         css: true  // Apply minification to CSS assets
-        })
-      ]
-    },
-
-    module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader'
+      optimization: {
+          minimizer: [
+              new EsbuildPlugin({
+                  target: 'es2015',
++                 css: true  // Apply minification to CSS assets
+              })
           ]
-        }
-      ]
-    },
+      },
 
-    plugins: [
-      new MiniCssExtractPlugin()
-    ]
+      module: {
+          rules: [
+              {
+                  test: /\.css$/i,
+                  use: [
+                      MiniCssExtractPlugin.loader,
+                      'css-loader'
+                  ]
+              }
+          ],
+      },
+
+      plugins: [
+          new MiniCssExtractPlugin()
+      ]
   }
 ```
 
@@ -283,25 +283,25 @@ In `webpack.config.js`:
 
 ```diff
   module.exports = {
-    ...,
+      // ...,
 
-    module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          use: [
-            'style-loader',
-            'css-loader',
-+           {
-+             loader: 'esbuild-loader',
-+             options: {
-+               minify: true
-+             }
-+           }
-          ]
-        }
-      ]
-    }
+      module: {
+          rules: [
+              {
+                  test: /\.css$/i,
+                  use: [
+                      'style-loader',
+                      'css-loader',
++                     {
++                         loader: 'esbuild-loader',
++                         options: {
++                             minify: true,
++                         },
++                     },
+                  ],
+              },
+          ],
+      },
   }
 ```
 
@@ -317,23 +317,21 @@ To work around this, you can use the `implementation` option in the loader or th
 ```diff
 + const esbuild = require('esbuild')
 
-  ...
-
   module.exports = {
-    ...,
+      // ...,
 
-    module: {
-      rules: [
-        {
-          test: ...,
-          loader: 'esbuild-loader',
-          options: {
-            ...,
-+           implementation: esbuild
-          }
-        }
-      ]
-    }
+      module: {
+          rules: [
+              {
+                  test: ...,
+                  loader: 'esbuild-loader',
+                  options: {
+                      // ...,
++                     implementation: esbuild,
+                  },
+              },
+          ],
+      },
   }
 ```
 
