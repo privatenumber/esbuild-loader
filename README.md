@@ -169,7 +169,7 @@ Consider these type-checking alternatives:
 - Running `tsc --noEmit` to type check
 - Integrating type-checking to your Webpack build as a separate process using [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin)
 
-## EsbuildPlugin
+## ESBuildPlugin
 
 ### Minification
 You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
@@ -177,14 +177,14 @@ You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](
 In `webpack.config.js`:
 
 ```diff
-+ const { EsbuildPlugin } = require('esbuild-loader')
++ const { ESBuildPlugin } = require('esbuild-loader')
 
   module.exports = {
       ...,
 
 +     optimization: {
 +         minimizer: [
-+             new EsbuildPlugin({
++             new ESBuildPlugin({
 +                 target: 'es2015'  // Syntax to transpile to (see options below for possible values)
 +             })
 +         ]
@@ -200,7 +200,7 @@ In `webpack.config.js`:
 
 ```diff
 - const { DefinePlugin } = require('webpack')
-+ const { EsbuildPlugin } = require('esbuild-loader')
++ const { ESBuildPlugin } = require('esbuild-loader')
 
   module.exports = {
       // ...,
@@ -209,7 +209,7 @@ In `webpack.config.js`:
 -         new DefinePlugin({
 -             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 -         })
-+         new EsbuildPlugin({
++         new ESBuildPlugin({
 +             options: {
 +                 define: {
 +                     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
@@ -235,12 +235,12 @@ Simply set the `target` option on the minifier to specify which support level yo
 Depending on your setup, there are two ways to minify CSS. You should already have CSS loading setup using [`css-loader`](https://github.com/webpack-contrib/css-loader).
 
 ### CSS assets
-If the CSS is extracted and emitted as `.css` file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) with the `EsbuildPlugin`.
+If the CSS is extracted and emitted as `.css` file, you can replace CSS minification plugins like [`css-minimizer-webpack-plugin`](https://github.com/webpack-contrib/css-minimizer-webpack-plugin) with the `ESBuildPlugin`.
 
 Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin), in `webpack.config.js`:
 
 ```diff
-  const { EsbuildPlugin } = require('esbuild-loader')
+  const { ESBuildPlugin } = require('esbuild-loader')
   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
   module.exports = {
@@ -248,7 +248,7 @@ Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https:
 
       optimization: {
           minimizer: [
-              new EsbuildPlugin({
+              new ESBuildPlugin({
                   target: 'es2015',
 +                 css: true  // Apply minification to CSS assets
               })
@@ -407,7 +407,7 @@ _Custom esbuild-loader option._
 
 Use it to pass in a [different esbuild version](#bring-your-own-esbuild-advanced).
 
-### EsbuildPlugin
+### ESBuildPlugin
 
 The loader supports [all Transform options from esbuild](https://github.com/evanw/esbuild/blob/88821b7e7d46737f633120f91c65f662eace0bcf/lib/shared/types.ts#L158-L172).
 
