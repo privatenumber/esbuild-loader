@@ -86,7 +86,7 @@ const transformAssets = async (
 		if (result.legalComments) {
 			compilation.emitAsset(
 				`${asset.name}.LEGAL.txt`,
-				new RawSource(result.legalComments) as any,
+				new RawSource(result.legalComments) as webpack5.sources.Source,
 			);
 		}
 
