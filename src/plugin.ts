@@ -5,7 +5,7 @@ import {
 } from 'webpack-sources';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
-import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
+import ModuleFilenameHelpers from 'webpack/lib/ModuleFilenameHelpers.js';
 import { version } from '../package.json';
 import type { EsbuildPluginOptions } from './types.js';
 
@@ -47,7 +47,7 @@ const transformAssets = async (
 			isJsFile.test(asset.name)
 			|| (minifyCss && isCssFile.test(asset.name))
 		)
-		&& matchObject(
+		&& ModuleFilenameHelpers.matchObject(
 			{ include, exclude },
 			asset.name,
 		)
