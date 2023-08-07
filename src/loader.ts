@@ -10,12 +10,10 @@ import {
 	parseTsconfig,
 	createFilesMatcher,
 	type TsConfigResult,
-	type FileMatcher,
 } from 'get-tsconfig';
 import type { LoaderOptions } from './types.js';
 
-let foundTsconfig: TsConfigResult | null;
-let fileMatcher: FileMatcher;
+const tsconfigCache = new Map<string, TsConfigResult>();
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext<LoaderOptions>,
@@ -25,7 +23,7 @@ async function ESBuildLoader(
 	const options: LoaderOptions = typeof this.getOptions === 'function' ? this.getOptions() : getOptions(this);
 	const {
 		implementation,
-		tsconfig,
+		tsconfig: tsconfigPath,
 		...esbuildTransformOptions
 	} = options;
 
@@ -49,26 +47,44 @@ async function ESBuildLoader(
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
-		if (!fileMatcher) {
-			const tsconfigPath = tsconfig && path.resolve(tsconfig);
-			foundTsconfig = (
-				tsconfigPath
-					? {
-						config: parseTsconfig(tsconfigPath),
-						path: tsconfigPath,
-					}
-					: getTsconfig()
-			);
-			if (foundTsconfig) {
-				fileMatcher = createFilesMatcher(foundTsconfig);
+		const { resourcePath } = this;
+		/**
+		 * If a tsconfig.json path is specified, force apply it
+		 * Same way a provided tsconfigRaw is applied regardless
+		 * of whether it actually matches
+		 *
+		 * However in this case, we also warn if it doesn't match
+		 */
+		if (tsconfigPath) {
+			const tsconfigFullPath = path.resolve(tsconfigPath);
+			let tsconfig = tsconfigCache.get(tsconfigFullPath);
+			if (!tsconfig) {
+				tsconfig = {
+					config: parseTsconfig(tsconfigFullPath),
+					path: tsconfigFullPath,
+				};
+				tsconfigCache.set(tsconfigFullPath, tsconfig);
 			}
-		}
 
-		if (fileMatcher) {
-			transformOptions.tsconfigRaw = fileMatcher(
-				// Doesn't include query
-				this.resourcePath,
-			) as TransformOptions['tsconfigRaw'];
+			const filesMatcher = createFilesMatcher(tsconfig);
+			const matches = filesMatcher(resourcePath);
+
+			if (!matches) {
+				this.emitWarning(
+					new Error(`[esbuild-loader] The specified tsconfig at "${tsconfigFullPath}" was applied to the file "${resourcePath}" but does not match its "include" patterns`),
+				);
+			}
+
+			transformOptions.tsconfigRaw = tsconfig.config as TransformOptions['tsconfigRaw'];
+		} else {
+			/* Detect tsconfig file */
+
+			// Webpack shouldn't be loading the same path multiple times so doesn't need to be cached
+			const tsconfig = getTsconfig(resourcePath);
+			if (tsconfig) {
+				const fileMatcher = createFilesMatcher(tsconfig);
+				transformOptions.tsconfigRaw = fileMatcher(resourcePath) as TransformOptions['tsconfigRaw'];
+			}
 		}
 	}
 

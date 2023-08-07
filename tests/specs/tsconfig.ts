@@ -16,8 +16,20 @@ export default testSuite(({ describe }) => {
 			test('finds tsconfig.json and applies strict mode', async ({ onTestFinish }) => {
 				const fixture = await createFixture({
 					src: {
-						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts")];`,
+						'index.ts': `module.exports = [
+							${detectStrictMode},
+							require("./not-strict.ts"),
+							require("./different-config/strict.ts"),
+						];`,
 						'not-strict.ts': `module.exports = ${detectStrictMode}`,
+						'different-config': {
+							'strict.ts': `module.exports = ${detectStrictMode}`,
+							'tsconfig.json': tsconfigJson({
+								compilerOptions: {
+									strict: true,
+								},
+							}),
+						},
 					},
 					'webpack.config.js': `
 					module.exports = {
@@ -66,7 +78,7 @@ export default testSuite(({ describe }) => {
 				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
-				).toStrictEqual([true, false]);
+				).toStrictEqual([true, false, true]);
 			});
 
 			test('handles resource with query', async ({ onTestFinish }) => {
@@ -174,14 +186,90 @@ export default testSuite(({ describe }) => {
 
 				onTestFinish(async () => await fixture.rm());
 
-				await execa(webpackCli, {
+				const { stdout } = await execa(webpackCli, {
 					cwd: fixture.path,
 				});
+
+				expect(stdout).toMatch('does not match its "include" patterns');
 
 				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
-				).toStrictEqual([false, true]);
+				).toStrictEqual([true, true]);
+			});
+
+			test('applies different tsconfig.json paths', async ({ onTestFinish }) => {
+				const fixture = await createFixture({
+					src: {
+						'index.ts': 'export class C { foo = 100; }',
+						'index2.ts': 'export class C { foo = 100; }',
+					},
+					'webpack.config.js': `
+					module.exports = {
+						mode: 'production',
+
+						optimization: {
+							minimize: false,
+						},
+
+						resolveLoader: {
+							alias: {
+								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
+							},
+						},
+
+						module: {
+							rules: [
+								{
+									test: /index\\.ts$/,
+									loader: 'esbuild-loader',
+									options: {
+										tsconfig: './tsconfig.custom1.json',
+									}
+								},
+								{
+									test: /index2\\.ts$/,
+									loader: 'esbuild-loader',
+									options: {
+										tsconfig: './tsconfig.custom2.json',
+									}
+								}
+							],
+						},
+
+						entry: {
+							index1: './src/index.ts',
+							index2: './src/index2.ts',
+						},
+
+						output: {
+							libraryTarget: 'commonjs2',
+						},
+					};
+					`,
+					'tsconfig.custom1.json': tsconfigJson({
+						compilerOptions: {
+							useDefineForClassFields: false,
+						},
+					}),
+					'tsconfig.custom2.json': tsconfigJson({
+						compilerOptions: {
+							useDefineForClassFields: true,
+						},
+					}),
+				});
+
+				onTestFinish(async () => await fixture.rm());
+
+				await execa(webpackCli, {
+					cwd: fixture.path,
+				});
+
+				const code1 = await fixture.readFile('dist/index1.js', 'utf8');
+				expect(code1).toMatch('this.foo = 100;');
+
+				const code2 = await fixture.readFile('dist/index2.js', 'utf8');
+				expect(code2).toMatch('__publicField(this, "foo", 100);');
 			});
 		});
 
