@@ -9,8 +9,11 @@ import {
 	getTsconfig,
 	parseTsconfig,
 	createFilesMatcher,
+	type TsConfigResult,
 } from 'get-tsconfig';
 import type { LoaderOptions } from './types.js';
+
+const tsconfigCache = new Map<string, TsConfigResult>();
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext<LoaderOptions>,
@@ -54,10 +57,14 @@ async function ESBuildLoader(
 		 */
 		if (tsconfigPath) {
 			const tsconfigFullPath = path.resolve(tsconfigPath);
-			const tsconfig = {
-				config: parseTsconfig(tsconfigFullPath),
-				path: tsconfigFullPath,
-			};
+			let tsconfig = tsconfigCache.get(tsconfigFullPath);
+			if (!tsconfig) {
+				tsconfig = {
+					config: parseTsconfig(tsconfigFullPath),
+					path: tsconfigFullPath,
+				};
+				tsconfigCache.set(tsconfigFullPath, tsconfig);
+			}
 
 			const filesMatcher = createFilesMatcher(tsconfig);
 			const matches = filesMatcher(resourcePath);
@@ -70,10 +77,12 @@ async function ESBuildLoader(
 
 			transformOptions.tsconfigRaw = tsconfig.config as TransformOptions['tsconfigRaw'];
 		} else {
-			// Detect tsconfig file
-			const foundTsconfig = getTsconfig(resourcePath);
-			if (foundTsconfig) {
-				const fileMatcher = createFilesMatcher(foundTsconfig);
+			/* Detect tsconfig file */
+
+			// Webpack shouldn't be loading the same path multiple times so doesn't need to be cached
+			const tsconfig = getTsconfig(resourcePath);
+			if (tsconfig) {
+				const fileMatcher = createFilesMatcher(tsconfig);
 				transformOptions.tsconfigRaw = fileMatcher(resourcePath) as TransformOptions['tsconfigRaw'];
 			}
 		}
