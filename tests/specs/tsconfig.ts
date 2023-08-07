@@ -24,7 +24,7 @@ export default testSuite(({ describe }) => {
 						'not-strict.ts': `module.exports = ${detectStrictMode}`,
 						'different-config': {
 							'strict.ts': `module.exports = ${detectStrictMode}`,
-							'tsconfig.json': JSON.stringify({
+							'tsconfig.json': tsconfigJson({
 								compilerOptions: {
 									strict: true,
 								},
@@ -247,13 +247,13 @@ export default testSuite(({ describe }) => {
 						},
 					};
 					`,
-					'tsconfig.custom1.json': JSON.stringify({
+					'tsconfig.custom1.json': tsconfigJson({
 						compilerOptions: {
 							strict: true,
 							useDefineForClassFields: false,
 						},
 					}),
-					'tsconfig.custom2.json': JSON.stringify({
+					'tsconfig.custom2.json': tsconfigJson({
 						compilerOptions: {
 							strict: true,
 							useDefineForClassFields: true,
