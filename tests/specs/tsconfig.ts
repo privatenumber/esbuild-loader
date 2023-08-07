@@ -7,12 +7,7 @@ import { execa } from 'execa';
 const webpackCli = path.resolve('node_modules/webpack-cli/bin/cli.js');
 const esbuildLoader = path.resolve('dist/index.cjs');
 
-const detectStrictMode = `
-(function (isStrict) {
-    arguments[0] = false;
-    return isStrict;
-})(true)
-`;
+const detectStrictMode = '(function() { return !this; })()';
 
 export default testSuite(({ describe }) => {
 	describe('tsconfig', ({ describe }) => {
