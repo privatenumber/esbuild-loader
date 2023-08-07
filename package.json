@@ -48,7 +48,7 @@
 		"webpack": "^4.40.0 || ^5.0.0"
 	},
 	"dependencies": {
-		"esbuild": "^0.18.17",
+		"esbuild": "^0.18.19",
 		"get-tsconfig": "^4.6.2",
 		"loader-utils": "^2.0.4",
 		"webpack-sources": "^1.4.3"
@@ -63,12 +63,12 @@
 		"clean-pkg-json": "^1.2.0",
 		"css-loader": "^5.2.7",
 		"eslint": "^8.45.0",
-		"execa": "^7.1.1",
+		"execa": "^7.2.0",
 		"fs-fixture": "^1.2.0",
-		"manten": "^0.7.0",
-		"memfs": "^4.2.0",
+		"manten": "^1.0.0",
+		"memfs": "^4.2.1",
 		"mini-css-extract-plugin": "^1.6.2",
-		"pkgroll": "^1.10.0",
+		"pkgroll": "^1.11.0",
 		"tsx": "^3.12.7",
 		"typescript": "^5.1.6",
 		"webpack": "^4.44.2",
@@ -78,5 +78,10 @@
 	},
 	"eslintConfig": {
 		"extends": "@pvtnbr"
+	},
+	"pnpm": {
+		"overrides": {
+			"fsevents@1": "^2.0.0"
+		}
 	}
 }

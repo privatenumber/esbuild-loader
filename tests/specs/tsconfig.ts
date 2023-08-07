@@ -13,7 +13,7 @@ const detectStrictMode = '(function() { return !this; })()';
 export default testSuite(({ describe }) => {
 	describe('tsconfig', ({ describe }) => {
 		describe('loader', ({ test }) => {
-			test('finds tsconfig.json and applies strict mode', async () => {
+			test('finds tsconfig.json and applies strict mode', async ({ onTestFinish }) => {
 				const fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [
@@ -69,6 +69,8 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
+				onTestFinish(async () => await fixture.rm());
+
 				await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -77,11 +79,9 @@ export default testSuite(({ describe }) => {
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
 				).toStrictEqual([true, false, true]);
-
-				await fixture.rm();
 			});
 
-			test('handles resource with query', async () => {
+			test('handles resource with query', async ({ onTestFinish }) => {
 				const fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts?some-query")];`,
@@ -125,6 +125,8 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
+				onTestFinish(async () => await fixture.rm());
+
 				await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -133,11 +135,9 @@ export default testSuite(({ describe }) => {
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
 				).toStrictEqual([true, false]);
-
-				await fixture.rm();
 			});
 
-			test('accepts custom tsconfig.json path', async () => {
+			test('accepts custom tsconfig.json path', async ({ onTestFinish }) => {
 				const fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [${detectStrictMode}, require("./strict.ts")];`,
@@ -184,6 +184,8 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
+				onTestFinish(async () => await fixture.rm());
+
 				const { stdout } = await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -194,11 +196,9 @@ export default testSuite(({ describe }) => {
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
 				).toStrictEqual([true, true]);
-
-				await fixture.rm();
 			});
 
-			test('applies different tsconfig.json paths', async () => {
+			test('applies different tsconfig.json paths', async ({ onTestFinish }) => {
 				const fixture = await createFixture({
 					src: {
 						'index.ts': 'export class C { foo = 100; }',
@@ -259,6 +259,8 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
+				onTestFinish(async () => await fixture.rm());
+
 				await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -268,8 +270,6 @@ export default testSuite(({ describe }) => {
 
 				const code2 = await fixture.readFile('dist/index2.js', 'utf8');
 				expect(code2).toMatch('__publicField(this, "foo", 100);');
-
-				await fixture.rm();
 			});
 		});
 
@@ -278,7 +278,7 @@ export default testSuite(({ describe }) => {
 			 * Since the plugin applies on distribution assets, it should not apply
 			 * any tsconfig settings.
 			 */
-			test('should not detect tsconfig.json and apply strict mode', async () => {
+			test('should not detect tsconfig.json and apply strict mode', async ({ onTestFinish }) => {
 				const fixture = await createFixture({
 					src: {
 						'index.js': 'console.log(1)',
@@ -302,14 +302,14 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
+				onTestFinish(async () => await fixture.rm());
+
 				await execa(webpackCli, {
 					cwd: fixture.path,
 				});
 
 				const code = await fixture.readFile('dist/main.js', 'utf8');
 				expect(code).not.toMatch('use strict');
-
-				await fixture.rm();
 			});
 		});
 	});
