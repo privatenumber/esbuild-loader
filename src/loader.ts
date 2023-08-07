@@ -18,11 +18,11 @@ const foundTsconfigMap = new Map<string | undefined, TsConfigResult | null>();
 const fileMatcherMap = new Map<string | undefined, FileMatcher>();
 
 async function ESBuildLoader(
-	this: webpack.loader.LoaderContext,
+	this: webpack.loader.LoaderContext<LoaderOptions>,
 	source: string,
 ): Promise<void> {
 	const done = this.async()!;
-	const options: LoaderOptions = getOptions(this);
+	const options: LoaderOptions = typeof this.getOptions === 'function' ? this.getOptions() : getOptions(this);
 	const {
 		implementation,
 		tsconfig,

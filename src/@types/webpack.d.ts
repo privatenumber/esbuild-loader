@@ -1,4 +1,5 @@
 import 'webpack';
+import type { LoaderContext as Webpack5LoaderContext } from 'webpack5';
 
 declare module 'webpack' {
 
@@ -10,6 +11,12 @@ declare module 'webpack' {
 				source: Source,
 				assetInfo?: AssetInfo,
 			): void;
+		}
+	}
+
+	namespace loader {
+		interface LoaderContext <T> {
+			getOptions: Webpack5LoaderContext<T>['getOptions'];
 		}
 	}
 
