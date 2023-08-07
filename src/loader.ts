@@ -9,13 +9,8 @@ import {
 	getTsconfig,
 	parseTsconfig,
 	createFilesMatcher,
-	type TsConfigResult,
-	type FileMatcher,
 } from 'get-tsconfig';
 import type { LoaderOptions } from './types.js';
-
-const foundTsconfigMap = new Map<string | undefined, TsConfigResult | null>();
-const fileMatcherMap = new Map<string | undefined, FileMatcher>();
 
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext<LoaderOptions>,
@@ -25,7 +20,7 @@ async function ESBuildLoader(
 	const options: LoaderOptions = typeof this.getOptions === 'function' ? this.getOptions() : getOptions(this);
 	const {
 		implementation,
-		tsconfig,
+		tsconfig: tsconfigPath,
 		...esbuildTransformOptions
 	} = options;
 
@@ -49,34 +44,38 @@ async function ESBuildLoader(
 	};
 
 	if (!('tsconfigRaw' in transformOptions)) {
-		let fileMatcher = fileMatcherMap.get(tsconfig);
-		if (!fileMatcher) {
-			const tsconfigPath = tsconfig && path.resolve(tsconfig);
-			let foundTsconfig = foundTsconfigMap.get(tsconfig);
-			if (!foundTsconfig) {
-				foundTsconfig = (
-					tsconfigPath
-						? {
-							config: parseTsconfig(tsconfigPath),
-							path: tsconfigPath,
-						}
-						: getTsconfig()
+		const { resourcePath } = this;
+		/**
+		 * If a tsconfig.json path is specified, force apply it
+		 * Same way a provided tsconfigRaw is applied regardless
+		 * of whether it actually matches
+		 *
+		 * However in this case, we also warn if it doesn't match
+		 */
+		if (tsconfigPath) {
+			const tsconfigFullPath = path.resolve(tsconfigPath);
+			const tsconfig = {
+				config: parseTsconfig(tsconfigFullPath),
+				path: tsconfigFullPath,
+			};
+
+			const filesMatcher = createFilesMatcher(tsconfig);
+			const matches = filesMatcher(resourcePath);
+
+			if (!matches) {
+				this.emitWarning(
+					new Error(`[esbuild-loader] The specified tsconfig at "${tsconfigFullPath}" was applied to the file "${resourcePath}" but does not match its "include" patterns`),
 				);
 			}
-			if (foundTsconfig) {
-				foundTsconfigMap.set(tsconfig, foundTsconfig);
-				fileMatcher = createFilesMatcher(foundTsconfig);
-				if (fileMatcher) {
-					fileMatcherMap.set(tsconfig, fileMatcher);
-				}
-			}
-		}
 
-		if (fileMatcher) {
-			transformOptions.tsconfigRaw = fileMatcher(
-				// Doesn't include query
-				this.resourcePath,
-			) as TransformOptions['tsconfigRaw'];
+			transformOptions.tsconfigRaw = tsconfig.config as TransformOptions['tsconfigRaw'];
+		} else {
+			// Detect tsconfig file
+			const foundTsconfig = getTsconfig(resourcePath);
+			if (foundTsconfig) {
+				const fileMatcher = createFilesMatcher(foundTsconfig);
+				transformOptions.tsconfigRaw = fileMatcher(resourcePath) as TransformOptions['tsconfigRaw'];
+			}
 		}
 	}
 

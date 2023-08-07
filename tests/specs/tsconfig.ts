@@ -7,12 +7,7 @@ import { execa } from 'execa';
 const webpackCli = path.resolve('node_modules/webpack-cli/bin/cli.js');
 const esbuildLoader = path.resolve('dist/index.cjs');
 
-const detectStrictMode = `
-(function (isStrict) {
-    arguments[0] = false;
-    return isStrict;
-})(true)
-`;
+const detectStrictMode = '(function() { return !this; })()';
 
 export default testSuite(({ describe }) => {
 	describe('tsconfig', ({ describe }) => {
@@ -20,8 +15,20 @@ export default testSuite(({ describe }) => {
 			test('finds tsconfig.json and applies strict mode', async () => {
 				const fixture = await createFixture({
 					src: {
-						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts")];`,
+						'index.ts': `module.exports = [
+							${detectStrictMode},
+							require("./not-strict.ts"),
+							require("./different-config/strict.ts"),
+						];`,
 						'not-strict.ts': `module.exports = ${detectStrictMode}`,
+						'different-config': {
+							'strict.ts': `module.exports = ${detectStrictMode}`,
+							'tsconfig.json': JSON.stringify({
+								compilerOptions: {
+									strict: true,
+								},
+							}),
+						},
 					},
 					'webpack.config.js': `
 					module.exports = {
@@ -68,7 +75,7 @@ export default testSuite(({ describe }) => {
 				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
-				).toStrictEqual([true, false]);
+				).toStrictEqual([true, false, true]);
 
 				await fixture.rm();
 			});
@@ -176,19 +183,21 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
-				await execa(webpackCli, {
+				const { stdout } = await execa(webpackCli, {
 					cwd: fixture.path,
 				});
+
+				expect(stdout).toMatch('does not match its "include" patterns');
 
 				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
-				).toStrictEqual([false, true]);
+				).toStrictEqual([true, true]);
 
 				await fixture.rm();
 			});
 
-			test('accepts multiple custom tsconfig.json paths', async () => {
+			test('applies different tsconfig.json paths', async () => {
 				const fixture = await createFixture({
 					src: {
 						'index.ts': 'export class C { foo = 100; }',
