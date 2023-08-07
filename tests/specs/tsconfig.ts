@@ -3,16 +3,12 @@ import { createRequire } from 'node:module';
 import { testSuite, expect } from 'manten';
 import { createFixture } from 'fs-fixture';
 import { execa } from 'execa';
+import { tsconfigJson } from '../utils.js';
 
 const webpackCli = path.resolve('node_modules/webpack-cli/bin/cli.js');
 const esbuildLoader = path.resolve('dist/index.cjs');
 
-const detectStrictMode = `
-(function (isStrict) {
-    arguments[0] = false;
-    return isStrict;
-})(true)
-`;
+const detectStrictMode = '(function() { return !this; })()';
 
 export default testSuite(({ describe }) => {
 	describe('tsconfig', ({ describe }) => {
@@ -51,7 +47,7 @@ export default testSuite(({ describe }) => {
 						},
 					};
 					`,
-					'tsconfig.json': JSON.stringify({
+					'tsconfig.json': tsconfigJson({
 						compilerOptions: {
 							strict: true,
 						},
@@ -107,7 +103,7 @@ export default testSuite(({ describe }) => {
 						},
 					};
 					`,
-					'tsconfig.json': JSON.stringify({
+					'tsconfig.json': tsconfigJson({
 						compilerOptions: {
 							strict: true,
 						},
@@ -166,7 +162,7 @@ export default testSuite(({ describe }) => {
 						},
 					};
 					`,
-					'tsconfig.custom.json': JSON.stringify({
+					'tsconfig.custom.json': tsconfigJson({
 						compilerOptions: {
 							strict: true,
 						},
@@ -211,7 +207,7 @@ export default testSuite(({ describe }) => {
 						entry: './src/index.js',
 					};
 					`,
-					'tsconfig.json': JSON.stringify({
+					'tsconfig.json': tsconfigJson({
 						compilerOptions: {
 							strict: true,
 						},

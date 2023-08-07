@@ -2,6 +2,7 @@ import path from 'path';
 import type webpack4 from 'webpack';
 import type webpack5 from 'webpack5';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import type { TsConfigJson } from 'get-tsconfig';
 import { EsbuildPlugin, type EsbuildPluginOptions } from '#esbuild-loader';
 
 const esbuildLoaderPath = path.resolve('./dist/index.cjs');
@@ -74,3 +75,7 @@ export const configureMiniCssExtractPlugin = (
 		new MiniCssExtractPlugin(),
 	);
 };
+
+export const tsconfigJson = (
+	tsconfigObject: TsConfigJson,
+) => JSON.stringify(tsconfigObject);
