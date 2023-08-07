@@ -249,13 +249,11 @@ export default testSuite(({ describe }) => {
 					`,
 					'tsconfig.custom1.json': tsconfigJson({
 						compilerOptions: {
-							strict: true,
 							useDefineForClassFields: false,
 						},
 					}),
 					'tsconfig.custom2.json': tsconfigJson({
 						compilerOptions: {
-							strict: true,
 							useDefineForClassFields: true,
 						},
 					}),
@@ -265,11 +263,11 @@ export default testSuite(({ describe }) => {
 					cwd: fixture.path,
 				});
 
-				let code = await fixture.readFile('dist/index1.js', 'utf8');
-				expect(code).toMatch('this.foo = 100;');
+				const code1 = await fixture.readFile('dist/index1.js', 'utf8');
+				expect(code1).toMatch('this.foo = 100;');
 
-				code = await fixture.readFile('dist/index2.js', 'utf8');
-				expect(code).not.toMatch('this.foo = 100;');
+				const code2 = await fixture.readFile('dist/index2.js', 'utf8');
+				expect(code2).toMatch('__publicField(this, "foo", 100);');
 
 				await fixture.rm();
 			});
