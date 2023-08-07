@@ -5,7 +5,7 @@ import {
 } from 'webpack-sources';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
-import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
+import ModuleFilenameHelpers from 'webpack/lib/ModuleFilenameHelpers.js';
 import { version } from '../package.json';
 import type { EsbuildPluginOptions } from './types.js';
 
@@ -47,7 +47,7 @@ const transformAssets = async (
 			isJsFile.test(asset.name)
 			|| (minifyCss && isCssFile.test(asset.name))
 		)
-		&& matchObject(
+		&& ModuleFilenameHelpers.matchObject(
 			{ include, exclude },
 			asset.name,
 		)
@@ -129,17 +129,7 @@ export default function EsbuildPlugin(
 
 	const transform = implementation?.transform ?? defaultEsbuildTransform;
 
-	const hasGranularMinificationConfig = (
-		'minifyIdentifiers' in options
-		|| 'minifySyntax' in options
-		|| 'minifyWhitespace' in options
-	);
-
-	if (!hasGranularMinificationConfig) {
-		options.minify = true;
-	}
-
-	return {
+	const pluginInstance = {
 		apply(compiler: Compiler) {
 			if (!('format' in options)) {
 				const { target } = compiler.options;
@@ -160,6 +150,23 @@ export default function EsbuildPlugin(
 				if (isWebTarget && !wontGenerateHelpers) {
 					options.format = 'iife';
 				}
+			}
+
+			/**
+			 * Enable minification by default if used in the minimizer array
+			 * unless further specified in the options
+			 */
+			const usedAsMinimizer = compiler.options.optimization?.minimizer?.includes?.(pluginInstance);
+			if (
+				usedAsMinimizer
+				&& !(
+					'minify' in options
+					|| 'minifyWhitespace' in options
+					|| 'minifyIdentifiers' in options
+					|| 'minifySyntax' in options
+				)
+			) {
+				options.minify = compiler.options.optimization?.minimize;
 			}
 
 			compiler.hooks.compilation.tap(pluginName, (compilation) => {
@@ -230,4 +237,6 @@ export default function EsbuildPlugin(
 			});
 		},
 	};
+
+	return pluginInstance;
 }

@@ -9,7 +9,7 @@ import {
 	configureMiniCssExtractPlugin,
 } from '../utils.js';
 import * as fixtures from '../fixtures.js';
-import type { EsbuildPluginOptions } from '#esbuild-loader';
+import { EsbuildPlugin, type EsbuildPluginOptions } from '#esbuild-loader';
 
 const assertMinified = (code: string) => {
 	expect(code).not.toMatch(/\s{2,}/);
@@ -23,7 +23,72 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 	const webpackIs4 = isWebpack4(webpack);
 
 	describe('Plugin', ({ test, describe }) => {
-		describe('Minify JS', ({ test }) => {
+		describe('Minify JS', ({ test, describe }) => {
+			describe('should not minify by default', ({ test }) => {
+				test('minimizer', async () => {
+					const built = await build(
+						fixtures.minification,
+						(config) => {
+							config.optimization = {
+								minimize: false,
+								minimizer: [
+									new EsbuildPlugin(),
+								],
+							};
+						},
+						webpack,
+					);
+
+					expect(built.stats.hasWarnings()).toBe(false);
+					expect(built.stats.hasErrors()).toBe(false);
+
+					const exportedFunction = built.require('/dist/');
+					expect(exportedFunction('hello world')).toBe('hello world');
+					expect(exportedFunction.toString()).toMatch(/\s{2,}/);
+				});
+
+				test('plugin', async () => {
+					const built = await build(
+						fixtures.minification,
+						(config) => {
+							config.plugins?.push(new EsbuildPlugin());
+						},
+						webpack,
+					);
+
+					expect(built.stats.hasWarnings()).toBe(false);
+					expect(built.stats.hasErrors()).toBe(false);
+
+					const exportedFunction = built.require('/dist/');
+					expect(exportedFunction('hello world')).toBe('hello world');
+					expect(exportedFunction.toString()).toMatch(/\s{2,}/);
+				});
+
+				test('plugin with minimize enabled', async () => {
+					const built = await build(
+						fixtures.minification,
+						(config) => {
+							config.optimization = {
+								minimize: true,
+
+								// Remove Terser
+								minimizer: [],
+							};
+
+							config.plugins?.push(new EsbuildPlugin());
+						},
+						webpack,
+					);
+
+					expect(built.stats.hasWarnings()).toBe(false);
+					expect(built.stats.hasErrors()).toBe(false);
+
+					const exportedFunction = built.require('/dist/');
+					expect(exportedFunction('hello world')).toBe('hello world');
+					expect(exportedFunction.toString()).toMatch(/\s{2,}/);
+				});
+			});
+
 			test('minify', async () => {
 				const built = await build(
 					fixtures.minification,
