@@ -78,5 +78,10 @@
 	},
 	"eslintConfig": {
 		"extends": "@pvtnbr"
+	},
+	"pnpm": {
+		"overrides": {
+			"fsevents@1": "^2.0.0"
+		}
 	}
 }
