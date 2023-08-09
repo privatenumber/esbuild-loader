@@ -13,8 +13,17 @@ Curious how much faster your build will be? See [what users are saying](https://
 >
 > If you're interested in supercharging your Node.js runtime with esbuild, take a look at our new project [`tsx`](https://github.com/esbuild-kit/tsx). It's an esbuild-enhanced Node.js runtime that can run TypeScript instantly!
 
+<br>
 
-<sub>Found this package useful? Show your support & appreciation by [sponsoring](https://github.com/sponsors/privatenumber)! ❤️</sub>
+<p align="center">
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum">
+		<picture>
+			<source width="830" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum&image=dark">
+			<source width="830" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum&image">
+			<img width="830" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+</p>
 
 ## 🚀 Install
 
@@ -343,6 +352,18 @@ If you'd like to see working Webpack builds that use esbuild-loader for basic JS
 
 [→ esbuild-loader examples](https://github.com/esbuild-kit/esbuild-loader-examples)
 
+<br>
+
+<p align="center">
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold">
+		<picture>
+			<source width="830" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold&image=dark">
+			<source width="830" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold&image">
+			<img width="830" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+</p>
+
 ## ⚙️ Options
 
 ### Loader
@@ -531,6 +552,25 @@ Webpack-integrated Mocha test-runner with Webpack 5 support.
 Localize/i18nalize your Webpack build. Optimized for multiple locales!
 
 ## Sponsors
+
+<p align="center">
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1">
+		<picture>
+			<source width="410" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1&image=dark">
+			<source width="410" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1&image">
+			<img width="410" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2">
+		<picture>
+			<source width="410" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2&image=dark">
+			<source width="410" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2&image">
+			<img width="410" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+</p>
+
+
 <p align="center">
 	<a href="https://github.com/sponsors/privatenumber">
 		<img src="https://cdn.jsdelivr.net/gh/privatenumber/sponsors/sponsorkit/sponsors.svg">
