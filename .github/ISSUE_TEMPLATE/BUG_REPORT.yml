@@ -6,6 +6,7 @@ body:
     attributes:
       value: |
         Thank you for taking the time to file this bug report.
+
   - type: textarea
     attributes:
       label: Bug description
@@ -22,6 +23,7 @@ body:
         -->
     validations:
       required: true
+
   - type: input
     attributes:
       label: Minimal reproduction link
@@ -42,6 +44,7 @@ body:
       placeholder: Minimal reproduction URL
     validations:
       required: true
+
   - type: textarea
     attributes:
       label: Environment
@@ -66,9 +69,15 @@ body:
       render: shell
     validations:
       required: true
+
   - type: checkboxes
     attributes:
       label: Can you contribute a fix?
       description: We would love it if you can open a pull request to fix this bug!
       options:
         - label: I’m interested in opening a pull request for this issue.
+
+  - type: markdown
+    attributes:
+      value: |
+        Want to escalate this issue and get priority support? Consider becoming a [sponsor](https://github.com/sponsors/privatenumber)! Your sponsorship helps ensure swift bug resolution and ongoing project maintenance. Thank you for your support! 🙏

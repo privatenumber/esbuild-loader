@@ -6,13 +6,16 @@ body:
     attributes:
       value: |
         Thank you for taking the time to file this feature request.
+
   - type: textarea
     attributes:
       label: Feature request
       description: A description of the feature you would like.
     validations:
       required: true
+
   - type: textarea
+
     attributes:
       label: Why?
       description: |
@@ -25,6 +28,7 @@ body:
         -->
     validations:
       required: true
+
   - type: textarea
     attributes:
       label: Alternatives
@@ -36,8 +40,14 @@ body:
 
           Do you have a workaround?
         -->
+
   - type: textarea
     attributes:
       label: Additional context
       description: |
         Anything else to share? Screenshots? Links?
+
+  - type: markdown
+    attributes:
+      value: |
+        Want to escalate this issue and get priority support? Consider becoming a [sponsor](https://github.com/sponsors/privatenumber)! Your sponsorship helps ensure swift bug resolution and ongoing project maintenance. Thank you for your support! 🙏
