@@ -26,23 +26,6 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    attributes:
-      label: Bug description
-      description: A clear and concise description of the bug.
-      placeholder: |
-        <!--
-          What did you do? (Provide reproduction code in next section)
-
-          What did you expect to happen?
-
-          What happened instead?
-
-          Do you have an error stack-trace?
-        -->
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
