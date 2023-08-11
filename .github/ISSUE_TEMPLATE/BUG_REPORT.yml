@@ -1,11 +1,30 @@
-name: Bug report
-description: File a bug report
+name: 🐛 Bug report
+description: Run into a bug? File a report and get the help you need!
 labels: [bug, pending triage]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to file this bug report.
+        ## 👀 Tell us about the bug
+        A clear and concise description of what the bug is. If applicable, add screenshots to help explain your problem.
+
+  - type: textarea
+    attributes:
+      label: Problem
+      placeholder: |
+        What did you do and what happened?
+
+        Do you have an error stack trace?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      placeholder: |
+        What did you expect to happen?
+    validations:
+      required: true
 
   - type: textarea
     attributes:
@@ -24,63 +43,95 @@ body:
     validations:
       required: true
 
-  - type: input
+  - type: markdown
     attributes:
-      label: Minimal reproduction link
-      description: |
-        > ⚠️ A minimal reproduction is required to demonstrate the bug, and for us to debug it. If not provided, the issue will be closed.
+      value: |
+        ## 📋 Minimal reproduction
+        > ⚠️ If a minimal reproduction is not provided, **the issue will be closed.**
 
-        Provide a link to a minimal reproduction repository so we can `git clone`, run `npm start`, and reproduce the bug right away.
+        The minimal reproduction proves a bug exists in this project, streamlines the conversation, and allows others to debug it for you right away.
+
+        #### Requirements
+        1. Create the reproduction on [StackBlitz](https://stackblitz.com) or a new GitHub repository so it can be opened in the browser.
+        2. Keep the reproduction small.
+          Delete _everything_ you don't need. Narrowing the scope is the first step of debugging so doing this will save us work.
+          The _smaller_ the reproduction, the _faster_ we can debug and resolve your issue.
+
+        3. No more than 10 files.
+          Delete irrelevant files (e.g. `LICENSE`, `.npmrc`, `.github`).
+        4. Set the `start` script in `package.json` to the command that demonstrates the bug.
 
         Starter template: [fork this template on StackBlitz](https://stackblitz.com/edit/node-guv65j?file=webpack.config.js&view=editor)
 
-        #### Requirements:
-        - No more than 10 files
-          Delete irrelevant files (e.g. `LICENSE`, `.npmrc`, `.github`). This is the first step of debugging so doing this will save us work.
-          👉 **Tip:** The _smaller_ the reproduction, the _faster_ we can debug and resolve your issue
-
-        - Set the `start` script in `package.json` to the command that shows the bug
-
-      placeholder: Minimal reproduction URL
+  - type: input
+    attributes:
+      label: URL
+      placeholder: https://stackblitz.com/edit/...
     validations:
       required: true
-
-  - type: textarea
-    attributes:
-      label: Environment
-      description: |
-        Run and paste the output of:
-        ```
-        npx envinfo --system --npmPackages webpack,esbuild-loader --binaries
-        ```
-        
-        This information is used to for reproduction and debugging.
-      placeholder: |
-        System:
-          OS:
-          CPU:
-          Shell:
-        Binaries:
-          Node:
-          npm:
-        npmPackages:
-          webpack:
-          esbuild-loader:
-      render: shell
-    validations:
-      required: true
-
-  - type: checkboxes
-    attributes:
-      label: Can you contribute a fix?
-      description: We would love it if you can open a pull request to fix this bug!
-      options:
-        - label: I’m interested in opening a pull request for this issue.
 
   - type: markdown
     attributes:
       value: |
-        #### Seeking priority support?
-        Escalate this issue by becoming a [sponsor](https://github.com/sponsors/privatenumber)! As a sponsor, your concern will receive prompt attention, ensuring faster and more efficient resolution.
+        > **🙋 Experiencing a challenging bug and need expert assistance?**
+        >
+        > Get personalized help through my [_Priority Support_ service](https://github.com/sponsors/privatenumber). From minimal reproduction creation to debugging, I'm here to assist you!
 
-        [👉 Get priority support now!](https://github.com/sponsors/privatenumber)
+  - type: markdown
+    attributes:
+      value: "## 🌍 Environment"
+
+  - type: input
+    attributes:
+      label: Version
+      placeholder: v0.0.0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Node.js version
+      placeholder: v0.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: package-manager
+    attributes:
+      label: Package manager
+      options:
+        - npm
+        - yarn
+        - pnpm
+        - bun
+        - N/A
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## 🛠️ Can you contribute a fix?"
+
+  - type: checkboxes
+    attributes:
+      label: It would be amazing if you can contribute to the project!
+      options:
+        - label: I plan to open a pull request for this issue.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Need immediate attention?
+        Escalate this issue by becoming a [_Priority Patron_ sponsor](https://github.com/sponsors/privatenumber)! As a _Priority Patron_, your concern will receive prompt attention, ensuring faster and more efficient resolution.
+
+        [👉 Become a _Priority Patron_ now!](https://github.com/sponsors/privatenumber)
