@@ -50,4 +50,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Want to escalate this issue and get priority support? Consider becoming a [sponsor](https://github.com/sponsors/privatenumber)! Your sponsorship helps ensure swift bug resolution and ongoing project maintenance. Thank you for your support! 🙏
+        #### Seeking priority support?
+        Escalate this issue by becoming a [sponsor](https://github.com/sponsors/privatenumber)! As a sponsor, your concern will receive prompt attention, ensuring faster and more efficient resolution.
+
+        [👉 Get priority support now!](https://github.com/sponsors/privatenumber)
