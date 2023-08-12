@@ -63,8 +63,7 @@ body:
         5. Upload the reproduction to [StackBlitz](https://stackblitz.com), or a new GitHub repository, so it can be opened in the browser.
         </details>
 
-        Starter template: [fork this template on StackBlitz](https://stackblitz.com/edit/node-guv65j?file=webpack.config.js&view=
-editor)
+        Starter template: [fork this template on StackBlitz](https://stackblitz.com/edit/node-guv65j?file=webpack.config.js&view=editor)
 
         The _smaller_ the reproduction, the _faster_ others can help you.
 
