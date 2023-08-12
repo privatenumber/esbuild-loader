@@ -511,6 +511,12 @@ Type: `{ transform: Function }`
 
 Use it to pass in a [different esbuild version](#bring-your-own-esbuild-advanced).
 
+## 💡 Support
+
+For personalized assistance, take advantage of my [_Priority Support_ service](https://github.com/sponsors/privatenumber).
+
+Whether it's about Webpack configuration, esbuild, or TypeScript, I'm here to guide you every step of the way!
+
 ## 🙋‍♀️ FAQ
 
 ### Is it possible to use esbuild plugins?
@@ -540,7 +546,7 @@ Running esbuild as a standalone bundler vs esbuild-loader + Webpack are complete
 Using any JS bundler introduces a bottleneck that makes reaching those speeds impossible. However, esbuild-loader can still speed up your build by removing the bottlenecks created by [`babel-loader`](https://twitter.com/wSokra/status/1316274855042584577?s=20), `ts-loader`, Terser, etc.
 
 
-## 💞 Related
+## 💞 Related projects
 
 #### [tsx](https://github.com/esbuild-kit/tsx)
 Node.js enhanced with esbuild to run TypeScript and ESM.
