@@ -194,6 +194,7 @@ In `webpack.config.js`:
 +     optimization: {
 +         minimizer: [
 +             new EsbuildPlugin({
++                 minify: true
 +                 target: 'es2015'  // Syntax to transpile to (see options below for possible values)
 +             })
 +         ]
