@@ -73,6 +73,7 @@
 		"typescript": "^5.1.6",
 		"webpack": "^4.44.2",
 		"webpack-cli": "^4.10.0",
+		"webpack-merge": "^5.9.0",
 		"webpack-test-utils": "^2.1.0",
 		"webpack5": "npm:webpack@^5.0.0"
 	},

@@ -112,131 +112,135 @@ const transformAssets = async (
 	}));
 };
 
-export default function EsbuildPlugin(
-	{
-		implementation,
-		...options
-	}: EsbuildPluginOptions = {},
-) {
-	if (
-		implementation
-		&& typeof implementation.transform !== 'function'
+export default class EsbuildPlugin {
+	options: EsbuildPluginOptions;
+
+	constructor(
+		options: EsbuildPluginOptions = {},
 	) {
-		throw new TypeError(
-			`[${pluginName}] implementation.transform must be an esbuild transform function. Received ${typeof implementation.transform}`,
-		);
+		const { implementation } = options;
+		if (
+			implementation
+			&& typeof implementation.transform !== 'function'
+		) {
+			throw new TypeError(
+				`[${pluginName}] implementation.transform must be an esbuild transform function. Received ${typeof implementation.transform}`,
+			);
+		}
+
+		this.options = options;
 	}
 
-	const transform = implementation?.transform ?? defaultEsbuildTransform;
+	apply(compiler: Compiler) {
+		const {
+			implementation,
+			...options
+		} = this.options;
+		const transform = implementation?.transform ?? defaultEsbuildTransform;
 
-	const pluginInstance = {
-		apply(compiler: Compiler) {
-			if (!('format' in options)) {
-				const { target } = compiler.options;
-				const isWebTarget = (
-					Array.isArray(target)
-						? target.includes('web')
-						: target === 'web'
-				);
-				const wontGenerateHelpers = !options.target || (
-					Array.isArray(options.target)
-						? (
-							options.target.length === 1
-							&& options.target[0] === 'esnext'
-						)
-						: options.target === 'esnext'
-				);
+		if (!('format' in options)) {
+			const { target } = compiler.options;
+			const isWebTarget = (
+				Array.isArray(target)
+					? target.includes('web')
+					: target === 'web'
+			);
+			const wontGenerateHelpers = !options.target || (
+				Array.isArray(options.target)
+					? (
+						options.target.length === 1
+						&& options.target[0] === 'esnext'
+					)
+					: options.target === 'esnext'
+			);
 
-				if (isWebTarget && !wontGenerateHelpers) {
-					options.format = 'iife';
-				}
+			if (isWebTarget && !wontGenerateHelpers) {
+				options.format = 'iife';
 			}
+		}
+
+		/**
+		 * Enable minification by default if used in the minimizer array
+		 * unless further specified in the options
+		 */
+		const usedAsMinimizer = compiler.options.optimization?.minimizer?.includes?.(this);
+		if (
+			usedAsMinimizer
+			&& !(
+				'minify' in options
+				|| 'minifyWhitespace' in options
+				|| 'minifyIdentifiers' in options
+				|| 'minifySyntax' in options
+			)
+		) {
+			options.minify = compiler.options.optimization?.minimize;
+		}
+
+		compiler.hooks.compilation.tap(pluginName, (compilation) => {
+			const meta = JSON.stringify({
+				name: 'esbuild-loader',
+				version,
+				options,
+			});
+
+			compilation.hooks.chunkHash.tap(
+				pluginName,
+				(_, hash) => hash.update(meta),
+			);
 
 			/**
-			 * Enable minification by default if used in the minimizer array
-			 * unless further specified in the options
+			 * Check if sourcemaps are enabled
+			 * Webpack 4: https://github.com/webpack/webpack/blob/v4.46.0/lib/SourceMapDevToolModuleOptionsPlugin.js#L20
+			 * Webpack 5: https://github.com/webpack/webpack/blob/v5.75.0/lib/SourceMapDevToolModuleOptionsPlugin.js#LL27
 			 */
-			const usedAsMinimizer = compiler.options.optimization?.minimizer?.includes?.(pluginInstance);
-			if (
-				usedAsMinimizer
-				&& !(
-					'minify' in options
-					|| 'minifyWhitespace' in options
-					|| 'minifyIdentifiers' in options
-					|| 'minifySyntax' in options
-				)
-			) {
-				options.minify = compiler.options.optimization?.minimize;
-			}
+			let useSourceMap = false;
+			compilation.hooks.finishModules.tap(
+				pluginName,
+				(modules) => {
+					const firstModule = (
+						Array.isArray(modules)
+							? modules[0]
+							: (modules as Set<webpack5.Module>).values().next().value as webpack5.Module
+					);
+					useSourceMap = firstModule.useSourceMap;
+				},
+			);
 
-			compiler.hooks.compilation.tap(pluginName, (compilation) => {
-				const meta = JSON.stringify({
-					name: 'esbuild-loader',
-					version,
-					options,
-				});
-
-				compilation.hooks.chunkHash.tap(
-					pluginName,
-					(_, hash) => hash.update(meta),
-				);
-
-				/**
-				 * Check if sourcemaps are enabled
-				 * Webpack 4: https://github.com/webpack/webpack/blob/v4.46.0/lib/SourceMapDevToolModuleOptionsPlugin.js#L20
-				 * Webpack 5: https://github.com/webpack/webpack/blob/v5.75.0/lib/SourceMapDevToolModuleOptionsPlugin.js#LL27
-				 */
-				let useSourceMap = false;
-				compilation.hooks.finishModules.tap(
-					pluginName,
-					(modules) => {
-						const firstModule = (
-							Array.isArray(modules)
-								? modules[0]
-								: (modules as Set<webpack5.Module>).values().next().value as webpack5.Module
-						);
-						useSourceMap = firstModule.useSourceMap;
+			// Webpack 5
+			if ('processAssets' in compilation.hooks) {
+				compilation.hooks.processAssets.tapPromise(
+					{
+						name: pluginName,
+						// @ts-expect-error undefined on Function type
+						stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+						additionalAssets: true,
 					},
+					() => transformAssets(options, transform, compilation, useSourceMap),
 				);
 
-				// Webpack 5
-				if ('processAssets' in compilation.hooks) {
-					compilation.hooks.processAssets.tapPromise(
-						{
-							name: pluginName,
-							// @ts-expect-error undefined on Function type
-							stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
-							additionalAssets: true,
-						},
-						() => transformAssets(options, transform, compilation, useSourceMap),
-					);
-
-					compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter) => {
-						statsPrinter.hooks.print
-							.for('asset.info.minimized')
-							.tap(
-								pluginName,
-								(
-									minimized,
-									{ green, formatFlag },
-								// @ts-expect-error type incorrectly doesn't accept undefined
-								) => (
-									minimized
-										// @ts-expect-error type incorrectly doesn't accept undefined
-										? green(formatFlag('minimized'))
-										: undefined
-								),
-							);
-					});
-				} else {
-					compilation.hooks.optimizeChunkAssets.tapPromise(
-						pluginName,
-						() => transformAssets(options, transform, compilation, useSourceMap),
-					);
-				}
-			});
-		},
-	};
-
-	return pluginInstance;
+				compilation.hooks.statsPrinter.tap(pluginName, (statsPrinter) => {
+					statsPrinter.hooks.print
+						.for('asset.info.minimized')
+						.tap(
+							pluginName,
+							(
+								minimized,
+								{ green, formatFlag },
+							// @ts-expect-error type incorrectly doesn't accept undefined
+							) => (
+								minimized
+									// @ts-expect-error type incorrectly doesn't accept undefined
+									? green(formatFlag('minimized'))
+									: undefined
+							),
+						);
+				});
+			} else {
+				compilation.hooks.optimizeChunkAssets.tapPromise(
+					pluginName,
+					() => transformAssets(options, transform, compilation, useSourceMap),
+				);
+			}
+		});
+	}
 }

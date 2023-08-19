@@ -79,6 +79,9 @@ devDependencies:
   webpack-cli:
     specifier: ^4.10.0
     version: 4.10.0(webpack@4.46.0)
+  webpack-merge:
+    specifier: ^5.9.0
+    version: 5.9.0
   webpack-test-utils:
     specifier: ^2.1.0
     version: 2.1.0(webpack@4.46.0)
@@ -6761,11 +6764,11 @@ packages:
       interpret: 2.2.0
       rechoir: 0.7.1
       webpack: 4.46.0(webpack-cli@4.10.0)
-      webpack-merge: 5.8.0
+      webpack-merge: 5.9.0
     dev: true
 
-  /webpack-merge@5.8.0:
-    resolution: {integrity: sha512-/SaI7xY0831XwP6kzuwhKWVKDP9t1QY1h65lAFLbZqMPIuYcD9QAW4u9STIbU9kaJbPBB/geU/gLr1wDjOhQ+Q==}
+  /webpack-merge@5.9.0:
+    resolution: {integrity: sha512-6NbRQw4+Sy50vYNTw7EyOn41OZItPiXB8GNv3INSoe3PSFaHJEz3SHTrYVaRm2LilNGnFUzh0FAwqPEmU/CwDg==}
     engines: {node: '>=10.0.0'}
     dependencies:
       clone-deep: 4.0.1

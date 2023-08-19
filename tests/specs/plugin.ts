@@ -3,6 +3,7 @@ import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import * as esbuild from 'esbuild';
+import { merge } from 'webpack-merge';
 import {
 	isWebpack4,
 	configureEsbuildMinifyPlugin,
@@ -699,6 +700,25 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				expect(code.endsWith('})();\n')).toBe(true);
 				expect(countIife(code)).toBe(webpackIs4 ? 1 : 2);
 			});
+		});
+
+		test('supports webpack-merge', async () => {
+			const built = await build(
+				fixtures.minification,
+				(config) => {
+					configureEsbuildMinifyPlugin(config);
+					const clonedConfig = merge({}, config);
+					config.optimization = clonedConfig.optimization;
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const exportedFunction = built.require('/dist/');
+			expect(exportedFunction('hello world')).toBe('hello world');
+			assertMinified(exportedFunction.toString());
 		});
 	});
 });
