@@ -176,6 +176,24 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				expect(code).not.toMatch('return ');
 			});
 
+			test('minify with plugin', async () => {
+				const built = await build(
+					fixtures.minification,
+					(config) => {
+						configureEsbuildMinifyPlugin(config);
+						config.plugins?.push(new EsbuildPlugin());
+					},
+					webpack,
+				);
+
+				expect(built.stats.hasWarnings()).toBe(false);
+				expect(built.stats.hasErrors()).toBe(false);
+
+				const exportedFunction = built.require('/dist/');
+				expect(exportedFunction('hello world')).toBe('hello world');
+				assertMinified(exportedFunction.toString());
+			});
+
 			test('minify chunks & filter using include/exclude', async () => {
 				const built = await build({
 					'/src/index.js': `
