@@ -37,6 +37,13 @@ const transformAssets = async (
 		...transformOptions
 	} = options;
 
+	const minimized = (
+		transformOptions.minify
+		|| transformOptions.minifyWhitespace
+		|| transformOptions.minifyIdentifiers
+		|| transformOptions.minifySyntax
+	);
+
 	const assets = (compilation.getAssets() as Asset[]).filter(asset => (
 
 		// Filter out already minimized
@@ -106,7 +113,7 @@ const transformAssets = async (
 			) as any,
 			{
 				...asset.info,
-				minimized: true,
+				minimized,
 			},
 		);
 	}));
