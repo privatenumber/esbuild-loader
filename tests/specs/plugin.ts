@@ -176,7 +176,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				expect(code).not.toMatch('return ');
 			});
 
-			test('minify with plugin', async () => {
+			test('should minify when used alongside plugin', async () => {
 				const built = await build(
 					fixtures.minification,
 					(config) => {
