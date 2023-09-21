@@ -4,9 +4,9 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 
 [_esbuild_](https://github.com/evanw/esbuild) is a JavaScript bundler written in Go that supports blazing fast ESNext & TypeScript transpilation and [JS minification](https://github.com/privatenumber/minification-benchmarks/).
 
-[_esbuild-loader_](https://github.com/esbuild-kit/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. `babel-loader`/`ts-loader`) and minification (eg. Terser)!
+[_esbuild-loader_](https://github.com/privatenumber/esbuild-loader) lets you harness the speed of esbuild in your Webpack build by offering faster alternatives for transpilation (eg. `babel-loader`/`ts-loader`) and minification (eg. Terser)!
 
-Curious how much faster your build will be? See [what users are saying](https://github.com/esbuild-kit/esbuild-loader/discussions/138).
+Curious how much faster your build will be? See [what users are saying](https://github.com/privatenumber/esbuild-loader/discussions/138).
 
 
 > **💡 Protip: Enhance your Node.js DX with `tsx`**
@@ -76,7 +76,7 @@ In this setup, esbuild will automatically determine how to handle each file base
 - `.tsx` as TSX
 
 
-If you want to force a specific handler on different file extensions (e.g. to allow JSX in `.js` files), you can use the [`loader`](https://github.com/esbuild-kit/esbuild-loader/#loader) option:
+If you want to force a specific handler on different file extensions (e.g. to allow JSX in `.js` files), you can use the [`loader`](https://github.com/privatenumber/esbuild-loader/#loader) option:
 
 ```diff
  {
@@ -350,7 +350,7 @@ _The `implementation` option will be removed once esbuild reaches a stable relea
 ## Setup examples
 If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, Next.js, etc. check out the examples repo:
 
-[→ esbuild-loader examples](https://github.com/esbuild-kit/esbuild-loader-examples)
+[→ esbuild-loader examples](https://github.com/privatenumber/esbuild-loader-examples)
 
 <br>
 
@@ -531,7 +531,7 @@ No. The `inject` option is only available in the build API. And esbuild-loader u
 
 However, you can use the Webpack equivalent [ProvidePlugin](https://webpack.js.org/plugins/provide-plugin/) instead.
 
-If you're using React, check out [this example](https://github.com/esbuild-kit/esbuild-loader-examples/blob/52ca91b8cb2080de5fc63cc6e9371abfefe1f823/examples/react/webpack.config.js#L39-L41) on how to auto-import React in your components.
+If you're using React, check out [this example](https://github.com/privatenumber/esbuild-loader-examples/blob/52ca91b8cb2080de5fc63cc6e9371abfefe1f823/examples/react/webpack.config.js#L39-L41) on how to auto-import React in your components.
 
 ### Is it possible to use Babel plugins?
 No. If you really need them, consider porting them over to a Webpack loader.

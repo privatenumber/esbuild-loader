@@ -10,8 +10,8 @@
 		"esnext"
 	],
 	"license": "MIT",
-	"repository": "esbuild-kit/esbuild-loader",
-	"funding": "https://github.com/esbuild-kit/esbuild-loader?sponsor=1",
+	"repository": "privatenumber/esbuild-loader",
+	"funding": "https://github.com/privatenumber/esbuild-loader?sponsor=1",
 	"author": {
 		"name": "Hiroki Osame",
 		"email": "hiroki.osame@gmail.com"
