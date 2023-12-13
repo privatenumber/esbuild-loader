@@ -54,7 +54,7 @@
 		"webpack-sources": "^1.4.3"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.34.0",
+		"@pvtnbr/eslint-config": "github:privatenumber/eslint-config#npm/flat-config",
 		"@types/loader-utils": "^2.0.3",
 		"@types/mini-css-extract-plugin": "2.4.0",
 		"@types/node": "^18.13.0",
@@ -62,7 +62,7 @@
 		"@types/webpack-sources": "^0.1.9",
 		"clean-pkg-json": "^1.2.0",
 		"css-loader": "^5.2.7",
-		"eslint": "^8.45.0",
+		"eslint": "^8.55.0",
 		"execa": "^7.2.0",
 		"fs-fixture": "^1.2.0",
 		"manten": "^1.0.0",
@@ -76,9 +76,6 @@
 		"webpack-merge": "^5.9.0",
 		"webpack-test-utils": "^2.1.0",
 		"webpack5": "npm:webpack@^5.0.0"
-	},
-	"eslintConfig": {
-		"extends": "@pvtnbr"
 	},
 	"pnpm": {
 		"overrides": {
