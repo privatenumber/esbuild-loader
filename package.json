@@ -16,10 +16,10 @@
 		"name": "Hiroki Osame",
 		"email": "hiroki.osame@gmail.com"
 	},
-	"type": "module",
 	"files": [
 		"dist"
 	],
+	"type": "module",
 	"main": "./dist/index.cjs",
 	"types": "./dist/index.d.ts",
 	"exports": {
