@@ -16,10 +16,10 @@
 		"name": "Hiroki Osame",
 		"email": "hiroki.osame@gmail.com"
 	},
+	"type": "module",
 	"files": [
 		"dist"
 	],
-	"type": "module",
 	"main": "./dist/index.cjs",
 	"types": "./dist/index.d.ts",
 	"exports": {
@@ -40,7 +40,7 @@
 		"build": "pkgroll --target=node16.19.0",
 		"test": "tsx tests",
 		"dev": "tsx watch --conditions=development tests",
-		"lint": "lint --node --cache .",
+		"lint": "eslint --cache .",
 		"type-check": "tsc --noEmit",
 		"prepack": "pnpm build && clean-pkg-json"
 	},
@@ -62,20 +62,23 @@
 		"@types/webpack-sources": "^0.1.9",
 		"clean-pkg-json": "^1.2.0",
 		"css-loader": "^5.2.7",
-		"eslint": "^8.55.0",
-		"execa": "^7.2.0",
+		"eslint": "^8.56.0",
+		"execa": "^8.0.1",
 		"fs-fixture": "^1.2.0",
-		"manten": "^1.0.0",
-		"memfs": "^4.2.1",
+		"manten": "^1.2.0",
+		"memfs": "^4.6.0",
 		"mini-css-extract-plugin": "^1.6.2",
 		"pkgroll": "^1.11.0",
-		"tsx": "^3.12.7",
-		"typescript": "^5.1.6",
+		"tsx": "^4.7.0",
+		"typescript": "^5.3.3",
 		"webpack": "^4.44.2",
 		"webpack-cli": "^4.10.0",
 		"webpack-merge": "^5.9.0",
 		"webpack-test-utils": "^2.1.0",
 		"webpack5": "npm:webpack@^5.0.0"
+	},
+	"eslintConfig": {
+		"extends": "@pvtnbr"
 	},
 	"pnpm": {
 		"overrides": {
