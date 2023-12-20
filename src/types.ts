@@ -11,6 +11,7 @@ type Except<ObjectType, Properties> = {
 };
 
 export type LoaderOptions = Except<TransformOptions, 'sourcemap' | 'sourcefile'> & {
+
 	/** Pass a custom esbuild implementation */
 	implementation?: Implementation;
 
@@ -24,6 +25,7 @@ export type EsbuildPluginOptions = Except<TransformOptions, 'sourcemap' | 'sourc
 	include?: Filter | Filter[];
 	exclude?: Filter | Filter[];
 	css?: boolean;
+
 	/** Pass a custom esbuild implementation */
 	implementation?: Implementation;
 };

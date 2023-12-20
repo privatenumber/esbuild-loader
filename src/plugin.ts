@@ -55,7 +55,10 @@ const transformAssets = async (
 			|| (minifyCss && isCssFile.test(asset.name))
 		)
 		&& ModuleFilenameHelpers.matchObject(
-			{ include, exclude },
+			{
+				include,
+				exclude,
+			},
 			asset.name,
 		)
 	));
@@ -218,6 +221,7 @@ export default class EsbuildPlugin {
 				compilation.hooks.processAssets.tapPromise(
 					{
 						name: pluginName,
+
 						// @ts-expect-error undefined on Function type
 						stage: compilation.constructor.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
 						additionalAssets: true,
@@ -233,9 +237,11 @@ export default class EsbuildPlugin {
 							(
 								minimized,
 								{ green, formatFlag },
+
 							// @ts-expect-error type incorrectly doesn't accept undefined
 							) => (
 								minimized
+
 									// @ts-expect-error type incorrectly doesn't accept undefined
 									? green(formatFlag('minimized'))
 									: undefined

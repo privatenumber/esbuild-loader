@@ -16,10 +16,10 @@
 		"name": "Hiroki Osame",
 		"email": "hiroki.osame@gmail.com"
 	},
-	"type": "module",
 	"files": [
 		"dist"
 	],
+	"type": "module",
 	"main": "./dist/index.cjs",
 	"types": "./dist/index.d.ts",
 	"exports": {
@@ -40,7 +40,7 @@
 		"build": "pkgroll --target=node16.19.0",
 		"test": "tsx tests",
 		"dev": "tsx watch --conditions=development tests",
-		"lint": "lint --cache --node .",
+		"lint": "lint --node --cache .",
 		"type-check": "tsc --noEmit",
 		"prepack": "pnpm build && clean-pkg-json"
 	},

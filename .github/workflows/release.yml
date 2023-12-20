@@ -11,33 +11,33 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
 
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 8
-        run_install: true
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
 
-    - name: Build
-      run: pnpm build
+      - name: Build
+        run: pnpm build
 
-    - name: Test
-      env:
-        NODE_OPTIONS: --openssl-legacy-provider 
-      run: pnpm test
+      - name: Test
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+        run: pnpm test
 
-    - name: Lint
-      run: pnpm lint
+      - name: Lint
+        run: pnpm lint
 
-    - name: Release
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: pnpm dlx semantic-release
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm dlx semantic-release

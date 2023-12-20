@@ -486,6 +486,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				};
 
 				await expect(
+
 					// @ts-expect-error testing invalid type
 					runWithImplementation({}),
 				).rejects.toThrow(
@@ -493,6 +494,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				);
 
 				await expect(
+
 					// @ts-expect-error testing invalid type
 					runWithImplementation({ transform: 123 }),
 				).rejects.toThrow(
@@ -623,7 +625,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				configureEsbuildMinifyPlugin(config);
 
 				config.plugins!.push({
-					apply(compiler) {
+					apply: (compiler) => {
 						compiler.hooks.compilation.tap('test', (compilation) => {
 							compilation.hooks.processAssets.tap(
 								{ name: 'test' },

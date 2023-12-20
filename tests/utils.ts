@@ -71,6 +71,7 @@ export const configureMiniCssExtractPlugin = (
 	cssRule.use.unshift(MiniCssExtractPlugin.loader);
 
 	config.plugins!.push(
+
 		// @ts-expect-error Forcing it to Webpack 5
 		new MiniCssExtractPlugin(),
 	);

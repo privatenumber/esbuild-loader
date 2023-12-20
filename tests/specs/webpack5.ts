@@ -22,7 +22,7 @@ export default testSuite(({ describe }) => {
 				configureEsbuildMinifyPlugin(config);
 
 				config.plugins!.push({
-					apply(compiler) {
+					apply: (compiler) => {
 						compiler.hooks.compilation.tap('test', (compilation) => {
 							compilation.hooks.processAssets.tap(
 								{ name: 'test' },
@@ -54,7 +54,7 @@ export default testSuite(({ describe }) => {
 				configureEsbuildMinifyPlugin(config);
 
 				config.plugins!.push({
-					apply(compiler) {
+					apply: (compiler) => {
 						compiler.hooks.compilation.tap('test', (compilation) => {
 							compilation.hooks.processAssets.tap(
 								{ name: 'test' },

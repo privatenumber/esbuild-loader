@@ -10,33 +10,33 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
 
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 8
-        run_install: true
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
 
-    - name: Lint
-      run: pnpm lint
+      - name: Lint
+        run: pnpm lint
 
-    - name: Type check
-      run: pnpm type-check
+      - name: Type check
+        run: pnpm type-check
 
-    - name: Build
-      run: pnpm build
+      - name: Build
+        run: pnpm build
 
-    - name: Test
-      env:
-        NODE_OPTIONS: --openssl-legacy-provider
-      run: pnpm test
+      - name: Test
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+        run: pnpm test
 
-    - name: Test Node.js v16
-      run: pnpm --use-node-version=16.19.0 test
+      - name: Test Node.js v16
+        run: pnpm --use-node-version=16.19.0 test
