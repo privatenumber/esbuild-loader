@@ -40,7 +40,7 @@
 		"build": "pkgroll --target=node16.19.0",
 		"test": "tsx tests",
 		"dev": "tsx watch --conditions=development tests",
-		"lint": "eslint --cache .",
+		"lint": "lint --node --cache .",
 		"type-check": "tsc --noEmit",
 		"prepack": "pnpm build && clean-pkg-json"
 	},
@@ -76,9 +76,6 @@
 		"webpack-merge": "^5.9.0",
 		"webpack-test-utils": "^2.1.0",
 		"webpack5": "npm:webpack@^5.0.0"
-	},
-	"eslintConfig": {
-		"extends": "@pvtnbr"
 	},
 	"pnpm": {
 		"overrides": {
