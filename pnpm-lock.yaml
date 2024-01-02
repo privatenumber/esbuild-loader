@@ -24,7 +24,7 @@ dependencies:
 devDependencies:
   '@pvtnbr/eslint-config':
     specifier: github:privatenumber/eslint-config#npm/develop
-    version: github.com/privatenumber/eslint-config/ba8441e4af80ba63909a4e3975695abf39d658b4(eslint@8.56.0)(typescript@5.3.3)
+    version: github.com/privatenumber/eslint-config/52939db0dea2e667fda968cf504cb38404b8332b(eslint@8.56.0)(typescript@5.3.3)
   '@types/loader-utils':
     specifier: ^2.0.3
     version: 2.0.3
@@ -3157,14 +3157,6 @@ packages:
       is-js-type: 2.0.0
       is-obj-prop: 1.0.0
       is-proto-prop: 2.0.0
-    dev: true
-
-  /eslint-plugin-prefer-arrow-functions@3.2.4(eslint@8.56.0):
-    resolution: {integrity: sha512-HbPmlbO/iYQeVs2fuShNkGVJDfVfgSd84Vzxv+xlh+nIVoSsZvTj6yOqszw4mtG9JbiqMShVWqbVeoVsejE59w==}
-    peerDependencies:
-      eslint: '>=5.0.0'
-    dependencies:
-      eslint: 8.56.0
     dev: true
 
   /eslint-plugin-promise@6.1.1(eslint@8.56.0):
@@ -7179,9 +7171,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/privatenumber/eslint-config/ba8441e4af80ba63909a4e3975695abf39d658b4(eslint@8.56.0)(typescript@5.3.3):
-    resolution: {tarball: https://codeload.github.com/privatenumber/eslint-config/tar.gz/ba8441e4af80ba63909a4e3975695abf39d658b4}
-    id: github.com/privatenumber/eslint-config/ba8441e4af80ba63909a4e3975695abf39d658b4
+  github.com/privatenumber/eslint-config/52939db0dea2e667fda968cf504cb38404b8332b(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {tarball: https://codeload.github.com/privatenumber/eslint-config/tar.gz/52939db0dea2e667fda968cf504cb38404b8332b}
+    id: github.com/privatenumber/eslint-config/52939db0dea2e667fda968cf504cb38404b8332b
     name: '@pvtnbr/eslint-config'
     version: 0.0.0-semantic-release
     hasBin: true
@@ -7202,7 +7194,6 @@ packages:
       eslint-plugin-markdown: 3.0.1(eslint@8.56.0)
       eslint-plugin-n: 16.5.0(eslint@8.56.0)
       eslint-plugin-no-use-extend-native: 0.5.0
-      eslint-plugin-prefer-arrow-functions: 3.2.4(eslint@8.56.0)
       eslint-plugin-promise: 6.1.1(eslint@8.56.0)
       eslint-plugin-react: 7.33.2(eslint@8.56.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.56.0)
