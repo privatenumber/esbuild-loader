@@ -1,4 +1,4 @@
-import { transform as defaultEsbuildTransform } from 'esbuild';
+import { transform as defaultEsbuildTransform, stop as esbuildStop } from 'esbuild';
 import {
 	RawSource as WP4RawSource,
 	SourceMapSource as WP4SourceMapSource,
@@ -249,5 +249,10 @@ export default class EsbuildPlugin {
 				);
 			}
 		});
+
+		// Webpack 5
+		if ('shutdown' in compiler.hooks) {
+			compiler.hooks.shutdown.tap(pluginName, () => esbuildStop());
+		}
 	}
 }
