@@ -630,7 +630,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 								() => {
 									compilation.emitAsset(
 										'test.js',
-										createSource(' 1  +  1'),
+										createSource('console.log( 1  +  1)'),
 									);
 								},
 							);
@@ -648,7 +648,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			]);
 			expect(
 				built.fs.readFileSync('/dist/test.js', 'utf8'),
-			).toBe('1+1;\n');
+			).toBe('console.log(2);\n');
 		});
 
 		describe('minify targets', ({ test }) => {
