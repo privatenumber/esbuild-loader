@@ -545,6 +545,17 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				expect(exportedFunction('hello world')).toBe('hello world');
 				assertMinified(exportedFunction.toString());
 			});
+
+			test('can handle invalid webpack config', async () => {
+				await expect(build(
+					fixtures.blank,
+					(config) => {
+						config.entry = 'not-there.js';
+						configureEsbuildMinifyPlugin(config);
+					},
+					webpack,
+				)).resolves.toBeTruthy();
+			});
 		});
 
 		describe('CSS', ({ test }) => {

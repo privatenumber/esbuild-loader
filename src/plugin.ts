@@ -209,7 +209,9 @@ export default class EsbuildPlugin {
 							? modules[0]
 							: (modules as Set<webpack5.Module>).values().next().value as webpack5.Module
 					);
-					useSourceMap = firstModule.useSourceMap;
+					if (firstModule) {
+						useSourceMap = firstModule.useSourceMap;
+					}
 				},
 			);
 
