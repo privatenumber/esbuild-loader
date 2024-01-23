@@ -1,88 +1,48 @@
 {
-	"name": "esbuild-loader",
-	"version": "0.0.0-semantic-release",
-	"description": "⚡️ Speed up your Webpack build with esbuild",
-	"keywords": [
-		"esbuild",
-		"webpack",
-		"loader",
-		"typescript",
-		"esnext"
-	],
-	"license": "MIT",
-	"repository": "privatenumber/esbuild-loader",
-	"funding": "https://github.com/privatenumber/esbuild-loader?sponsor=1",
-	"author": {
-		"name": "Hiroki Osame",
-		"email": "hiroki.osame@gmail.com"
-	},
-	"type": "module",
-	"files": [
-		"dist"
-	],
-	"main": "./dist/index.cjs",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"default": "./dist/index.cjs"
-		},
-		"./package.json": "./package.json"
-	},
-	"imports": {
-		"#esbuild-loader": {
-			"types": "./src/index.d.ts",
-			"development": "./src/index.ts",
-			"default": "./dist/index.cjs"
-		}
-	},
-	"scripts": {
-		"build": "pkgroll --target=node16.19.0",
-		"test": "tsx --env-file .env tests",
-		"dev": "tsx watch --env-file .env --conditions=development tests",
-		"lint": "eslint --cache .",
-		"type-check": "tsc --noEmit",
-		"prepack": "pnpm build && clean-pkg-json"
-	},
-	"peerDependencies": {
-		"webpack": "^4.40.0 || ^5.0.0"
-	},
-	"dependencies": {
-		"esbuild": "^0.19.0",
-		"get-tsconfig": "^4.7.0",
-		"loader-utils": "^2.0.4",
-		"webpack-sources": "^1.4.3"
-	},
-	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.34.0",
-		"@types/loader-utils": "^2.0.3",
-		"@types/mini-css-extract-plugin": "2.4.0",
-		"@types/node": "^18.13.0",
-		"@types/webpack": "^4.41.33",
-		"@types/webpack-sources": "^0.1.9",
-		"clean-pkg-json": "^1.2.0",
-		"css-loader": "^5.2.7",
-		"eslint": "^8.56.0",
-		"execa": "^8.0.1",
-		"fs-fixture": "^1.2.0",
-		"manten": "^1.2.0",
-		"memfs": "^4.6.0",
-		"mini-css-extract-plugin": "^1.6.2",
-		"pkgroll": "^1.11.0",
-		"tsx": "^4.7.0",
-		"typescript": "^5.3.3",
-		"webpack": "^4.44.2",
-		"webpack-cli": "^4.10.0",
-		"webpack-merge": "^5.9.0",
-		"webpack-test-utils": "^2.1.0",
-		"webpack5": "npm:webpack@^5.0.0"
-	},
-	"eslintConfig": {
-		"extends": "@pvtnbr"
-	},
-	"pnpm": {
-		"overrides": {
-			"fsevents@1": "^2.0.0"
-		}
-	}
+  "name": "esbuild-loader",
+  "version": "0.0.0-semantic-release",
+  "description": "⚡️ Speed up your Webpack build with esbuild",
+  "keywords": [
+    "esbuild",
+    "webpack",
+    "loader",
+    "typescript",
+    "esnext"
+  ],
+  "license": "MIT",
+  "repository": "privatenumber/esbuild-loader",
+  "funding": "https://github.com/privatenumber/esbuild-loader?sponsor=1",
+  "author": {
+    "name": "Hiroki Osame",
+    "email": "hiroki.osame@gmail.com"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "imports": {
+    "#esbuild-loader": {
+      "types": "./src/index.d.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "peerDependencies": {
+    "webpack": "^4.40.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.0",
+    "get-tsconfig": "^4.7.0",
+    "loader-utils": "^2.0.4",
+    "webpack-sources": "^1.4.3"
+  }
 }
