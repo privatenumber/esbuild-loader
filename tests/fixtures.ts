@@ -162,6 +162,10 @@ export const minification = {
 	'/src/index.js': 'export default ( stringVal )  =>  { return stringVal }',
 };
 
+export const define = {
+	'/src/index.js': 'export default () => [__TEST1__, __TEST2__]',
+};
+
 export const getHelpers = {
 	'/src/index.js': 'export default async () => {}',
 };

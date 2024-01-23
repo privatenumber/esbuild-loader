@@ -750,5 +750,33 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 				webpack,
 			)).resolves.toBeTruthy();
 		});
+
+		test('multiple plugins', async () => {
+			const built = await build(
+				fixtures.define,
+				(config) => {
+					configureEsbuildMinifyPlugin(config);
+					config.plugins?.push(
+						new EsbuildPlugin({
+							define: {
+								__TEST1__: '123',
+							},
+						}),
+						new EsbuildPlugin({
+							define: {
+								__TEST2__: '321',
+							},
+						}),
+					);
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const exportedFunction = built.require('/dist/');
+			expect(exportedFunction('hello world')).toStrictEqual([123, 321]);
+		});
 	});
 });
