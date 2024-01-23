@@ -34,6 +34,10 @@ jobs:
         run: pnpm build
 
       - name: Test
+        env:
+          # This can't be added to the package.json script because we also test Node.js v16
+          # https://github.com/webpack/webpack/issues/14532
+          NODE_OPTIONS: --openssl-legacy-provider
         run: pnpm test
 
       - name: Test Node.js v16
