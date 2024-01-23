@@ -201,6 +201,12 @@ export default class EsbuildPlugin {
 			 * Webpack 5: https://github.com/webpack/webpack/blob/v5.75.0/lib/SourceMapDevToolModuleOptionsPlugin.js#LL27
 			 */
 			let useSourceMap = false;
+
+			/**
+			 * `finishModules` hook is called after all the `buildModule` hooks are called,
+			 * which is where the `useSourceMap` flag is set
+			 * https://webpack.js.org/api/compilation-hooks/#finishmodules
+			 */
 			compilation.hooks.finishModules.tap(
 				pluginName,
 				(modules) => {
