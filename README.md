@@ -9,9 +9,14 @@ Speed up your Webpack build with [esbuild](https://github.com/evanw/esbuild)! �
 Curious how much faster your build will be? See [what users are saying](https://github.com/privatenumber/esbuild-loader/discussions/138).
 
 
-> **💡 Protip: Enhance your Node.js DX with `tsx`**
+> [!TIP]
+> **Are you using TypeScript with Node.js?**
 >
-> If you're interested in supercharging your Node.js runtime with esbuild, take a look at our new project [`tsx`](https://github.com/esbuild-kit/tsx). It's an esbuild-enhanced Node.js runtime that can run TypeScript instantly!
+> Supercharge your Node.js with TypeScript support using _tsx_!
+> 
+> _tsx_ is a simple, lightweight, and blazing fast alternative to ts-node.
+>
+> [→ Learn more about _tsx_](https://github.com/privatenumber/tsx)
 
 <br>
 
