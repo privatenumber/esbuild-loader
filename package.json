@@ -38,8 +38,8 @@
 	},
 	"scripts": {
 		"build": "pkgroll --target=node16.19.0",
-		"test": "tsx tests",
-		"dev": "tsx watch --conditions=development tests",
+		"test": "tsx --env-file .env tests",
+		"dev": "tsx watch --env-file .env --conditions=development tests",
 		"lint": "eslint --cache .",
 		"type-check": "tsc --noEmit",
 		"prepack": "pnpm build && clean-pkg-json"
