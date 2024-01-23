@@ -71,12 +71,12 @@ Here's an example of how to set it up in your `webpack.config.js`:
 
 In this setup, esbuild will automatically determine how to handle each file based on its extension:
 - `.js` files will be treated as JS (no JSX allowed)
-- `.jsx` & `.tsx` files as JSX
-- `.ts` as TS (no JSX allowed)
+- `.jsx` as JSX
+- `.ts` as TS (no TSX allowed)
 - `.tsx` as TSX
 
 
-If you want to force a specific handler on different file extensions (e.g. to allow JSX in `.js` files), you can use the [`loader`](https://github.com/privatenumber/esbuild-loader/#loader) option:
+If you want to force a specific loader on different file extensions (e.g. to allow JSX in `.js` files), you can use the [`loader` option](https://github.com/privatenumber/esbuild-loader/#loader):
 
 ```diff
  {
