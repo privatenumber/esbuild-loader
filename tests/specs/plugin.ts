@@ -738,5 +738,17 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			expect(exportedFunction('hello world')).toBe('hello world');
 			assertMinified(exportedFunction.toString());
 		});
+
+		// https://github.com/privatenumber/esbuild-loader/issues/356
+		test('can handle empty modules set', async () => {
+			await expect(build(
+				fixtures.blank,
+				(config) => {
+					config.entry = 'not-there.js';
+					configureEsbuildMinifyPlugin(config);
+				},
+				webpack,
+			)).resolves.toBeTruthy();
+		});
 	});
 });
