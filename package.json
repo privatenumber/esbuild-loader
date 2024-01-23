@@ -21,10 +21,10 @@
 		"dist"
 	],
 	"main": "./dist/index.cjs",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/index.d.cts",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
+			"types": "./dist/index.d.cts",
 			"default": "./dist/index.cjs"
 		},
 		"./package.json": "./package.json"
