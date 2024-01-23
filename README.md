@@ -97,7 +97,7 @@ If you want to force a specific loader on different file extensions (e.g. to all
 
 ### JavaScript
 
-You can replace `babel-loader` with `esbuild-loader` to transpile new JavaScript syntax into code compatible with older JavaScript engines.
+`esbuild-loader` can be used in-place of `babel-loader` to transpile new JavaScript syntax into code compatible with older JavaScript engines.
 
 While this ensures your code can run smoothly across various environments, note that it can bloat your output code (like Babel).
 
@@ -129,7 +129,9 @@ For a detailed list of supported transpilations and versions, refer to [the esbu
 }
 ```
 
-> Note: You cannot use the `tsx` loader for `*.ts` files as it has incompatible syntax with the `ts` loader.
+
+> [!IMPORTANT]
+> It's possible to pass in `loader: 'tsx'` to handle both `.ts` and `.tsx` files, but you should not do this as TypeScript and TSX do not have compatible syntaxes.
 >
 > [→ Read more](https://esbuild.github.io/content-types/#ts-vs-tsx)
 
@@ -149,7 +151,7 @@ If it's under a custom name, you can pass in the path via `tsconfig` option:
 
 > Behind the scenes: [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) is used to load the tsconfig, and to also resolve the `extends` property if it exists.
 
-You can also use the `tsconfigRaw` option to pass in a raw `tsconfig` object, but it will not resolve the `extends` property.
+The `tsconfigRaw` option can be used to pass in a raw `tsconfig` object, but it will not resolve the `extends` property.
 
 
 ##### Caveats
@@ -181,7 +183,7 @@ Consider these type-checking alternatives:
 ## EsbuildPlugin
 
 ### Minification
-You can replace JS minifiers like Terser or UglifyJs. Checkout the [benchmarks](https://github.com/privatenumber/minification-benchmarks) to see how much faster esbuild is. The `target` option tells esbuild that it can use newer JS syntax to perform better minification.
+Esbuild supports JavaScript minification, offering a faster alternative to traditional JS minifiers like Terser or UglifyJs. Minification is crucial for reducing file size and improving load times in web development. For a comparative analysis of its performance, refer to these [minification benchmarks](https://github.com/privatenumber/minification-benchmarks).
 
 In `webpack.config.js`:
 
@@ -201,9 +203,12 @@ In `webpack.config.js`:
   }
 ```
 
+> [!TIP]
+> Utilizing the `target` option allows for the use of newer JavaScript syntax, enhancing minification effectiveness.
+
 ### Defining constants
 
-You can replace the [`DefinePlugin`](https://webpack.js.org/plugins/define-plugin/) to define global constants. The parsing cost of the DefinePlugin is often overlooked so replacing it with esbuild can speed up the build.
+Webpack's [`DefinePlugin`](https://webpack.js.org/plugins/define-plugin/) can replaced with `EsbuildPlugin` to define global constants. This could speed up the build by removing the parsing costs associated with the `DefinePlugin`.
 
 In `webpack.config.js`:
 
@@ -229,12 +234,11 @@ In `webpack.config.js`:
 
 ### Transpilation
 
-If you're not using TypeScript, JSX, or any syntax unsupported by Webpack, you can also leverage the minifier for transpilation (as an alternative to Babel).
+If your project does not use TypeScript, JSX, or any other syntax that requires additional configuration beyond what Webpack provides, you can use `EsbuildPlugin` for transpilation instead of the loader.
 
-It will be faster because there's less files to work on and will produce a smaller output because the polyfills will only be bundled once for the entire build instead of per file.
+It will be faster because there's fewer files to process, and will produce a smaller output because polyfills will only be added once for the entire build as opposed to per file.
 
-Simply set the `target` option on the minifier to specify which support level you want.
-
+To utilize esbuild for transpilation, simply set the `target` option on the plugin to specify which syntax support you want.
 
 
 ## CSS Minification
