@@ -48,6 +48,7 @@ async function ESBuildLoader(
 
 	if (!('tsconfigRaw' in transformOptions)) {
 		const { resourcePath } = this;
+
 		/**
 		 * If a tsconfig.json path is specified, force apply it
 		 * Same way a provided tsconfigRaw is applied regardless

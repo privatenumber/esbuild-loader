@@ -16,10 +16,10 @@
 		"name": "Hiroki Osame",
 		"email": "hiroki.osame@gmail.com"
 	},
-	"type": "module",
 	"files": [
 		"dist"
 	],
+	"type": "module",
 	"main": "./dist/index.cjs",
 	"types": "./dist/index.d.cts",
 	"exports": {
@@ -40,7 +40,7 @@
 		"build": "pkgroll --target=node16.19.0",
 		"test": "tsx tests",
 		"dev": "tsx watch --conditions=development tests",
-		"lint": "eslint --cache .",
+		"lint": "lint --cache .",
 		"type-check": "tsc --noEmit",
 		"prepack": "pnpm build && clean-pkg-json"
 	},
@@ -54,7 +54,7 @@
 		"webpack-sources": "^1.4.3"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.34.0",
+		"@pvtnbr/eslint-config": "^1.0.0",
 		"@types/loader-utils": "^2.0.3",
 		"@types/mini-css-extract-plugin": "2.4.0",
 		"@types/node": "^18.13.0",
@@ -76,9 +76,6 @@
 		"webpack-merge": "^5.9.0",
 		"webpack-test-utils": "^2.1.0",
 		"webpack5": "npm:webpack@^5.0.0"
-	},
-	"eslintConfig": {
-		"extends": "@pvtnbr"
 	},
 	"pnpm": {
 		"overrides": {

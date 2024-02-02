@@ -55,7 +55,10 @@ const transformAssets = async (
 			|| (minifyCss && isCssFile.test(asset.name))
 		)
 		&& ModuleFilenameHelpers.matchObject(
-			{ include, exclude },
+			{
+				include,
+				exclude,
+			},
 			asset.name,
 		)
 	));
