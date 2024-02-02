@@ -15,11 +15,13 @@ export type WebpackConfiguration = webpack4.Configuration | webpack5.Configurati
 
 type RuleSetUseItem = webpack4.RuleSetUseItem & webpack5.RuleSetUseItem;
 
+type RuleSetRule = webpack4.RuleSetRule & webpack5.RuleSetRule;
+
 export const isWebpack4 = (webpack: Webpack): webpack is Webpack4 => Boolean(webpack.version?.startsWith('4.'));
 
 export const configureEsbuildLoader = (
 	config: WebpackConfiguration,
-	rulesConfig?: any,
+	rulesConfig?: RuleSetRule,
 ) => {
 	config.resolveLoader!.alias = {
 		'esbuild-loader': esbuildLoaderPath,
@@ -31,7 +33,11 @@ export const configureEsbuildLoader = (
 		...rulesConfig,
 		options: {
 			tsconfigRaw: undefined,
-			...rulesConfig?.options,
+			...(
+				typeof rulesConfig?.options === 'object'
+					? rulesConfig.options
+					: {}
+			),
 		},
 	});
 };
