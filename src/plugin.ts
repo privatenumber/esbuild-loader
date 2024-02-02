@@ -102,18 +102,20 @@ const transformAssets = async (
 
 		compilation.updateAsset(
 			asset.name,
+			// @ts-expect-error complex webpack union type for source
 			(
 				result.map
 					? new SourceMapSource(
 						result.code,
 						asset.name,
-						result.map as any,
+						// @ts-expect-error it accepts strings
+						result.map,
 						sourceAsString,
-						map as any,
+						map,
 						true,
 					)
 					: new RawSource(result.code)
-			) as any,
+			),
 			{
 				...asset.info,
 				minimized,

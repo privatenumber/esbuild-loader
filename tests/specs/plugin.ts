@@ -5,6 +5,7 @@ import webpack5 from 'webpack5';
 import * as esbuild from 'esbuild';
 import { merge } from 'webpack-merge';
 import {
+	type Webpack,
 	isWebpack4,
 	configureEsbuildMinifyPlugin,
 	configureMiniCssExtractPlugin,
@@ -303,7 +304,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							configureEsbuildMinifyPlugin(config);
 
 							config.plugins!.push(
-								new webpack.SourceMapDevToolPlugin({}) as any,
+								new webpack.SourceMapDevToolPlugin({}) as Webpack['SourceMapDevToolPlugin'],
 							);
 						},
 						webpack,
@@ -330,7 +331,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 							config.plugins!.push(
 								new webpack.SourceMapDevToolPlugin({
 									filename: 'index.js.map',
-								}) as any,
+								}) as Webpack['SourceMapDevToolPlugin'],
 							);
 						},
 						webpack,

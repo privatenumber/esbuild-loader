@@ -3,6 +3,7 @@ import { build } from 'webpack-test-utils';
 import webpack4 from 'webpack';
 import webpack5 from 'webpack5';
 import {
+	type Webpack,
 	configureEsbuildLoader,
 	configureCssLoader,
 } from '../utils.js';
@@ -349,7 +350,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 						delete config.devtool;
 						config.plugins!.push(
-							new webpack.SourceMapDevToolPlugin({}) as any,
+							new webpack.SourceMapDevToolPlugin({}) as Webpack['SourceMapDevToolPlugin'],
 						);
 					},
 					webpack,
