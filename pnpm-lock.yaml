@@ -23,8 +23,8 @@ dependencies:
 
 devDependencies:
   '@pvtnbr/eslint-config':
-    specifier: ^1.0.0
-    version: 1.0.0(eslint@8.56.0)(typescript@5.3.3)
+    specifier: ^1.0.1
+    version: 1.0.1(eslint@8.56.0)(typescript@5.3.3)
   '@types/loader-utils':
     specifier: ^2.0.3
     version: 2.0.3
@@ -661,8 +661,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@pvtnbr/eslint-config@1.0.0(eslint@8.56.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-yFWpFu98PmGyLrk/XuTXGGME7qIA/PM71VdV0isATWF96jncRYAsh8wbP1jxD/q1dewa+1jd63ZF1epAwAEoOA==}
+  /@pvtnbr/eslint-config@1.0.1(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-KPQqTlE9ZSMC6nHCzGmokecye6ZV35EdVESKjpVQhBnYp936tq0VdBzU+QTb3dDNe7oU3nxWTM7pxEmeP5PSZQ==}
     hasBin: true
     peerDependencies:
       eslint: ^8.50.0
