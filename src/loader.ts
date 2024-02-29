@@ -90,6 +90,14 @@ async function ESBuildLoader(
 		}
 	}
 
+	/**
+	 * Enable dynamic import by default to support code splitting in Webpack
+	 */
+	transformOptions.supported = {
+		"dynamic-import": true,
+		...(transformOptions.supported ?? {})
+	};
+
 	try {
 		const { code, map } = await transform(source, transformOptions);
 		done(null, code, map && JSON.parse(map));
