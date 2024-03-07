@@ -48,7 +48,7 @@
 		"webpack": "^4.40.0 || ^5.0.0"
 	},
 	"dependencies": {
-		"esbuild": "^0.19.0",
+		"esbuild": "^0.20.0",
 		"get-tsconfig": "^4.7.0",
 		"loader-utils": "^2.0.4",
 		"webpack-sources": "^1.4.3"
