@@ -407,5 +407,56 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			const code = built.fs.readFileSync('/dist/index.js', 'utf8');
 			expect(code).toContain('div{color:red}');
 		});
+
+		test('Keeps dynamic imports by default', async () => {
+			const built = await build(
+				{
+					'/src/index.js': 'export default async () => (await import("./test2.js")).default',
+					'/src/test2.js': 'export default "test2"',
+				},
+				(config) => {
+					configureEsbuildLoader(config, { options: { target: 'chrome52' } });
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const { assets } = built.stats.compilation;
+			expect(assets).toHaveProperty(['index.js']);
+
+			// Chunk split because esbuild preserved the dynamic import
+			expect(Object.keys(assets).length).toBe(2);
+			expect(await built.require('/dist')()).toBe('test2');
+		});
+
+		test('Dynamic imports can be disabled', async () => {
+			const built = await build(
+				{
+					'/src/index.js': 'export default async () => (await import("./test2.js")).default',
+					'/src/test2.js': 'export default "test2"',
+				},
+				(config) => {
+					configureEsbuildLoader(config, {
+						options: {
+							target: 'chrome52',
+							supported: { 'dynamic-import': false },
+						},
+					});
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			const { assets } = built.stats.compilation;
+			expect(assets).toHaveProperty(['index.js']);
+
+			// No chunk split because esbuild removed the dynamic import
+			expect(Object.keys(assets).length).toBe(1);
+			expect(await built.require('/dist')()).toBe('test2');
+		});
 	});
 });
