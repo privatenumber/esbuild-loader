@@ -415,7 +415,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					'/src/test2.js': 'export default "test2"',
 				},
 				(config) => {
-					configureEsbuildLoader(config, { options: { target: "chrome52" } });
+					configureEsbuildLoader(config, { options: { target: 'chrome52' } });
 				},
 				webpack,
 			);
@@ -427,7 +427,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			expect(assets).toHaveProperty(['index.js']);
 			expect(Object.keys(assets).length).toBe(2);
 
-			expect(await built.require('/dist')()).toBe("test2");
+			expect(await built.require('/dist')()).toBe('test2');
 		});
 
 		test('Dynamic imports can be disabled', async () => {
@@ -437,7 +437,12 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 					'/src/test2.js': 'export default "test2"',
 				},
 				(config) => {
-					configureEsbuildLoader(config, { options: { target: "chrome52", supported: { "dynamic-import": false } } });
+					configureEsbuildLoader(config, {
+						options: {
+							target: 'chrome52',
+							supported: { 'dynamic-import': false },
+						},
+					});
 				},
 				webpack,
 			);
@@ -449,7 +454,7 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			expect(assets).toHaveProperty(['index.js']);
 			expect(Object.keys(assets).length).toBe(1);
 
-			expect(await built.require('/dist')()).toBe("test2");
+			expect(await built.require('/dist')()).toBe('test2');
 		});
 	});
 });

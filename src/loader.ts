@@ -94,8 +94,8 @@ async function ESBuildLoader(
 	 * Enable dynamic import by default to support code splitting in Webpack
 	 */
 	transformOptions.supported = {
-		"dynamic-import": true,
-		...(transformOptions.supported ?? {})
+		'dynamic-import': true,
+		...transformOptions.supported,
 	};
 
 	try {
