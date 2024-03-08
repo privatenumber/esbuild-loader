@@ -425,8 +425,9 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			const { assets } = built.stats.compilation;
 			expect(assets).toHaveProperty(['index.js']);
-			expect(Object.keys(assets).length).toBe(2);
 
+			// Chunk split because esbuild preserved the dynamic import
+			expect(Object.keys(assets).length).toBe(2);
 			expect(await built.require('/dist')()).toBe('test2');
 		});
 
@@ -452,8 +453,9 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 
 			const { assets } = built.stats.compilation;
 			expect(assets).toHaveProperty(['index.js']);
-			expect(Object.keys(assets).length).toBe(1);
 
+			// No chunk split because esbuild removed the dynamic import
+			expect(Object.keys(assets).length).toBe(1);
 			expect(await built.require('/dist')()).toBe('test2');
 		});
 	});
