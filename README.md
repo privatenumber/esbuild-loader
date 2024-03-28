@@ -106,7 +106,7 @@ If you want to force a specific loader on different file extensions (e.g. to all
 
 While this ensures your code can run smoothly across various environments, note that it can bloat your output code (like Babel).
 
-By default, the target to `esnext`, which means it doesn't perform any transpilations.
+The default target is `esnext`, which means it doesn't perform any transpilations.
 
 To specify a target JavaScript engine that only supports ES2015, use the following configuration in your `webpack.config.js`:
 
@@ -136,7 +136,7 @@ For a detailed list of supported transpilations and versions, refer to [the esbu
 
 
 > [!IMPORTANT]
-> It's possible to pass in `loader: 'tsx'` to handle both `.ts` and `.tsx` files, but you should not do this as TypeScript and TSX do not have compatible syntaxes.
+> It's possible to use `loader: 'tsx'` for both `.ts` and `.tsx` files, but this could lead to unexpected behavior as TypeScript and TSX do not have compatible syntaxes.
 >
 > [→ Read more](https://esbuild.github.io/content-types/#ts-vs-tsx)
 
@@ -292,7 +292,7 @@ Assuming the CSS is extracted using something like [MiniCssExtractPlugin](https:
 
 ### CSS in JS
 
-If your CSS is not emitted as a `.css` file, but rather inserted from the JavaScript using something like [`style-loader`](https://github.com/webpack-contrib/style-loader), you can use the loader for minification.
+If your CSS is not emitted as a `.css` file, but rather injected with JavaScript using something like [`style-loader`](https://github.com/webpack-contrib/style-loader), you can use the loader for minification.
 
 
 In `webpack.config.js`:
@@ -327,7 +327,8 @@ esbuild-loader comes with a version of esbuild it has been tested to work with. 
 
 To work around this, you can use the `implementation` option in the loader or the plugin to pass in your own version of esbuild (eg. a newer one).
 
-⚠️ esbuild is not stable yet and can have dramatic differences across releases. Using a different version of esbuild is not guaranteed to work.
+> [!WARNING]  
+> ⚠esbuild is not stable yet and can have dramatic differences across releases. Using a different version of esbuild is not guaranteed to work.
 
 
 ```diff
@@ -350,9 +351,6 @@ To work around this, you can use the `implementation` option in the loader or th
       },
   }
 ```
-
-_The `implementation` option will be removed once esbuild reaches a stable release. Instead esbuild will become a peerDependency so you always provide your own._
-
 
 ## Setup examples
 If you'd like to see working Webpack builds that use esbuild-loader for basic JS, React, TypeScript, Next.js, etc. check out the examples repo:
@@ -550,7 +548,7 @@ Running esbuild as a standalone bundler vs esbuild-loader + Webpack are complete
 - esbuild is highly optimized, written in Go, and compiled to native code. Read more about it [here](https://esbuild.github.io/faq/#why-is-esbuild-fast).
 - esbuild-loader is handled by Webpack in a JS runtime, which applies esbuild transforms per file. On top of that, there's likely other loaders & plugins in a Webpack config that slow it down.
 
-Using any JS bundler introduces a bottleneck that makes reaching those speeds impossible. However, esbuild-loader can still speed up your build by removing the bottlenecks created by [`babel-loader`](https://twitter.com/wSokra/status/1316274855042584577?s=20), `ts-loader`, Terser, etc.
+Using a JS runtime introduces a bottleneck that makes reaching those speeds impossible. However, esbuild-loader can still speed up your build by removing the bottlenecks created by [`babel-loader`](https://twitter.com/wSokra/status/1316274855042584577), `ts-loader`, Terser, etc.
 
 
 ## 💞 Related projects
