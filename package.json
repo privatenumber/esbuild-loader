@@ -40,7 +40,7 @@
 		"build": "pkgroll --target=node16.19.0",
 		"test": "tsx tests",
 		"dev": "tsx watch --conditions=development tests",
-		"lint": "lint --cache .",
+		"lint": "lintroll --cache .",
 		"type-check": "tsc --noEmit",
 		"prepack": "pnpm build && clean-pkg-json"
 	},
@@ -54,7 +54,6 @@
 		"webpack-sources": "^1.4.3"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^1.0.1",
 		"@types/loader-utils": "^2.0.3",
 		"@types/mini-css-extract-plugin": "2.4.0",
 		"@types/node": "^18.13.0",
@@ -62,9 +61,9 @@
 		"@types/webpack-sources": "^0.1.9",
 		"clean-pkg-json": "^1.2.0",
 		"css-loader": "^5.2.7",
-		"eslint": "^8.56.0",
 		"execa": "^8.0.1",
 		"fs-fixture": "^1.2.0",
+		"lintroll": "^1.4.0",
 		"manten": "^1.2.0",
 		"memfs": "^4.6.0",
 		"mini-css-extract-plugin": "^1.6.2",
