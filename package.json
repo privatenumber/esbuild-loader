@@ -63,7 +63,7 @@
 		"css-loader": "^5.2.7",
 		"execa": "^8.0.1",
 		"fs-fixture": "^1.2.0",
-		"lintroll": "^1.4.0",
+		"lintroll": "^1.6.1",
 		"manten": "^1.2.0",
 		"memfs": "^4.6.0",
 		"mini-css-extract-plugin": "^1.6.2",
