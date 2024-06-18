@@ -14,7 +14,7 @@ export default testSuite(({ describe }) => {
 	describe('tsconfig', ({ describe }) => {
 		describe('loader', ({ test }) => {
 			test('finds tsconfig.json and applies strict mode', async ({ onTestFinish }) => {
-				const fixture = await createFixture({
+				await using fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [
 							${detectStrictMode},
@@ -69,8 +69,6 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
-				onTestFinish(async () => await fixture.rm());
-
 				await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -82,7 +80,7 @@ export default testSuite(({ describe }) => {
 			});
 
 			test('handles resource with query', async ({ onTestFinish }) => {
-				const fixture = await createFixture({
+				await using fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts?some-query")];`,
 						'not-strict.ts': `module.exports = ${detectStrictMode}`,
@@ -125,8 +123,6 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
-				onTestFinish(async () => await fixture.rm());
-
 				await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -138,7 +134,7 @@ export default testSuite(({ describe }) => {
 			});
 
 			test('accepts custom tsconfig.json path', async ({ onTestFinish }) => {
-				const fixture = await createFixture({
+				await using fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [${detectStrictMode}, require("./strict.ts")];`,
 						'strict.ts': `module.exports = ${detectStrictMode}`,
@@ -184,8 +180,6 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
-				onTestFinish(async () => await fixture.rm());
-
 				const { stdout } = await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -199,7 +193,7 @@ export default testSuite(({ describe }) => {
 			});
 
 			test('applies different tsconfig.json paths', async ({ onTestFinish }) => {
-				const fixture = await createFixture({
+				await using fixture = await createFixture({
 					src: {
 						'index.ts': 'export class C { foo = 100; }',
 						'index2.ts': 'export class C { foo = 100; }',
@@ -259,8 +253,6 @@ export default testSuite(({ describe }) => {
 					}),
 				});
 
-				onTestFinish(async () => await fixture.rm());
-
 				await execa(webpackCli, {
 					cwd: fixture.path,
 				});
@@ -279,7 +271,7 @@ export default testSuite(({ describe }) => {
 			 * any tsconfig settings.
 			 */
 			test('should not detect tsconfig.json and apply strict mode', async ({ onTestFinish }) => {
-				const fixture = await createFixture({
+				await using fixture = await createFixture({
 					src: {
 						'index.js': 'console.log(1)',
 					},
@@ -301,8 +293,6 @@ export default testSuite(({ describe }) => {
 						},
 					}),
 				});
-
-				onTestFinish(async () => await fixture.rm());
 
 				await execa(webpackCli, {
 					cwd: fixture.path,
