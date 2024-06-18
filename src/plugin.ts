@@ -102,8 +102,8 @@ const transformAssets = async (
 
 		compilation.updateAsset(
 			asset.name,
-			// @ts-expect-error complex webpack union type for source
 			(
+				// @ts-expect-error complex webpack union type for source
 				result.map
 					? new SourceMapSource(
 						result.code,

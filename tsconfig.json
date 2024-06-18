@@ -1,14 +1,17 @@
 {
 	"compilerOptions": {
+		"target": "es2022",
+		"moduleDetection": "force",
 
-		// Node 10
-		"target": "ES2018",
-		"lib": ["ES2018"],
-		"module": "Node16",
-
+		"module": "preserve",
 		"resolveJsonModule": true,
+		"allowJs": true,
 		"strict": true,
+		// "noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noEmit": true,
 		"esModuleInterop": true,
+		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
-	},
+	}
 }

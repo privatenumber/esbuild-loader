@@ -1,4 +1,4 @@
-import { transform, TransformOptions } from 'esbuild';
+import { transform, type TransformOptions } from 'esbuild';
 
 type Filter = string | RegExp;
 
