@@ -2,7 +2,7 @@ import path from 'path';
 import { createRequire } from 'node:module';
 import { testSuite, expect } from 'manten';
 import { createFixture } from 'fs-fixture';
-import { execa } from 'execa';
+import { execa, type ExecaError } from 'execa';
 import { tsconfigJson } from '../utils.js';
 
 const require = createRequire(import.meta.url);
@@ -261,6 +261,80 @@ export default testSuite(({ describe }) => {
 
 				const code2 = await fixture.readFile('dist/index2.js', 'utf8');
 				expect(code2).toMatch('__publicField(this, "foo", 100);');
+			});
+
+			test('ignores tsconfig.json in third party dependencies', async () => {
+				await using fixture = await createFixture({
+					// Fake external dependency
+					node_modules: {
+						'fake-lib': {
+							'index.ts': 'export function testFn(): string { return "Hi!" }',
+							'package.json': JSON.stringify({
+								name: 'fake-lib',
+							}),
+							'tsconfig.json': tsconfigJson({
+								extends: 'something-imaginary',
+							}),
+						},
+					},
+					// Our project
+					src: {
+						'index.ts': `
+							import { testFn } from "fake-lib";
+
+							export default testFn;`,
+					},
+					'webpack.config.js': `
+					module.exports = {
+						mode: 'production',
+
+						optimization: {
+							minimize: false,
+						},
+
+						resolveLoader: {
+							alias: {
+								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
+							},
+						},
+
+						resolve: {
+							extensions: ['.ts', '.js'],
+						},
+
+						module: {
+							rules: [
+								{
+									test: /.[tj]sx?$/,
+									loader: 'esbuild-loader',
+									options: {
+										target: 'es2015',
+									}
+								}
+							],
+						},
+
+						entry: {
+							index: './src/index.ts',
+						},
+					};
+					`,
+				});
+
+				let result;
+
+				try {
+					result = await execa(webpackCli, {
+						cwd: fixture.path,
+					});
+				} catch (error) {
+					result = error as ExecaError;
+				}
+				const { exitCode, stdout } = result;
+
+				// We log this as a warning, and continue the transform
+				expect(stdout).toMatch("Error while discovering tsconfig.json in dependency: \"Error: File 'something-imaginary' not found.\"");
+				expect(exitCode).toEqual(0);
 			});
 		});
 

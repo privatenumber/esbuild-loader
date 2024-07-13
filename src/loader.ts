@@ -81,8 +81,21 @@ async function ESBuildLoader(
 		} else {
 			/* Detect tsconfig file */
 
-			// Webpack shouldn't be loading the same path multiple times so doesn't need to be cached
-			const tsconfig = getTsconfig(resourcePath, 'tsconfig.json', tsconfigCache);
+			let tsconfig;
+
+			try {
+				// Webpack shouldn't be loading the same path multiple times so doesn't need to be cached
+				tsconfig = getTsconfig(resourcePath, 'tsconfig.json', tsconfigCache);
+			} catch (error) {
+				if (resourcePath.split(path.sep).includes('node_modules')) {
+					this.emitWarning(
+						new Error(`[esbuild-loader] Error while discovering tsconfig.json in dependency: "${error?.toString()}"`),
+					);
+				} else {
+					throw error;
+				}
+			}
+
 			if (tsconfig) {
 				const fileMatcher = createFilesMatcher(tsconfig);
 				transformOptions.tsconfigRaw = fileMatcher(resourcePath) as TransformOptions['tsconfigRaw'];
