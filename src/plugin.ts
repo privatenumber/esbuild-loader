@@ -3,8 +3,8 @@ import {
 	RawSource as WP4RawSource,
 	SourceMapSource as WP4SourceMapSource,
 } from 'webpack-sources';
-import webpack4 from 'webpack';
-import webpack5 from 'webpack5';
+import type webpack4 from 'webpack';
+import type webpack5 from 'webpack5';
 import ModuleFilenameHelpers from 'webpack/lib/ModuleFilenameHelpers.js';
 import { version } from '../package.json';
 import type { EsbuildPluginOptions } from './types.js';
