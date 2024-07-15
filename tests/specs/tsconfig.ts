@@ -13,7 +13,7 @@ const detectStrictMode = '(function() { return !this; })()';
 export default testSuite(({ describe }) => {
 	describe('tsconfig', ({ describe }) => {
 		describe('loader', ({ test }) => {
-			test('finds tsconfig.json and applies strict mode', async ({ onTestFinish }) => {
+			test('finds tsconfig.json and applies strict mode', async () => {
 				await using fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [
@@ -79,7 +79,7 @@ export default testSuite(({ describe }) => {
 				).toStrictEqual([true, false, true]);
 			});
 
-			test('handles resource with query', async ({ onTestFinish }) => {
+			test('handles resource with query', async () => {
 				await using fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts?some-query")];`,
@@ -133,7 +133,7 @@ export default testSuite(({ describe }) => {
 				).toStrictEqual([true, false]);
 			});
 
-			test('accepts custom tsconfig.json path', async ({ onTestFinish }) => {
+			test('accepts custom tsconfig.json path', async () => {
 				await using fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [${detectStrictMode}, require("./strict.ts")];`,
@@ -192,7 +192,7 @@ export default testSuite(({ describe }) => {
 				).toStrictEqual([true, true]);
 			});
 
-			test('applies different tsconfig.json paths', async ({ onTestFinish }) => {
+			test('applies different tsconfig.json paths', async () => {
 				await using fixture = await createFixture({
 					src: {
 						'index.ts': 'export class C { foo = 100; }',
@@ -270,7 +270,7 @@ export default testSuite(({ describe }) => {
 			 * Since the plugin applies on distribution assets, it should not apply
 			 * any tsconfig settings.
 			 */
-			test('should not detect tsconfig.json and apply strict mode', async ({ onTestFinish }) => {
+			test('should not detect tsconfig.json and apply strict mode', async () => {
 				await using fixture = await createFixture({
 					src: {
 						'index.js': 'console.log(1)',
