@@ -5,6 +5,8 @@ import { createFixture } from 'fs-fixture';
 import { execa } from 'execa';
 import { tsconfigJson } from '../utils.js';
 
+const require = createRequire(import.meta.url);
+
 const webpackCli = path.resolve('node_modules/webpack-cli/bin/cli.js');
 const esbuildLoader = path.resolve('dist/index.cjs');
 
@@ -73,7 +75,6 @@ export default testSuite(({ describe }) => {
 					cwd: fixture.path,
 				});
 
-				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
 				).toStrictEqual([true, false, true]);
@@ -127,7 +128,6 @@ export default testSuite(({ describe }) => {
 					cwd: fixture.path,
 				});
 
-				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
 				).toStrictEqual([true, false]);
@@ -186,7 +186,6 @@ export default testSuite(({ describe }) => {
 
 				expect(stdout).toMatch('does not match its "include" patterns');
 
-				const require = createRequire(import.meta.url);
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
 				).toStrictEqual([true, true]);
