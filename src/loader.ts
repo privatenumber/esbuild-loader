@@ -15,6 +15,8 @@ import type { LoaderOptions } from './types.js';
 
 const tsconfigCache = new Map<string, TsConfigResult>();
 
+const tsExtensionsPattern = /\.(?:[cm]?ts|[tj]sx)$/;
+
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext<LoaderOptions>,
 	source: string,
@@ -35,20 +37,25 @@ async function ESBuildLoader(
 		);
 		return;
 	}
-
 	const transform = implementation?.transform ?? defaultEsbuildTransform;
 
+	const { resourcePath } = this;
 	const transformOptions = {
 		...esbuildTransformOptions,
 		target: options.target ?? 'es2015',
 		loader: options.loader ?? 'default',
 		sourcemap: this.sourceMap,
-		sourcefile: this.resourcePath,
+		sourcefile: resourcePath,
 	};
 
-	if (!('tsconfigRaw' in transformOptions)) {
-		const { resourcePath } = this;
+	const isDependency = resourcePath.includes(`${path.sep}node_modules${path.sep}`);
+	if (
+		!('tsconfigRaw' in transformOptions)
 
+		// If file is local project, always try to apply tsconfig.json (e.g. allowJs)
+		// If file is dependency, only apply tsconfig.json if .ts
+		&& (!isDependency || tsExtensionsPattern.test(resourcePath))
+	) {
 		/**
 		 * If a tsconfig.json path is specified, force apply it
 		 * Same way a provided tsconfigRaw is applied regardless
@@ -56,7 +63,7 @@ async function ESBuildLoader(
 		 *
 		 * However in this case, we also warn if it doesn't match
 		 */
-		if (tsconfigPath) {
+		if (!isDependency && tsconfigPath) {
 			const tsconfigFullPath = path.resolve(tsconfigPath);
 			const cacheKey = `esbuild-loader:${tsconfigFullPath}`;
 			let tsconfig = tsconfigCache.get(cacheKey);
@@ -73,7 +80,7 @@ async function ESBuildLoader(
 
 			if (!matches) {
 				this.emitWarning(
-					new Error(`[esbuild-loader] The specified tsconfig at "${tsconfigFullPath}" was applied to the file "${resourcePath}" but does not match its "include" patterns`),
+					new Error(`esbuild-loader] The specified tsconfig at "${tsconfigFullPath}" was applied to the file "${resourcePath}" but does not match its "include" patterns`),
 				);
 			}
 
@@ -81,8 +88,22 @@ async function ESBuildLoader(
 		} else {
 			/* Detect tsconfig file */
 
-			// Webpack shouldn't be loading the same path multiple times so doesn't need to be cached
-			const tsconfig = getTsconfig(resourcePath, 'tsconfig.json', tsconfigCache);
+			let tsconfig;
+
+			try {
+				// Webpack shouldn't be loading the same path multiple times so doesn't need to be cached
+				tsconfig = getTsconfig(resourcePath, 'tsconfig.json', tsconfigCache);
+			} catch (error) {
+				if (error instanceof Error) {
+					const tsconfigError = new Error(`[esbuild-loader] Error parsing tsconfig.json:\n${error.message}`);
+					if (isDependency) {
+						this.emitWarning(tsconfigError);
+					} else {
+						return done(tsconfigError);
+					}
+				}
+			}
+
 			if (tsconfig) {
 				const fileMatcher = createFilesMatcher(tsconfig);
 				transformOptions.tsconfigRaw = fileMatcher(resourcePath) as TransformOptions['tsconfigRaw'];
