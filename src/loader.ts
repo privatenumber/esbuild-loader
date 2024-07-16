@@ -15,6 +15,8 @@ import type { LoaderOptions } from './types.js';
 
 const tsconfigCache = new Map<string, TsConfigResult>();
 
+const tsExtensionsPattern = /\.(?:[cm]?ts|[tj]sx)$/;
+
 async function ESBuildLoader(
 	this: webpack.loader.LoaderContext<LoaderOptions>,
 	source: string,
@@ -52,7 +54,7 @@ async function ESBuildLoader(
 
 		// If file is local project, always try to apply tsconfig.json (e.g. allowJs)
 		// If file is dependency, only apply tsconfig.json if .ts
-		&& (!isDependency || resourcePath.endsWith('.ts'))
+		&& (!isDependency || tsExtensionsPattern.test(resourcePath))
 	) {
 		/**
 		 * If a tsconfig.json path is specified, force apply it
@@ -61,7 +63,7 @@ async function ESBuildLoader(
 		 *
 		 * However in this case, we also warn if it doesn't match
 		 */
-		if (tsconfigPath) {
+		if (!isDependency && tsconfigPath) {
 			const tsconfigFullPath = path.resolve(tsconfigPath);
 			const cacheKey = `esbuild-loader:${tsconfigFullPath}`;
 			let tsconfig = tsconfigCache.get(cacheKey);
@@ -78,7 +80,7 @@ async function ESBuildLoader(
 
 			if (!matches) {
 				this.emitWarning(
-					new Error(`[esbuild-loader] The specified tsconfig at "${tsconfigFullPath}" was applied to the file "${resourcePath}" but does not match its "include" patterns`),
+					new Error(`esbuild-loader] The specified tsconfig at "${tsconfigFullPath}" was applied to the file "${resourcePath}" but does not match its "include" patterns`),
 				);
 			}
 
