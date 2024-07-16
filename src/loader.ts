@@ -92,7 +92,7 @@ async function ESBuildLoader(
 					if (resourcePath.includes(`${path.sep}node_modules${path.sep}`)) {
 						this.emitWarning(tsconfigError);
 					} else {
-						this.emitError(tsconfigError);
+						return done(tsconfigError);
 					}
 				}
 			}
