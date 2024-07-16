@@ -2,7 +2,7 @@ import path from 'path';
 import { createRequire } from 'node:module';
 import { testSuite, expect } from 'manten';
 import { createFixture } from 'fs-fixture';
-import { execa, type ExecaError } from 'execa';
+import { execa } from 'execa';
 import { tsconfigJson } from '../utils.js';
 
 const require = createRequire(import.meta.url);
@@ -263,26 +263,15 @@ export default testSuite(({ describe }) => {
 				expect(code2).toMatch('__publicField(this, "foo", 100);');
 			});
 
-			test('ignores tsconfig.json in third party dependencies', async () => {
+			test('fails on invalid tsconfig.json', async () => {
 				await using fixture = await createFixture({
-					// Fake external dependency
-					node_modules: {
-						'fake-lib': {
-							'index.ts': 'export function testFn(): string { return "Hi!" }',
-							'package.json': JSON.stringify({
-								name: 'fake-lib',
-							}),
-							'tsconfig.json': tsconfigJson({
-								extends: 'something-imaginary',
-							}),
-						},
-					},
-					// Our project
+					'tsconfig.json': tsconfigJson({
+						extends: 'something-imaginary',
+					}),
 					src: {
 						'index.ts': `
-							import { testFn } from "fake-lib";
-
-							export default testFn;`,
+						console.log('Hello, world!' as numer);
+						`,
 					},
 					'webpack.config.js': `
 					module.exports = {
@@ -321,20 +310,76 @@ export default testSuite(({ describe }) => {
 					`,
 				});
 
-				let result;
+				const { stdout, exitCode } = await execa(webpackCli, {
+					cwd: fixture.path,
+					reject: false,
+				});
 
-				try {
-					result = await execa(webpackCli, {
-						cwd: fixture.path,
-					});
-				} catch (error) {
-					result = error as ExecaError;
-				}
-				const { exitCode, stdout } = result;
+				expect(stdout).toMatch('Error parsing tsconfig.json:\nFile \'something-imaginary\' not found.');
+				expect(exitCode).toBe(1);
+			});
 
-				// We log this as a warning, and continue the transform
-				expect(stdout).toMatch("Error while discovering tsconfig.json in dependency: \"Error: File 'something-imaginary' not found.\"");
-				expect(exitCode).toEqual(0);
+			test('ignores invalid tsconfig.json in dependencies', async () => {
+				await using fixture = await createFixture({
+					'node_modules/fake-lib': {
+						'package.json': JSON.stringify({
+							name: 'fake-lib',
+						}),
+						'tsconfig.json': tsconfigJson({
+							extends: 'something-imaginary',
+						}),
+						'index.ts': 'export function testFn(): string { return "Hi!" }',
+					},
+					'src/index.ts': `
+					import { testFn } from "fake-lib";
+					testFn();
+					`,
+					'webpack.config.js': `
+					module.exports = {
+						mode: 'production',
+
+						optimization: {
+							minimize: false,
+						},
+
+						resolveLoader: {
+							alias: {
+								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
+							},
+						},
+
+						resolve: {
+							extensions: ['.ts', '.js'],
+						},
+
+						module: {
+							rules: [
+								{
+									test: /.[tj]sx?$/,
+									loader: 'esbuild-loader',
+									options: {
+										target: 'es2015',
+									}
+								}
+							],
+						},
+
+						entry: {
+							index: './src/index.ts',
+						},
+					};
+					`,
+				});
+
+				const { stdout, exitCode } = await execa(webpackCli, {
+					cwd: fixture.path,
+					reject: false,
+				});
+
+				expect(stdout).toMatch('Error parsing tsconfig.json:\nFile \'something-imaginary\' not found.');
+
+				// Warning so doesn't fail
+				expect(exitCode).toBe(0);
 			});
 		});
 

@@ -87,12 +87,13 @@ async function ESBuildLoader(
 				// Webpack shouldn't be loading the same path multiple times so doesn't need to be cached
 				tsconfig = getTsconfig(resourcePath, 'tsconfig.json', tsconfigCache);
 			} catch (error) {
-				if (resourcePath.split(path.sep).includes('node_modules')) {
-					this.emitWarning(
-						new Error(`[esbuild-loader] Error while discovering tsconfig.json in dependency: "${error?.toString()}"`),
-					);
-				} else {
-					throw error;
+				if (error instanceof Error) {
+					const tsconfigError = new Error(`[esbuild-loader] Error parsing tsconfig.json:\n${error.message}`);
+					if (resourcePath.includes(`${path.sep}node_modules${path.sep}`)) {
+						this.emitWarning(tsconfigError);
+					} else {
+						this.emitError(tsconfigError);
+					}
 				}
 			}
 
