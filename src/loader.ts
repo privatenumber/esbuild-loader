@@ -35,20 +35,25 @@ async function ESBuildLoader(
 		);
 		return;
 	}
-
 	const transform = implementation?.transform ?? defaultEsbuildTransform;
 
+	const { resourcePath } = this;
 	const transformOptions = {
 		...esbuildTransformOptions,
 		target: options.target ?? 'es2015',
 		loader: options.loader ?? 'default',
 		sourcemap: this.sourceMap,
-		sourcefile: this.resourcePath,
+		sourcefile: resourcePath,
 	};
 
-	if (!('tsconfigRaw' in transformOptions)) {
-		const { resourcePath } = this;
+	const isDependency = resourcePath.includes(`${path.sep}node_modules${path.sep}`);
+	if (
+		!('tsconfigRaw' in transformOptions)
 
+		// If file is local project, always try to apply tsconfig.json (e.g. allowJs)
+		// If file is dependency, only apply tsconfig.json if .ts
+		&& (!isDependency || resourcePath.endsWith('.ts'))
+	) {
 		/**
 		 * If a tsconfig.json path is specified, force apply it
 		 * Same way a provided tsconfigRaw is applied regardless
@@ -89,7 +94,7 @@ async function ESBuildLoader(
 			} catch (error) {
 				if (error instanceof Error) {
 					const tsconfigError = new Error(`[esbuild-loader] Error parsing tsconfig.json:\n${error.message}`);
-					if (resourcePath.includes(`${path.sep}node_modules${path.sep}`)) {
+					if (isDependency) {
 						this.emitWarning(tsconfigError);
 					} else {
 						return done(tsconfigError);

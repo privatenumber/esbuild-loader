@@ -266,7 +266,7 @@ export default testSuite(({ describe }) => {
 			test('fails on invalid tsconfig.json', async () => {
 				await using fixture = await createFixture({
 					'tsconfig.json': tsconfigJson({
-						extends: 'something-imaginary',
+						extends: 'unresolvable-dep',
 					}),
 					src: {
 						'index.ts': `
@@ -315,18 +315,78 @@ export default testSuite(({ describe }) => {
 					reject: false,
 				});
 
-				expect(stdout).toMatch('Error parsing tsconfig.json:\nFile \'something-imaginary\' not found.');
+				expect(stdout).toMatch('Error parsing tsconfig.json:\nFile \'unresolvable-dep\' not found.');
 				expect(exitCode).toBe(1);
 			});
 
-			test('ignores invalid tsconfig.json in dependencies', async () => {
+			test('ignores invalid tsconfig.json in JS dependencies', async () => {
 				await using fixture = await createFixture({
 					'node_modules/fake-lib': {
 						'package.json': JSON.stringify({
 							name: 'fake-lib',
 						}),
 						'tsconfig.json': tsconfigJson({
-							extends: 'something-imaginary',
+							extends: 'unresolvable-dep',
+						}),
+						'index.js': 'export function testFn() { return "Hi!" }',
+					},
+					'src/index.ts': `
+					import { testFn } from "fake-lib";
+					testFn();
+					`,
+					'webpack.config.js': `
+					module.exports = {
+						mode: 'production',
+
+						optimization: {
+							minimize: false,
+						},
+
+						resolveLoader: {
+							alias: {
+								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
+							},
+						},
+
+						resolve: {
+							extensions: ['.ts', '.js'],
+						},
+
+						module: {
+							rules: [
+								{
+									test: /.[tj]sx?$/,
+									loader: 'esbuild-loader',
+									options: {
+										target: 'es2015',
+									}
+								}
+							],
+						},
+
+						entry: {
+							index: './src/index.ts',
+						},
+					};
+					`,
+				});
+
+				const { stdout, exitCode } = await execa(webpackCli, {
+					cwd: fixture.path,
+				});
+
+				expect(stdout).not.toMatch('Error parsing tsconfig.json');
+				expect(exitCode).toBe(0);
+			});
+
+			test('warns on invalid tsconfig.json in TS dependencies', async () => {
+				await using fixture = await createFixture({
+					'node_modules/fake-lib': {
+						'package.json': JSON.stringify({
+							name: 'fake-lib',
+						}),
+						'tsconfig.json': tsconfigJson({
+							extends: 'unresolvable-dep',
 						}),
 						'index.ts': 'export function testFn(): string { return "Hi!" }',
 					},
@@ -373,10 +433,9 @@ export default testSuite(({ describe }) => {
 
 				const { stdout, exitCode } = await execa(webpackCli, {
 					cwd: fixture.path,
-					reject: false,
 				});
 
-				expect(stdout).toMatch('Error parsing tsconfig.json:\nFile \'something-imaginary\' not found.');
+				expect(stdout).toMatch('Error parsing tsconfig.json:\nFile \'unresolvable-dep\' not found.');
 
 				// Warning so doesn't fail
 				expect(exitCode).toBe(0);
