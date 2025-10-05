@@ -1,4 +1,4 @@
-import { EsbuildPluginOptions } from './types.js';
+import type { EsbuildPluginOptions } from './types.js';
 
 export class EsbuildPlugin {
 	constructor(options?: EsbuildPluginOptions);

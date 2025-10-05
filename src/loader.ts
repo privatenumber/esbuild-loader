@@ -4,7 +4,7 @@ import {
 	type TransformOptions,
 } from 'esbuild';
 import { getOptions } from 'loader-utils';
-import webpack from 'webpack';
+import type webpack from 'webpack';
 import {
 	getTsconfig,
 	parseTsconfig,

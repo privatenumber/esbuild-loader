@@ -1,7 +1,7 @@
 import { testSuite, expect } from 'manten';
 import { build } from 'webpack-test-utils';
-import webpack4 from 'webpack';
-import webpack5 from 'webpack5';
+import type webpack4 from 'webpack';
+import type webpack5 from 'webpack5';
 import {
 	type Webpack,
 	configureEsbuildLoader,

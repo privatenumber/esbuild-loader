@@ -125,12 +125,12 @@ For a detailed list of supported transpilations and versions, refer to [the esbu
 
 `esbuild-loader` can be used in-place of `ts-loader` to compile TypeScript.
 
-```json5
-{
+```js
+({
     // `.ts` or `.tsx` files
     test: /\.tsx?$/,
-    loader: 'esbuild-loader',
-}
+    loader: 'esbuild-loader'
+})
 ```
 
 

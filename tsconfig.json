@@ -1,7 +1,9 @@
 {
 	"compilerOptions": {
 		"target": "es2022",
-		"lib": ["ESNext"],
+		"lib": [
+			"ESNext",
+		],
 		"moduleDetection": "force",
 
 		"module": "preserve",
@@ -14,5 +16,5 @@
 		"esModuleInterop": true,
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
-	}
+	},
 }
