@@ -15,17 +15,17 @@ const detectStrictMode = '(function() { return !this; })()';
 export default testSuite(({ describe }) => {
 	describe('tsconfig', ({ describe }) => {
 		describe('loader', ({ test }) => {
-			test('finds tsconfig.json and applies strict mode', async () => {
+			test('auto-detects tsconfig and applies to all files regardless of include patterns', async () => {
 				await using fixture = await createFixture({
 					src: {
 						'index.ts': `module.exports = [
 							${detectStrictMode},
-							require("./not-strict.ts"),
-							require("./different-config/strict.ts"),
+							require("./lib.ts"),
+							require("./nested/also-strict.ts"),
 						];`,
-						'not-strict.ts': `module.exports = ${detectStrictMode}`,
-						'different-config': {
-							'strict.ts': `module.exports = ${detectStrictMode}`,
+						'lib.ts': `module.exports = ${detectStrictMode}`,
+						nested: {
+							'also-strict.ts': `module.exports = ${detectStrictMode}`,
 							'tsconfig.json': tsconfigJson({
 								compilerOptions: {
 									strict: true,
@@ -36,24 +36,24 @@ export default testSuite(({ describe }) => {
 					'webpack.config.js': `
 					module.exports = {
 						mode: 'production',
-	
+
 						optimization: {
 							minimize: false,
 						},
-	
+
 						resolveLoader: {
 							alias: {
 								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
 							},
 						},
-	
+
 						module: {
 							rules: [{
 								test: /\\.ts$/,
 								loader: 'esbuild-loader',
 							}],
 						},
-	
+
 						entry: './src/index.ts',
 
 						output: {
@@ -75,38 +75,40 @@ export default testSuite(({ describe }) => {
 					cwd: fixture.path,
 				});
 
+				// All files get strict mode from their nearest tsconfig
+				// lib.ts is NOT in include pattern but still gets strict mode
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
-				).toStrictEqual([true, false, true]);
+				).toStrictEqual([true, true, true]);
 			});
 
-			test('handles resource with query', async () => {
+			test('handles resource with query string', async () => {
 				await using fixture = await createFixture({
 					src: {
-						'index.ts': `module.exports = [${detectStrictMode}, require("./not-strict.ts?some-query")];`,
-						'not-strict.ts': `module.exports = ${detectStrictMode}`,
+						'index.ts': `module.exports = [${detectStrictMode}, require("./lib.ts?some-query")];`,
+						'lib.ts': `module.exports = ${detectStrictMode}`,
 					},
 					'webpack.config.js': `
 					module.exports = {
 						mode: 'production',
-	
+
 						optimization: {
 							minimize: false,
 						},
-	
+
 						resolveLoader: {
 							alias: {
 								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
 							},
 						},
-	
+
 						module: {
 							rules: [{
 								test: /\\.ts$/,
 								loader: 'esbuild-loader',
 							}],
 						},
-	
+
 						entry: './src/index.ts',
 
 						output: {
@@ -118,9 +120,6 @@ export default testSuite(({ describe }) => {
 						compilerOptions: {
 							strict: true,
 						},
-						include: [
-							'src/index.ts',
-						],
 					}),
 				});
 
@@ -128,64 +127,69 @@ export default testSuite(({ describe }) => {
 					cwd: fixture.path,
 				});
 
+				// Both files get strict mode even with query string in require
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
-				).toStrictEqual([true, false]);
+				).toStrictEqual([true, true]);
 			});
 
-			test('accepts custom tsconfig.json path', async () => {
+			test('applies custom tsconfig to all files regardless of include patterns', async () => {
 				await using fixture = await createFixture({
 					src: {
-						'index.ts': `module.exports = [${detectStrictMode}, require("./strict.ts")];`,
-						'strict.ts': `module.exports = ${detectStrictMode}`,
+						'utils/lib.ts': `module.exports = ${detectStrictMode}`,
+						'app/index.ts': `module.exports = [${detectStrictMode}, require("../utils/lib.ts")];`,
 					},
 					'webpack.config.js': `
 					module.exports = {
 						mode: 'production',
-	
+
 						optimization: {
 							minimize: false,
 						},
-	
+
 						resolveLoader: {
 							alias: {
 								'esbuild-loader': ${JSON.stringify(esbuildLoader)},
 							},
 						},
-	
+
 						module: {
 							rules: [{
 								test: /\\.ts$/,
 								loader: 'esbuild-loader',
 								options: {
-									tsconfig: './tsconfig.custom.json',
+									tsconfig: './tsconfig.json',
 								}
 							}],
 						},
-	
-						entry: './src/index.ts',
+
+						entry: './src/app/index.ts',
 
 						output: {
 							libraryTarget: 'commonjs2',
 						},
 					};
 					`,
-					'tsconfig.custom.json': tsconfigJson({
+					'tsconfig.json': tsconfigJson({
 						compilerOptions: {
 							strict: true,
 						},
 						include: [
-							'src/strict.ts',
+							'src/app/**/*',
 						],
 					}),
 				});
 
-				const { stdout } = await execa(webpackCli, {
+				const { stdout, exitCode } = await execa(webpackCli, {
 					cwd: fixture.path,
 				});
 
-				expect(stdout).toMatch('does not match its "include" patterns');
+				// Should NOT produce warnings even though lib.ts is not in include patterns
+				// TypeScript applies tsconfig to all imports
+				expect(stdout).not.toMatch('does not match its "include" patterns');
+				expect(exitCode).toBe(0);
 
+				// Both files should have strict mode applied
 				expect(
 					require(path.join(fixture.path, 'dist/main.js')),
 				).toStrictEqual([true, true]);

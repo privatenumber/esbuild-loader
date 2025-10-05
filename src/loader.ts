@@ -8,7 +8,6 @@ import webpack from 'webpack';
 import {
 	getTsconfig,
 	parseTsconfig,
-	createFilesMatcher,
 	type TsConfigResult,
 } from 'get-tsconfig';
 import type { LoaderOptions } from './types.js';
@@ -61,7 +60,9 @@ async function ESBuildLoader(
 		 * Same way a provided tsconfigRaw is applied regardless
 		 * of whether it actually matches
 		 *
-		 * However in this case, we also warn if it doesn't match
+		 * This follows TypeScript behavior: a tsconfig applies to all
+		 * files imported by entry files, not just files matching include patterns.
+		 * The include/files patterns only determine entry points.
 		 */
 		if (!isDependency && tsconfigPath) {
 			const tsconfigFullPath = path.resolve(tsconfigPath);
@@ -73,15 +74,6 @@ async function ESBuildLoader(
 					path: tsconfigFullPath,
 				};
 				tsconfigCache.set(cacheKey, tsconfig);
-			}
-
-			const filesMatcher = createFilesMatcher(tsconfig);
-			const matches = filesMatcher(resourcePath);
-
-			if (!matches) {
-				this.emitWarning(
-					new Error(`esbuild-loader] The specified tsconfig at "${tsconfigFullPath}" was applied to the file "${resourcePath}" but does not match its "include" patterns`),
-				);
 			}
 
 			transformOptions.tsconfigRaw = tsconfig.config as TransformOptions['tsconfigRaw'];
@@ -105,8 +97,7 @@ async function ESBuildLoader(
 			}
 
 			if (tsconfig) {
-				const fileMatcher = createFilesMatcher(tsconfig);
-				transformOptions.tsconfigRaw = fileMatcher(resourcePath) as TransformOptions['tsconfigRaw'];
+				transformOptions.tsconfigRaw = tsconfig.config as TransformOptions['tsconfigRaw'];
 			}
 		}
 	}
