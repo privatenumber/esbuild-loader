@@ -2,5 +2,28 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
 		"github>privatenumber/renovate-config"
+	],
+	"packageRules": [
+		{
+			"description": "Pin css-loader to v5 (v6+ dropped Webpack 4 support)",
+			"matchPackageNames": [
+				"css-loader"
+			],
+			"allowedVersions": "<6.0.0"
+		},
+		{
+			"description": "Pin mini-css-extract-plugin to v1 (v2+ dropped Webpack 4 support)",
+			"matchPackageNames": [
+				"mini-css-extract-plugin"
+			],
+			"allowedVersions": "<2.0.0"
+		},
+		{
+			"description": "Pin webpack-cli to v4 (v5+ dropped Webpack 4 support)",
+			"matchPackageNames": [
+				"webpack-cli"
+			],
+			"allowedVersions": "<5.0.0"
+		}
 	]
 }
