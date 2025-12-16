@@ -46,7 +46,7 @@
 		"prepack": "pnpm build && clean-pkg-json"
 	},
 	"dependencies": {
-		"esbuild": "^0.25.0",
+		"esbuild": "^0.27.1",
 		"get-tsconfig": "^4.10.1",
 		"loader-utils": "^2.0.4",
 		"webpack-sources": "^1.4.3"

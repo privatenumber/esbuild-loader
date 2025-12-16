@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       esbuild:
-        specifier: ^0.25.0
-        version: 0.25.0
+        specifier: ^0.27.1
+        version: 0.27.1
       get-tsconfig:
         specifier: ^4.10.1
         version: 4.10.1
@@ -29,7 +29,7 @@ importers:
         version: 2.0.6
       '@types/mini-css-extract-plugin':
         specifier: 2.4.0
-        version: 2.4.0(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))
+        version: 2.4.0(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0))
       '@types/node':
         specifier: ^18.19.129
         version: 18.19.129
@@ -86,7 +86,7 @@ importers:
         version: 2.1.0(webpack@4.47.0(webpack-cli@4.10.0))
       webpack5:
         specifier: npm:webpack@^5.0.0
-        version: webpack@5.88.2(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))
+        version: webpack@5.88.2(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0))
 
 packages:
 
@@ -103,316 +103,322 @@ packages:
     engines: {node: '>=10.0.0'}
 
   '@emnapi/core@1.5.0':
-    resolution: {integrity: sha512-sbP8GzB1WDzacS8fgNPpHlp6C9VZe+SJP3F90W9rLemaQj2PzIuTEl1qDOYQf58YIpyjViI24y9aPWCjEzY2cg==}
+    resolution: {integrity: sha512-sbP8GzB1WDzacS8fgNPpHlp6C9VZe+SJP3F90W9rLemaQj2PzIuTEl1qDOYQf58YIpyjViI24y9aPWCjEzY2cg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@emnapi/core/-/core-1.5.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40emnapi%2Fcore%2F-%2Fcore-1.5.0.tgz}
 
   '@emnapi/runtime@1.5.0':
-    resolution: {integrity: sha512-97/BJ3iXHww3djw6hYIfErCZFee7qCtrneuLa20UXFCOTCfBM2cvQHjWJ2EG0s0MtdNwInarqCTz35i4wWXHsQ==}
+    resolution: {integrity: sha512-97/BJ3iXHww3djw6hYIfErCZFee7qCtrneuLa20UXFCOTCfBM2cvQHjWJ2EG0s0MtdNwInarqCTz35i4wWXHsQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@emnapi/runtime/-/runtime-1.5.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40emnapi%2Fruntime%2F-%2Fruntime-1.5.0.tgz}
 
   '@emnapi/wasi-threads@1.1.0':
-    resolution: {integrity: sha512-WI0DdZ8xFSbgMjR1sFsKABJ/C5OnRrjT06JXbZKexJGrDuPTzZdDYfFlsgcCXCyf+suG5QU2e/y1Wo2V/OapLQ==}
-
-  '@esbuild/aix-ppc64@0.25.0':
-    resolution: {integrity: sha512-O7vun9Sf8DFjH2UtqK8Ku3LkquL9SZL8OLY1T5NZkA34+wG3OQF7cl4Ql8vdNzM6fzBbYfLaiRLIOZ+2FOCgBQ==}
-    engines: {node: '>=18'}
-    cpu: [ppc64]
-    os: [aix]
+    resolution: {integrity: sha512-WI0DdZ8xFSbgMjR1sFsKABJ/C5OnRrjT06JXbZKexJGrDuPTzZdDYfFlsgcCXCyf+suG5QU2e/y1Wo2V/OapLQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@emnapi/wasi-threads/-/wasi-threads-1.1.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40emnapi%2Fwasi-threads%2F-%2Fwasi-threads-1.1.0.tgz}
 
   '@esbuild/aix-ppc64@0.25.10':
-    resolution: {integrity: sha512-0NFWnA+7l41irNuaSVlLfgNT12caWJVLzp5eAVhZ0z1qpxbockccEt3s+149rE64VUI3Ml2zt8Nv5JVc4QXTsw==}
+    resolution: {integrity: sha512-0NFWnA+7l41irNuaSVlLfgNT12caWJVLzp5eAVhZ0z1qpxbockccEt3s+149rE64VUI3Ml2zt8Nv5JVc4QXTsw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/aix-ppc64/-/aix-ppc64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Faix-ppc64%2F-%2Faix-ppc64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [ppc64]
     os: [aix]
 
-  '@esbuild/android-arm64@0.25.0':
-    resolution: {integrity: sha512-grvv8WncGjDSyUBjN9yHXNt+cq0snxXbDxy5pJtzMKGmmpPxeAmAhWxXI+01lU5rwZomDgD3kJwulEnhTRUd6g==}
+  '@esbuild/aix-ppc64@0.27.1':
+    resolution: {integrity: sha512-HHB50pdsBX6k47S4u5g/CaLjqS3qwaOVE5ILsq64jyzgMhLuCuZ8rGzM9yhsAjfjkbgUPMzZEPa7DAp7yz6vuA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/aix-ppc64/-/aix-ppc64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Faix-ppc64%2F-%2Faix-ppc64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [android]
+    cpu: [ppc64]
+    os: [aix]
 
   '@esbuild/android-arm64@0.25.10':
-    resolution: {integrity: sha512-LSQa7eDahypv/VO6WKohZGPSJDq5OVOo3UoFR1E4t4Gj1W7zEQMUhI+lo81H+DtB+kP+tDgBp+M4oNCwp6kffg==}
+    resolution: {integrity: sha512-LSQa7eDahypv/VO6WKohZGPSJDq5OVOo3UoFR1E4t4Gj1W7zEQMUhI+lo81H+DtB+kP+tDgBp+M4oNCwp6kffg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/android-arm64/-/android-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fandroid-arm64%2F-%2Fandroid-arm64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [android]
 
-  '@esbuild/android-arm@0.25.0':
-    resolution: {integrity: sha512-PTyWCYYiU0+1eJKmw21lWtC+d08JDZPQ5g+kFyxP0V+es6VPPSUhM6zk8iImp2jbV6GwjX4pap0JFbUQN65X1g==}
+  '@esbuild/android-arm64@0.27.1':
+    resolution: {integrity: sha512-45fuKmAJpxnQWixOGCrS+ro4Uvb4Re9+UTieUY2f8AEc+t7d4AaZ6eUJ3Hva7dtrxAAWHtlEFsXFMAgNnGU9uQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/android-arm64/-/android-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fandroid-arm64%2F-%2Fandroid-arm64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [arm]
+    cpu: [arm64]
     os: [android]
 
   '@esbuild/android-arm@0.25.10':
-    resolution: {integrity: sha512-dQAxF1dW1C3zpeCDc5KqIYuZ1tgAdRXNoZP7vkBIRtKZPYe2xVr/d3SkirklCHudW1B45tGiUlz2pUWDfbDD4w==}
+    resolution: {integrity: sha512-dQAxF1dW1C3zpeCDc5KqIYuZ1tgAdRXNoZP7vkBIRtKZPYe2xVr/d3SkirklCHudW1B45tGiUlz2pUWDfbDD4w==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/android-arm/-/android-arm-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fandroid-arm%2F-%2Fandroid-arm-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [arm]
     os: [android]
 
-  '@esbuild/android-x64@0.25.0':
-    resolution: {integrity: sha512-m/ix7SfKG5buCnxasr52+LI78SQ+wgdENi9CqyCXwjVR2X4Jkz+BpC3le3AoBPYTC9NHklwngVXvbJ9/Akhrfg==}
+  '@esbuild/android-arm@0.27.1':
+    resolution: {integrity: sha512-kFqa6/UcaTbGm/NncN9kzVOODjhZW8e+FRdSeypWe6j33gzclHtwlANs26JrupOntlcWmB0u8+8HZo8s7thHvg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/android-arm/-/android-arm-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fandroid-arm%2F-%2Fandroid-arm-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [x64]
+    cpu: [arm]
     os: [android]
 
   '@esbuild/android-x64@0.25.10':
-    resolution: {integrity: sha512-MiC9CWdPrfhibcXwr39p9ha1x0lZJ9KaVfvzA0Wxwz9ETX4v5CHfF09bx935nHlhi+MxhA63dKRRQLiVgSUtEg==}
+    resolution: {integrity: sha512-MiC9CWdPrfhibcXwr39p9ha1x0lZJ9KaVfvzA0Wxwz9ETX4v5CHfF09bx935nHlhi+MxhA63dKRRQLiVgSUtEg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/android-x64/-/android-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fandroid-x64%2F-%2Fandroid-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [android]
 
-  '@esbuild/darwin-arm64@0.25.0':
-    resolution: {integrity: sha512-mVwdUb5SRkPayVadIOI78K7aAnPamoeFR2bT5nszFUZ9P8UpK4ratOdYbZZXYSqPKMHfS1wdHCJk1P1EZpRdvw==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@esbuild/darwin-arm64@0.25.10':
-    resolution: {integrity: sha512-JC74bdXcQEpW9KkV326WpZZjLguSZ3DfS8wrrvPMHgQOIEIG/sPXEN/V8IssoJhbefLRcRqw6RQH2NnpdprtMA==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@esbuild/darwin-x64@0.25.0':
-    resolution: {integrity: sha512-DgDaYsPWFTS4S3nWpFcMn/33ZZwAAeAFKNHNa1QN0rI4pUjgqf0f7ONmXf6d22tqTY+H9FNdgeaAa+YIFUn2Rg==}
+  '@esbuild/android-x64@0.27.1':
+    resolution: {integrity: sha512-LBEpOz0BsgMEeHgenf5aqmn/lLNTFXVfoWMUox8CtWWYK9X4jmQzWjoGoNb8lmAYml/tQ/Ysvm8q7szu7BoxRQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/android-x64/-/android-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fandroid-x64%2F-%2Fandroid-x64-0.27.1.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
+    os: [android]
+
+  '@esbuild/darwin-arm64@0.25.10':
+    resolution: {integrity: sha512-JC74bdXcQEpW9KkV326WpZZjLguSZ3DfS8wrrvPMHgQOIEIG/sPXEN/V8IssoJhbefLRcRqw6RQH2NnpdprtMA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/darwin-arm64/-/darwin-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fdarwin-arm64%2F-%2Fdarwin-arm64-0.25.10.tgz}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@esbuild/darwin-arm64@0.27.1':
+    resolution: {integrity: sha512-veg7fL8eMSCVKL7IW4pxb54QERtedFDfY/ASrumK/SbFsXnRazxY4YykN/THYqFnFwJ0aVjiUrVG2PwcdAEqQQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/darwin-arm64/-/darwin-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fdarwin-arm64%2F-%2Fdarwin-arm64-0.27.1.tgz}
+    engines: {node: '>=18'}
+    cpu: [arm64]
     os: [darwin]
 
   '@esbuild/darwin-x64@0.25.10':
-    resolution: {integrity: sha512-tguWg1olF6DGqzws97pKZ8G2L7Ig1vjDmGTwcTuYHbuU6TTjJe5FXbgs5C1BBzHbJ2bo1m3WkQDbWO2PvamRcg==}
+    resolution: {integrity: sha512-tguWg1olF6DGqzws97pKZ8G2L7Ig1vjDmGTwcTuYHbuU6TTjJe5FXbgs5C1BBzHbJ2bo1m3WkQDbWO2PvamRcg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/darwin-x64/-/darwin-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fdarwin-x64%2F-%2Fdarwin-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [darwin]
 
-  '@esbuild/freebsd-arm64@0.25.0':
-    resolution: {integrity: sha512-VN4ocxy6dxefN1MepBx/iD1dH5K8qNtNe227I0mnTRjry8tj5MRk4zprLEdG8WPyAPb93/e4pSgi1SoHdgOa4w==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [freebsd]
-
-  '@esbuild/freebsd-arm64@0.25.10':
-    resolution: {integrity: sha512-3ZioSQSg1HT2N05YxeJWYR+Libe3bREVSdWhEEgExWaDtyFbbXWb49QgPvFH8u03vUPX10JhJPcz7s9t9+boWg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [freebsd]
-
-  '@esbuild/freebsd-x64@0.25.0':
-    resolution: {integrity: sha512-mrSgt7lCh07FY+hDD1TxiTyIHyttn6vnjesnPoVDNmDfOmggTLXRv8Id5fNZey1gl/V2dyVK1VXXqVsQIiAk+A==}
+  '@esbuild/darwin-x64@0.27.1':
+    resolution: {integrity: sha512-+3ELd+nTzhfWb07Vol7EZ+5PTbJ/u74nC6iv4/lwIU99Ip5uuY6QoIf0Hn4m2HoV0qcnRivN3KSqc+FyCHjoVQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/darwin-x64/-/darwin-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fdarwin-x64%2F-%2Fdarwin-x64-0.27.1.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
+    os: [darwin]
+
+  '@esbuild/freebsd-arm64@0.25.10':
+    resolution: {integrity: sha512-3ZioSQSg1HT2N05YxeJWYR+Libe3bREVSdWhEEgExWaDtyFbbXWb49QgPvFH8u03vUPX10JhJPcz7s9t9+boWg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Ffreebsd-arm64%2F-%2Ffreebsd-arm64-0.25.10.tgz}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [freebsd]
+
+  '@esbuild/freebsd-arm64@0.27.1':
+    resolution: {integrity: sha512-/8Rfgns4XD9XOSXlzUDepG8PX+AVWHliYlUkFI3K3GB6tqbdjYqdhcb4BKRd7C0BhZSoaCxhv8kTcBrcZWP+xg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/freebsd-arm64/-/freebsd-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Ffreebsd-arm64%2F-%2Ffreebsd-arm64-0.27.1.tgz}
+    engines: {node: '>=18'}
+    cpu: [arm64]
     os: [freebsd]
 
   '@esbuild/freebsd-x64@0.25.10':
-    resolution: {integrity: sha512-LLgJfHJk014Aa4anGDbh8bmI5Lk+QidDmGzuC2D+vP7mv/GeSN+H39zOf7pN5N8p059FcOfs2bVlrRr4SK9WxA==}
+    resolution: {integrity: sha512-LLgJfHJk014Aa4anGDbh8bmI5Lk+QidDmGzuC2D+vP7mv/GeSN+H39zOf7pN5N8p059FcOfs2bVlrRr4SK9WxA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/freebsd-x64/-/freebsd-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Ffreebsd-x64%2F-%2Ffreebsd-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [freebsd]
 
-  '@esbuild/linux-arm64@0.25.0':
-    resolution: {integrity: sha512-9QAQjTWNDM/Vk2bgBl17yWuZxZNQIF0OUUuPZRKoDtqF2k4EtYbpyiG5/Dk7nqeK6kIJWPYldkOcBqjXjrUlmg==}
+  '@esbuild/freebsd-x64@0.27.1':
+    resolution: {integrity: sha512-GITpD8dK9C+r+5yRT/UKVT36h/DQLOHdwGVwwoHidlnA168oD3uxA878XloXebK4Ul3gDBBIvEdL7go9gCUFzQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/freebsd-x64/-/freebsd-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Ffreebsd-x64%2F-%2Ffreebsd-x64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [linux]
+    cpu: [x64]
+    os: [freebsd]
 
   '@esbuild/linux-arm64@0.25.10':
-    resolution: {integrity: sha512-5luJWN6YKBsawd5f9i4+c+geYiVEw20FVW5x0v1kEMWNq8UctFjDiMATBxLvmmHA4bf7F6hTRaJgtghFr9iziQ==}
+    resolution: {integrity: sha512-5luJWN6YKBsawd5f9i4+c+geYiVEw20FVW5x0v1kEMWNq8UctFjDiMATBxLvmmHA4bf7F6hTRaJgtghFr9iziQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-arm64/-/linux-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-arm64%2F-%2Flinux-arm64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [linux]
 
-  '@esbuild/linux-arm@0.25.0':
-    resolution: {integrity: sha512-vkB3IYj2IDo3g9xX7HqhPYxVkNQe8qTK55fraQyTzTX/fxaDtXiEnavv9geOsonh2Fd2RMB+i5cbhu2zMNWJwg==}
+  '@esbuild/linux-arm64@0.27.1':
+    resolution: {integrity: sha512-W9//kCrh/6in9rWIBdKaMtuTTzNj6jSeG/haWBADqLLa9P8O5YSRDzgD5y9QBok4AYlzS6ARHifAb75V6G670Q==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-arm64/-/linux-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-arm64%2F-%2Flinux-arm64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [arm]
+    cpu: [arm64]
     os: [linux]
 
   '@esbuild/linux-arm@0.25.10':
-    resolution: {integrity: sha512-oR31GtBTFYCqEBALI9r6WxoU/ZofZl962pouZRTEYECvNF/dtXKku8YXcJkhgK/beU+zedXfIzHijSRapJY3vg==}
+    resolution: {integrity: sha512-oR31GtBTFYCqEBALI9r6WxoU/ZofZl962pouZRTEYECvNF/dtXKku8YXcJkhgK/beU+zedXfIzHijSRapJY3vg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-arm/-/linux-arm-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-arm%2F-%2Flinux-arm-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [arm]
     os: [linux]
 
-  '@esbuild/linux-ia32@0.25.0':
-    resolution: {integrity: sha512-43ET5bHbphBegyeqLb7I1eYn2P/JYGNmzzdidq/w0T8E2SsYL1U6un2NFROFRg1JZLTzdCoRomg8Rvf9M6W6Gg==}
+  '@esbuild/linux-arm@0.27.1':
+    resolution: {integrity: sha512-ieMID0JRZY/ZeCrsFQ3Y3NlHNCqIhTprJfDgSB3/lv5jJZ8FX3hqPyXWhe+gvS5ARMBJ242PM+VNz/ctNj//eA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-arm/-/linux-arm-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-arm%2F-%2Flinux-arm-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [ia32]
+    cpu: [arm]
     os: [linux]
 
   '@esbuild/linux-ia32@0.25.10':
-    resolution: {integrity: sha512-NrSCx2Kim3EnnWgS4Txn0QGt0Xipoumb6z6sUtl5bOEZIVKhzfyp/Lyw4C1DIYvzeW/5mWYPBFJU3a/8Yr75DQ==}
+    resolution: {integrity: sha512-NrSCx2Kim3EnnWgS4Txn0QGt0Xipoumb6z6sUtl5bOEZIVKhzfyp/Lyw4C1DIYvzeW/5mWYPBFJU3a/8Yr75DQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-ia32/-/linux-ia32-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-ia32%2F-%2Flinux-ia32-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [ia32]
     os: [linux]
 
-  '@esbuild/linux-loong64@0.25.0':
-    resolution: {integrity: sha512-fC95c/xyNFueMhClxJmeRIj2yrSMdDfmqJnyOY4ZqsALkDrrKJfIg5NTMSzVBr5YW1jf+l7/cndBfP3MSDpoHw==}
+  '@esbuild/linux-ia32@0.27.1':
+    resolution: {integrity: sha512-VIUV4z8GD8rtSVMfAj1aXFahsi/+tcoXXNYmXgzISL+KB381vbSTNdeZHHHIYqFyXcoEhu9n5cT+05tRv13rlw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-ia32/-/linux-ia32-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-ia32%2F-%2Flinux-ia32-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [loong64]
+    cpu: [ia32]
     os: [linux]
 
   '@esbuild/linux-loong64@0.25.10':
-    resolution: {integrity: sha512-xoSphrd4AZda8+rUDDfD9J6FUMjrkTz8itpTITM4/xgerAZZcFW7Dv+sun7333IfKxGG8gAq+3NbfEMJfiY+Eg==}
+    resolution: {integrity: sha512-xoSphrd4AZda8+rUDDfD9J6FUMjrkTz8itpTITM4/xgerAZZcFW7Dv+sun7333IfKxGG8gAq+3NbfEMJfiY+Eg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-loong64/-/linux-loong64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-loong64%2F-%2Flinux-loong64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [loong64]
     os: [linux]
 
-  '@esbuild/linux-mips64el@0.25.0':
-    resolution: {integrity: sha512-nkAMFju7KDW73T1DdH7glcyIptm95a7Le8irTQNO/qtkoyypZAnjchQgooFUDQhNAy4iu08N79W4T4pMBwhPwQ==}
+  '@esbuild/linux-loong64@0.27.1':
+    resolution: {integrity: sha512-l4rfiiJRN7sTNI//ff65zJ9z8U+k6zcCg0LALU5iEWzY+a1mVZ8iWC1k5EsNKThZ7XCQ6YWtsZ8EWYm7r1UEsg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-loong64/-/linux-loong64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-loong64%2F-%2Flinux-loong64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [mips64el]
+    cpu: [loong64]
     os: [linux]
 
   '@esbuild/linux-mips64el@0.25.10':
-    resolution: {integrity: sha512-ab6eiuCwoMmYDyTnyptoKkVS3k8fy/1Uvq7Dj5czXI6DF2GqD2ToInBI0SHOp5/X1BdZ26RKc5+qjQNGRBelRA==}
+    resolution: {integrity: sha512-ab6eiuCwoMmYDyTnyptoKkVS3k8fy/1Uvq7Dj5czXI6DF2GqD2ToInBI0SHOp5/X1BdZ26RKc5+qjQNGRBelRA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-mips64el/-/linux-mips64el-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-mips64el%2F-%2Flinux-mips64el-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [mips64el]
     os: [linux]
 
-  '@esbuild/linux-ppc64@0.25.0':
-    resolution: {integrity: sha512-NhyOejdhRGS8Iwv+KKR2zTq2PpysF9XqY+Zk77vQHqNbo/PwZCzB5/h7VGuREZm1fixhs4Q/qWRSi5zmAiO4Fw==}
+  '@esbuild/linux-mips64el@0.27.1':
+    resolution: {integrity: sha512-U0bEuAOLvO/DWFdygTHWY8C067FXz+UbzKgxYhXC0fDieFa0kDIra1FAhsAARRJbvEyso8aAqvPdNxzWuStBnA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-mips64el/-/linux-mips64el-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-mips64el%2F-%2Flinux-mips64el-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [ppc64]
+    cpu: [mips64el]
     os: [linux]
 
   '@esbuild/linux-ppc64@0.25.10':
-    resolution: {integrity: sha512-NLinzzOgZQsGpsTkEbdJTCanwA5/wozN9dSgEl12haXJBzMTpssebuXR42bthOF3z7zXFWH1AmvWunUCkBE4EA==}
+    resolution: {integrity: sha512-NLinzzOgZQsGpsTkEbdJTCanwA5/wozN9dSgEl12haXJBzMTpssebuXR42bthOF3z7zXFWH1AmvWunUCkBE4EA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-ppc64/-/linux-ppc64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-ppc64%2F-%2Flinux-ppc64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [ppc64]
     os: [linux]
 
-  '@esbuild/linux-riscv64@0.25.0':
-    resolution: {integrity: sha512-5S/rbP5OY+GHLC5qXp1y/Mx//e92L1YDqkiBbO9TQOvuFXM+iDqUNG5XopAnXoRH3FjIUDkeGcY1cgNvnXp/kA==}
+  '@esbuild/linux-ppc64@0.27.1':
+    resolution: {integrity: sha512-NzdQ/Xwu6vPSf/GkdmRNsOfIeSGnh7muundsWItmBsVpMoNPVpM61qNzAVY3pZ1glzzAxLR40UyYM23eaDDbYQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-ppc64/-/linux-ppc64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-ppc64%2F-%2Flinux-ppc64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [riscv64]
+    cpu: [ppc64]
     os: [linux]
 
   '@esbuild/linux-riscv64@0.25.10':
-    resolution: {integrity: sha512-FE557XdZDrtX8NMIeA8LBJX3dC2M8VGXwfrQWU7LB5SLOajfJIxmSdyL/gU1m64Zs9CBKvm4UAuBp5aJ8OgnrA==}
+    resolution: {integrity: sha512-FE557XdZDrtX8NMIeA8LBJX3dC2M8VGXwfrQWU7LB5SLOajfJIxmSdyL/gU1m64Zs9CBKvm4UAuBp5aJ8OgnrA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-riscv64/-/linux-riscv64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-riscv64%2F-%2Flinux-riscv64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [riscv64]
     os: [linux]
 
-  '@esbuild/linux-s390x@0.25.0':
-    resolution: {integrity: sha512-XM2BFsEBz0Fw37V0zU4CXfcfuACMrppsMFKdYY2WuTS3yi8O1nFOhil/xhKTmE1nPmVyvQJjJivgDT+xh8pXJA==}
+  '@esbuild/linux-riscv64@0.27.1':
+    resolution: {integrity: sha512-7zlw8p3IApcsN7mFw0O1Z1PyEk6PlKMu18roImfl3iQHTnr/yAfYv6s4hXPidbDoI2Q0pW+5xeoM4eTCC0UdrQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-riscv64/-/linux-riscv64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-riscv64%2F-%2Flinux-riscv64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [s390x]
+    cpu: [riscv64]
     os: [linux]
 
   '@esbuild/linux-s390x@0.25.10':
-    resolution: {integrity: sha512-3BBSbgzuB9ajLoVZk0mGu+EHlBwkusRmeNYdqmznmMc9zGASFjSsxgkNsqmXugpPk00gJ0JNKh/97nxmjctdew==}
+    resolution: {integrity: sha512-3BBSbgzuB9ajLoVZk0mGu+EHlBwkusRmeNYdqmznmMc9zGASFjSsxgkNsqmXugpPk00gJ0JNKh/97nxmjctdew==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-s390x/-/linux-s390x-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-s390x%2F-%2Flinux-s390x-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [s390x]
     os: [linux]
 
-  '@esbuild/linux-x64@0.25.0':
-    resolution: {integrity: sha512-9yl91rHw/cpwMCNytUDxwj2XjFpxML0y9HAOH9pNVQDpQrBxHy01Dx+vaMu0N1CKa/RzBD2hB4u//nfc+Sd3Cw==}
+  '@esbuild/linux-s390x@0.27.1':
+    resolution: {integrity: sha512-cGj5wli+G+nkVQdZo3+7FDKC25Uh4ZVwOAK6A06Hsvgr8WqBBuOy/1s+PUEd/6Je+vjfm6stX0kmib5b/O2Ykw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-s390x/-/linux-s390x-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-s390x%2F-%2Flinux-s390x-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [x64]
+    cpu: [s390x]
     os: [linux]
 
   '@esbuild/linux-x64@0.25.10':
-    resolution: {integrity: sha512-QSX81KhFoZGwenVyPoberggdW1nrQZSvfVDAIUXr3WqLRZGZqWk/P4T8p2SP+de2Sr5HPcvjhcJzEiulKgnxtA==}
+    resolution: {integrity: sha512-QSX81KhFoZGwenVyPoberggdW1nrQZSvfVDAIUXr3WqLRZGZqWk/P4T8p2SP+de2Sr5HPcvjhcJzEiulKgnxtA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-x64/-/linux-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-x64%2F-%2Flinux-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [linux]
 
-  '@esbuild/netbsd-arm64@0.25.0':
-    resolution: {integrity: sha512-RuG4PSMPFfrkH6UwCAqBzauBWTygTvb1nxWasEJooGSJ/NwRw7b2HOwyRTQIU97Hq37l3npXoZGYMy3b3xYvPw==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [netbsd]
-
-  '@esbuild/netbsd-arm64@0.25.10':
-    resolution: {integrity: sha512-AKQM3gfYfSW8XRk8DdMCzaLUFB15dTrZfnX8WXQoOUpUBQ+NaAFCP1kPS/ykbbGYz7rxn0WS48/81l9hFl3u4A==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [netbsd]
-
-  '@esbuild/netbsd-x64@0.25.0':
-    resolution: {integrity: sha512-jl+qisSB5jk01N5f7sPCsBENCOlPiS/xptD5yxOx2oqQfyourJwIKLRA2yqWdifj3owQZCL2sn6o08dBzZGQzA==}
+  '@esbuild/linux-x64@0.27.1':
+    resolution: {integrity: sha512-z3H/HYI9MM0HTv3hQZ81f+AKb+yEoCRlUby1F80vbQ5XdzEMyY/9iNlAmhqiBKw4MJXwfgsh7ERGEOhrM1niMA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/linux-x64/-/linux-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Flinux-x64%2F-%2Flinux-x64-0.27.1.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
+    os: [linux]
+
+  '@esbuild/netbsd-arm64@0.25.10':
+    resolution: {integrity: sha512-AKQM3gfYfSW8XRk8DdMCzaLUFB15dTrZfnX8WXQoOUpUBQ+NaAFCP1kPS/ykbbGYz7rxn0WS48/81l9hFl3u4A==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fnetbsd-arm64%2F-%2Fnetbsd-arm64-0.25.10.tgz}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [netbsd]
+
+  '@esbuild/netbsd-arm64@0.27.1':
+    resolution: {integrity: sha512-wzC24DxAvk8Em01YmVXyjl96Mr+ecTPyOuADAvjGg+fyBpGmxmcr2E5ttf7Im8D0sXZihpxzO1isus8MdjMCXQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/netbsd-arm64/-/netbsd-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fnetbsd-arm64%2F-%2Fnetbsd-arm64-0.27.1.tgz}
+    engines: {node: '>=18'}
+    cpu: [arm64]
     os: [netbsd]
 
   '@esbuild/netbsd-x64@0.25.10':
-    resolution: {integrity: sha512-7RTytDPGU6fek/hWuN9qQpeGPBZFfB4zZgcz2VK2Z5VpdUxEI8JKYsg3JfO0n/Z1E/6l05n0unDCNc4HnhQGig==}
+    resolution: {integrity: sha512-7RTytDPGU6fek/hWuN9qQpeGPBZFfB4zZgcz2VK2Z5VpdUxEI8JKYsg3JfO0n/Z1E/6l05n0unDCNc4HnhQGig==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/netbsd-x64/-/netbsd-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fnetbsd-x64%2F-%2Fnetbsd-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [netbsd]
 
-  '@esbuild/openbsd-arm64@0.25.0':
-    resolution: {integrity: sha512-21sUNbq2r84YE+SJDfaQRvdgznTD8Xc0oc3p3iW/a1EVWeNj/SdUCbm5U0itZPQYRuRTW20fPMWMpcrciH2EJw==}
+  '@esbuild/netbsd-x64@0.27.1':
+    resolution: {integrity: sha512-1YQ8ybGi2yIXswu6eNzJsrYIGFpnlzEWRl6iR5gMgmsrR0FcNoV1m9k9sc3PuP5rUBLshOZylc9nqSgymI+TYg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/netbsd-x64/-/netbsd-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fnetbsd-x64%2F-%2Fnetbsd-x64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [openbsd]
+    cpu: [x64]
+    os: [netbsd]
 
   '@esbuild/openbsd-arm64@0.25.10':
-    resolution: {integrity: sha512-5Se0VM9Wtq797YFn+dLimf2Zx6McttsH2olUBsDml+lm0GOCRVebRWUvDtkY4BWYv/3NgzS8b/UM3jQNh5hYyw==}
+    resolution: {integrity: sha512-5Se0VM9Wtq797YFn+dLimf2Zx6McttsH2olUBsDml+lm0GOCRVebRWUvDtkY4BWYv/3NgzS8b/UM3jQNh5hYyw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fopenbsd-arm64%2F-%2Fopenbsd-arm64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [openbsd]
 
-  '@esbuild/openbsd-x64@0.25.0':
-    resolution: {integrity: sha512-2gwwriSMPcCFRlPlKx3zLQhfN/2WjJ2NSlg5TKLQOJdV0mSxIcYNTMhk3H3ulL/cak+Xj0lY1Ym9ysDV1igceg==}
+  '@esbuild/openbsd-arm64@0.27.1':
+    resolution: {integrity: sha512-5Z+DzLCrq5wmU7RDaMDe2DVXMRm2tTDvX2KU14JJVBN2CT/qov7XVix85QoJqHltpvAOZUAc3ndU56HSMWrv8g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/openbsd-arm64/-/openbsd-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fopenbsd-arm64%2F-%2Fopenbsd-arm64-0.27.1.tgz}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [openbsd]
+
+  '@esbuild/openbsd-x64@0.25.10':
+    resolution: {integrity: sha512-XkA4frq1TLj4bEMB+2HnI0+4RnjbuGZfet2gs/LNs5Hc7D89ZQBHQ0gL2ND6Lzu1+QVkjp3x1gIcPKzRNP8bXw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/openbsd-x64/-/openbsd-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fopenbsd-x64%2F-%2Fopenbsd-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [openbsd]
 
-  '@esbuild/openbsd-x64@0.25.10':
-    resolution: {integrity: sha512-XkA4frq1TLj4bEMB+2HnI0+4RnjbuGZfet2gs/LNs5Hc7D89ZQBHQ0gL2ND6Lzu1+QVkjp3x1gIcPKzRNP8bXw==}
+  '@esbuild/openbsd-x64@0.27.1':
+    resolution: {integrity: sha512-Q73ENzIdPF5jap4wqLtsfh8YbYSZ8Q0wnxplOlZUOyZy7B4ZKW8DXGWgTCZmF8VWD7Tciwv5F4NsRf6vYlZtqg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/openbsd-x64/-/openbsd-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fopenbsd-x64%2F-%2Fopenbsd-x64-0.27.1.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [openbsd]
 
   '@esbuild/openharmony-arm64@0.25.10':
-    resolution: {integrity: sha512-AVTSBhTX8Y/Fz6OmIVBip9tJzZEUcY8WLh7I59+upa5/GPhh2/aM6bvOMQySspnCCHvFi79kMtdJS1w0DXAeag==}
+    resolution: {integrity: sha512-AVTSBhTX8Y/Fz6OmIVBip9tJzZEUcY8WLh7I59+upa5/GPhh2/aM6bvOMQySspnCCHvFi79kMtdJS1w0DXAeag==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/openharmony-arm64/-/openharmony-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fopenharmony-arm64%2F-%2Fopenharmony-arm64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [openharmony]
 
-  '@esbuild/sunos-x64@0.25.0':
-    resolution: {integrity: sha512-bxI7ThgLzPrPz484/S9jLlvUAHYMzy6I0XiU1ZMeAEOBcS0VePBFxh1JjTQt3Xiat5b6Oh4x7UC7IwKQKIJRIg==}
+  '@esbuild/openharmony-arm64@0.27.1':
+    resolution: {integrity: sha512-ajbHrGM/XiK+sXM0JzEbJAen+0E+JMQZ2l4RR4VFwvV9JEERx+oxtgkpoKv1SevhjavK2z2ReHk32pjzktWbGg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/openharmony-arm64/-/openharmony-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fopenharmony-arm64%2F-%2Fopenharmony-arm64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [x64]
-    os: [sunos]
+    cpu: [arm64]
+    os: [openharmony]
 
   '@esbuild/sunos-x64@0.25.10':
-    resolution: {integrity: sha512-fswk3XT0Uf2pGJmOpDB7yknqhVkJQkAQOcW/ccVOtfx05LkbWOaRAtn5SaqXypeKQra1QaEa841PgrSL9ubSPQ==}
+    resolution: {integrity: sha512-fswk3XT0Uf2pGJmOpDB7yknqhVkJQkAQOcW/ccVOtfx05LkbWOaRAtn5SaqXypeKQra1QaEa841PgrSL9ubSPQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/sunos-x64/-/sunos-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fsunos-x64%2F-%2Fsunos-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [sunos]
 
-  '@esbuild/win32-arm64@0.25.0':
-    resolution: {integrity: sha512-ZUAc2YK6JW89xTbXvftxdnYy3m4iHIkDtK3CLce8wg8M2L+YZhIvO1DKpxrd0Yr59AeNNkTiic9YLf6FTtXWMw==}
+  '@esbuild/sunos-x64@0.27.1':
+    resolution: {integrity: sha512-IPUW+y4VIjuDVn+OMzHc5FV4GubIwPnsz6ubkvN8cuhEqH81NovB53IUlrlBkPMEPxvNnf79MGBoz8rZ2iW8HA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/sunos-x64/-/sunos-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fsunos-x64%2F-%2Fsunos-x64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [win32]
+    cpu: [x64]
+    os: [sunos]
 
   '@esbuild/win32-arm64@0.25.10':
-    resolution: {integrity: sha512-ah+9b59KDTSfpaCg6VdJoOQvKjI33nTaQr4UluQwW7aEwZQsbMCfTmfEO4VyewOxx4RaDT/xCy9ra2GPWmO7Kw==}
+    resolution: {integrity: sha512-ah+9b59KDTSfpaCg6VdJoOQvKjI33nTaQr4UluQwW7aEwZQsbMCfTmfEO4VyewOxx4RaDT/xCy9ra2GPWmO7Kw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/win32-arm64/-/win32-arm64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fwin32-arm64%2F-%2Fwin32-arm64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [win32]
 
-  '@esbuild/win32-ia32@0.25.0':
-    resolution: {integrity: sha512-eSNxISBu8XweVEWG31/JzjkIGbGIJN/TrRoiSVZwZ6pkC6VX4Im/WV2cz559/TXLcYbcrDN8JtKgd9DJVIo8GA==}
+  '@esbuild/win32-arm64@0.27.1':
+    resolution: {integrity: sha512-RIVRWiljWA6CdVu8zkWcRmGP7iRRIIwvhDKem8UMBjPql2TXM5PkDVvvrzMtj1V+WFPB4K7zkIGM7VzRtFkjdg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/win32-arm64/-/win32-arm64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fwin32-arm64%2F-%2Fwin32-arm64-0.27.1.tgz}
     engines: {node: '>=18'}
-    cpu: [ia32]
+    cpu: [arm64]
     os: [win32]
 
   '@esbuild/win32-ia32@0.25.10':
-    resolution: {integrity: sha512-QHPDbKkrGO8/cz9LKVnJU22HOi4pxZnZhhA2HYHez5Pz4JeffhDjf85E57Oyco163GnzNCVkZK0b/n4Y0UHcSw==}
+    resolution: {integrity: sha512-QHPDbKkrGO8/cz9LKVnJU22HOi4pxZnZhhA2HYHez5Pz4JeffhDjf85E57Oyco163GnzNCVkZK0b/n4Y0UHcSw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/win32-ia32/-/win32-ia32-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fwin32-ia32%2F-%2Fwin32-ia32-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [ia32]
     os: [win32]
 
-  '@esbuild/win32-x64@0.25.0':
-    resolution: {integrity: sha512-ZENoHJBxA20C2zFzh6AI4fT6RraMzjYw4xKWemRTRmRVtN9c5DcH9r/f2ihEkMjOW5eGgrwCslG/+Y/3bL+DHQ==}
+  '@esbuild/win32-ia32@0.27.1':
+    resolution: {integrity: sha512-2BR5M8CPbptC1AK5JbJT1fWrHLvejwZidKx3UMSF0ecHMa+smhi16drIrCEggkgviBwLYd5nwrFLSl5Kho96RQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/win32-ia32/-/win32-ia32-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fwin32-ia32%2F-%2Fwin32-ia32-0.27.1.tgz}
+    engines: {node: '>=18'}
+    cpu: [ia32]
+    os: [win32]
+
+  '@esbuild/win32-x64@0.25.10':
+    resolution: {integrity: sha512-9KpxSVFCu0iK1owoez6aC/s/EdUQLDN3adTxGCqxMVhrPDj6bt5dbrHDXUuq+Bs2vATFBBrQS5vdQ/Ed2P+nbw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/win32-x64/-/win32-x64-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fwin32-x64%2F-%2Fwin32-x64-0.25.10.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
 
-  '@esbuild/win32-x64@0.25.10':
-    resolution: {integrity: sha512-9KpxSVFCu0iK1owoez6aC/s/EdUQLDN3adTxGCqxMVhrPDj6bt5dbrHDXUuq+Bs2vATFBBrQS5vdQ/Ed2P+nbw==}
+  '@esbuild/win32-x64@0.27.1':
+    resolution: {integrity: sha512-d5X6RMYv6taIymSk8JBP+nxv8DQAMY6A51GPgusqLdK9wBz5wWIXy1KjTck6HnjE9hqJzJRdk+1p/t5soSbCtw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@esbuild/win32-x64/-/win32-x64-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40esbuild%2Fwin32-x64%2F-%2Fwin32-x64-0.27.1.tgz}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
@@ -573,7 +579,7 @@ packages:
       tslib: '2'
 
   '@napi-rs/wasm-runtime@0.2.12':
-    resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
+    resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.12.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40napi-rs%2Fwasm-runtime%2F-%2Fwasm-runtime-0.2.12.tgz}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -655,117 +661,117 @@ packages:
         optional: true
 
   '@rollup/rollup-android-arm-eabi@4.52.4':
-    resolution: {integrity: sha512-BTm2qKNnWIQ5auf4deoetINJm2JzvihvGb9R6K/ETwKLql/Bb3Eg2H1FBp1gUb4YGbydMA3jcmQTR73q7J+GAA==}
+    resolution: {integrity: sha512-BTm2qKNnWIQ5auf4deoetINJm2JzvihvGb9R6K/ETwKLql/Bb3Eg2H1FBp1gUb4YGbydMA3jcmQTR73q7J+GAA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-android-arm-eabi%2F-%2Frollup-android-arm-eabi-4.52.4.tgz}
     cpu: [arm]
     os: [android]
 
   '@rollup/rollup-android-arm64@4.52.4':
-    resolution: {integrity: sha512-P9LDQiC5vpgGFgz7GSM6dKPCiqR3XYN1WwJKA4/BUVDjHpYsf3iBEmVz62uyq20NGYbiGPR5cNHI7T1HqxNs2w==}
+    resolution: {integrity: sha512-P9LDQiC5vpgGFgz7GSM6dKPCiqR3XYN1WwJKA4/BUVDjHpYsf3iBEmVz62uyq20NGYbiGPR5cNHI7T1HqxNs2w==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-android-arm64/-/rollup-android-arm64-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-android-arm64%2F-%2Frollup-android-arm64-4.52.4.tgz}
     cpu: [arm64]
     os: [android]
 
   '@rollup/rollup-darwin-arm64@4.52.4':
-    resolution: {integrity: sha512-QRWSW+bVccAvZF6cbNZBJwAehmvG9NwfWHwMy4GbWi/BQIA/laTIktebT2ipVjNncqE6GLPxOok5hsECgAxGZg==}
+    resolution: {integrity: sha512-QRWSW+bVccAvZF6cbNZBJwAehmvG9NwfWHwMy4GbWi/BQIA/laTIktebT2ipVjNncqE6GLPxOok5hsECgAxGZg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-darwin-arm64%2F-%2Frollup-darwin-arm64-4.52.4.tgz}
     cpu: [arm64]
     os: [darwin]
 
   '@rollup/rollup-darwin-x64@4.52.4':
-    resolution: {integrity: sha512-hZgP05pResAkRJxL1b+7yxCnXPGsXU0fG9Yfd6dUaoGk+FhdPKCJ5L1Sumyxn8kvw8Qi5PvQ8ulenUbRjzeCTw==}
+    resolution: {integrity: sha512-hZgP05pResAkRJxL1b+7yxCnXPGsXU0fG9Yfd6dUaoGk+FhdPKCJ5L1Sumyxn8kvw8Qi5PvQ8ulenUbRjzeCTw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-darwin-x64/-/rollup-darwin-x64-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-darwin-x64%2F-%2Frollup-darwin-x64-4.52.4.tgz}
     cpu: [x64]
     os: [darwin]
 
   '@rollup/rollup-freebsd-arm64@4.52.4':
-    resolution: {integrity: sha512-xmc30VshuBNUd58Xk4TKAEcRZHaXlV+tCxIXELiE9sQuK3kG8ZFgSPi57UBJt8/ogfhAF5Oz4ZSUBN77weM+mQ==}
+    resolution: {integrity: sha512-xmc30VshuBNUd58Xk4TKAEcRZHaXlV+tCxIXELiE9sQuK3kG8ZFgSPi57UBJt8/ogfhAF5Oz4ZSUBN77weM+mQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-freebsd-arm64/-/rollup-freebsd-arm64-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-freebsd-arm64%2F-%2Frollup-freebsd-arm64-4.52.4.tgz}
     cpu: [arm64]
     os: [freebsd]
 
   '@rollup/rollup-freebsd-x64@4.52.4':
-    resolution: {integrity: sha512-WdSLpZFjOEqNZGmHflxyifolwAiZmDQzuOzIq9L27ButpCVpD7KzTRtEG1I0wMPFyiyUdOO+4t8GvrnBLQSwpw==}
+    resolution: {integrity: sha512-WdSLpZFjOEqNZGmHflxyifolwAiZmDQzuOzIq9L27ButpCVpD7KzTRtEG1I0wMPFyiyUdOO+4t8GvrnBLQSwpw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-freebsd-x64/-/rollup-freebsd-x64-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-freebsd-x64%2F-%2Frollup-freebsd-x64-4.52.4.tgz}
     cpu: [x64]
     os: [freebsd]
 
   '@rollup/rollup-linux-arm-gnueabihf@4.52.4':
-    resolution: {integrity: sha512-xRiOu9Of1FZ4SxVbB0iEDXc4ddIcjCv2aj03dmW8UrZIW7aIQ9jVJdLBIhxBI+MaTnGAKyvMwPwQnoOEvP7FgQ==}
+    resolution: {integrity: sha512-xRiOu9Of1FZ4SxVbB0iEDXc4ddIcjCv2aj03dmW8UrZIW7aIQ9jVJdLBIhxBI+MaTnGAKyvMwPwQnoOEvP7FgQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-arm-gnueabihf/-/rollup-linux-arm-gnueabihf-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-arm-gnueabihf%2F-%2Frollup-linux-arm-gnueabihf-4.52.4.tgz}
     cpu: [arm]
     os: [linux]
 
   '@rollup/rollup-linux-arm-musleabihf@4.52.4':
-    resolution: {integrity: sha512-FbhM2p9TJAmEIEhIgzR4soUcsW49e9veAQCziwbR+XWB2zqJ12b4i/+hel9yLiD8pLncDH4fKIPIbt5238341Q==}
+    resolution: {integrity: sha512-FbhM2p9TJAmEIEhIgzR4soUcsW49e9veAQCziwbR+XWB2zqJ12b4i/+hel9yLiD8pLncDH4fKIPIbt5238341Q==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-arm-musleabihf/-/rollup-linux-arm-musleabihf-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-arm-musleabihf%2F-%2Frollup-linux-arm-musleabihf-4.52.4.tgz}
     cpu: [arm]
     os: [linux]
 
   '@rollup/rollup-linux-arm64-gnu@4.52.4':
-    resolution: {integrity: sha512-4n4gVwhPHR9q/g8lKCyz0yuaD0MvDf7dV4f9tHt0C73Mp8h38UCtSCSE6R9iBlTbXlmA8CjpsZoujhszefqueg==}
+    resolution: {integrity: sha512-4n4gVwhPHR9q/g8lKCyz0yuaD0MvDf7dV4f9tHt0C73Mp8h38UCtSCSE6R9iBlTbXlmA8CjpsZoujhszefqueg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-arm64-gnu/-/rollup-linux-arm64-gnu-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-arm64-gnu%2F-%2Frollup-linux-arm64-gnu-4.52.4.tgz}
     cpu: [arm64]
     os: [linux]
 
   '@rollup/rollup-linux-arm64-musl@4.52.4':
-    resolution: {integrity: sha512-u0n17nGA0nvi/11gcZKsjkLj1QIpAuPFQbR48Subo7SmZJnGxDpspyw2kbpuoQnyK+9pwf3pAoEXerJs/8Mi9g==}
+    resolution: {integrity: sha512-u0n17nGA0nvi/11gcZKsjkLj1QIpAuPFQbR48Subo7SmZJnGxDpspyw2kbpuoQnyK+9pwf3pAoEXerJs/8Mi9g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-arm64-musl/-/rollup-linux-arm64-musl-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-arm64-musl%2F-%2Frollup-linux-arm64-musl-4.52.4.tgz}
     cpu: [arm64]
     os: [linux]
 
   '@rollup/rollup-linux-loong64-gnu@4.52.4':
-    resolution: {integrity: sha512-0G2c2lpYtbTuXo8KEJkDkClE/+/2AFPdPAbmaHoE870foRFs4pBrDehilMcrSScrN/fB/1HTaWO4bqw+ewBzMQ==}
+    resolution: {integrity: sha512-0G2c2lpYtbTuXo8KEJkDkClE/+/2AFPdPAbmaHoE870foRFs4pBrDehilMcrSScrN/fB/1HTaWO4bqw+ewBzMQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-loong64-gnu/-/rollup-linux-loong64-gnu-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-loong64-gnu%2F-%2Frollup-linux-loong64-gnu-4.52.4.tgz}
     cpu: [loong64]
     os: [linux]
 
   '@rollup/rollup-linux-ppc64-gnu@4.52.4':
-    resolution: {integrity: sha512-teSACug1GyZHmPDv14VNbvZFX779UqWTsd7KtTM9JIZRDI5NUwYSIS30kzI8m06gOPB//jtpqlhmraQ68b5X2g==}
+    resolution: {integrity: sha512-teSACug1GyZHmPDv14VNbvZFX779UqWTsd7KtTM9JIZRDI5NUwYSIS30kzI8m06gOPB//jtpqlhmraQ68b5X2g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-ppc64-gnu/-/rollup-linux-ppc64-gnu-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-ppc64-gnu%2F-%2Frollup-linux-ppc64-gnu-4.52.4.tgz}
     cpu: [ppc64]
     os: [linux]
 
   '@rollup/rollup-linux-riscv64-gnu@4.52.4':
-    resolution: {integrity: sha512-/MOEW3aHjjs1p4Pw1Xk4+3egRevx8Ji9N6HUIA1Ifh8Q+cg9dremvFCUbOX2Zebz80BwJIgCBUemjqhU5XI5Eg==}
+    resolution: {integrity: sha512-/MOEW3aHjjs1p4Pw1Xk4+3egRevx8Ji9N6HUIA1Ifh8Q+cg9dremvFCUbOX2Zebz80BwJIgCBUemjqhU5XI5Eg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-riscv64-gnu/-/rollup-linux-riscv64-gnu-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-riscv64-gnu%2F-%2Frollup-linux-riscv64-gnu-4.52.4.tgz}
     cpu: [riscv64]
     os: [linux]
 
   '@rollup/rollup-linux-riscv64-musl@4.52.4':
-    resolution: {integrity: sha512-1HHmsRyh845QDpEWzOFtMCph5Ts+9+yllCrREuBR/vg2RogAQGGBRC8lDPrPOMnrdOJ+mt1WLMOC2Kao/UwcvA==}
+    resolution: {integrity: sha512-1HHmsRyh845QDpEWzOFtMCph5Ts+9+yllCrREuBR/vg2RogAQGGBRC8lDPrPOMnrdOJ+mt1WLMOC2Kao/UwcvA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-riscv64-musl/-/rollup-linux-riscv64-musl-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-riscv64-musl%2F-%2Frollup-linux-riscv64-musl-4.52.4.tgz}
     cpu: [riscv64]
     os: [linux]
 
   '@rollup/rollup-linux-s390x-gnu@4.52.4':
-    resolution: {integrity: sha512-seoeZp4L/6D1MUyjWkOMRU6/iLmCU2EjbMTyAG4oIOs1/I82Y5lTeaxW0KBfkUdHAWN7j25bpkt0rjnOgAcQcA==}
+    resolution: {integrity: sha512-seoeZp4L/6D1MUyjWkOMRU6/iLmCU2EjbMTyAG4oIOs1/I82Y5lTeaxW0KBfkUdHAWN7j25bpkt0rjnOgAcQcA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-s390x-gnu/-/rollup-linux-s390x-gnu-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-s390x-gnu%2F-%2Frollup-linux-s390x-gnu-4.52.4.tgz}
     cpu: [s390x]
     os: [linux]
 
   '@rollup/rollup-linux-x64-gnu@4.52.4':
-    resolution: {integrity: sha512-Wi6AXf0k0L7E2gteNsNHUs7UMwCIhsCTs6+tqQ5GPwVRWMaflqGec4Sd8n6+FNFDw9vGcReqk2KzBDhCa1DLYg==}
+    resolution: {integrity: sha512-Wi6AXf0k0L7E2gteNsNHUs7UMwCIhsCTs6+tqQ5GPwVRWMaflqGec4Sd8n6+FNFDw9vGcReqk2KzBDhCa1DLYg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-x64-gnu%2F-%2Frollup-linux-x64-gnu-4.52.4.tgz}
     cpu: [x64]
     os: [linux]
 
   '@rollup/rollup-linux-x64-musl@4.52.4':
-    resolution: {integrity: sha512-dtBZYjDmCQ9hW+WgEkaffvRRCKm767wWhxsFW3Lw86VXz/uJRuD438/XvbZT//B96Vs8oTA8Q4A0AfHbrxP9zw==}
+    resolution: {integrity: sha512-dtBZYjDmCQ9hW+WgEkaffvRRCKm767wWhxsFW3Lw86VXz/uJRuD438/XvbZT//B96Vs8oTA8Q4A0AfHbrxP9zw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-linux-x64-musl%2F-%2Frollup-linux-x64-musl-4.52.4.tgz}
     cpu: [x64]
     os: [linux]
 
   '@rollup/rollup-openharmony-arm64@4.52.4':
-    resolution: {integrity: sha512-1ox+GqgRWqaB1RnyZXL8PD6E5f7YyRUJYnCqKpNzxzP0TkaUh112NDrR9Tt+C8rJ4x5G9Mk8PQR3o7Ku2RKqKA==}
+    resolution: {integrity: sha512-1ox+GqgRWqaB1RnyZXL8PD6E5f7YyRUJYnCqKpNzxzP0TkaUh112NDrR9Tt+C8rJ4x5G9Mk8PQR3o7Ku2RKqKA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-openharmony-arm64/-/rollup-openharmony-arm64-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-openharmony-arm64%2F-%2Frollup-openharmony-arm64-4.52.4.tgz}
     cpu: [arm64]
     os: [openharmony]
 
   '@rollup/rollup-win32-arm64-msvc@4.52.4':
-    resolution: {integrity: sha512-8GKr640PdFNXwzIE0IrkMWUNUomILLkfeHjXBi/nUvFlpZP+FA8BKGKpacjW6OUUHaNI6sUURxR2U2g78FOHWQ==}
+    resolution: {integrity: sha512-8GKr640PdFNXwzIE0IrkMWUNUomILLkfeHjXBi/nUvFlpZP+FA8BKGKpacjW6OUUHaNI6sUURxR2U2g78FOHWQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-win32-arm64-msvc/-/rollup-win32-arm64-msvc-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-win32-arm64-msvc%2F-%2Frollup-win32-arm64-msvc-4.52.4.tgz}
     cpu: [arm64]
     os: [win32]
 
   '@rollup/rollup-win32-ia32-msvc@4.52.4':
-    resolution: {integrity: sha512-AIy/jdJ7WtJ/F6EcfOb2GjR9UweO0n43jNObQMb6oGxkYTfLcnN7vYYpG+CN3lLxrQkzWnMOoNSHTW54pgbVxw==}
+    resolution: {integrity: sha512-AIy/jdJ7WtJ/F6EcfOb2GjR9UweO0n43jNObQMb6oGxkYTfLcnN7vYYpG+CN3lLxrQkzWnMOoNSHTW54pgbVxw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-win32-ia32-msvc/-/rollup-win32-ia32-msvc-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-win32-ia32-msvc%2F-%2Frollup-win32-ia32-msvc-4.52.4.tgz}
     cpu: [ia32]
     os: [win32]
 
   '@rollup/rollup-win32-x64-gnu@4.52.4':
-    resolution: {integrity: sha512-UF9KfsH9yEam0UjTwAgdK0anlQ7c8/pWPU2yVjyWcF1I1thABt6WXE47cI71pGiZ8wGvxohBoLnxM04L/wj8mQ==}
+    resolution: {integrity: sha512-UF9KfsH9yEam0UjTwAgdK0anlQ7c8/pWPU2yVjyWcF1I1thABt6WXE47cI71pGiZ8wGvxohBoLnxM04L/wj8mQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-win32-x64-gnu/-/rollup-win32-x64-gnu-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-win32-x64-gnu%2F-%2Frollup-win32-x64-gnu-4.52.4.tgz}
     cpu: [x64]
     os: [win32]
 
   '@rollup/rollup-win32-x64-msvc@4.52.4':
-    resolution: {integrity: sha512-bf9PtUa0u8IXDVxzRToFQKsNCRz9qLYfR/MpECxl4mRoWYjAeFjgxj1XdZr2M/GNVpT05p+LgQOHopYDlUu6/w==}
+    resolution: {integrity: sha512-bf9PtUa0u8IXDVxzRToFQKsNCRz9qLYfR/MpECxl4mRoWYjAeFjgxj1XdZr2M/GNVpT05p+LgQOHopYDlUu6/w==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.52.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rollup%2Frollup-win32-x64-msvc%2F-%2Frollup-win32-x64-msvc-4.52.4.tgz}
     cpu: [x64]
     os: [win32]
 
   '@rtsao/scc@1.1.0':
-    resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+    resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@rtsao/scc/-/scc-1.1.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40rtsao%2Fscc%2F-%2Fscc-1.1.0.tgz}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -777,7 +783,7 @@ packages:
       eslint: '>=9.0.0'
 
   '@tybys/wasm-util@0.10.1':
-    resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
+    resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@tybys/wasm-util/-/wasm-util-0.10.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40tybys%2Fwasm-util%2F-%2Fwasm-util-0.10.1.tgz}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -813,7 +819,7 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
   '@types/json5@0.0.29':
-    resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@types/json5/-/json5-0.0.29.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fjson5%2F-%2Fjson5-0.0.29.tgz}
 
   '@types/loader-utils@2.0.6':
     resolution: {integrity: sha512-cgu0Xefgq9O5FjFR78jgI6X31aPjDWCaJ6LCfRtlj6BtyVVWiXagysSYlPACwGKAzRwsFLjKXcj4iGfcVt6cLw==}
@@ -920,97 +926,97 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@unrs/resolver-binding-android-arm-eabi@1.11.1':
-    resolution: {integrity: sha512-ppLRUgHVaGRWUx0R0Ut06Mjo9gBaBkg3v/8AxusGLhsIotbBLuRk51rAzqLC8gq6NyyAojEXglNjzf6R948DNw==}
+    resolution: {integrity: sha512-ppLRUgHVaGRWUx0R0Ut06Mjo9gBaBkg3v/8AxusGLhsIotbBLuRk51rAzqLC8gq6NyyAojEXglNjzf6R948DNw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-android-arm-eabi/-/resolver-binding-android-arm-eabi-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-android-arm-eabi%2F-%2Fresolver-binding-android-arm-eabi-1.11.1.tgz}
     cpu: [arm]
     os: [android]
 
   '@unrs/resolver-binding-android-arm64@1.11.1':
-    resolution: {integrity: sha512-lCxkVtb4wp1v+EoN+HjIG9cIIzPkX5OtM03pQYkG+U5O/wL53LC4QbIeazgiKqluGeVEeBlZahHalCaBvU1a2g==}
+    resolution: {integrity: sha512-lCxkVtb4wp1v+EoN+HjIG9cIIzPkX5OtM03pQYkG+U5O/wL53LC4QbIeazgiKqluGeVEeBlZahHalCaBvU1a2g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-android-arm64/-/resolver-binding-android-arm64-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-android-arm64%2F-%2Fresolver-binding-android-arm64-1.11.1.tgz}
     cpu: [arm64]
     os: [android]
 
   '@unrs/resolver-binding-darwin-arm64@1.11.1':
-    resolution: {integrity: sha512-gPVA1UjRu1Y/IsB/dQEsp2V1pm44Of6+LWvbLc9SDk1c2KhhDRDBUkQCYVWe6f26uJb3fOK8saWMgtX8IrMk3g==}
+    resolution: {integrity: sha512-gPVA1UjRu1Y/IsB/dQEsp2V1pm44Of6+LWvbLc9SDk1c2KhhDRDBUkQCYVWe6f26uJb3fOK8saWMgtX8IrMk3g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-darwin-arm64/-/resolver-binding-darwin-arm64-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-darwin-arm64%2F-%2Fresolver-binding-darwin-arm64-1.11.1.tgz}
     cpu: [arm64]
     os: [darwin]
 
   '@unrs/resolver-binding-darwin-x64@1.11.1':
-    resolution: {integrity: sha512-cFzP7rWKd3lZaCsDze07QX1SC24lO8mPty9vdP+YVa3MGdVgPmFc59317b2ioXtgCMKGiCLxJ4HQs62oz6GfRQ==}
+    resolution: {integrity: sha512-cFzP7rWKd3lZaCsDze07QX1SC24lO8mPty9vdP+YVa3MGdVgPmFc59317b2ioXtgCMKGiCLxJ4HQs62oz6GfRQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-darwin-x64/-/resolver-binding-darwin-x64-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-darwin-x64%2F-%2Fresolver-binding-darwin-x64-1.11.1.tgz}
     cpu: [x64]
     os: [darwin]
 
   '@unrs/resolver-binding-freebsd-x64@1.11.1':
-    resolution: {integrity: sha512-fqtGgak3zX4DCB6PFpsH5+Kmt/8CIi4Bry4rb1ho6Av2QHTREM+47y282Uqiu3ZRF5IQioJQ5qWRV6jduA+iGw==}
+    resolution: {integrity: sha512-fqtGgak3zX4DCB6PFpsH5+Kmt/8CIi4Bry4rb1ho6Av2QHTREM+47y282Uqiu3ZRF5IQioJQ5qWRV6jduA+iGw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-freebsd-x64/-/resolver-binding-freebsd-x64-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-freebsd-x64%2F-%2Fresolver-binding-freebsd-x64-1.11.1.tgz}
     cpu: [x64]
     os: [freebsd]
 
   '@unrs/resolver-binding-linux-arm-gnueabihf@1.11.1':
-    resolution: {integrity: sha512-u92mvlcYtp9MRKmP+ZvMmtPN34+/3lMHlyMj7wXJDeXxuM0Vgzz0+PPJNsro1m3IZPYChIkn944wW8TYgGKFHw==}
+    resolution: {integrity: sha512-u92mvlcYtp9MRKmP+ZvMmtPN34+/3lMHlyMj7wXJDeXxuM0Vgzz0+PPJNsro1m3IZPYChIkn944wW8TYgGKFHw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-arm-gnueabihf/-/resolver-binding-linux-arm-gnueabihf-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-arm-gnueabihf%2F-%2Fresolver-binding-linux-arm-gnueabihf-1.11.1.tgz}
     cpu: [arm]
     os: [linux]
 
   '@unrs/resolver-binding-linux-arm-musleabihf@1.11.1':
-    resolution: {integrity: sha512-cINaoY2z7LVCrfHkIcmvj7osTOtm6VVT16b5oQdS4beibX2SYBwgYLmqhBjA1t51CarSaBuX5YNsWLjsqfW5Cw==}
+    resolution: {integrity: sha512-cINaoY2z7LVCrfHkIcmvj7osTOtm6VVT16b5oQdS4beibX2SYBwgYLmqhBjA1t51CarSaBuX5YNsWLjsqfW5Cw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-arm-musleabihf/-/resolver-binding-linux-arm-musleabihf-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-arm-musleabihf%2F-%2Fresolver-binding-linux-arm-musleabihf-1.11.1.tgz}
     cpu: [arm]
     os: [linux]
 
   '@unrs/resolver-binding-linux-arm64-gnu@1.11.1':
-    resolution: {integrity: sha512-34gw7PjDGB9JgePJEmhEqBhWvCiiWCuXsL9hYphDF7crW7UgI05gyBAi6MF58uGcMOiOqSJ2ybEeCvHcq0BCmQ==}
+    resolution: {integrity: sha512-34gw7PjDGB9JgePJEmhEqBhWvCiiWCuXsL9hYphDF7crW7UgI05gyBAi6MF58uGcMOiOqSJ2ybEeCvHcq0BCmQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-arm64-gnu/-/resolver-binding-linux-arm64-gnu-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-arm64-gnu%2F-%2Fresolver-binding-linux-arm64-gnu-1.11.1.tgz}
     cpu: [arm64]
     os: [linux]
 
   '@unrs/resolver-binding-linux-arm64-musl@1.11.1':
-    resolution: {integrity: sha512-RyMIx6Uf53hhOtJDIamSbTskA99sPHS96wxVE/bJtePJJtpdKGXO1wY90oRdXuYOGOTuqjT8ACccMc4K6QmT3w==}
+    resolution: {integrity: sha512-RyMIx6Uf53hhOtJDIamSbTskA99sPHS96wxVE/bJtePJJtpdKGXO1wY90oRdXuYOGOTuqjT8ACccMc4K6QmT3w==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-arm64-musl/-/resolver-binding-linux-arm64-musl-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-arm64-musl%2F-%2Fresolver-binding-linux-arm64-musl-1.11.1.tgz}
     cpu: [arm64]
     os: [linux]
 
   '@unrs/resolver-binding-linux-ppc64-gnu@1.11.1':
-    resolution: {integrity: sha512-D8Vae74A4/a+mZH0FbOkFJL9DSK2R6TFPC9M+jCWYia/q2einCubX10pecpDiTmkJVUH+y8K3BZClycD8nCShA==}
+    resolution: {integrity: sha512-D8Vae74A4/a+mZH0FbOkFJL9DSK2R6TFPC9M+jCWYia/q2einCubX10pecpDiTmkJVUH+y8K3BZClycD8nCShA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-ppc64-gnu/-/resolver-binding-linux-ppc64-gnu-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-ppc64-gnu%2F-%2Fresolver-binding-linux-ppc64-gnu-1.11.1.tgz}
     cpu: [ppc64]
     os: [linux]
 
   '@unrs/resolver-binding-linux-riscv64-gnu@1.11.1':
-    resolution: {integrity: sha512-frxL4OrzOWVVsOc96+V3aqTIQl1O2TjgExV4EKgRY09AJ9leZpEg8Ak9phadbuX0BA4k8U5qtvMSQQGGmaJqcQ==}
+    resolution: {integrity: sha512-frxL4OrzOWVVsOc96+V3aqTIQl1O2TjgExV4EKgRY09AJ9leZpEg8Ak9phadbuX0BA4k8U5qtvMSQQGGmaJqcQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-riscv64-gnu/-/resolver-binding-linux-riscv64-gnu-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-riscv64-gnu%2F-%2Fresolver-binding-linux-riscv64-gnu-1.11.1.tgz}
     cpu: [riscv64]
     os: [linux]
 
   '@unrs/resolver-binding-linux-riscv64-musl@1.11.1':
-    resolution: {integrity: sha512-mJ5vuDaIZ+l/acv01sHoXfpnyrNKOk/3aDoEdLO/Xtn9HuZlDD6jKxHlkN8ZhWyLJsRBxfv9GYM2utQ1SChKew==}
+    resolution: {integrity: sha512-mJ5vuDaIZ+l/acv01sHoXfpnyrNKOk/3aDoEdLO/Xtn9HuZlDD6jKxHlkN8ZhWyLJsRBxfv9GYM2utQ1SChKew==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-riscv64-musl/-/resolver-binding-linux-riscv64-musl-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-riscv64-musl%2F-%2Fresolver-binding-linux-riscv64-musl-1.11.1.tgz}
     cpu: [riscv64]
     os: [linux]
 
   '@unrs/resolver-binding-linux-s390x-gnu@1.11.1':
-    resolution: {integrity: sha512-kELo8ebBVtb9sA7rMe1Cph4QHreByhaZ2QEADd9NzIQsYNQpt9UkM9iqr2lhGr5afh885d/cB5QeTXSbZHTYPg==}
+    resolution: {integrity: sha512-kELo8ebBVtb9sA7rMe1Cph4QHreByhaZ2QEADd9NzIQsYNQpt9UkM9iqr2lhGr5afh885d/cB5QeTXSbZHTYPg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-s390x-gnu/-/resolver-binding-linux-s390x-gnu-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-s390x-gnu%2F-%2Fresolver-binding-linux-s390x-gnu-1.11.1.tgz}
     cpu: [s390x]
     os: [linux]
 
   '@unrs/resolver-binding-linux-x64-gnu@1.11.1':
-    resolution: {integrity: sha512-C3ZAHugKgovV5YvAMsxhq0gtXuwESUKc5MhEtjBpLoHPLYM+iuwSj3lflFwK3DPm68660rZ7G8BMcwSro7hD5w==}
+    resolution: {integrity: sha512-C3ZAHugKgovV5YvAMsxhq0gtXuwESUKc5MhEtjBpLoHPLYM+iuwSj3lflFwK3DPm68660rZ7G8BMcwSro7hD5w==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-x64-gnu/-/resolver-binding-linux-x64-gnu-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-x64-gnu%2F-%2Fresolver-binding-linux-x64-gnu-1.11.1.tgz}
     cpu: [x64]
     os: [linux]
 
   '@unrs/resolver-binding-linux-x64-musl@1.11.1':
-    resolution: {integrity: sha512-rV0YSoyhK2nZ4vEswT/QwqzqQXw5I6CjoaYMOX0TqBlWhojUf8P94mvI7nuJTeaCkkds3QE4+zS8Ko+GdXuZtA==}
+    resolution: {integrity: sha512-rV0YSoyhK2nZ4vEswT/QwqzqQXw5I6CjoaYMOX0TqBlWhojUf8P94mvI7nuJTeaCkkds3QE4+zS8Ko+GdXuZtA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-linux-x64-musl/-/resolver-binding-linux-x64-musl-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-linux-x64-musl%2F-%2Fresolver-binding-linux-x64-musl-1.11.1.tgz}
     cpu: [x64]
     os: [linux]
 
   '@unrs/resolver-binding-wasm32-wasi@1.11.1':
-    resolution: {integrity: sha512-5u4RkfxJm+Ng7IWgkzi3qrFOvLvQYnPBmjmZQ8+szTK/b31fQCnleNl1GgEt7nIsZRIf5PLhPwT0WM+q45x/UQ==}
+    resolution: {integrity: sha512-5u4RkfxJm+Ng7IWgkzi3qrFOvLvQYnPBmjmZQ8+szTK/b31fQCnleNl1GgEt7nIsZRIf5PLhPwT0WM+q45x/UQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-wasm32-wasi/-/resolver-binding-wasm32-wasi-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-wasm32-wasi%2F-%2Fresolver-binding-wasm32-wasi-1.11.1.tgz}
     engines: {node: '>=14.0.0'}
     cpu: [wasm32]
 
   '@unrs/resolver-binding-win32-arm64-msvc@1.11.1':
-    resolution: {integrity: sha512-nRcz5Il4ln0kMhfL8S3hLkxI85BXs3o8EYoattsJNdsX4YUU89iOkVn7g0VHSRxFuVMdM4Q1jEpIId1Ihim/Uw==}
+    resolution: {integrity: sha512-nRcz5Il4ln0kMhfL8S3hLkxI85BXs3o8EYoattsJNdsX4YUU89iOkVn7g0VHSRxFuVMdM4Q1jEpIId1Ihim/Uw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-win32-arm64-msvc/-/resolver-binding-win32-arm64-msvc-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-win32-arm64-msvc%2F-%2Fresolver-binding-win32-arm64-msvc-1.11.1.tgz}
     cpu: [arm64]
     os: [win32]
 
   '@unrs/resolver-binding-win32-ia32-msvc@1.11.1':
-    resolution: {integrity: sha512-DCEI6t5i1NmAZp6pFonpD5m7i6aFrpofcp4LA2i8IIq60Jyo28hamKBxNrZcyOwVOZkgsRp9O2sXWBWP8MnvIQ==}
+    resolution: {integrity: sha512-DCEI6t5i1NmAZp6pFonpD5m7i6aFrpofcp4LA2i8IIq60Jyo28hamKBxNrZcyOwVOZkgsRp9O2sXWBWP8MnvIQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-win32-ia32-msvc/-/resolver-binding-win32-ia32-msvc-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-win32-ia32-msvc%2F-%2Fresolver-binding-win32-ia32-msvc-1.11.1.tgz}
     cpu: [ia32]
     os: [win32]
 
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
-    resolution: {integrity: sha512-lrW200hZdbfRtztbygyaq/6jP6AKE8qQN2KvPcJ+x7wiD038YtnYtZ82IMNJ69GJibV7bwL3y9FgK+5w/pYt6g==}
+    resolution: {integrity: sha512-lrW200hZdbfRtztbygyaq/6jP6AKE8qQN2KvPcJ+x7wiD038YtnYtZ82IMNJ69GJibV7bwL3y9FgK+5w/pYt6g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.11.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40unrs%2Fresolver-binding-win32-x64-msvc%2F-%2Fresolver-binding-win32-x64-msvc-1.11.1.tgz}
     cpu: [x64]
     os: [win32]
 
@@ -1227,7 +1233,7 @@ packages:
     engines: {node: '>= 0.4'}
 
   array.prototype.findlastindex@1.2.6:
-    resolution: {integrity: sha512-F/TKATkzseUExPlfvmwQKGITM3DGTK+vkAsCZoDc5daVygbJBnjEUCbgkAvVFsgfXfX4YIqZ/27G3k3tdXrTxQ==}
+    resolution: {integrity: sha512-F/TKATkzseUExPlfvmwQKGITM3DGTK+vkAsCZoDc5daVygbJBnjEUCbgkAvVFsgfXfX4YIqZ/27G3k3tdXrTxQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/array.prototype.findlastindex/-/array.prototype.findlastindex-1.2.6.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Farray.prototype.findlastindex%2F-%2Farray.prototype.findlastindex-1.2.6.tgz}
     engines: {node: '>= 0.4'}
 
   array.prototype.flat@1.3.3:
@@ -1420,7 +1426,7 @@ packages:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==}
 
   chokidar@3.5.3:
-    resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
+    resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/chokidar/-/chokidar-3.5.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fchokidar%2F-%2Fchokidar-3.5.3.tgz}
     engines: {node: '>= 8.10.0'}
 
   chownr@1.1.4:
@@ -1582,7 +1588,7 @@ packages:
         optional: true
 
   debug@3.2.7:
-    resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/debug/-/debug-3.2.7.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fdebug%2F-%2Fdebug-3.2.7.tgz}
     peerDependencies:
       supports-color: '*'
     peerDependenciesMeta:
@@ -1740,13 +1746,13 @@ packages:
     resolution: {integrity: sha512-w+5mJ3GuFL+NjVtJlvydShqE1eN3h3PbI7/5LAsYJP/2qtuMXjfL2LpHSRqo4b4eSF5K/DH1JXKUAHSB2UW50g==}
     engines: {node: '>= 0.4'}
 
-  esbuild@0.25.0:
-    resolution: {integrity: sha512-BXq5mqc8ltbaN34cDqWuYKyNhX8D/Z0J1xdtdQ8UcIIIyJyz+ZMKUt58tF3SrZ85jcfN/PZYhjR5uDQAYNVbuw==}
+  esbuild@0.25.10:
+    resolution: {integrity: sha512-9RiGKvCwaqxO2owP61uQ4BgNborAQskMR6QusfWzQqv7AZOg5oGehdY2pRJMTKuwxd1IDBP4rSbI5lHzU7SMsQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/esbuild/-/esbuild-0.25.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fesbuild%2F-%2Fesbuild-0.25.10.tgz}
     engines: {node: '>=18'}
     hasBin: true
 
-  esbuild@0.25.10:
-    resolution: {integrity: sha512-9RiGKvCwaqxO2owP61uQ4BgNborAQskMR6QusfWzQqv7AZOg5oGehdY2pRJMTKuwxd1IDBP4rSbI5lHzU7SMsQ==}
+  esbuild@0.27.1:
+    resolution: {integrity: sha512-yY35KZckJJuVVPXpvjgxiCuVEJT67F6zDeVTv4rizyPrfGBUpZQsvmxnN+C371c2esD/hNMjj4tpBhuueLN7aA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/esbuild/-/esbuild-0.27.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fesbuild%2F-%2Fesbuild-0.27.1.tgz}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1796,7 +1802,7 @@ packages:
         optional: true
 
   eslint-import-resolver-node@0.3.9:
-    resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==}
+    resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-import-resolver-node%2F-%2Feslint-import-resolver-node-0.3.9.tgz}
 
   eslint-import-resolver-typescript@4.4.4:
     resolution: {integrity: sha512-1iM2zeBvrYmUNTj2vSC/90JTHDth+dfOfiNKkxApWRsTJYNrc8rOdxxIf5vazX+BiAXTeOT0UvWpGI/7qIWQOw==}
@@ -1823,7 +1829,7 @@ packages:
         optional: true
 
   eslint-module-utils@2.12.1:
-    resolution: {integrity: sha512-L8jSWTze7K2mTg0vos/RuLRS5soomksDPoJLXIslC7c8Wmut3bx7CPpJijDcBZtxQ5lrbUdM+s0OlNbz0DCDNw==}
+    resolution: {integrity: sha512-L8jSWTze7K2mTg0vos/RuLRS5soomksDPoJLXIslC7c8Wmut3bx7CPpJijDcBZtxQ5lrbUdM+s0OlNbz0DCDNw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/eslint-module-utils/-/eslint-module-utils-2.12.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-module-utils%2F-%2Feslint-module-utils-2.12.1.tgz}
     engines: {node: '>=4'}
     peerDependencies:
       '@typescript-eslint/parser': '*'
@@ -1863,7 +1869,7 @@ packages:
         optional: true
 
   eslint-plugin-import@2.32.0:
-    resolution: {integrity: sha512-whOE1HFo/qJDyX4SnXzP4N6zOWn79WhnCUY/iDR0mPfQZO8wcYE4JClzI2oZrhBnnMUCBCHZhO6VQyoBU95mZA==}
+    resolution: {integrity: sha512-whOE1HFo/qJDyX4SnXzP4N6zOWn79WhnCUY/iDR0mPfQZO8wcYE4JClzI2oZrhBnnMUCBCHZhO6VQyoBU95mZA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/eslint-plugin-import/-/eslint-plugin-import-2.32.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-import%2F-%2Feslint-plugin-import-2.32.0.tgz}
     engines: {node: '>=4'}
     peerDependencies:
       '@typescript-eslint/parser': '*'
@@ -2157,7 +2163,7 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
   fsevents@2.3.3:
-    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/fsevents/-/fsevents-2.3.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Ffsevents%2F-%2Ffsevents-2.3.3.tgz}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
@@ -3106,7 +3112,7 @@ packages:
     engines: {node: '>= 0.4'}
 
   object.groupby@1.0.3:
-    resolution: {integrity: sha512-+Lhy3TQTuzXI5hevh8sBGqbmurHbbIjAi0Z4S63nthVLmLxfbj4T54a4CfZrXIrt9iP4mVAPYMo/v99taj3wjQ==}
+    resolution: {integrity: sha512-+Lhy3TQTuzXI5hevh8sBGqbmurHbbIjAi0Z4S63nthVLmLxfbj4T54a4CfZrXIrt9iP4mVAPYMo/v99taj3wjQ==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/object.groupby/-/object.groupby-1.0.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fobject.groupby%2F-%2Fobject.groupby-1.0.3.tgz}
     engines: {node: '>= 0.4'}
 
   object.pick@1.3.0:
@@ -3721,7 +3727,7 @@ packages:
     resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
 
   strip-bom@3.0.0:
-    resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
+    resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/strip-bom/-/strip-bom-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fstrip-bom%2F-%2Fstrip-bom-3.0.0.tgz}
     engines: {node: '>=4'}
 
   strip-final-newline@3.0.0:
@@ -3853,7 +3859,7 @@ packages:
       typescript: '>=4.0.0'
 
   tsconfig-paths@3.15.0:
-    resolution: {integrity: sha512-2Ac2RgzDe/cn48GvOe3M+o82pEFewD3UPbyoUHHdKasHwJKjds4fLXWf/Ux5kATBKN20oaFGu+jbElp1pos0mg==}
+    resolution: {integrity: sha512-2Ac2RgzDe/cn48GvOe3M+o82pEFewD3UPbyoUHHdKasHwJKjds4fLXWf/Ux5kATBKN20oaFGu+jbElp1pos0mg==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/tsconfig-paths/-/tsconfig-paths-3.15.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Ftsconfig-paths%2F-%2Ftsconfig-paths-3.15.0.tgz}
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
@@ -3985,7 +3991,7 @@ packages:
       eslint: ^8.57.0 || ^9.0.0
 
   watchpack-chokidar2@2.0.1:
-    resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==}
+    resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==, tarball: https://na.artifactory.swg-devops.com/artifactory/api/npm/wcp-tmp-ace-fr-team-npm-virtual/watchpack-chokidar2/-/watchpack-chokidar2-2.0.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fwatchpack-chokidar2%2F-%2Fwatchpack-chokidar2-2.0.1.tgz}
 
   watchpack@1.7.5:
     resolution: {integrity: sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==}
@@ -4148,157 +4154,160 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@esbuild/aix-ppc64@0.25.0':
-    optional: true
-
   '@esbuild/aix-ppc64@0.25.10':
     optional: true
 
-  '@esbuild/android-arm64@0.25.0':
+  '@esbuild/aix-ppc64@0.27.1':
     optional: true
 
   '@esbuild/android-arm64@0.25.10':
     optional: true
 
-  '@esbuild/android-arm@0.25.0':
+  '@esbuild/android-arm64@0.27.1':
     optional: true
 
   '@esbuild/android-arm@0.25.10':
     optional: true
 
-  '@esbuild/android-x64@0.25.0':
+  '@esbuild/android-arm@0.27.1':
     optional: true
 
   '@esbuild/android-x64@0.25.10':
     optional: true
 
-  '@esbuild/darwin-arm64@0.25.0':
+  '@esbuild/android-x64@0.27.1':
     optional: true
 
   '@esbuild/darwin-arm64@0.25.10':
     optional: true
 
-  '@esbuild/darwin-x64@0.25.0':
+  '@esbuild/darwin-arm64@0.27.1':
     optional: true
 
   '@esbuild/darwin-x64@0.25.10':
     optional: true
 
-  '@esbuild/freebsd-arm64@0.25.0':
+  '@esbuild/darwin-x64@0.27.1':
     optional: true
 
   '@esbuild/freebsd-arm64@0.25.10':
     optional: true
 
-  '@esbuild/freebsd-x64@0.25.0':
+  '@esbuild/freebsd-arm64@0.27.1':
     optional: true
 
   '@esbuild/freebsd-x64@0.25.10':
     optional: true
 
-  '@esbuild/linux-arm64@0.25.0':
+  '@esbuild/freebsd-x64@0.27.1':
     optional: true
 
   '@esbuild/linux-arm64@0.25.10':
     optional: true
 
-  '@esbuild/linux-arm@0.25.0':
+  '@esbuild/linux-arm64@0.27.1':
     optional: true
 
   '@esbuild/linux-arm@0.25.10':
     optional: true
 
-  '@esbuild/linux-ia32@0.25.0':
+  '@esbuild/linux-arm@0.27.1':
     optional: true
 
   '@esbuild/linux-ia32@0.25.10':
     optional: true
 
-  '@esbuild/linux-loong64@0.25.0':
+  '@esbuild/linux-ia32@0.27.1':
     optional: true
 
   '@esbuild/linux-loong64@0.25.10':
     optional: true
 
-  '@esbuild/linux-mips64el@0.25.0':
+  '@esbuild/linux-loong64@0.27.1':
     optional: true
 
   '@esbuild/linux-mips64el@0.25.10':
     optional: true
 
-  '@esbuild/linux-ppc64@0.25.0':
+  '@esbuild/linux-mips64el@0.27.1':
     optional: true
 
   '@esbuild/linux-ppc64@0.25.10':
     optional: true
 
-  '@esbuild/linux-riscv64@0.25.0':
+  '@esbuild/linux-ppc64@0.27.1':
     optional: true
 
   '@esbuild/linux-riscv64@0.25.10':
     optional: true
 
-  '@esbuild/linux-s390x@0.25.0':
+  '@esbuild/linux-riscv64@0.27.1':
     optional: true
 
   '@esbuild/linux-s390x@0.25.10':
     optional: true
 
-  '@esbuild/linux-x64@0.25.0':
+  '@esbuild/linux-s390x@0.27.1':
     optional: true
 
   '@esbuild/linux-x64@0.25.10':
     optional: true
 
-  '@esbuild/netbsd-arm64@0.25.0':
+  '@esbuild/linux-x64@0.27.1':
     optional: true
 
   '@esbuild/netbsd-arm64@0.25.10':
     optional: true
 
-  '@esbuild/netbsd-x64@0.25.0':
+  '@esbuild/netbsd-arm64@0.27.1':
     optional: true
 
   '@esbuild/netbsd-x64@0.25.10':
     optional: true
 
-  '@esbuild/openbsd-arm64@0.25.0':
+  '@esbuild/netbsd-x64@0.27.1':
     optional: true
 
   '@esbuild/openbsd-arm64@0.25.10':
     optional: true
 
-  '@esbuild/openbsd-x64@0.25.0':
+  '@esbuild/openbsd-arm64@0.27.1':
     optional: true
 
   '@esbuild/openbsd-x64@0.25.10':
     optional: true
 
+  '@esbuild/openbsd-x64@0.27.1':
+    optional: true
+
   '@esbuild/openharmony-arm64@0.25.10':
     optional: true
 
-  '@esbuild/sunos-x64@0.25.0':
+  '@esbuild/openharmony-arm64@0.27.1':
     optional: true
 
   '@esbuild/sunos-x64@0.25.10':
     optional: true
 
-  '@esbuild/win32-arm64@0.25.0':
+  '@esbuild/sunos-x64@0.27.1':
     optional: true
 
   '@esbuild/win32-arm64@0.25.10':
     optional: true
 
-  '@esbuild/win32-ia32@0.25.0':
+  '@esbuild/win32-arm64@0.27.1':
     optional: true
 
   '@esbuild/win32-ia32@0.25.10':
     optional: true
 
-  '@esbuild/win32-x64@0.25.0':
+  '@esbuild/win32-ia32@0.27.1':
     optional: true
 
   '@esbuild/win32-x64@0.25.10':
+    optional: true
+
+  '@esbuild/win32-x64@0.27.1':
     optional: true
 
   '@eslint-community/eslint-plugin-eslint-comments@4.5.0(eslint@9.37.0)':
@@ -4682,11 +4691,11 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/mini-css-extract-plugin@2.4.0(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))':
+  '@types/mini-css-extract-plugin@2.4.0(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0))':
     dependencies:
       '@types/node': 18.19.129
       tapable: 2.2.1
-      webpack: 5.88.2(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))
+      webpack: 5.88.2(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0))
     transitivePeerDependencies:
       - '@swc/core'
       - esbuild
@@ -5869,34 +5878,6 @@ snapshots:
       is-date-object: 1.1.0
       is-symbol: 1.1.1
 
-  esbuild@0.25.0:
-    optionalDependencies:
-      '@esbuild/aix-ppc64': 0.25.0
-      '@esbuild/android-arm': 0.25.0
-      '@esbuild/android-arm64': 0.25.0
-      '@esbuild/android-x64': 0.25.0
-      '@esbuild/darwin-arm64': 0.25.0
-      '@esbuild/darwin-x64': 0.25.0
-      '@esbuild/freebsd-arm64': 0.25.0
-      '@esbuild/freebsd-x64': 0.25.0
-      '@esbuild/linux-arm': 0.25.0
-      '@esbuild/linux-arm64': 0.25.0
-      '@esbuild/linux-ia32': 0.25.0
-      '@esbuild/linux-loong64': 0.25.0
-      '@esbuild/linux-mips64el': 0.25.0
-      '@esbuild/linux-ppc64': 0.25.0
-      '@esbuild/linux-riscv64': 0.25.0
-      '@esbuild/linux-s390x': 0.25.0
-      '@esbuild/linux-x64': 0.25.0
-      '@esbuild/netbsd-arm64': 0.25.0
-      '@esbuild/netbsd-x64': 0.25.0
-      '@esbuild/openbsd-arm64': 0.25.0
-      '@esbuild/openbsd-x64': 0.25.0
-      '@esbuild/sunos-x64': 0.25.0
-      '@esbuild/win32-arm64': 0.25.0
-      '@esbuild/win32-ia32': 0.25.0
-      '@esbuild/win32-x64': 0.25.0
-
   esbuild@0.25.10:
     optionalDependencies:
       '@esbuild/aix-ppc64': 0.25.10
@@ -5925,6 +5906,35 @@ snapshots:
       '@esbuild/win32-arm64': 0.25.10
       '@esbuild/win32-ia32': 0.25.10
       '@esbuild/win32-x64': 0.25.10
+
+  esbuild@0.27.1:
+    optionalDependencies:
+      '@esbuild/aix-ppc64': 0.27.1
+      '@esbuild/android-arm': 0.27.1
+      '@esbuild/android-arm64': 0.27.1
+      '@esbuild/android-x64': 0.27.1
+      '@esbuild/darwin-arm64': 0.27.1
+      '@esbuild/darwin-x64': 0.27.1
+      '@esbuild/freebsd-arm64': 0.27.1
+      '@esbuild/freebsd-x64': 0.27.1
+      '@esbuild/linux-arm': 0.27.1
+      '@esbuild/linux-arm64': 0.27.1
+      '@esbuild/linux-ia32': 0.27.1
+      '@esbuild/linux-loong64': 0.27.1
+      '@esbuild/linux-mips64el': 0.27.1
+      '@esbuild/linux-ppc64': 0.27.1
+      '@esbuild/linux-riscv64': 0.27.1
+      '@esbuild/linux-s390x': 0.27.1
+      '@esbuild/linux-x64': 0.27.1
+      '@esbuild/netbsd-arm64': 0.27.1
+      '@esbuild/netbsd-x64': 0.27.1
+      '@esbuild/openbsd-arm64': 0.27.1
+      '@esbuild/openbsd-x64': 0.27.1
+      '@esbuild/openharmony-arm64': 0.27.1
+      '@esbuild/sunos-x64': 0.27.1
+      '@esbuild/win32-arm64': 0.27.1
+      '@esbuild/win32-ia32': 0.27.1
+      '@esbuild/win32-x64': 0.27.1
 
   escalade@3.1.1: {}
 
@@ -8443,16 +8453,16 @@ snapshots:
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
 
-  terser-webpack-plugin@5.3.9(esbuild@0.25.0)(webpack@5.88.2(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))):
+  terser-webpack-plugin@5.3.9(esbuild@0.27.1)(webpack@5.88.2(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0))):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.18
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.19.2
-      webpack: 5.88.2(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))
+      webpack: 5.88.2(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0))
     optionalDependencies:
-      esbuild: 0.25.0
+      esbuild: 0.27.1
 
   terser@4.8.1:
     dependencies:
@@ -8799,7 +8809,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  webpack@5.88.2(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0)):
+  webpack@5.88.2(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0)):
     dependencies:
       '@types/eslint-scope': 3.7.4
       '@types/estree': 1.0.1
@@ -8822,7 +8832,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.9(esbuild@0.25.0)(webpack@5.88.2(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0)))
+      terser-webpack-plugin: 5.3.9(esbuild@0.27.1)(webpack@5.88.2(esbuild@0.27.1)(webpack-cli@4.10.0(webpack@4.47.0)))
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     optionalDependencies:
