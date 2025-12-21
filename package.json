@@ -36,7 +36,7 @@
 			"default": "./dist/index.cjs"
 		}
 	},
-	"packageManager": "pnpm@9.2.0",
+	"packageManager": "pnpm@10.26.1",
 	"scripts": {
 		"build": "pkgroll --target=node16.19.0",
 		"test": "tsx --env-file=.env tests",
