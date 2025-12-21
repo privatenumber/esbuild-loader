@@ -31,8 +31,8 @@ importers:
         specifier: 2.4.0
         version: 2.4.0(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))
       '@types/node':
-        specifier: ^18.19.129
-        version: 18.19.129
+        specifier: ^20.19.27
+        version: 20.19.27
       '@types/webpack':
         specifier: ^4.41.40
         version: 4.41.40
@@ -827,8 +827,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@18.19.129':
-    resolution: {integrity: sha512-hrmi5jWt2w60ayox3iIXwpMEnfUvOLJCRtrOPbHtH15nTjvO7uhnelvrdAs0dO0/zl5DZ3ZbahiaXEVb54ca/A==}
+  '@types/node@20.19.27':
+    resolution: {integrity: sha512-N2clP5pJhB2YnZJ3PIHFk5RkygRX5WO/5f0WC08tp0wd+sv0rsJk3MqWn3CbNmT2J505a5336jaQj4ph1AdMug==}
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -3902,8 +3902,8 @@ packages:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
   union-value@1.0.1:
     resolution: {integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==}
@@ -4414,7 +4414,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 18.19.129
+      '@types/node': 20.19.27
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -4683,7 +4683,7 @@ snapshots:
 
   '@types/loader-utils@2.0.6':
     dependencies:
-      '@types/node': 18.19.129
+      '@types/node': 20.19.27
       '@types/webpack': 4.41.40
 
   '@types/mdast@4.0.4':
@@ -4692,7 +4692,7 @@ snapshots:
 
   '@types/mini-css-extract-plugin@2.4.0(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))':
     dependencies:
-      '@types/node': 18.19.129
+      '@types/node': 20.19.27
       tapable: 2.2.1
       webpack: 5.88.2(esbuild@0.25.0)(webpack-cli@4.10.0(webpack@4.47.0))
     transitivePeerDependencies:
@@ -4703,9 +4703,9 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@18.19.129':
+  '@types/node@20.19.27':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.21.0
 
   '@types/resolve@1.20.2': {}
 
@@ -4723,13 +4723,13 @@ snapshots:
 
   '@types/webpack-sources@0.1.12':
     dependencies:
-      '@types/node': 18.19.129
+      '@types/node': 20.19.27
       '@types/source-list-map': 0.1.2
       source-map: 0.6.1
 
   '@types/webpack@4.41.40':
     dependencies:
-      '@types/node': 18.19.129
+      '@types/node': 20.19.27
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.13.1
       '@types/webpack-sources': 0.1.12
@@ -6939,7 +6939,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 18.19.129
+      '@types/node': 20.19.27
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -6947,7 +6947,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 18.19.129
+      '@types/node': 20.19.27
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -8598,7 +8598,7 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  undici-types@5.26.5: {}
+  undici-types@6.21.0: {}
 
   union-value@1.0.1:
     dependencies:
