@@ -236,6 +236,9 @@ In `webpack.config.js`:
   }
 ```
 
+> [!WARNING]
+> The plugin's `define` option **does not work with eval-based devtools** (e.g., `eval`, `eval-source-map`). This is because eval devtools wrap module code in `eval()` strings, and esbuild's define cannot replace identifiers inside string literals. If you need to use `define` with eval devtools, use the **loader's** `define` option instead, which transforms files before bundling.
+
 ### Transpilation
 
 If your project does not use TypeScript, JSX, or any other syntax that requires additional configuration beyond what Webpack provides, you can use `EsbuildPlugin` for transpilation instead of the loader.

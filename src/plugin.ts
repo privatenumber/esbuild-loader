@@ -188,7 +188,33 @@ export default class EsbuildPlugin {
 			options.minify = compiler.options.optimization?.minimize;
 		}
 
+		/**
+		 * Warn if `define` is used with eval-based devtools.
+		 * Eval devtools wrap module code in eval() strings, which prevents
+		 * esbuild's define from replacing identifiers (they become string content).
+		 */
+		const { devtool } = compiler.options;
+		const isEvalDevtool = (
+			typeof devtool === 'string'
+			&& devtool.includes('eval')
+		);
+		let hasWarnedEvalDefine = false;
+
 		compiler.hooks.compilation.tap(pluginName, (compilation) => {
+			if (
+				!hasWarnedEvalDefine
+				&& options.define
+				&& Object.keys(options.define).length > 0
+				&& isEvalDevtool
+			) {
+				hasWarnedEvalDefine = true;
+				const warning = new Error(
+					`[${pluginName}] The "define" option may not work as expected with eval-based devtools (current: "${devtool}"). `
+					+ 'Eval devtools wrap module code in eval() strings, preventing identifier replacement. '
+					+ 'Consider using the loader\'s "define" option instead, or switch to a non-eval devtool like "source-map".',
+				);
+				compilation.warnings.push(warning as webpack5.WebpackError);
+			}
 			const meta = JSON.stringify({
 				name: 'esbuild-loader',
 				version,

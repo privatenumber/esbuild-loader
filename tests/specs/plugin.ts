@@ -779,5 +779,82 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			const exportedFunction = built.require('/dist/');
 			expect(exportedFunction('hello world')).toStrictEqual([123, 321]);
 		});
+
+		test('warns when define is used with eval devtool', async () => {
+			const built = await build(
+				fixtures.minification,
+				(config) => {
+					config.devtool = 'eval-source-map';
+					config.plugins?.push(
+						new EsbuildPlugin({
+							define: {
+								__TEST__: '"value"',
+							},
+						}),
+					);
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(true);
+			const warnings = built.stats.toJson().warnings!;
+			expect(warnings.length).toBe(1);
+			// Webpack 4 returns string, Webpack 5 returns object with message property
+			const warningMessage = typeof warnings[0] === 'string' ? warnings[0] : warnings[0].message;
+			expect(warningMessage).toMatch('[EsbuildPlugin] The "define" option may not work as expected with eval-based devtools (current: "eval-source-map")');
+			expect(warningMessage).toMatch('Consider using the loader\'s "define" option instead');
+		});
+
+		test('no warning when define is used with non-eval devtool', async () => {
+			const built = await build(
+				fixtures.minification,
+				(config) => {
+					config.devtool = 'source-map';
+					config.plugins?.push(
+						new EsbuildPlugin({
+							define: {
+								__TEST__: '"value"',
+							},
+						}),
+					);
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+		});
+
+		test('no warning when define is not used with eval devtool', async () => {
+			const built = await build(
+				fixtures.minification,
+				(config) => {
+					config.devtool = 'eval-source-map';
+					config.plugins?.push(new EsbuildPlugin());
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+		});
+
+		test('no warning when define is empty with eval devtool', async () => {
+			const built = await build(
+				fixtures.minification,
+				(config) => {
+					config.devtool = 'eval-source-map';
+					config.plugins?.push(
+						new EsbuildPlugin({
+							define: {},
+						}),
+					);
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+		});
 	});
 });
