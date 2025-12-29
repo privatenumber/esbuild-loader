@@ -184,6 +184,25 @@ Consider these type-checking alternatives:
 - Running `tsc --noEmit` to type check
 - Integrating type-checking to your Webpack build as a separate process using [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin)
 
+### Defining constants
+
+Use the [`define`](#define) option to replace global identifiers with constant expressions:
+
+```diff
+ {
+     test: /\.[jt]sx?$/,
+     loader: 'esbuild-loader',
+     options: {
++        define: {
++            'process.env.NODE_ENV': JSON.stringify('production'),
++        },
+     },
+ }
+```
+
+> [!TIP]
+> The loader's `define` works with **all devtools**, including eval-based ones. If you're using the [plugin's `define`](#defining-constants-1) and it's not working, try the loader instead.
+
 ## EsbuildPlugin
 
 ### Minification
@@ -237,7 +256,7 @@ In `webpack.config.js`:
 ```
 
 > [!WARNING]
-> The plugin's `define` option **does not work with eval-based devtools** (e.g., `eval`, `eval-source-map`). This is because eval devtools wrap module code in `eval()` strings, and esbuild's define cannot replace identifiers inside string literals. If you need to use `define` with eval devtools, use the **loader's** `define` option instead, which transforms files before bundling.
+> The plugin's `define` option **does not work with eval-based devtools** (e.g., `eval`, `eval-source-map`). This is because eval devtools wrap module code in `eval()` strings, and esbuild's define cannot replace identifiers inside string literals. If you need to use `define` with eval devtools, use the [loader's `define` option](#define) instead, which transforms files before bundling.
 
 ### Transpilation
 
@@ -415,6 +434,16 @@ Customize the JSX fragment function name to use.
 
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#jsx-fragment).
+
+#### define
+Type: `{ [key: string]: string }`
+
+Replace global identifiers with constant expressions (e.g., `'process.env.NODE_ENV': JSON.stringify('production')`).
+
+> [!TIP]
+> Unlike the plugin's `define` option, the loader's `define` works with **all devtools** including eval-based ones (e.g., `eval-source-map`). This is because the loader transforms files _before_ Webpack bundles them, so identifiers are replaced before any eval wrapping occurs.
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#define).
 
 #### implementation
 Type: `{ transform: Function }`

@@ -458,5 +458,53 @@ export default testSuite(({ describe }, webpack: typeof webpack4 | typeof webpac
 			expect(Object.keys(assets).length).toBe(1);
 			expect(await built.require('/dist')()).toBe('test2');
 		});
+
+		test('define replaces identifiers', async () => {
+			const built = await build(
+				{
+					'/src/index.js': 'export default MY_CONSTANT',
+				},
+				(config) => {
+					configureEsbuildLoader(config, {
+						options: {
+							define: {
+								MY_CONSTANT: JSON.stringify('replaced-value'),
+							},
+						},
+					});
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			expect(built.require('/dist')).toBe('replaced-value');
+		});
+
+		test('define works with eval devtool in loader', async () => {
+			const built = await build(
+				{
+					'/src/index.js': 'export default MY_CONSTANT',
+				},
+				(config) => {
+					configureEsbuildLoader(config, {
+						options: {
+							define: {
+								MY_CONSTANT: JSON.stringify('works-with-eval'),
+							},
+						},
+					});
+					config.devtool = 'eval-source-map';
+				},
+				webpack,
+			);
+
+			expect(built.stats.hasWarnings()).toBe(false);
+			expect(built.stats.hasErrors()).toBe(false);
+
+			// Loader's define works with eval devtools because it runs BEFORE bundling
+			expect(built.require('/dist')).toBe('works-with-eval');
+		});
 	});
 });
