@@ -67,7 +67,7 @@
 		"fs-fixture": "^2.11.0",
 		"lintroll": "^1.20.1",
 		"manten": "^2.0.0",
-		"memfs": "^4.48.1",
+		"memfs": "^4.56.11",
 		"mini-css-extract-plugin": "^1.6.2",
 		"pkgroll": "^2.17.0",
 		"skills-npm": "^1.0.0",
