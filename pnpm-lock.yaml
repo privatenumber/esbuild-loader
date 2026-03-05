@@ -18,15 +18,15 @@ importers:
         specifier: ^4.10.1
         version: 4.10.1
       loader-utils:
-        specifier: ^2.0.4
-        version: 2.0.4
+        specifier: ^3.3.1
+        version: 3.3.1
       webpack-sources:
         specifier: ^1.4.3
         version: 1.4.3
     devDependencies:
       '@types/loader-utils':
-        specifier: ^2.0.6
-        version: 2.0.6
+        specifier: ^3.0.0
+        version: 3.0.0(esbuild@0.27.2)(webpack-cli@4.10.0)
       '@types/mini-css-extract-plugin':
         specifier: 2.4.0
         version: 2.4.0(esbuild@0.27.2)(webpack-cli@4.10.0)
@@ -929,8 +929,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/loader-utils@2.0.6':
-    resolution: {integrity: sha512-cgu0Xefgq9O5FjFR78jgI6X31aPjDWCaJ6LCfRtlj6BtyVVWiXagysSYlPACwGKAzRwsFLjKXcj4iGfcVt6cLw==}
+  '@types/loader-utils@3.0.0':
+    resolution: {integrity: sha512-oOi4OGpiLUbb+Q/cN9FIkkDFgOpOGZ2cUAzb5i03wrGstnG6Syx1WDMhSiB5rcP10XX7cw7Uev8mv++/aplnNg==}
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
@@ -2878,6 +2878,10 @@ packages:
   loader-utils@2.0.4:
     resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
     engines: {node: '>=8.9.0'}
+
+  loader-utils@3.3.1:
+    resolution: {integrity: sha512-FMJTLMXfCLMLfJxcX9PFqX5qD88Z5MRGaZCVzfuqeZSPsyiBzs+pahDQjbIWz2QIzPZz0NX9Zy4FX3lmK6YHIg==}
+    engines: {node: '>= 12.13.0'}
 
   locate-path@3.0.0:
     resolution: {integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==}
@@ -4977,10 +4981,15 @@ snapshots:
   '@types/json5@0.0.29':
     optional: true
 
-  '@types/loader-utils@2.0.6':
+  '@types/loader-utils@3.0.0(esbuild@0.27.2)(webpack-cli@4.10.0)':
     dependencies:
       '@types/node': 22.19.3
-      '@types/webpack': 4.41.40
+      webpack: 5.88.2(esbuild@0.27.2)(webpack-cli@4.10.0)
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
 
   '@types/mdast@4.0.4':
     dependencies:
@@ -7399,6 +7408,8 @@ snapshots:
       big.js: 5.2.2
       emojis-list: 3.0.0
       json5: 2.2.0
+
+  loader-utils@3.3.1: {}
 
   locate-path@3.0.0:
     dependencies:
