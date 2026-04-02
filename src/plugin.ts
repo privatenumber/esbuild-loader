@@ -108,10 +108,10 @@ const transformAssets = async (
 					? new SourceMapSource(
 						result.code,
 						asset.name,
-						// @ts-expect-error it accepts strings
 						result.map,
 						sourceAsString,
-						map,
+						// @ts-expect-error webpack types use Object for source maps, but SourceMapSource expects RawSourceMap
+						map ?? undefined,
 						true,
 					)
 					: new RawSource(result.code)
