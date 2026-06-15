@@ -47,7 +47,7 @@
 		"prepare": "skills-npm"
 	},
 	"dependencies": {
-		"esbuild": "^0.27.1",
+		"esbuild": "^0.28.1",
 		"get-tsconfig": "^4.10.1",
 		"loader-utils": "^2.0.4",
 		"webpack-sources": "^3.3.4"
