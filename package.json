@@ -69,7 +69,7 @@
 		"manten": "^2.0.0",
 		"memfs": "^4.56.11",
 		"mini-css-extract-plugin": "^1.6.2",
-		"pkgroll": "^2.17.0",
+		"pkgroll": "^2.27.1",
 		"skills-npm": "^1.2.0",
 		"tsx": "^4.20.6",
 		"typescript": "^5.9.3",
