@@ -70,7 +70,7 @@
 		"memfs": "^4.56.11",
 		"mini-css-extract-plugin": "^1.6.2",
 		"pkgroll": "^2.17.0",
-		"skills-npm": "^1.0.0",
+		"skills-npm": "^1.2.0",
 		"tsx": "^4.20.6",
 		"typescript": "^5.9.3",
 		"webpack": "^4.47.0",
