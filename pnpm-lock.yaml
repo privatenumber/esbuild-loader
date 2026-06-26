@@ -49,8 +49,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1
       fs-fixture:
-        specifier: ^2.11.0
-        version: 2.11.0
+        specifier: ^2.14.0
+        version: 2.14.0
       lintroll:
         specifier: ^1.20.1
         version: 1.20.1(@typescript-eslint/utils@8.45.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.45.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1)))(jiti@2.6.1)(typescript@5.9.3)
@@ -2288,8 +2288,8 @@ packages:
   from2@2.3.0:
     resolution: {integrity: sha512-OMcX/4IC/uqEPVgGeyfN22LJk6AZrMkRZHxcHBMBvHScDGgwTm2GT2Wkgtocyd3JfZffjj2kYUDXXII0Fk9W0g==}
 
-  fs-fixture@2.11.0:
-    resolution: {integrity: sha512-elzOu5Ru04qPSBT344kngxx1bpq3RbpznEyjTcn+NHI2nvzwDcGt2zde/a6LBmF5SJtgSYBGHAPnel6S1IefeA==}
+  fs-fixture@2.14.0:
+    resolution: {integrity: sha512-lZBaSOewY5snBSyOjn3fmo2ES5gOR7Q1Y6dILH0/xR0xejjUhux65OGaFWhQ+jiyvTi5HOHqXQrQ9v48Lsmqbw==}
     engines: {node: '>=18.0.0'}
 
   fs-monkey@1.0.3:
@@ -6790,7 +6790,7 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 2.3.7
 
-  fs-fixture@2.11.0: {}
+  fs-fixture@2.14.0: {}
 
   fs-monkey@1.0.3: {}
 
