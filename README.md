@@ -445,6 +445,23 @@ Replace global identifiers with constant expressions (e.g., `'process.env.NODE_E
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#define).
 
+#### drop
+Type: `Array<'console' | 'debugger'>`
+
+Strip matching calls from the output. Useful for removing `console.*` from production builds.
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#drop).
+
+```diff
+ {
+     test: /\.[jt]sx?$/,
+     loader: 'esbuild-loader',
+     options: {
++        drop: ['console', 'debugger'],
+     },
+ }
+```
+
 #### implementation
 Type: `{ transform: Function }`
 
@@ -512,6 +529,19 @@ Type: `'none' | 'inline' | 'eof' | 'external'`
 Default: `'inline'`
 
 Read more about it in the [esbuild docs](https://esbuild.github.io/api/#legal-comments).
+
+#### drop
+Type: `Array<'console' | 'debugger'>`
+
+Strip matching calls from the output. Useful for removing `console.*` from production builds.
+
+Read more about it in the [esbuild docs](https://esbuild.github.io/api/#drop).
+
+```diff
+ new EsbuildPlugin({
++    drop: ['console', 'debugger'],
+ })
+```
 
 #### css
 Type: `boolean`
