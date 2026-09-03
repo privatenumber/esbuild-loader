@@ -49,8 +49,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1
       fs-fixture:
-        specifier: ^2.11.0
-        version: 2.11.0
+        specifier: ^2.16.0
+        version: 2.16.0
       lintroll:
         specifier: ^1.20.1
         version: 1.20.1(@typescript-eslint/utils@8.45.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.45.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1)))(jiti@2.6.1)(typescript@5.9.3)
@@ -2082,6 +2082,7 @@ packages:
   eslint@9.37.0:
     resolution: {integrity: sha512-XyLmROnACWqSxiGYArdef1fItQd47weqB7iwtfr9JHwRrqIXZdcFMvvEcL9xHCmL0SNsOvF0c42lWyM1U5dgig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -2269,8 +2270,8 @@ packages:
   from2@2.3.0:
     resolution: {integrity: sha512-OMcX/4IC/uqEPVgGeyfN22LJk6AZrMkRZHxcHBMBvHScDGgwTm2GT2Wkgtocyd3JfZffjj2kYUDXXII0Fk9W0g==}
 
-  fs-fixture@2.11.0:
-    resolution: {integrity: sha512-elzOu5Ru04qPSBT344kngxx1bpq3RbpznEyjTcn+NHI2nvzwDcGt2zde/a6LBmF5SJtgSYBGHAPnel6S1IefeA==}
+  fs-fixture@2.16.0:
+    resolution: {integrity: sha512-wLgUrK+xH81K9shOMrQATJKbZTCPDxtmlt8s9iyE7vy0/H5KSXgKm9UPFzz7D08VCAYFvqw6JNnlFmJ/ukVWnQ==}
     engines: {node: '>=18.0.0'}
 
   fs-monkey@1.0.3:
@@ -6770,7 +6771,7 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 2.3.7
 
-  fs-fixture@2.11.0: {}
+  fs-fixture@2.16.0: {}
 
   fs-monkey@1.0.3: {}
 
