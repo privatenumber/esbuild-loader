@@ -36,4 +36,4 @@ jobs:
         run: pnpm test
 
       - name: Test Node.js v16
-        run: pnpm --use-node-version=16.19.0 tsx tests
+        run: pnpm dlx node@runtime:16.19.0 node_modules/tsx/dist/cli.mjs tests
