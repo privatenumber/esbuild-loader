@@ -1,0 +1,14 @@
+overrides:
+  fsevents@1: ^2.0.0
+
+allowBuilds:
+  esbuild: false
+  unrs-resolver: false
+
+skills:
+  dirs:
+    - .agents/skills
+
+permissions:
+  manten:
+    skills: true
